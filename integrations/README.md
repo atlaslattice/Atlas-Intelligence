@@ -4,6 +4,11 @@
 
 This is a **separate, U.S.-scoped** Atlas ARI integration draft, not a silent merge of the Mandarin-first DragonSeek constitutional corpus. It preserves the original Gemini-primary Atlas source and adds an opt-in GPT-primary research runner. Changes remain in a feature branch until reviewed.
 
+
+## Mobile console
+
+The [ATLAS ARI two-brain research panel](../public/ari-fabric.html) is served at `/ari-fabric.html` by a local Vite/Express development server. It offers an **offline, manually pasted reference-ID comparison**; this is not model inference, connected-account access, or factual verification. The panel truthfully shows provider integration as unimplemented.
+
 ## Functional local components
 
 - `atlas_fabric.py`: read-only, manually invoked UWS commands (no shell strings or write methods); Sheldonbrain /query client (opt-in); source-linked SQLite KG; Dream/Play/Work 8/8/8 planner; two-brain receipt comparison.
