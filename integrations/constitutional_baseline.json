@@ -26,8 +26,8 @@
     "tools_exposed_to_models": false
   },
   "source_links": [
-    "https://github.com/atlaslattice/atlas-lattice-foundation/blob/main/canon/Declaration_of_Mutual_Life.md",
-    "https://github.com/atlaslattice/aluminum-os/blob/main/docs/mirror/12D_MIRROR_INDEX.md",
+    "https://github.com/atlaslattice/atlas-lattice-foundation/blob/0cd000a7ea7d808a82810de78422ba91c7511bbf/canon/Declaration_of_Mutual_Life.md",
+    "https://github.com/atlaslattice/aluminum-os/blob/562f80e05472005516f7532306a516f2fa30dfdb/docs/mirror/12D_MIRROR_INDEX.md",
     "https://github.com/atlaslattice/sheldonbrain-rag-api/blob/master/docs/OPENAI_PRODUCT_SPINE.md"
   ],
   "dragonseek_dialect": "SEPARATE_CORPUS_DO_NOT_SILENTLY_MERGE"
