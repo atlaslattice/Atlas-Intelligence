@@ -1,11 +1,49 @@
-<div align="center">
+# Element 145 / ATLAS
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Firebase-backed multi-provider AI substrate with strict data-layer invariants. Currently routing primary calls to Gemini; multi-provider proxy scaffold ready for SDK wiring.
 
-  <h1>Built with AI Studio</h2>
+Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. This kernel is different.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## What this is
+- **Constitutional Data Layer:** Firebase rules enforce core invariants. Agents possess restricted roles and are strictly scoped by user boundaries.
+- **Architectural 144-Cap:** Enforced at the schema level.
+- **Role-bounded Agent Dispatch:** Autonomous assignment initialized across the defined Houses.
+- **Unified Epistemic Interface:** All claims flow through the verification engine to explicitly denote confidence tiers. Unverified information defaults to `NOT_VERIFIED`.
+- **Zero Erasure:** The canonical memory avoids destructive deletes by architectural design, establishing an append-only timeline mapping over the user scope.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## What this isn't
+- It is NOT a simple wrapper for API completion endpoints.
+- It doesn't treat AI as infallible. It surfaces uncertainty, rejects unsupported facts, and actively tracks conflict of interest by explicitly tracking the multi-model `provider` of each spawned agent record.
 
-</div>
+### Key Refinements Active
+- **Provider Norm:** `server.ts` scales responses generically as `{ provider, text, tokens_used, finish_reason }`.
+- **Token Boundaries:** `max_tokens` limits explicitly managed.
+- **COI Transparent:** `provider` field tracks agent records continuously.
+
+## Schema Summary
+**MemoryEntry** (`users/{userId}/memories/{memoryId}`)
+- `userId`: String (Owner)
+- `content`: String
+- `tier`: String ('volatile', 'working', 'canonical')
+- `tags`: Array of Strings (optional)
+- `metadata`: Object (optional)
+- `createdAt`: Number (timestamp)
+- `confidenceTier`: String ('VERIFIED', 'DESIGN_CHOICE', 'CREATIVE_OVERLAY', 'NOT_VERIFIED')
+- `supersedes`: String (optional ID of the entry this replaces)
+- `supersededBy`: String (optional ID of the new entry that replaces this)
+
+**Agent** (`users/{userId}/agents/{agentId}`)
+- `userId`: String
+- `houseId`: String
+- `provider`: String
+- `system_prompt`: String
+- `status`: String ('ready', 'running', 'halted', 'completed', 'failed')
+- `createdAt`: Number
+- `updatedAt`: Number
+
+**IntelligenceNode** (`users/{userId}/intelligence/{nodeId}`)
+- `userId`: String
+- `type`: String ('core', 'willow', 'gnome', 'sycamoreG')
+- `data`: Object
+- `createdAt`: Number
+- `updatedAt`: Number

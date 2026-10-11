@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "MemoryEntry": {
+      "title": "Memory Entry",
+      "description": "A single piece of persistent memory.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "content": { "type": "string" },
+        "tier": { "type": "string", "enum": ["volatile", "working", "canonical"] },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "metadata": { "type": "object" },
+        "createdAt": { "type": "number" },
+        "supersededBy": { "type": "string" },
+        "supersedes": { "type": "string" },
+        "confidenceTier": { "type": "string" }
+      },
+      "required": ["userId", "content", "tier", "createdAt", "confidenceTier"]
+    },
+    "Agent": {
+      "title": "Autonomous Research Agent",
+      "description": "An autonomous research agent assigned to a specific house.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "houseId": { "type": "string" },
+        "status": { "type": "string", "enum": ["ready", "running", "halted", "completed", "failed"] },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "houseId", "status", "createdAt", "updatedAt"]
+    },
+    "IntelligenceNode": {
+      "title": "Intelligence Node",
+      "description": "Nodes for core intelligence, willow, gnome, and sycamore G.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "type": { "type": "string", "enum": ["core", "willow", "gnome", "sycamoreG"] },
+        "data": { "type": "object" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "type", "data", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}/memories/{memoryId}": {
+      "schema": "MemoryEntry",
+      "description": "User's persistent memory entries."
+    },
+    "users/{userId}/agents/{agentId}": {
+      "schema": "Agent",
+      "description": "User's autonomous research agents."
+    },
+    "users/{userId}/intelligence/{nodeId}": {
+      "schema": "IntelligenceNode",
+      "description": "User's intelligence graphs (core, willow, etc.)."
+    }
+  }
+}

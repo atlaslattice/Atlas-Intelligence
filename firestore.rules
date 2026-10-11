@@ -1,0 +1,108 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Validation Helpers
+    function isSignedIn() { return request.auth != null; }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function isValidTimestampMs(timestampMs) { return timestampMs is number && timestampMs >= request.time.toMillis() - 120000 && timestampMs <= request.time.toMillis() + 120000; }
+    
+    function isValidMemoryEntry(data) {
+      return data.keys().hasAll(['userId', 'content', 'tier', 'createdAt', 'confidenceTier']) &&
+             data.userId == request.auth.uid &&
+             data.content is string && data.content.size() <= 500000 &&
+             data.tier in ['volatile', 'working', 'canonical'] &&
+             data.createdAt is number &&
+             data.confidenceTier in ['VERIFIED', 'DESIGN_CHOICE', 'CREATIVE_OVERLAY', 'NOT_VERIFIED'] &&
+             (data.keys().hasAny(['tags']) ? (data.tags is list && data.tags.size() <= 100) : true) &&
+             (data.keys().hasAny(['metadata']) ? data.metadata is map : true) &&
+             (data.keys().hasAny(['houseId']) ? (data.houseId is string && data.houseId.size() <= 10) : true) &&
+             (data.keys().hasAny(['sphereId']) ? (data.sphereId is string && data.sphereId.size() <= 10) : true) &&
+             (data.keys().hasAny(['convenorTokenId']) ? data.convenorTokenId is string : true) &&
+             (data.keys().hasAny(['supersededBy']) ? (data.supersededBy is string && data.supersededBy.size() <= 128) : true) &&
+             (data.keys().hasAny(['supersedes']) ? (data.supersedes is string && data.supersedes.size() <= 128) : true);
+    }
+
+    function isValidAgent(data) {
+      return data.keys().hasAll(['userId', 'houseId', 'status', 'createdAt', 'updatedAt', 'provider', 'system_prompt']) &&
+             data.userId == request.auth.uid &&
+             data.houseId is string && data.houseId.size() <= 10 &&
+             data.provider is string && data.provider.size() <= 64 &&
+             data.system_prompt is string && data.system_prompt.size() <= 50000 &&
+             data.status in ['ready', 'running', 'halted', 'completed', 'failed'] &&
+             data.createdAt is number && data.updatedAt is number;
+    }
+    
+    function isValidIntelligenceNode(data) {
+      return data.keys().hasAll(['userId', 'type', 'data', 'createdAt', 'updatedAt']) &&
+             data.userId == request.auth.uid &&
+             data.type in ['core', 'willow', 'gnome', 'sycamoreG'] &&
+             data.data is map &&
+             data.createdAt is number && data.updatedAt is number;
+    }
+
+    // Collections
+    match /users/{userId}/convenor_tokens/{tokenId} {
+      allow read: if isSignedIn() && userId == request.auth.uid;
+      allow create: if isSignedIn() && userId == request.auth.uid &&
+                    incoming().keys().hasAll(['userId', 'expiresAt']) &&
+                    incoming().userId == request.auth.uid &&
+                    incoming().expiresAt > request.time.toMillis();
+      allow delete: if isSignedIn() && userId == request.auth.uid;
+    }
+
+    match /users/{userId}/memories/{memoryId} {
+      allow read: if isSignedIn() && userId == request.auth.uid && isValidId(userId);
+      allow list: if isSignedIn() && userId == request.auth.uid && isValidId(userId);
+      allow create: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(memoryId) && 
+                    isValidMemoryEntry(incoming()) && isValidTimestampMs(incoming().createdAt) &&
+                    (incoming().tier == 'canonical' ? 
+                      (incoming().keys().hasAny(['convenorTokenId']) && 
+                       exists(/databases/$(database)/documents/users/$(userId)/convenor_tokens/$(incoming().convenorTokenId)) && 
+                       !existsAfter(/databases/$(database)/documents/users/$(userId)/convenor_tokens/$(incoming().convenorTokenId))) 
+                      : true);
+      allow update: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(memoryId) && 
+                    isValidMemoryEntry(incoming()) &&
+                    incoming().userId == existing().userId &&
+                    incoming().createdAt == existing().createdAt &&
+                    incoming().diff(existing()).affectedKeys().hasOnly(['supersededBy', 'metadata']);
+      // Zero Erasure Policy: canonical memory cannot be deleted, but we allow deleting working/volatile if needed, though simpler to restrict all for now or check tier.
+      allow delete: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(memoryId) && existing().tier != 'canonical';
+    }
+
+    match /users/{userId}/agents/{agentId} {
+      allow read: if isSignedIn() && userId == request.auth.uid && isValidId(userId);
+      allow list: if isSignedIn() && userId == request.auth.uid && isValidId(userId);
+      allow create: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(agentId) &&
+                    isValidAgent(incoming()) && isValidTimestampMs(incoming().createdAt);
+      allow update: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(agentId) &&
+                    isValidAgent(incoming()) &&
+                    incoming().userId == existing().userId &&
+                    incoming().createdAt == existing().createdAt &&
+                    isValidTimestampMs(incoming().updatedAt) &&
+                    incoming().diff(existing()).affectedKeys().hasOnly(['status', 'updatedAt']);
+      allow delete: if false; // Agents persist
+    }
+
+    match /users/{userId}/intelligence/{nodeId} {
+      allow read: if isSignedIn() && userId == request.auth.uid && isValidId(userId);
+      allow list: if isSignedIn() && userId == request.auth.uid && isValidId(userId);
+      allow create: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(nodeId) &&
+                    isValidIntelligenceNode(incoming()) && isValidTimestampMs(incoming().createdAt);
+      allow update: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(nodeId) &&
+                    isValidIntelligenceNode(incoming()) &&
+                    incoming().userId == existing().userId &&
+                    incoming().createdAt == existing().createdAt &&
+                    isValidTimestampMs(incoming().updatedAt) &&
+                    incoming().diff(existing()).affectedKeys().hasOnly(['data', 'updatedAt']);
+      allow delete: if isSignedIn() && userId == request.auth.uid && isValidId(userId) && isValidId(nodeId);
+    }
+  }
+}
