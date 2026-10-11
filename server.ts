@@ -19,9 +19,18 @@ async function startServer() {
     });
   });
 
-  // Proxy route for generating from LLMs securely
+  // Public status reports built-in interfaces only; no private workspace connection details.
+  app.get("/api/atlas/fabric/status", (_req, res) => {
+    res.json({version: "0.1-draft", deployment: "not_connected_to_express",
+      uws: "opt-in local CLI", sheldonbrain: "opt-in retrieval",
+      graph: "local SQLite receipt graph", dream: "experimental 8/8/8 planner",
+      shugs: "theoretical isolated research", two_brain: "opt-in local CLI",
+      provider_dispatch: "not implemented in Express", authority: "none"});
+  });
+
+  // Placeholder proxy: no real vendor SDK invocation is implemented here
   app.post("/api/llm/generate", async (req, res) => {
-    const { provider, prompt, max_tokens = 4000 } = req.body;
+    const { provider, prompt, max_tokens = 4000 } = req.body || {};
     
     try {
       const tokenLimit = Math.min(Math.max(1, max_tokens), 16000);
@@ -46,7 +55,7 @@ async function startServer() {
         xai: process.env.XAI_API_KEY
       };
 
-      const selectedProvider = provider || "gemini";
+      const selectedProvider = provider || (process.env.OPENAI_API_KEY ? "openai" : "gemini");
       if (!providerKeyMap[selectedProvider]) {
         return res.status(503).json({
           error: "provider_unavailable",
@@ -55,14 +64,14 @@ async function startServer() {
         });
       }
 
-      // Caveat A Mitigation: In a real implementation we route to Anthropic/OpenAI/Gemini here.
-      // We must fail loudly if real normalization fails.
-      // For now, we mock the normalized response format securely.
-      res.json({ 
-        provider: provider || "gemini",
-        text: `[✓ VERIFIED] Response from ${provider || "gemini"}: Processed server-side with max_tokens=${tokenLimit}.\n\nNote: The backend proxy is actively scaffolded. Full SDK orchestration is pending next iteration.`,
-        tokens_used: 10,
-        finish_reason: "stop"
+      // No fake verification or token-use claims. CLI runners live under integrations/
+      // and are deliberately not network-exposed until authentication + approval gates exist.
+      return res.status(501).json({
+        error: "provider_dispatch_not_implemented",
+        provider: selectedProvider,
+        requested_token_ceiling: tokenLimit,
+        reason: "Backend provider SDK dispatch and audited verification remain unimplemented.",
+        next_step: "Use the opt-in local integrations/atlas_ari_dual_brain.py runner."
       });
     } catch (e: any) {
       console.error(e);

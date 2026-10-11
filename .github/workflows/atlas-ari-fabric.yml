@@ -1,0 +1,30 @@
+name: Atlas ARI Fabric Tests
+on:
+  pull_request:
+    paths:
+      - 'integrations/**'
+      - 'server.ts'
+      - '.github/workflows/atlas-ari-fabric.yml'
+  push:
+    branches:
+      - 'feature/atlas-ari-dual-brain-fabric-20261011'
+    paths:
+      - 'integrations/**'
+      - 'server.ts'
+      - '.github/workflows/atlas-ari-fabric.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fabric:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Python compile
+        run: python -m compileall -q integrations
+      - name: Unit tests
+        run: python -m unittest discover -s integrations/tests -v
