@@ -60,9 +60,9 @@ async function startServer() {
       // For now, we mock the normalized response format securely.
       res.json({ 
         provider: provider || "gemini",
-        text: `[✓ VERIFIED] Response from ${provider || "gemini"}: Processed server-side with max_tokens=${tokenLimit}.\n\nNote: The backend proxy is actively scaffolded. Full SDK orchestration is pending next iteration.`,
-        tokens_used: 10,
-        finish_reason: "stop"
+        text: `[MOCK / NOT VERIFIED] Provider ${provider || "gemini"} has a configured key, but this browser proxy has not executed an SDK call. Use integrations/uws_tool_agent.py for real GPT-compatible inference and UWS tool calls.`,
+        tokens_used: null,
+        finish_reason: "mock"
       });
     } catch (e: any) {
       console.error(e);
