@@ -98,6 +98,14 @@ class FabricTests(unittest.TestCase):
         self.bad(lambda d:d['sources'][0].update(raw_body='PRIVATE CONTENT'))
     def test_38_revoked_source_hold(self):
         self.bad(lambda d:d['sources'][0].update(revoked=True))
+    def test_38b_ambiguous_revocation_marker_denied(self):
+        # The prior 'is not True' check accepted every value below.
+        for marker in (None, "true", "false", 1, 0, [], {}):
+            with self.subTest(marker=repr(marker)):
+                self.bad(lambda d:d['sources'][0].update(revoked=marker))
+        valid=copy.deepcopy(self.root)
+        valid['sources'][0]['revoked']=False
+        self.assertEqual(validate_fabric(valid)['status'],'SOURCE_GRAPH_VALID_NOT_HOSTED')
     def test_39_source_rights_not_granted(self):
         self.bad(lambda d:d['sources'][0].update(rights_effect='CANON'))
     def test_40_source_url_not_external_forgery(self):
