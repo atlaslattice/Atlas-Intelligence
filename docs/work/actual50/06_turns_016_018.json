@@ -1,0 +1,117 @@
+{
+  "schema": "atlas.actual-50-work-macroturns/v0.1",
+  "batch": 6,
+  "outcomes": [
+    {
+      "macroturn": 16,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/300",
+        "title": "experiment: Krakoa Living Habitat v0.1 — standalone offline Dream Palace",
+        "state": "open",
+        "head_sha": "79329bfe0ae7755550a438b94f012b0cdd83f442",
+        "base": "master",
+        "draft": true,
+        "mergeable": false
+      },
+      "paired_task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/273",
+        "title": "Emergency quarantine: Grok and Claude materials pending contamination review",
+        "state": "open",
+        "linkage": "COMPANION_BACKLOG_ONLY"
+      },
+      "work_checks": {
+        "pr_live_read": true,
+        "issue_live_read": true,
+        "workflow_observed": true,
+        "head_recorded": true,
+        "release_scanned": true,
+        "receipt_to_be_persisted": true
+      },
+      "workflow": [],
+      "holds": [
+        "DRAFT",
+        "CONFLICT_OR_NONMERGEABLE",
+        "CI_UNOBSERVED",
+        "RELEASE_HOLD_IN_SOURCE"
+      ],
+      "result": "HOLD",
+      "reserved_modes": 14
+    },
+    {
+      "macroturn": 17,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/299",
+        "title": "research: DragonSeek 1.1 — Indra planetary public science, DeepSeek fixes, 55 tests & global resilience",
+        "state": "open",
+        "head_sha": "9188383d18704fa70fbb93dd7cd8b3556bd692fe",
+        "base": "research/dragonseek-v10-national-planetary-resilience-20261011",
+        "draft": true,
+        "mergeable": true
+      },
+      "paired_task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/270",
+        "title": "[INTAKE] GrokSwarm refined K1-LCS tranche 1 specs — lattice core, maglock, bolt ring",
+        "state": "open",
+        "linkage": "COMPANION_BACKLOG_ONLY"
+      },
+      "work_checks": {
+        "pr_live_read": true,
+        "issue_live_read": true,
+        "workflow_observed": true,
+        "head_recorded": true,
+        "release_scanned": true,
+        "receipt_to_be_persisted": true
+      },
+      "workflow": [
+        {
+          "id": 38134715849,
+          "conclusion": "failure",
+          "status": "completed"
+        }
+      ],
+      "holds": [
+        "DRAFT",
+        "CI_FAILED",
+        "STACKED_BASE",
+        "RELEASE_HOLD_IN_SOURCE"
+      ],
+      "result": "HOLD",
+      "reserved_modes": 14
+    },
+    {
+      "macroturn": 18,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/298",
+        "title": "research: DragonSeek 1.0 — China-wide Earth systems, Lahaina disaster resilience, federated data-security gates",
+        "state": "open",
+        "head_sha": "9ef05ce8f2e64c08624af16489f92b36956fda83",
+        "base": "research/djk-v09-deepseek-2026-standards-interfaces-20261011",
+        "draft": true,
+        "mergeable": true
+      },
+      "paired_task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/269",
+        "title": "[INTAKE] K1-LCS SRD v0.2 Kardashev-I Lattice Coordination System",
+        "state": "open",
+        "linkage": "COMPANION_BACKLOG_ONLY"
+      },
+      "work_checks": {
+        "pr_live_read": true,
+        "issue_live_read": true,
+        "workflow_observed": true,
+        "head_recorded": true,
+        "release_scanned": true,
+        "receipt_to_be_persisted": true
+      },
+      "workflow": [],
+      "holds": [
+        "DRAFT",
+        "CI_UNOBSERVED",
+        "STACKED_BASE",
+        "RELEASE_HOLD_IN_SOURCE"
+      ],
+      "result": "HOLD",
+      "reserved_modes": 14
+    }
+  ]
+}
