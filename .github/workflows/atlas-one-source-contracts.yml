@@ -1,0 +1,71 @@
+name: Atlas ONE source-only federation acceptance
+on:
+  pull_request:
+    paths:
+      - 'interop/**'
+      - 'tests/test_atlas*.py'
+      - 'docs/interop/**'
+      - '.github/workflows/atlas-one-source-contracts.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run public source-only tests (no provider tokens or model calls)
+        run: python -m unittest discover -s tests -p 'test_atlas*.py' -v
+      - name: Validate federation and exercise one inert end-to-end Work receipt
+        run: |
+          python interop/atlas_fabric.py interop/atlas_project_manifest.v0.1.json --pretty
+          python interop/atlas_one_circuit.py interop/atlas_collision_h01.work.v0.2.json > /tmp/atlas_one_circuit_receipt.json
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,'interop')
+          from atlas_one_circuit import verify_receipt
+          receipt=json.load(open('/tmp/atlas_one_circuit_receipt.json'))
+          assert verify_receipt(receipt), 'local receipt replay failure'
+          assert len(receipt['events']) == 8, 'unexpected state machine'
+          assert receipt['run_state'] == 'LOCAL_PREPARED_UNPOSTED'
+          assert receipt['actual_model_turns'] == receipt['post_count'] == 0
+          print('LOCAL_SOURCE_ONLY_ACCEPTANCE; NOT HOSTED / NOT CANON')
+          PY
+  upstream-public-contract-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: atlaslattice/noosphere-archive
+          ref: 82469d1ee6269b1886f3c2cdce83dcf8bb974106
+          path: _pinned_public/noosphere
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: atlaslattice/aluminum-os
+          ref: 9fbe55e8e4edbc27abd5af4df331451bd608aa48
+          path: _pinned_public/aluminum
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test exact pinned source contracts, no connected-account access
+        run: |
+          python interop/atlas_contract_bridge.py \
+            --noosphere _pinned_public/noosphere/core/swarmhub_contracts.py \
+            --goldentrace _pinned_public/aluminum/kintsugi/sdk/golden_trace.py
+          python -m unittest discover -s _pinned_public/noosphere/tests -p 'test_swarmhub_contracts.py' -v
