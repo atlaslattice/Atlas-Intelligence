@@ -1,0 +1,110 @@
+{
+  "batch": 14,
+  "entries": [
+    {
+      "cycle": 40,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/58",
+        "title": "Finite alpha-transport controls v0.1: side escape, unresolved exits and pocket gate",
+        "head": "9299019cd7f78c0844b175594f2b46f1fe6523df",
+        "base": "gptwork/alpha-birth-escape-v0-1",
+        "state": "open",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/253",
+        "title": "Graph safety receipt: China benchmark boundary and non-participation guardrail",
+        "state": "open",
+        "relation": "INDEPENDENT_BACKLOG"
+      },
+      "checks": [],
+      "hold": [
+        "DRAFT",
+        "STACKED",
+        "CI_UNOBSERVED",
+        "PHYSICAL_VALIDATION_PENDING"
+      ],
+      "result": "HOLD",
+      "work_beats": [
+        "PR_ID",
+        "ISSUE_ID",
+        "HOSTED_CHECKS",
+        "BRANCH_PARENT",
+        "EVIDENCE_BOUNDS",
+        "RECEIPT"
+      ],
+      "reserved_slots": 14
+    },
+    {
+      "cycle": 41,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/57",
+        "title": "Conditional alpha birth → cold-slab escape v0.1: correlations, energy bounds and replay",
+        "head": "d35d31a95253ed91a942236ecf500a14acc74ec8",
+        "base": "gptwork/warpx-target-handoff-v0-2",
+        "state": "open",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/252",
+        "title": "Swarm Slice 001: P0 Notion → Drive → GitHub export spine",
+        "state": "open",
+        "relation": "INDEPENDENT_BACKLOG"
+      },
+      "checks": [],
+      "hold": [
+        "DRAFT",
+        "STACKED",
+        "CI_UNOBSERVED",
+        "PHYSICAL_VALIDATION_PENDING"
+      ],
+      "result": "HOLD",
+      "work_beats": [
+        "PR_ID",
+        "ISSUE_ID",
+        "HOSTED_CHECKS",
+        "BRANCH_PARENT",
+        "EVIDENCE_BOUNDS",
+        "RECEIPT"
+      ],
+      "reserved_slots": 14
+    },
+    {
+      "cycle": 42,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/56",
+        "title": "Beyond Q v1.6: direct DD He-3 capture, tritium fuel retention and electricity-offset thresholds",
+        "head": "fe10971566b35ae09b007a24ff8780d691ad31e7",
+        "base": "research/beyond-q-wallplug-v1.5",
+        "state": "open",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/250",
+        "title": "Log and review Aetherforge foundational blockages technical challenge packet",
+        "state": "open",
+        "relation": "INDEPENDENT_BACKLOG"
+      },
+      "checks": [],
+      "hold": [
+        "DRAFT",
+        "STACKED",
+        "CI_UNOBSERVED",
+        "PHYSICAL_VALIDATION_PENDING"
+      ],
+      "result": "HOLD",
+      "work_beats": [
+        "PR_ID",
+        "ISSUE_ID",
+        "HOSTED_CHECKS",
+        "BRANCH_PARENT",
+        "EVIDENCE_BOUNDS",
+        "RECEIPT"
+      ],
+      "reserved_slots": 14
+    }
+  ]
+}
