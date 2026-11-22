@@ -112,6 +112,11 @@ def validate_sources(source):
         _dict(x,'source')
         sid=x.get('id')
         require(isinstance(sid,str) and sid and sid not in result,'duplicate_or_missing_source')
+        # A public reference/pin can never carry raw source bodies, even if
+        # it reports public visibility. Privacy scope cannot be self-certified.
+        for body_key in ('raw_body', 'raw_text', 'raw_content', 'body',
+                         'private_text', 'transcript'):
+            require(x.get(body_key) is None, 'source_body_in_metadata_hold')
         kind=x.get('kind')
         require(kind in SOURCE_KINDS,'unknown_source_kind')
         require(x.get('publication_scope') in {'PUBLIC_REFERENCE_ONLY','PRIVATE_PIN_ONLY'},'source_scope_unknown')
