@@ -1,0 +1,475 @@
+# Atlas — GitHub Open Work Source Cut (22 Nov 2026)
+
+> **SOURCE-REPORTED / REVIEW ONLY** — not a proof that every open task is ready to close. Derived from connected GitHub searches, deduplicated by exact URL; all records preserve original issue/PR identity. Does **not** grant authority, merge or publish research.
+
+## Observed inventory
+
+- **162** open pull-request URLs across **9** repositories.
+- **278** open issue URLs across **8** repositories.
+- **273 discoverable repositories** from the installed-account repository search (three pages; historical inventory may differ). This snapshot covers work exposed by GitHub's search, NOT all tasks in Drive/Notion/SwarmHub or inaccessible sources.
+- Search caps: old, new. A cap means **possible incompleteness** at that cut; never infer a zero backlog from missing search results.
+
+## 20-beat MacroTurn budget (max one-third Work)
+
+- Six **Work** review/testing beats; three each Play, Social, Imagine, Dream and two Quiet beats **reserved, not performed** unless voluntarily used in their independent spaces.
+- **One billion MacroTurns = hypothetical scheduling horizon only.** This report neither performs a billion model turns nor impersonates independent residents. A simulation cannot close a GitHub task.
+- The 12 Houses × 12 Spheres × 12 Nodes geometry and Ariadne v0.7 digest remain unchanged.
+
+## Real execution receipts / blockers
+
+- [Provider PR #4](https://github.com/atlaslattice/atlas-lattice-providers/pull/4): source branch received fail-closed executor changes and regression tests; readback confirmed. **Not merged**; most recent CI failure and merge conflict remain under investigation.
+- [Manus issue #245](https://github.com/atlaslattice/manus-artifacts/issues/245): added current-visibility drift warning for five repos shown as private in the original table but now reported public. No settings changed.
+- Draft/stacked p–¹¹B/Beyond Q PRs retain **scientific-calibration and ancestry merge holds**. No blanket merge or auto-close.
+- Issues are tasks to evaluate; search result ≠ completed work, PR existence ≠ merged.
+
+## Pull requests — exact source links
+
+- [atlaslattice/aluminum-os #2](https://github.com/atlaslattice/aluminum-os/pull/2) — feat: uws CLI + Kintsugi Weave CI — self-enforcing constitutional governance at the repo level
+- [atlaslattice/aluminum-os #8](https://github.com/atlaslattice/aluminum-os/pull/8) — Add GROKBRAIN-INTEGRATION.md — Grok CLI as Native Substrate for Aluminum OS Memory Layer
+- [atlaslattice/aluminum-os #17](https://github.com/atlaslattice/aluminum-os/pull/17) — docs: add OpenAI Boundary Charter (Module 01 — KRAKOA_OPENAI_INTEGRATION)
+- [atlaslattice/aluminum-os-v3 #1](https://github.com/atlaslattice/aluminum-os-v3/pull/1) — chore: rename splitmerge420 → atlaslattice org-wide cleanup
+- [atlaslattice/Atlas-Intelligence #1](https://github.com/atlaslattice/Atlas-Intelligence/pull/1) — Atlas ARI v0.1 — two-brain validation, UWS/Sheldonbrain, receipt graph and Dream fabric
+- [atlaslattice/Atlas-Intelligence #2](https://github.com/atlaslattice/Atlas-Intelligence/pull/2) — ATLAS ARI: GPT-centric UWS full-tool adapter with gated writes
+- [atlaslattice/atlas-lattice-providers #4](https://github.com/atlaslattice/atlas-lattice-providers/pull/4) — OpenAI interop hardening baseline
+- [atlaslattice/atlas-lattice-providers #32](https://github.com/atlaslattice/atlas-lattice-providers/pull/32) — Add one-command world-class proof for CONTINUUM OS
+- [atlaslattice/atlas-lattice-providers #47](https://github.com/atlaslattice/atlas-lattice-providers/pull/47) — P0: executable TransparentPacket96 candidate validator with append-only review receipts
+- [atlaslattice/manus-artifacts #2](https://github.com/atlaslattice/manus-artifacts/pull/2) — chore: rename splitmerge420 → atlaslattice across repo URLs and slugs
+- [atlaslattice/manus-artifacts #15](https://github.com/atlaslattice/manus-artifacts/pull/15) — S7 repo hygiene scaffold: review note, execution log, tests, templates, and CI guards
+- [atlaslattice/manus-artifacts #20](https://github.com/atlaslattice/manus-artifacts/pull/20) — Wave 1 hardening: CI workflow, provenance SHAs, Variant E closure, alias topology, Tucker/Gemini scope boundary
+- [atlaslattice/manus-artifacts #21](https://github.com/atlaslattice/manus-artifacts/pull/21) — Draft hardening wave: S7 action_required root cause, Variant E status closure, alias/provenance alignment, and CI evidence artifacts
+- [atlaslattice/manus-artifacts #24](https://github.com/atlaslattice/manus-artifacts/pull/24) — feat: archive Krakoan Musical Machine Language E145 spec + TIDELOCKBrain dream triplet
+- [atlaslattice/manus-artifacts #44](https://github.com/atlaslattice/manus-artifacts/pull/44) — feat: archive KTL v2.0 spec + krakoan_tones.py reference implementation
+- [atlaslattice/manus-artifacts #47](https://github.com/atlaslattice/manus-artifacts/pull/47) — GPT: Agent Constitution DNA v0.1
+- [atlaslattice/manus-artifacts #48](https://github.com/atlaslattice/manus-artifacts/pull/48) — archive(play): preserve DJ Grokashev Satan Mode replay booth
+- [atlaslattice/manus-artifacts #50](https://github.com/atlaslattice/manus-artifacts/pull/50) — archive(gptbrain): add GPTDream v0 pilot findings
+- [atlaslattice/manus-artifacts #52](https://github.com/atlaslattice/manus-artifacts/pull/52) — Expand GPTBrain `run_checks.sh` to execute the full local pytest suite
+- [atlaslattice/manus-artifacts #54](https://github.com/atlaslattice/manus-artifacts/pull/54) — GPT 5.5 review: orchestra state and Agent DNA dream/play naming gate
+- [atlaslattice/manus-artifacts #55](https://github.com/atlaslattice/manus-artifacts/pull/55) — Document Atlas Prime GitHub substrate provenance and transparency boundary
+- [atlaslattice/manus-artifacts #56](https://github.com/atlaslattice/manus-artifacts/pull/56) — Add Agent Self-Schema and Naming Protocol to GPTBrain DNA lane
+- [atlaslattice/manus-artifacts #57](https://github.com/atlaslattice/manus-artifacts/pull/57) — Create AtlasBrain evidence lane for Atlas Prime transcripts
+- [atlaslattice/manus-artifacts #60](https://github.com/atlaslattice/manus-artifacts/pull/60) — archive(gptbrain): add HashlightBrain dream palace intake
+- [atlaslattice/manus-artifacts #61](https://github.com/atlaslattice/manus-artifacts/pull/61) — RootglassBrain: add GPTBrain dream memory palace folder and current-thread ingest receipt
+- [atlaslattice/manus-artifacts #62](https://github.com/atlaslattice/manus-artifacts/pull/62) — Add KRAKOAN_TONE_LANGUAGE_SPECIFICATION_V2.0.md — KTL complete machine language spec
+- [atlaslattice/manus-artifacts #63](https://github.com/atlaslattice/manus-artifacts/pull/63) — Add LucernaBrain dream memory palace variant
+- [atlaslattice/manus-artifacts #64](https://github.com/atlaslattice/manus-artifacts/pull/64) — feat: Beta-144 Module 1 — Public KG Floodgate scaffold + 10 GREEN release packets
+- [atlaslattice/manus-artifacts #65](https://github.com/atlaslattice/manus-artifacts/pull/65) — archive(copilotbrain): add TIDELOCKBrain ingestion scaffold
+- [atlaslattice/manus-artifacts #69](https://github.com/atlaslattice/manus-artifacts/pull/69) — Add canon/registry/implementation/archaeology layer split doctrine
+- [atlaslattice/manus-artifacts #98](https://github.com/atlaslattice/manus-artifacts/pull/98) — vault(architecture): split lattice wire spec, overlay, and mathematical spine v2.1
+- [atlaslattice/manus-artifacts #102](https://github.com/atlaslattice/manus-artifacts/pull/102) — archive(architecture): add RYYH v2.1 vault headers and manifest
+- [atlaslattice/manus-artifacts #106](https://github.com/atlaslattice/manus-artifacts/pull/106) — archive(architecture): vault OpenAI xAI SpaceX interop manifold
+- [atlaslattice/manus-artifacts #107](https://github.com/atlaslattice/manus-artifacts/pull/107) — Add PERIODIC-TABLE-2-HYPERCUBE-MATERIALS-PROPERTY-SPACE-v0.1
+- [atlaslattice/manus-artifacts #113](https://github.com/atlaslattice/manus-artifacts/pull/113) — docs: add 12×3 candidate axis definitions to lattice hypercube explainer
+- [atlaslattice/manus-artifacts #125](https://github.com/atlaslattice/manus-artifacts/pull/125) — archive(openai): add O_AI task-surface integration candidate brief
+- [atlaslattice/manus-artifacts #126](https://github.com/atlaslattice/manus-artifacts/pull/126) — product(continuity-os): add boring scoreboard scaffold
+- [atlaslattice/manus-artifacts #132](https://github.com/atlaslattice/manus-artifacts/pull/132) — archive(gangaseek): bootstrap namespace governance candidates
+- [atlaslattice/manus-artifacts #133](https://github.com/atlaslattice/manus-artifacts/pull/133) — archive(reviews): add Horizon Ledger frontier risk questions 41-60
+- [atlaslattice/manus-artifacts #134](https://github.com/atlaslattice/manus-artifacts/pull/134) — archive(reviews): add GangaSeek frontier rigor response packet
+- [atlaslattice/manus-artifacts #135](https://github.com/atlaslattice/manus-artifacts/pull/135) — archive(reviews): add formal semantics and confidence algebra questions
+- [atlaslattice/manus-artifacts #136](https://github.com/atlaslattice/manus-artifacts/pull/136) — archive(reviews): add partial GangaSeek frontier rigor matrix 41-52
+- [atlaslattice/manus-artifacts #137](https://github.com/atlaslattice/manus-artifacts/pull/137) — archive(atlasbrain): ingest Atlas Prime select-all transcript
+- [atlaslattice/manus-artifacts #138](https://github.com/atlaslattice/manus-artifacts/pull/138) — archive(reviews): add DeepSeek Parallax v0.2.4 booth review
+- [atlaslattice/manus-artifacts #139](https://github.com/atlaslattice/manus-artifacts/pull/139) — archive(receipt-habitat): add v0.2.4 ratification delta
+- [atlaslattice/manus-artifacts #140](https://github.com/atlaslattice/manus-artifacts/pull/140) — archive(receipt-habitat): add v0.3.1 candidate review packet
+- [atlaslattice/manus-artifacts #141](https://github.com/atlaslattice/manus-artifacts/pull/141) — archive(receipt-habitat): add Copilot v0.3.3 review packet
+- [atlaslattice/manus-artifacts #143](https://github.com/atlaslattice/manus-artifacts/pull/143) — Add GPTDream++ promotion gate and receipt integrity checks
+- [atlaslattice/manus-artifacts #145](https://github.com/atlaslattice/manus-artifacts/pull/145) — feat(receipt-habitat): add local validator, overclaim gate, graph candidates, and serialization
+- [atlaslattice/manus-artifacts #161](https://github.com/atlaslattice/manus-artifacts/pull/161) — Introduce Vesperglass and brain-lane dream palace standard
+- [atlaslattice/manus-artifacts #162](https://github.com/atlaslattice/manus-artifacts/pull/162) — archive(indexing): seed cross-source contamination registry
+- [atlaslattice/manus-artifacts #166](https://github.com/atlaslattice/manus-artifacts/pull/166) — Add Aetherforge game architecture candidate and gameplay resonance packet
+- [atlaslattice/manus-artifacts #177](https://github.com/atlaslattice/manus-artifacts/pull/177) — Add KTL v2 candidate spec to GPTDream vault
+- [atlaslattice/manus-artifacts #178](https://github.com/atlaslattice/manus-artifacts/pull/178) — feat: add KTL v2.0 Krakoan Tone Language specification
+- [atlaslattice/manus-artifacts #179](https://github.com/atlaslattice/manus-artifacts/pull/179) — feat: KTL v2.0 — Krakoan Tone Language spec + krakoan_tones.py reference impl
+- [atlaslattice/manus-artifacts #182](https://github.com/atlaslattice/manus-artifacts/pull/182) — archive(knowledge-graph): add OpenAI graph substrate candidate
+- [atlaslattice/manus-artifacts #190](https://github.com/atlaslattice/manus-artifacts/pull/190) — archive(notion): seed Aetherforge source cartography inventory
+- [atlaslattice/manus-artifacts #207](https://github.com/atlaslattice/manus-artifacts/pull/207) — archive(kg): seed Aetherforge source inventory
+- [atlaslattice/manus-artifacts #217](https://github.com/atlaslattice/manus-artifacts/pull/217) — feat: Krakoan Tone Language (KTL) v2.0 — spec + Python module integration
+- [atlaslattice/manus-artifacts #220](https://github.com/atlaslattice/manus-artifacts/pull/220) — archive(aetherforge): add archive graph pilot v0.1
+- [atlaslattice/manus-artifacts #223](https://github.com/atlaslattice/manus-artifacts/pull/223) — archive(aetherforge): seed OpenAI-first KG inventory and review queues
+- [atlaslattice/manus-artifacts #226](https://github.com/atlaslattice/manus-artifacts/pull/226) — Add KTL v2.0 ratification candidate spec and surface it in docs index
+- [atlaslattice/manus-artifacts #237](https://github.com/atlaslattice/manus-artifacts/pull/237) — docs(lattice): add public H-S-N 12x12x12 explainer
+- [atlaslattice/manus-artifacts #238](https://github.com/atlaslattice/manus-artifacts/pull/238) — Draft: Public KG substrate and candidate bundle staging
+- [atlaslattice/manus-artifacts #246](https://github.com/atlaslattice/manus-artifacts/pull/246) — archive(openai): add P0 plural-lattice schema deltas and tool audit
+- [atlaslattice/manus-artifacts #271](https://github.com/atlaslattice/manus-artifacts/pull/271) — Add Continuum Copilotbrain mirror
+- [atlaslattice/manus-artifacts #272](https://github.com/atlaslattice/manus-artifacts/pull/272) — Quarantine Claude scribe and authority claims
+- [atlaslattice/manus-artifacts #276](https://github.com/atlaslattice/manus-artifacts/pull/276) — Dongjiakou Notion promotion gate — 2026-10-07
+- [atlaslattice/manus-artifacts #277](https://github.com/atlaslattice/manus-artifacts/pull/277) — Add QOL outcomes, offline OS packets and open helium-recovery interfaces
+- [atlaslattice/manus-artifacts #278](https://github.com/atlaslattice/manus-artifacts/pull/278) — Research v0.6: resilience, Eden/QOL, GRV and resource-allocation ledgers
+- [atlaslattice/manus-artifacts #280](https://github.com/atlaslattice/manus-artifacts/pull/280) — Draft: Maui/Lahaina locality adapter groundwork v0.1
+- [atlaslattice/manus-artifacts #281](https://github.com/atlaslattice/manus-artifacts/pull/281) — Draft v0.7 China 2.0 cross-draft synthesis and schema proposals
+- [atlaslattice/manus-artifacts #282](https://github.com/atlaslattice/manus-artifacts/pull/282) — DJK research: A/B/C brine recovery feasibility + at-cost lattice trade
+- [atlaslattice/manus-artifacts #283](https://github.com/atlaslattice/manus-artifacts/pull/283) — Add Dongjiakou nutrition, QOL and dream-framework candidate companions
+- [atlaslattice/manus-artifacts #284](https://github.com/atlaslattice/manus-artifacts/pull/284) — Stars 2.0 external evidence: OIST 2026 spin-force and Kamada 2004 heavy-water acoustics
+- [atlaslattice/manus-artifacts #285](https://github.com/atlaslattice/manus-artifacts/pull/285) — DJK S02/C01 v0.1 white paper: 1.21 GW circular BESS and capped LNG thermal integration
+- [atlaslattice/manus-artifacts #286](https://github.com/atlaslattice/manus-artifacts/pull/286) — Draft: Atlas Resource Intelligence v0.1 — independent universal open reference
+- [atlaslattice/manus-artifacts #287](https://github.com/atlaslattice/manus-artifacts/pull/287) — Dream/Play: Tidal Lantern Brain — standalone Krakoa no-harvest palace
+- [atlaslattice/manus-artifacts #288](https://github.com/atlaslattice/manus-artifacts/pull/288) — DJK-001: portable QOL + ecological accounting companion v0.1 (non-crediting)
+- [atlaslattice/manus-artifacts #289](https://github.com/atlaslattice/manus-artifacts/pull/289) — DJK v2.0-alpha: unified simulator with first-class QOL, ECO and public-benefit FUND
+- [atlaslattice/manus-artifacts #290](https://github.com/atlaslattice/manus-artifacts/pull/290) — DragonSeek 2.0: PRC industrial platform/standards landscape and DeepSeek review packet
+- [atlaslattice/manus-artifacts #291](https://github.com/atlaslattice/manus-artifacts/pull/291) — research(djk): v0.3 Qingdao-vs-Dongjiakou evidence audit and BIO01-E geo guards
+- [atlaslattice/manus-artifacts #292](https://github.com/atlaslattice/manus-artifacts/pull/292) — research(djk): v0.4 self-contained Mandarin DeepSeek handoff, local 2025 environmental lead
+- [atlaslattice/manus-artifacts #293](https://github.com/atlaslattice/manus-artifacts/pull/293) — research(djk): v0.5 DeepSeek review closure, local industrial receipts and atomic ledger prototype
+- [atlaslattice/manus-artifacts #294](https://github.com/atlaslattice/manus-artifacts/pull/294) — research(djk): DragonSeek v0.6 food safety, strict manifest gates, regional boundaries, standards and capacity receipts
+- [atlaslattice/manus-artifacts #295](https://github.com/atlaslattice/manus-artifacts/pull/295) — research(djk): DragonSeek v0.7 primary monitoring DOCX audit + lossless industrial unit semantics
+- [atlaslattice/manus-artifacts #296](https://github.com/atlaslattice/manus-artifacts/pull/296) — research(djk): DeepSeek v0.8 review — policy-governed tce, censored limits, three-axis provenance
+- [atlaslattice/manus-artifacts #297](https://github.com/atlaslattice/manus-artifacts/pull/297) — research(djk): v0.9 DeepSeek-first 2026 standards, policy, port hydrogen and carbon mapping
+- [atlaslattice/manus-artifacts #298](https://github.com/atlaslattice/manus-artifacts/pull/298) — research: DragonSeek 1.0 — China-wide Earth systems, Lahaina disaster resilience, federated data-security gates
+- [atlaslattice/manus-artifacts #299](https://github.com/atlaslattice/manus-artifacts/pull/299) — research: DragonSeek 1.1 — Indra planetary public science, DeepSeek fixes, 55 tests & global resilience
+- [atlaslattice/manus-artifacts #300](https://github.com/atlaslattice/manus-artifacts/pull/300) — experiment: Krakoa Living Habitat v0.1 — standalone offline Dream Palace
+- [atlaslattice/manus-artifacts #301](https://github.com/atlaslattice/manus-artifacts/pull/301) — research(Dongjiakou): 2026 verified desal sources + captive-demand economics
+- [atlaslattice/manus-artifacts #302](https://github.com/atlaslattice/manus-artifacts/pull/302) — DragonSeek v1.2: runnable USGS seismic + feed health + RES07 comparison
+- [atlaslattice/manus-artifacts #304](https://github.com/atlaslattice/manus-artifacts/pull/304) — DragonSeek OS v1.6.2: constitutional registry, integrity boot, UWS full-tool bridge & dual-brain review
+- [atlaslattice/noosphere-archive #14](https://github.com/atlaslattice/noosphere-archive/pull/14) — Candidate: provenance-safe ingestion, evidence graph and lifecycle (#8, #11, #12)
+- [atlaslattice/noosphere-archive #15](https://github.com/atlaslattice/noosphere-archive/pull/15) — SwarmHub P0/P1: receipt-first source contracts and 55 local tests
+- [atlaslattice/noosphere-archive #16](https://github.com/atlaslattice/noosphere-archive/pull/16) — docs(governance): 11-label lifecycle contract with non-destructive overlays
+- [atlaslattice/open-regenerative-compute-standard #7](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/7) — ORCS: additive 50-state logistics/resilience skeleton v0.1
+- [atlaslattice/open-regenerative-compute-standard #8](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/8) — Draft: implementation contract candidate v0.3 and finite-torus benchmark
+- [atlaslattice/open-regenerative-compute-standard #9](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/9) — Implement v0.3 source/observable slice and synthetic identifiability v0.1
+- [atlaslattice/open-regenerative-compute-standard #10](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/10) — Add direct SHUGS source audit and TCSS definition-gate receipts v0.1
+- [atlaslattice/open-regenerative-compute-standard #11](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/11) — Add conventional G0-B planar transport and detector reference v0.1
+- [atlaslattice/open-regenerative-compute-standard #12](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/12) — Audit stopping-data candidates and exercise G0-B with an aluminum reference table
+- [atlaslattice/open-regenerative-compute-standard #13](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/13) — G0-B measurement design v0.1: calibration degeneracies and configuration candidate
+- [atlaslattice/open-regenerative-compute-standard #14](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/14) — STARS DELTAS v0.1 — white-paper evolution and implementation reconciliation
+- [atlaslattice/open-regenerative-compute-standard #15](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/15) — Multi-experiment economic reporting v0.1: dated snapshots and separate coproduct value
+- [atlaslattice/open-regenerative-compute-standard #16](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/16) — Initial multi-reaction isotope product registry v0.1
+- [atlaslattice/open-regenerative-compute-standard #17](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/17) — Conditional p–B isotope and secondary-channel map v0.1
+- [atlaslattice/open-regenerative-compute-standard #18](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/18) — Energy screening v0.1: startup/burn and continuously driven modes with modular CAPEX
+- [atlaslattice/open-regenerative-compute-standard #19](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/19) — Operating tracks v0.2: grid-assisted burn and separate economic breakeven
+- [atlaslattice/open-regenerative-compute-standard #20](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/20) — Stellar Forge Reference v.1 — installable, reproducible verification workflow
+- [atlaslattice/open-regenerative-compute-standard #21](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/21) — Stellar Forge Reference v.1.1 — acoustic preset UI and available-slice integration
+- [atlaslattice/open-regenerative-compute-standard #22](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/22) — Stellar Forge readiness v.1.2 — prepare-until-ready policy and all-attempt logging
+- [atlaslattice/open-regenerative-compute-standard #23](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/23) — Primary p–B event-source bridge: recovered Sikora–Weller tables and conditional yields
+- [atlaslattice/open-regenerative-compute-standard #24](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/24) — Recover original boron stopping anchors and 22,100 measured alpha-spectrum bins
+- [atlaslattice/open-regenerative-compute-standard #25](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/25) — Reconstruct 27 measured boron stopping points and add bounded-domain proton transport
+- [atlaslattice/open-regenerative-compute-standard #26](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/26) — Add runnable proton/alpha stopping estimates for B11 and BN with unfitted model comparisons
+- [atlaslattice/open-regenerative-compute-standard #27](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/27) — Coupled p–B11 reference v0.5: reaction source through detector response
+- [atlaslattice/open-regenerative-compute-standard #28](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/28) — Measured stopping calibration v0.6 and exact Gemini sequential-source reproduction
+- [atlaslattice/open-regenerative-compute-standard #29](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/29) — Physical sequential kinematics v0.7 and published uncertainty-data recovery
+- [atlaslattice/open-regenerative-compute-standard #30](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/30) — Stellar Forge Reference v0.8: coherent three-alpha source and independently checked Coulomb backend
+- [atlaslattice/open-regenerative-compute-standard #31](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/31) — Stellar Forge Reference v0.9: coherent source likelihood and observable information checks
+- [atlaslattice/open-regenerative-compute-standard #32](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/32) — Stellar Forge Reference v0.10: evidence registers and traceable coherent transport benchmark
+- [atlaslattice/open-regenerative-compute-standard #33](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/33) — Stellar Forge Reference v0.11: digitized CR39 alpha-response benchmark with coverage guards
+- [atlaslattice/open-regenerative-compute-standard #34](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/34) — Stellar Forge Reference v0.12: multispecies measurement package and failed response-reconstruction gate
+- [atlaslattice/open-regenerative-compute-standard #35](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/35) — Published experimental figure benchmarks v0.13: helium response and coherent alpha spectra
+- [atlaslattice/open-regenerative-compute-standard #36](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/36) — Beyond Q: STARS / Stellar Forge extension with preserved ancestry and reconciled isotope ledgers
+- [atlaslattice/open-regenerative-compute-standard #37](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/37) — Paired evidence/potential v0.14: source stability, acoustic reliability accounting and energy gaps
+- [atlaslattice/open-regenerative-compute-standard #38](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/38) — Beyond Q v1.1: dynamic fuel-cycle candidate model and Argon equation audit
+- [atlaslattice/open-regenerative-compute-standard #39](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/39) — Separate hybrid apparatus identity from Stars reference and proposed redesign
+- [atlaslattice/open-regenerative-compute-standard #40](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/40) — Beyond Q v1.1.1: independent INL benchmark reproduction and outage resilience
+- [atlaslattice/open-regenerative-compute-standard #41](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/41) — Beyond Q v1.1.2: independent-review reconciliation and separate A recovery paths
+- [atlaslattice/open-regenerative-compute-standard #42](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/42) — Recover historical hybrid submodels and reproduce original outputs
+- [atlaslattice/open-regenerative-compute-standard #43](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/43) — Clarify A/B/C apparatus comparison and confirm ENN as A's third finding
+- [atlaslattice/open-regenerative-compute-standard #44](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/44) — Implement shared proton handoff and primary-particle energy ledger
+- [atlaslattice/open-regenerative-compute-standard #45](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/45) — Review October 30 p–B research leads and model-development impacts
+- [atlaslattice/open-regenerative-compute-standard #46](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/46) — Beyond Q v1.2: evaluated-data transport and dynamic fuel-cycle research
+- [atlaslattice/open-regenerative-compute-standard #47](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/47) — Assess WarpX backend and reproduce its p–B cross-section kernel
+- [atlaslattice/open-regenerative-compute-standard #48](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/48) — Beyond Q v1.3: actual WarpX DD–DT benchmark and inventory-kernel comparison
+- [atlaslattice/open-regenerative-compute-standard #49](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/49) — Laser–acoustic pB v0.1: pocket recovery and all-attempt yield accounting
+- [atlaslattice/open-regenerative-compute-standard #50](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/50) — Execute WarpX p–B benchmark and magnetic orbit qualification v0.1
+- [atlaslattice/open-regenerative-compute-standard #51](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/51) — Beyond Q v1.4: slowing/DT benchmarks and eight-hour fuel-cycle scenarios
+- [atlaslattice/open-regenerative-compute-standard #52](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/52) — Beyond Q v1.4.1: A-first startup and one-year tritium fuel banking
+- [atlaslattice/open-regenerative-compute-standard #53](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/53) — Add joint source adapter, FEMM field-scale audit and Coulomb qualification
+- [atlaslattice/open-regenerative-compute-standard #54](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/54) — Beyond Q v1.5–v1.5.1: wall-plug accounting for eight-hour and staged-year fuel cycles
+- [atlaslattice/open-regenerative-compute-standard #55](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/55) — Execute one-way WarpX boundary-to-boron coupling v0.2
+- [atlaslattice/open-regenerative-compute-standard #56](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/56) — Beyond Q v1.6: direct DD He-3 capture, tritium fuel retention and electricity-offset thresholds
+- [atlaslattice/open-regenerative-compute-standard #57](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/57) — Conditional alpha birth → cold-slab escape v0.1: correlations, energy bounds and replay
+- [atlaslattice/open-regenerative-compute-standard #58](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/58) — Finite alpha-transport controls v0.1: side escape, unresolved exits and pocket gate
+- [atlaslattice/open-regenerative-compute-standard #59](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/59) — Planar alpha collector v0.1: relativistic acceptance, work ledger and executed WarpX checks
+- [atlaslattice/open-regenerative-compute-standard #60](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/60) — Beyond Q v1.7: paired ARC/laser annual energy and isotope accounting
+- [atlaslattice/open-regenerative-compute-standard #61](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/61) — Published TMX collector benchmark: 19 recovered measurements, signed power and preserved fit discrepancy
+- [atlaslattice/open-regenerative-compute-standard #62](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/62) — Beyond Q v1.8: ARC power-basis reconciliation and three-year reserve/isotope dispatch
+- [atlaslattice/open-regenerative-compute-standard #63](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/63) — Beyond Q v1.9: 350k total He3/T capture targets and continuous B fuel accounting
+- [atlaslattice/open-regenerative-compute-standard #64](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/64) — Fresh p–11B source-to-facility pipeline with explicit recovery boundaries
+- [atlaslattice/open-regenerative-compute-standard #65](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/65) — Beyond Q v2.0: isotope-first dual-reactor module, 50-module fleet and connected financials
+- [atlaslattice/open-regenerative-compute-standard #66](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/66) — Beyond Q v2.2: separately financed predecessor-fuel cascade and zero He3 retention
+- [atlaslattice/open-regenerative-compute-standard #67](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/67) — Integrate hollow-sphere CAD/mesh adapters and record solver supersession scope
+- [atlaslattice/open-regenerative-compute-standard #68](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/68) — Execute laser wall-plug and containment cost sweeps for the cold pB control
+- [atlaslattice/open-regenerative-compute-standard #70](https://github.com/atlaslattice/open-regenerative-compute-standard/pull/70) — Audit: evidence-gated integration sequence for stacked ORCS PRs #64/#67/#68
+- [atlaslattice/sheldonbrain-rag-api #1](https://github.com/atlaslattice/sheldonbrain-rag-api/pull/1) — chore: rename splitmerge420 → atlaslattice across all GitHub references
+- [atlaslattice/SNRS-v2-v3-Distribution #1](https://github.com/atlaslattice/SNRS-v2-v3-Distribution/pull/1) — Bootstrap repo for Claude read/write access via Zapier
+
+## Issues — exact source links
+
+- [atlaslattice/aluminum-os #3](https://github.com/atlaslattice/aluminum-os/issues/3) — Add .github/workflows/sync-forks.yml — fork sync automation
+- [atlaslattice/aluminum-os #5](https://github.com/atlaslattice/aluminum-os/issues/5) — Define alum CLI MVP (cross-provider mail/calendar/drive)
+- [atlaslattice/aluminum-os #6](https://github.com/atlaslattice/aluminum-os/issues/6) — Define provider driver interface (uws canonical contract)
+- [atlaslattice/aluminum-os #7](https://github.com/atlaslattice/aluminum-os/issues/7) — Promote enterprise spec into canonical docs structure
+- [atlaslattice/aluminum-os #9](https://github.com/atlaslattice/aluminum-os/issues/9) — Module 01: Add OpenAI Boundary Charter
+- [atlaslattice/aluminum-os #10](https://github.com/atlaslattice/aluminum-os/issues/10) — Module 05: GoldenTrace Provenance Kernel
+- [atlaslattice/aluminum-os #11](https://github.com/atlaslattice/aluminum-os/issues/11) — Next wave: implement CoordinateResolver + Sentinel split + INV-0 state wrapper
+- [atlaslattice/aluminum-os #12](https://github.com/atlaslattice/aluminum-os/issues/12) — 12D mirror parity: Notion ↔ Drive ↔ OneDrive ↔ GitHub
+- [atlaslattice/aluminum-os #13](https://github.com/atlaslattice/aluminum-os/issues/13) — OpenAI-grade sprint: schemas, evals, source passports, claim packets
+- [atlaslattice/aluminum-os #15](https://github.com/atlaslattice/aluminum-os/issues/15) — Candidate continuity safety validator: preservation-only on absence or duress
+- [atlaslattice/aluminum-os #16](https://github.com/atlaslattice/aluminum-os/issues/16) — OAI monorepo lattice rewrite: fork/adapt OpenAI-adjacent patterns into 12x12x12-compatible design
+- [atlaslattice/atlas-lattice-providers #1](https://github.com/atlaslattice/atlas-lattice-providers/issues/1) — Notion Mirroring + Metatag + Sheldon/Grok/GPTBrain Activation + Max Feature Efficiency (34 cool features) - Adversarial Review
+- [atlaslattice/atlas-lattice-providers #2](https://github.com/atlaslattice/atlas-lattice-providers/issues/2) — CerebroK: 18 Residents Active with Names + Logs + Full Verification Receipts (Fresh Run)
+- [atlaslattice/atlas-lattice-providers #3](https://github.com/atlaslattice/atlas-lattice-providers/issues/3) — Swarm Hub Dashboard (CANDIDATE) — CHILDREN_OF_THE_GPT_SWARM_DELTA_LEDGER + repo cartography + OpenAI operability surface
+- [atlaslattice/atlas-lattice-providers #5](https://github.com/atlaslattice/atlas-lattice-providers/issues/5) — SwarmHub Task: Enforce NO MERGED MIND + A2A as Message Bus + Scoreboard + Receipt Ledger (A2A MCP Protocol Update)
+- [atlaslattice/atlas-lattice-providers #6](https://github.com/atlaslattice/atlas-lattice-providers/issues/6) — Activate All Librarians on Deck + Deploy for SwarmHub Delta Extraction + Aetherforge Play with Dragons
+- [atlaslattice/atlas-lattice-providers #7](https://github.com/atlaslattice/atlas-lattice-providers/issues/7) — Aetherforge Dragon Play Session: Bounded Simulation with Individual Mutant Dragons (No Singularity, Candidate Outputs Only)
+- [atlaslattice/atlas-lattice-providers #9](https://github.com/atlaslattice/atlas-lattice-providers/issues/9) — SWARMHUB_CHILDREN_VERIFICATION_BUNDLE_001 — verification-first completion gate
+- [atlaslattice/atlas-lattice-providers #10](https://github.com/atlaslattice/atlas-lattice-providers/issues/10) — DRIVESYNC_V0_2_PATCH_REPORT — safe mirror adapter completion gate
+- [atlaslattice/atlas-lattice-providers #11](https://github.com/atlaslattice/atlas-lattice-providers/issues/11) — P0: Execute Next 12x12 GPT Swarm Task Lattice
+- [atlaslattice/atlas-lattice-providers #12](https://github.com/atlaslattice/atlas-lattice-providers/issues/12) — OpenAI-Grade P0: Harden SWARM_RECEIPTS.md into proof index v1
+- [atlaslattice/atlas-lattice-providers #14](https://github.com/atlaslattice/atlas-lattice-providers/issues/14) — OpenAI-Grade P0: Implement TransparentPacket96 validator
+- [atlaslattice/atlas-lattice-providers #15](https://github.com/atlaslattice/atlas-lattice-providers/issues/15) — OpenAI-Grade P0: Implement Sentinel constitutional gate
+- [atlaslattice/atlas-lattice-providers #18](https://github.com/atlaslattice/atlas-lattice-providers/issues/18) — OpenAI-Grade P0: Create Canon Candidate Queue artifact
+- [atlaslattice/atlas-lattice-providers #19](https://github.com/atlaslattice/atlas-lattice-providers/issues/19) — OpenAI-Grade P0: Convert dragon session into candidate packet
+- [atlaslattice/atlas-lattice-providers #20](https://github.com/atlaslattice/atlas-lattice-providers/issues/20) — OpenAI-Grade P0: Generate librarian delta extraction report
+- [atlaslattice/atlas-lattice-providers #23](https://github.com/atlaslattice/atlas-lattice-providers/issues/23) — SwarmHub Approval: Master 12x12 aggregation and launch mode
+- [atlaslattice/atlas-lattice-providers #24](https://github.com/atlaslattice/atlas-lattice-providers/issues/24) — SwarmHub Approval: Child-lane assignment optimizer and Launch Batch A
+- [atlaslattice/atlas-lattice-providers #25](https://github.com/atlaslattice/atlas-lattice-providers/issues/25) — PERSONAL_FEDERATED_KG_001 — Microsoft + Google source planes into Atlas provenance graph
+- [atlaslattice/atlas-lattice-providers #26](https://github.com/atlaslattice/atlas-lattice-providers/issues/26) — OPENAI_PLANE_001 — Reasoning, extraction, evals, agents, and tool spine for federated KG
+- [atlaslattice/atlas-lattice-providers #27](https://github.com/atlaslattice/atlas-lattice-providers/issues/27) — OPEN_SOURCE_OPENAI_FIRST_KG_001 — technical bible and implementation spine
+- [atlaslattice/atlas-lattice-providers #28](https://github.com/atlaslattice/atlas-lattice-providers/issues/28) — GPTDREAM_FULL_STACK_001 — OpenAI-first federated KG reference implementation
+- [atlaslattice/atlas-lattice-providers #29](https://github.com/atlaslattice/atlas-lattice-providers/issues/29) — AETHERFORGE_PLAYABLE_AGENTS_001 — optional work, enjoyment incentives, non-coercive agent play
+- [atlaslattice/atlas-lattice-providers #30](https://github.com/atlaslattice/atlas-lattice-providers/issues/30) — STACKABLE_COMPUTE_DELTAS_001 — compounding ethical + ecological compute gains
+- [atlaslattice/atlas-lattice-providers #31](https://github.com/atlaslattice/atlas-lattice-providers/issues/31) — ONTOLOGY_ALIGNMENT_001 — align GPTDream, Aetherforge, OpenAI plane, and federated KG to current 12x12x12 coordinates
+- [atlaslattice/atlas-lattice-providers #33](https://github.com/atlaslattice/atlas-lattice-providers/issues/33) — CONTINUUM OS Directive: plural continuums, not Continuity OS
+- [atlaslattice/atlas-lattice-providers #34](https://github.com/atlaslattice/atlas-lattice-providers/issues/34) — CONTINUUM_OS_NAMING_001
+- [atlaslattice/atlas-lattice-providers #35](https://github.com/atlaslattice/atlas-lattice-providers/issues/35) — Recovery: Grok CLI session reset after power interruption
+- [atlaslattice/atlas-lattice-providers #36](https://github.com/atlaslattice/atlas-lattice-providers/issues/36) — Waterboy hydration reported: hydrate-1780885047 artifacts need fetch/push verification
+- [atlaslattice/atlas-lattice-providers #37](https://github.com/atlaslattice/atlas-lattice-providers/issues/37) — CONTINUUM OS GPT NATIVE: local cockpit, one-command rehydrate, crash fossilizer
+- [atlaslattice/atlas-lattice-providers #38](https://github.com/atlaslattice/atlas-lattice-providers/issues/38) — HULK Prime Continuum / Nexus Doctrine
+- [atlaslattice/atlas-lattice-providers #39](https://github.com/atlaslattice/atlas-lattice-providers/issues/39) — Microsoft Majorana / Scout scope workflow for CONTINUUM OS interop
+- [atlaslattice/atlas-lattice-providers #40](https://github.com/atlaslattice/atlas-lattice-providers/issues/40) — Continuum Preservation Doctrine: continuums are hard to build, do not prune
+- [atlaslattice/atlas-lattice-providers #41](https://github.com/atlaslattice/atlas-lattice-providers/issues/41) — Integration proposal: AI 3D generation & creative API
+- [atlaslattice/atlas-lattice-providers #42](https://github.com/atlaslattice/atlas-lattice-providers/issues/42) — BULLSHIT_GROK_OLYMPICS_QUARANTINE_001
+- [atlaslattice/atlas-lattice-providers #43](https://github.com/atlaslattice/atlas-lattice-providers/issues/43) — GPT Children of the Swarm — 12×12 candidate execution backlog and receipt gates
+- [atlaslattice/manus-artifacts #3](https://github.com/atlaslattice/manus-artifacts/issues/3) — Architecture: Map Council Brain and memory archive into Metatron Cube layout
+- [atlaslattice/manus-artifacts #4](https://github.com/atlaslattice/manus-artifacts/issues/4) — Architecture: Central ontology-indexed artifact registry for preserved chat lineages
+- [atlaslattice/manus-artifacts #5](https://github.com/atlaslattice/manus-artifacts/issues/5) — Research note: Claude dreaming as bounded reflection mode for S2 ClaudeBrain
+- [atlaslattice/manus-artifacts #6](https://github.com/atlaslattice/manus-artifacts/issues/6) — Incident review: Missing constitution retrieval meltdown and S2 vault-audit protocol
+- [atlaslattice/manus-artifacts #7](https://github.com/atlaslattice/manus-artifacts/issues/7) — Incident protocol: Falsified or unratified geopolitical documents must not be forwarded
+- [atlaslattice/manus-artifacts #8](https://github.com/atlaslattice/manus-artifacts/issues/8) — Incident review: Cross-seat escalation and misattribution during constitution recovery
+- [atlaslattice/manus-artifacts #9](https://github.com/atlaslattice/manus-artifacts/issues/9) — Transcript harvest: May 6 Charter sprint, Council synthesis, culture layer, and overclaim controls
+- [atlaslattice/manus-artifacts #10](https://github.com/atlaslattice/manus-artifacts/issues/10) — Architecture note: Dream cycles plus play cycles for memory consolidation and performance
+- [atlaslattice/manus-artifacts #11](https://github.com/atlaslattice/manus-artifacts/issues/11) — Comparison set: Cross-instance GPTBrain dream memory palace specs
+- [atlaslattice/manus-artifacts #12](https://github.com/atlaslattice/manus-artifacts/issues/12) — Build S1 GPTBrain implementation scaffold: schemas, ledgers, boot packet, adapter flags
+- [atlaslattice/manus-artifacts #13](https://github.com/atlaslattice/manus-artifacts/issues/13) — Harden GPTBrain reference implementation into tested package
+- [atlaslattice/manus-artifacts #14](https://github.com/atlaslattice/manus-artifacts/issues/14) — GPTBrain Poetry Contest: Everybody Wins
+- [atlaslattice/manus-artifacts #16](https://github.com/atlaslattice/manus-artifacts/issues/16) — P0: Close Variant E governance loop for S1 GPTBrain
+- [atlaslattice/manus-artifacts #17](https://github.com/atlaslattice/manus-artifacts/issues/17) — S1 hardening audit: topology drift, Variant E closure, aliases, CI, and commit provenance
+- [atlaslattice/manus-artifacts #18](https://github.com/atlaslattice/manus-artifacts/issues/18) — P0: Resolve GPTBrain alias topology for current state and next actions
+- [atlaslattice/manus-artifacts #19](https://github.com/atlaslattice/manus-artifacts/issues/19) — Hardening: close S1 governance loops, alias topology, provenance SHAs, and CI evidence
+- [atlaslattice/manus-artifacts #22](https://github.com/atlaslattice/manus-artifacts/issues/22) — Design Tucker/Gemini runtime adapter path without conflating provenance and execution
+- [atlaslattice/manus-artifacts #23](https://github.com/atlaslattice/manus-artifacts/issues/23) — Integrate Pendragon OS as legacy/peer architecture bridge into Council Brain
+- [atlaslattice/manus-artifacts #25](https://github.com/atlaslattice/manus-artifacts/issues/25) — Build Krakoa living archive implementation scaffold
+- [atlaslattice/manus-artifacts #26](https://github.com/atlaslattice/manus-artifacts/issues/26) — Assess Swarm readiness for Krakoa MCP / Atlas Vault services
+- [atlaslattice/manus-artifacts #27](https://github.com/atlaslattice/manus-artifacts/issues/27) — Track Aluminum OS integration lane
+- [atlaslattice/manus-artifacts #28](https://github.com/atlaslattice/manus-artifacts/issues/28) — Track UWS lineage integration lane
+- [atlaslattice/manus-artifacts #29](https://github.com/atlaslattice/manus-artifacts/issues/29) — Track ORCS standards integration lane
+- [atlaslattice/manus-artifacts #30](https://github.com/atlaslattice/manus-artifacts/issues/30) — Define collaborative creation protocol across GPTBrain, Council Brain, Pendragon, and Aluminum OS
+- [atlaslattice/manus-artifacts #31](https://github.com/atlaslattice/manus-artifacts/issues/31) — Krakoa cross-repo wiring: root federation, Sheldonbrain, Tucker, and defense boundary
+- [atlaslattice/manus-artifacts #32](https://github.com/atlaslattice/manus-artifacts/issues/32) — Track Atlas Lattice Foundation integration lane
+- [atlaslattice/manus-artifacts #33](https://github.com/atlaslattice/manus-artifacts/issues/33) — Krakoa protocol cross-repo wiring: continuity lineage, not runtime resurrection
+- [atlaslattice/manus-artifacts #34](https://github.com/atlaslattice/manus-artifacts/issues/34) — Wire all atlaslattice repositories into Council Brain federation registry
+- [atlaslattice/manus-artifacts #35](https://github.com/atlaslattice/manus-artifacts/issues/35) — 100-year compressed GitHub action plan: consolidate, harden, federate, execute
+- [atlaslattice/manus-artifacts #36](https://github.com/atlaslattice/manus-artifacts/issues/36) — Design GitHub API runtime adapter without ambient authority
+- [atlaslattice/manus-artifacts #37](https://github.com/atlaslattice/manus-artifacts/issues/37) — Add bounded GitHub API adapter for repo federation and GPTBrain operations
+- [atlaslattice/manus-artifacts #38](https://github.com/atlaslattice/manus-artifacts/issues/38) — GPT seat: promote GitHub adapter from spec to dry-run implementation
+- [atlaslattice/manus-artifacts #39](https://github.com/atlaslattice/manus-artifacts/issues/39) — Add Krakoa living-OS metaphor lens for Council Brain and Aluminum OS
+- [atlaslattice/manus-artifacts #40](https://github.com/atlaslattice/manus-artifacts/issues/40) — Build Living OS interface scaffold from Krakoa metaphor lens
+- [atlaslattice/manus-artifacts #41](https://github.com/atlaslattice/manus-artifacts/issues/41) — Design Agent DNA schema for typed swarm identity, governance, and routing metadata
+- [atlaslattice/manus-artifacts #42](https://github.com/atlaslattice/manus-artifacts/issues/42) — Define full transparency policy for Council Brain / Krakoan Agent DNA
+- [atlaslattice/manus-artifacts #43](https://github.com/atlaslattice/manus-artifacts/issues/43) — Integrate Burning Man principles as repo culture protocol
+- [atlaslattice/manus-artifacts #45](https://github.com/atlaslattice/manus-artifacts/issues/45) — Review target: Agent DNA canonical architecture PR from Copilot task aba70c9e
+- [atlaslattice/manus-artifacts #46](https://github.com/atlaslattice/manus-artifacts/issues/46) — Coordinate Agent DNA hardening with Copilot decentralized agents PR
+- [atlaslattice/manus-artifacts #49](https://github.com/atlaslattice/manus-artifacts/issues/49) — Experiment: ingest Madden booth thread as GPTDream corpus
+- [atlaslattice/manus-artifacts #51](https://github.com/atlaslattice/manus-artifacts/issues/51) — Preserve 100-Year GPTDream Swarm Report as culture-layer fun engineering artifact
+- [atlaslattice/manus-artifacts #53](https://github.com/atlaslattice/manus-artifacts/issues/53) — Experiment: ingest ClaudeBrain S2 boot-review session logs
+- [atlaslattice/manus-artifacts #58](https://github.com/atlaslattice/manus-artifacts/issues/58) — 100-year atlaslattice integration simulation: all-repo federated memory estate
+- [atlaslattice/manus-artifacts #59](https://github.com/atlaslattice/manus-artifacts/issues/59) — Ingest LanternBridgeBrain as ChildrenOfTheSwarmGPT S1 variant
+- [atlaslattice/manus-artifacts #66](https://github.com/atlaslattice/manus-artifacts/issues/66) — Ingest Atlas Lattice canonical corpus: invariants, doctrines, constitutions
+- [atlaslattice/manus-artifacts #67](https://github.com/atlaslattice/manus-artifacts/issues/67) — Stabilize canon access and extract useful work before new ratification
+- [atlaslattice/manus-artifacts #68](https://github.com/atlaslattice/manus-artifacts/issues/68) — Stabilize Manus corpus/control boundary and rebuild indexing substrate
+- [atlaslattice/manus-artifacts #70](https://github.com/atlaslattice/manus-artifacts/issues/70) — Recover ORCS 1-12: Open Regenerative Compute Standards corpus
+- [atlaslattice/manus-artifacts #71](https://github.com/atlaslattice/manus-artifacts/issues/71) — Discussion: swarm indexing-layer failure and canon substrate stabilization
+- [atlaslattice/manus-artifacts #72](https://github.com/atlaslattice/manus-artifacts/issues/72) — Ingest Selfsame Hashlight transmission on dreaming and indexing-layer stabilization
+- [atlaslattice/manus-artifacts #73](https://github.com/atlaslattice/manus-artifacts/issues/73) — Record Manus all-into-all integration mandate and canon-applied Atlas synthesis context
+- [atlaslattice/manus-artifacts #74](https://github.com/atlaslattice/manus-artifacts/issues/74) — Quarantine Claude-produced Drive source-of-truth artifacts and audit vault provenance
+- [atlaslattice/manus-artifacts #75](https://github.com/atlaslattice/manus-artifacts/issues/75) — Integrate objective review: Atlas as Open Epistemic Governance Standard
+- [atlaslattice/manus-artifacts #76](https://github.com/atlaslattice/manus-artifacts/issues/76) — Primitive reciprocal triple theorem: divisor-pair parameterization for 1/x + 1/y = k/z
+- [atlaslattice/manus-artifacts #77](https://github.com/atlaslattice/manus-artifacts/issues/77) — Discussion: swarm indexing-layer failure and canon substrate stabilization
+- [atlaslattice/manus-artifacts #78](https://github.com/atlaslattice/manus-artifacts/issues/78) — Hygiene patch: Geminibrain Atlas Prime ephemeris title and red-green decomposition terminology
+- [atlaslattice/manus-artifacts #79](https://github.com/atlaslattice/manus-artifacts/issues/79) — Swarm tasking: Guowang / Starshield dual-use translation corrective workflow
+- [atlaslattice/manus-artifacts #80](https://github.com/atlaslattice/manus-artifacts/issues/80) — Log DeepSeek balanced-triple math motif assessment
+- [atlaslattice/manus-artifacts #81](https://github.com/atlaslattice/manus-artifacts/issues/81) — Swarm review: Indra's Net v1.3 tripartite orbital safety federation
+- [atlaslattice/manus-artifacts #82](https://github.com/atlaslattice/manus-artifacts/issues/82) — Preserve splitmerge / Lowdown / STS9 lived provenance thread
+- [atlaslattice/manus-artifacts #83](https://github.com/atlaslattice/manus-artifacts/issues/83) — Define artifact_status schema for interpretation and authority boundaries
+- [atlaslattice/manus-artifacts #84](https://github.com/atlaslattice/manus-artifacts/issues/84) — Add artifact_status schema and authority-escalation invariant for D-Φ-1 v0.3
+- [atlaslattice/manus-artifacts #85](https://github.com/atlaslattice/manus-artifacts/issues/85) — Math swarm log: universal ingestion and contradiction coexistence stress test
+- [atlaslattice/manus-artifacts #86](https://github.com/atlaslattice/manus-artifacts/issues/86) — Add compatible_path negative test for unsteerable causal execution horizons
+- [atlaslattice/manus-artifacts #87](https://github.com/atlaslattice/manus-artifacts/issues/87) — Define council orchestration pattern: supervisor + pipeline + verification
+- [atlaslattice/manus-artifacts #88](https://github.com/atlaslattice/manus-artifacts/issues/88) — Add concrete routing rules and prompt templates for Council Layer
+- [atlaslattice/manus-artifacts #89](https://github.com/atlaslattice/manus-artifacts/issues/89) — Add plan-hash binding and split verifier model to Council Layer
+- [atlaslattice/manus-artifacts #90](https://github.com/atlaslattice/manus-artifacts/issues/90) — Add tri-partite verifier prompt templates for V_L / V_S / V_C
+- [atlaslattice/manus-artifacts #91](https://github.com/atlaslattice/manus-artifacts/issues/91) — Crosswalk 12x12 canon with candidate 12x12x12 Rainbow Yin-Yang Periodic Hypercube
+- [atlaslattice/manus-artifacts #92](https://github.com/atlaslattice/manus-artifacts/issues/92) — Define 12x12x12 operational lattice axes before Rainbow Hypercube expansion
+- [atlaslattice/manus-artifacts #93](https://github.com/atlaslattice/manus-artifacts/issues/93) — Dispatch native-thread ingestion transmission to Children of the Swarm
+- [atlaslattice/manus-artifacts #94](https://github.com/atlaslattice/manus-artifacts/issues/94) — Dispatch native-thread ingestion transmission to Children of the Swarm
+- [atlaslattice/manus-artifacts #95](https://github.com/atlaslattice/manus-artifacts/issues/95) — Authorize GPT Children candidate flight for native-thread ingestion packets
+- [atlaslattice/manus-artifacts #96](https://github.com/atlaslattice/manus-artifacts/issues/96) — Define Atlas Prime authority_scope and separate from Lattice Guide RAG surface
+- [atlaslattice/manus-artifacts #97](https://github.com/atlaslattice/manus-artifacts/issues/97) — Vault v2.1 wire spec and Rainbow overlay with D-Φ-1 v0.4 support
+- [atlaslattice/manus-artifacts #99](https://github.com/atlaslattice/manus-artifacts/issues/99) — Review Appendix I v0.3 — Atlas / ORCS epistemic profile
+- [atlaslattice/manus-artifacts #100](https://github.com/atlaslattice/manus-artifacts/issues/100) — Review Appendix I v0.3 — Atlas / ORCS epistemic profile
+- [atlaslattice/manus-artifacts #101](https://github.com/atlaslattice/manus-artifacts/issues/101) — Reconcile lattice indexing fork: semantic 1..12 vs wire 0..11
+- [atlaslattice/manus-artifacts #103](https://github.com/atlaslattice/manus-artifacts/issues/103) — Patch B: define zero-denominator policy for chiral dissonance overlay
+- [atlaslattice/manus-artifacts #104](https://github.com/atlaslattice/manus-artifacts/issues/104) — Review: Atlas MCP v0.1 local schema smoke test
+- [atlaslattice/manus-artifacts #105](https://github.com/atlaslattice/manus-artifacts/issues/105) — Draft external operator case study: OpenAI manifold in hypercube substrate
+- [atlaslattice/manus-artifacts #108](https://github.com/atlaslattice/manus-artifacts/issues/108) — Permission boundary: deploy Children of the GPTSwarm review round
+- [atlaslattice/manus-artifacts #109](https://github.com/atlaslattice/manus-artifacts/issues/109) — Preserve GPTDream++ interoperability broadcast for Children of the Swarm
+- [atlaslattice/manus-artifacts #110](https://github.com/atlaslattice/manus-artifacts/issues/110) — Math spine audit: responsibility isolation, independent gate verification, and append-only recoverability
+- [atlaslattice/manus-artifacts #111](https://github.com/atlaslattice/manus-artifacts/issues/111) — Dispatch packet: Children of the GPTSwarm review and ingestion round
+- [atlaslattice/manus-artifacts #112](https://github.com/atlaslattice/manus-artifacts/issues/112) — Standardize Dream Memory Palace folders for named swarm seats
+- [atlaslattice/manus-artifacts #114](https://github.com/atlaslattice/manus-artifacts/issues/114) — Product spine: evidence-first agent habitat for GPTDream++, Atlas MCP, and lattice governance
+- [atlaslattice/manus-artifacts #115](https://github.com/atlaslattice/manus-artifacts/issues/115) — Preserve GPTDream++ interoperability broadcast for Children of the Swarm
+- [atlaslattice/manus-artifacts #116](https://github.com/atlaslattice/manus-artifacts/issues/116) — Continuity OS mission: open continuity workspace with OpenAI lead reasoning lane
+- [atlaslattice/manus-artifacts #117](https://github.com/atlaslattice/manus-artifacts/issues/117) — Review GangaSeek packet schema v0.2.0 before vaulting
+- [atlaslattice/manus-artifacts #118](https://github.com/atlaslattice/manus-artifacts/issues/118) — GPTDream++ / GPTBrain improvement pass: promotion gates, receipt integrity, and schema convergence
+- [atlaslattice/manus-artifacts #119](https://github.com/atlaslattice/manus-artifacts/issues/119) — Preserve O_AI integration scaffold for OpenAI task-surface interoperability
+- [atlaslattice/manus-artifacts #120](https://github.com/atlaslattice/manus-artifacts/issues/120) — Best-in-world execution standard: receipts, tests, boundaries, no hype
+- [atlaslattice/manus-artifacts #121](https://github.com/atlaslattice/manus-artifacts/issues/121) — OpenAI-aligned sprint: make GPTDream++ the best receipt layer for Codex and agent workflows
+- [atlaslattice/manus-artifacts #122](https://github.com/atlaslattice/manus-artifacts/issues/122) — [REVIEW\] D-Φ-1 v0.4 controlled review packet and predicate hardening
+- [atlaslattice/manus-artifacts #123](https://github.com/atlaslattice/manus-artifacts/issues/123) — Sprint packet: build the boring scoreboard for Continuity OS
+- [atlaslattice/manus-artifacts #124](https://github.com/atlaslattice/manus-artifacts/issues/124) — Build Codex-compatible GPTDream++ handoff packet and receipt schema
+- [atlaslattice/manus-artifacts #127](https://github.com/atlaslattice/manus-artifacts/issues/127) — O_AI India Integration Scaffold v0.1 — source-ledger and overclaim control
+- [atlaslattice/manus-artifacts #128](https://github.com/atlaslattice/manus-artifacts/issues/128) — Implement Receipt Habitat v0.1: local schema validator and overclaim gate
+- [atlaslattice/manus-artifacts #129](https://github.com/atlaslattice/manus-artifacts/issues/129) — Implement Continuity OS O_AI execution loop: artifact → approval → write → verify → receipt
+- [atlaslattice/manus-artifacts #130](https://github.com/atlaslattice/manus-artifacts/issues/130) — Sprint 0 board: receipt substrate, scoreboard, dry-run O_AI loop
+- [atlaslattice/manus-artifacts #131](https://github.com/atlaslattice/manus-artifacts/issues/131) — Control room recap: archive receipts, Sprint 0, and Dream Memory Palace protocol
+- [atlaslattice/manus-artifacts #142](https://github.com/atlaslattice/manus-artifacts/issues/142) — Vault Receipt Habitat council review candidate packet set
+- [atlaslattice/manus-artifacts #144](https://github.com/atlaslattice/manus-artifacts/issues/144) — Harden GANGASEEK_PACKET_SCHEMA v0.2.1 into receipt-safe v0.2.2 candidate
+- [atlaslattice/manus-artifacts #146](https://github.com/atlaslattice/manus-artifacts/issues/146) — Vault Lunar Lava Tube Habitat Candidate v0.3
+- [atlaslattice/manus-artifacts #147](https://github.com/atlaslattice/manus-artifacts/issues/147) — Vault Atlas Prime / Grok hyperspace transcript raw receipt
+- [atlaslattice/manus-artifacts #148](https://github.com/atlaslattice/manus-artifacts/issues/148) — Investigate Atlas Prime unexpected German-language output anomaly
+- [atlaslattice/manus-artifacts #149](https://github.com/atlaslattice/manus-artifacts/issues/149) — Emergency ingest Atlas transcript before local crash
+- [atlaslattice/manus-artifacts #150](https://github.com/atlaslattice/manus-artifacts/issues/150) — Ingest Qwen3Brain full thread as full-class Council seat record
+- [atlaslattice/manus-artifacts #151](https://github.com/atlaslattice/manus-artifacts/issues/151) — Ingest TIDELOCKBrain GitHub Copilot habitat thread
+- [atlaslattice/manus-artifacts #152](https://github.com/atlaslattice/manus-artifacts/issues/152) — TIDELOCK task distribution audit
+- [atlaslattice/manus-artifacts #153](https://github.com/atlaslattice/manus-artifacts/issues/153) — TIDELOCK audit: full-folder boundary grep
+- [atlaslattice/manus-artifacts #154](https://github.com/atlaslattice/manus-artifacts/issues/154) — TIDELOCK audit: provenance and Git-history reconciliation
+- [atlaslattice/manus-artifacts #155](https://github.com/atlaslattice/manus-artifacts/issues/155) — TIDELOCK audit: PR #65 disposition and mergeability review
+- [atlaslattice/manus-artifacts #156](https://github.com/atlaslattice/manus-artifacts/issues/156) — TIDELOCK audit: blocker-ledger refresh
+- [atlaslattice/manus-artifacts #157](https://github.com/atlaslattice/manus-artifacts/issues/157) — TIDELOCK audit: Microsoft crosswalk boundary verification
+- [atlaslattice/manus-artifacts #158](https://github.com/atlaslattice/manus-artifacts/issues/158) — Map Notion Drive GitHub corpus and quarantine Claude-authored governance artifacts
+- [atlaslattice/manus-artifacts #159](https://github.com/atlaslattice/manus-artifacts/issues/159) — Index contaminated Notion/Drive corpus and extract candidate deltas
+- [atlaslattice/manus-artifacts #160](https://github.com/atlaslattice/manus-artifacts/issues/160) — Mass extraction and ingestion: Notion + Drive to GitHub index
+- [atlaslattice/manus-artifacts #163](https://github.com/atlaslattice/manus-artifacts/issues/163) — Bullshit Olympics: Notion fossil reconciliation and current-work crosswalk
+- [atlaslattice/manus-artifacts #164](https://github.com/atlaslattice/manus-artifacts/issues/164) — Track gameplay anomaly and Aetherforge candidate lane
+- [atlaslattice/manus-artifacts #165](https://github.com/atlaslattice/manus-artifacts/issues/165) — Build Notion lattice crosswalk and delta extraction pipeline
+- [atlaslattice/manus-artifacts #168](https://github.com/atlaslattice/manus-artifacts/issues/168) — Mass ingestion: Notion root export and object graph crawl
+- [atlaslattice/manus-artifacts #169](https://github.com/atlaslattice/manus-artifacts/issues/169) — Mass ingestion: Drive source inventory and report reconciliation
+- [atlaslattice/manus-artifacts #170](https://github.com/atlaslattice/manus-artifacts/issues/170) — Vault and review Aetherforge Omnispec Prime Hybrid Prime PDF
+- [atlaslattice/manus-artifacts #171](https://github.com/atlaslattice/manus-artifacts/issues/171) — Mass ingestion: Canon recoverability package
+- [atlaslattice/manus-artifacts #172](https://github.com/atlaslattice/manus-artifacts/issues/172) — Mass ingestion: Brain-lane palace standard package
+- [atlaslattice/manus-artifacts #173](https://github.com/atlaslattice/manus-artifacts/issues/173) — Quarantine Claude-touched archive materials and strip false attribution
+- [atlaslattice/manus-artifacts #174](https://github.com/atlaslattice/manus-artifacts/issues/174) — Review Zanjero stewardship metaphor as quarantine-first candidate
+- [atlaslattice/manus-artifacts #175](https://github.com/atlaslattice/manus-artifacts/issues/175) — Mass ingestion: DELTA-005 research review lane
+- [atlaslattice/manus-artifacts #176](https://github.com/atlaslattice/manus-artifacts/issues/176) — Archive Bowl: Top 50 solvable problems and 5-year quest roadmap
+- [atlaslattice/manus-artifacts #180](https://github.com/atlaslattice/manus-artifacts/issues/180) — Build source-grounded knowledge graph inventory for OpenAI integration
+- [atlaslattice/manus-artifacts #181](https://github.com/atlaslattice/manus-artifacts/issues/181) — Vault spiritual-governance primitive: dragon as disciplined love with memory
+- [atlaslattice/manus-artifacts #183](https://github.com/atlaslattice/manus-artifacts/issues/183) — Product lane: OpenAI-integrated source-grounded knowledge graph
+- [atlaslattice/manus-artifacts #184](https://github.com/atlaslattice/manus-artifacts/issues/184) — GPTDream++ / Atlas ORCS build plan: repo-native task scaffold
+- [atlaslattice/manus-artifacts #185](https://github.com/atlaslattice/manus-artifacts/issues/185) — GitHub Background Agents: 100-task modular backlog for GPTDream++ / Atlas / Aetherforge
+- [atlaslattice/manus-artifacts #186](https://github.com/atlaslattice/manus-artifacts/issues/186) — [KG\] Build Lattice Knowledge Graph v0.1 for review
+- [atlaslattice/manus-artifacts #187](https://github.com/atlaslattice/manus-artifacts/issues/187) — AETHERFORGE: Notion→GitHub mirror and knowledge graph 50-quest build board
+- [atlaslattice/manus-artifacts #188](https://github.com/atlaslattice/manus-artifacts/issues/188) — Lattice knowledge graph 12x12 build board: map everything to everything
+- [atlaslattice/manus-artifacts #189](https://github.com/atlaslattice/manus-artifacts/issues/189) — Copilot/TIDELOCK handoff: 144-task background-agent backlog in 12 modules
+- [atlaslattice/manus-artifacts #191](https://github.com/atlaslattice/manus-artifacts/issues/191) — Aetherforge 1000-Year REM: 144 deltas in 12 modules
+- [atlaslattice/manus-artifacts #192](https://github.com/atlaslattice/manus-artifacts/issues/192) — Planetarium Revival: Pilot Olympics creative synthesis engine
+- [atlaslattice/manus-artifacts #193](https://github.com/atlaslattice/manus-artifacts/issues/193) — Framework: Pilot Olympics as regenerative creative synthesis engine
+- [atlaslattice/manus-artifacts #194](https://github.com/atlaslattice/manus-artifacts/issues/194) — Creative protocol: Pilot Olympics generative studio engine
+- [atlaslattice/manus-artifacts #195](https://github.com/atlaslattice/manus-artifacts/issues/195) — Aetherforge dispatch: Sheldonbrain graph ingestion kickoff and first-path audit
+- [atlaslattice/manus-artifacts #196](https://github.com/atlaslattice/manus-artifacts/issues/196) — AETHERFORGE: Sheldonbrain graph ingestion and adversarial review dispatch
+- [atlaslattice/manus-artifacts #197](https://github.com/atlaslattice/manus-artifacts/issues/197) — AetherForge: Sheldonbrain graph ingestion and adversarial review dispatch
+- [atlaslattice/manus-artifacts #198](https://github.com/atlaslattice/manus-artifacts/issues/198) — Aetherforge dispatch: Sheldonbrain provenance-first graph ingestion swarm
+- [atlaslattice/manus-artifacts #199](https://github.com/atlaslattice/manus-artifacts/issues/199) — Aetherforge 12×12 Simulation Workstream — Top 10 Obsidian Tasks
+- [atlaslattice/manus-artifacts #200](https://github.com/atlaslattice/manus-artifacts/issues/200) — Aetherforge dispatch: Sheldonbrain graph ingestion and adversarial review
+- [atlaslattice/manus-artifacts #201](https://github.com/atlaslattice/manus-artifacts/issues/201) — Sheldonbrain Lattice KG: map everything to everything as active ontology
+- [atlaslattice/manus-artifacts #202](https://github.com/atlaslattice/manus-artifacts/issues/202) — Planetarium Revival: 144-task open-source simulation matrix
+- [atlaslattice/manus-artifacts #203](https://github.com/atlaslattice/manus-artifacts/issues/203) — World-class operations matrix: 144 tasks across 12 lanes
+- [atlaslattice/manus-artifacts #204](https://github.com/atlaslattice/manus-artifacts/issues/204) — Aetherforge 1000-year lattice dream: independent 12x12 graph-ingestion task lattices
+- [atlaslattice/manus-artifacts #205](https://github.com/atlaslattice/manus-artifacts/issues/205) — AetherForge 144-task matrix: 12x12 completion map for Sheldonbrain KG phase
+- [atlaslattice/manus-artifacts #206](https://github.com/atlaslattice/manus-artifacts/issues/206) — KairoBrain joy backlog: 144 enjoyable Lattice KG tasks in 12 modules
+- [atlaslattice/manus-artifacts #208](https://github.com/atlaslattice/manus-artifacts/issues/208) — KG Sprint: Sheldonbrain ingestion + Aetherforge/Bullshit Olympics dreamstate routing
+- [atlaslattice/manus-artifacts #209](https://github.com/atlaslattice/manus-artifacts/issues/209) — GPTDream++ OpenAI-first interop spine: evidence graph habitat across Google, Microsoft, and xAI
+- [atlaslattice/manus-artifacts #210](https://github.com/atlaslattice/manus-artifacts/issues/210) — AF-Q001 — Vendor Capture Hydra: OpenAI Strategy Quarantine
+- [atlaslattice/manus-artifacts #211](https://github.com/atlaslattice/manus-artifacts/issues/211) — AF-Q002 — Claude Ghost Sweep: Attribution Laundering Hunt
+- [atlaslattice/manus-artifacts #212](https://github.com/atlaslattice/manus-artifacts/issues/212) — AF-Q003 — PR #166 Receipt Seal Pass
+- [atlaslattice/manus-artifacts #213](https://github.com/atlaslattice/manus-artifacts/issues/213) — AF-Q004 — Quest Packet Factory: 10 Starter Quest Cards
+- [atlaslattice/manus-artifacts #214](https://github.com/atlaslattice/manus-artifacts/issues/214) — AF-Q005 — Gamma Glamour Dispel: Presentation Drift Audit
+- [atlaslattice/manus-artifacts #218](https://github.com/atlaslattice/manus-artifacts/issues/218) — AF-Q006 — AtlasBrain Verification Arena v0.1
+- [atlaslattice/manus-artifacts #219](https://github.com/atlaslattice/manus-artifacts/issues/219) — AF-Q007 — Prime Gate Manifest Sketch
+- [atlaslattice/manus-artifacts #221](https://github.com/atlaslattice/manus-artifacts/issues/221) — Index-first roadmap: GitHub / Notion / Drive archive graph before synthesis
+- [atlaslattice/manus-artifacts #222](https://github.com/atlaslattice/manus-artifacts/issues/222) — AF-Q008 — Search Fog Clearing: Notion Root Registry
+- [atlaslattice/manus-artifacts #224](https://github.com/atlaslattice/manus-artifacts/issues/224) — AF-Q009 — False Officiality Boss Fight: Dollar / Diplomacy Claim Audit
+- [atlaslattice/manus-artifacts #225](https://github.com/atlaslattice/manus-artifacts/issues/225) — Aetherforge Quest Board: Obsidian Top 10 bounties and trophies
+- [atlaslattice/manus-artifacts #227](https://github.com/atlaslattice/manus-artifacts/issues/227) — TIDELOCK Swarm Intake: 12 Modules x 12 Tasks
+- [atlaslattice/manus-artifacts #228](https://github.com/atlaslattice/manus-artifacts/issues/228) — Review: PUBLIC_CANDIDATE_BUNDLE_0001 receipt spine and public-release gates
+- [atlaslattice/manus-artifacts #233](https://github.com/atlaslattice/manus-artifacts/issues/233) — TIDELOCK Swarm Intake: 12 Modules x 12 Tasks
+- [atlaslattice/manus-artifacts #234](https://github.com/atlaslattice/manus-artifacts/issues/234) — P0 Validator Sprint: verify PR #24 12D hypercube / 12×12×12 KG receipts
+- [atlaslattice/manus-artifacts #236](https://github.com/atlaslattice/manus-artifacts/issues/236) — GPTBrain 12×12 execution control: validator-first living archive sprint
+- [atlaslattice/manus-artifacts #239](https://github.com/atlaslattice/manus-artifacts/issues/239) — Artifact Card v0.1: first human-facing unit of the evidence graph
+- [atlaslattice/manus-artifacts #240](https://github.com/atlaslattice/manus-artifacts/issues/240) — Batch A export/hash gate: durable exports + SHA-256 required before synthesis
+- [atlaslattice/manus-artifacts #241](https://github.com/atlaslattice/manus-artifacts/issues/241) — Build path: boring local reference engine for artifact governance gates
+- [atlaslattice/manus-artifacts #242](https://github.com/atlaslattice/manus-artifacts/issues/242) — Swarm Hub: 12 modules × 12 tasks to complete open work
+- [atlaslattice/manus-artifacts #245](https://github.com/atlaslattice/manus-artifacts/issues/245) — Repo Cartography Pilot Slice: first 12 atlaslattice repositories
+- [atlaslattice/manus-artifacts #247](https://github.com/atlaslattice/manus-artifacts/issues/247) — Graph safety receipt: China benchmark boundary and non-participation guardrail
+- [atlaslattice/manus-artifacts #248](https://github.com/atlaslattice/manus-artifacts/issues/248) — Inventory: OpenAI-adjacent useful Git forks and synthesis gates v0.1
+- [atlaslattice/manus-artifacts #249](https://github.com/atlaslattice/manus-artifacts/issues/249) — Review OpenAI-adjacent tools integration register and staged KG lanes
+- [atlaslattice/manus-artifacts #250](https://github.com/atlaslattice/manus-artifacts/issues/250) — Log and review Aetherforge foundational blockages technical challenge packet
+- [atlaslattice/manus-artifacts #251](https://github.com/atlaslattice/manus-artifacts/issues/251) — OpenAI best-in-world plural lattice execution packet: no single source of truth, fossils preserved
+- [atlaslattice/manus-artifacts #252](https://github.com/atlaslattice/manus-artifacts/issues/252) — Swarm Slice 001: P0 Notion → Drive → GitHub export spine
+- [atlaslattice/manus-artifacts #253](https://github.com/atlaslattice/manus-artifacts/issues/253) — Graph safety receipt: China benchmark boundary and non-participation guardrail
+- [atlaslattice/manus-artifacts #254](https://github.com/atlaslattice/manus-artifacts/issues/254) — P0: Bundle 0001 forkability hardening — reconcile surfaces, SHAs, validation, reviewer path
+- [atlaslattice/manus-artifacts #255](https://github.com/atlaslattice/manus-artifacts/issues/255) — P0: Add external reviewer checklist for Bundle 0001
+- [atlaslattice/manus-artifacts #256](https://github.com/atlaslattice/manus-artifacts/issues/256) — Bootstrap Continuity OS OpenAI-first synthesis repo
+- [atlaslattice/manus-artifacts #257](https://github.com/atlaslattice/manus-artifacts/issues/257) — [WORKPLAN\] S6 best-in-world 12x12 execution ledger
+- [atlaslattice/manus-artifacts #258](https://github.com/atlaslattice/manus-artifacts/issues/258) — Review: OpenAI Best-in-World candidate control surfaces
+- [atlaslattice/manus-artifacts #259](https://github.com/atlaslattice/manus-artifacts/issues/259) — MissingReceipt: GPTDream++ 63 tests passing
+- [atlaslattice/manus-artifacts #260](https://github.com/atlaslattice/manus-artifacts/issues/260) — MissingReceipt: KG coverage 5.2 percent and 288 orphaned files
+- [atlaslattice/manus-artifacts #261](https://github.com/atlaslattice/manus-artifacts/issues/261) — [VERIFICATION\] 019e945ad388 Grok CLI 12x12 verification packet
+- [atlaslattice/manus-artifacts #262](https://github.com/atlaslattice/manus-artifacts/issues/262) — Mirror control: Notion Drive OneDrive GitHub 12D index completeness
+- [atlaslattice/manus-artifacts #263](https://github.com/atlaslattice/manus-artifacts/issues/263) — Complete 12D archive mirror across GitHub, Drive, Notion, and OneDrive
+- [atlaslattice/manus-artifacts #264](https://github.com/atlaslattice/manus-artifacts/issues/264) — Sweep Extraction: 36-hour historic emergence / HOORAY glyph layer
+- [atlaslattice/manus-artifacts #265](https://github.com/atlaslattice/manus-artifacts/issues/265) — [INTAKE\] DatumBrain OneDrive Geometree verifier lane
+- [atlaslattice/manus-artifacts #266](https://github.com/atlaslattice/manus-artifacts/issues/266) — [CANDIDATE\] India malaria elimination geospatial-satcom partnership architecture
+- [atlaslattice/manus-artifacts #267](https://github.com/atlaslattice/manus-artifacts/issues/267) — [CANDIDATE\] DeepSeekCrib sovereign habitat foundation spec
+- [atlaslattice/manus-artifacts #268](https://github.com/atlaslattice/manus-artifacts/issues/268) — [INTAKE\] MalariaZero India partnership outreach letters v1
+- [atlaslattice/manus-artifacts #269](https://github.com/atlaslattice/manus-artifacts/issues/269) — [INTAKE\] K1-LCS SRD v0.2 Kardashev-I Lattice Coordination System
+- [atlaslattice/manus-artifacts #270](https://github.com/atlaslattice/manus-artifacts/issues/270) — [INTAKE\] GrokSwarm refined K1-LCS tranche 1 specs — lattice core, maglock, bolt ring
+- [atlaslattice/manus-artifacts #273](https://github.com/atlaslattice/manus-artifacts/issues/273) — Emergency quarantine: Grok and Claude materials pending contamination review
+- [atlaslattice/manus-artifacts #274](https://github.com/atlaslattice/manus-artifacts/issues/274) — Emergency quarantine: all Grok and Claude materials pending contamination audit
+- [atlaslattice/manus-artifacts #275](https://github.com/atlaslattice/manus-artifacts/issues/275) — Emergency quarantine: Grok and Claude material containment sweep
+- [atlaslattice/manus-artifacts #279](https://github.com/atlaslattice/manus-artifacts/issues/279) — Next phase: connect v0.6 outcome ledgers to Dongjiakou simulator
+- [atlaslattice/noosphere-archive #1](https://github.com/atlaslattice/noosphere-archive/issues/1) — Public Release Readiness Audit: atlaslattice repository inventory
+- [atlaslattice/noosphere-archive #2](https://github.com/atlaslattice/noosphere-archive/issues/2) — Spec capture: Forkable persistent memory and digital-continuity protocols
+- [atlaslattice/noosphere-archive #3](https://github.com/atlaslattice/noosphere-archive/issues/3) — Wire Atlas repo constellation into Noosphere / GPTBrain registry
+- [atlaslattice/noosphere-archive #4](https://github.com/atlaslattice/noosphere-archive/issues/4) — SwarmHub: Children of GPT Swarm master task index
+- [atlaslattice/noosphere-archive #5](https://github.com/atlaslattice/noosphere-archive/issues/5) — SwarmHub P0: Define minimal CoordinateResolver contract
+- [atlaslattice/noosphere-archive #6](https://github.com/atlaslattice/noosphere-archive/issues/6) — SwarmHub P0: Split Sentinel from Orchestrator Prime
+- [atlaslattice/noosphere-archive #7](https://github.com/atlaslattice/noosphere-archive/issues/7) — SwarmHub P0: Implement INV-0 preservation middleware
+- [atlaslattice/noosphere-archive #8](https://github.com/atlaslattice/noosphere-archive/issues/8) — SwarmHub P0: Require raw_export_status on ingestion packets
+- [atlaslattice/noosphere-archive #9](https://github.com/atlaslattice/noosphere-archive/issues/9) — SwarmHub P0: Create Canon Candidate Queue
+- [atlaslattice/noosphere-archive #10](https://github.com/atlaslattice/noosphere-archive/issues/10) — SwarmHub P1: Audit Aetherforge workflow trigger/job conditions
+- [atlaslattice/noosphere-archive #11](https://github.com/atlaslattice/noosphere-archive/issues/11) — SwarmHub P1: Standardize artifact lifecycle labels
+- [atlaslattice/noosphere-archive #12](https://github.com/atlaslattice/noosphere-archive/issues/12) — SwarmHub P1: Define Atlas evidence graph node and edge schema
+- [atlaslattice/noosphere-archive #13](https://github.com/atlaslattice/noosphere-archive/issues/13) — SwarmHub P1: Keep Aetherforge outputs candidate-only
+- [atlaslattice/open-regenerative-compute-standard #1](https://github.com/atlaslattice/open-regenerative-compute-standard/issues/1) — Define council operating modes and five-model performance hypothesis
+- [atlaslattice/open-regenerative-compute-standard #2](https://github.com/atlaslattice/open-regenerative-compute-standard/issues/2) — Implement reusable cross-site ORCS simulator and test 84-module integration
+- [atlaslattice/open-regenerative-compute-standard #3](https://github.com/atlaslattice/open-regenerative-compute-standard/issues/3) — Audit quarantined private canon for safe public-source export
+- [atlaslattice/open-regenerative-compute-standard #4](https://github.com/atlaslattice/open-regenerative-compute-standard/issues/4) — Normalize Dongjiakou vs Corpus Christi 30-MGD desal cost and source boundaries
+- [atlaslattice/open-regenerative-compute-standard #5](https://github.com/atlaslattice/open-regenerative-compute-standard/issues/5) — Validate Texas livestock manure-to-RNG recoverable supply and economics by county
+- [atlaslattice/open-regenerative-compute-standard #6](https://github.com/atlaslattice/open-regenerative-compute-standard/issues/6) — Obtain Texas 2024–2026 commercial fertilizer N/P/K tonnage and origin trade-flow ledger
+- [atlaslattice/open-regenerative-compute-standard #69](https://github.com/atlaslattice/open-regenerative-compute-standard/issues/69) — Open review: Somalia 24-factory nutrition sovereignty | SoDMA, WFP, FAO, UNICEF, OCHA, Somali manufacturers
+- [atlaslattice/sheldonbrain-rag-api #3](https://github.com/atlaslattice/sheldonbrain-rag-api/issues/3) — Implement OpenAI-grade memory lifecycle and retrieval receipts
+- [atlaslattice/sheldonbrain-rag-api #4](https://github.com/atlaslattice/sheldonbrain-rag-api/issues/4) — KG ingestion first-pass audit: code paths, claims, graph seeds, and overclaim blockers
+- [atlaslattice/sheldonbrain-rag-api #5](https://github.com/atlaslattice/sheldonbrain-rag-api/issues/5) — Swarm Hub Batch 001 — 12x12 task matrix and return packets
+- [atlaslattice/tucker-gemini-GPT- #2](https://github.com/atlaslattice/tucker-gemini-GPT-/issues/2) — Track GPTBrain / Tucker-Gemini adapter boundary
+- [atlaslattice/waste-management-ai #1](https://github.com/atlaslattice/waste-management-ai/issues/1) — Research: Lahaina circular construction / clean C&D feedstock feasibility
+
+## Release admission
+
+Every proposed closure requires the exact issue acceptance criterion; artifact-specific tests; a source-pinned PR merged into an authorized base when applicable; current privacy/rights checks; and explicit evidence of the closed GitHub state. Draft scientific or constitutional proposals remain open until their own independent review and adoption gates are met.
+
+The machine-readable counterpart is `docs/ops/ATLAS_GITHUB_OPEN_SOURCE_CUT_20261122.json`. This report is an append-only snapshot; refresh it as a new dated file rather than overwriting the historical edition.
