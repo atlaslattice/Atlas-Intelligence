@@ -1,0 +1,86 @@
+{
+  "batch": 11,
+  "entries": [
+    {
+      "cycle": 31,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/67",
+        "title": "Integrate hollow-sphere CAD/mesh adapters and record solver supersession scope",
+        "state": "open",
+        "head_sha": "604158962fada3c5605339ce67539432ec94b2a7",
+        "base": "gptwork/facility-integration-v0-1",
+        "draft": true,
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/issues/5",
+        "title": "Validate Texas livestock manure-to-RNG recoverable supply and economics by county",
+        "state": "open"
+      },
+      "ci": [],
+      "hold": [
+        "DRAFT",
+        "STACKED_BASE",
+        "NO_CI_RECEIPT",
+        "SCIENCE_RIGHTS_REVIEW"
+      ],
+      "disposition": "HOLD",
+      "work_beats": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "cycle": 32,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/66",
+        "title": "Beyond Q v2.2: separately financed predecessor-fuel cascade and zero He3 retention",
+        "state": "open",
+        "head_sha": "35c0703073dd2b441015f2d47f00cfb5aeb52e60",
+        "base": "research/beyond-q-module-fleet-v2.0",
+        "draft": true,
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/issues/4",
+        "title": "Normalize Dongjiakou vs Corpus Christi 30-MGD desal cost and source boundaries",
+        "state": "open"
+      },
+      "ci": [],
+      "hold": [
+        "DRAFT",
+        "STACKED_BASE",
+        "NO_CI_RECEIPT",
+        "SCIENCE_RIGHTS_REVIEW"
+      ],
+      "disposition": "HOLD",
+      "work_beats": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "cycle": 33,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/65",
+        "title": "Beyond Q v2.0: isotope-first dual-reactor module, 50-module fleet and connected financials",
+        "state": "open",
+        "head_sha": "15df944c1d9c4ba284a7b86d894a6451c69b20da",
+        "base": "research/beyond-q-capture-target-v1.9",
+        "draft": true,
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/issues/3",
+        "title": "Audit quarantined private canon for safe public-source export",
+        "state": "open"
+      },
+      "ci": [],
+      "hold": [
+        "DRAFT",
+        "STACKED_BASE",
+        "NO_CI_RECEIPT",
+        "SCIENCE_RIGHTS_REVIEW"
+      ],
+      "disposition": "HOLD",
+      "work_beats": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}
