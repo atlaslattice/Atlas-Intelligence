@@ -264,6 +264,56 @@ class CircuitTests(unittest.TestCase):
         r['terminal_sha256']='f'*64
         self.assertFalse(verify_receipt(r))
 
+    def test_forged_rehashed_peer_read_still_denied(self):
+        r=run_circuit(self.fabric,self.packet)
+        r['events'][6]['payload']['peer_read']='PEER_VERIFIED'
+        self.rehash_all(r)
+        self.assertFalse(verify_receipt(r))
+
+    def test_forged_rehashed_semantic_mapping_still_denied(self):
+        r=run_circuit(self.fabric,self.packet)
+        r['events'][2]['payload']['cross_namespace_same_as']='APPROVED'
+        self.rehash_all(r)
+        self.assertFalse(verify_receipt(r))
+
+    def test_forged_rehashed_scientific_validation_still_denied(self):
+        r=run_circuit(self.fabric,self.packet)
+        r['events'][5]['payload']['evidence']['H12']='VALIDATED'
+        self.rehash_all(r)
+        self.assertFalse(verify_receipt(r))
+
+    def test_forged_rehashed_full_export_still_denied(self):
+        r=run_circuit(self.fabric,self.packet)
+        r['events'][1]['payload']['completeness']='COMPLETE'
+        self.rehash_all(r)
+        self.assertFalse(verify_receipt(r))
+
+    def test_forged_rehashed_host_execution_still_denied(self):
+        r=run_circuit(self.fabric,self.packet)
+        r['events'][6]['payload']['work_room_post']='POSTED'
+        self.rehash_all(r)
+        self.assertFalse(verify_receipt(r))
+
+    def test_forged_rehashed_erased_dissent_still_denied(self):
+        r=run_circuit(self.fabric,self.packet)
+        r['events'][4]['payload']['counterevidence_sha256']=[]
+        self.rehash_all(r)
+        self.assertFalse(verify_receipt(r))
+
+    def test_extra_root_secret_rejected(self):
+        r=run_circuit(self.fabric,self.packet)
+        r['secret']='DO_NOT_LEAK'
+        self.assertFalse(verify_receipt(r))
+
+    @staticmethod
+    def rehash_all(r):
+        prior='GENESIS'
+        for ev in r['events']:
+            ev['previous_sha256']=prior
+            ev['sha256']=sha({key:ev[key] for key in ('index','kind','previous_sha256','payload')})
+            prior=ev['sha256']
+        r['terminal_sha256']=prior
+
     def test_strict_parser_duplicate_key_rejected(self):
         with tempfile.TemporaryDirectory() as t:
             f=Path(t)/'bad.json';f.write_text('{"a":1,"a":2}')
