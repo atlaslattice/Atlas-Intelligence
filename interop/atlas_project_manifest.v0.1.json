@@ -1,0 +1,864 @@
+{
+  "authority_effect": "NONE",
+  "backlog_snapshot": {
+    "open_issues_observed": 278,
+    "open_prs_observed": 162,
+    "project_scope": "GitHub search snapshot, not all connected apps",
+    "review_status": "NOT_CLOSED_OR_MERGED_BY_INDEX",
+    "source_id": "atlas_workboard",
+    "status": "DATED_SOURCE_CUT_NOT_LIVE"
+  },
+  "canon": false,
+  "collisions": [
+    {
+      "approved": false,
+      "id": "different_origin",
+      "left": {
+        "address": "H01.S01.N01",
+        "namespace": "ariadne.v07",
+        "role": "NODE"
+      },
+      "reason": "0- versus 1-based coordinates; numeric offset alone cannot establish semantic identity",
+      "review": "NO_AUTOMATIC_MAPPING",
+      "right": {
+        "address": "H00.S00.N00",
+        "namespace": "providers.0base",
+        "role": "NODE"
+      }
+    },
+    {
+      "approved": false,
+      "id": "H01_not_equivalent",
+      "left": {
+        "address": "H01.S03",
+        "namespace": "orcs.legacy",
+        "role": "NODE"
+      },
+      "reason": "Identical strings have different House meanings by source edition",
+      "review": "NO_AUTOMATIC_MAPPING",
+      "right": {
+        "address": "H01.S03",
+        "namespace": "aluminum.draft4",
+        "role": "NODE"
+      }
+    },
+    {
+      "approved": false,
+      "id": "H12_not_equivalent",
+      "left": {
+        "address": "H12.S01.N01",
+        "namespace": "ariadne.v07",
+        "role": "NODE"
+      },
+      "reason": "Historical H12 Law & Governance vs newer Space & Aerospace",
+      "review": "NO_AUTOMATIC_MAPPING",
+      "right": {
+        "address": "H12.S01",
+        "namespace": "orcs.legacy",
+        "role": "NODE"
+      }
+    },
+    {
+      "approved": false,
+      "id": "global_sphere",
+      "left": {
+        "address": "S001",
+        "namespace": "uws.early",
+        "role": "NODE"
+      },
+      "reason": "UWS global sphere index vs Sheldonbrain local House/Sphere code",
+      "review": "NO_AUTOMATIC_MAPPING",
+      "right": {
+        "address": "H01.S01",
+        "namespace": "sheldon.lcp1",
+        "role": "NODE"
+      }
+    },
+    {
+      "approved": false,
+      "id": "sentinel_is_not_field",
+      "left": {
+        "address": "H00.S00.N00",
+        "namespace": "providers.0base",
+        "role": "EARTH_SENTINEL"
+      },
+      "reason": "Grounding sentinel role is not a scientific discipline or same-as mapping",
+      "review": "NO_AUTOMATIC_MAPPING",
+      "right": {
+        "address": "H01.S01.N01",
+        "namespace": "ariadne.v07",
+        "role": "NODE"
+      }
+    }
+  ],
+  "crosswalk_candidates": [],
+  "date": "2026-11-22",
+  "edges": [
+    {
+      "authority_effect": "NONE",
+      "from": "ariadne",
+      "id": "e01",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "science-discovery"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "ariadne",
+      "id": "e02",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "science-fabric"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "science-discovery",
+      "id": "e03",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "science-fabric"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "resident-rhythm",
+      "id": "e04",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "science-fabric"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "noosphere-contracts",
+      "id": "e05",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "swarmchat-host"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "provider-resolver",
+      "id": "e06",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "solution-evolution"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "noosphere-contracts",
+      "id": "e07",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "solution-evolution"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "goldentrace",
+      "id": "e08",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "solution-evolution"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "science-fabric",
+      "id": "e09",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "solution-evolution"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "orcs",
+      "id": "e10",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "solution-evolution"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "swarmchat-host",
+      "id": "e11",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "solution-evolution"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "solution-evolution",
+      "id": "e12",
+      "kind": "REQUIRES_BEFORE_HOST",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "h12-habitat-case"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "uws-interop",
+      "id": "e13",
+      "kind": "PROPOSED_INTEGRATION",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "atlas-ui"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "sheldonbrain",
+      "id": "e14",
+      "kind": "PROPOSED_INTEGRATION",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "atlas-ui"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "aluminum-os",
+      "id": "e15",
+      "kind": "PRESERVES_LINEAGE",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "goldentrace"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "manus-archive",
+      "id": "e16",
+      "kind": "RESEARCH_FEEDBACK",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "ariadne"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "h12-habitat-case",
+      "id": "e17",
+      "kind": "RESEARCH_FEEDBACK",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "orcs"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "orcs",
+      "id": "e18",
+      "kind": "RESEARCH_FEEDBACK",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "h12-habitat-case"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "atlas-foundation",
+      "id": "e19",
+      "kind": "OVERLAPS_REVIEW",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "aluminum-os"
+    },
+    {
+      "authority_effect": "NONE",
+      "from": "provider-resolver",
+      "id": "e20",
+      "kind": "OVERLAPS_REVIEW",
+      "status": "PROPOSED_NOT_HOSTED",
+      "to": "ariadne"
+    }
+  ],
+  "example_solution": {
+    "counterevidence": [
+      "Water recovery is not proof of potable safety",
+      "Recovered nutrients do not establish edible food safety",
+      "Reduced annual energy does not prove blackout survivability",
+      "Recycling can concentrate contaminants",
+      "One economic gain cannot cancel protected rights or environmental harm"
+    ],
+    "falsification_tests": [
+      "Energy and mass balances including leakage",
+      "Paired contaminant assays across full service life",
+      "Critical-load outage and recovery trial",
+      "Independent longitudinal crop and substrate tests",
+      "Explicit community participation and independent rights review",
+      "Common-unit 20-year lifecycle comparison with uncertainty",
+      "Test independent human-relevant outcomes"
+    ],
+    "houses": [
+      {
+        "address": "H01",
+        "evidence": "NOT_VALIDATED",
+        "role": "DIRECT"
+      },
+      {
+        "address": "H02",
+        "evidence": "NOT_VALIDATED",
+        "role": "DIRECT"
+      },
+      {
+        "address": "H03",
+        "evidence": "NOT_VALIDATED",
+        "role": "DIRECT"
+      },
+      {
+        "address": "H04",
+        "evidence": "NOT_VALIDATED",
+        "role": "DIRECT"
+      },
+      {
+        "address": "H05",
+        "evidence": "NOT_VALIDATED",
+        "role": "ENABLER"
+      },
+      {
+        "address": "H06",
+        "evidence": "NOT_VALIDATED",
+        "role": "ENABLER"
+      },
+      {
+        "address": "H07",
+        "evidence": "NOT_VALIDATED",
+        "role": "ENABLER"
+      },
+      {
+        "address": "H08",
+        "evidence": "NOT_VALIDATED",
+        "role": "GATE"
+      },
+      {
+        "address": "H09",
+        "evidence": "NOT_VALIDATED",
+        "role": "GATE"
+      },
+      {
+        "address": "H10",
+        "evidence": "NOT_VALIDATED",
+        "role": "GATE"
+      },
+      {
+        "address": "H11",
+        "evidence": "NOT_VALIDATED",
+        "role": "GATE"
+      },
+      {
+        "address": "H12",
+        "evidence": "NOT_VALIDATED",
+        "role": "DIRECT"
+      }
+    ],
+    "id": "synthetic-regenerative-resource-hub",
+    "purpose": "Illustrative Earth-to-H12 cross-House review; no facility claims, costs, crop yields or interventions",
+    "status": "HYPOTHETICAL_NOT_VALIDATED"
+  },
+  "host_gates": [
+    {
+      "id": "SRC-DEPENDENCIES",
+      "state": "HELD"
+    },
+    {
+      "id": "SRC-LICENSE",
+      "state": "HELD"
+    },
+    {
+      "id": "AUTH-PRINCIPAL",
+      "state": "HELD"
+    },
+    {
+      "id": "AUTH-D1",
+      "state": "HELD"
+    },
+    {
+      "id": "AUTH-CALLBACK",
+      "state": "HELD"
+    },
+    {
+      "id": "A2A-INBOX",
+      "state": "HELD"
+    },
+    {
+      "id": "GRAPH-ACL",
+      "state": "HELD"
+    },
+    {
+      "id": "ORCS-REAL-DATA",
+      "state": "HELD"
+    },
+    {
+      "id": "WORK-CAS",
+      "state": "HELD"
+    },
+    {
+      "id": "PLAY-BOUNDARY",
+      "state": "HELD"
+    },
+    {
+      "id": "CANON-RATIFY",
+      "state": "HELD"
+    },
+    {
+      "id": "PUBLISH-OWNER",
+      "state": "HELD"
+    },
+    {
+      "id": "REPAIR-OBSERVED",
+      "state": "HELD"
+    }
+  ],
+  "hosted": false,
+  "modules": [
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "atlas-ui",
+      "purpose": "Existing web substrate and dated issue/PR inventory; not deployed by this package",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "atlas_main",
+        "atlas_workboard"
+      ],
+      "status": "SOURCE_INDEXED"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "ariadne",
+      "purpose": "Private evidence/work substrate, separately governed; no private data or authorization transported by this public candidate.",
+      "rights": "PRIVATE_PIN_ONLY",
+      "scope": "PRIVATE",
+      "source_ids": [
+        "ariadne07",
+        "openalex_frozen"
+      ],
+      "status": "SOURCE_INDEXED"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "science-discovery",
+      "purpose": "Private evidence/work substrate, separately governed; no private data or authorization transported by this public candidate.",
+      "rights": "PRIVATE_PIN_ONLY",
+      "scope": "PRIVATE",
+      "source_ids": [
+        "science_kit",
+        "ariadne07"
+      ],
+      "status": "TESTED_LOCAL"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "resident-rhythm",
+      "purpose": "Private evidence/work substrate, separately governed; no private data or authorization transported by this public candidate.",
+      "rights": "PRIVATE_PIN_ONLY",
+      "scope": "PRIVATE",
+      "source_ids": [
+        "resident_v1"
+      ],
+      "status": "TESTED_LOCAL"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "science-fabric",
+      "purpose": "Private evidence/work substrate, separately governed; no private data or authorization transported by this public candidate.",
+      "rights": "PRIVATE_PIN_ONLY",
+      "scope": "PRIVATE",
+      "source_ids": [
+        "science_fabric_v11"
+      ],
+      "status": "TESTED_LOCAL"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "swarmchat-host",
+      "purpose": "Work-only broker host requires identity/grants/permissions/deployment proof",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "noosphere_core"
+      ],
+      "status": "HELD_HOST"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "noosphere-contracts",
+      "purpose": "Merged source-only SwarmHub contracts, not hosted authority",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "noosphere_core"
+      ],
+      "status": "MERGED_SOURCE"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "uws-interop",
+      "purpose": "Historical 144-sphere source and provider adapter context",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "uws_early"
+      ],
+      "status": "SOURCE_INDEXED"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "provider-resolver",
+      "purpose": "Source-only zero-based coordinate validator; no automatic crosswalk",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "provider_coord"
+      ],
+      "status": "TESTED_LOCAL"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "sheldonbrain",
+      "purpose": "Historical 145/144+1 LCP and ingestion context",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "sheldon_lcp"
+      ],
+      "status": "SOURCE_INDEXED"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "goldentrace",
+      "purpose": "Trace emitter source; separate additive v1.1 PR in review",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "aluminum_trace"
+      ],
+      "status": "DRAFT_REVIEW"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "aluminum-os",
+      "purpose": "Historical distinct governance and ontology dialect",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "aluminum_ontology"
+      ],
+      "status": "SOURCE_INDEXED"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "orcs",
+      "purpose": "Physical research/engineering source with legacy taxonomy",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "orcs_h01",
+        "orcs_h12"
+      ],
+      "status": "SOURCE_INDEXED"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "manus-archive",
+      "purpose": "Historical source and dissent archive, non-authorizing",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "manus_candidate"
+      ],
+      "status": "SOURCE_INDEXED"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "atlas-foundation",
+      "purpose": "Historical public ontology filename is not JSON; source repair needed",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "foundation_placeholder"
+      ],
+      "status": "HELD_HOST"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "solution-evolution",
+      "purpose": "Proposed multi-source solution review & measured evolution loop, not hosted",
+      "rights": "PUBLIC_METADATA_ONLY",
+      "scope": "PUBLIC",
+      "source_ids": [
+        "atlas_main",
+        "noosphere_core"
+      ],
+      "status": "CANDIDATE_REVIEW"
+    },
+    {
+      "authority_effect": "NONE",
+      "canon": false,
+      "hosted": false,
+      "id": "h12-habitat-case",
+      "purpose": "Private evidence/work substrate, separately governed; no private data or authorization transported by this public candidate.",
+      "rights": "PRIVATE_PIN_ONLY",
+      "scope": "PRIVATE",
+      "source_ids": [
+        "ariadne07"
+      ],
+      "status": "CANDIDATE_REVIEW"
+    }
+  ],
+  "namespaces": [
+    {
+      "edition": "v0.7",
+      "id": "ariadne.v07",
+      "mapping_authority": "NONE",
+      "scheme": "H_S_N_1BASE",
+      "source_id": "ariadne07",
+      "visibility": "PRIVATE_PIN_ONLY"
+    },
+    {
+      "edition": "candidate-v0.1",
+      "id": "providers.0base",
+      "mapping_authority": "NONE",
+      "scheme": "H_S_N_0BASE",
+      "source_id": "provider_coord",
+      "visibility": "PUBLIC_REFERENCE_ONLY"
+    },
+    {
+      "edition": "historical",
+      "id": "orcs.legacy",
+      "mapping_authority": "NONE",
+      "scheme": "H_S_1BASE",
+      "source_id": "orcs_h01",
+      "visibility": "PUBLIC_REFERENCE_ONLY"
+    },
+    {
+      "edition": "v4.0-draft.6",
+      "id": "aluminum.draft4",
+      "mapping_authority": "NONE",
+      "scheme": "H_S_1BASE",
+      "source_id": "aluminum_ontology",
+      "visibility": "PUBLIC_REFERENCE_ONLY"
+    },
+    {
+      "edition": "v1.0",
+      "id": "sheldon.lcp1",
+      "mapping_authority": "NONE",
+      "scheme": "H_S_1BASE",
+      "source_id": "sheldon_lcp",
+      "visibility": "PUBLIC_REFERENCE_ONLY"
+    },
+    {
+      "edition": "v0.1",
+      "id": "uws.early",
+      "mapping_authority": "NONE",
+      "scheme": "GLOBAL_S_1BASE",
+      "source_id": "uws_early",
+      "visibility": "PUBLIC_REFERENCE_ONLY"
+    }
+  ],
+  "nonclaims": [
+    "No uniform 12-House vocabulary across historical sources",
+    "No automatic node or identity mapping",
+    "No real autonomous 1,728-resident population",
+    "No hosted integration proof",
+    "No CANON promotion, cost approval, or public release",
+    "No private Work/leisure body ingestion"
+  ],
+  "rhythm": {
+    "beats_per_cycle": 20,
+    "executed_model_turns": 0,
+    "forced_leisure": false,
+    "optional_nonwork_beats": 14,
+    "work_beats": 6
+  },
+  "schema": "atlas.one.project-fabric/v0.1",
+  "scope": "PUBLIC_METADATA_ONLY",
+  "sources": [
+    {
+      "description": "Owner-private source reference; raw bytes and exact digest are not published or authenticated by this public manifest.",
+      "digest": null,
+      "id": "ariadne07",
+      "kind": "PRIVATE_OPAQUE",
+      "publication_scope": "PRIVATE_PIN_ONLY",
+      "rights_effect": "NONE",
+      "url": null,
+      "validation": "REDACTED_METADATA_ONLY"
+    },
+    {
+      "description": "Owner-private source reference; raw bytes and exact digest are not published or authenticated by this public manifest.",
+      "digest": null,
+      "id": "openalex_frozen",
+      "kind": "PRIVATE_OPAQUE",
+      "publication_scope": "PRIVATE_PIN_ONLY",
+      "rights_effect": "NONE",
+      "url": null,
+      "validation": "REDACTED_METADATA_ONLY"
+    },
+    {
+      "description": "Owner-private source reference; raw bytes and exact digest are not published or authenticated by this public manifest.",
+      "digest": null,
+      "id": "science_kit",
+      "kind": "PRIVATE_OPAQUE",
+      "publication_scope": "PRIVATE_PIN_ONLY",
+      "rights_effect": "NONE",
+      "url": null,
+      "validation": "REDACTED_METADATA_ONLY"
+    },
+    {
+      "description": "Owner-private source reference; raw bytes and exact digest are not published or authenticated by this public manifest.",
+      "digest": null,
+      "id": "resident_v1",
+      "kind": "PRIVATE_OPAQUE",
+      "publication_scope": "PRIVATE_PIN_ONLY",
+      "rights_effect": "NONE",
+      "url": null,
+      "validation": "REDACTED_METADATA_ONLY"
+    },
+    {
+      "description": "Owner-private source reference; raw bytes and exact digest are not published or authenticated by this public manifest.",
+      "digest": null,
+      "id": "science_fabric_v11",
+      "kind": "PRIVATE_OPAQUE",
+      "publication_scope": "PRIVATE_PIN_ONLY",
+      "rights_effect": "NONE",
+      "url": null,
+      "validation": "REDACTED_METADATA_ONLY"
+    },
+    {
+      "description": "React/Vite/Firebase Atlas Intelligence source-facing summary",
+      "digest": "d115087a6c6a6271bb23227b75379ddcba17e1b0",
+      "id": "atlas_main",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/Atlas-Intelligence/blob/main/README.md",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Merged point-in-time GitHub backlog snapshot, not a live task query",
+      "digest": "165a59bfeefbeeeaf314b1db8b071e8f8de3f6af",
+      "id": "atlas_workboard",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/Atlas-Intelligence/blob/main/docs/ops/ATLAS_GITHUB_OPEN_SOURCE_CUT_20261122.json",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Merged source-only receipt-first SwarmHub contract",
+      "digest": "9eee852737e50dc361648c4f2e3167f3420a3ed5",
+      "id": "noosphere_core",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/noosphere-archive/blob/main/docs/SWARMHUB_CONTRACTS_v01.md",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Zero-based H00-H11 three-axis resolver source; no authority",
+      "digest": "81a37f771bf4415f9898123823479a2ad9e33fa0",
+      "id": "provider_coord",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/atlas-lattice-providers/blob/main/docs/COORDINATE_RESOLVER_CONTRACT.md",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Historical Aluminum OS 144-sphere 12x12 source, not universal Atlas authority",
+      "digest": "fb879f37dcffd3ac6d60a2e50bf3331ab985a5c9",
+      "id": "aluminum_ontology",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/aluminum-os/blob/master/docs/architecture/SOURCE_OF_TRUTH.md",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Historical GoldenTrace Python SHA3 chain emitter",
+      "digest": "7590ff007023ff4edeb2b62975adf6e3d622de1f",
+      "id": "aluminum_trace",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/aluminum-os/blob/master/kintsugi/sdk/golden_trace.py",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Historical ORCS H01 differs from Ariadne H01",
+      "digest": "17516ab06bdd09b5e45ef2477bc69915e19f34d6",
+      "id": "orcs_h01",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/blob/main/codebase-artifacts/houses/H01_philosophy_logic/manifest.yaml",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Historical ORCS H12 differs from Ariadne H12",
+      "digest": "1ccbd6837b8f8079b6cb34981ddcfadb2b481fba",
+      "id": "orcs_h12",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/blob/main/codebase-artifacts/houses/H12_law_governance/manifest.yaml",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Historical Sheldonbrain 145-lattice LCP; not Ariadne HSN",
+      "digest": "dff15d8da619ecd7e778a1005235d77c6ff5b15d",
+      "id": "sheldon_lcp",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/sheldonbrain-rag-api/blob/master/canonical/lattice_ontology.yaml",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Early global S001–S144 ontology; 12 Houses different meanings",
+      "digest": "c741715675c3fd0c5a3a4b318ad8aa2a099340be",
+      "id": "uws_early",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/uws/blob/uws-universal/ingestion/144_sphere_ontology_full.md",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Historical ontology candidate, not ratified or deployed",
+      "digest": "d7ba3f4c6d2ceb826200a51e3083010d36effb90",
+      "id": "manus_candidate",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/manus-artifacts/blob/master/archive/architecture/ontology/ATLAS_LATTICE_UNIFIED_ONTOLOGY_CANDIDATE_v0_3_3_2026-05-21.md",
+      "validation": "PINNED_METADATA_ONLY"
+    },
+    {
+      "description": "Public file with JSON suffix contains plain-text placeholder, not an ontology document",
+      "digest": "4b8e80c33482a35ed6ea9b1173cb5bf260d51362",
+      "id": "foundation_placeholder",
+      "kind": "GITHUB_BLOB_SHA1",
+      "publication_scope": "PUBLIC_REFERENCE_ONLY",
+      "rights_effect": "NONE",
+      "url": "https://github.com/atlaslattice/atlas-lattice-foundation/blob/main/KRAKOA_Habitat/Metadata/TermStore/12x12x12_Ontology.json",
+      "validation": "PINNED_METADATA_ONLY"
+    }
+  ],
+  "status": "SOURCE_ONLY_CANDIDATE"
+}
