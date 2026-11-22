@@ -9,3 +9,7 @@ This gates the public-source `docs/ops/ATLAS_GITHUB_OPEN_SOURCE_CUT_20261122.jso
 Missing records in a newer snapshot are **not** merges/closures. A real closure needs an independently fetched current GitHub issue/PR state, head SHA, execution/CI evidence as appropriate and accepted review gates. No user-private Work, Social, Play, Imagine, Quiet or Brain/Palace content should enter this index. All 1,728 Ariadne node addresses remain a separate ontology, not 1,728 completed tasks.
 
 Proposed scope: [Atlas Intelligence Workboard PR #3](https://github.com/atlaslattice/Atlas-Intelligence/pull/3), source-only already merged. This extension adds executable integrity checking, not a live-refresh job.
+
+## v0.1.1 numeric safety
+
+Reject Boolean aliases and negative per-repository quantities, even when Python considers `True == 1`. All counted records require exact nonnegative integer types. This is source-only validation, not a closure receipt.
