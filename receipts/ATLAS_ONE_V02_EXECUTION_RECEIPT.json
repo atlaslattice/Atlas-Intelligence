@@ -1,0 +1,41 @@
+{
+  "actual_human_review_receipts": 0,
+  "actual_model_calls": 0,
+  "actual_semantic_crosswalk_approvals": 0,
+  "actual_swarmchat_work_posts": 0,
+  "canon_changes": 0,
+  "circuit_events": 8,
+  "circuit_terminal_sha256": "5bec8616f83d53f6023f572a2d22af0fd6a920b0727a46a5550dcf92f751c939",
+  "crossrepo_upstream_source_acceptance": "CI_PENDING",
+  "date": "2026-11-22",
+  "deployments": 0,
+  "files_sha256": {
+    ".github/workflows/atlas-one-source-contracts.yml": "e007255af1a0ad002427d57a1899566f37781e6570f0ad0d08ffc897a54a283b",
+    "docs/interop/ATLAS_ONE_EVIDENCE_CIRCUIT_V02.md": "055033fbb09dc50dd64818d222761f19cb5316f1da7844e6c11d57804f8c52a8",
+    "interop/atlas_collision_h01.work.v0.2.json": "3ba83ffb8ae2d0b1d57981cb063f6d0983c44f6082a8257438a5d6ff7d4c320e",
+    "interop/atlas_contract_bridge.py": "825deb4d8d937e5da23b37070ba9928c73a3aedf5748e4b2ff1d7b7be4dd0931",
+    "interop/atlas_one_circuit.py": "d21719d8b190af7648185fe33b508906e7698cce2851e8e10abb1ae828d80b71",
+    "tests/test_atlas_contract_bridge.py": "367e8965cc730bc6afbdf0caa618d747575d4e101da99b2476a7024929c3d6da",
+    "tests/test_atlas_coordinate_sweep.py": "2e997156112f613c2301d0d0140e4306b96456be0b121233c4be8ee3e4146982",
+    "tests/test_atlas_one_circuit.py": "caa049dd37364f38c9ebaa65410aa7a54420f0599197484cc7b3ce5fd327e7ce"
+  },
+  "host_acceptance": "NOT_VERIFIED",
+  "private_bodies_ingested": 0,
+  "repository_cI_status": "NOT_YET_RUN",
+  "schema": "atlas.one.execution-receipt/v0.2",
+  "source_checksum_status": "SOURCE_INDEX_PINNED_NOT_LIVE_CONTENT_REVERIFIED",
+  "status": "TESTED_LOCAL_NOT_HOSTED",
+  "three_historical_2d_namespaces": {
+    "individual_address_shapes_checked": 144,
+    "namespaces_checked": 3
+  },
+  "total_valid_coordinate_shapes_exercised_per_full_sweep": 4032,
+  "two_dimensions_3d": {
+    "ariadne_address_shapes_checked": 1728,
+    "providers_0base_address_shapes_checked": 1728
+  },
+  "unit_tests": 154,
+  "unit_tests_result": "PASS",
+  "user_review": "ORDINARY_SOURCE_ENGINEERING_AUTHORIZED; NO RUNTIME/RIGHTS APPROVAL",
+  "uws_global_spheres_checked": 144
+}
