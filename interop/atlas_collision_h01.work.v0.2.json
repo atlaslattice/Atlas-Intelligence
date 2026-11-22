@@ -1,0 +1,67 @@
+{
+  "schema": "atlas.one.work-circuit/v0.2",
+  "id": "h01-ontology-edition-collision-20261122",
+  "input_scope": "PUBLIC_WORK_METADATA",
+  "raw_export_status": "raw_partial",
+  "raw_export_claim_complete": false,
+  "source_refs": ["orcs_h01", "aluminum_ontology"],
+  "operands": {
+    "A": {
+      "namespace": "orcs.legacy",
+      "edition": "historical",
+      "address": "H01.S03",
+      "role": "NODE",
+      "source_ref": "orcs_h01",
+      "label": "Historical ORCS H01: Philosophy and Logic",
+      "claim": "The source's H01 manifest identifies House 01 as Philosophy and Logic."
+    },
+    "B": {
+      "namespace": "aluminum.draft4",
+      "edition": "v4.0-draft.6",
+      "address": "H01.S03",
+      "role": "NODE",
+      "source_ref": "aluminum_ontology",
+      "label": "Aluminum OS H01: Science",
+      "claim": "The source's v4.0 draft lists H1 as Science; an H01 identifier here is edition-specific."
+    }
+  },
+  "synthesis": {
+    "relation": "EDITION_COLLISION_CANDIDATE",
+    "hypothesis": "A+B=C: two source-indexed ontologies reuse H01 with incompatible House semantics, therefore federation must retain edition-qualified coordinates and refuse same-as mapping until separately reviewed.",
+    "counterevidence": [
+      "Both House taxonomies may legitimately discuss overlapping subjects such as philosophy of science; a reviewed RELATED mapping is possible without an EQUIVALENT identity claim.",
+      "The Aluminum document is versioned as a draft; its source-authority description cannot automatically govern the Ariadne v0.7 ontology."
+    ],
+    "falsification_tests": [
+      "Compare full pinned H01 source definitions and separately signed crosswalk acceptance before attempting semantic joining.",
+      "Run a negative joining test: H01 alone must not conflate Philosophy and Logic with Science across editions.",
+      "Verify current source rights and revocation at each eventual Work reader and output action."
+    ],
+    "status": "CANDIDATE_UNREVIEWED",
+    "semantic_equivalence": false,
+    "independently_validated": false
+  },
+  "house_review": [
+    {"house":"H01","role":"DIRECT","evidence":"NOT_VALIDATED","score":null,"risk":"Ontology ambiguity can misclassify energy or physical-science claims."},
+    {"house":"H02","role":"ENABLER","evidence":"NOT_VALIDATED","score":null,"risk":"Water and food topics may be assigned to an incompatible historical House."},
+    {"house":"H03","role":"ENABLER","evidence":"NOT_VALIDATED","score":null,"risk":"Circular infrastructure records may inherit wrong ontology identities."},
+    {"house":"H04","role":"ENABLER","evidence":"NOT_VALIDATED","score":null,"risk":"Health evidence may be misrouted across namespaces."},
+    {"house":"H05","role":"DIRECT","evidence":"NOT_VALIDATED","score":null,"risk":"Publication, extraction and scientific review remain separate evidence states."},
+    {"house":"H06","role":"ENABLER","evidence":"NOT_VALIDATED","score":null,"risk":"A fabricated coordinate equivalence may cross a security access boundary."},
+    {"house":"H07","role":"ENABLER","evidence":"NOT_VALIDATED","score":null,"risk":"Financial conclusions cannot inherit authority from an ontology name."},
+    {"house":"H08","role":"GATE","evidence":"NOT_VALIDATED","score":null,"risk":"Translation across cultural knowledge systems can erase context."},
+    {"house":"H09","role":"GATE","evidence":"NOT_VALIDATED","score":null,"risk":"Epistemic disagreement must be preserved instead of auto-resolved."},
+    {"house":"H10","role":"GATE","evidence":"NOT_VALIDATED","score":null,"risk":"Community sources require explicit permission and representation."},
+    {"house":"H11","role":"GATE","evidence":"NOT_VALIDATED","score":null,"risk":"Rights revocation and consent take priority over archive continuity."},
+    {"house":"H12","role":"DIRECT","evidence":"NOT_VALIDATED","score":null,"risk":"Space and aerospace source meaning is not established by H12 in legacy ORCS."}
+  ],
+  "work_rhythm": {"beats_per_cycle":20,"work_beats":6,"nonwork_reserved":14,"nonwork_performed":0},
+  "review_state": "UNREVIEWED",
+  "host_state": "NOT_HOSTED",
+  "authority_effect": "NONE",
+  "canon": false,
+  "deployed": false,
+  "authenticated_principal": "NOT_VERIFIED",
+  "model_calls": 0,
+  "posted_messages": 0
+}
