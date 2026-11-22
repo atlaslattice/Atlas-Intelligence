@@ -1,0 +1,89 @@
+{
+  "batch": 12,
+  "entries": [
+    {
+      "turn": 34,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/64",
+        "title": "Fresh p–11B source-to-facility pipeline with explicit recovery boundaries",
+        "head_sha": "a080438ab6ff3321f13d8f8b29fcb00ec32c7f70",
+        "base": "gptwork/collector-evidence-v0-1",
+        "draft": true,
+        "state": "open",
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/issues/2",
+        "title": "Implement reusable cross-site ORCS simulator and test 84-module integration",
+        "state": "open",
+        "cross_repo": false
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_PARENT_BRANCH",
+        "NO_CURRENT_CI_EVIDENCE",
+        "SCIENCE_OR_AUTHORITY_REVIEW"
+      ],
+      "result": "HOLD",
+      "work_steps": 6,
+      "other_mode_slots": 14
+    },
+    {
+      "turn": 35,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/63",
+        "title": "Beyond Q v1.9: 350k total He3/T capture targets and continuous B fuel accounting",
+        "head_sha": "597ae386d185ed0fe812ffc3f3a1bb3af2b3f4f8",
+        "base": "research/beyond-q-reserve-dispatch-v1.8",
+        "draft": true,
+        "state": "open",
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/issues/1",
+        "title": "Define council operating modes and five-model performance hypothesis",
+        "state": "open",
+        "cross_repo": false
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_PARENT_BRANCH",
+        "NO_CURRENT_CI_EVIDENCE",
+        "SCIENCE_OR_AUTHORITY_REVIEW"
+      ],
+      "result": "HOLD",
+      "work_steps": 6,
+      "other_mode_slots": 14
+    },
+    {
+      "turn": 36,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/62",
+        "title": "Beyond Q v1.8: ARC power-basis reconciliation and three-year reserve/isotope dispatch",
+        "head_sha": "717d0e3da8b9e726b1861ef557d03a2c3d463655",
+        "base": "research/beyond-q-paired-annual-v1.7",
+        "draft": true,
+        "state": "open",
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/258",
+        "title": "Review: OpenAI Best-in-World candidate control surfaces",
+        "state": "open",
+        "cross_repo": true
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_PARENT_BRANCH",
+        "NO_CURRENT_CI_EVIDENCE",
+        "SCIENCE_OR_AUTHORITY_REVIEW"
+      ],
+      "result": "HOLD",
+      "work_steps": 6,
+      "other_mode_slots": 14
+    }
+  ]
+}
