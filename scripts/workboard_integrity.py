@@ -78,8 +78,15 @@ def audit(snapshot: dict[str,Any]) -> dict[str,Any]:
             if u in seen:errors.append('DUPLICATE_URL')
             seen.add(u);group[repo]+=1
         counts[kind]=dict(sorted(group.items()))
+    if (type(agg.get('open_issues_observed')) is not int or
+        type(agg.get('open_prs_observed')) is not int):
+        errors.append('AGGREGATE_COUNT_TYPE_INVALID')
     if agg.get('open_issues_observed')!=len(issues) or agg.get('open_prs_observed')!=len(prs):
         errors.append('AGGREGATE_COUNT_MISMATCH')
+    for field in ('issue_by_repo','pr_by_repo'):
+        d=agg.get(field)
+        if type(d) is not dict or any(type(v) is not int or v<0 for v in d.values()):
+            errors.append('PER_REPO_COUNT_TYPE_INVALID')
     if agg.get('issue_by_repo')!=counts['issue'] or agg.get('pr_by_repo')!=counts['pull_request']:
         errors.append('PER_REPO_COUNT_MISMATCH')
     sources=snapshot.get('sources')
