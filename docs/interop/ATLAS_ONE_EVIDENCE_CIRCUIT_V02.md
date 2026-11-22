@@ -36,7 +36,7 @@ python interop/atlas_fabric.py interop/atlas_project_manifest.v0.1.json --pretty
 python interop/atlas_one_circuit.py interop/atlas_collision_h01.work.v0.2.json --pretty
 ```
 
-`atlas_one_circuit.py` does not write the receipt; use shell redirection in an authorized local sandbox if it should be retained. Verify the replay chain with `verify_receipt` before interpreting the output. The hash is Python-local deterministic JSON encoding, **not RFC 8785, a signature, an authentication token, original-source completeness, or independent human review**.
+`atlas_one_circuit.py` does not write the receipt; use shell redirection in an authorized local sandbox if it should be retained. Verify the replay chain with `verify_receipt` before interpreting the output. The hash is Python-local deterministic JSON encoding, **not RFC 8785, a signature, an authentication token, original-source completeness, or independent human review**. Even if a malicious editor recomputes the full local chain, independent stage assertions reject counterfeit peer-read, hosted, mapping-approved, source-complete and CANON signals. An attacker able to rewrite all bytes may still produce a new structurally valid but unauthenticated source-only candidate; cryptographic signatures and authoritative originals remain separate requirements.
 
 ## Actual Noosphere and GoldenTrace source contracts (CI only)
 
@@ -55,7 +55,11 @@ Pinned public repo commit refs for CI:
 
 The Noosphere adapter deliberately maps a partial export to `INCOMPLETE_HELD` even when Noosphere's `validate_ingestion` reports `SOURCE_REPORTED_ONLY` for both partial and hashed source metadata. The adapter *never* upgrades a reported hash to independently verified source completeness. The GoldenTrace adapter links the Atlas circuit terminal digest to an existing local SHA3-256 event without claiming cross-runtime canonicalization, durable storage or signer authenticity.
 
-The GitHub workflow `atlas-one-source-contracts.yml` runs stdlib tests on Python 3.11 and 3.13 and checks pinned upstream public sources on 3.11. **Workflow execution is not asserted until real GitHub run logs and conclusions can be read back.**
+The GitHub workflow `atlas-one-source-contracts.yml` runs stdlib tests on Python 3.11 and 3.13 and checks pinned upstream public sources on 3.11. **As checked on 2026-11-22:** GitHub Actions attempted this workflow on PR #5. All three jobs immediately reported failure with `runner_id:0`, zero executable steps, and an unavailable job log. The jobs therefore **did not execute the test suite or checkout the pinned upstreams**. The root runner/account cause is not exposed by the available connector; `CI_FAILED_BEFORE_STEPS` is a host blocker, not an independently diagnosed source-code failure.
+
+## Actual local test results
+
+**161/161** standard-library regression tests passed on Python 3.13 in this bounded visit. The full coordinate-space test executes **4,032 unique edition-qualified address forms**: 1,728 Ariadne 1-based, 1,728 provider 0-based, 3 × 144 historical 2-D, and 144 global UWS spheres. These are syntax/index checks, **not** validated scientific node mappings. The source-only circuit performs eight actual local processing events with zero model calls and zero broker posts.
 
 ## Noncancelling House checks
 
