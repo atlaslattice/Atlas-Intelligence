@@ -241,6 +241,12 @@ def verify_receipt(receipt):
     """
     try:
         check(type(receipt) is dict and receipt.get('schema')=='atlas.one.circuit-receipt/v0.2','receipt_schema')
+        exact_fields(receipt,{'schema','packet_id','run_state','source_scope',
+            'authority_effect','post_count','actual_model_turns','human_review',
+            'peer_read','hosted','canon','deployed','attestation','events',
+            'terminal_sha256'},'receipt')
+        check(receipt.get('human_review')=='NOT_REQUESTED' and
+              receipt.get('peer_read')=='NOT_VERIFIED','false_review_receipt')
         check(receipt.get('run_state')=='LOCAL_PREPARED_UNPOSTED','receipt_state')
         check(receipt.get('source_scope')=='PUBLIC_WORK_METADATA','scope')
         check(receipt.get('authority_effect')=='NONE' and receipt.get('hosted') is False
@@ -262,6 +268,42 @@ def verify_receipt(receipt):
             check(record.get('sha256')==expected,'tampered_event')
             prev=expected
         check(prev==receipt.get('terminal_sha256'),'terminal_hash_mismatch')
+        stages=[x['payload'] for x in events]
+        check(stages[0].get('hosted') is False and stages[0].get('authority')=='NONE',
+              'fabric_event_not_inert')
+        check(stages[1].get('completeness')=='NOT_INDEPENDENTLY_ATTESTED',
+              'fabric_source_completeness_overclaimed')
+        check(stages[2].get('cross_namespace_same_as')=='NOT_AUTHORIZED',
+              'fabric_auto_equivalence')
+        for label in ('A','B'):
+            check(type(stages[2].get(label)) is dict and
+                  type(stages[2][label].get('source_ref')) is str and
+                  type(stages[2][label].get('claim_sha256')) is str,
+                  'fabric_operand_bad')
+        check(stages[2]['A']['namespace']!=stages[2]['B']['namespace'],
+              'cross_namespace_evidence_not_distinct')
+        check(stages[3].get('evaluation')=='CANDIDATE_UNREVIEWED',
+              'synthesis_self_promoted')
+        check(stages[4].get('preserved') is True and
+              type(stages[4].get('counterevidence_sha256')) is list and
+              len(stages[4]['counterevidence_sha256'])>=1 and
+              type(stages[4].get('falsification_sha256')) is list and
+              len(stages[4]['falsification_sha256'])>=1,'dissent_erased')
+        check(stages[5].get('cross_house_scoring')=='NOT_PERFORMED',
+              'unsupported_global_scoring')
+        roles=stages[5].get('roles')
+        evidence=stages[5].get('evidence')
+        expected_houses={f'H{i:02}' for i in range(1,13)}
+        check(type(roles) is dict and type(evidence) is dict and
+              set(roles)==expected_houses and set(evidence)==expected_houses and
+              all(x in {'DIRECT','ENABLER','GATE'} for x in roles.values()) and
+              set(evidence.values())=={'NOT_VALIDATED'},'house_review_not_independent')
+        check(stages[6].get('human_review')=='NOT_REQUESTED' and
+              stages[6].get('peer_read')=='NOT_VERIFIED' and
+              stages[6].get('authenticated_principal')=='NOT_VERIFIED' and
+              stages[6].get('work_room_post')=='NOT_ATTEMPTED' and
+              type(stages[6].get('held_host_gates')) is list and
+              bool(stages[6]['held_host_gates']), 'host_or_peer_read_overclaim')
         final=events[-1]['payload']
         check(final.get('result')=='LOCAL_PREPARED_UNPOSTED'
               and final.get('model_calls')==0 and final.get('authority_effect')=='NONE',
