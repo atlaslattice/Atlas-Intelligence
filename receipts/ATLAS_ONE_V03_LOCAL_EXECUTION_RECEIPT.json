@@ -1,0 +1,132 @@
+{
+  "schema": "atlas.one.global-integration-source-receipt/v0.3",
+  "observed_date": "2026-11-22",
+  "program": "ATLAS_ONE",
+  "status": "SOURCE_ONLY_EXECUTED_LOCALLY_NOT_HOSTED",
+  "authority": "NONE",
+  "canon_ratified": false,
+  "production_deployed": false,
+  "original_atlas_one_pr5_source_head": "c6f1c5a4aa9dc0a964867833d4a34cdc69790a74",
+  "original_atlas_one_files_source_hashes": {
+    "interop/atlas_fabric.py": "103e68021b8b6294e0f55c45481d6a840b760243",
+    "interop/atlas_one_circuit.py": "a6d3b0c6cd13291062fa494909dd9e4bd3d64e5a",
+    "interop/atlas_contract_bridge.py": "7ec1b4f6776f78c4b25586c6bf27392f9dd2e0ef",
+    "interop/atlas_project_manifest.v0.1.json": "0f7d679343cf079f30f6a39b21bbf76afcfbac9b",
+    "interop/atlas_collision_h01.work.v0.2.json": "af8ab59d013a812a2feaa338fd28fe7a9ca1bc34",
+    "interop/build_circuit_observatory.py": "03e614838e419024989498a210b762c39517db75",
+    "tests/test_atlas_fabric.py": "7a5b70dffdd28082bf932ed386c3e656820e05e6",
+    "tests/test_atlas_one_circuit.py": "65de521addd9f2de7f5a31f5307b2d60ee442683",
+    "tests/test_atlas_coordinate_sweep.py": "cab522c236cb397d4cf64252c23fd14e27bdb442",
+    "tests/test_atlas_contract_bridge.py": "ef3abcfd31d2821d3b45d4bebf8988e514c3493b"
+  },
+  "noosphere_public_source_git_blob": "70dc375cb7d6ed931b40c3b2b82642d5312cdcb3",
+  "atlas_one_python_tests_pass": 234,
+  "atlas_one_python_optimized_tests_pass": 234,
+  "source_only_noosphere_python_tests_pass": 188,
+  "source_linked_work_docket": {
+    "open_prs": 170,
+    "open_issues": 203,
+    "total": 373,
+    "repositories": 10,
+    "complete_public_search_pages": 5,
+    "source_snapshot_not_live": true
+  },
+  "reversible_coordinate_pairs_checked": 1728,
+  "physical_glyph_calibrations": 0,
+  "actual_atlas_v02_circuit_events": 8,
+  "actual_model_calls": 0,
+  "actual_broker_posts": 0,
+  "actual_new_pr_merges_from_router": 0,
+  "actual_new_issue_closures_from_router": 0,
+  "cross_repo_noosphere_call": "ACTUAL_PUBLIC_SOURCE_IMPORTED_LOCALLY",
+  "input": "SYNTHETIC_RAW_PARTIAL_METADATA",
+  "cross_repo_noosphere_result": "SOURCE_REPORTED_ONLY",
+  "local_receipt_sha256": "8281b35b472c99e4f2e31e88c863d73edcce68b3b5656cc7c7b00625671e0744",
+  "source_files_added": {
+    "docs/interop/ATLAS_ONE_V03_GLOBAL_INTEGRATION.md": {
+      "sha256": "f7896e332e4626b94d73e3a6c7925b02b563365a106e1e03a3508bbd9e3d9282",
+      "bytes": 7869
+    },
+    "docs/ops/ATLAS_ONE_CI_RUNNER_BLOCKER_OWNER_DECISION.md": {
+      "sha256": "e2702808ab485ffc3a19ec3fa119d3fce69201023fb68eae9ab1f5ab4a072b58",
+      "bytes": 1831
+    },
+    "docs/ops/ATLAS_ONE_GLOBAL_DOCKET_373_REVIEW_SUMMARY.md": {
+      "sha256": "7b7099e9b5b522304329c0ae6d101e28a44a3295b150148fc316e052af261a2e",
+      "bytes": 2528
+    },
+    "interop/atlas_one_unity/__init__.py": {
+      "sha256": "2d4d1aa568a5342510d0a748d3d35b891b8a18ba7ba993c7bef4a71e91b27e53",
+      "bytes": 808
+    },
+    "interop/atlas_one_unity/budget.py": {
+      "sha256": "c52c8eb13e64d1e34933d024a4c94b7dd7dac4e53234202ea878262c289f7d09",
+      "bytes": 1002
+    },
+    "interop/atlas_one_unity/circuit.py": {
+      "sha256": "e1fcce883d2f02444649750f004ccf63200bb07a37bee039e05b7e99dfcaa8ae",
+      "bytes": 3745
+    },
+    "interop/atlas_one_unity/coordinates.py": {
+      "sha256": "2aedbbef944b928aa7e4b913fc2fb5301a070898443ea5c68b94ddc85c311a13",
+      "bytes": 4052
+    },
+    "interop/atlas_one_unity/dashboard.py": {
+      "sha256": "2e85a9b2e2470b76e818281899af5070c548dd3aa248f6b0f078b15a1f585dfe",
+      "bytes": 11028
+    },
+    "interop/atlas_one_unity/demo.py": {
+      "sha256": "a2e8911e706043a3c9fec8b15b0c2580674e6bf0cff71cc98270ed55c032f0f8",
+      "bytes": 2675
+    },
+    "interop/atlas_one_unity/dispatch.py": {
+      "sha256": "50a83531ff11f34149bc8ef99cdc6d302cd6e461981b52d90d807e89549b5780",
+      "bytes": 5096
+    },
+    "interop/atlas_one_unity/docket.py": {
+      "sha256": "916664911328709cf1ae0d9fd3d6c244bd57adcbad75e74c845e6b70ae9c5950",
+      "bytes": 4285
+    },
+    "interop/atlas_one_unity/gate.py": {
+      "sha256": "fe90432b77409cc2373323967977f4928f87aaa83085caba168abd916a9a3beb",
+      "bytes": 3092
+    },
+    "tests/test_atlas_one_unity_circuit.py": {
+      "sha256": "3d244aea0890c5ab4ab8995ba24563b95ef9c945bcfe3226312d1be0dca28335",
+      "bytes": 4615
+    },
+    "tests/test_atlas_one_unity_coordinates.py": {
+      "sha256": "601cfa7fac78d88963f0ca80651c886b877a51ba6d981fa87b13097a2eccb758",
+      "bytes": 3279
+    },
+    "tests/test_atlas_one_unity_dashboard.py": {
+      "sha256": "4f62b839a4f3bd65b3a84457c53bfc5578f3f3935fe137b403273a702cc2bb15",
+      "bytes": 1249
+    },
+    "tests/test_atlas_one_unity_dispatch.py": {
+      "sha256": "79d9b9eb96230e312eb66753bde2ed29ddcd52fe5b3c9d416791eb5b63e16a34",
+      "bytes": 2010
+    },
+    "tests/test_atlas_one_unity_docket.py": {
+      "sha256": "c2a0691cda966d872bb81ec44aec5575fc6f22632d206d44bcadb8746825356e",
+      "bytes": 3901
+    },
+    "tests/test_atlas_one_unity_gate.py": {
+      "sha256": "dbd3b0142d08c30304dc5bbbd4e0eb4b93faf149c26e3b1c3d5bde57448a7cf0",
+      "bytes": 3551
+    }
+  },
+  "release_gates": {
+    "CI_RUNNER": "HELD",
+    "HOST_PRINCIPAL": "HELD",
+    "D1_RIGHTS": "HELD",
+    "CANON_GOVERNANCE": "HELD"
+  },
+  "external_source_or_private_plugin_code_committed": false,
+  "notes": [
+    "Git SHA-1 source pins authenticate bytes of observed blobs, not persons or rights",
+    "GitHub CI failed before recorded steps; no hosted test pass",
+    "Exact public data snapshot is not a current per-PR head/CI/review census",
+    "12 operational workstreams are lexical proposals, not twelve validated science houses"
+  ]
+}
