@@ -94,6 +94,18 @@ class FabricTests(unittest.TestCase):
         self.bad(lambda d:next(x for x in d['sources'] if x['kind']=='GITHUB_BLOB_SHA1').update(digest='f'*64))
     def test_36_private_source_cannot_have_url(self):
         self.bad(lambda d:d['sources'][0].update(url='https://example.org/secret'))
+    def test_37b_public_source_pointer_cannot_embed_raw_private_body(self):
+        # Existing validator checked raw_body only on private source kinds.
+        # Even a declared public GitHub blob is a POINTER, not raw-data authority.
+        for unsafe_key in ('raw_body', 'raw_text', 'raw_content', 'body',
+                           'private_text', 'transcript'):
+            with self.subTest(field=unsafe_key):
+                self.bad(lambda d:next(s for s in d['sources']
+                     if s['kind']=='GITHUB_BLOB_SHA1').update(
+                         {unsafe_key: 'FICTIONAL_PRIVATE_DO_NOT_EXPORT'}))
+                self.bad(lambda d:d['sources'][0].update(
+                         {unsafe_key: 'FICTIONAL_PRIVATE_DO_NOT_EXPORT'}))
+
     def test_37_private_source_body_cannot_be_released(self):
         self.bad(lambda d:d['sources'][0].update(raw_body='PRIVATE CONTENT'))
     def test_38_revoked_source_hold(self):
