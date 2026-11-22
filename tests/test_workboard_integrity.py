@@ -40,6 +40,15 @@ class WorkboardTests(unittest.TestCase):
     def test_duplicates(self):
         p=fixture();p['issues'].append(p['issues'][0]);p['aggregate']['open_issues_observed']=2;p['aggregate']['issue_by_repo']['atlaslattice/Atlas-Intelligence']=2
         self.assertIn('DUPLICATE_URL',self.verify(p)['errors'])
+    def test_bool_aggregate_count_rejected(self):
+        p=fixture();p['aggregate']['open_issues_observed']=True
+        self.assertIn('AGGREGATE_COUNT_TYPE_INVALID',self.verify(p)['errors'])
+    def test_bool_per_repo_count_rejected(self):
+        p=fixture();p['aggregate']['issue_by_repo']['atlaslattice/Atlas-Intelligence']=True
+        self.assertIn('PER_REPO_COUNT_TYPE_INVALID',self.verify(p)['errors'])
+    def test_negative_per_repo_count_rejected(self):
+        p=fixture();p['aggregate']['pr_by_repo']['atlaslattice/Atlas-Intelligence']=-1
+        self.assertIn('PER_REPO_COUNT_TYPE_INVALID',self.verify(p)['errors'])
     def test_stale_by_repo(self):
         p=fixture();p['aggregate']['issue_by_repo']={}
         self.assertIn('PER_REPO_COUNT_MISMATCH',self.verify(p)['errors'])
