@@ -132,7 +132,8 @@ def validate_sources(source):
             require(x.get('raw_body') is None,'private_source_body_exposed')
         if kind=='PUBLIC_REFERENCE':
             require(x.get('url') and isinstance(x.get('url'),str) and x['url'].startswith('https://'), 'public_reference_must_be_https')
-        require(x.get('revoked') is not True,'revoked_source_hold')
+        # A present non-boolean or null revocation marker is ambiguous, not a grant.
+        require(x.get('revoked', False) is False,'revoked_source_hold')
         require(x.get('rights_effect')=='NONE','source_receipt_does_not_grant_rights')
         require(x.get('validation') in {'PINNED_METADATA_ONLY','SOURCE_ONLY','OFFLINE_REPLAYED','REDACTED_METADATA_ONLY'},'unsupported_source_claim')
         result[sid]=x
