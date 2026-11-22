@@ -1,0 +1,103 @@
+{
+  "batch": 4,
+  "schema": "atlas.actual-50-work-macroturns/v0.1",
+  "entries": [
+    {
+      "cycle": 10,
+      "pr": {
+        "url": "https://github.com/atlaslattice/aluminum-os/pull/2",
+        "title": "feat: uws CLI + Kintsugi Weave CI — self-enforcing constitutional governance at the repo level",
+        "state": "open",
+        "head": "a274c5b4fb2676410ae3110a1df09a88dbcd31c1",
+        "base": "master",
+        "draft": true,
+        "mergeable": false,
+        "files": 28
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/aluminum-os/issues/6",
+        "title": "Define provider driver interface (uws canonical contract)",
+        "state": "open",
+        "cross_repo": false
+      },
+      "ci": [],
+      "held": [
+        "DRAFT",
+        "NOT_MERGEABLE",
+        "CI_UNOBSERVED",
+        "RELEASE_REVIEW_REQUIRED"
+      ],
+      "result": "HOLD",
+      "actual_work_beats": 6,
+      "other_slots": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "cycle": 11,
+      "pr": {
+        "url": "https://github.com/atlaslattice/Atlas-Intelligence/pull/2",
+        "title": "ATLAS ARI: GPT-centric UWS full-tool adapter with gated writes",
+        "state": "open",
+        "head": "0d914aa4b7498cf9b38afbce55a4135862bdb81b",
+        "base": "main",
+        "draft": true,
+        "mergeable": true,
+        "files": 8
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/256",
+        "title": "Bootstrap Continuity OS OpenAI-first synthesis repo",
+        "state": "open",
+        "cross_repo": true
+      },
+      "ci": [
+        {
+          "id": 38164465364,
+          "status": "completed",
+          "result": "failure"
+        }
+      ],
+      "held": [
+        "DRAFT",
+        "CI_FAILED",
+        "RELEASE_REVIEW_REQUIRED"
+      ],
+      "result": "HOLD",
+      "actual_work_beats": 6,
+      "other_slots": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "cycle": 12,
+      "pr": {
+        "url": "https://github.com/atlaslattice/Atlas-Intelligence/pull/1",
+        "title": "Atlas ARI v0.1 — two-brain validation, UWS/Sheldonbrain, receipt graph and Dream fabric",
+        "state": "open",
+        "head": "c8321b2993651277baefc593d0f0a08c12bb64c8",
+        "base": "main",
+        "draft": true,
+        "mergeable": true,
+        "files": 13
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/251",
+        "title": "OpenAI best-in-world plural lattice execution packet: no single source of truth, fossils preserved",
+        "state": "open",
+        "cross_repo": true
+      },
+      "ci": [
+        {
+          "id": 38163755628,
+          "status": "completed",
+          "result": "failure"
+        }
+      ],
+      "held": [
+        "DRAFT",
+        "CI_FAILED",
+        "RELEASE_REVIEW_REQUIRED"
+      ],
+      "result": "HOLD",
+      "actual_work_beats": 6,
+      "other_slots": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}
