@@ -1,41 +1,61 @@
 {
-  "actual_human_review_receipts": 0,
   "actual_model_calls": 0,
-  "actual_semantic_crosswalk_approvals": 0,
   "actual_swarmchat_work_posts": 0,
+  "authority_effect": "NONE",
+  "browser_render": "NOT_VERIFIED; STATIC_HTML_AND_JS_CHECKED",
   "canon_changes": 0,
+  "ci_cause": "NOT_DIAGNOSED; NO CODE-TEST EXECUTION OBSERVED",
+  "ci_job_conclusions": [
+    "failure",
+    "failure",
+    "failure"
+  ],
+  "ci_logs": "UNAVAILABLE_BLOB_NOT_FOUND",
+  "ci_runner_ids": [
+    0,
+    0,
+    0
+  ],
+  "ci_steps_per_job": [
+    0,
+    0,
+    0
+  ],
   "circuit_events": 8,
   "circuit_terminal_sha256": "5bec8616f83d53f6023f572a2d22af0fd6a920b0727a46a5550dcf92f751c939",
-  "crossrepo_upstream_source_acceptance": "CI_PENDING",
+  "coordinate_forms": {
+    "ariadne_onebase": 1728,
+    "global_spheres_uws": 144,
+    "historical_twod_across_three_namespaces": 432,
+    "provider_zerobase": 1728,
+    "total": 4032
+  },
+  "crossrepo_upstream_source_acceptance": "HELD_CI_NO_EXECUTED_STEPS",
   "date": "2026-11-22",
-  "deployments": 0,
   "files_sha256": {
     ".github/workflows/atlas-one-source-contracts.yml": "e007255af1a0ad002427d57a1899566f37781e6570f0ad0d08ffc897a54a283b",
-    "docs/interop/ATLAS_ONE_EVIDENCE_CIRCUIT_V02.md": "055033fbb09dc50dd64818d222761f19cb5316f1da7844e6c11d57804f8c52a8",
+    "docs/interop/ATLAS_ONE_EVIDENCE_CIRCUIT_V02.md": "264381b1fb4460466b296c5e031765dda4ae6473dd66f679ba8405cc2ad87881",
+    "interop/ATLAS_ONE_CIRCUIT_OBSERVATORY_OFFLINE_v02.html": "5570a0542623612a7d95bbee1750fb945d8ef1a89f5a45df9eca26510cab85d4",
     "interop/atlas_collision_h01.work.v0.2.json": "3ba83ffb8ae2d0b1d57981cb063f6d0983c44f6082a8257438a5d6ff7d4c320e",
     "interop/atlas_contract_bridge.py": "825deb4d8d937e5da23b37070ba9928c73a3aedf5748e4b2ff1d7b7be4dd0931",
-    "interop/atlas_one_circuit.py": "d21719d8b190af7648185fe33b508906e7698cce2851e8e10abb1ae828d80b71",
+    "interop/atlas_one_circuit.py": "862bfd73d60e757be8b9061a6e65137a3baac99bc0d1bef52239c44643f7a7a7",
+    "interop/build_circuit_observatory.py": "c705dee7cd83e4fc111255d4c21a4640a7d34392626767ba42abf6d476eefe8d",
+    "receipts/ATLAS_ONE_H01_LOCAL_CIRCUIT_RECEIPT.json": "fd5f94fd8ffcc7aa0d6bfa1da584675f6a39204a9cd719430a7e6376ac118d3d",
+    "receipts/atlas_one_v02_tests.log": "843b26e5223073b0a04fce0c0a7298858a41f6f51db52a07f23e3472e63269a9",
     "tests/test_atlas_contract_bridge.py": "367e8965cc730bc6afbdf0caa618d747575d4e101da99b2476a7024929c3d6da",
     "tests/test_atlas_coordinate_sweep.py": "2e997156112f613c2301d0d0140e4306b96456be0b121233c4be8ee3e4146982",
-    "tests/test_atlas_one_circuit.py": "caa049dd37364f38c9ebaa65410aa7a54420f0599197484cc7b3ce5fd327e7ce"
+    "tests/test_atlas_one_circuit.py": "bbf43fc60876672200e0ce73732c72e0bc2c6bc85a0e474c1737e0beb22f515a"
   },
-  "host_acceptance": "NOT_VERIFIED",
-  "private_bodies_ingested": 0,
-  "repository_cI_status": "NOT_YET_RUN",
+  "git_actions_run_id": 45065985670,
+  "hosted_deployments": 0,
+  "peer_read_receipts": 0,
+  "permission_claim": "NONE",
+  "pr": "https://github.com/atlaslattice/Atlas-Intelligence/pull/5",
+  "private_source_bodies_ingested": 0,
   "schema": "atlas.one.execution-receipt/v0.2",
-  "source_checksum_status": "SOURCE_INDEX_PINNED_NOT_LIVE_CONTENT_REVERIFIED",
+  "scientific_or_semantic_node_approvals": 0,
+  "source_integrity": "GITHUB_BLOB_SHA_MATCH_FOR_WRITTEN_FILES",
   "status": "TESTED_LOCAL_NOT_HOSTED",
-  "three_historical_2d_namespaces": {
-    "individual_address_shapes_checked": 144,
-    "namespaces_checked": 3
-  },
-  "total_valid_coordinate_shapes_exercised_per_full_sweep": 4032,
-  "two_dimensions_3d": {
-    "ariadne_address_shapes_checked": 1728,
-    "providers_0base_address_shapes_checked": 1728
-  },
-  "unit_tests": 154,
-  "unit_tests_result": "PASS",
-  "user_review": "ORDINARY_SOURCE_ENGINEERING_AUTHORIZED; NO RUNTIME/RIGHTS APPROVAL",
-  "uws_global_spheres_checked": 144
+  "unit_tests": 161,
+  "unit_tests_result": "PASS"
 }
