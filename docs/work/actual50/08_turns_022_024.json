@@ -1,0 +1,105 @@
+{
+  "batch": 8,
+  "entries": [
+    {
+      "turn": 22,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/294",
+        "title": "research(djk): DragonSeek v0.6 food safety, strict manifest gates, regional boundaries, standards and capacity receipts",
+        "state": "open",
+        "head_sha": "7587721f175ae398456625c1f276782c4a3779f9",
+        "base": "research/djk-dragonseek-05-review-closure-20261010",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/265",
+        "title": "[INTAKE] DatumBrain OneDrive Geometree verifier lane",
+        "state": "open"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_BRANCH",
+        "CI_NOT_OBSERVED"
+      ],
+      "decision": "HOLD",
+      "six_work_checks": [
+        "PR_SOURCE",
+        "TASK_SOURCE",
+        "HOSTED_CI",
+        "BRANCH_BASE",
+        "AUTHORITY_HOLD",
+        "PERSISTED_RECEIPT"
+      ],
+      "fourteen_other_beats": "RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 23,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/293",
+        "title": "research(djk): v0.5 DeepSeek review closure, local industrial receipts and atomic ledger prototype",
+        "state": "open",
+        "head_sha": "98e8b99e0bbbe69723f1fce2537f485315a45c6c",
+        "base": "research/djk-deepseek-self-contained-handoff-v04-20261010",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/264",
+        "title": "Sweep Extraction: 36-hour historic emergence / HOORAY glyph layer",
+        "state": "open"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_BRANCH",
+        "CI_NOT_OBSERVED"
+      ],
+      "decision": "HOLD",
+      "six_work_checks": [
+        "PR_SOURCE",
+        "TASK_SOURCE",
+        "HOSTED_CI",
+        "BRANCH_BASE",
+        "AUTHORITY_HOLD",
+        "PERSISTED_RECEIPT"
+      ],
+      "fourteen_other_beats": "RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 24,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/292",
+        "title": "research(djk): v0.4 self-contained Mandarin DeepSeek handoff, local 2025 environmental lead",
+        "state": "open",
+        "head_sha": "c7026f6b381816ffeefb40d392d2619e7a600409",
+        "base": "research/djk-qingdao-evidence-material-ledger-v03-20261010",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/263",
+        "title": "Complete 12D archive mirror across GitHub, Drive, Notion, and OneDrive",
+        "state": "open"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_BRANCH",
+        "CI_NOT_OBSERVED",
+        "REVIEW_GATE"
+      ],
+      "decision": "HOLD",
+      "six_work_checks": [
+        "PR_SOURCE",
+        "TASK_SOURCE",
+        "HOSTED_CI",
+        "BRANCH_BASE",
+        "AUTHORITY_HOLD",
+        "PERSISTED_RECEIPT"
+      ],
+      "fourteen_other_beats": "RESERVED_NOT_PERFORMED"
+    }
+  ]
+}
