@@ -43,19 +43,22 @@ export class AtomicJournal {
     try{return fn();}finally{closeSync(fd);unlinkSync(this.lock);}
   }
   inspect(runId){requireValid(typeof runId==='string'&&ID.test(runId),'JOURNAL_RUN_ID_INVALID');
-    const db=this.#load(),run=db.runs[runId];
+    const db=this.#load(),run=Object.hasOwn(db.runs,runId)?db.runs[runId]:null;
     return run?db.version===2?{...structuredClone(run),integrity:'UNATTESTED_LEGACY_REQUEST_BINDING'}:structuredClone(run):null;}
   list(){return Object.keys(this.#load().runs).sort();}
   record({runId,inputDigest,step,detail,requestId}){return this.#guard(()=>{
     requireValid(typeof runId==='string'&&ID.test(runId)&&typeof inputDigest==='string'&&SHA.test(inputDigest),'JOURNAL_ID_OR_DIGEST_INVALID');
     requireValid(typeof step==='string'&&/^[A-Z_]{3,40}$/.test(step)&&isObject(detail),'JOURNAL_STEP_OR_DETAIL_INVALID');
     requireValid(typeof requestId==='string'&&ID.test(requestId),'JOURNAL_REQUEST_ID_INVALID');
-    const db=this.#load();requireValid(db.version===3,'LEGACY_JOURNAL_WRITE_HOLD');let run=db.runs[runId];if(run)requireValid(run.inputDigest===inputDigest,'RUN_IDEMPOTENCY_CONFLICT');
+    // Snapshot getter-bearing or caller-mutable detail exactly once BEFORE
+    // the hash and persisted image are derived; they must share the same bytes.
+    const stableDetail=JSON.parse(canonical(detail));
+    const db=this.#load();requireValid(db.version===3,'LEGACY_JOURNAL_WRITE_HOLD');let run=Object.hasOwn(db.runs,runId)?db.runs[runId]:null;if(run)requireValid(run.inputDigest===inputDigest,'RUN_IDEMPOTENCY_CONFLICT');
     else run=db.runs[runId]={inputDigest,head:ZERO,events:[]};
     const old=run.events.find(e=>e.requestId===requestId);
-    if(old){requireValid(old.step===step&&digest(old.detail)===digest(detail),'REQUEST_IDEMPOTENCY_CONFLICT');return {replayed:true,seq:old.seq,head:run.head};}
+    if(old){requireValid(old.step===step&&digest(old.detail)===digest(stableDetail),'REQUEST_IDEMPOTENCY_CONFLICT');return {replayed:true,seq:old.seq,head:run.head};}
     const seq=run.events.length+1,prev=run.head;
-    const e={seq,step,detail,prev,requestId,hash:digest({runId,inputDigest,seq,step,detail,requestId,prev})};
+    const e={seq,step,detail:stableDetail,prev,requestId,hash:digest({runId,inputDigest,seq,step,detail:stableDetail,requestId,prev})};
     run.events.push(e);run.head=e.hash;this.#atomicWrite(db);return {replayed:false,seq,head:run.head};
   });}
   /** A sender never assumes lack of a local ACK means a remote operation did not commit. */
