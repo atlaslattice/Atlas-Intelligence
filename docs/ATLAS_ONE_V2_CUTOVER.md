@@ -22,7 +22,7 @@ ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/atlas.json npm --prefix packages
 ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/atlas.json npm run atlas:v2:serve-local
 ```
 
-Public CI cannot include the owner-private exact `atlas.json`; tests requiring it are intentionally skipped. An owner-local source-pinned run has 115/115 passing tests as of this candidate; absence of source bytes in public CI produces 92 passes and 23 deliberate skips. Do not call that hosted verification.
+Public CI cannot include the owner-private exact `atlas.json`; tests requiring it are intentionally skipped. An owner-local source-pinned run has 119/119 passing tests as of this candidate; absence of source bytes in public CI produces 96 passes and 23 deliberate skips. Do not call that hosted verification.
 
 ## Stage gates to supersede historical code
 
