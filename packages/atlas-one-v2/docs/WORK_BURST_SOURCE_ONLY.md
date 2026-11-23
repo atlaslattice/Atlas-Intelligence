@@ -46,3 +46,16 @@ The example creates 12 synthetic Work tasks with up to 4 independent operators p
 * Live SwarmChat broker: separate host, no automatic posting, no arbitrary count exemptions.
 
 **Keeper:** one visit may contain many *real* engineering operations; not a single artificial delta. Neither a big batch nor many tests grant authority.
+
+## Exact-source local verification (2026-11-23)
+
+The exact source files were fetched through the authenticated GitHub connector, reconstructed in the local Node 22.16.0 runtime, and verified using Git's blob-hash algorithm **before testing**:
+
+- src/work-burst.mjs Git blob SHA-1: 1978170e0f62f24d7afcab4a64d843236c2e46a7
+- test/work-burst.test.mjs Git blob SHA-1: 42a393c28ebbe0bf3b4c2aefabe1d63b6a676a32
+- 25/25 Node tests PASS normally and 25/25 PASS under node --jitless; zero skips.
+- 12 synthetic Work operations completed in 3 waves of 4; receipt SHA256 45581eabe8f80c305ef55e55c8b6fe8dd08f57a16bcf025c4f59342c23faccc1. No hosted effect.
+- 96 synthetic LOCAL operations completed in 8 waves of 12; observed test-handler overlap 12, receipt SHA256 ffb5b3161c508df4aa4b983460a5d62c18ace4d3713d575643c8d79d1f3cb045.
+- Included negative tests: private/no-harvest modes, dependency cycles, held prerequisites, resource locks, operator errors, output size, unauthorized status labels, unknown fields and deterministic replay digests.
+
+These are **TESTED_LOCAL** source code and fixtures, not proof of live model concurrency, actual host IAM, timeouts, GitHub Actions passing, multi-account privacy, broker message delivery, CANON, or deployment. No consumer should auto-execute unreviewed operator callbacks.
