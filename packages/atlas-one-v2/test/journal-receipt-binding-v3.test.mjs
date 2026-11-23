@@ -4,11 +4,11 @@ import {readFileSync,writeFileSync,mkdtempSync,existsSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {AtomicJournal} from '../src/journal.mjs';
-import {digest} from '../src/index.mjs';
+import {digest,canonical} from '../src/index.mjs';
 const newJournal=()=>{const dir=mkdtempSync(join(tmpdir(),'atlas-v3-'));const path=join(dir,'journal.json');return {path,j:new AtomicJournal(path)}};
 const p={runId:'example-run',inputDigest:'a'.repeat(64),step:'PREPARED',detail:{payload:'example'},requestId:'req-001'};
 const throws=(fn,code)=>assert.throws(fn,e=>e?.code===code);
-const edit=(path,modify)=>{const x=JSON.parse(readFileSync(path,'utf8'));modify(x);writeFileSync(path,JSON.stringify(x));};
+const edit=(path,modify)=>{const x=JSON.parse(readFileSync(path,'utf8'));modify(x);writeFileSync(path,canonical(x)+'\n');};
 test('fresh v3 binds all idempotency inputs to hash',()=>{
  const {j,path}=newJournal(),a=j.record(p);assert.equal(a.seq,1);const db=JSON.parse(readFileSync(path));assert.equal(db.version,3);
  assert.equal(db.runs[p.runId].events[0].hash,digest({runId:p.runId,inputDigest:p.inputDigest,seq:1,step:p.step,detail:p.detail,requestId:p.requestId,prev:'0'.repeat(64)}));

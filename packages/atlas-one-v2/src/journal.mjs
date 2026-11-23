@@ -22,7 +22,17 @@ export class AtomicJournal {
       if(!existsSync(this.file))this.#guard(()=>{if(!existsSync(this.file))this.#atomicWrite({version:3,runs:{}});});}
     requireValid(existsSync(this.file),'JOURNAL_MISSING');this.#load();
   }
-  #load(){let db;try{db=JSON.parse(readFileSync(this.file,'utf8'));}catch{throw new Hold('JOURNAL_CORRUPT');}
+  #load(){let db,raw;
+    try{raw=readFileSync(this.file);db=JSON.parse(raw.toString('utf8'));}
+    catch{throw new Hold('JOURNAL_CORRUPT');}
+    // Every first-party v3 writer emits exactly canonical(db) plus one LF.
+    // JSON.parse by itself discards duplicate/escaped object keys (including
+    // Unicode aliases) *before* any event hash can examine them. Compare the
+    // original bytes before granting even read-only journal access. Historical
+    // noncanonical v3 files are quarantined for separate forensic review,
+    // never rewritten or silently repaired here. v2 retains its separate
+    // explicit legacyRead/readOnly policy, not this v3 writer-byte contract.
+    if(db?.version===3)requireValid(raw.equals(Buffer.from(canonical(db)+'\n','utf8')),'JOURNAL_RAW_NONCANONICAL');
     requireValid(isObject(db)&&(db.version===2||db.version===3)&&isObject(db.runs),'JOURNAL_SCHEMA_INVALID');
     if(db.version===2)requireValid(this.readOnly&&this.legacyRead,'LEGACY_JOURNAL_HASH_UNBOUND');
     // Old v3 snapshots may contain individually valid effect preparation records
