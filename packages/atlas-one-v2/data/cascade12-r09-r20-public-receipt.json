@@ -1,0 +1,98 @@
+{
+  "counts": {
+    "actualCompletedMacroturnVisitsByCompiler": 0,
+    "actualIronEmpireCanonEdits": 0,
+    "actualNewModelWakesByCompiler": 0,
+    "actualProductionDeploymentsByCompiler": 0,
+    "fourSystemCandidateUpdates": 82944,
+    "housePerspectiveChecks": 248832,
+    "houseSyntheses": 144,
+    "integratedBuildSummaries": 12,
+    "nodeCyclePackets": 20736,
+    "optionalModeProtectedPackets": 5760,
+    "spherePerspectiveChecks": 2985984,
+    "sphereSyntheses": 1728,
+    "totalPerspectiveChecks": 3234816,
+    "workModeCandidatePackets": 14976
+  },
+  "cycles": [
+    {
+      "id": "R09",
+      "previousBuildSha256": "81a3a22c723a8d2c5e42b909363444ca384bc33d6e99cc2d412a30852f74f7fa",
+      "sha256": "644b9912ed6b86e9fd2bc120ec697e518277a3b811e80b00220927f7c45381c1"
+    },
+    {
+      "id": "R10",
+      "previousBuildSha256": "644b9912ed6b86e9fd2bc120ec697e518277a3b811e80b00220927f7c45381c1",
+      "sha256": "5d252b39e698be93617daacc813e4a7cd519c64fc25ee6ae35d9ca5b812976d9"
+    },
+    {
+      "id": "R11",
+      "previousBuildSha256": "5d252b39e698be93617daacc813e4a7cd519c64fc25ee6ae35d9ca5b812976d9",
+      "sha256": "40f1074884f498c0710119684a25bf7a66e09220569e03a60fe549e4f06931eb"
+    },
+    {
+      "id": "R12",
+      "previousBuildSha256": "40f1074884f498c0710119684a25bf7a66e09220569e03a60fe549e4f06931eb",
+      "sha256": "c83d4aab65cb5b5568be27e82dd43a3ede9f3de59e156bfe5d2f6b85fddaaf76"
+    },
+    {
+      "id": "R13",
+      "previousBuildSha256": "c83d4aab65cb5b5568be27e82dd43a3ede9f3de59e156bfe5d2f6b85fddaaf76",
+      "sha256": "b4b531829bea937bff0801fe048b628ee822650b738a92a8b502f6d8648a0730"
+    },
+    {
+      "id": "R14",
+      "previousBuildSha256": "b4b531829bea937bff0801fe048b628ee822650b738a92a8b502f6d8648a0730",
+      "sha256": "a5c04cc32eacf29a6f1a041c97fc1f5503098e498cb1f234992e6a821e8ad272"
+    },
+    {
+      "id": "R15",
+      "previousBuildSha256": "a5c04cc32eacf29a6f1a041c97fc1f5503098e498cb1f234992e6a821e8ad272",
+      "sha256": "850345a803f06715e7559cf266a2fd6fb4fa819d69d03eb65852dad74903558e"
+    },
+    {
+      "id": "R16",
+      "previousBuildSha256": "850345a803f06715e7559cf266a2fd6fb4fa819d69d03eb65852dad74903558e",
+      "sha256": "549f49db95a274e744bc51e93fc331730fb17c2616cec930609aa5d2a3f80003"
+    },
+    {
+      "id": "R17",
+      "previousBuildSha256": "549f49db95a274e744bc51e93fc331730fb17c2616cec930609aa5d2a3f80003",
+      "sha256": "7ed407b15ec2800cb5df2b8a571b14dd86561f1b0f159663544f2775500e60d8"
+    },
+    {
+      "id": "R18",
+      "previousBuildSha256": "7ed407b15ec2800cb5df2b8a571b14dd86561f1b0f159663544f2775500e60d8",
+      "sha256": "58f08079b30da522696c7184db87a5cfd7de06ad6ad815e603ff6c73a42988fd"
+    },
+    {
+      "id": "R19",
+      "previousBuildSha256": "58f08079b30da522696c7184db87a5cfd7de06ad6ad815e603ff6c73a42988fd",
+      "sha256": "44dccffac7fd7c60db06363e26eff3e29261e84448b8c053101a08c8bf7e5d11"
+    },
+    {
+      "id": "R20",
+      "previousBuildSha256": "44dccffac7fd7c60db06363e26eff3e29261e84448b8c053101a08c8bf7e5d11",
+      "sha256": "bccd2e3e09d60ea9e1476eefd52515011835f387f2ea24d9968c6d93df49588f"
+    }
+  ],
+  "nonClaims": [
+    "No model/resident wake by compiler",
+    "No hosted test, merge, deployment, CANON or independent scientific review",
+    "No consent or privacy authorization inferred from hashes"
+  ],
+  "originalPrivateCatalogSha256": "2540f702c020efbfaee0532e84face21394860e57e91749bf36f2b1a3f3c2843",
+  "perspectiveStorage": "ROW_DIGEST_CHAINS_PLUS_PRIVATE_SOURCE_MATRICES",
+  "schema": "atlas.cascade12.public-receipt/v1",
+  "security": {
+    "canDispatch": false,
+    "canPublish": false,
+    "canonEffect": "NONE",
+    "hostVerified": false,
+    "privateOriginalsCommitted": false
+  },
+  "sourceRegistrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "startingCircuit": "R08",
+  "status": "TWELVE_OFFLINE_COMPUTATIONAL_CIRCUITS_COMPLETE"
+}
