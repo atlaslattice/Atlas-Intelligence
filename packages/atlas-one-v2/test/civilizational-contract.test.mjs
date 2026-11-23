@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {ARIADNE_V07_SHA256,HOUSE_NAMES,prepareRoomProfile,prepareWorkSubscription,evaluateCanonHsnCandidate,evaluateTwelveHouseReadiness} from '../src/civilizational-contract.mjs';
+import {ARIADNE_V07_SHA256,HOUSE_NAMES,prepareRoomProfile,prepareWorkSubscription,evaluateCanonHsnCandidate,evaluateTwelveHouseReadiness,projectTypedHsnCoverage} from '../src/civilizational-contract.mjs';
 const caps={maxMessages:500,maxPerMember:30,maxHops:10,expiresMinutes:1440};
 const room={kind:'work',status:'open',roomId:'room-001',expiresAt:'2026-11-24T00:00:00Z'};
 const session={tenant:'tenant-001',account:'account-001',principal:'person-001',mode:'WORK',rightsEpoch:3};
@@ -36,3 +36,29 @@ test('unknown or double House is not 12D coverage',()=>{assert.equal(evaluateTwe
 test('empty rights and unsubstantiated reviewed house HOLD',()=>{assert.equal(evaluateTwelveHouseReadiness({material:true,impacts,rights:[],stocks}).status,'HOLD');assert.equal(evaluateTwelveHouseReadiness({material:true,impacts:impacts.map((v,i)=>i===5?{...v,sourceRefs:[]}:v),rights,stocks}).reason,'HOUSE_SOURCE_EVIDENCE_MISSING')});
 test('resource ledger must close with units',()=>{assert.equal(evaluateTwelveHouseReadiness({material:true,impacts,rights,stocks:stocks.map(s=>({...s,closing:109}))}).reason,'PHYSICAL_STOCK_NOT_CLOSED');assert.equal(evaluateTwelveHouseReadiness({material:true,impacts,rights,stocks:stocks.map(s=>({...s,unit:''}))}).status,'HOLD')});
 test('nonmaterial tasks need reason, not compulsory 12-house review',()=>{assert.equal(evaluateTwelveHouseReadiness({material:false}).status,'NOT_APPLICABLE_WITH_REASON_REQUIRED')});
+
+const synthetic1728=Array.from({length:12},(_,h)=>Array.from({length:12},(_,s)=>Array.from({length:12},(_,n)=>({
+  coordinate:`H${String(h+1).padStart(2,'0')}.S${String(s+1).padStart(2,'0')}.N${String(n+1).padStart(2,'0')}`,
+  kind:n<7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META',hasEvidence:h===0&&s===0&&n===0,
+  sourceRefs:h===0&&s===0&&n===0?['synthetic:source-001']:[]
+})))).flat(2);
+test('full candidate HSN projects 1728 into distinct 12D domain/method tracks',()=>{
+  const x=projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records:synthetic1728});
+  assert.equal(x.status,'STRUCTURAL_CANDIDATE_ONLY');assert.equal(x.houses.length,12);
+  assert.equal(x.houses[0].domain,84);assert.equal(x.houses[0].method,60);
+  assert.equal(x.houses[0].domainWithSource,1);assert.equal(x.houses[1].domainWithSource,0);
+  assert.equal(x.sourceBytesVerified,false);assert.equal(x.recoverableFrom12D,false);
+});
+test('projector holds partial and duplicated HSN records',()=>{
+  const args={registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256};
+  assert.equal(projectTypedHsnCoverage({...args,records:synthetic1728.slice(1)}).status,'HOLD');
+  assert.equal(projectTypedHsnCoverage({...args,records:[...synthetic1728.slice(1),synthetic1728[1]]}).status,'HOLD');
+});
+test('projector rejects incorrect epistemic/domain assignment',()=>{
+  const records=synthetic1728.map((v,i)=>i===8?{...v,kind:'DOMAIN_SPECIALIZATION'}:v);
+  assert.equal(projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records}).reason,'HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
+});
+test('claimed domain coverage without a source reference is held',()=>{
+  const records=synthetic1728.map((v,i)=>i===0?{...v,sourceRefs:[]}:v);
+  assert.equal(projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records}).reason,'HSN_SUPPORTED_WITHOUT_SOURCES');
+});
