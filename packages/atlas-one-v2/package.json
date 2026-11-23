@@ -13,12 +13,15 @@
     "./host": "./src/adapters.mjs",
     "./civilization": "./src/civilizational-contract.mjs",
     "./next144": "./src/next144.mjs",
-    "./iron-empire": "./src/iron-empire-circuit.mjs"
+    "./iron-empire": "./src/iron-empire-circuit.mjs",
+    "./twelvefold": "./src/twelvefold-port.mjs",
+    "./twelvefold/broker": "./src/twelvefold-broker-port.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "smoke": "node examples/quickstart.mjs",
-    "serve:local": "node src/serve-local.mjs"
+    "serve:local": "node src/serve-local.mjs",
+    "test:twelvefold": "node --test test/twelvefold-*.test.mjs"
   },
   "license": "MIT",
   "description": "Original OpenAI-native Atlas ONE 2.0 orchestration core: source-locked research, durable local checks, separate Work broker authority."
