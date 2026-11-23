@@ -35,3 +35,7 @@ The **owner-private** SQLite store retains these namespaces separately:
 - Evidence grade is `SOURCE_REPORTED_UNREVIEWED` until a specialist examines the individual claims' primary references, conflicts and domain appropriateness. Wikipedia is not itself the scientific primary literature source for STARS or fusion validation.
 
 Full page content or Wikimedia dump ingestion and large-scale crawling are intentionally **out of scope** for the initial plugin. For future scale, use Wikimedia's officially documented dumps or appropriately permissioned data distribution channel, with licensing, attribution, filtering and deletion policies.
+
+## Avoid hidden candidate-denominator errors
+
+The full database and owner-private JSONL preserve every topic-to-node candidate, not only the first eight. `inspect_topic_candidate_display` rejects duplicate T-IDs and forged accepted status, and returns `totalCandidates`, `primaryCandidates`, `alternateCandidates`, `visibleCandidates`, `omittedCandidates`, and `omittedPrimaryCandidates`. A preview limit or top-N ranking is never evidence that missing candidates are nonexistent. The offline viewer paginates every historical candidate (40 links per click) while retaining its original rank and unreviewed status.

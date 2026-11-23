@@ -6,7 +6,7 @@ Inputs are owner-private and intentionally not shipped in public code repositori
 """
 from __future__ import annotations
 import argparse,collections,csv,json,pathlib,sqlite3,sys
-from wikimedia_bridge import ARIADNE_SHA,initialize_evidence_db,digest,canonical,WikimediaHold
+from wikimedia_bridge import ARIADNE_SHA,initialize_evidence_db,digest,canonical,WikimediaHold,inspect_topic_candidate_display
 
 
 def generate(registry_path,crosswalk_path,r09_output_dir,output_dir,v09_src):
@@ -21,6 +21,8 @@ def generate(registry_path,crosswalk_path,r09_output_dir,output_dir,v09_src):
     by_node={n['hsn']:n for n in research_nodes}
     if set(by_node)!=set(reg['nodes']):raise WikimediaHold('MISMATCH_RESEARCH_NODE_IDS')
     out=pathlib.Path(output_dir);out.mkdir(parents=True,exist_ok=True)
+    if (out/'atlas_evidence_ontology.sqlite').exists():
+        raise WikimediaHold('EXISTING_PRIVATE_DATABASE_PROTECTED_USE_FRESH_OUTPUT_DIR')
     db=initialize_evidence_db(out/'atlas_evidence_ontology.sqlite')
     db.executescript('''
     CREATE TABLE IF NOT EXISTS hsn_nodes(hsn TEXT PRIMARY KEY,house TEXT NOT NULL,sphere TEXT NOT NULL,role TEXT NOT NULL,name TEXT NOT NULL,source_record_digest TEXT NOT NULL,source_registry_digest TEXT NOT NULL);
@@ -52,7 +54,12 @@ def generate(registry_path,crosswalk_path,r09_output_dir,output_dir,v09_src):
         meta=x['kind']=='EPISTEMIC_META'
         if not meta and record:has_domain_candidate+=1
         if not meta and not record:uncovered.append(k)
-        nodes.append({'coordinate':k,'sourceNodeName':x['name'],'sourceRole':x['kind'],
+        all_choices=[{'id':e['topicId'],'label':e['topicLabel'],'rank':e['rank'],
+            'status':'HISTORICAL_CANDIDATE_NOT_EQUIVALENCE'} for e in record] if not meta else []
+        display_counts=inspect_topic_candidate_display(all_choices,min(8,len(all_choices)))
+        nodes.append({'candidateDisplay':display_counts,
+          'allOpenalexCandidates':all_choices,
+          'coordinate':k,'sourceNodeName':x['name'],'sourceRole':x['kind'],
           'sphere':k[:7],'house':k[:3],'nodeSourceSHA256':x['source_record_sha256'],
           'openalexCandidateCount':len(record),'topOpenalexTopics':[{'id':e['topicId'],'label':e['topicLabel'],
             'rank':e['rank'],'status':'HISTORICAL_CANDIDATE_NOT_EQUIVALENCE'} for e in record[:8]] if not meta else [],

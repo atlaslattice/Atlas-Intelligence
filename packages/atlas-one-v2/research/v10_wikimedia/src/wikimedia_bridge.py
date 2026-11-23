@@ -52,6 +52,28 @@ def normalize_wikipedia_url(value, language='en'):
     safe=urllib.parse.quote(title.replace(' ','_'),safe='():,-')
     return {'language':language,'title':title,'articleUrl':f'https://{language}.wikipedia.org/wiki/{safe}'}
 
+def inspect_topic_candidate_display(candidates,visible_count=8):
+    """Prevent a truncated view from masquerading as the complete crosswalk.
+
+    This is a structural check of unreviewed candidates, NOT source-semantic review.
+    """
+    _ensure(isinstance(candidates,list) and len(candidates)<=4516,'TOPIC_CANDIDATE_COLLECTION_INVALID')
+    _ensure(isinstance(visible_count,int) and 0<=visible_count<=len(candidates),'VISIBLE_COUNT_INVALID')
+    ids=set();primaries=0
+    for item in candidates:
+        _ensure(_obj(item) and isinstance(item.get('id'),str) and TOPIC_ID.fullmatch(item['id']) and
+                isinstance(item.get('rank'),int) and 1<=item['rank']<=5 and item.get('status')=='HISTORICAL_CANDIDATE_NOT_EQUIVALENCE',
+                'CANDIDATE_ROW_INVALID')
+        _ensure(item['id'] not in ids,'DUPLICATE_TOPIC_NODE_CANDIDATE')
+        ids.add(item['id'])
+        if item['rank']==1:primaries+=1
+    shown=candidates[:visible_count]
+    return {'totalCandidates':len(candidates),'primaryCandidates':primaries,
+            'alternateCandidates':len(candidates)-primaries,'visibleCandidates':len(shown),
+            'omittedCandidates':len(candidates)-len(shown),
+            'omittedPrimaryCandidates':primaries-sum(x['rank']==1 for x in shown),
+            'allCandidatesUnreviewed':True,'semanticApproval':False}
+
 def openalex_topic_anchor(raw):
     """Recognize an authoritative *topic metadata* link, not a semantic HSN match."""
     _ensure(_obj(raw),'TOPIC_RECORD_INVALID')

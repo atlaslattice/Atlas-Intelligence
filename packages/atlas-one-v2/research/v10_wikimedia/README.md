@@ -13,7 +13,7 @@ This extends the original source-pinned Ariadne v0.7, Atlas ONE, SwarmChat and O
 5. **Wikidata Action API parser.** Revision-locks `Q...` identities, `enwiki` sitelink and a conservative allowlist of claims, carrying property IDs, rank, statement ID and number of reference entries. Structured Wikidata is CC0; individual statements are unreviewed and references are NOT independently verified. Person/biography class `Q5` is held for separate privacy review.
 6. **Private append-only SQLite evidence store** with typed namespaces: Ariadne HSN 1,728, OpenAlex topics 4,516, unreviewed topic→HSN candidate edges 22,580, arXiv route seeds 4,884, unassigned specialist roles 1,884; plus versioned Wikipedia/Wikidata source records, typed statements and candidate review receipts. **No CANON table or automatic normative promotion exists.**
 7. **Read-only provider transport** with fixed host/path allowlists, explicit opt-in, contact-bearing User-Agent, 3 second minimum spacing, max 3 requests per run, no redirects, no write APIs, and fail-stop on HTTP 429/503. It saves raw returned provider JSON only to an operator-chosen private directory; never automatically publishes it.
-8. **Accessible offline HTML explorer** with all 1,728 source names and historical topic candidates, exact node lookup, House/role filters, and all 12 audit perspectives. Runs without network access and never claims a Wikipedia page or Wikidata QID was fetched.
+8. **Accessible offline HTML explorer** with all 1,728 source names and **every one of the 22,580 historical topic-candidate edges** (paginated without losing denominator), exact node lookup, House/role filters, and all 12 audit perspectives. Nodes with hundreds of candidates retain the full primary/alternate count; no top-eight preview silently erases candidates. Runs without network access and never claims a Wikipedia page or Wikidata QID was fetched.
 
 ## Grounded counters
 
@@ -73,3 +73,7 @@ A publisher with *separate* actual authority can later provide preapproved Wikim
 ## Remaining release gates
 
 Host READ/RETURN rights, provider API connectivity, response format compatibility on real samples, correct rate/usage policy at deployment time, cross-account privacy/revocation tests, high-volume snapshot/dump licensing, scientific-review criteria, CI, and CANON/creative rights are **HELD**. Local passing tests prove only what was exercised locally.
+
+## Review correction: full topic denominators
+
+A live peer review identified the danger of top-N displays: H10.S05.N12 has 32 historical candidates (7 primary / 25 alternate), H04.S01.N02 has 203 (113 primary / 90 alternate), and H08.S01.N10 has 14 (1 primary / 13 alternate, including weak computer-graphics false friends). The v0.2 private compiler retains each **complete** candidate roster and verifies primary/alternate counts; the HTML explorer paginates all candidates in slices of 40, with an explicit visible/total/omitted counter. No topic automatically becomes a Wikidata QID or semantic match.

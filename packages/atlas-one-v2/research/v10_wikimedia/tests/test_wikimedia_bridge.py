@@ -27,6 +27,17 @@ def composed():
     return raw,anchor,w,p,e,c
 
 class Validity(unittest.TestCase):
+    def test_candidate_denominator_never_disappears(self):
+        rows=[{'id':f'T{10000+i}','rank':1 if i<7 else 2,'status':'HISTORICAL_CANDIDATE_NOT_EQUIVALENCE'} for i in range(32)]
+        r=inspect_topic_candidate_display(rows,5)
+        self.assertEqual((r['totalCandidates'],r['primaryCandidates'],r['alternateCandidates']),(32,7,25))
+        self.assertEqual((r['visibleCandidates'],r['omittedCandidates'],r['omittedPrimaryCandidates']),(5,27,2))
+    def test_duplicate_candidate_requires_hold(self):
+        row={'id':'T10346','rank':1,'status':'HISTORICAL_CANDIDATE_NOT_EQUIVALENCE'}
+        with self.assertRaises(WikimediaHold):inspect_topic_candidate_display([row,row],1)
+    def test_candidate_cannot_claim_semantic_equivalence(self):
+        row={'id':'T10346','rank':1,'status':'VERIFIED_SAME_AS'}
+        with self.assertRaises(WikimediaHold):inspect_topic_candidate_display([row],1)
     def test_topic_id_and_wikipedia_link(self):
         r=openalex_topic_anchor(source_records()[0]);self.assertEqual(r['topicId'],'T10346');self.assertEqual(r['article']['title'],TITLE)
     def test_wikipedia_link_absent_held_not_mapped(self):
