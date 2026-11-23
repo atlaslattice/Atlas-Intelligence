@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {fingerprint64,cutItems,planEvolution,verifyEvolution,SOURCE_BLOB} from '../scripts/atlas_source_cascade.mjs';
+import {fingerprint64,cutItems,planEvolution,verifyEvolution,planCompletion,SOURCE_BLOB} from '../scripts/atlas_source_cascade.mjs';
 
 const snapshot=JSON.parse(readFileSync(new URL('../docs/ops/ATLAS_GITHUB_OPEN_SOURCE_CUT_20261122.json',import.meta.url),'utf8'));
 const synthetic={
@@ -133,4 +133,33 @@ test('noncryptographic fingerprint never substitutes for signed evidence',()=>{
   assert.match(fingerprint64('source'),/^[a-f0-9]{16}$/);
   const p=planEvolution(synthetic,{pilot:1,expansion:1});
   assert.equal(p.summary.rights_or_canon_grants,0);
+});
+
+test('supplementary 220 candidate gates inherit the 1100-step root unchanged',()=>{
+  const base=planEvolution(snapshot);
+  const finish=planCompletion(snapshot,base);
+  assert.equal(finish.completion_steps.length,220);
+  assert.equal(finish.total_step_count,1320);
+  assert.equal(finish.completion_steps[0].previous_checksum64,base.final_checkpoint64);
+  assert.equal(finish.parent_checkpoint64,'b03d9322902e100a');
+  assert.equal(finish.final_checkpoint64,'32d8fcce0ee6cd28');
+});
+test('complete review-requirement coverage is balanced across 440 source items',()=>{
+  const end=planCompletion(snapshot);
+  assert.deepEqual(end.coverage,{source:440,rights:440,acceptance:440});
+  assert.equal(end.complete_candidate_gate_matrix,true);
+  assert.equal(end.actual_prs_merged,0);
+  assert.equal(end.actual_issues_closed,0);
+  assert.equal(end.approval_granted,false);
+});
+test('completion rejects a falsified 1100 source chain',()=>{
+  const r=planEvolution(snapshot);
+  r.pilot_rows[7].checksum64='0000000000000000';
+  assert.throws(()=>planCompletion(snapshot,r),/BASE_1100_REPLAY_HOLD/);
+});
+test('full 1320 record keys are unique even across the optional continuation',()=>{
+  const r=planEvolution(snapshot);
+  const extra=planCompletion(snapshot,r);
+  const rows=[...r.pilot_rows,...r.expansion_rows,...extra.completion_steps];
+  assert.equal(new Set(rows.map(x=>x.item_key+'/'+x.review_stage)).size,1320);
 });
