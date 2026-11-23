@@ -9,18 +9,18 @@ GitHub Actions fails before any hosted runner is assigned
 
 Hello GitHub Support,
 
-Every tested GitHub-hosted \`ubuntu-latest\` job under the three public Atlas
-repositories fails in about two seconds with \`runner_id=0\`, no runner name,
-\`steps=[]\`, no executed tests and no usable job logs.
+Every tested GitHub-hosted `ubuntu-latest` job under the three public Atlas
+repositories fails in about two seconds with `runner_id=0`, no runner name,
+`steps=[]`, no executed tests and no usable job logs.
 
 Most importantly we installed a new no-secrets, no-checkout, no-third-party
 Actions and no-application-dependency diagnostic on Atlas Intelligence's public
-\`main\`. It was automatically triggered only by its own file change.
+`main`. It was automatically triggered only by its own file change.
 - Commit: https://github.com/atlaslattice/Atlas-Intelligence/commit/a37b2069d350d743c438bd62a68e690770d936fc
 - Run: https://github.com/atlaslattice/Atlas-Intelligence/actions/runs/45240063934
 - Job / check run: 137921988371
 - Time: 2026-11-23 18:35:48–18:35:50 UTC
-- Result: \`completed/failure\`, \`runner_id=0\`, \`runner_name=""\`, \`steps=[]\`.
+- Result: `completed/failure`, `runner_id=0`, `runner_name=""`, `steps=[]`.
 
 Independent same-account examples:
 - Providers https://github.com/atlaslattice/atlas-lattice-providers/actions/runs/45237255178 (job 137912144365).
