@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {ARIADNE_V07_SHA256,HOUSE_NAMES,prepareRoomProfile,prepareWorkSubscription,evaluateCanonHsnCandidate,evaluateTwelveHouseReadiness,projectTypedHsnCoverage} from '../src/civilizational-contract.mjs';
 const caps={maxMessages:500,maxPerMember:30,maxHops:10,expiresMinutes:1440};
-const room={kind:'work',status:'open',roomId:'room-001',expiresAt:'2026-11-24T00:00:00Z'};
+const room={kind:'work',status:'open',tenant:'tenant-001',account:'account-001',roomId:'room-001',expiresAt:'2026-11-24T00:00:00Z'};
 const session={tenant:'tenant-001',account:'account-001',principal:'person-001',mode:'WORK',rightsEpoch:3};
-const join={roomId:'room-001',account:'account-001',principal:'person-001',rightsEpoch:3,authenticatedByHost:true};
-const consent={optIn:true,roomId:'room-001',principal:'person-001',purpose:'WORK_EVENT',termsDigest:'a'.repeat(64)};
+const join={roomId:'room-001',tenant:'tenant-001',account:'account-001',principal:'person-001',rightsEpoch:3,authenticatedByHost:true};
+const consent={optIn:true,roomId:'room-001',tenant:'tenant-001',account:'account-001',rightsEpoch:3,principal:'person-001',purpose:'WORK_EVENT',termsDigest:'a'.repeat(64)};
 const now=Date.parse('2026-11-23T12:00:00Z');
 const clause={edition:'compiled-2026-11-14',sourceDigest:'b'.repeat(64),coordinate:'D-004',clauseDigest:'c'.repeat(64)};
 const node={registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,coordinate:'H08.S01.N01',nodeDigest:'d'.repeat(64),name:'Music theory'};
@@ -63,4 +63,29 @@ test('projector rejects incorrect epistemic/domain assignment',()=>{
 test('claimed domain coverage without a source reference is held',()=>{
   const records=synthetic1728.map((v,i)=>i===0?{...v,sourceRefs:[]}:v);
   assert.equal(projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records}).reason,'HSN_SUPPORTED_WITHOUT_SOURCES');
+});
+
+// Source-only cross-scope negatives. These tests do NOT attest live host consent.
+test('consent binds tenant, account and current rights epoch',()=>{
+  for(const malformed of [
+    {...consent,tenant:'tenant-002'},
+    {...consent,account:'account-002'},
+    {...consent,rightsEpoch:2},
+    (({tenant,...other})=>other)(consent),
+    (({account,...other})=>other)(consent),
+    (({rightsEpoch,...other})=>other)(consent)
+  ]) assert.equal(prepareWorkSubscription({room,join,consent:malformed,hostSession:session,nowMs:now}).reason,'EXPLICIT_ROOM_EVENT_CONSENT_REQUIRED');
+});
+test('host-reported room scope must match session even with otherwise valid join',()=>{
+  for(const changed of [{...room,tenant:'tenant-002'},{...room,account:'account-002'},(({tenant,...other})=>other)(room),(({account,...other})=>other)(room)])
+    assert.equal(prepareWorkSubscription({room:changed,join,consent,hostSession:session,nowMs:now}).reason,'WORK_ROOM_SCOPE_MISMATCH');
+});
+test('joined membership binds tenant as well as account, principal and epoch',()=>{
+  for(const changed of [{...join,tenant:'tenant-002'},(({tenant,...other})=>other)(join)])
+    assert.equal(prepareWorkSubscription({room,join:changed,consent,hostSession:session,nowMs:now}).reason,'HOST_JOIN_REQUIRED');
+});
+test('valid correctly scoped consent stays preparation-only',()=>{
+  const v=prepareWorkSubscription({room,join,consent,hostSession:session,nowMs:now});
+  assert.equal(v.status,'PREPARED_NOT_APPLIED');assert.equal(v.scope.tenant,consent.tenant);assert.equal(v.scope.account,consent.account);assert.equal(v.scope.rightsEpoch,consent.rightsEpoch);
+  assert.equal(v.subscriptionInstalled,false);assert.equal(v.modelWoke,false);
 });
