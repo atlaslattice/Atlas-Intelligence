@@ -1,5 +1,6 @@
 # Element 145 / ATLAS
 
+> **Atlas ONE v2 replacement (review candidate):** the original OpenAI-native orchestration source is in [packages/atlas-one-v2](packages/atlas-one-v2/). It supersedes the architecture of the historical Firebase/Gemini prototype after owner-publisher acceptance, not before. `npm run atlas:v2:test` runs source-level tests; `ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/atlas.json npm run atlas:v2:serve-local` starts the local-only preview. The historical `server.ts` provider route is a **mock**, not verified model execution. The v2 code is not yet mounted in the hosted SwarmChat Site or authorized for public data movement. See [cutover gates](docs/ATLAS_ONE_V2_CUTOVER.md).\n\n
 Firebase-backed multi-provider AI substrate with strict data-layer invariants. Currently routing primary calls to Gemini; multi-provider proxy scaffold ready for SDK wiring.
 
 Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. This kernel is different.
