@@ -1,0 +1,30 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {ARIADNE_V07_SHA256,PUBLIC_FICTION_SOURCE_IDS,IRON_HOUSE_REVIEW_LENSES,
+ validatePinnedAriadneV07,proposeIronEmpireNode,compilePinnedIronEmpireCandidates,previewIronEmpireContinuityEvent} from '../src/iron-empire-circuit.mjs';
+const digest='a'.repeat(64);
+const good={eventId:'IE-event-001',fictional:true,mode:'WORK',sourceId:PUBLIC_FICTION_SOURCE_IDS[1],chapter:'Film III',year:2090,kind:'MARS_MAIN_RESTORATION'};
+test('t01 exact frozen registry source ID unchanged',()=>assert.match(ARIADNE_V07_SHA256,/^[a-f0-9]{64}$/));
+test('t02 twelve distinct House lenses',()=>assert.equal(IRON_HOUSE_REVIEW_LENSES.length,12));
+test('t03 five public WORK source IDs',()=>assert.equal(new Set(PUBLIC_FICTION_SOURCE_IDS).size,5));
+test('t04 raw source required (no prepared registry dict)',()=>assert.equal(validatePinnedAriadneV07({}).status,'HOLD'));
+test('t05 fake raw bytes denied',()=>assert.equal(validatePinnedAriadneV07(Buffer.from('{}')).reason,'SOURCE_DIGEST_MISMATCH'));
+test('t06 compilation fails closed without pinned source bytes',()=>assert.equal(compilePinnedIronEmpireCandidates(Buffer.from('{}')).status,'HOLD'));
+test('t07 H08 musical subject is subject bound, not PMU',()=>{const x=proposeIronEmpireNode({coordinate:'H08.S01.N10',nodeName:'Instrument design',nodeDigest:digest});assert.match(x.question,/Instrument design/);assert.match(x.storyTopic,/cultural/);assert.equal(x.realWorldScienceVerified,false)});
+test('t08 no false room, Work macroturn or CANON claim',()=>{const x=proposeIronEmpireNode({coordinate:'H01.S01.N01',nodeName:'Mechanics of matter',nodeDigest:digest});assert.equal(x.posted,false);assert.equal(x.actualWorkMacroturnCompleted,false);assert.equal(x.canonEffect,'NONE');assert.equal(x.privateModeIngestion,'FORBIDDEN')});
+test('t09 H02 source is Mars author correction',()=>{const x=proposeIronEmpireNode({coordinate:'H02.S01.N01',nodeName:'Agronomy',nodeDigest:digest});assert.equal(x.fictionSource,'IRON-MARS-DELTA-20261106-v01')});
+test('t10 H11 Qverse rights is fictional, never legal right',()=>{const x=proposeIronEmpireNode({coordinate:'H11.S01.N01',nodeName:'International human rights',nodeDigest:digest});assert.equal(x.realWorldScienceVerified,false);assert.equal(x.storyCanonEffect,'NONE')});
+test('t11 wrong ontology edition denied',()=>assert.equal(proposeIronEmpireNode({coordinate:'H01.S01.N01',nodeName:'Mechanics of matter',nodeDigest:digest,sourceEdition:'v0.6'}).status,'HOLD'));
+test('t12 wrong node digest denied',()=>assert.equal(proposeIronEmpireNode({coordinate:'H01.S01.N01',nodeName:'Mechanics of matter',nodeDigest:'xx'}).status,'HOLD'));
+test('t13 wrong coordinate denied',()=>assert.equal(proposeIronEmpireNode({coordinate:'H00.S01.N01',nodeName:'Danger',nodeDigest:digest}).status,'HOLD'));
+test('t14 Film II major restoration kept as conflict',()=>assert.equal(previewIronEmpireContinuityEvent({...good,chapter:'Film II'}).reason,'MARS_RESTORATION_CHAPTER_CONFLICT'));
+test('t15 Film III restoration is candidate only',()=>{const x=previewIronEmpireContinuityEvent(good);assert.equal(x.status,'FICTION_CONTINUITY_CANDIDATE_UNREVIEWED');assert.equal(x.timelineAccepted,false)});
+test('t16 author-directed ancient Mars prequel located in Film II',()=>assert.equal(previewIronEmpireContinuityEvent({...good,kind:'MARS_ANCIENT_PREQUEL',chapter:'Film III'}).reason,'MARS_PREQUEL_CHAPTER_CONFLICT'));
+test('t17 invented pre-2069 restoration held',()=>assert.equal(previewIronEmpireContinuityEvent({...good,year:1200}).status,'HOLD'));
+test('t18 speculative technology cannot become real-world proof',()=>assert.equal(previewIronEmpireContinuityEvent({...good,realWorldEstablished:true}).reason,'CLIENT_CLAIMED_AUTHORITY_NOT_ALLOWED'));
+test('t19 self-reported story CANON ratification rejected',()=>assert.equal(previewIronEmpireContinuityEvent({...good,canonApproved:true}).reason,'CLIENT_CLAIMED_AUTHORITY_NOT_ALLOWED'));
+test('t20 no private mode admitted',()=>assert.equal(previewIronEmpireContinuityEvent({...good,mode:'PLAY'}).status,'HOLD'));
+test('t21 unknown lore source denied',()=>assert.equal(previewIronEmpireContinuityEvent({...good,sourceId:'private-palace'}).status,'HOLD'));
+test('t22 negative chapter check',()=>assert.equal(previewIronEmpireContinuityEvent({...good,chapter:'Film VII'}).status,'HOLD'));
+test('t23 fictional AI personhood claims not real',()=>{const x=previewIronEmpireContinuityEvent({...good,sourceId:'IRON-QVERSE-20261030-v02',kind:'QVERSE_SOCIETY'});assert.equal(x.realWorldScienceVerified,false)});
+
+test('t24 cannot forge source authority from a naked prepared node',()=>{const x=proposeIronEmpireNode({coordinate:'H07.S01.N01',nodeName:'Pretend business source',nodeDigest:digest});assert.equal(x.status,'SOURCE_ONLY_FICTION_WORK_CANDIDATE_NOT_CANON');assert.equal(x.sourceContentsVerified,false);assert.equal(x.hostAuthenticated,false)});
