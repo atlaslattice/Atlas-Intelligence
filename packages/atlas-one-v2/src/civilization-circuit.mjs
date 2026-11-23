@@ -20,8 +20,8 @@ function hold(reason){return {schema:'atlas.civilization.readonly-result/v1',sta
 function checkDigest(x){return typeof x==='string'&&SHA.test(x);}
 
 export class CivilizationCircuit {
-  #registry;#nodes;#spheres;#houses;#manifest;
-  constructor({originalAriadneBytes,manifest,nodeRecords,sphereReviews,houseFollowups}={}){
+  #registry;#nodes;#spheres;#houses;#houseSphere;#manifest;
+  constructor({originalAriadneBytes,manifest,nodeRecords,sphereReviews,houseFollowups,houseSphereFollowups}={}){
     this.#registry=new AriadneRegistry(originalAriadneBytes);
     // The entire trusted hierarchy is read ONLY AFTER AriadneRegistry verified original bytes.
     const originalHierarchy=JSON.parse(Buffer.from(originalAriadneBytes).toString('utf8'));
@@ -31,13 +31,17 @@ export class CivilizationCircuit {
       &&manifest.pairEvaluations===248832&&manifest.homeStructural===1728
       &&manifest.externalPerspectiveEvaluations===247104
       &&manifest.nodePassRecords===1728&&manifest.sphereReviewRecords===144
-      &&manifest.houseFollowups===12&&manifest.domain===1008&&manifest.epistemicMeta===720
+      &&manifest.houseFollowups===12&&manifest.houseSphereFollowups===1728
+      &&manifest.houseSphereReferencedPositionsNotFresh===2985984
+      &&manifest.totalLogicalPositionsIncludingReusedHouseReferences===3234816
+      &&manifest.domain===1008&&manifest.epistemicMeta===720
       &&manifest.genuineResidentMacroturns===0&&manifest.peerReviewsVerified===0
       &&manifest.semanticallyAcceptedCrossLinks===0&&manifest.siteDeployments===0,
       'CIRCUIT_MANIFEST_NOT_SOURCE_LOCKED');
     requireValid(Array.isArray(nodeRecords)&&nodeRecords.length===1728
       &&Array.isArray(sphereReviews)&&sphereReviews.length===144
-      &&Array.isArray(houseFollowups)&&houseFollowups.length===12,
+      &&Array.isArray(houseFollowups)&&houseFollowups.length===12
+      &&Array.isArray(houseSphereFollowups)&&houseSphereFollowups.length===1728,
       'CIRCUIT_REVIEW_INVENTORY_INCOMPLETE');
     const nmap=new Map(),smap=new Map(),hmap=new Map();
     for(let i=0;i<nodeRecords.length;i++){
@@ -88,13 +92,37 @@ export class CivilizationCircuit {
         'CIRCUIT_HOUSE_SOURCE_OR_AUTHORITY_CONFLICT');
       hmap.set(h.houseId,h);
     }
+    const fmap=new Map();
+    for(const f of houseSphereFollowups){
+      const key=typeof f?.sphereUnderReview==='string'&&typeof f?.housePerspective==='string'
+        ?`${f.sphereUnderReview}::${f.housePerspective}`:null;
+      const sphere=smap.get(f?.sphereUnderReview),house=hmap.get(f?.housePerspective);
+      const exactRole=sphere?.roleCounts?.DOMAIN_SPECIALIZATION===12?'DOMAIN_SUBJECT':'EPISTEMIC_METHOD';
+      requireValid(valid(f)&&key===f.followupId&&!fmap.has(key)&&sphere&&house
+        &&f.sourceSHA256===HSN_SHA256&&f.sourceEdition==='Ariadne v0.7'
+        &&f.sphereName===sphere.sphereName&&f.housePerspectiveName===house.houseName
+        &&f.sphereReviewSHA256===sphere.receiptSHA256
+        &&f.houseReviewSHA256===house.receiptSHA256
+        &&f.sphereRole===exactRole&&f.homeNodeCount===12
+        &&f.existingSphereEvidenceEvaluationsReferenced===1728
+        &&f.referenceReusedNotFreshComputation===true
+        &&f.semanticGate===(exactRole==='EPISTEMIC_METHOD'?'EPISTEMIC_METHOD_ONLY_NOT_SAME_AS':'DOMAIN_CANDIDATE_NOT_SAME_AS')
+        &&f.humanReviewCount===0&&f.residentAuthenticated===false
+        &&f.actualMacroturnCompleted===false&&f.workPostPerformed===false
+        &&f.modelCallPerformed===false&&f.canonEffect==='NONE'
+        &&f.creativeEffect==='NONE'&&validReceipt(f),
+        'CIRCUIT_HOUSE_SPHERE_SOURCE_OR_AUTHORITY_CONFLICT');
+      fmap.set(key,f);
+    }
+    requireValid(fmap.size===1728,'CIRCUIT_HOUSE_SPHERE_COVERAGE_INCOMPLETE');
     requireValid(nmap.size===1728&&smap.size===144&&hmap.size===12,'CIRCUIT_SOURCE_COVERAGE_INCOMPLETE');
-    this.#manifest=manifest;this.#nodes=nmap;this.#spheres=smap;this.#houses=hmap;
+    this.#manifest=manifest;this.#nodes=nmap;this.#spheres=smap;this.#houses=hmap;this.#houseSphere=fmap;
     Object.freeze(this);
   }
   status(){return {schema:'atlas.civilization.source-status/v1',sourceSHA256:HSN_SHA256,
     sourceEdition:'Ariadne v0.7',nodes:this.#nodes.size,spheres:this.#spheres.size,
     houses:this.#houses.size,comparisons:this.#manifest.pairEvaluations,
+    houseSphereFollowups:this.#houseSphere.size,reusedPositionReferences:this.#manifest.houseSphereReferencedPositionsNotFresh,
     actualMacroturns:0,rights:'NO_HOSTED_IAM',workPosting:'DISABLED',
     science:'ALL_LEXICAL_CANDIDATES_UNREVIEWED',...noAuthority};}
   node(nodeId,{mode}={}){
@@ -124,6 +152,18 @@ export class CivilizationCircuit {
       houseId,name:h.houseName,spheres:h.sphereIds,reviewQuestion:h.followupQuestion,
       rightsConcern:h.rightsConcern,physicalStockConcern:h.physicalStockConcern,
       contrastingHouseQuestions:h.contrastingHouseQuestions,receiptSHA256:h.receiptSHA256},...noAuthority};
+  }
+  houseSphereFollowup(sphereId,houseId,{mode}={}){
+    if(!ownSource(mode))return hold('OWNER_SOURCE_ONLY_NO_LIVE_WORK_RIGHTS');
+    const key=`${sphereId}::${houseId}`;
+    if(!SPHERE.test(sphereId)||!HOUSE.test(houseId)||!this.#houseSphere.has(key))return hold('HOUSE_SPHERE_PAIR_NOT_IN_SOURCE');
+    const f=this.#houseSphere.get(key);
+    return {schema:'atlas.civilization.readonly-result/v1',status:'HOUSE_SPHERE_FOLLOWUP_UNREVIEWED',data:{
+      followupId:key,housePerspective:houseId,sphereUnderReview:sphereId,
+      sphereRole:f.sphereRole,question:f.question,semanticGate:f.semanticGate,
+      counterexample:f.counterexample,rightsGate:f.rightsGate,sourceSHA256:f.sourceSHA256,
+      sphereReviewSHA256:f.sphereReviewSHA256,houseReviewSHA256:f.houseReviewSHA256,
+      receiptSHA256:f.receiptSHA256,reusedPerspectiveDataNotNewComputation:true},...noAuthority};
   }
   prepareWorkProposal(nodeId,{roomId,mode}={}){
     // Even an owner's local request cannot grant host rights or write to broker.
