@@ -22,27 +22,38 @@ export class WorkHostPort {
   // All Work query denial classes share one externally observable source-only
   // shape. Internal host audits may record causes ONLY in protected telemetry.
   // This does not equalize timing/callback/cache behavior or fence real egress.
-  async query(request={}){
+  async query(request={},options={}){
+    // Cancellation is an optional best-effort source-level stop, NOT a grant,
+    // queue cancellation witness or atomically fenced host output.
+    if(!isObject(options)||Object.keys(options).some(k=>k!=='signal'))return hold('WORK_UNAVAILABLE');
+    const signal=options.signal;
+    if(signal!==undefined && !(signal instanceof AbortSignal))return hold('WORK_UNAVAILABLE');
+    const abandoned=()=>signal?.aborted===true;
+    if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!isObject(request)||Object.keys(request).some(k=>!['roomId','sourceSeqs','purpose'].includes(k)))return hold('WORK_UNAVAILABLE');
     const {roomId,sourceSeqs,purpose='research'}=request;
     if(typeof roomId!=='string'||!ID.test(roomId)||purpose!=='research'||!Array.isArray(sourceSeqs)||sourceSeqs.length<1||sourceSeqs.length>6||sourceSeqs.some(s=>!Number.isInteger(s)||s<1||s>500)||new Set(sourceSeqs).size!==sourceSeqs.length)return hold('WORK_UNAVAILABLE');
     let identity;
     try{identity=await this.#session();}catch{return hold('WORK_UNAVAILABLE');}
+    if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!isObject(identity)||!['tenant','account','principal'].every(k=>typeof identity[k]==='string'&&ID.test(identity[k]))||identity.mode!=='WORK'||identity.purpose!=='research'||!Number.isSafeInteger(identity.rightsEpoch)||identity.rightsEpoch<0)return hold('WORK_UNAVAILABLE');
     const scope=Object.freeze({tenant:identity.tenant,account:identity.account,principal:identity.principal,roomId,sourceSeqs:Object.freeze([...sourceSeqs]),mode:'WORK',purpose,rightsEpoch:identity.rightsEpoch});
     const bound=r=>isObject(r)&&r.tenant===scope.tenant&&r.account===scope.account&&r.principal===scope.principal;
     let permit,rows,current;
     try{permit=await this.#admission(scope);}catch{return hold('WORK_UNAVAILABLE');}
+    if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!bound(permit)||permit.allow!==true||typeof permit.leaseId!=='string'||!ID.test(permit.leaseId)||permit.epoch!==scope.rightsEpoch)return hold('WORK_UNAVAILABLE');
     // Snapshot the grant before read: a callback cannot change the scope or
     // lease evidence later while an asynchronous read is in flight.
     const admitted=Object.freeze({tenant:permit.tenant,account:permit.account,principal:permit.principal,leaseId:permit.leaseId,epoch:permit.epoch,allow:true});
     try{rows=await this.#read(scope,admitted);}catch{return hold('WORK_UNAVAILABLE');}
+    if(abandoned())return hold('WORK_UNAVAILABLE');
     // Independent defense in depth: bind the currently active session again
     // after the asynchronous READ. The host-owned egress callback must still
     // atomically fence its actual sink commit; this does NOT attest live IAM.
     let fresh;
     try{fresh=await this.#session();}catch{return hold('WORK_UNAVAILABLE');}
+    if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!bound(fresh)||fresh.mode!=='WORK'||fresh.purpose!==purpose||fresh.rightsEpoch!==scope.rightsEpoch)return hold('WORK_UNAVAILABLE');
     if(!Array.isArray(rows)||rows.length!==scope.sourceSeqs.length)return hold('WORK_UNAVAILABLE');
     const refs=[];
@@ -50,7 +61,10 @@ export class WorkHostPort {
       // Deliberately discard full body, identity claims, source metadata, and input URLs.
       refs.push({roomId:row.roomId,seq:row.seq,sourceSHA256:row.sha256});}
     if(new Set(refs.map(r=>r.seq)).size!==scope.sourceSeqs.length)return hold('WORK_UNAVAILABLE');
+    if(abandoned())return hold('WORK_UNAVAILABLE');
     try{current=await this.#egress(scope,admitted);}catch{return hold('WORK_UNAVAILABLE');}
+    // Already-started host side effects are not undone by this observation.
+    if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!bound(current)||current.allow!==true||current.leaseId!==admitted.leaseId||current.epoch!==admitted.epoch)return hold('WORK_UNAVAILABLE');
     // No public scope digest: a stable scope fingerprint is a correlation oracle.
     const publicData={references:refs.sort((a,b)=>a.seq-b.seq),sourceCount:refs.length};
