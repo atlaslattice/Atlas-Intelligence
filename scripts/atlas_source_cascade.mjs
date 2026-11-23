@@ -115,3 +115,30 @@ export function planCompletion(cut,base=null){
     total_step_count:ordinal,complete_candidate_gate_matrix:true,source_rights_verified:false,approval_granted:false,
     actual_issues_closed:0,actual_prs_merged:0,model_calls:0,external_effects:0};
 }
+
+/* Verify all published compact receipts, not just an in-memory full plan. */
+export function verifyCompactReceipts(cut,receipts){
+  const hold=(reason)=>({valid:false,reason});
+  if(!receipts||typeof receipts!=="object")return hold("RECEIPTS_MISSING");
+  try{
+    const base=planEvolution(cut),extra=planCompletion(cut,base);
+    const transform=rows=>rows.map(row=>({
+      step:row.ordinal,item:row.item_key,stage:row.review_stage,parent_step:row.previous_ordinal,
+      prior_item_step:row.previous_item_ordinal,
+      previous_checksum64:row.previous_checksum64,checksum64:row.checksum64
+    }));
+    const expected=[
+      {source:receipts.pilot,rows:transform(base.pilot_rows),phase:"PILOT_100",parent:base.initial_checksum64,checkpoint:base.pilot_checkpoint64},
+      {source:receipts.followon,rows:transform(base.expansion_rows),phase:"EXPANSION_1000",parent:base.pilot_checkpoint64,checkpoint:base.final_checkpoint64},
+      {source:receipts.completion,rows:transform(extra.completion_steps),phase:"COMPLETION_220",parent:base.final_checkpoint64,checkpoint:extra.final_checkpoint64}
+    ];
+    for(const x of expected){
+      const obj=x.source;
+      if(!obj||obj.phase!==x.phase||obj.steps?.length!==x.rows.length||obj.parent_checkpoint64!==x.parent
+         ||obj.final_checkpoint64!==x.checkpoint
+         ||(obj.source_cut_blob_sha1??obj.source_git_blob_sha1)!==base.source_cut_blob_sha1
+         ||JSON.stringify(obj.steps)!==JSON.stringify(x.rows))return hold("RECEIPT_CONTENT_OR_CHAIN_MISMATCH");
+    }
+    return {valid:true,reason:"EXACT_THREE_PHASE_REPLAY",steps:1320,source_items:base.source_items,final_checkpoint64:extra.final_checkpoint64};
+  }catch{return hold("REPLAY_HOLD");}
+}
