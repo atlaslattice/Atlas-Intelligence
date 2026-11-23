@@ -1,0 +1,924 @@
+{
+  "schema": "atlas.source-cascade.receipt/v1",
+  "source_path": "docs/ops/ATLAS_GITHUB_OPEN_SOURCE_CUT_20261122.json",
+  "source_cut_blob_sha1": "165a59bfeefbeeeaf314b1db8b071e8f8de3f6af",
+  "source_date": "2026-11-22",
+  "source_was_historical": true,
+  "source_coverage": "SOURCE_SEARCH_SNAPSHOT_NOT_CLOSED_OR_COMPLETED",
+  "source_items": 440,
+  "engine_path": "scripts/atlas_source_cascade.mjs",
+  "engine_blob_sha1": "7aeb647405d7643e3216f805e781391ed04dfd23",
+  "checksum_algorithm": "FNV1a64_over_UTF16_NOT_CRYPTOGRAPHIC",
+  "source_digest64": "a655c33a6a96267a",
+  "no_model_calls": true,
+  "no_host_actions": true,
+  "no_ci_claim": true,
+  "no_real_completions_claimed": true,
+  "no_canon_or_deployment": true,
+  "phase": "PILOT_100",
+  "count": 100,
+  "parent_checkpoint64": "6f42f224005fe71e",
+  "final_checkpoint64": "a948570f2487761f",
+  "steps": [
+    {
+      "step": 1,
+      "item": "pull_request:atlaslattice/Atlas-Intelligence#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 0,
+      "prior_item_step": null,
+      "previous_checksum64": "6f42f224005fe71e",
+      "checksum64": "783b4ad50998e309"
+    },
+    {
+      "step": 2,
+      "item": "pull_request:atlaslattice/SNRS-v2-v3-Distribution#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 1,
+      "prior_item_step": null,
+      "previous_checksum64": "783b4ad50998e309",
+      "checksum64": "5c471ed9614e8d14"
+    },
+    {
+      "step": 3,
+      "item": "issue:atlaslattice/aluminum-os#3",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 2,
+      "prior_item_step": null,
+      "previous_checksum64": "5c471ed9614e8d14",
+      "checksum64": "8956223646040874"
+    },
+    {
+      "step": 4,
+      "item": "pull_request:atlaslattice/aluminum-os-v3#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 3,
+      "prior_item_step": null,
+      "previous_checksum64": "8956223646040874",
+      "checksum64": "8c3b547f85239307"
+    },
+    {
+      "step": 5,
+      "item": "issue:atlaslattice/atlas-lattice-providers#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 4,
+      "prior_item_step": null,
+      "previous_checksum64": "8c3b547f85239307",
+      "checksum64": "7c4214b5fc7a5b7e"
+    },
+    {
+      "step": 6,
+      "item": "issue:atlaslattice/manus-artifacts#3",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 5,
+      "prior_item_step": null,
+      "previous_checksum64": "7c4214b5fc7a5b7e",
+      "checksum64": "7fd5b1f020527983"
+    },
+    {
+      "step": 7,
+      "item": "issue:atlaslattice/noosphere-archive#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 6,
+      "prior_item_step": null,
+      "previous_checksum64": "7fd5b1f020527983",
+      "checksum64": "0724c6127e3086ab"
+    },
+    {
+      "step": 8,
+      "item": "issue:atlaslattice/open-regenerative-compute-standard#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 7,
+      "prior_item_step": null,
+      "previous_checksum64": "0724c6127e3086ab",
+      "checksum64": "6aa132a42fbffe47"
+    },
+    {
+      "step": 9,
+      "item": "issue:atlaslattice/sheldonbrain-rag-api#3",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 8,
+      "prior_item_step": null,
+      "previous_checksum64": "6aa132a42fbffe47",
+      "checksum64": "94378c0ddf5944de"
+    },
+    {
+      "step": 10,
+      "item": "issue:atlaslattice/tucker-gemini-GPT-#2",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 9,
+      "prior_item_step": null,
+      "previous_checksum64": "94378c0ddf5944de",
+      "checksum64": "2cd448c82bd9f486"
+    },
+    {
+      "step": 11,
+      "item": "issue:atlaslattice/waste-management-ai#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 10,
+      "prior_item_step": null,
+      "previous_checksum64": "2cd448c82bd9f486",
+      "checksum64": "67232b9bb0ea0d7c"
+    },
+    {
+      "step": 12,
+      "item": "pull_request:atlaslattice/Atlas-Intelligence#2",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 11,
+      "prior_item_step": null,
+      "previous_checksum64": "67232b9bb0ea0d7c",
+      "checksum64": "509b99c486e8e3a6"
+    },
+    {
+      "step": 13,
+      "item": "issue:atlaslattice/aluminum-os#5",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 12,
+      "prior_item_step": null,
+      "previous_checksum64": "509b99c486e8e3a6",
+      "checksum64": "dcaf76dedeaf258c"
+    },
+    {
+      "step": 14,
+      "item": "issue:atlaslattice/atlas-lattice-providers#2",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 13,
+      "prior_item_step": null,
+      "previous_checksum64": "dcaf76dedeaf258c",
+      "checksum64": "21b56517837297ef"
+    },
+    {
+      "step": 15,
+      "item": "issue:atlaslattice/manus-artifacts#4",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 14,
+      "prior_item_step": null,
+      "previous_checksum64": "21b56517837297ef",
+      "checksum64": "fb30124349302656"
+    },
+    {
+      "step": 16,
+      "item": "issue:atlaslattice/noosphere-archive#2",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 15,
+      "prior_item_step": null,
+      "previous_checksum64": "fb30124349302656",
+      "checksum64": "4380eaca85ca0330"
+    },
+    {
+      "step": 17,
+      "item": "issue:atlaslattice/open-regenerative-compute-standard#2",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 16,
+      "prior_item_step": null,
+      "previous_checksum64": "4380eaca85ca0330",
+      "checksum64": "55e95e93c6ff03e6"
+    },
+    {
+      "step": 18,
+      "item": "issue:atlaslattice/sheldonbrain-rag-api#4",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 17,
+      "prior_item_step": null,
+      "previous_checksum64": "55e95e93c6ff03e6",
+      "checksum64": "1fabeb75035b334d"
+    },
+    {
+      "step": 19,
+      "item": "issue:atlaslattice/aluminum-os#6",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 18,
+      "prior_item_step": null,
+      "previous_checksum64": "1fabeb75035b334d",
+      "checksum64": "7e21c24d311cd617"
+    },
+    {
+      "step": 20,
+      "item": "issue:atlaslattice/atlas-lattice-providers#3",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 19,
+      "prior_item_step": null,
+      "previous_checksum64": "7e21c24d311cd617",
+      "checksum64": "3c890cc9f356ad3f"
+    },
+    {
+      "step": 21,
+      "item": "issue:atlaslattice/manus-artifacts#5",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 20,
+      "prior_item_step": null,
+      "previous_checksum64": "3c890cc9f356ad3f",
+      "checksum64": "4d93a97c3590a221"
+    },
+    {
+      "step": 22,
+      "item": "issue:atlaslattice/noosphere-archive#3",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 21,
+      "prior_item_step": null,
+      "previous_checksum64": "4d93a97c3590a221",
+      "checksum64": "ca9ccb946785e87f"
+    },
+    {
+      "step": 23,
+      "item": "issue:atlaslattice/open-regenerative-compute-standard#3",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 22,
+      "prior_item_step": null,
+      "previous_checksum64": "ca9ccb946785e87f",
+      "checksum64": "1bd5241db8215609"
+    },
+    {
+      "step": 24,
+      "item": "issue:atlaslattice/sheldonbrain-rag-api#5",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 23,
+      "prior_item_step": null,
+      "previous_checksum64": "1bd5241db8215609",
+      "checksum64": "62abf58813ea0e70"
+    },
+    {
+      "step": 25,
+      "item": "issue:atlaslattice/aluminum-os#7",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 24,
+      "prior_item_step": null,
+      "previous_checksum64": "62abf58813ea0e70",
+      "checksum64": "a9e55c887ea05080"
+    },
+    {
+      "step": 26,
+      "item": "issue:atlaslattice/atlas-lattice-providers#5",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 25,
+      "prior_item_step": null,
+      "previous_checksum64": "a9e55c887ea05080",
+      "checksum64": "72e2efa93c653296"
+    },
+    {
+      "step": 27,
+      "item": "issue:atlaslattice/manus-artifacts#6",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 26,
+      "prior_item_step": null,
+      "previous_checksum64": "72e2efa93c653296",
+      "checksum64": "f8ec8a74e6ec617e"
+    },
+    {
+      "step": 28,
+      "item": "issue:atlaslattice/noosphere-archive#4",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 27,
+      "prior_item_step": null,
+      "previous_checksum64": "f8ec8a74e6ec617e",
+      "checksum64": "2416ecf78dcae81c"
+    },
+    {
+      "step": 29,
+      "item": "issue:atlaslattice/open-regenerative-compute-standard#4",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 28,
+      "prior_item_step": null,
+      "previous_checksum64": "2416ecf78dcae81c",
+      "checksum64": "b7b3035ca34c9b46"
+    },
+    {
+      "step": 30,
+      "item": "pull_request:atlaslattice/sheldonbrain-rag-api#1",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 29,
+      "prior_item_step": null,
+      "previous_checksum64": "b7b3035ca34c9b46",
+      "checksum64": "45df0e0213e8e896"
+    },
+    {
+      "step": 31,
+      "item": "issue:atlaslattice/aluminum-os#9",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 30,
+      "prior_item_step": null,
+      "previous_checksum64": "45df0e0213e8e896",
+      "checksum64": "c9c20547e7d63d94"
+    },
+    {
+      "step": 32,
+      "item": "issue:atlaslattice/atlas-lattice-providers#6",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 31,
+      "prior_item_step": null,
+      "previous_checksum64": "c9c20547e7d63d94",
+      "checksum64": "4b611156b9e96267"
+    },
+    {
+      "step": 33,
+      "item": "issue:atlaslattice/manus-artifacts#7",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 32,
+      "prior_item_step": null,
+      "previous_checksum64": "4b611156b9e96267",
+      "checksum64": "4f3010b3ba0e1789"
+    },
+    {
+      "step": 34,
+      "item": "issue:atlaslattice/noosphere-archive#5",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 33,
+      "prior_item_step": null,
+      "previous_checksum64": "4f3010b3ba0e1789",
+      "checksum64": "ab8bece7da8ff9cb"
+    },
+    {
+      "step": 35,
+      "item": "issue:atlaslattice/open-regenerative-compute-standard#5",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 34,
+      "prior_item_step": null,
+      "previous_checksum64": "ab8bece7da8ff9cb",
+      "checksum64": "6f3eec6f80c24ef7"
+    },
+    {
+      "step": 36,
+      "item": "issue:atlaslattice/aluminum-os#10",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 35,
+      "prior_item_step": null,
+      "previous_checksum64": "6f3eec6f80c24ef7",
+      "checksum64": "34513cb90c53df24"
+    },
+    {
+      "step": 37,
+      "item": "issue:atlaslattice/atlas-lattice-providers#7",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 36,
+      "prior_item_step": null,
+      "previous_checksum64": "34513cb90c53df24",
+      "checksum64": "93eea1e99d85b19e"
+    },
+    {
+      "step": 38,
+      "item": "issue:atlaslattice/manus-artifacts#8",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 37,
+      "prior_item_step": null,
+      "previous_checksum64": "93eea1e99d85b19e",
+      "checksum64": "f762299ed7304bca"
+    },
+    {
+      "step": 39,
+      "item": "issue:atlaslattice/noosphere-archive#6",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 38,
+      "prior_item_step": null,
+      "previous_checksum64": "f762299ed7304bca",
+      "checksum64": "d895b06baf8b4c20"
+    },
+    {
+      "step": 40,
+      "item": "issue:atlaslattice/open-regenerative-compute-standard#6",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 39,
+      "prior_item_step": null,
+      "previous_checksum64": "d895b06baf8b4c20",
+      "checksum64": "11b5b7185bc36e1f"
+    },
+    {
+      "step": 41,
+      "item": "issue:atlaslattice/aluminum-os#11",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 40,
+      "prior_item_step": null,
+      "previous_checksum64": "11b5b7185bc36e1f",
+      "checksum64": "fdd35dc51dc790f3"
+    },
+    {
+      "step": 42,
+      "item": "issue:atlaslattice/atlas-lattice-providers#9",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 41,
+      "prior_item_step": null,
+      "previous_checksum64": "fdd35dc51dc790f3",
+      "checksum64": "5dd64cd96b40e652"
+    },
+    {
+      "step": 43,
+      "item": "issue:atlaslattice/manus-artifacts#9",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 42,
+      "prior_item_step": null,
+      "previous_checksum64": "5dd64cd96b40e652",
+      "checksum64": "1b590c53427635dd"
+    },
+    {
+      "step": 44,
+      "item": "issue:atlaslattice/noosphere-archive#7",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 43,
+      "prior_item_step": null,
+      "previous_checksum64": "1b590c53427635dd",
+      "checksum64": "edb9ab1690dc1ce7"
+    },
+    {
+      "step": 45,
+      "item": "issue:atlaslattice/open-regenerative-compute-standard#69",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 44,
+      "prior_item_step": null,
+      "previous_checksum64": "edb9ab1690dc1ce7",
+      "checksum64": "31e516e9db6617e1"
+    },
+    {
+      "step": 46,
+      "item": "issue:atlaslattice/aluminum-os#12",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 45,
+      "prior_item_step": null,
+      "previous_checksum64": "31e516e9db6617e1",
+      "checksum64": "1f118a586f92299a"
+    },
+    {
+      "step": 47,
+      "item": "issue:atlaslattice/atlas-lattice-providers#10",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 46,
+      "prior_item_step": null,
+      "previous_checksum64": "1f118a586f92299a",
+      "checksum64": "a9aeb8363c7a95ee"
+    },
+    {
+      "step": 48,
+      "item": "issue:atlaslattice/manus-artifacts#10",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 47,
+      "prior_item_step": null,
+      "previous_checksum64": "a9aeb8363c7a95ee",
+      "checksum64": "4f8f4b17707fa857"
+    },
+    {
+      "step": 49,
+      "item": "issue:atlaslattice/noosphere-archive#8",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 48,
+      "prior_item_step": null,
+      "previous_checksum64": "4f8f4b17707fa857",
+      "checksum64": "af54c6a4c314a370"
+    },
+    {
+      "step": 50,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#7",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 49,
+      "prior_item_step": null,
+      "previous_checksum64": "af54c6a4c314a370",
+      "checksum64": "2fa9ef44be5508e7"
+    },
+    {
+      "step": 51,
+      "item": "issue:atlaslattice/aluminum-os#13",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 50,
+      "prior_item_step": null,
+      "previous_checksum64": "2fa9ef44be5508e7",
+      "checksum64": "62e950a9245c0f3d"
+    },
+    {
+      "step": 52,
+      "item": "issue:atlaslattice/atlas-lattice-providers#11",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 51,
+      "prior_item_step": null,
+      "previous_checksum64": "62e950a9245c0f3d",
+      "checksum64": "4eaaec3442e72add"
+    },
+    {
+      "step": 53,
+      "item": "issue:atlaslattice/manus-artifacts#11",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 52,
+      "prior_item_step": null,
+      "previous_checksum64": "4eaaec3442e72add",
+      "checksum64": "ea22e0fce4309152"
+    },
+    {
+      "step": 54,
+      "item": "issue:atlaslattice/noosphere-archive#9",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 53,
+      "prior_item_step": null,
+      "previous_checksum64": "ea22e0fce4309152",
+      "checksum64": "a977689c0c24acbf"
+    },
+    {
+      "step": 55,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#8",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 54,
+      "prior_item_step": null,
+      "previous_checksum64": "a977689c0c24acbf",
+      "checksum64": "4d83c0f9d4add5dd"
+    },
+    {
+      "step": 56,
+      "item": "issue:atlaslattice/aluminum-os#15",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 55,
+      "prior_item_step": null,
+      "previous_checksum64": "4d83c0f9d4add5dd",
+      "checksum64": "c2375551412d3c03"
+    },
+    {
+      "step": 57,
+      "item": "issue:atlaslattice/atlas-lattice-providers#12",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 56,
+      "prior_item_step": null,
+      "previous_checksum64": "c2375551412d3c03",
+      "checksum64": "2b40bdb8debaf010"
+    },
+    {
+      "step": 58,
+      "item": "issue:atlaslattice/manus-artifacts#12",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 57,
+      "prior_item_step": null,
+      "previous_checksum64": "2b40bdb8debaf010",
+      "checksum64": "cb1e128e9b61bb31"
+    },
+    {
+      "step": 59,
+      "item": "issue:atlaslattice/noosphere-archive#10",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 58,
+      "prior_item_step": null,
+      "previous_checksum64": "cb1e128e9b61bb31",
+      "checksum64": "aa3753f32d38b1c5"
+    },
+    {
+      "step": 60,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#9",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 59,
+      "prior_item_step": null,
+      "previous_checksum64": "aa3753f32d38b1c5",
+      "checksum64": "1995dd77864f7915"
+    },
+    {
+      "step": 61,
+      "item": "issue:atlaslattice/aluminum-os#16",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 60,
+      "prior_item_step": null,
+      "previous_checksum64": "1995dd77864f7915",
+      "checksum64": "7fc160021d93209e"
+    },
+    {
+      "step": 62,
+      "item": "issue:atlaslattice/atlas-lattice-providers#14",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 61,
+      "prior_item_step": null,
+      "previous_checksum64": "7fc160021d93209e",
+      "checksum64": "05b2be406dfbe5ae"
+    },
+    {
+      "step": 63,
+      "item": "issue:atlaslattice/manus-artifacts#13",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 62,
+      "prior_item_step": null,
+      "previous_checksum64": "05b2be406dfbe5ae",
+      "checksum64": "1354226d7be71886"
+    },
+    {
+      "step": 64,
+      "item": "issue:atlaslattice/noosphere-archive#11",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 63,
+      "prior_item_step": null,
+      "previous_checksum64": "1354226d7be71886",
+      "checksum64": "f4c58dc273a79274"
+    },
+    {
+      "step": 65,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#10",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 64,
+      "prior_item_step": null,
+      "previous_checksum64": "f4c58dc273a79274",
+      "checksum64": "61f3af5d2a9d2e66"
+    },
+    {
+      "step": 66,
+      "item": "pull_request:atlaslattice/aluminum-os#2",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 65,
+      "prior_item_step": null,
+      "previous_checksum64": "61f3af5d2a9d2e66",
+      "checksum64": "f879c017a7643432"
+    },
+    {
+      "step": 67,
+      "item": "issue:atlaslattice/atlas-lattice-providers#15",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 66,
+      "prior_item_step": null,
+      "previous_checksum64": "f879c017a7643432",
+      "checksum64": "f422e2a098422ced"
+    },
+    {
+      "step": 68,
+      "item": "issue:atlaslattice/manus-artifacts#14",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 67,
+      "prior_item_step": null,
+      "previous_checksum64": "f422e2a098422ced",
+      "checksum64": "7375581733f1fa1f"
+    },
+    {
+      "step": 69,
+      "item": "issue:atlaslattice/noosphere-archive#12",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 68,
+      "prior_item_step": null,
+      "previous_checksum64": "7375581733f1fa1f",
+      "checksum64": "abe219718b498731"
+    },
+    {
+      "step": 70,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#11",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 69,
+      "prior_item_step": null,
+      "previous_checksum64": "abe219718b498731",
+      "checksum64": "a7256643835e7f2a"
+    },
+    {
+      "step": 71,
+      "item": "pull_request:atlaslattice/aluminum-os#8",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 70,
+      "prior_item_step": null,
+      "previous_checksum64": "a7256643835e7f2a",
+      "checksum64": "5d216a013b0ca81a"
+    },
+    {
+      "step": 72,
+      "item": "issue:atlaslattice/atlas-lattice-providers#18",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 71,
+      "prior_item_step": null,
+      "previous_checksum64": "5d216a013b0ca81a",
+      "checksum64": "000a30d1a081f254"
+    },
+    {
+      "step": 73,
+      "item": "issue:atlaslattice/manus-artifacts#16",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 72,
+      "prior_item_step": null,
+      "previous_checksum64": "000a30d1a081f254",
+      "checksum64": "f3fe2124c316903d"
+    },
+    {
+      "step": 74,
+      "item": "issue:atlaslattice/noosphere-archive#13",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 73,
+      "prior_item_step": null,
+      "previous_checksum64": "f3fe2124c316903d",
+      "checksum64": "6bd48bc4e470ed10"
+    },
+    {
+      "step": 75,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#12",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 74,
+      "prior_item_step": null,
+      "previous_checksum64": "6bd48bc4e470ed10",
+      "checksum64": "757685908da08516"
+    },
+    {
+      "step": 76,
+      "item": "pull_request:atlaslattice/aluminum-os#17",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 75,
+      "prior_item_step": null,
+      "previous_checksum64": "757685908da08516",
+      "checksum64": "240bda93acc9676e"
+    },
+    {
+      "step": 77,
+      "item": "issue:atlaslattice/atlas-lattice-providers#19",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 76,
+      "prior_item_step": null,
+      "previous_checksum64": "240bda93acc9676e",
+      "checksum64": "1260ba55ab9d4cb9"
+    },
+    {
+      "step": 78,
+      "item": "issue:atlaslattice/manus-artifacts#17",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 77,
+      "prior_item_step": null,
+      "previous_checksum64": "1260ba55ab9d4cb9",
+      "checksum64": "eb0b622eb92e107c"
+    },
+    {
+      "step": 79,
+      "item": "pull_request:atlaslattice/noosphere-archive#14",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 78,
+      "prior_item_step": null,
+      "previous_checksum64": "eb0b622eb92e107c",
+      "checksum64": "7c1c32cda3241f9e"
+    },
+    {
+      "step": 80,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#13",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 79,
+      "prior_item_step": null,
+      "previous_checksum64": "7c1c32cda3241f9e",
+      "checksum64": "9ad33e46b9c88968"
+    },
+    {
+      "step": 81,
+      "item": "issue:atlaslattice/atlas-lattice-providers#20",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 80,
+      "prior_item_step": null,
+      "previous_checksum64": "9ad33e46b9c88968",
+      "checksum64": "628bf8dd1dd0bb5f"
+    },
+    {
+      "step": 82,
+      "item": "issue:atlaslattice/manus-artifacts#18",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 81,
+      "prior_item_step": null,
+      "previous_checksum64": "628bf8dd1dd0bb5f",
+      "checksum64": "c982aaaef9e881d1"
+    },
+    {
+      "step": 83,
+      "item": "pull_request:atlaslattice/noosphere-archive#15",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 82,
+      "prior_item_step": null,
+      "previous_checksum64": "c982aaaef9e881d1",
+      "checksum64": "5c884bad5070ce81"
+    },
+    {
+      "step": 84,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#14",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 83,
+      "prior_item_step": null,
+      "previous_checksum64": "5c884bad5070ce81",
+      "checksum64": "abffcb4fea23fa5e"
+    },
+    {
+      "step": 85,
+      "item": "issue:atlaslattice/atlas-lattice-providers#23",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 84,
+      "prior_item_step": null,
+      "previous_checksum64": "abffcb4fea23fa5e",
+      "checksum64": "e7afd2149bb05c3a"
+    },
+    {
+      "step": 86,
+      "item": "issue:atlaslattice/manus-artifacts#19",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 85,
+      "prior_item_step": null,
+      "previous_checksum64": "e7afd2149bb05c3a",
+      "checksum64": "924db73f0a4be150"
+    },
+    {
+      "step": 87,
+      "item": "pull_request:atlaslattice/noosphere-archive#16",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 86,
+      "prior_item_step": null,
+      "previous_checksum64": "924db73f0a4be150",
+      "checksum64": "605dcaa449d0a628"
+    },
+    {
+      "step": 88,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#15",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 87,
+      "prior_item_step": null,
+      "previous_checksum64": "605dcaa449d0a628",
+      "checksum64": "9378d59893f46525"
+    },
+    {
+      "step": 89,
+      "item": "issue:atlaslattice/atlas-lattice-providers#24",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 88,
+      "prior_item_step": null,
+      "previous_checksum64": "9378d59893f46525",
+      "checksum64": "ada0ee1a6fef5f3d"
+    },
+    {
+      "step": 90,
+      "item": "issue:atlaslattice/manus-artifacts#22",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 89,
+      "prior_item_step": null,
+      "previous_checksum64": "ada0ee1a6fef5f3d",
+      "checksum64": "b14cd1a6c9c8a29f"
+    },
+    {
+      "step": 91,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#16",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 90,
+      "prior_item_step": null,
+      "previous_checksum64": "b14cd1a6c9c8a29f",
+      "checksum64": "6c34ad191fc7c4c2"
+    },
+    {
+      "step": 92,
+      "item": "issue:atlaslattice/atlas-lattice-providers#25",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 91,
+      "prior_item_step": null,
+      "previous_checksum64": "6c34ad191fc7c4c2",
+      "checksum64": "0b660f2e904f3bf6"
+    },
+    {
+      "step": 93,
+      "item": "issue:atlaslattice/manus-artifacts#23",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 92,
+      "prior_item_step": null,
+      "previous_checksum64": "0b660f2e904f3bf6",
+      "checksum64": "810372d1f8008977"
+    },
+    {
+      "step": 94,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#17",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 93,
+      "prior_item_step": null,
+      "previous_checksum64": "810372d1f8008977",
+      "checksum64": "8d93f21620e301ad"
+    },
+    {
+      "step": 95,
+      "item": "issue:atlaslattice/atlas-lattice-providers#26",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 94,
+      "prior_item_step": null,
+      "previous_checksum64": "8d93f21620e301ad",
+      "checksum64": "3dba034fdb54e10f"
+    },
+    {
+      "step": 96,
+      "item": "issue:atlaslattice/manus-artifacts#25",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 95,
+      "prior_item_step": null,
+      "previous_checksum64": "3dba034fdb54e10f",
+      "checksum64": "f77d1bf0b9f9fb5d"
+    },
+    {
+      "step": 97,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#18",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 96,
+      "prior_item_step": null,
+      "previous_checksum64": "f77d1bf0b9f9fb5d",
+      "checksum64": "bbc1a7444f30c8fc"
+    },
+    {
+      "step": 98,
+      "item": "issue:atlaslattice/atlas-lattice-providers#27",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 97,
+      "prior_item_step": null,
+      "previous_checksum64": "bbc1a7444f30c8fc",
+      "checksum64": "f81b87e936b1b1a6"
+    },
+    {
+      "step": 99,
+      "item": "issue:atlaslattice/manus-artifacts#26",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 98,
+      "prior_item_step": null,
+      "previous_checksum64": "f81b87e936b1b1a6",
+      "checksum64": "2b2e7e5b3e5700e2"
+    },
+    {
+      "step": 100,
+      "item": "pull_request:atlaslattice/open-regenerative-compute-standard#19",
+      "stage": "PIN_CURRENT_SOURCE",
+      "parent_step": 99,
+      "prior_item_step": null,
+      "previous_checksum64": "2b2e7e5b3e5700e2",
+      "checksum64": "a948570f2487761f"
+    }
+  ]
+}
