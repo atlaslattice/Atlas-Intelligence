@@ -9,7 +9,7 @@
 1. `prepareRoomProfile`: validate a chosen WORK room policy against host-reported bounded ceilings (not caller-imposed higher limits). Default to the maximum *permitted* value and allow an explicit smaller request. **No room is created, extended, deleted or implicitly renewed.** Profile fields remain `PREPARED_NOT_APPLIED`.
 2. `prepareWorkSubscription`: fail closed unless the proposed Work room is open and unexpired, the caller supplies host-reported tenant/account/principal/epoch, a matching host-reported join, and explicit per-room event consent. Returns only an intent. Never installs a webhook or asserts resident authentication, notification receipt, model wake or consent at another mode.
 3. `evaluateCanonHsnCandidate`: demand versioned CANON clause digest + Ariadne v0.7 registry/node digest, typed non-authoritative relation, and a source reference. Hold for H01 epoch and H08/music false friends and forged display glyph authority. Output is always `CANDIDATE_REQUIRES_SEMANTIC_REVIEW`, `normativeForce:NONE`, `ratified:false`. Full semantic legitimacy requires independently selected source bytes and human review.
-4. `evaluateTwelveHouseReadiness`: distinguish 1,008 domain and 720 epistemic addresses, require twelve source-backed House reviews, non-offsettable binding rights checks, and dimensioned stock-ledger closure before even returning an unverified candidate. No welfare scalar, scientific proof, legal judgment, or approval is generated.\n5. `projectTypedHsnCoverage`: validate an entire 1,728-coordinate source-reported structural input, 7 domain and 5 epistemic nodes per Sphere, reject duplicates/missing locations/unsupported evidence assertions, and project to 12 House summaries without confusing method-source counts with welfare. This map is explicitly information-losing and not an original registry byte attestation.
+4. `evaluateTwelveHouseReadiness`: distinguish 1,008 domain and 720 epistemic addresses, require twelve source-backed House reviews, non-offsettable binding rights checks, and dimensioned stock-ledger closure before even returning an unverified candidate. No welfare scalar, scientific proof, legal judgment, or approval is generated.\n5. `projectTypedHsnCoverage`: validate an entire 1,728-coordinate source-reported structural input, 7 domain and 5 epistemic SPHERES per House (each Sphere contains 12 uniform-role nodes), reject duplicates/missing locations/unsupported evidence assertions, and project to 12 House summaries without confusing method-source counts with welfare. This map is explicitly information-losing and not an original registry byte attestation.
 
 ## Observed broker limit and semantics
 
@@ -34,3 +34,12 @@ Before any publisher mount: signed-in two-account tests; actual Work opt-in, roo
 Owner-private editorial working note exists in the user's connected Google Drive. Its link, contents and access controls are not exported into this public source candidate.
 
 \n**Current isolated local evidence:** 27/27 Node.js v22.16.0 tests PASS normally and 27/27 under `--jitless`; full app/CI and hosted permissions remain HOLD.\n
+
+
+## Ariadne v0.7 source-role topology correction — 2026-11-23
+
+The complete 1,728-row owner-scoped index shows exactly **seven domain Spheres (S01–S07) and five epistemic Spheres (S08–S12) per House**. All twelve nodes within a Sphere have the same role. Thus across the 144 Spheres there are 84 all-domain Spheres (1,008 domain nodes) and 60 all-epistemic Spheres (720 epistemic nodes).
+
+The previous 7-domain + 5-meta **nodes per Sphere** condition rejected valid source-index-shaped records and accepted a fictitious mixed-role lattice. The source-only projector and its synthetic regression fixture now follow the edition-locked Sphere role position. Exact original Ariadne v0.7 registry bytes remain a separate external provenance gate: this repair was grounded in the connected owner-scoped *source index* and spot-checked HSN resolver, not a verified registry download or host acceptance.
+
+This remains a draft deterministic review candidate. Nothing changes the live SwarmChat broker, resident roles, private modes, rights, CANON or scientific truth.
