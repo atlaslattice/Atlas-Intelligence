@@ -129,3 +129,126 @@ export function proposeResidentSpecialty(program,nomination={}){
     assigned:false,meritRank:null,permanentRole:false,canPublish:false,authorityEffect:'NONE',canonEffect:'NONE'};
   return Object.freeze({...core,nominationDigest:digest(core)});
 }
+
+// Additive source-bound review ingress. The older positional APIs above retain
+// their exact accepted fields and UNMAPPED semantics.
+const PIN_FIELDS=['namespace','edition','nodeId','recordSha256','kind','registrySha256'];
+const CANDIDATE_LINK_TYPES=new Set(['LEXICAL_CANDIDATE','REVIEW_CANDIDATE']);
+const PROJECT_CONTEXTS=new Set(['GENERAL_WORK_REVIEW','IRON_EMPIRE_FICTION']);
+const PIN_NAMESPACE=/^[A-Za-z][A-Za-z0-9._:/-]{2,95}$/;
+function dataRecord(value,allowed){
+  if(!plain(value))return null;
+  const desc=Object.getOwnPropertyDescriptors(value),out=Object.create(null);
+  for(const key of Reflect.ownKeys(desc)){
+    if(typeof key!=='string'||!allowed.includes(key)||!('value' in desc[key]))return null;
+    out[key]=desc[key].value;
+  }
+  return out;
+}
+function denseArray(value,max){
+  if(!Array.isArray(value)||Object.getPrototypeOf(value)!==Array.prototype)return null;
+  const desc=Object.getOwnPropertyDescriptors(value),n=desc.length?.value;
+  if(!Number.isSafeInteger(n)||n<0||n>max||Reflect.ownKeys(desc).length!==n+1)return null;
+  const out=[];
+  for(let i=0;i<n;i++){
+    const d=desc[String(i)];
+    if(!d||!('value' in d))return null;
+    out.push(d.value);
+  }
+  return out;
+}
+function pinKey(pin){return JSON.stringify(PIN_FIELDS.map(key=>pin[key]));}
+function nodePin(value,indexPin,allowLabel=false){
+  const p=dataRecord(value,allowLabel?[...PIN_FIELDS,'label']:PIN_FIELDS);
+  if(!p||typeof p.namespace!=='string'||!PIN_NAMESPACE.test(p.namespace)||
+    p.namespace!==indexPin.namespace||p.edition!==indexPin.edition||
+    p.registrySha256!==indexPin.registrySha256||typeof p.nodeId!=='string'||
+    !NODE.test(p.nodeId)||typeof p.recordSha256!=='string'||!SHA.test(p.recordSha256))return null;
+  const expectedKind=Number(p.nodeId.slice(5,7))<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META';
+  if(p.kind!==expectedKind)return null;
+  if(allowLabel&&p.label!==undefined&&(typeof p.label!=='string'||p.label.length>300||
+      /[\u0000-\u001f\uD800-\uDFFF]/u.test(p.label)))return null;
+  return Object.freeze(Object.fromEntries(PIN_FIELDS.map(key=>[key,p[key]])));
+}
+function reviewRefs(value,min=0){
+  const a=denseArray(value,8);
+  return a&&refs(a,{min,max:8})?Object.freeze(a):null;
+}
+
+/**
+ * Bind review candidates to an independently supplied, explicitly pinned
+ * source index. This compares caller-supplied pins; it cannot authenticate the
+ * original registry bytes, current rights, semantics, or scientific truth.
+ *
+ * referenceIndex: {namespace,edition,registrySha256,records:[six-field node pin,
+ *   optionally with label]}. Labels are never identity and are not returned.
+ * input: {mode:'WORK',bindings:[{candidateId,node:pin}],links:[{from:pin,to:pin,
+ *   relation:'LEXICAL_CANDIDATE'|'REVIEW_CANDIDATE',sourceRefs,dissentRefs?,rationale}],
+ *   projectReviewContext?:'GENERAL_WORK_REVIEW'|'IRON_EMPIRE_FICTION'}.
+ * Inputs must be inert, ordinary data. This is not a Proxy sandbox.
+ */
+export function proposeSourceBoundCandidateGraph(program,referenceIndex,input={}){
+  try{
+    if(!valid(program))return hold('PROGRAM_UNVERIFIED');
+    const index=dataRecord(referenceIndex,['namespace','edition','registrySha256','records']);
+    const request=dataRecord(input,['mode','bindings','links','projectReviewContext']);
+    if(!index||!request||typeof index.namespace!=='string'||!PIN_NAMESPACE.test(index.namespace)||
+      index.edition!==program.sourceEdition||index.registrySha256!==program.sourceDigest||
+      request.mode!=='WORK')return hold('SOURCE_BOUND_SCOPE_INVALID');
+    const projectReviewContext=request.projectReviewContext===undefined?'GENERAL_WORK_REVIEW':request.projectReviewContext;
+    if(!PROJECT_CONTEXTS.has(projectReviewContext))return hold('PROJECT_REVIEW_CONTEXT_INVALID');
+    const records=denseArray(index.records,1728),bindings=denseArray(request.bindings,1728),
+      links=denseArray(request.links===undefined?[]:request.links,6912);
+    if(!records||!records.length||!bindings||!links)return hold('SOURCE_BOUND_COLLECTION_INVALID');
+    const known=new Map();
+    for(const record of records){
+      const pin=nodePin(record,index,true);
+      if(!pin||known.has(pin.nodeId))return hold('SOURCE_INDEX_INVALID_OR_DUPLICATE');
+      known.set(pin.nodeId,pin);
+    }
+    const matchedPin=value=>{
+      const pin=nodePin(value,index),expected=pin&&known.get(pin.nodeId);
+      return expected&&pinKey(pin)===pinKey(expected)?pin:null;
+    };
+    const tasks=new Map(program.tasks.map(task=>[task.id,task]));
+    const selected=new Map(),nodes=[];
+    for(const binding of bindings){
+      const b=dataRecord(binding,['candidateId','node']);
+      const pin=b&&matchedPin(b.node),task=b&&tasks.get(b.candidateId);
+      if(!pin||!task||!task.nodeSlots.includes(pin.nodeId))return hold('CANDIDATE_SOURCE_BINDING_INVALID');
+      const key=pinKey(pin);
+      if(selected.has(key))return hold('DUPLICATE_SOURCE_BINDING');
+      const item=Object.freeze({candidateId:b.candidateId,node:pin,
+        bindingType:'POSITIONAL_REVIEW_ONLY',sourceSemanticMatch:'UNMAPPED'});
+      selected.set(key,item);nodes.push(item);
+    }
+    const out=[],seen=new Set();
+    for(const link of links){
+      const l=dataRecord(link,['from','to','relation','sourceRefs','dissentRefs','rationale']);
+      const from=l&&matchedPin(l.from),to=l&&matchedPin(l.to);
+      const sourceRefs=l&&reviewRefs(l.sourceRefs,1),dissentRefs=l&&reviewRefs(l.dissentRefs===undefined?[]:l.dissentRefs);
+      if(!from||!to||!selected.has(pinKey(from))||!selected.has(pinKey(to))||
+        pinKey(from)===pinKey(to)||!CANDIDATE_LINK_TYPES.has(l.relation)||!sourceRefs||!dissentRefs||
+        typeof l.rationale!=='string'||l.rationale.trim().length<20||l.rationale.length>400||
+        /[\u0000-\u001f\uD800-\uDFFF]/u.test(l.rationale))return hold('SOURCE_BOUND_LINK_INVALID');
+      const key=JSON.stringify([pinKey(from),pinKey(to),l.relation]);
+      if(seen.has(key))return hold('DUPLICATE_SOURCE_RELATION');
+      seen.add(key);
+      out.push(Object.freeze({from,to,relation:l.relation,sourceRefs,dissentRefs,
+        rationale:l.rationale.trim(),epistemicStatus:'UNREVIEWED_CANDIDATE',authorityEffect:'NONE'}));
+    }
+    nodes.sort((a,b)=>pinKey(a.node).localeCompare(pinKey(b.node),'en'));
+    out.sort((a,b)=>JSON.stringify([pinKey(a.from),pinKey(a.to),a.relation])
+      .localeCompare(JSON.stringify([pinKey(b.from),pinKey(b.to),b.relation]),'en'));
+    const core={schema:'atlas.one.whole-144-source-bound-candidate/v1',status:'SOURCE_BOUND_CANDIDATE_ONLY',
+      programDigest:program.programDigest,mode:'WORK',sourcePin:Object.freeze({namespace:index.namespace,
+        edition:index.edition,registrySha256:index.registrySha256}),projectReviewContext,
+      evidenceModality:projectReviewContext==='IRON_EMPIRE_FICTION'?'FICTION_REVIEW':'WORK_REVIEW',
+      nodes:Object.freeze(nodes),links:Object.freeze(out),nodeCount:nodes.length,linkCount:out.length,
+      labelsUsedForIdentity:false,sourceIndexComparison:'CALLER_SUPPLIED_PIN_MATCH',
+      sourceOriginalBytesVerified:false,sourceNodeSemantics:'UNREVIEWED',scientificEndorsement:false,
+      semanticEquivalencesEstablished:0,actualResidentAssignments:0,verifiedGains:0,
+      rightsVerified:false,hostedVerified:false,canPublish:false,authorityEffect:'NONE',canonEffect:'NONE'};
+    return Object.freeze({...core,graphDigest:digest(core)});
+  }catch(_){return hold('SOURCE_BOUND_INPUT_INVALID');}
+}

@@ -29,3 +29,49 @@ The isolated fixture environment uses the same explicit **test-only stub of two 
 - Inspect exact Ariadne semantics under authorized source rights; correct provisional mappings without public disclosure of protected registry content.
 - Create an offline two-account host-rights harness (with deny-at-return) before proposing live SwarmChat notifications or resident assignments.
 - Preserve dissent, community governance, open-ended play and non-work boundaries separately from Work telemetry. The goal is **substantive, original contributions**, not volume or imaginary statistics.
+
+
+## Additive exact-source candidate ingress (2026-11-23 review)
+
+`proposeSourceBoundCandidateGraph(program, referenceIndex, input)` adds a source-bound review boundary to this existing module. The three earlier APIs and their accepted fields remain unchanged.
+
+The independently supplied `referenceIndex` contains `namespace`, `edition`, `registrySha256`, and at most 1,728 `records`. Each record has exactly the six identity fields `namespace`, `edition`, `nodeId`, `recordSha256`, `kind`, and `registrySha256`, plus an optional descriptive `label`. The program edition and registry digest must agree with the reference index. Namespace is a normalized ASCII identifier, such as `ariadne.hsn`; it is not inferred from a label. Matching these caller-supplied pins does not authenticate original registry bytes or rights.
+
+`input` is inert ordinary data with:
+
+- `mode: WORK`;
+- `bindings: [{candidateId, node}]`, where `node` is the exact six-field identity tuple and `candidateId` remains the existing `W144-Hxx-Sxx` planning ID;
+- optional `links: [{from, to, relation, sourceRefs, dissentRefs, rationale}]`, where both endpoints are complete identity tuples already selected by the bindings;
+- optional `projectReviewContext`: `GENERAL_WORK_REVIEW` or `IRON_EMPIRE_FICTION`.
+
+The accepted link relations are only `LEXICAL_CANDIDATE` and `REVIEW_CANDIDATE`. The ingress never converts lexical proximity into `SAME_AS`, `REQUIRES`, a legacy planning dependency, or authority. Repeated labels cannot merge nodes, and labels are omitted from output. Candidate IDs continue to mean planning positions with `sourceSemanticMatch: UNMAPPED`; matching a position is not semantic adoption. Ariadne v0.7 kind checks use the original Sphere axis: S01–S07 are DOMAIN_SPECIALIZATION, S08–S12 are EPISTEMIC_META, independent of node number.
+
+`IRON_EMPIRE_FICTION` is an explicit project-review provenance marker. It leaves Ariadne node kind unchanged, returns `evidenceModality: FICTION_REVIEW`, and always returns `scientificEndorsement: false`. It does not ingest private Imagine/Dream/Palace content or turn fictional mechanics into a scientific result. Reference-index labels are caller-authorized source metadata only; source bodies and private-mode fields are rejected by the input shape.
+
+The output remains `SOURCE_BOUND_CANDIDATE_ONLY`, with zero verified gains, semantic equivalences or resident assignments; no publication, host, CANON or rights effect. Nested identity, link, source-reference and dissent arrays are frozen. Exact identity checks, deterministic digests and frozen data do not replace independent source authenticity, consent, semantic review or trusted host READ/RETURN.
+
+### Executed verification for this additive change
+
+The original 66 Whole144 and compounding tests were independently rerun against exact fetched `civilizational-contract.mjs` and catalogue dependencies, without the earlier constants stub: 66/66 PASS in Node normal and `--jitless`. The new suite adds 29 cases: 13 same-label identities, all six endpoint substitutions, wrong edition/registry/kind, missing/duplicate bindings, unknown/private/authority fields, accessors and custom iterators, candidate-only links, explicit fiction provenance, source mutation resistance and legacy compatibility. Combined: 95/95 PASS normally and 95/95 PASS under `--jitless` (Node v24.22.3). These are scoped local module tests, not full-repository CI or live host validation.
+
+```sh
+node --test test/whole-144.test.mjs test/whole-144-compounding.test.mjs test/whole-144-source-bound.test.mjs
+node --jitless --test test/whole-144.test.mjs test/whole-144-compounding.test.mjs test/whole-144-source-bound.test.mjs
+```
+
+Committed test records are explicitly synthetic; the private original ontology and Iron Empire project source bodies are not included. A separate authorized integration can supply the genuine pinned source index and retain its independent byte-verification receipt without changing this review boundary into a trusted signer or scheduler.
+# Original-source integration check
+
+An owner-private, exact-byte Ariadne v0.7 integration exercised all 1,728 source
+bindings and twelve explicitly unreviewed lexical links through this API.
+Eight real-source negative controls rejected edition, digest, role, planning-slot,
+private-mode, relation and authority substitutions. The caller verified original
+registry bytes separately; the callee continues to state that it only compares
+supplied source pins.
+
+The causal-inference regression preserves thirteen source identities. In the raw
+registry, one title is unqualified and twelve META titles carry their House
+prefix. A derived topic facet may remove that exact prefix for discovery, while
+full titles and coordinate identities remain intact. It is not a semantic join.
+Private registry bytes and project-fiction bodies are not embedded in this code.
+
