@@ -25,6 +25,10 @@ export class AtomicJournal {
   #load(){let db;try{db=JSON.parse(readFileSync(this.file,'utf8'));}catch{throw new Hold('JOURNAL_CORRUPT');}
     requireValid(isObject(db)&&(db.version===2||db.version===3)&&isObject(db.runs),'JOURNAL_SCHEMA_INVALID');
     if(db.version===2)requireValid(this.readOnly&&this.legacyRead,'LEGACY_JOURNAL_HASH_UNBOUND');
+    // Old v3 snapshots may contain individually valid effect preparation records
+    // duplicated across run IDs (before cross-run admission was introduced).
+    // Never reclassify that history as unambiguous on reopen, even read-only.
+    const effectOwnerByRequestId=new Map();
     for(const [id,run] of Object.entries(db.runs)){
       requireValid(ID.test(id)&&isObject(run)&&SHA.test(run.inputDigest)&&Array.isArray(run.events)&&SHA.test(run.head),'JOURNAL_RUN_INVALID');
       let prev=ZERO;const seen=new Set();for(let i=0;i<run.events.length;i++){
@@ -34,6 +38,11 @@ export class AtomicJournal {
           ? {runId:id,inputDigest:run.inputDigest,seq:e.seq,step:e.step,detail:e.detail,requestId:e.requestId,prev:e.prev}
           : {runId:id,seq:e.seq,step:e.step,detail:e.detail,prev:e.prev};
         requireValid(digest(claim)===e.hash,'JOURNAL_HASH_CORRUPT');prev=e.hash;
+        if(db.version===3&&e.requestId.startsWith('effect:')){
+          const priorOwner=effectOwnerByRequestId.get(e.requestId);
+          requireValid(priorOwner===undefined||priorOwner===id,'JOURNAL_EFFECT_CROSS_RUN_CONFLICT');
+          effectOwnerByRequestId.set(e.requestId,id);
+        }
       }requireValid(run.head===prev,'JOURNAL_HEAD_CORRUPT');
     }
     return db;
