@@ -1,0 +1,90 @@
+[
+  {
+    "caseId": "SCI-FIXTURE-001",
+    "mode": "WORK",
+    "nodes": [
+      "H01.S05.N09",
+      "H03.S06.N02"
+    ],
+    "relation": "ANALOGY",
+    "problem": "This synthetic exercise compares measurement and infrastructure monitoring; no real scientific evidence is asserted",
+    "hypothesis": "A method from one subject might be instructive for a toy model in another; this is a synthetic fixture only",
+    "testPlan": "Test both synthetic readout methods on the same generated signal and compare false positive counts",
+    "falsifier": "If the synthetic baseline is no worse than the candidate, the exercise cannot support transfer",
+    "papers": [
+      {
+        "id": "SCI-FIXTURE-001-SOURCE-NOT-PUBLISHED",
+        "title": "Synthetic citation placeholder, not a publication",
+        "url": "https://doi.org/10.1000/182",
+        "publishedDate": "2026-01-01",
+        "status": "SOURCE_REPORTED"
+      }
+    ]
+  },
+  {
+    "caseId": "SCI-FIXTURE-002",
+    "mode": "WORK",
+    "nodes": [
+      "H12.S04.N01",
+      "H01.S03.N09"
+    ],
+    "relation": "ANALOGY",
+    "problem": "This synthetic exercise compares spacecraft power circuits with terrestrial grid controls; no real scientific evidence is asserted",
+    "hypothesis": "A method from one subject might be instructive for a toy model in another; this is a synthetic fixture only",
+    "testPlan": "Inject a bounded artificial fault into two simplified public-domain simulator scenarios",
+    "falsifier": "If the proposed controller does not improve simulated restoration, reject the analogy",
+    "papers": [
+      {
+        "id": "SCI-FIXTURE-002-SOURCE-NOT-PUBLISHED",
+        "title": "Synthetic citation placeholder, not a publication",
+        "url": "https://doi.org/10.1000/182",
+        "publishedDate": "2026-01-01",
+        "status": "SOURCE_REPORTED"
+      }
+    ]
+  },
+  {
+    "caseId": "SCI-FIXTURE-003",
+    "mode": "WORK",
+    "nodes": [
+      "H02.S05.N09",
+      "H01.S01.N11"
+    ],
+    "relation": "ANALOGY",
+    "problem": "This synthetic exercise studies measurement calibration across water and physics; no real scientific evidence is asserted",
+    "hypothesis": "A method from one subject might be instructive for a toy model in another; this is a synthetic fixture only",
+    "testPlan": "Apply a common synthetic offset and compare two uncertainty estimates under controlled noise",
+    "falsifier": "If the candidate calibration overstates coverage, reject the proposed transfer",
+    "papers": [
+      {
+        "id": "SCI-FIXTURE-003-SOURCE-NOT-PUBLISHED",
+        "title": "Synthetic citation placeholder, not a publication",
+        "url": "https://doi.org/10.1000/182",
+        "publishedDate": "2026-01-01",
+        "status": "SOURCE_REPORTED"
+      }
+    ]
+  },
+  {
+    "caseId": "SCI-FIXTURE-004",
+    "mode": "WORK",
+    "nodes": [
+      "H02.S07.N03",
+      "H03.S02.N03"
+    ],
+    "relation": "ANALOGY",
+    "problem": "This synthetic exercise contrasts plant production and climate model sensitivity; no real scientific evidence is asserted",
+    "hypothesis": "A method from one subject might be instructive for a toy model in another; this is a synthetic fixture only",
+    "testPlan": "Use a toy sensitivity model with held-out artificial rainfall perturbations",
+    "falsifier": "If the baseline outperforms the transferred feature, preserve a negative result",
+    "papers": [
+      {
+        "id": "SCI-FIXTURE-004-SOURCE-NOT-PUBLISHED",
+        "title": "Synthetic citation placeholder, not a publication",
+        "url": "https://doi.org/10.1000/182",
+        "publishedDate": "2026-01-01",
+        "status": "SOURCE_REPORTED"
+      }
+    ]
+  }
+]
