@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {fingerprint64,cutItems,planEvolution,verifyEvolution,planCompletion,SOURCE_BLOB} from '../scripts/atlas_source_cascade.mjs';
+import {fingerprint64,cutItems,planEvolution,verifyEvolution,planCompletion,verifyCompactReceipts,SOURCE_BLOB} from '../scripts/atlas_source_cascade.mjs';
 
 const snapshot=JSON.parse(readFileSync(new URL('../docs/ops/ATLAS_GITHUB_OPEN_SOURCE_CUT_20261122.json',import.meta.url),'utf8'));
 const synthetic={
@@ -162,4 +162,29 @@ test('full 1320 record keys are unique even across the optional continuation',()
   const extra=planCompletion(snapshot,r);
   const rows=[...r.pilot_rows,...r.expansion_rows,...extra.completion_steps];
   assert.equal(new Set(rows.map(x=>x.item_key+'/'+x.review_stage)).size,1320);
+});
+
+const committedReceipts=()=>{
+  const base=new URL('../data/',import.meta.url);
+  return {
+    pilot:JSON.parse(readFileSync(new URL('atlas_cascade_100_pilot_20261123.json',base),'utf8')),
+    followon:JSON.parse(readFileSync(new URL('atlas_cascade_1000_expansion_20261123.json',base),'utf8')),
+    completion:JSON.parse(readFileSync(new URL('atlas_cascade_220_completion_20261123.json',base),'utf8'))
+  };
+};
+test('published 100+1000+220 receipts reproduce exact 1320-step cascade',()=>{
+  const result=verifyCompactReceipts(snapshot,committedReceipts());
+  assert.equal(result.valid,true);
+  assert.equal(result.steps,1320);
+  assert.equal(result.final_checkpoint64,'32d8fcce0ee6cd28');
+});
+test('edited published receipt step cannot pass replay',()=>{
+  const receipts=committedReceipts();
+  receipts.followon.steps[700].checksum64='0000000000000000';
+  assert.equal(verifyCompactReceipts(snapshot,receipts).valid,false);
+});
+test('wrong persisted source edition cannot pass replay',()=>{
+  const receipts=committedReceipts();
+  receipts.pilot.source_cut_blob_sha1='a'.repeat(40);
+  assert.equal(verifyCompactReceipts(snapshot,receipts).valid,false);
 });
