@@ -29,6 +29,26 @@ def canonical(obj):
     return json.dumps(obj,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode('utf-8')
 def sha(data):return hashlib.sha256(data).hexdigest()
 
+def expected_coordinate(seen, previous_head):
+    """Independent Python reimplementation of the Node 12-House adaptive selector."""
+    house=[0]*13
+    sphere=[[0]*13 for _ in range(13)]
+    node=[[0]*13 for _ in range(13)]
+    for c in seen:
+        h=int(c[1:3]);sp=int(c[5:7]);nd=int(c[9:11])
+        house[h]+=1;sphere[h][sp]+=1;node[h][nd]+=1
+    tie_seed=int(previous_head[:8],16)
+    best=None
+    for i in range(1728):
+        h=i//144+1;sp=(i%144)//12+1;nd=i%12+1
+        c=f'H{h:02d}.S{sp:02d}.N{nd:02d}'
+        if c in seen:continue
+        tie=(((i+1)*2654435761)&0xFFFFFFFF)^tie_seed
+        metric=(house[h],sphere[h][sp],node[h][nd],tie)
+        if best is None or metric<best[0]:best=(metric,c)
+    require(best is not None,'COORDINATE_EXHAUSTION')
+    return best[1]
+
 def check(ledgerpath,summarypath):
     raw=ledgerpath.read_bytes()
     require(len(raw)<=2_000_000,'LEDGER_FILE_BUDGET')
@@ -44,6 +64,7 @@ def check(ledgerpath,summarypath):
         require(row['phase']==('PRIMARY_100' if i<=100 else 'DESCENDANT_1000'),'PHASE')
         require(type(row['coordinate']) is str and COORD.fullmatch(row['coordinate']),'COORDINATE')
         require(row['coordinate'] not in seen,'DUPLICATE_COORDINATE')
+        require(row['coordinate']==expected_coordinate(seen,previous),'ADAPTIVE_COORDINATE_MISMATCH')
         require(row['family']==FAMILIES[(i-1)%len(FAMILIES)],'FAMILY_ORDER')
         require(row['previousHead']==previous,'ANCESTRY')
         source=sha(('synthetic-hsn-source-v1:'+row['coordinate']).encode())
