@@ -46,7 +46,12 @@ export const modeIsWork = m => m==='WORK';
  */
 export function parseStrictJson(raw, {maxBytes=2_000_000,maxDepth=64}={}) {
   requireValid(typeof raw==='string' || Buffer.isBuffer(raw),'JSON_STRING_REQUIRED');
-  const s=Buffer.isBuffer(raw)?raw.toString('utf8'):raw;
+  if(Buffer.isBuffer(raw)) requireValid(raw.length<=maxBytes,'JSON_SIZE_LIMIT');
+  let s=raw;
+  if(Buffer.isBuffer(raw)){
+    try{s=new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(raw);}
+    catch{throw new Hold('INVALID_UTF8_BYTES');}
+  }
   requireValid(Buffer.byteLength(s,'utf8')<=maxBytes,'JSON_SIZE_LIMIT');
   let i=0;
   const ws=()=>{while(i<s.length && /[\t\n\r ]/.test(s[i]))i++;};
@@ -54,7 +59,8 @@ export function parseStrictJson(raw, {maxBytes=2_000_000,maxDepth=64}={}) {
     requireValid(s[i]==='"','JSON_STRING_EXPECTED');const start=i++;let escaped=false;
     while(i<s.length){const c=s[i++];if(!escaped&&c==='"'){
       const token=s.slice(start,i);let v;try{v=JSON.parse(token);}catch{throw new Hold('INVALID_JSON_STRING');}
-      requireValid(!/[\u0000-\u001f]/.test(v),'CONTROL_STRING_DENIED');return v;
+      requireValid(!/[\u0000-\u001f]/.test(v),'CONTROL_STRING_DENIED');
+      requireValid(!/[\uD800-\uDFFF]/u.test(v),'INVALID_UNICODE_SCALAR');return v;
     } if(!escaped&&c==='\\'){escaped=true;continue;}escaped=false;}
     throw new Hold('UNTERMINATED_JSON_STRING');
   }
