@@ -2,13 +2,36 @@
  * Append-only logical events persisted in a single atomic snapshot and protected
  * by an exclusive process lock. Lost acknowledgements remain UNCERTAIN, never retried blindly.
  */
-import {openSync,closeSync,readFileSync,writeFileSync,renameSync,mkdirSync,existsSync,fsyncSync,unlinkSync} from 'node:fs';
+import {openSync,closeSync,readFileSync,writeFileSync,renameSync,mkdirSync,existsSync,fsyncSync,unlinkSync,statSync} from 'node:fs';
 import {dirname,resolve} from 'node:path';
 import {randomUUID} from 'node:crypto';
 import {digest,canonical,Hold,requireValid,isObject} from './index.mjs';
 const SHA=/^[a-f0-9]{64}$/;
 const ID=/^[A-Za-z][A-Za-z0-9._:-]{2,79}$/;
 const ZERO='0'.repeat(64);
+// Bound adversarial or corrupt local journal files before JSON.parse or
+// recursive canonicalization. These are source-candidate limits, not a claim
+// about cloud/D1 storage or host policy.
+const MAX_JOURNAL_RAW_BYTES=2_000_000;
+const MAX_JOURNAL_NESTING=64;
+function preflightJournalRaw(raw){
+  requireValid(raw.length<=MAX_JOURNAL_RAW_BYTES,'JOURNAL_RAW_SIZE_LIMIT');
+  let depth=0,quoted=false,escaped=false;
+  // ASCII JSON structural bytes remain unambiguous in UTF-8. Ignore brackets
+  // inside JSON strings, including escaped quotes and escaped backslashes.
+  for(const byte of raw){
+    if(quoted){
+      if(escaped)escaped=false;
+      else if(byte===0x5c)escaped=true;
+      else if(byte===0x22)quoted=false;
+      continue;
+    }
+    if(byte===0x22){quoted=true;continue;}
+    if(byte===0x7b||byte===0x5b){
+      depth++;requireValid(depth<=MAX_JOURNAL_NESTING,'JOURNAL_RAW_NESTING_LIMIT');
+    }else if(byte===0x7d||byte===0x5d)depth--;
+  }
+}
 export class AtomicJournal {
   constructor(filepath,{readOnly=false,legacyRead=false}={}) {
     requireValid(typeof filepath==='string'&&filepath.length>0,'JOURNAL_PATH_REQUIRED');
@@ -23,16 +46,30 @@ export class AtomicJournal {
     requireValid(existsSync(this.file),'JOURNAL_MISSING');this.#load();
   }
   #load(){let db,raw;
-    try{raw=readFileSync(this.file);db=JSON.parse(raw.toString('utf8'));}
-    catch{throw new Hold('JOURNAL_CORRUPT');}
-    // Every first-party v3 writer emits exactly canonical(db) plus one LF.
+    try{
+      // Refuse oversized files before allocating/read, then recheck actual
+      // bytes after the read so a concurrent replacement cannot evade the cap.
+      requireValid(statSync(this.file).size<=MAX_JOURNAL_RAW_BYTES,'JOURNAL_RAW_SIZE_LIMIT');
+      raw=readFileSync(this.file);preflightJournalRaw(raw);
+      db=JSON.parse(raw.toString('utf8'));
+      // Every first-party v3 writer emits exactly canonical(db) plus one LF.
     // JSON.parse by itself discards duplicate/escaped object keys (including
     // Unicode aliases) *before* any event hash can examine them. Compare the
     // original bytes before granting even read-only journal access. Historical
     // noncanonical v3 files are quarantined for separate forensic review,
     // never rewritten or silently repaired here. v2 retains its separate
     // explicit legacyRead/readOnly policy, not this v3 writer-byte contract.
-    if(db?.version===3)requireValid(raw.equals(Buffer.from(canonical(db)+'\n','utf8')),'JOURNAL_RAW_NONCANONICAL');
+      if(db?.version===3)requireValid(raw.equals(Buffer.from(canonical(db)+'\n','utf8')),'JOURNAL_RAW_NONCANONICAL');
+    }catch(error){
+      // Preserve the R19 exact-byte gate's established HOLD code. JSON syntax,
+      // nonfinite numbers, malicious depth and byte limits otherwise surface
+      // as one controlled journal corruption HOLD, not a raw RangeError or
+      // generic NONCANONICAL_VALUE. The untouched bytes remain forensic input.
+      if(error instanceof Hold&&error.code==='JOURNAL_RAW_NONCANONICAL')throw error;
+      const hold=new Hold('JOURNAL_CORRUPT');
+      Object.defineProperty(hold,'forensicCause',{value:error,enumerable:false});
+      throw hold;
+    }
     requireValid(isObject(db)&&(db.version===2||db.version===3)&&isObject(db.runs),'JOURNAL_SCHEMA_INVALID');
     if(db.version===2)requireValid(this.readOnly&&this.legacyRead,'LEGACY_JOURNAL_HASH_UNBOUND');
     // Old v3 snapshots may contain individually valid effect preparation records
