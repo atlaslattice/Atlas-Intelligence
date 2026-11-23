@@ -1,6 +1,12 @@
 # Element 145 / ATLAS
 
-Firebase-backed multi-provider AI substrate with strict data-layer invariants. Currently routing primary calls to Gemini; multi-provider proxy scaffold ready for SDK wiring.
+## ATLAS ARI — GPT-centric UWS (experimental full tool access)
+
+**[Run the real local UWS + compatible-model integration](integrations/README.md)** · **[Draft integration PR #2](https://github.com/atlaslattice/Atlas-Intelligence/pull/2)**
+
+The versioned Python agent bridges GPT-compatible model tool calls to the user's local [UWS CLI](https://github.com/atlaslattice/uws), including supported **read and write** operations across authorized providers. External writes require native UWS dry-run and human approval. This does not connect or expose a public browser execution endpoint. The existing browser proxy remains a **mock** (now labeled as such), not verified inference. Models, OAuth, live providers, and user consent must be configured on the local host.
+
+Firebase-backed multi-provider AI substrate with strict data-layer invariants. The browser multi-provider proxy is a simulation pending authenticated SDK wiring; the local ARI UWS agent is the separately executable real-model integration.
 
 Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. This kernel is different.
 
