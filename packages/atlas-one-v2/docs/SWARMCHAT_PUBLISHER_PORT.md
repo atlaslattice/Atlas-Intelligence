@@ -27,3 +27,43 @@ The existing SwarmChat account-private Site/D1 broker remains the only shared ro
 - Run the original Site tests/build and a complete rollback on the exact served HEAD, then only promote by authorized publisher.
 
 `WorkHostPort` is a **source-level callback contract** with a test fixture. It is NOT a cryptographic proof of real IAM, host issuer, D1 ACL or signed event delivery. Faking its callback is trivial and cannot be used as a release approval.
+
+## WorkHostPort scoped callback contract (source-only revision 2026-11-22)
+
+The host-only `WorkHostPort` constructor requires four functions: `session`,
+`admission`, `read`, and `egress`. Public `query()` input accepts only
+`{roomId,sourceSeqs,purpose:'research'}`. Caller-provided tenant, account,
+principal, mode and rights epoch are rejected **before invoking the host**.
+
+The host-owned `session()` returns the current
+`{tenant,account,principal,mode:'WORK',purpose:'research',rightsEpoch}`.
+All IDs are bounded and validated. Admission must return
+`{allow:true,leaseId,epoch,tenant,account,principal}` with matching scope and
+`epoch===rightsEpoch`; the same immutable scope and snapshotted lease are
+passed to `read` and `egress`. Each source row must bind
+`{tenant,account,roomId,seq,sha256}`. Egress must repeat the current
+tenant/account/principal, lease and epoch; mismatches fail closed. This
+revision intentionally removes the stable public `scopeDigest` to avoid
+cross-session correlation. Any denial leaves no exported private source body.
+
+The integration tests include wrong-tenant/account at admission, returned
+rows and egress, stale session epochs, unsupported modes, forged query
+authority, unavailable session, duplicate seqs, return revocation, and no
+false hosted attestation. This is an **incompatible source API hardening** for
+earlier untrusted `query({principal,...})` callers. Do not silently fall back
+to the old contract. An authorized Site publisher must bind `session`
+from the trusted platform identity and enforce current READ + RETURN rights
+inside the controlled storage/egress boundary. Merely injecting a callback
+remains forgeable in standalone JavaScript and does not prove host IAM,
+network-byte atomics, original source custody, or authenticated peers.
+
+Exact tested files (GitHub blob SHA-1):
+- `src/adapters.mjs` `a538001a02b3fc569ee9c1414a7e004e00bbf632`
+- `test/adapters.test.mjs` `0467589310ab06b6d3945e82058bd8eeb911a8a0`
+- `test/host-session-scope.test.mjs` `0bce2e820c6d6e7a6eb87fc524c327a7cc3ab74f`
+
+Local isolated source-equivalent tests: **31/31 PASS** under Node 22, using
+stubs for the untouched `index.mjs` and `engine.mjs` imports. The complete
+repository suite, genuine original Ariadne private fixture, CI runner,
+D1 multi-account test, served Site HEAD, and host publisher have NOT been
+verified by these 31 tests. Keep the PR DRAFT until those gates are observed.
