@@ -11,29 +11,40 @@ export const PORT_STATES=Object.freeze({DISABLED:'HOST_ADAPTER_NOT_BOUND',PREPAR
 function hold(code){return {schema:'atlas.one.host-port/v2',status:'HOLD',reason:code,hostAuthenticated:false,postPerformed:false,canonEffect:'NONE',data:null};}
 /** Only the publisher's already-authenticated service can supply this port. At
  * source level, even a returned ALLOW is not independent evidence of real IAM.
+ * A model/request must not provide tenant, account, principal or issuer epoch.
  */
 export class WorkHostPort {
-  #admission;#read;#egress;
-  constructor({admission,read,egress}={}){
-    requireValid(typeof admission==='function'&&typeof read==='function'&&typeof egress==='function','HOST_PORT_CALLBACKS_REQUIRED');
-    this.#admission=admission;this.#read=read;this.#egress=egress;
+  #session;#admission;#read;#egress;
+  constructor({session,admission,read,egress}={}){
+    requireValid(typeof session==='function'&&typeof admission==='function'&&typeof read==='function'&&typeof egress==='function','HOST_PORT_CALLBACKS_REQUIRED');
+    this.#session=session;this.#admission=admission;this.#read=read;this.#egress=egress;
   }
-  async query({principal,roomId,sourceSeqs,purpose='research'}={}){
-    if(typeof principal!=='string'||!ID.test(principal)||typeof roomId!=='string'||!ID.test(roomId)||purpose!=='research'||!Array.isArray(sourceSeqs)||sourceSeqs.length<1||sourceSeqs.length>6||sourceSeqs.some(s=>!Number.isInteger(s)||s<1||s>500))return hold('REQUEST_SHAPE_INVALID');
-    const scope={principal,roomId,sourceSeqs:[...new Set(sourceSeqs)],mode:'WORK',purpose};
+  async query(request={}){
+    if(!isObject(request)||Object.keys(request).some(k=>!['roomId','sourceSeqs','purpose'].includes(k)))return hold('REQUEST_SHAPE_INVALID');
+    const {roomId,sourceSeqs,purpose='research'}=request;
+    if(typeof roomId!=='string'||!ID.test(roomId)||purpose!=='research'||!Array.isArray(sourceSeqs)||sourceSeqs.length<1||sourceSeqs.length>6||sourceSeqs.some(s=>!Number.isInteger(s)||s<1||s>500)||new Set(sourceSeqs).size!==sourceSeqs.length)return hold('REQUEST_SHAPE_INVALID');
+    let identity;
+    try{identity=await this.#session();}catch{return hold('HOST_SESSION_UNAVAILABLE');}
+    if(!isObject(identity)||!['tenant','account','principal'].every(k=>typeof identity[k]==='string'&&ID.test(identity[k]))||identity.mode!=='WORK'||identity.purpose!=='research'||!Number.isSafeInteger(identity.rightsEpoch)||identity.rightsEpoch<0)return hold('HOST_SESSION_UNAVAILABLE');
+    const scope=Object.freeze({tenant:identity.tenant,account:identity.account,principal:identity.principal,roomId,sourceSeqs:Object.freeze([...sourceSeqs]),mode:'WORK',purpose,rightsEpoch:identity.rightsEpoch});
+    const bound=r=>isObject(r)&&r.tenant===scope.tenant&&r.account===scope.account&&r.principal===scope.principal;
     let permit,rows,current;
     try{permit=await this.#admission(scope);}catch{return hold('HOST_ADMISSION_FAILED');}
-    if(!isObject(permit)||permit.allow!==true||typeof permit.leaseId!=='string'||!ID.test(permit.leaseId)||!Number.isSafeInteger(permit.epoch)||permit.epoch<0)return hold('READ_RIGHTS_MISSING');
-    try{rows=await this.#read(scope,permit);}catch{return hold('HOST_READ_FAILED');}
+    if(!bound(permit)||permit.allow!==true||typeof permit.leaseId!=='string'||!ID.test(permit.leaseId)||permit.epoch!==scope.rightsEpoch)return hold('READ_RIGHTS_MISSING');
+    // Snapshot the grant before read: a callback cannot change the scope or
+    // lease evidence later while an asynchronous read is in flight.
+    const admitted=Object.freeze({tenant:permit.tenant,account:permit.account,principal:permit.principal,leaseId:permit.leaseId,epoch:permit.epoch,allow:true});
+    try{rows=await this.#read(scope,admitted);}catch{return hold('HOST_READ_FAILED');}
     if(!Array.isArray(rows)||rows.length!==scope.sourceSeqs.length)return hold('HOST_RETURN_SHAPE_INVALID');
     const refs=[];
-    for(const row of rows){if(!isObject(row)||row.roomId!==roomId||!scope.sourceSeqs.includes(row.seq)||typeof row.sha256!=='string'||!SHA.test(row.sha256))return hold('HOST_SOURCE_IDENTITY_INVALID');
+    for(const row of rows){if(!isObject(row)||row.tenant!==scope.tenant||row.account!==scope.account||row.roomId!==roomId||!scope.sourceSeqs.includes(row.seq)||typeof row.sha256!=='string'||!SHA.test(row.sha256))return hold('HOST_SOURCE_IDENTITY_INVALID');
       // Deliberately discard full body, identity claims, source metadata, and input URLs.
       refs.push({roomId:row.roomId,seq:row.seq,sourceSHA256:row.sha256});}
     if(new Set(refs.map(r=>r.seq)).size!==scope.sourceSeqs.length)return hold('HOST_SOURCE_SEQUENCE_DUPLICATE');
-    try{current=await this.#egress(scope,permit);}catch{return hold('HOST_RETURN_RECHECK_FAILED');}
-    if(!isObject(current)||current.allow!==true||current.leaseId!==permit.leaseId||current.epoch!==permit.epoch)return hold('REVOKED_OR_STALE_EPOCH_AT_RETURN');
-    const publicData={references:refs.sort((a,b)=>a.seq-b.seq),sourceCount:refs.length,scopeDigest:digest({roomId,sourceSeqs:scope.sourceSeqs,purpose})};
+    try{current=await this.#egress(scope,admitted);}catch{return hold('HOST_RETURN_RECHECK_FAILED');}
+    if(!bound(current)||current.allow!==true||current.leaseId!==admitted.leaseId||current.epoch!==admitted.epoch)return hold('REVOKED_OR_STALE_EPOCH_AT_RETURN');
+    // No public scope digest: a stable scope fingerprint is a correlation oracle.
+    const publicData={references:refs.sort((a,b)=>a.seq-b.seq),sourceCount:refs.length};
     return {schema:'atlas.one.host-port/v2',status:PORT_STATES.READ,data:publicData,hostAuthenticated:false,rightsProof:'HOST_CALLBACK_REPORTED_NOT_INDEPENDENTLY_ATTESTED',postPerformed:false,canonEffect:'NONE'};
   }
 }
