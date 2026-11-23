@@ -50,3 +50,9 @@ test('R17 negative: request seq getter cannot alter selected source after admiss
  const r=await port.query({roomId:'work-001',sourceSeqs:seqs});
  assert.equal(r.status,PORT_STATES.READ);assert.deepEqual(admittedSeq,[5]);assert.equal(r.data.references[0].seq,5);
 });
+
+test('R17 negative: hostile callback descriptor trap returns HOLD, not a rejected query',async()=>{
+ let egress=0;const hostile=new Proxy({}, {getPrototypeOf(){throw new Error('trap');}});
+ const port=make({read:async()=>[hostile],egress:async()=>{egress++;return permit();}});
+ hold(await port.query(request));assert.equal(egress,0);
+});
