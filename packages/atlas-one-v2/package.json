@@ -15,12 +15,15 @@
     "./work-burst": "./src/work-burst.mjs",
     "./cascade-evolution": "./src/cascade-evolution.mjs",
     "./symbiosis": "./generated/generated-node-routes.mjs",
-    "./r07-workburst": "./src/r07-workburst-bridge.mjs"
+    "./r07-workburst": "./src/r07-workburst-bridge.mjs",
+    "./evolution-projections": "./tools/cupwake-evolution/integrations/workburst-bridge.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "smoke": "node examples/quickstart.mjs",
-    "serve:local": "node src/serve-local.mjs"
+    "serve:local": "node src/serve-local.mjs",
+    "evolution:local": "python3 tools/cupwake-evolution/run_evolution.py build",
+    "test:evolution": "python3 tools/cupwake-evolution/run_public_tests.py"
   },
   "license": "MIT",
   "description": "Original OpenAI-native Atlas ONE 2.0 orchestration core: source-locked research, durable local checks, separate Work broker authority."
