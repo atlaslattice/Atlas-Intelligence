@@ -52,8 +52,13 @@ function snapshotCallerDetail(root){
     // getter effects. Descriptor custody and bounded traversal are retained.
     if(Object.hasOwn(task,'sourceDescriptor')){
       try{
-        const descriptor=task.sourceDescriptor;
-        value=!descriptor ? null : Object.hasOwn(descriptor,'value') ? descriptor.value :
+        // The historical canonical visitor resolves each property when its
+        // DFS turn arrives, not when a parent first enumerates siblings.
+        // Earlier getters can replace a later descriptor. Resample exactly
+        // once at that turn; use an explicit sparse-array fallback only.
+        const descriptor=Object.getOwnPropertyDescriptor(task.owner,task.key);
+        value=!descriptor ? (task.arraySource ? null : undefined) :
+          Object.hasOwn(descriptor,'value') ? descriptor.value :
           typeof descriptor.get==='function' ? descriptor.get.call(task.owner) : undefined;
       }catch(error){
         if(error instanceof Hold)throw error;
@@ -108,7 +113,7 @@ function snapshotCallerDetail(root){
     for(let i=children.length-1;i>=0;i--){
       const [childKey,sourceDescriptor]=children[i];
       pending.push({target:out,key:childKey,depth:depth+1,ancestors:nextAncestors,
-                    sourceDescriptor,owner:value});
+                    sourceDescriptor,owner:value,arraySource:Array.isArray(value)});
     }
   }
   return holder.value;
