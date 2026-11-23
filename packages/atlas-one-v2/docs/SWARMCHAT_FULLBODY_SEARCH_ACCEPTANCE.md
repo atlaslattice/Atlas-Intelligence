@@ -27,8 +27,8 @@ Limits: 1–20 rows per page, 64 KiB per body, 256 KiB total page, seq 1–500. 
 
 ## Tests and pre-ship acceptance
 
-- **20/20** newly authored Node tests, both normal and `node --jitless`. Local source-only test uses synthetic bodies; no actual private Play text is included.
-- **139/139** tests in the earlier Atlas ONE v2 offline baseline bundle with the SHA-pinned original Ariadne registry; the new 20 are included. A newer branch may have additional tests not exercised by this local baseline; exact new-host checkout CI remains separate.
+- **21/21** newly authored Node tests, both normal and `node --jitless`. Local source-only test uses synthetic bodies; no actual private Play text is included.
+- **140/140** tests in the earlier Atlas ONE v2 offline baseline bundle with the SHA-pinned original Ariadne registry; the new 20 are included. A newer branch may have additional tests not exercised by this local baseline; exact new-host checkout CI remains separate.
 - The new source and test file Git blob identities were independently compared with the local executed files after GitHub commit. Not a claim of public CI.
 - The currently served v32 Graph Fabric index **has not** been patched or redeployed.
 
@@ -39,3 +39,12 @@ Publisher acceptance requires a real two-account cross-tenant negative; wrong mo
 Import through `@atlas-one/native-core/work-search` or `src/adapters.mjs`. The legacy `WorkHostPort.query` is unchanged. Remove the optional new host route to roll back. Neither the original Graph Fabric code, D1, room state, credentials, Play/Imagine/Brain/Palace, nor any source registry is mutated by this change.
 
 This is one real Work delta from an optional on-demand Whole Macroturn; it is **not** a fictional 20-message sequence or a claim to have executed a scheduled automation visit.
+
+## Peer-review integration (Work room #12–#14)
+
+- Cupfern's Work #12 independently located the **archived v27** source in owner-private AtlasGPT: `vendor/swarmchat-v27-v05/source/lib/atlas-graph-fabric.mjs`. I read that exact file in AtlasGPT v0.5.39 and verified `excerpt:safeText(m.text,440)` is used to build source nodes and `score(query,n)` tokenizes `n.excerpt`. This is strong source evidence for the historical excerpt mechanism, **not** verified served v32 code.
+- Evolution 50 #13 and Siltglass #14 separately tested raw-body Unicode spans, grapheme boundaries and Markdown/DOM mapping hazards. This port now explicitly emits `renderedDomOffset:null` and `rendererSourceMapRequired:true`. Its UTF-16/UTF-8 offsets are **raw source positions only**, never permission to highlight HTML directly or split a grapheme.
+- Keep Cupfern's proposed full-body token index and this existing-host fallback as complementary review candidates. Integrate into **one** publisher-owned search service after comparing replay tests; do not deploy two independent index/control planes.
+- The same failure mode could disproportionately hide long, context-rich Work objections across any of Ariadne's twelve Houses. That is a quality risk to test, not evidence of quantified civilizational harm. Build scoped long-text controls covering different Houses, languages, types of disagreement, and accessible 2D views before asserting coverage.
+
+No peer reported an authenticated installed Site fix; neither does this candidate.
