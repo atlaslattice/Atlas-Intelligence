@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATLAS ARI — Two-Brain Research Console</title><style>
+:root{color-scheme:dark;background:#091827;color:#e5f5ff;font:16px system-ui,sans-serif}*{box-sizing:border-box}
+body{max-width:980px;margin:auto;padding:18px;line-height:1.55}a{color:#8cdbff}h1{font-size:1.6rem;margin-bottom:2px}h2{font-size:1.04rem}
+.note{color:#b4cedf}.status{border:1px solid #446378;border-radius:18px;padding:4px 9px;font-size:.76rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin:20px 0}
+.panel{padding:15px;border:1px solid #2e536c;border-radius:13px;background:#102b3d}
+textarea{width:100%;height:135px;background:#0a192b;color:#e9f8ff;border:1px solid #61829b;border-radius:8px;padding:10px;font:inherit}
+button{padding:9px 13px;margin-top:7px;background:#236d95;color:white;border:0;border-radius:8px;font:inherit;cursor:pointer}
+pre{white-space:pre-wrap;word-break:break-word}
+</style></head><body>
+<h1>ATLAS ARI <small style="font-size:.75rem">Atlas Resource Intelligence</small></h1>
+<p class="note">U.S.-scoped research candidate · GPT-primary preference · Independent counter-review · Human-rooted INV-0 Nothing Dies</p>
+<p><span class="status">DRAFT / NON-CANON / NO PROVIDER CONNECTED</span></p>
+<div class="grid">
+<div class="panel"><h2>UWS tool bus</h2><p>Local, explicit, read-only allowlist; no web UI access to connected accounts.</p><span class="status">LOCAL CLI</span></div>
+<div class="panel"><h2>Sheldonbrain + provenance KG</h2><p>Opt-in memory retrieval, local parsing, SQLite receipts and contradictions. Memory is not permission.</p><span class="status">LOCAL / DRAFT</span></div>
+<div class="panel"><h2>Dream × Play × Work 8/8/8</h2><p>Unbounded ideation references within bounded execution; no silent canon promotion or model weight updates.</p><span class="status">SIMULATION</span></div>
+<div class="panel"><h2>SHUGS experiments</h2><p>Original N=145 numerical research preserved for reproducibility; no physical proof or operational efficiency claim.</p><span class="status">THEORETICAL</span></div>
+</div>
+<div class="panel"><h2>Two-Brain Evidence Crosscheck (manual, local)</h2><p class="note">Paste two candidate analyses below. This browser tool compares cited IDs and disagreement opportunities only. It never contacts a model, sends content to a server, or certifies factual truth.</p>
+<div class="grid"><label>Primary / Brain A<textarea id="a" placeholder="Candidate answer with INV-0, D-42..."></textarea></label>
+<label>Reviewer / Brain B<textarea id="b" placeholder="Independent dissent and source citations..."></textarea></label></div>
+<button id="compare" type="button">Compare cited identifiers</button><pre id="result" aria-live="polite">Awaiting two independently sourced answers.</pre></div>
+<p class="note" id="backend">Backend status: not queried.</p>
+<p>Reference: <a href="https://github.com/atlaslattice/Atlas-Intelligence/blob/feature/atlas-ari-dual-brain-fabric-20261011/integrations/README.md">Integration and setup</a> · <a href="https://github.com/atlaslattice/Atlas-Intelligence/pull/1">Development PR</a></p>
+<script>
+document.getElementById('compare').addEventListener('click',()=>{
+ const a=document.getElementById('a').value,b=document.getElementById('b').value, out=document.getElementById('result');
+ if(!a.trim()||!b.trim()){out.textContent='Both candidate texts are required.';return;}
+ const re=/\b(?:INV-\d+|D-\d+[a-zA-Z-]*|SHUGS[-_A-Z0-9.]*)\b/g;
+ const first=new Set((a.match(re)||[])),second=new Set((b.match(re)||[]));
+ const common=[...first].filter(x=>second.has(x));const onlyA=[...first].filter(x=>!second.has(x)),onlyB=[...second].filter(x=>!first.has(x));
+ out.textContent='Shared references: '+(common.join(', ')||'none')+'\nPrimary-only: '+(onlyA.join(', ')||'none')+
+  '\nReviewer-only: '+(onlyB.join(', ')||'none')+'\n\nCAUTION: matching citation labels ≠ matching evidence ≠ proof. Resolve disagreements against original sources and retain human approval.';
+});
+fetch('/api/atlas/fabric/status').then(r=>{if(!r.ok)throw Error('Unavailable');return r.json()}).then(j=>{
+ document.getElementById('backend').textContent='Backend: '+j.deployment+
+ '; provider dispatch: '+j.provider_dispatch+'; knowledge graph: '+j.graph;
+}).catch(()=>{document.getElementById('backend').textContent='Backend status unavailable. This local comparison still works offline.'});
+</script></body></html>

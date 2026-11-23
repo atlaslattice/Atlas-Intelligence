@@ -47,3 +47,12 @@ Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. Th
 - `data`: Object
 - `createdAt`: Number
 - `updatedAt`: Number
+
+
+## New Atlas ARI v0.1 research fabric (DRAFT)
+
+See [integrations/README.md](integrations/README.md) for the source-linked opt-in **UWS** read-only adapter, **Sheldonbrain** private parser/query integration, functional **SQLite knowledge graph**, **GPT-primary + independent reviewer** two-brain CLI, exploratory **8/8/8 Dream/Play/optional Work** registry, and sandboxed **SHUGS** numerical data.
+
+**Operational truth:** The existing Express LLM endpoint has not been connected to vendor SDKs. It now returns `501 provider_dispatch_not_implemented` rather than the previous falsely labeled `[✓ VERIFIED]` mock answer. `GET /api/atlas/fabric/status` reports capabilities only; it does not run UWS, Sheldonbrain or models. The separate local Python tools never execute without explicit user invocation. The constitutional baseline is user-directed INV-0 **Nothing Dies**, not a signed government or vendor ratification.
+
+This is a review branch; run tests and secure the web app before connecting any private account or promoting to production.
