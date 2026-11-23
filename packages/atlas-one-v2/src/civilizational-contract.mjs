@@ -93,8 +93,13 @@ export function evaluateCanonHsnCandidate({clause,node,relation,claimedGlyph,rev
 /** A civilizational readiness PREVIEW. Reviews all twelve Houses, keeps domain
  * and method evidence separate, and never estimates a universal welfare score.
  */
-export function evaluateTwelveHouseReadiness({material,impacts,rights,stocks}={}){
-  if(material===false)return Object.freeze({status:'NOT_APPLICABLE_WITH_REASON_REQUIRED',authorityEffect:'NONE'});
+export function evaluateTwelveHouseReadiness({material,materialReason,impacts,rights,stocks}={}){
+  // A non-material declaration still needs an explicit bounded reason;
+  // otherwise the mandatory 12-House review could be bypassed by a bare flag.
+  if(material===false){
+    if(typeof materialReason!=='string'||materialReason.trim().length<12||materialReason.length>500)return deny('NONMATERIAL_REASON_REQUIRED');
+    return Object.freeze({status:'NOT_APPLICABLE_WITH_REASON',reason:materialReason.trim(),authorityEffect:'NONE'});
+  }
   if(material!==true||!Array.isArray(impacts)||impacts.length!==12||!Array.isArray(rights)||!Array.isArray(stocks))return deny('TWELVE_HOUSE_SCOPE_REQUIRED');
   if(rights.length===0)return deny('MANDATORY_RIGHTS_COVERAGE_MISSING');
   if(rights.some(x=>!plain(x)||!['PASS','BLOCK','UNKNOWN'].includes(x.state)))return deny('RIGHTS_SCHEMA_INVALID');
@@ -111,7 +116,7 @@ export function evaluateTwelveHouseReadiness({material,impacts,rights,stocks}={}
   if(uncovered)return deny('HOUSE_EVIDENCE_UNKNOWN');
   const seenStocks=new Set();
   for(const s of stocks){
-    if(!plain(s)||typeof s.resource!=='string'||s.resource.length<2||seenStocks.has(s.resource)||typeof s.unit!=='string'||s.unit.length<1||!['opening','imports','regeneration','restoration','withdrawals','losses','closing'].every(k=>Number.isFinite(s[k]))||s.withdrawals<0||s.losses<0||s.opening<0||s.closing<0)return deny('RESOURCE_LEDGER_INVALID');
+    if(!plain(s)||typeof s.resource!=='string'||s.resource.length<2||seenStocks.has(s.resource)||typeof s.unit!=='string'||s.unit.length<1||!['opening','imports','regeneration','restoration','withdrawals','losses','closing'].every(k=>Number.isFinite(s[k]))||['opening','imports','regeneration','restoration','withdrawals','losses','closing'].some(k=>s[k]<0))return deny('RESOURCE_LEDGER_INVALID');
     seenStocks.add(s.resource);
     const expected=s.opening+s.imports+s.regeneration+s.restoration-s.withdrawals-s.losses;
     if(Math.abs(expected-s.closing)>Math.max(1e-9,1e-9*Math.abs(expected)))return deny('PHYSICAL_STOCK_NOT_CLOSED');
