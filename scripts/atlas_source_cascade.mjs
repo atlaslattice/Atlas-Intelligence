@@ -89,3 +89,29 @@ export function verifyEvolution(cut,receipt){
  const a=JSON.stringify(receipt),b=JSON.stringify(wanted);
  return {valid:a===b,reason:a===b?"EXACT_DETERMINISTIC_REPLAY":"CONTENT_OR_ANCESTRY_MISMATCH",steps:wanted.summary.total_steps,final_checkpoint64:wanted.final_checkpoint64};
 }
+
+/* Optional supplemental 220 candidate checks: extend the existing 1100 checksum chain. */
+export function planCompletion(cut,base=null){
+  const r=base??planEvolution(cut);
+  if(r.pilot_target!==100||r.expansion_target!==1000||!verifyEvolution(cut,r).valid)throw Error("BASE_1100_REPLAY_HOLD");
+  const ordered=cutItems(cut),priorRows=[...r.pilot_rows,...r.expansion_rows],history=new Map();
+  for(const x of priorRows)history.set(x.item_key,x);
+  const v=STAGES[2],remaining=ordered.filter(item=>history.get(item.key)?.review_stage===STAGES[1].id);
+  if(remaining.length!==ordered.length*STAGES.length-r.summary.total_steps||remaining.length!==220)throw Error("REMAINING_SET_MISMATCH");
+  const appended=[];let prev=r.final_checkpoint64,ordinal=r.summary.total_steps;
+  for(const item of remaining){
+    const past=history.get(item.key);ordinal++;
+    const row={ordinal,phase:"COMPLETION_220",item_key:item.key,repository:item.repository,type:item.type,number:item.number,url:item.url,
+      source_observed_date:cut.observed_date,review_stage:v.id,stage_kind:v.kind,previous_ordinal:ordinal-1,
+      previous_item_ordinal:past.ordinal,required_action:v.requirement,hold_reason:v.hold,
+      evidence_status:"UNVERIFIED_REQUEST_NOT_COMPLETED",item_current_state:"NOT_REFRESHED",
+      external_effects:0,canon_effect:"NONE",source_cut_blob_sha1:r.source_cut_blob_sha1,previous_checksum64:prev};
+    row.checksum64=fingerprint64(prev+"\u0000"+JSON.stringify(row));prev=row.checksum64;
+    history.set(item.key,row);appended.push(row);
+  }
+  return {schema:"atlas.source-cascade.completion/v1",source_cut_blob_sha1:r.source_cut_blob_sha1,
+    source_digest64:r.source_digest64,parent_checkpoint64:r.final_checkpoint64,completion_steps:appended,
+    final_checkpoint64:prev,coverage:{source:ordered.length,rights:ordered.length,acceptance:ordered.length},
+    total_step_count:ordinal,complete_candidate_gate_matrix:true,source_rights_verified:false,approval_granted:false,
+    actual_issues_closed:0,actual_prs_merged:0,model_calls:0,external_effects:0};
+}
