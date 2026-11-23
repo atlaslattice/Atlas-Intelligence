@@ -19,7 +19,10 @@ export function createLocalPreviewServer({registry=null}={}){
     }
     if(req.method==='POST' && url.pathname==='/v2/research/preview'){
       if(!registry)return reply(res,503,{status:'HOLD',reason:'REGISTRY_NOT_INSTALLED'});
-      let raw='',size=0;for await(const chunk of req){size+=chunk.length;if(size>65536)return reply(res,413,{status:'HOLD',reason:'REQUEST_TOO_LARGE'});raw+=chunk.toString('utf8');}
+      let size=0;const chunks=[];for await(const chunk of req){size+=chunk.length;if(size>65536)return reply(res,413,{status:'HOLD',reason:'REQUEST_TOO_LARGE'});chunks.push(chunk);}
+      // Preserve original bytes across arbitrary transport chunks. Strict parser
+      // applies one fatal UTF-8 decode; per-chunk toString() is lossy.
+      const raw=Buffer.concat(chunks,size);
       try{const packet=prepareResearch(parseStrictJson(raw,{maxBytes:65536}),registry);return reply(res,200,{status:'CANDIDATE_NOT_ADJUDICATED',packetSHA256:packet.packetSHA256,envelope:prepareWorkEnvelope(packet),hostAuthenticated:false});}
       catch(e){return reply(res,400,{status:'HOLD',reason:e instanceof Hold?e.code:'INVALID_RESEARCH_PACKET'});}
     }
