@@ -14,7 +14,8 @@
     "./civilization": "./src/civilizational-contract.mjs",
     "./work-burst": "./src/work-burst.mjs",
     "./cascade-evolution": "./src/cascade-evolution.mjs",
-    "./symbiosis": "./generated/generated-node-routes.mjs"
+    "./symbiosis": "./generated/generated-node-routes.mjs",
+    "./r07-workburst": "./src/r07-workburst-bridge.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
