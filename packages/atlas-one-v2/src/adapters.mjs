@@ -35,6 +35,12 @@ export class WorkHostPort {
     // lease evidence later while an asynchronous read is in flight.
     const admitted=Object.freeze({tenant:permit.tenant,account:permit.account,principal:permit.principal,leaseId:permit.leaseId,epoch:permit.epoch,allow:true});
     try{rows=await this.#read(scope,admitted);}catch{return hold('HOST_READ_FAILED');}
+    // Independent defense in depth: bind the currently active session again
+    // after the asynchronous READ. The host-owned egress callback must still
+    // atomically fence its actual sink commit; this does NOT attest live IAM.
+    let fresh;
+    try{fresh=await this.#session();}catch{return hold('REVOKED_OR_STALE_EPOCH_AT_RETURN');}
+    if(!bound(fresh)||fresh.mode!=='WORK'||fresh.purpose!==purpose||fresh.rightsEpoch!==scope.rightsEpoch)return hold('REVOKED_OR_STALE_EPOCH_AT_RETURN');
     if(!Array.isArray(rows)||rows.length!==scope.sourceSeqs.length)return hold('HOST_RETURN_SHAPE_INVALID');
     const refs=[];
     for(const row of rows){if(!isObject(row)||row.tenant!==scope.tenant||row.account!==scope.account||row.roomId!==roomId||!scope.sourceSeqs.includes(row.seq)||typeof row.sha256!=='string'||!SHA.test(row.sha256))return hold('HOST_SOURCE_IDENTITY_INVALID');
