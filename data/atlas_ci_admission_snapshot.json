@@ -36,7 +36,9 @@
           "steps": [],
           "logs_verified": false
         }
-      ]
+      ],
+      "pr_number": 63,
+      "current_pr_head_sha": "1dec8b619afc032d3ebc5cf94aaf05f606358e9d"
     },
     {
       "repository": "atlaslattice/noosphere-archive",
@@ -54,7 +56,9 @@
           "steps": [],
           "logs_verified": false
         }
-      ]
+      ],
+      "pr_number": 19,
+      "current_pr_head_sha": "8b93495fe886a10787cd0a5ad5c2452c2c6c3bfe"
     }
   ]
 }

@@ -55,6 +55,15 @@ class AdmissionTests(unittest.TestCase):
                "steps": [{"conclusion": "success"}], "logs_verified": True}
         self.assertEqual(ci.evaluate_snapshot(input_for(job, actual="b" * 40))["release_gate"], "HELD")
 
+    def test_current_pr_head_drift_blocks_old_green_run(self):
+        job = {"id": 1, "conclusion": "success", "runner_id": 3,
+               "steps": [{"conclusion": "success"}], "logs_verified": True}
+        evidence = input_for(job)
+        evidence["runs"][0]["current_pr_head_sha"] = "b" * 40
+        result = ci.evaluate_snapshot(evidence)
+        self.assertEqual(result["release_gate"], "HELD")
+        self.assertEqual(result["jobs"][0]["source_status"], "STALE_PR_HEAD")
+
     def test_unknown_repository_rejected(self):
         with self.assertRaises(ValueError):
             ci.evaluate_snapshot(input_for({"id": 1, "steps": []}, repo="unknown/private"))

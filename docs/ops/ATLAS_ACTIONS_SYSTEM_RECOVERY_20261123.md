@@ -81,3 +81,19 @@ head/base/check details and target workflow files before any new run. Preserve
 all original failures and 234/234 local v0.3 receipts; do not treat a historical
 rerun as a current-head check. Keep all merges, branch-policy changes,
 licensing, publishing, CANON and hosted deployment under independent approval.
+
+## Refreshed current PR heads, not historical run SHAs (readback 2026-11-23)
+
+The historical pins above are evidence, NOT automatically the current PR heads. Some have already advanced. Do not claim a historical rerun certifies a current PR.
+
+| Repo / PR | Current inspected head SHA | Example historical run SHA | Same? |
+|---|---|---|---|
+| Atlas-Intelligence #5 | `705d1ab9f33e13f85ffe66f0103a1d10c70c78e9` | `705d1ab9f33e13f85ffe66f0103a1d10c70c78e9` | Yes |
+| atlas-lattice-providers #53 | `72b54c1dcf2e37953fba4674fb593eeb62418e2b` | `75b03b5d6b7582726e70adf400634ae9f0374323` | **NO: stale** |
+| atlas-lattice-providers #59 | `3d666950cc3c17954b18204a8fbaad13a87da7f3` | `d28f72a27eff88fcbc32b79f9ee65791e5352ba6` | **NO: stale** |
+| atlas-lattice-providers #63 | `1dec8b619afc032d3ebc5cf94aaf05f606358e9d` | `785363eeb83c15e9254d6727f4615a4d9aee3497` | **NO: stale** |
+| noosphere-archive #19 | `8b93495fe886a10787cd0a5ad5c2452c2c6c3bfe` | `8b93495fe886a10787cd0a5ad5c2452c2c6c3bfe` | Yes |
+| noosphere-archive #26 | `2d281579501a8fdf9fc8b6d42075476ec7faa6cd` | `279e064f499f0d3d535c6cb503d440ee21712383` | **NO: stale** |
+| noosphere-archive #29 | `0e9e6721fbe771e0270c8bc6f26da4d5d457d524` | `a8e3426e9217f2744bb4b1e45e3e384f443b6da7` | **NO: stale** |
+
+Machine-readable source-head sample: `data/atlas_ci_retest_heads_20261123.json`. The `atlas_ci_admission.py` evaluator now fails closed on `STALE_PR_HEAD` even when a historical run's `expected_head_sha` matches its original SHA. In `--live` mode it fetches the linked PR's current HEAD via GET before classifying acceptance. Historical local evidence remains immutable.

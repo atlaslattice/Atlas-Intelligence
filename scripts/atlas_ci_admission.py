@@ -51,6 +51,9 @@ def evaluate_snapshot(document):
         if not actual or len(actual) != 40 or any(c not in "0123456789abcdef" for c in actual):
             raise ValueError("missing/invalid full SHA for run " + str(entry.get("run_id")))
         source_status = "STALE_SOURCE_PIN" if expected and actual != expected else "PINNED_SOURCE_MATCH"
+        current_pr_head = entry.get("current_pr_head_sha")
+        if current_pr_head and actual != current_pr_head:
+            source_status = "STALE_PR_HEAD"
         for job in entry["jobs"]:
             state = evaluate_job(job)
             results.append({
@@ -113,6 +116,8 @@ def collect_live(index):
         run_id = int(item["run_id"])
         base = "https://api.github.com/repos/" + repo + "/actions/runs/" + str(run_id)
         metadata = github_json(base, token)
+        pr_number = item.get("pr_number")
+        current_pr_head = (github_json("https://api.github.com/repos/" + repo + "/pulls/" + str(int(pr_number)), token)["head"]["sha"] if pr_number else item.get("current_pr_head_sha"))
         job_response = github_json(base + "/jobs?per_page=100", token)
         jobs = job_response.get("jobs", [])
         if job_response.get("total_count", 0) > len(jobs):
@@ -123,6 +128,8 @@ def collect_live(index):
             "workflow": metadata.get("path") or item["workflow"],
             "head_sha": metadata["head_sha"],
             "expected_head_sha": item.get("expected_head_sha"),
+            "pr_number": pr_number,
+            "current_pr_head_sha": current_pr_head,
             "jobs": [{
                 "id": j["id"], "name": j.get("name"), "status": j.get("status"),
                 "conclusion": j.get("conclusion"), "runner_id": j.get("runner_id"),
