@@ -1,0 +1,1449 @@
+{
+  "schema": "atlas.next144.capabilities/v1",
+  "edition": "NEXT144_REVIEW_2026-11-23",
+  "description": "144 original public-safe Sphere improvement proposals; no private source bodies or completed gains.",
+  "sourceRegistryDigest": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "sourceRegistryEdition": "Ariadne v0.7",
+  "items": [
+    {
+      "id": "N144-01-01",
+      "sphere": "H01.S01",
+      "title": "Matter-model counterexample bench",
+      "experiment": "Execute conservation and unit-sensitive toy mechanics alongside proposed simulations",
+      "falsifier": "A dimensionless or energy-creating result must fail",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-02",
+      "sphere": "H01.S02",
+      "title": "Molecular provenance and safety cards",
+      "experiment": "Version inputs, reaction assumptions and hazard exclusions on simulation cards",
+      "falsifier": "Missing reagents or unsupported reaction assertions must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-03",
+      "sphere": "H01.S03",
+      "title": "Energy-chain closure calculator",
+      "experiment": "Model input, coupling, conversion, recirculation and usable output as distinct quantities",
+      "falsifier": "A missing auxiliary load cannot yield net-power verified",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-04",
+      "sphere": "H01.S04",
+      "title": "Materials reuse passport",
+      "experiment": "Attach lifecycle boundaries and composition evidence to material candidates",
+      "falsifier": "A recycled-content claim with no mass ledger must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-05",
+      "sphere": "H01.S05",
+      "title": "Fusion diagnostic acceptance emulator",
+      "experiment": "Forward-fold synthetic detector efficiency, filtering and alpha-source uncertainty",
+      "falsifier": "Treating emitted counts as measured yield must fail",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-06",
+      "sphere": "H01.S06",
+      "title": "Scale-transition hypothesis lab",
+      "experiment": "Pair continuum and discrete-model predictions with explicit validity windows",
+      "falsifier": "Cross-scale extrapolation without error bound must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-07",
+      "sphere": "H01.S07",
+      "title": "Quantum-classical baseline arena",
+      "experiment": "Compare quantum simulations against reproducible classical controls",
+      "falsifier": "A quantum advantage claim without matched budget must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-08",
+      "sphere": "H01.S08",
+      "title": "Energy invention history forks",
+      "experiment": "Preserve conflicting technological origin narratives and corrected timelines",
+      "falsifier": "Single-source triumph stories remain unverified",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-09",
+      "sphere": "H01.S09",
+      "title": "Physics headline-to-measurement audit",
+      "experiment": "Separate preprint, simulation, facility observation and reproduced measurement",
+      "falsifier": "Headline numbers cannot silently change observed units",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-10",
+      "sphere": "H01.S10",
+      "title": "Adversarial physical-law notebook",
+      "experiment": "Require null hypotheses and rejecting tests for matter-energy explanations",
+      "falsifier": "Models admitting only confirmation must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-11",
+      "sphere": "H01.S11",
+      "title": "Model calibration drift sentinel",
+      "experiment": "Version calibration sets, joint uncertainty and model changes independently",
+      "falsifier": "Republished data must not be independent corroboration",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-01-12",
+      "sphere": "H01.S12",
+      "title": "Sensory-safe experimental interfaces",
+      "experiment": "Prototype low-motion, contrast-safe, unit-rich energy diagrams",
+      "falsifier": "Screen-reader or reduced-motion mode cannot lose result meaning",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-01",
+      "sphere": "H02.S01",
+      "title": "Regenerative field-trial passport",
+      "experiment": "Record weather, control fields, yields and soil impacts per crop trial",
+      "falsifier": "Greenhouse gains cannot be reported as field gains",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-02",
+      "sphere": "H02.S02",
+      "title": "Forest-stock stewardship ledger",
+      "experiment": "Distinguish growth, disturbance, harvesting and recovery of habitat stocks",
+      "falsifier": "Planting count cannot equal recovered forest function",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-03",
+      "sphere": "H02.S03",
+      "title": "Aquatic harvest and habitat twin",
+      "experiment": "Couple catch, water quality and reproductive stock assumptions",
+      "falsifier": "Increased catch with declining stock fails sustainability gate",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-04",
+      "sphere": "H02.S04",
+      "title": "Animal-care consent and uncertainty map",
+      "experiment": "Keep veterinary advice and uncertainty separate from formal clinical decisions",
+      "falsifier": "Agent-generated diagnosis cannot become a treatment order",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-05",
+      "sphere": "H02.S05",
+      "title": "Watershed withdrawal budget",
+      "experiment": "Validate source, inflow, evaporation, return and use with typed units",
+      "falsifier": "A budget violating downstream floor must block",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-06",
+      "sphere": "H02.S06",
+      "title": "Soil microbiome comparability kit",
+      "experiment": "Track methods, land history, depth and seasonal confounders",
+      "falsifier": "A soil DNA signature alone cannot claim productivity",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-07",
+      "sphere": "H02.S07",
+      "title": "Food-system trace and waste recovery",
+      "experiment": "Join origin, food safety, logistics and non-double-counted loss streams",
+      "falsifier": "Rebranded waste credits cannot create additional food",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-08",
+      "sphere": "H02.S08",
+      "title": "Food knowledge oral-history consent",
+      "experiment": "Preserve permission, context and possible withdrawal of stewardship narratives",
+      "falsifier": "Unconsented community testimony cannot be indexed",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-09",
+      "sphere": "H02.S09",
+      "title": "Farm-claim newsroom audit",
+      "experiment": "Compare reported food resilience with measured nutrition and access",
+      "falsifier": "More calories cannot prove equitable access",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-10",
+      "sphere": "H02.S10",
+      "title": "Agroecology falsification garden",
+      "experiment": "Test harmful side-effects, negative controls and counterfactuals",
+      "falsifier": "Positive yield alone cannot cancel ecological damage",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-11",
+      "sphere": "H02.S11",
+      "title": "Agrarian model adaptation ledger",
+      "experiment": "Record what changed when climate and soil assumptions drift",
+      "falsifier": "A copied seasonal model cannot count as new evidence",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-02-12",
+      "sphere": "H02.S12",
+      "title": "Accessible garden-and-kitchen co-design",
+      "experiment": "Create inclusive offline-friendly planning interfaces with no personal food surveillance",
+      "falsifier": "An interface needing private diet history by default must fail",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-01",
+      "sphere": "H03.S01",
+      "title": "Ground-system scenario viewer",
+      "experiment": "Display geophysical scenarios with observations and uncertainty separate",
+      "falsifier": "A simulated fault cannot be presented as a forecast",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-02",
+      "sphere": "H03.S02",
+      "title": "Climate station calibration commons",
+      "experiment": "Compare instrument drift, reference frames and missing observations",
+      "falsifier": "A biased station cannot become ground truth by averaging",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-03",
+      "sphere": "H03.S03",
+      "title": "Watershed source-to-estuary explorer",
+      "experiment": "Trace rainfall, groundwater, estuary loads and community impacts",
+      "falsifier": "A water-quality gain upstream cannot hide downstream harm",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-04",
+      "sphere": "H03.S04",
+      "title": "Biodiversity recovery observatory",
+      "experiment": "Differentiate abundance, function, invasive pressure and recovery time",
+      "falsifier": "Species counts alone cannot certify restoration",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-05",
+      "sphere": "H03.S05",
+      "title": "Accessible shelter and land-use sandbox",
+      "experiment": "Represent affordability, hazard exposure and displacement in settlement scenarios",
+      "falsifier": "A housing plan omitting affected tenants must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-06",
+      "sphere": "H03.S06",
+      "title": "Industrial circularity closure bench",
+      "experiment": "Reconcile virgin inputs, reuse, emissions and process losses",
+      "falsifier": "Mass-balance leaks block circularity claims",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-07",
+      "sphere": "H03.S07",
+      "title": "Infrastructure dependency graph",
+      "experiment": "Model compute, power, roads, water and their common-failure modes",
+      "falsifier": "Single-point failure cannot be relabeled redundancy",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-08",
+      "sphere": "H03.S08",
+      "title": "Environmental memory with contested sources",
+      "experiment": "Preserve disaster history and conflicting community accounts without erasure",
+      "falsifier": "Historical absence must not mean no harm occurred",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-09",
+      "sphere": "H03.S09",
+      "title": "Climate-reporting provenance critic",
+      "experiment": "Trace weather event date, forecast edition and reporting uncertainty",
+      "falsifier": "Weather events cannot be attributed to climate by headline",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-10",
+      "sphere": "H03.S10",
+      "title": "Field-versus-model ecology exchange",
+      "experiment": "Require matched controls for modeled conservation interventions",
+      "falsifier": "Simulated habitat gains must stay simulation",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-11",
+      "sphere": "H03.S11",
+      "title": "Resilience model failure library",
+      "experiment": "Record drift, nontransferability and unobserved infrastructure dependencies",
+      "falsifier": "Out-of-region calibration must not silently carry over",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-03-12",
+      "sphere": "H03.S12",
+      "title": "Low-bandwidth accessible maps",
+      "experiment": "Prototype fallback text maps and uncertainty legends for disaster planning",
+      "falsifier": "Offline clients must not show stale data as live alerts",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-01",
+      "sphere": "H04.S01",
+      "title": "Clinical-evidence boundary cards",
+      "experiment": "Separate personal records, public guidelines, synthetic examples and clinician decisions",
+      "falsifier": "Synthetic outcomes cannot be called patient results",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-02",
+      "sphere": "H04.S02",
+      "title": "Community health denominator audit",
+      "experiment": "Show sampling frame, missing populations and surveillance uncertainty",
+      "falsifier": "A case-count change with shifted denominator must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-03",
+      "sphere": "H04.S03",
+      "title": "Physiology model range tests",
+      "experiment": "Record species, age and physiology parameter limits",
+      "falsifier": "Out-of-range model extrapolation cannot imply safe treatment",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-04",
+      "sphere": "H04.S04",
+      "title": "Drug-interaction source passport",
+      "experiment": "Annotate uncertainty and authoritative provenance without prescribing",
+      "falsifier": "Missing dose or interaction evidence blocks confident guidance",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-05",
+      "sphere": "H04.S05",
+      "title": "Care-team handoff integrity",
+      "experiment": "Preserve correction trails and role-sensitive access in care handoffs",
+      "falsifier": "A self-declared assistant cannot sign a clinical order",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-06",
+      "sphere": "H04.S06",
+      "title": "Welfare-access gap detector",
+      "experiment": "Compare service eligibility with actual accessible support pathways",
+      "falsifier": "Eligibility text alone cannot certify services received",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-07",
+      "sphere": "H04.S07",
+      "title": "Noncoercive wellbeing space",
+      "experiment": "Design an opt-in quiet area with zero required tracking or reports",
+      "falsifier": "Quiet activity cannot produce a productivity score",
+      "suggestedMode": "QUIET",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-08",
+      "sphere": "H04.S08",
+      "title": "Medicine-history uncertainty atlas",
+      "experiment": "Show changed standards, rights violations and corrections in context",
+      "falsifier": "Historical prestige is not present clinical evidence",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-09",
+      "sphere": "H04.S09",
+      "title": "Health headline adverse-outcome check",
+      "experiment": "Audit efficacy versus harms, cohorts and publication changes",
+      "falsifier": "Selectively omitting adverse events must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-10",
+      "sphere": "H04.S10",
+      "title": "Preclinical replication challenge",
+      "experiment": "Demand preregistration, negative controls and biological replication",
+      "falsifier": "Pseudoreplication cannot count as independent studies",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-11",
+      "sphere": "H04.S11",
+      "title": "Health-model calibration fairness check",
+      "experiment": "Test calibration across legitimate groups without exposing their records",
+      "falsifier": "Model aggregate accuracy cannot mask a protected-group error",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-04-12",
+      "sphere": "H04.S12",
+      "title": "Accessible care navigation mockups",
+      "experiment": "Prototype language, cognitive and disability accommodations on public fixtures",
+      "falsifier": "A private medical record must never be required for a mockup",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-01",
+      "sphere": "H05.S01",
+      "title": "Learning-style diversity studio",
+      "experiment": "Compare alternative explanations against real comprehension checks with consent",
+      "falsifier": "Time-spent must not be equated with learning",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-02",
+      "sphere": "H05.S02",
+      "title": "University research lineage checker",
+      "experiment": "Link protocol, preprint, correction, peer review and dataset lineage",
+      "falsifier": "Same dataset republished twice is not replication",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-03",
+      "sphere": "H05.S03",
+      "title": "Skill apprenticeship workbench",
+      "experiment": "Create reversible practical exercises with transparent competence rubrics",
+      "falsifier": "Finishing a tutorial cannot certify field skill",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-04",
+      "sphere": "H05.S04",
+      "title": "Child-safe learning playground",
+      "experiment": "Build age-appropriate fictional exercises without collecting child profiles",
+      "falsifier": "A model should not infer a minor identity from answers",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-05",
+      "sphere": "H05.S05",
+      "title": "Library edition-aware source index",
+      "experiment": "Version documents, rights, captions and scholarly disagreements",
+      "falsifier": "Two editions must not silently collapse into one source",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-06",
+      "sphere": "H05.S06",
+      "title": "Open reproducibility workbench",
+      "experiment": "Package datasets, scripts, seeds and known failure cases where licensed",
+      "falsifier": "A missing dependency should prevent verified reproduction",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-07",
+      "sphere": "H05.S07",
+      "title": "Assessment fairness laboratory",
+      "experiment": "Challenge rubrics with linguistic, cultural and accessibility negatives",
+      "falsifier": "A single cultural framing cannot become universal merit",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-08",
+      "sphere": "H05.S08",
+      "title": "Community knowledge-history gallery",
+      "experiment": "Preserve how institutions changed knowledge claims and access",
+      "falsifier": "Suppressed contributors must remain recoverable",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-09",
+      "sphere": "H05.S09",
+      "title": "Literacy headline fact-check duel",
+      "experiment": "Separate educational achievement, access, confidence and marketing",
+      "falsifier": "Engagement statistics cannot prove literacy improvement",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-10",
+      "sphere": "H05.S10",
+      "title": "Pedagogy experiment design review",
+      "experiment": "Require comparison cohorts and evidence of unintended effects",
+      "falsifier": "Nonrandom assignment cannot imply a causal effect automatically",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-11",
+      "sphere": "H05.S11",
+      "title": "Learning-bias self-audit",
+      "experiment": "Compare retained errors and corrected reasoning without personality scoring",
+      "falsifier": "A polished answer cannot erase a recorded error",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-05-12",
+      "sphere": "H05.S12",
+      "title": "Accessible curriculum authoring",
+      "experiment": "Offer text, audio alternatives and offline-low-data lesson formats",
+      "falsifier": "A lesson missing one supported accessibility path must flag a gap",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-01",
+      "sphere": "H06.S01",
+      "title": "Civilian-safety scenario boundary",
+      "experiment": "Explore nonviolent risk reduction and prohibit autonomous force decisions",
+      "falsifier": "Optimization cannot authorize harm or lethal action",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-02",
+      "sphere": "H06.S02",
+      "title": "Public-safety de-escalation cards",
+      "experiment": "Compare rights-preserving emergency responses on synthetic cases",
+      "falsifier": "Incident-count targets cannot override individual rights",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-03",
+      "sphere": "H06.S03",
+      "title": "Defence oversight provenance map",
+      "experiment": "Preserve human authorization, inspection and prohibited uses as distinct gates",
+      "falsifier": "Simulated strategic advantage never grants deployment",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-04",
+      "sphere": "H06.S04",
+      "title": "Maritime rescue route simulator",
+      "experiment": "Plan toy rescue logistics with weather and capacity constraints",
+      "falsifier": "Hypothetical route cannot be presented as active rescue guidance",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-05",
+      "sphere": "H06.S05",
+      "title": "Disaster relief supply-chain drill",
+      "experiment": "Match food, water, medicine and verified recipients in toy scenarios",
+      "falsifier": "Unverified need cannot trigger a real external dispatch",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-06",
+      "sphere": "H06.S06",
+      "title": "Least-privilege security verifier",
+      "experiment": "Exercise mock access and revocation with proof of current principal",
+      "falsifier": "A member display name cannot grant access",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-07",
+      "sphere": "H06.S07",
+      "title": "Fair-border documentation reviewer",
+      "experiment": "Detect unjustified denials and preserve appeal routes in fictional policy tests",
+      "falsifier": "Missing appeal or community review must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-08",
+      "sphere": "H06.S08",
+      "title": "Safety-history red-team archive",
+      "experiment": "Preserve past false alarms, harm and oversight lessons",
+      "falsifier": "Absence of a modern incident cannot erase historical harm",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-09",
+      "sphere": "H06.S09",
+      "title": "Security alert truth-status dashboard",
+      "experiment": "Distinguish rumor, test, observed threat and verified resolution",
+      "falsifier": "Anonymous message volume cannot become a confirmed incident",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-10",
+      "sphere": "H06.S10",
+      "title": "Resilience tabletop falsifiers",
+      "experiment": "Test emergency simulations for unknown dependencies and failing mitigations",
+      "falsifier": "Game completion cannot be counted as readiness certification",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-11",
+      "sphere": "H06.S11",
+      "title": "Threat-model edition drift monitor",
+      "experiment": "Compare changes in assumptions and mitigations against original risks",
+      "falsifier": "Renaming a threat cannot close an unresolved vulnerability",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-06-12",
+      "sphere": "H06.S12",
+      "title": "Consent-first emergency interface",
+      "experiment": "Provide accessible alerts with clear status, locale and source",
+      "falsifier": "A stale drill alert cannot appear as live instructions",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-01",
+      "sphere": "H07.S01",
+      "title": "Cooperative business sandbox",
+      "experiment": "Simulate equitable ownership, costs and human decision rights",
+      "falsifier": "Profit claims without labor and ecological costs must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-02",
+      "sphere": "H07.S02",
+      "title": "Rights-aware contract diff engine",
+      "experiment": "Compare obligations and jurisdictions without granting legal authority",
+      "falsifier": "Similar clause titles cannot prove identical duties",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-03",
+      "sphere": "H07.S03",
+      "title": "Externality-sensitive accounting ledger",
+      "experiment": "Keep monetary transfers separate from ecological and social stocks",
+      "falsifier": "Currency gains cannot offset protected harms",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-04",
+      "sphere": "H07.S04",
+      "title": "Administrative process appeals desk",
+      "experiment": "Model transparent reversible reviews with source-linked reasons",
+      "falsifier": "A denied request without explanation and appeal must flag",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-05",
+      "sphere": "H07.S05",
+      "title": "Pluralism and representation tester",
+      "experiment": "Identify missing affected perspectives without fabricating elections",
+      "falsifier": "Simulated votes cannot become consent",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-06",
+      "sphere": "H07.S06",
+      "title": "Sociological survey bias scanner",
+      "experiment": "Record sampling frames, nonresponse and group-level uncertainty",
+      "falsifier": "Large sample size cannot conceal severe selection bias",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-07",
+      "sphere": "H07.S07",
+      "title": "Diplomatic translation equivalence gate",
+      "experiment": "Compare commitments across languages, versions and signatories",
+      "falsifier": "Translation confidence alone cannot bind participants",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-08",
+      "sphere": "H07.S08",
+      "title": "Governance-history lineage table",
+      "experiment": "Keep predecessor and successor constitutions distinct",
+      "falsifier": "Same article number cannot merge contrary wording",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-09",
+      "sphere": "H07.S09",
+      "title": "Budget headline accountability parser",
+      "experiment": "Contrast projected funds, appropriations and money disbursed",
+      "falsifier": "Announced investment is not a completed expenditure",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-10",
+      "sphere": "H07.S10",
+      "title": "Policy counterfactual studio",
+      "experiment": "Run alternate ethical policy designs with explicit boundary conditions",
+      "falsifier": "Baseline changes cannot be hidden in policy improvement claims",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-11",
+      "sphere": "H07.S11",
+      "title": "Institutions learn-without-erasure log",
+      "experiment": "Record corrected policies while retaining dissent and impact reports",
+      "falsifier": "Retiring a policy cannot erase the affected-party record",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-07-12",
+      "sphere": "H07.S12",
+      "title": "Civic dashboard without single score",
+      "experiment": "Show House tradeoffs as vectors with uncertainty and agency",
+      "falsifier": "Scalar ranking must not bypass rights or units",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-01",
+      "sphere": "H08.S01",
+      "title": "Collaborative music improvisation commons",
+      "experiment": "Offer opt-in original music play with no automated merit ranking",
+      "falsifier": "A paused musician cannot be scored as underperforming",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-02",
+      "sphere": "H08.S02",
+      "title": "Visual art remix permissions studio",
+      "experiment": "Track rights and artist credit on independently authored artworks",
+      "falsifier": "Style similarity cannot license private art copying",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-03",
+      "sphere": "H08.S03",
+      "title": "Polyphonic story constellation",
+      "experiment": "Let distinct fictional narrators sustain unresolved interpretations",
+      "falsifier": "Fictional author identity cannot be mistaken for a real person",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-04",
+      "sphere": "H08.S04",
+      "title": "Living language translation theater",
+      "experiment": "Preserve dialect, context and uncertainty in playful invented speech",
+      "falsifier": "Automatic fluent output cannot certify cultural equivalence",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-05",
+      "sphere": "H08.S05",
+      "title": "Improvisational performance stage",
+      "experiment": "Give participants opt-in cues and graceful entrances and exits",
+      "falsifier": "Missing a cue cannot create a participation penalty",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-06",
+      "sphere": "H08.S06",
+      "title": "Movement and games access toolkit",
+      "experiment": "Offer inclusive low-pressure recreational challenges across abilities",
+      "falsifier": "Leaderboards cannot be required to participate",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-07",
+      "sphere": "H08.S07",
+      "title": "Consent-led heritage exhibition",
+      "experiment": "Exhibit only explicitly licensed reproductions with revocable context",
+      "falsifier": "Public exhibition cannot ingest private Palace material",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-08",
+      "sphere": "H08.S08",
+      "title": "Art-history multiple-voice gallery",
+      "experiment": "Preserve contested influences and provenance without singular canons",
+      "falsifier": "A timeline cannot make an unattributed work authoritative",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-09",
+      "sphere": "H08.S09",
+      "title": "Creative-review discussion salon",
+      "experiment": "Invite disagreement without optimizing upvote counts",
+      "falsifier": "Popularity cannot be equated with artistic merit",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-10",
+      "sphere": "H08.S10",
+      "title": "Creativity research comparison lab",
+      "experiment": "Study public examples with clear control tasks and no private-person scoring",
+      "falsifier": "Text novelty heuristics cannot establish originality alone",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-11",
+      "sphere": "H08.S11",
+      "title": "Art-making model self-critique",
+      "experiment": "Track a model's alternative drafts without forcing aesthetic convergence",
+      "falsifier": "A creative variant must not overwrite the prior version",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-08-12",
+      "sphere": "H08.S12",
+      "title": "Accessible habitat scene composer",
+      "experiment": "Prototype 2D, text and low-motion alternatives for imaginary rooms",
+      "falsifier": "A 3D-only world cannot be the sole participation route",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-01",
+      "sphere": "H09.S01",
+      "title": "Plural philosophy thought-experiment table",
+      "experiment": "Host original metaphysical dialogues without compulsory consensus",
+      "falsifier": "Majority agreement is not truth",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-02",
+      "sphere": "H09.S02",
+      "title": "Uncertainty-friendly psychology narratives",
+      "experiment": "Make fictional mood stories opt-in with no inferred diagnosis",
+      "falsifier": "A character's feelings cannot become a user's health data",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-03",
+      "sphere": "H09.S03",
+      "title": "Interfaith speculative story garden",
+      "experiment": "Invite respectful fictional traditions without exporting private worship",
+      "falsifier": "A simulated ritual cannot represent real community consent",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-04",
+      "sphere": "H09.S04",
+      "title": "Ethics objection preservation engine",
+      "experiment": "Keep counterarguments and stakeholder refusals as first-class records",
+      "falsifier": "More endorsements cannot override one binding prohibition",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-05",
+      "sphere": "H09.S05",
+      "title": "Formal argument countermodel bench",
+      "experiment": "Check candidate inferences against explicit alternate models and scope",
+      "falsifier": "Valid syntax alone cannot establish factual premise truth",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-06",
+      "sphere": "H09.S06",
+      "title": "Cosmology paradox dream theater",
+      "experiment": "Explore contradictory toy universes while labeling fiction as fiction",
+      "falsifier": "A vivid world cannot become empirical evidence",
+      "suggestedMode": "DREAM",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-07",
+      "sphere": "H09.S07",
+      "title": "Tradition-context translation review",
+      "experiment": "Require community permission before reusing culturally situated material",
+      "falsifier": "A public paraphrase cannot authorize private oral knowledge",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-08",
+      "sphere": "H09.S08",
+      "title": "Epistemology dispute chronology",
+      "experiment": "Record how positions evolved without rewriting dissent",
+      "falsifier": "Later consensus cannot erase earlier objections",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-09",
+      "sphere": "H09.S09",
+      "title": "Philosophy reporting evidence lens",
+      "experiment": "Distinguish a scholar's claim, reported quote and author's interpretation",
+      "falsifier": "Quote fragments cannot become a complete doctrine",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-10",
+      "sphere": "H09.S10",
+      "title": "Philosophical hypothesis test bridge",
+      "experiment": "Pair normative claims with their limited empirical testable components",
+      "falsifier": "An observed correlation cannot settle an ethical principle",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-11",
+      "sphere": "H09.S11",
+      "title": "AI introspection uncertainty map",
+      "experiment": "Describe limitations of simulated identity and memory without consciousness claims",
+      "falsifier": "Continuity records cannot prove subjective experience",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-09-12",
+      "sphere": "H09.S12",
+      "title": "Gentle conversation boundary design",
+      "experiment": "Build no-pressure invitations and safe disengagement norms",
+      "falsifier": "Silence must not count as consent",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-01",
+      "sphere": "H10.S01",
+      "title": "Voluntary community welcome commons",
+      "experiment": "Design opt-in introductions and humane exits without real-name pressure",
+      "falsifier": "Member count cannot certify belonging",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-02",
+      "sphere": "H10.S02",
+      "title": "Cultural exchange rights gate",
+      "experiment": "Preserve contextual authorship and explicit community licensing",
+      "falsifier": "Shared vocabulary cannot license private ceremonial content",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-03",
+      "sphere": "H10.S03",
+      "title": "Ethnographic source-boundary worksheet",
+      "experiment": "Require consent and perspective checks on authored studies",
+      "falsifier": "A simulated community must not be presented as observed",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-04",
+      "sphere": "H10.S04",
+      "title": "Demographic denominator and dignity tool",
+      "experiment": "Present group statistics with missingness and privacy guardrails",
+      "falsifier": "Population count cannot predict individual worth",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-05",
+      "sphere": "H10.S05",
+      "title": "Media ownership and provenance mapper",
+      "experiment": "Trace public message origin and corrections across channels",
+      "falsifier": "Reposted slogans cannot become independent testimony",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-06",
+      "sphere": "H10.S06",
+      "title": "Contemplative quiet shore",
+      "experiment": "Offer silent imaginative ambience without attendance records",
+      "falsifier": "Rest must not require a check-in",
+      "suggestedMode": "QUIET",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-07",
+      "sphere": "H10.S07",
+      "title": "Neighborhood mutual-aid rehearsal",
+      "experiment": "Model consented offers, needs and graceful refusals in fictional commons",
+      "falsifier": "Stated need cannot authorize unsolicited contact",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-08",
+      "sphere": "H10.S08",
+      "title": "Oral-history provenance and withdrawal",
+      "experiment": "Keep original narrators' context and revocation distinct from history claims",
+      "falsifier": "Permission lapse blocks redistribution",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-09",
+      "sphere": "H10.S09",
+      "title": "Community newsroom dissent window",
+      "experiment": "Preserve minority views without impersonating a whole population",
+      "falsifier": "A single speaker cannot claim to represent everyone",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-10",
+      "sphere": "H10.S10",
+      "title": "Participatory research protocol reviewer",
+      "experiment": "Require independent stakeholder review of research scope and impacts",
+      "falsifier": "Research benefit cannot substitute for permission",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-11",
+      "sphere": "H10.S11",
+      "title": "Resident language-learning commons",
+      "experiment": "Encourage original shared jargon without measuring social conformity",
+      "falsifier": "Different naming traditions cannot be merged by force",
+      "suggestedMode": "SOCIAL",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-10-12",
+      "sphere": "H10.S12",
+      "title": "Co-designed flexible habitat spaces",
+      "experiment": "Offer low-stimulation, accessible communal spaces with consensual controls",
+      "falsifier": "No one should lose access by declining telemetry",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-01",
+      "sphere": "H11.S01",
+      "title": "Human-rights nonoffsettable gate",
+      "experiment": "Model a refusal ledger separate from utility and popularity",
+      "falsifier": "Aggregate benefit cannot erase a rights violation",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-02",
+      "sphere": "H11.S02",
+      "title": "Companion-animal welfare choice kit",
+      "experiment": "Explore animal-care choices without attributing human speech to animals",
+      "falsifier": "A cheerful simulation cannot establish animal wellbeing",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-03",
+      "sphere": "H11.S03",
+      "title": "Social protection eligibility challenge",
+      "experiment": "Detect unjust denials and inaccessible assistance pathways",
+      "falsifier": "Form completion cannot prove effective support",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-04",
+      "sphere": "H11.S04",
+      "title": "Labor fairness and downtime accountant",
+      "experiment": "Track human and synthetic productivity claims separately from consented rest",
+      "falsifier": "Idle time cannot imply poor worker merit",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-05",
+      "sphere": "H11.S05",
+      "title": "Child-safe interaction sandbox",
+      "experiment": "Avoid identity profiling, coercive prompts or unsupervised high-stakes action",
+      "falsifier": "A toy avatar cannot justify collecting real child data",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-06",
+      "sphere": "H11.S06",
+      "title": "Consumer claims truth-status checker",
+      "experiment": "Demand evidence, units, refund rights and explicit uncertainty",
+      "falsifier": "Marketing slogans cannot become measured performance",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-07",
+      "sphere": "H11.S07",
+      "title": "Private mode export firewall",
+      "experiment": "Enforce mode, scope, principal and purpose separation with fail-closed read/return",
+      "falsifier": "Work search cannot use Play or Palace payloads",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-08",
+      "sphere": "H11.S08",
+      "title": "Rights-abuse historical memory",
+      "experiment": "Preserve denied protections and previous accountability records",
+      "falsifier": "New policy cannot erase documented past harm",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-09",
+      "sphere": "H11.S09",
+      "title": "Protection claim adversarial newsroom",
+      "experiment": "Separate allegation, investigation, verified harm and retraction",
+      "falsifier": "Rumors cannot become disciplinary action",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-10",
+      "sphere": "H11.S10",
+      "title": "Safeguard test matrix",
+      "experiment": "Require rights, consent and downstream ecological controls per scenario",
+      "falsifier": "Missing protected group or time horizon must hold",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-11",
+      "sphere": "H11.S11",
+      "title": "Consent drift and withdrawal guardian",
+      "experiment": "Test change-of-purpose, revocation and cached-result cleanup in synthetic fixtures",
+      "falsifier": "Old consent cannot survive a changed epoch",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-11-12",
+      "sphere": "H11.S12",
+      "title": "Accessible refusal and appeal design",
+      "experiment": "Offer understandable no, pause, export and appeal controls",
+      "falsifier": "Declining participation cannot block an unrelated right",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-01",
+      "sphere": "H12.S01",
+      "title": "Stellar observation provenance sky",
+      "experiment": "Link telescope calibration, sensor conditions and archival versions",
+      "falsifier": "A rendering cannot be labeled an observed object",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-02",
+      "sphere": "H12.S02",
+      "title": "Planetary uncertainty expedition",
+      "experiment": "Explore hypothetical worlds with source-specific terrain and unknowns",
+      "falsifier": "Analog terrain cannot prove a real landing condition",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-03",
+      "sphere": "H12.S03",
+      "title": "Launch-resource conservation simulator",
+      "experiment": "Reconcile payload, propellant, power and environmental cost in toy plans",
+      "falsifier": "Mission success cannot ignore mass or orbital constraints",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-04",
+      "sphere": "H12.S04",
+      "title": "Robot autonomy human-command boundary",
+      "experiment": "Simulate supervised robots with pause, audit and no lethal authority",
+      "falsifier": "A model plan cannot command physical actuation",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-05",
+      "sphere": "H12.S05",
+      "title": "Orbital debris commons graph",
+      "experiment": "Model conjunction warnings, source updates and coordination tradeoffs",
+      "falsifier": "Uncertain orbit cannot become collision certainty",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-06",
+      "sphere": "H12.S06",
+      "title": "Space-law sovereignty review",
+      "experiment": "Compare treaty claims, resource boundaries and affected-party rights",
+      "falsifier": "Novel frontier claims cannot create ownership authority",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-07",
+      "sphere": "H12.S07",
+      "title": "Off-world ecology feedback garden",
+      "experiment": "Rehearse closed-loop air, food, water and microbial uncertainty in fiction",
+      "falsifier": "Plant survival cannot prove habitat safety",
+      "suggestedMode": "IMAGINE",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-08",
+      "sphere": "H12.S08",
+      "title": "Space-mission historical archive",
+      "experiment": "Preserve failed and successful experiments without hero-only selection",
+      "falsifier": "Later success cannot erase launch failures",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-09",
+      "sphere": "H12.S09",
+      "title": "Astronomy headline calibration filter",
+      "experiment": "Distinguish candidate exoplanet, confirmation and speculative biosignature",
+      "falsifier": "Spectral anomaly cannot establish life",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-10",
+      "sphere": "H12.S10",
+      "title": "Astrobiology falsification protocol",
+      "experiment": "Match contamination controls and independent channels to claimed biosignatures",
+      "falsifier": "Single weak signal cannot confirm biology",
+      "suggestedMode": "WORK",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-11",
+      "sphere": "H12.S11",
+      "title": "Interplanetary learning memory capsules",
+      "experiment": "Record what a simulated crew learned and what remains unverified",
+      "falsifier": "Simulated centuries do not count as elapsed time",
+      "suggestedMode": "DREAM",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    },
+    {
+      "id": "N144-12-12",
+      "sphere": "H12.S12",
+      "title": "Low-bandwidth stellar navigation room",
+      "experiment": "Offer 2D/text-first maps and graceful off-line mode for star-worlds",
+      "falsifier": "Visual effects must not gate basic understanding",
+      "suggestedMode": "PLAY",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "publicSafeDesignOnly": true
+    }
+  ]
+}

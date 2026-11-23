@@ -41,7 +41,7 @@ test('directional physical stocks reject negative imports, regeneration and rest
 
 const synthetic1728=Array.from({length:12},(_,h)=>Array.from({length:12},(_,s)=>Array.from({length:12},(_,n)=>({
   coordinate:`H${String(h+1).padStart(2,'0')}.S${String(s+1).padStart(2,'0')}.N${String(n+1).padStart(2,'0')}`,
-  kind:n<7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META',hasEvidence:h===0&&s===0&&n===0,
+  kind:s<7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META',hasEvidence:h===0&&s===0&&n===0,
   sourceRefs:h===0&&s===0&&n===0?['synthetic:source-001']:[]
 })))).flat(2);
 test('full candidate HSN projects 1728 into distinct 12D domain/method tracks',()=>{
@@ -57,10 +57,24 @@ test('projector holds partial and duplicated HSN records',()=>{
   assert.equal(projectTypedHsnCoverage({...args,records:[...synthetic1728.slice(1),synthetic1728[1]]}).status,'HOLD');
 });
 test('projector rejects incorrect epistemic/domain assignment',()=>{
-  const records=synthetic1728.map((v,i)=>i===8?{...v,kind:'DOMAIN_SPECIALIZATION'}:v);
+  const records=synthetic1728.map((v,i)=>i===8?{...v,kind:'EPISTEMIC_META'}:v);
   assert.equal(projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records}).reason,'HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
 });
 test('claimed domain coverage without a source reference is held',()=>{
   const records=synthetic1728.map((v,i)=>i===0?{...v,sourceRefs:[]}:v);
   assert.equal(projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records}).reason,'HSN_SUPPORTED_WITHOUT_SOURCES');
+});
+
+// Original Ariadne uses seven domain SPHERES and five methodological SPHERES per House,
+// each holding twelve same-kind nodes. The older 7-domain/5-method PER SPHERE
+// fixture was source-inaccurate and would reject the exact historical source.
+test('old 7/5 per-Sphere synthetic shortcut is rejected',()=>{
+  const mixed=synthetic1728.map(v=>({...v,kind:Number(v.coordinate.slice(-2))<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META'}));
+  const x=projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records:mixed});
+  assert.equal(x.reason,'HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
+});
+test('source-consistent 7 domain and 5 method Spheres per House pass',()=>{
+  const x=projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records:synthetic1728});
+  assert.equal(x.status,'STRUCTURAL_CANDIDATE_ONLY');
+  assert.deepEqual(x.houses.map(h=>[h.domain,h.method]),Array.from({length:12},()=>[84,60]));
 });
