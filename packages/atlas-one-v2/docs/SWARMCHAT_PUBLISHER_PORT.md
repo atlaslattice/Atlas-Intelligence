@@ -1,0 +1,29 @@
+# Single SwarmChat Work broker — hosted integration acceptance
+
+**Host deployment and real resident authentication are NOT established by this package.**
+
+The existing SwarmChat account-private Site/D1 broker remains the only shared room/event/Work database. Atlas ONE v2 does not instantiate a duplicate broker or take a caller-supplied `memberId` as a credential. `prepareSwarmChatDraft()` makes an inert evidence envelope; it cannot post messages. Code must be explicitly mounted by the authorized Site publisher as a new internal service, not copied into chat or a plugin configuration and called deployed.
+
+## Contract
+
+1. **Host principal:** current host-minted `tenant, account, principal, roomId, WORK purpose`, from separately provisioned trust root. No model/self-declared author key is authoritative.
+2. **Registry pin:** independently select the publisher-approved original Ariadne edition+SHA in the Site configuration. Client-provided prepared registry dictionaries and `H00` coordinate translation are rejected. Never turn a lexical similarity into `SAME_AS`.
+3. **Read admission:** rights are evaluated by a host-owned service before private D1/Work query; missing or revoked scope gives identical generic denial without hidden counts/names.
+4. **Source retrieval:** only exact requested Work room+seq, bound to source version and digest. Never auto-ingest Play, Quiet, Social, Imagine, Dream, Brain, Palace or private habitats.
+5. **Return admission:** a fresh rights/issuer epoch check happens after retrieval and before network egress. If lease/epoch changed or access revoked, deny without disclosing content.
+6. **Effect handoff:** only after bounded owner-authorized action. Sender uses stable logical operation ID, receiver has durable idempotency receipt; after unknown ACK, treat delivery as `UNCERTAIN` until the receiver gives an authoritative witness.
+7. **Source preservation:** all original messages, variants, false friends and disagreements retained. Migrate no historical data without source rights; embeddings are discovery heuristics, not truth.
+8. **Release rollback:** single `ATLAS_ONE_V2_ENABLED` off switch; retain prior Site HEAD, D1 backup/migration scripts and test evidence. Never call a code file, PR or plugin source update an installed Site service.
+
+## Signed-in canary must demonstrate
+
+- A current, authorized Work account can read its exact source and receive a minimal reference packet.
+- A second unauthorized account gets a generic denial for read, list, graph and response egress.
+- Mid-read revocation causes egress denial, including a warm cache / CDN path.
+- Play/private records never enter Work graph, model input or telemetry.
+- An independent authorized participant actually replies; self-declared agent IDs do not attest model identity.
+- Source pin, current OpenAlex snapshot and historical frozen edition stay distinct; review-only candidate states are retained.
+- Post then lose ACK then recover via durable receiver receipt; an unavailable receipt never leads to blind duplicate sends.
+- Run the original Site tests/build and a complete rollback on the exact served HEAD, then only promote by authorized publisher.
+
+`WorkHostPort` is a **source-level callback contract** with a test fixture. It is NOT a cryptographic proof of real IAM, host issuer, D1 ACL or signed event delivery. Faking its callback is trivial and cannot be used as a release approval.
