@@ -27,3 +27,9 @@ test('model rejects runaway turns',{skip:!registry},async()=>await assert.reject
 
 test('local MCP ingress rejects duplicate request authority keys',()=>assert.throws(()=>parseStrictJson('{"jsonrpc":"2.0","method":"tools/call","method":"hidden"}'),e=>e.code==='DUPLICATE_OR_UNICODE_ALIAS_KEY'));
 test('local MCP ingress rejects nonfinite grant epochs',()=>assert.throws(()=>parseStrictJson('{"epoch":1e400}'),e=>e.code==='NONFINITE_NUMBER'));
+
+const modern={['io.modelcontextprotocol/protocolVersion']:'2026-07-28'};
+test('MCP 2026 stateless server/discover',()=>{const x=call(createMcpRouter(),7,'server/discover',{_meta:modern});assert.equal(x.result.protocolVersion,'2026-07-28');assert.equal(x.result.serverInfo.name,'atlas-one-v2');});
+test('MCP 2026 stateless tool list has bounded cache hint',()=>{const x=call(createMcpRouter(),8,'tools/list',{_meta:modern});assert.equal(x.result.ttlMs,60000);assert.equal(x.result.cacheScope,'public');});
+test('MCP 2026 stateless source status has serverInfo metadata',()=>{const x=call(createMcpRouter(),9,'tools/call',{name:'atlas_one_status',arguments:{},_meta:modern});assert.equal(x.result.structuredContent.canon,'UNCHANGED');assert.ok(x.result._meta['io.modelcontextprotocol/serverInfo']);});
+test('MCP unsupported versions are rejected with enumerated choices',()=>{const x=call(createMcpRouter(),10,'tools/list',{_meta:{['io.modelcontextprotocol/protocolVersion']:'1900-01-01'}});assert.equal(x.error.code,-32022);assert.ok(x.error.data.supported.includes('2026-07-28'));});
