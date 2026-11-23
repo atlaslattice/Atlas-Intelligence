@@ -66,7 +66,10 @@ export class AtomicJournal {
   });}
   /** A sender never assumes lack of a local ACK means a remote operation did not commit. */
   prepareEffect({runId,inputDigest,logicalId,effectDigest}){
-    requireValid(typeof logicalId==='string'&&ID.test(logicalId)&&SHA.test(effectDigest),'EFFECT_ID_INVALID');
+    // The persisted requestId adds a seven-byte 'effect:' prefix, yet record()
+    // enforces the same 80-character ID ceiling. Reject IDs that cannot fit
+    // BEFORE any effect handoff; preserve historic mapping and receipts.
+    requireValid(typeof logicalId==='string'&&logicalId.length<=73&&ID.test(logicalId)&&SHA.test(effectDigest),'EFFECT_ID_INVALID');
     return this.record({runId,inputDigest,step:'EXTERNAL_EFFECT_UNCERTAIN',requestId:'effect:'+logicalId,detail:{logicalId,effectDigest,status:'NO_REMOTE_RETRY_WITHOUT_WITNESS'}});
   }
 }
