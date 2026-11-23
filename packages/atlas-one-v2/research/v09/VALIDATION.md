@@ -2,7 +2,7 @@
 
 ## Source and baseline
 
-This patch extends open draft Atlas-Intelligence PR #28, exact observed head `debe5e4c7f5a89fe4412932479b08986ea27d648`. All seven baseline files were recovered at that head and their Git blob hashes independently matched the locally stored bytes. The original baseline passed **61/61 Python tests** in normal and optimized (`-O`) modes.
+This patch extends open draft Atlas-Intelligence PR #28, exact observed head `debe5e4c7f5a89fe4412932479b08986ea27d648`. The canonical package path is `packages/atlas-one-v2/research/v09/`. All seven baseline files were recovered at that head and their Git blob hashes independently matched the locally stored bytes. The original baseline passed **61/61 Python tests** in normal and optimized (`-O`) modes.
 
 The current baseline's hosted workflow `Atlas ONE v2 isolated source conformance` reported **failure**, run `45284008061`, job `138075471504`. Step summaries were empty and job-log retrieval returned 404/BlobNotFound. These local checks do not resolve or override that hosted failure.
 
@@ -27,3 +27,13 @@ A separately retained current connector response was compared with the exact his
 The full prior-plan/circuit `build()` pipeline was not rerun in this slice because the exact separately pinned prior plan and circuit SQLite were not supplied to this candidate checkout. The new coverage-only CLI and public API were exercised with the original registry/crosswalk, and the existing build path now adds their scoped projection as an additive node field. Source inspection confirms the prior node fields remain present; the preserved source-only tests exercise the prior API and queue behavior.
 
 This is local source and fixture evidence. It does not establish hosted CI success, deployment, current provider taxonomy, access grants, independent resident identity, expert approval, publication rights or CANON adoption. No provider request, scheduler change, broker post or remote source mutation is performed by this module or its verification script.
+
+## Packaging correction provenance
+
+The first R03 remote commit, `3103e98c1766c042c93657bf52134c9921def478`, used a file map with the `packages/atlas-one-v2/` prefix missing. Its five files were created at root `research/v09/`; the existing packaged module remained unchanged. The retained original file map and patch record this error.
+
+The corrective file map is pinned to that interim commit. It writes exactly five canonical package files: the existing `README.md` and `src/research_bridge.py`, plus the new `VALIDATION.md`, `tests/test_topic_coverage.py` and `tools/verify_topic_coverage.py`. It deletes only the same five misplaced R03 root-path files. The seven baseline files were independently checked against their original Git blob hashes before assembling a clean canonical package with these five candidate files. No original registry, frozen crosswalk, generated private coverage index or actual Work/connector body is included in these public file entries.
+
+The repair preserves the tested `src/research_bridge.py` bytes, SHA256 `a9e61983ee81cdbcad44ca3c8f01d57f5efd18140d0c71d412c40a107bbdc3d9`; only packaging and documentation provenance change. Remote corrective commit and readback remain pending at the time this validation text is authored. Hosted CI and browser limits above remain unresolved.
+
+Canonical-package verification after correcting the path map: **82/82 tests pass normally and 82/82 under `python3 -O`**, executed from `packages/atlas-one-v2/research/v09/` in the clean staging tree assembled from the seven verified baseline files plus the five correction candidates. This rerun verifies imports and test discovery at the real package location. It does not change the code or resolve hosted CI.

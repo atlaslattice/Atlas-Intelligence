@@ -6,8 +6,9 @@ issue CANON votes, or fetch from external APIs. All results are review candidate
 Original registries and historical CSV remain owner-private input parameters.
 """
 from __future__ import annotations
-import argparse, csv, hashlib, json, pathlib, re, sqlite3, collections, urllib.parse
+import argparse, csv, hashlib, json, pathlib, re, sqlite3, collections, urllib.parse, math
 from dataclasses import dataclass
+from types import MappingProxyType
 
 SOURCE_EDITION = 'Ariadne v0.7'
 ARIADNE_SHA = '07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6'
@@ -19,6 +20,10 @@ TOPIC = re.compile(r'^T\d{4,7}$')
 ARXIV = re.compile(r'^(?:astro-ph(?:\.[A-Za-z-]+)?|cond-mat(?:\.[A-Za-z-]+)?|cs\.[A-Za-z-]+|econ\.[A-Za-z-]+|eess\.[A-Za-z-]+|gr-qc|hep-(?:ex|lat|ph|th)|math(?:\.[A-Za-z-]+)?|math-ph|nlin\.[A-Za-z-]+|nucl-(?:ex|th)|physics\.[A-Za-z-]+|q-bio\.[A-Za-z-]+|q-fin\.[A-Za-z-]+|quant-ph|stat\.[A-Za-z-]+)$')
 FORBIDDEN_KEYS = {'residentAuthenticated','canonApproved','roleGranted','rightsVerified','hostApproved','hostGrant','verifiedGain','approvedMatch','secret','privateContext','playJournal','palaceNotes'}
 SCHEMA = 'atlas.hsn.research-bridge/v0.9'
+OPENALEX_EDITION = 'OpenAlex November 2026 frozen 4516'
+COVERAGE_SCHEMA = 'atlas.hsn.topic-coverage/v1'
+COVERAGE_SCOPES = ('PRIMARY', 'ALTERNATE', 'ALL_CANDIDATES')
+COVERAGE_ORDERS = ('SOURCE_ORDER', 'CANDIDATE_RANK_THEN_HEURISTIC_SCORE', 'TOPIC_ID')
 
 class SourceHold(ValueError):
     pass
@@ -63,9 +68,13 @@ def load_topics(path,reg):
     rows=list(csv.DictReader(raw.decode('utf-8-sig').splitlines()))
     if len(rows)!=4516 or len({r['T_ID'] for r in rows})!=4516: raise SourceHold('TOPIC_SET_CARDINALITY')
     edges=[]; seen=set()
-    for row in rows:
+    for source_row, row in enumerate(rows, 1):
         tid=row['T_ID']
         if not TOPIC.fullmatch(tid):raise SourceHold('BAD_TOPIC_ID')
+        score=float(row['Rank_score_NOT_probability'])
+        if not math.isfinite(score):raise SourceHold('NONFINITE_CANDIDATE_SCORE')
+        if row['verified_exact'] not in ('True','False') or row['reviewer_accepted'] not in ('True','False'):
+            raise SourceHold('SOURCE_REVIEW_FLAG_SHAPE')
         targets=[row['Candidate_HSN'], *row['Other_4_HSN_candidates'].split(';')]
         if len(targets)!=5 or len(set(targets))!=5: raise SourceHold('CANDIDATE_COUNT_OR_DUPLICATE')
         for rank,target in enumerate(targets,1):
@@ -73,14 +82,177 @@ def load_topics(path,reg):
                 raise SourceHold('FORCED_EPISTEMIC_OR_BAD_TARGET')
             edges.append({'topicId':tid,'topicLabel':row['OpenAlex_topic_name_source'],
                           'candidateHsn':target,'rank':rank,
-                          'score':float(row['Rank_score_NOT_probability']) if rank==1 else None,
+                          'score':score if rank==1 else None,
                           'scoreType':'UNCALIBRATED_HEURISTIC_NOT_PROBABILITY' if rank==1 else 'NOT_REPORTED',
                           'sourceStatus':row['Status'], 'relation':'UNREVIEWED_RELATEDNESS_CANDIDATE',
-                          'sourceEdition':'OpenAlex November 2026 frozen 4516',
+                          'sourceEdition':OPENALEX_EDITION,
+                          'sourceRowOrdinal':source_row,
+                          'candidateRole':'PRIMARY' if rank==1 else 'ALTERNATE',
+                          'sourceVerifiedExact':row['verified_exact']=='True',
+                          'sourceReviewerAccepted':row['reviewer_accepted']=='True' and rank==1,
                           'authorityEffect':'NONE','approved':False})
             seen.add(target)
     if len(edges)!=22580 or len(seen)!=969: raise SourceHold('CROSSWALK_INVARIANT')
     return rows,edges
+
+def _freeze_source(value):
+    if isinstance(value,dict):
+        return MappingProxyType({key:_freeze_source(item) for key,item in value.items()})
+    if isinstance(value,(list,tuple)):
+        return tuple(_freeze_source(item) for item in value)
+    return value
+
+@dataclass(frozen=True,init=False,eq=False)
+class FrozenTopicCoverage:
+    """Offline source projection; no provider calls, graph authority or acceptance.
+
+    Construction verifies both original byte digests through the existing source
+    loaders. Scope is mandatory: a primary-candidate graph cannot establish
+    coverage of alternates. Source review flags remain source assertions only.
+    """
+    def __init__(self, registry_path, crosswalk_path):
+        registry=load_registry(registry_path)
+        rows,edges=load_topics(crosswalk_path,registry)
+        immutable_edges=tuple(_freeze_source(edge) for edge in edges)
+        by_node={hsn:[] for hsn in registry['nodes']}
+        for edge in immutable_edges:
+            by_node[edge['candidateHsn']].append(edge)
+        object.__setattr__(self,'registry',_freeze_source(registry))
+        object.__setattr__(self,'rows',_freeze_source(rows))
+        object.__setattr__(self,'edges',immutable_edges)
+        object.__setattr__(self,'by_node',MappingProxyType({k:tuple(v) for k,v in by_node.items()}))
+        object.__setattr__(self,'source',_freeze_source({
+            'registryEdition':SOURCE_EDITION, 'registrySha256':ARIADNE_SHA,
+            'crosswalkEdition':OPENALEX_EDITION, 'crosswalkSha256':OPENALEX_SHA,
+            'proof':'EXACT_FROZEN_BYTES_VERIFIED_LOCALLY',
+        }))
+
+    @staticmethod
+    def _candidate_key(edge):
+        return (edge['rank'], -(edge['score'] or 0), edge['topicId'])
+
+    def _select(self, hsn, scope, limit, order):
+        if not isinstance(hsn,str) or not HSN.fullmatch(hsn) or hsn not in self.by_node:
+            raise SourceHold('COVERAGE_NODE_UNKNOWN')
+        if scope not in COVERAGE_SCOPES:raise SourceHold('COVERAGE_SCOPE_REQUIRED')
+        if type(limit) is not int or not 0<=limit<=4516:raise SourceHold('COVERAGE_CAP_INVALID')
+        if order not in COVERAGE_ORDERS:raise SourceHold('COVERAGE_ORDER_INVALID')
+        all_edges=self.by_node[hsn]
+        selected=[e for e in all_edges if scope=='ALL_CANDIDATES' or e['candidateRole']==scope]
+        key=(lambda e:e['sourceRowOrdinal']) if order=='SOURCE_ORDER' else self._candidate_key if order=='CANDIDATE_RANK_THEN_HEURISTIC_SCORE' else (lambda e:e['topicId'])
+        return all_edges,selected,sorted(selected,key=key)
+
+    def _receipt(self, hsn, scope, limit, order, visible=None):
+        all_edges,selected,ordered=self._select(hsn,scope,limit,order)
+        by_id={e['topicId']:e for e in selected}
+        if len(by_id)!=len(selected):raise SourceHold('COVERAGE_DUPLICATE_TOPIC_IN_NODE')
+        source_order=[e['topicId'] for e in sorted(selected,key=lambda e:e['sourceRowOrdinal'])]
+        candidate_order=[e['topicId'] for e in sorted(selected,key=self._candidate_key)]
+        source_pos={tid:i for i,tid in enumerate(source_order,1)}
+        candidate_pos={tid:i for i,tid in enumerate(candidate_order,1)}
+        chosen=ordered[:limit] if visible is None else [by_id[tid] for tid in visible]
+        counts={'primary':sum(e['candidateRole']=='PRIMARY' for e in all_edges),
+                'alternate':sum(e['candidateRole']=='ALTERNATE' for e in all_edges),
+                'allCandidates':len(all_edges),
+                'sourceReviewerAccepted':sum(e['sourceReviewerAccepted'] for e in all_edges),
+                'semanticAccepted':0,'visible':len(chosen),'total':len(selected),
+                'omitted':len(selected)-len(chosen)}
+        topics=[{'topicId':e['topicId'],'label':e['topicLabel'],
+                 'candidateRole':e['candidateRole'],'candidateRankWithinTopic':e['rank'],
+                 'primaryHeuristicScore':e['score'],'scoreType':e['scoreType'],
+                 'sourceStatus':e['sourceStatus'],'sourceRowOrdinal':e['sourceRowOrdinal'],
+                 'sourceOrderPosition':source_pos[e['topicId']],
+                 'candidateOrderPosition':candidate_pos[e['topicId']],
+                 'presentationPosition':i,'sourceVerifiedExact':e['sourceVerifiedExact'],
+                 'sourceReviewerAccepted':e['sourceReviewerAccepted'],'semanticAccepted':False}
+                for i,e in enumerate(chosen,1)]
+        node=self.registry['nodes'][hsn]
+        return {'schema':COVERAGE_SCHEMA,'status':'LOCAL_SOURCE_PROJECTION',
+                'source':dict(self.source),'hsn':hsn,'nodeName':node['name'],'nodeRole':node['kind'],
+                'scope':scope,'denominator':'HISTORICAL_'+scope+'_LINKS',
+                'order':order,'limit':limit,'counts':counts,
+                'capReached':len(chosen)==limit,'truncated':counts['omitted']>0,
+                'sourceTopicOrder':source_order,'candidateTopicOrder':candidate_order,
+                'presentationTopicOrder':[e['topicId'] for e in chosen],'topics':topics,
+                'sourceSetComplete':True,'historicalOnly':True,
+                'semanticAcceptance':'NOT_ESTABLISHED','hostGraphVerified':False,
+                'mode':'WORK','privacy':'OWNER_PRIVATE_GENERATED_METADATA','authorityEffect':'NONE'}
+
+    def node(self, hsn, *, scope, limit=5, order='TOPIC_ID'):
+        return self._receipt(hsn,scope,limit,order)
+
+    def observe_graph(self, observation):
+        """Compare caller-supplied visible IDs with exact frozen source scope.
+
+        A reference identifies the separately retained observation; this function
+        does not authenticate its origin or assert a live hosted capability.
+        An undersized selection is retained as a finding, never hidden as a cap.
+        """
+        required={'hsn','scope','limit','visibleTopicIds','observationRef','source'}
+        if type(observation) is not dict or set(observation)!=required:
+            raise SourceHold('GRAPH_OBSERVATION_SHAPE')
+        if observation['source']!={k:v for k,v in self.source.items() if k!='proof'}:
+            raise SourceHold('GRAPH_OBSERVATION_SOURCE_MISMATCH')
+        ref=observation['observationRef']
+        if not isinstance(ref,str) or not ref.strip() or len(ref)>2048:
+            raise SourceHold('GRAPH_OBSERVATION_REFERENCE_REQUIRED')
+        visible=observation['visibleTopicIds']
+        if type(visible) is not list or any(not isinstance(t,str) or not TOPIC.fullmatch(t) for t in visible):
+            raise SourceHold('GRAPH_VISIBLE_IDS_INVALID')
+        if len(set(visible))!=len(visible):raise SourceHold('GRAPH_VISIBLE_IDS_DUPLICATE')
+        _,selected,_=self._select(observation['hsn'],observation['scope'],observation['limit'],'TOPIC_ID')
+        if len(visible)>observation['limit']:raise SourceHold('GRAPH_VISIBLE_EXCEEDS_CAP')
+        if not set(visible)<=set(e['topicId'] for e in selected):raise SourceHold('GRAPH_VISIBLE_OUTSIDE_SCOPE')
+        r=self._receipt(observation['hsn'],observation['scope'],observation['limit'],'TOPIC_ID',visible)
+        r.update(status='SOURCE_CHECKED_GRAPH_OBSERVATION_NOT_HOST_ATTESTATION',
+                 order='OBSERVED_RETURN_ORDER',observationRef=ref,
+                 observationTrust='CALLER_SUPPLIED_REFERENCE_NOT_INDEPENDENT_HOST_AUTHENTICATION')
+        expected=min(r['limit'],r['counts']['total'])
+        r['observationChecks']={
+            'countExpectedAtCap':expected,'countMatchesCap':len(visible)==expected,
+            'displaySortedByTopicId':visible==sorted(visible),
+            'matchesSourceOrderPrefix':visible==r['sourceTopicOrder'][:len(visible)],
+            'matchesCandidateOrderPrefix':visible==r['candidateTopicOrder'][:len(visible)],
+            'matchesTopicIdOrderPrefix':visible==sorted(r['sourceTopicOrder'])[:len(visible)],
+        }
+        return r
+
+    def summary(self):
+        primary={n for n,a in self.by_node.items() if any(e['candidateRole']=='PRIMARY' for e in a)}
+        alternate={n for n,a in self.by_node.items() if any(e['candidateRole']=='ALTERNATE' for e in a)}
+        domain={n for n,v in self.registry['nodes'].items() if v['kind']=='DOMAIN_SPECIALIZATION'}
+        edges=[e for a in self.by_node.values() for e in a]
+        return {'schema':COVERAGE_SCHEMA,'source':dict(self.source),
+                'status':'LOCAL_FROZEN_CROSSWALK_COVERAGE','counts':{
+                    'registryNodes':len(self.by_node),'domainNodes':len(domain),
+                    'epistemicNodes':len(self.by_node)-len(domain),'topicRows':len(self.rows),
+                    'primaryLinks':sum(e['candidateRole']=='PRIMARY' for e in edges),
+                    'alternateLinks':sum(e['candidateRole']=='ALTERNATE' for e in edges),
+                    'allCandidateLinks':len(edges),'primaryCoveredNodes':len(primary),
+                    'alternateCoveredNodes':len(alternate),'anyCandidateCoveredNodes':len(primary|alternate),
+                    'alternateOnlyNodes':len(alternate-primary),
+                    'uncoveredDomainNodes':len(domain-primary-alternate),
+                    'sourceVerifiedExactPrimaryLinks':sum(e['sourceVerifiedExact'] for e in edges if e['rank']==1),
+                    'sourceReviewerAcceptedLinks':sum(e['sourceReviewerAccepted'] for e in edges),
+                    'semanticAcceptedMappings':0},
+                'sourceStatusCounts':dict(sorted(collections.Counter(r['Status'] for r in self.rows).items())),
+                'authorityEffect':'NONE','hostGraphVerified':False,'actualProviderRequests':0}
+
+    def write(self, out_path, *, limit=5, order='TOPIC_ID'):
+        """Write owner-private derived metadata; never include raw input bytes."""
+        # Validate selectors even when an input fixture happens to be empty.
+        self._select(next(iter(self.by_node)), 'PRIMARY', limit, order)
+        output={'schema':'atlas.hsn.topic-coverage-index/v1','summary':self.summary(),
+                'projection':{'limit':limit,'order':order,'scopes':list(COVERAGE_SCOPES)},
+                'nodes':{hsn:{scope:self.node(hsn,scope=scope,limit=limit,order=order)
+                             for scope in COVERAGE_SCOPES} for hsn in sorted(self.by_node)},
+                'privacy':'OWNER_PRIVATE_GENERATED_METADATA','authorityEffect':'NONE'}
+        output['digest']=sha256(canonical(output).encode())
+        path=pathlib.Path(out_path);path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_text(canonical(output)+'\n',encoding='utf-8')
+        return {'path':str(path),'sha256':sha256(path.read_bytes()),'digest':output['digest'],
+                'counts':output['summary']['counts'],'source':dict(self.source),
+                'actualProviderRequests':0,'authorityEffect':'NONE'}
 
 def arxiv_routes(reg):
     """Only original source placements; scope inheritance never means equivalence."""
@@ -172,7 +344,8 @@ def jsonl_dump(path,rows):
 def build(registry_path,crosswalk_path,prior_plan_path,sqlite_path,out_path):
     """Deterministic, source-locked research router. No networking or hosted changes."""
     out=pathlib.Path(out_path);out.mkdir(parents=True,exist_ok=True)
-    reg=load_registry(registry_path);topics,edges=load_topics(crosswalk_path,reg)
+    coverage=FrozenTopicCoverage(registry_path,crosswalk_path)
+    reg=coverage.registry;topics=coverage.rows;edges=coverage.edges
     prior,prior_by=load_plan(prior_plan_path,reg)
     with sqlite3.connect(sqlite_path) as cx:
         meta_row=cx.execute("SELECT value FROM metadata WHERE key='manifest'").fetchone()
@@ -202,6 +375,8 @@ def build(registry_path,crosswalk_path,prior_plan_path,sqlite_path,out_path):
           'sphere':sp,'sphereName':reg['spheres'][sp]['name'],'nodeName':node['name'],
           'role':node['kind'],'topicCandidateCount':len(arr),
           'topTopicCandidates':[{'id':a['topicId'],'label':a['topicLabel'],'rank':a['rank'],'status':a['sourceStatus']} for a in choices],
+          'topicCoverage':coverage.node(hsn,scope='ALL_CANDIDATES',limit=8,
+                                       order='CANDIDATE_RANK_THEN_HEURISTIC_SCORE'),
           'arxivCandidateCount':len(rts),
           'arxivCategories':[{'category':a['category'],'scope':a['sourceScope']} for a in rts[:10]],
           'literatureStatus':status,'sourceRegistryDigest':ARIADNE_SHA,
@@ -266,7 +441,7 @@ def build(registry_path,crosswalk_path,prior_plan_path,sqlite_path,out_path):
                 'request':req,'noLiveSearch':True,'semanticEquivalence':False})
     # Source-only artifacts; the original owner registry stays outside generated public-safe PR.
     jsonl_dump(out/'research_nodes_1728.jsonl',nodes)
-    jsonl_dump(out/'unreviewed_topic_edges_22580.jsonl',edges)
+    jsonl_dump(out/'unreviewed_topic_edges_22580.jsonl',(dict(edge) for edge in edges))
     jsonl_dump(out/'arxiv_scope_routes.jsonl',routes)
     jsonl_dump(out/'arxiv_query_templates.jsonl',arxiv_requests)
     jsonl_dump(out/'arxiv_node_queries.jsonl',node_arxiv_requests)
@@ -285,6 +460,7 @@ def build(registry_path,crosswalk_path,prior_plan_path,sqlite_path,out_path):
       'arxivScopeRoutes':len(routes),'arxivNodeQueryCandidates':len(node_arxiv_requests),'arxivDistinctCategorySeeds':len(unique_arxiv),
       'expertSlotsUnassigned':len(roles),'ironEmpireStoryCandidates':len(story),
       'realResearchRequests':0,'realResidentAppointments':0,'verifiedScientificClaims':0,'acceptedCanonUpdates':0}
+    counts['topicCoverage']=coverage.summary()['counts']
     receipt={'schema':SCHEMA,'status':'LOCAL_RESEARCH_CROSSWALK_COMPILED_NOT_HOSTED',
       'sourceDigests':{'ariadneOriginal':ARIADNE_SHA,'openalexFrozen':OPENALEX_SHA,
                       'priorPlan':sha256(pathlib.Path(prior_plan_path).read_bytes())},
@@ -303,8 +479,12 @@ def cli():
     for name in ('registry','topics','plan','circuit','out'):b.add_argument('--'+name,required=True)
     p=sub.add_parser('topic-url');p.add_argument('topic_id')
     q=sub.add_parser('arxiv-url');q.add_argument('category');q.add_argument('subject')
+    c=sub.add_parser('coverage',help='Compile explicit-scope owner-private coverage; no provider requests')
+    for name in ('registry','topics','out'):c.add_argument('--'+name,required=True)
+    c.add_argument('--limit',type=int,default=5);c.add_argument('--order',choices=COVERAGE_ORDERS,default='TOPIC_ID')
     a=ap.parse_args()
     if a.action=='build':print(json.dumps(build(a.registry,a.topics,a.plan,a.circuit,a.out),indent=2))
     elif a.action=='topic-url':print(json.dumps(safe_topic_request(a.topic_id),indent=2))
     elif a.action=='arxiv-url':print(json.dumps(safe_arxiv_request(a.category,a.subject),indent=2))
+    elif a.action=='coverage':print(json.dumps(FrozenTopicCoverage(a.registry,a.topics).write(a.out,limit=a.limit,order=a.order),indent=2))
 if __name__=='__main__':cli()
