@@ -14,6 +14,7 @@ const ATTACKS=Object.freeze([
   ['forged_source_digest',r=>r.sourceDigest='a'.repeat(64)],
   ['wrong_coordinate',r=>r.coordinate=r.coordinate==='H12.S12.N12'?'H01.S01.N01':'H12.S12.N12'],
   ['wrong_intrasphere',r=>r.intraSphere=r.intraSphere==='H12.S12.N12'?'H01.S01.N01':'H12.S12.N12'],
+  ['wrong_cross_sphere',r=>r.crossSphere=r.crossSphere==='H12.S12.N12'?'H01.S01.N01':'H12.S12.N12'],
   ['wrong_house',r=>r.crossHouse=r.crossHouse==='H12.S12.N12'?'H01.S01.N01':'H12.S12.N12'],
   ['selfclaimed_read_grant',r=>r.rightsRead='GRANTED'],
   ['revoked_return',r=>r.rightsReturn='REVOKED'],

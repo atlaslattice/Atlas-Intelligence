@@ -11,8 +11,8 @@ import {sha,SHA,COORD,proposeStructuralSymbiosis,
   ALL_NODES} from './node-symbiosis.mjs';
 import {challengeProposedRoute,sampleAttack,ATTACK_FAMILIES} from './node-adversary.mjs';
 
-export const CODE_CASCADE_SCHEMA='atlas.one.code-symbiosis-evolution/v1';
-export const GENESIS=sha('ATLAS_SYMBIOSIS_CODE_GENESIS_V1\0');
+export const CODE_CASCADE_SCHEMA='atlas.one.code-symbiosis-evolution/v2';
+export const GENESIS=sha('ATLAS_SYMBIOSIS_CODE_GENESIS_V2\0');
 const EXPECTED_PARENT_100='d02e7faa0b7e42ee8ac4e0c3cb5c412232b9d8af71ed44236f756b20e308646c';
 const EXPECTED_PARENT_1100='244a8dfb2b37ff38c097ee5414752f5feb2ce2e5e8bdeb3917bca5031e4f490a';
 const h1=v=>createHash('sha1').update(v).digest('hex');

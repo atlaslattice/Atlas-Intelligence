@@ -17,11 +17,45 @@ const holding=r=>{
   assert.equal(r.hostAttested,false);assert.equal(r.authorityEffect,'NONE');
 };
 
-test('entire 1728 catalog remains unique, fully scanned, 7+5 roles per Sphere',()=>{
+test('entire 1728 catalog has seven domain SPHERES and five meta SPHERES per House',()=>{
  const r=surveyLattice();assert.equal(r.valid,true);assert.equal(ALL_NODES.length,1728);
- assert.equal(r.spheres,144);assert.equal(r.roles.DOMAIN_LOCATOR,1008);
- assert.equal(r.roles.EPISTEMIC_METHOD,720);assert.ok(r.houses.every(n=>n===144));
+ assert.equal(r.spheres,144);assert.equal(r.roles.DOMAIN_SPECIALIZATION,1008);
+ assert.equal(r.roles.EPISTEMIC_META,720);assert.ok(r.houses.every(n=>n===144));
  assert.equal(new Set(ALL_NODES.map(x=>x.coordinate)).size,1728);
+});
+test('Ariadne original source-index split: H01.S01.N08 is DOMAIN, H01.S08.N01 is META',()=>{
+ assert.equal(ALL_NODES.find(x=>x.coordinate==='H01.S01.N08').role,'DOMAIN_SPECIALIZATION');
+ assert.equal(ALL_NODES.find(x=>x.coordinate==='H01.S08.N01').role,'EPISTEMIC_META');
+ assert.equal(ALL_NODES.find(x=>x.coordinate==='H12.S07.N12').role,'DOMAIN_SPECIALIZATION');
+ assert.equal(ALL_NODES.find(x=>x.coordinate==='H12.S08.N12').role,'EPISTEMIC_META');
+});
+test('each original source Sphere is homogeneous; no invented N01-N07 vs N08-N12 split',()=>{
+ for(let h=1;h<=12;h++)for(let s=1;s<=12;s++){
+  const records=ALL_NODES.filter(x=>x.house===h&&x.sphere===s);
+  assert.equal(records.length,12);
+  const expected=s<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META';
+  assert.ok(records.every(x=>x.role===expected));
+ }
+});
+test('structural symbiosis pairs across Sphere role axis but preserves in-Sphere identity',()=>{
+ for(const c of ['H01.S01.N08','H01.S08.N01','H12.S12.N12']){
+  const rule=proposeStructuralSymbiosis(c,'0'.repeat(64),'1'.repeat(64));
+  const source=parseCoordinate(c),intra=parseCoordinate(rule.intraSphere),contrast=parseCoordinate(rule.crossSphere);
+  assert.equal(intra.sphere,source.sphere);assert.equal(intra.node,source.node%12+1);
+  assert.equal(contrast.house,source.house);assert.equal(contrast.node,source.node);
+  assert.notEqual(contrast.sphere<=7,source.sphere<=7);
+  assert.notEqual(rule.counterpartRole,rule.nodeRole);
+  assert.equal(rule.semanticMappingApproved,false);
+ }
+});
+test('7-to-5 sphere contrasts are not reversible semantic equivalences',()=>{
+ const a=proposeStructuralSymbiosis('H01.S06.N01','0'.repeat(64),'1'.repeat(64));
+ assert.equal(a.crossSphere,'H01.S08.N01');
+ const b=proposeStructuralSymbiosis(a.crossSphere,'0'.repeat(64),'1'.repeat(64));
+ assert.equal(b.crossSphere,'H01.S01.N01');
+ assert.notEqual(b.crossSphere,a.coordinate);
+ assert.equal(a.relation,'TOPOLOGICAL_COMPLEMENT_CANDIDATE');
+ assert.equal(a.semanticMappingApproved,false);
 });
 test('actual built executable routes total 1100 with 628 explicitly unregistered',()=>{
  assert.equal(registeredCodeRoutes,1100);assert.equal(id.length,1100);
@@ -44,7 +78,7 @@ test('all 1100 code registrations are actually callable but inert',()=>{
   assert.equal(r.status,'PREPARED_LOCAL_ONLY');assert.equal(r.canExecute,false);
   assert.equal(r.canPublish,false);assert.equal(r.hostAttested,false);
   assert.equal(r.semanticMappingApproved,false);
-  assert.equal(r.contrasts.length,2);
+  assert.equal(r.contrasts.length,3);
  }
 });
 test('untouched nodes are not silently fabricated as active routes',()=>{
@@ -53,8 +87,8 @@ test('untouched nodes are not silently fabricated as active routes',()=>{
  for(const x of missed){holding(dispatchNode(x.coordinate,{}));}
 });
 test('adversarial testing runs against independent samples from both role types',()=>{
- const domain=id.find(a=>getNodeRule(a).nodeRole==='DOMAIN_LOCATOR');
- const method=id.find(a=>getNodeRule(a).nodeRole==='EPISTEMIC_METHOD');
+ const domain=id.find(a=>getNodeRule(a).nodeRole==='DOMAIN_SPECIALIZATION');
+ const method=id.find(a=>getNodeRule(a).nodeRole==='EPISTEMIC_META');
  assert.ok(domain&&method);
  for(const address of [domain,method,id.at(-1)]){
   const proof=challengeProposedRoute(getNodeRule(address));
@@ -105,10 +139,12 @@ test('private modes, forged host claims, duplicate/replay all hold for sampled n
 });
 test('intra-sphere structural complement is cross-role and cross-house pointer never authority',()=>{
  for(const a of id){
-  const r=getNodeRule(a),n=parseCoordinate(a),cross=parseCoordinate(r.crossHouse),intra=parseCoordinate(r.intraSphere);
+  const r=getNodeRule(a),n=parseCoordinate(a),cross=parseCoordinate(r.crossHouse),intra=parseCoordinate(r.intraSphere),contrast=parseCoordinate(r.crossSphere);
   assert.equal(intra.house,n.house);assert.equal(intra.sphere,n.sphere);
-  assert.notEqual(intra.node<=7,n.node<=7);
-  assert.equal(cross.house,n.house%12+1);assert.equal(cross.node,n.node);
+  assert.equal(intra.node,n.node%12+1);
+  assert.equal(contrast.house,n.house);assert.equal(contrast.node,n.node);
+  assert.notEqual(contrast.sphere<=7,n.sphere<=7);
+  assert.equal(cross.house,n.house%12+1);assert.equal(cross.sphere,n.sphere);assert.equal(cross.node,n.node);
   assert.equal(r.semanticMappingApproved,false);
   assert.equal(r.authorityEffect,'NONE');
  }

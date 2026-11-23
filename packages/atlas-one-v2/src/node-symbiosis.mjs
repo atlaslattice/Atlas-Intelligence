@@ -1,15 +1,16 @@
 /** Atlas ONE 1728-node structural symbiosis proposer, no semantic or host authority.
- * Role boundary: N01-N07 domain locators; N08-N12 epistemic-method locations.
+ * Original Ariadne v0.7 role axis: S01-S07 DOMAIN_SPECIALIZATION spheres;
+ * S08-S12 EPISTEMIC_META spheres. All 12 nodes inherit their sphere role.
  * An address is not a truth claim, a real researcher, or a resident specialty.
  */
 import {createHash} from 'node:crypto';
 
-export const CATALOG_VERSION = 'atlas.1728.structural-source-only/v1';
-export const ROUTE_VERSION = 'atlas.1728.symbiosis-projection/v1';
+export const CATALOG_VERSION = 'atlas.1728.structural-source-only/v2';
+export const ROUTE_VERSION = 'atlas.1728.symbiosis-projection/v2';
 export const COORD = /^H(0[1-9]|1[0-2])\.S(0[1-9]|1[0-2])\.N(0[1-9]|1[0-2])$/;
 export const SHA = /^[a-f0-9]{64}$/;
 export const sha = value => createHash('sha256').update(value).digest('hex');
-export const codeRole = n => n <= 7 ? 'DOMAIN_LOCATOR' : 'EPISTEMIC_METHOD';
+export const codeRole = sphere => sphere <= 7 ? 'DOMAIN_SPECIALIZATION' : 'EPISTEMIC_META';
 export const makeCoordinate = (h,s,n) => `H${String(h).padStart(2,'0')}.S${String(s).padStart(2,'0')}.N${String(n).padStart(2,'0')}`;
 export const parseCoordinate = address => {
   if (typeof address !== 'string' || !COORD.test(address)) return null;
@@ -19,7 +20,7 @@ export const buildCatalog = () => {
   const out=[];
   for(let h=1;h<=12;h++)for(let s=1;s<=12;s++)for(let n=1;n<=12;n++){
     const coordinate=makeCoordinate(h,s,n);
-    out.push(Object.freeze({coordinate,house:h,sphere:s,node:n,role:codeRole(n)}));
+    out.push(Object.freeze({coordinate,house:h,sphere:s,node:n,role:codeRole(s)}));
   }
   return Object.freeze(out);
 };
@@ -33,11 +34,14 @@ export function proposeStructuralSymbiosis(coordinate, previousAcceptedHead, ori
   const node=getStructuralNode(coordinate);
   if(!node||typeof previousAcceptedHead!=='string'||!SHA.test(previousAcceptedHead)
       ||typeof originalCaseHead!=='string'||!SHA.test(originalCaseHead))return null;
-  const counterpartNode=node.node<=7 ? 8+(node.node-1)%5 : 1+(node.node-8)%7;
-  const intraSphere=makeCoordinate(node.house,node.sphere,counterpartNode);
+  const counterpartSphere=node.sphere<=7 ? 8+(node.sphere-1)%5 : 1+(node.sphere-8)%7;
+  // One same-sphere neighbor (same role), one cross-sphere contrast (opposite role),
+  // and one cross-House source pointer (same positional role): no semantic edge.
+  const intraSphere=makeCoordinate(node.house,node.sphere,node.node%12+1);
+  const crossSphere=makeCoordinate(node.house,counterpartSphere,node.node);
   const crossHouse=makeCoordinate(node.house%12+1,node.sphere,node.node);
   const draft={schema:ROUTE_VERSION,coordinate,nodeRole:node.role,
-    counterpartRole:codeRole(counterpartNode),intraSphere,crossHouse,
+    counterpartRole:codeRole(counterpartSphere),intraSphere,crossSphere,crossHouse,
     relation:'TOPOLOGICAL_COMPLEMENT_CANDIDATE',
     sourceEdition:'synthetic-hsn-v1',sourceDigest:expectedSyntheticSourceDigest(coordinate),
     previousAcceptedHead,originalCaseHead,
@@ -47,19 +51,20 @@ export function proposeStructuralSymbiosis(coordinate, previousAcceptedHead, ori
 }
 
 export function surveyLattice(){
-  const houses=Array(12).fill(0),spheres=new Map(),roles={DOMAIN_LOCATOR:0,EPISTEMIC_METHOD:0};
+  const houses=Array(12).fill(0),spheres=new Map(),roles={DOMAIN_SPECIALIZATION:0,EPISTEMIC_META:0};
   for(const x of ALL_NODES){
     houses[x.house-1]++;
     const k=`H${String(x.house).padStart(2,'0')}.S${String(x.sphere).padStart(2,'0')}`;
     const slot=spheres.get(k)??{domain:0,method:0};
-    if(x.role==='DOMAIN_LOCATOR'){slot.domain++;roles.DOMAIN_LOCATOR++;}
-    else{slot.method++;roles.EPISTEMIC_METHOD++;}
+    if(x.role==='DOMAIN_SPECIALIZATION'){slot.domain++;roles.DOMAIN_SPECIALIZATION++;}
+    else{slot.method++;roles.EPISTEMIC_META++;}
     spheres.set(k,slot);
   }
   const valid=ALL_NODES.length===1728 && new Set(ALL_NODES.map(x=>x.coordinate)).size===1728
     && houses.every(n=>n===144)&&spheres.size===144
-    && [...spheres.values()].every(x=>x.domain===7&&x.method===5)
-    && roles.DOMAIN_LOCATOR===1008&&roles.EPISTEMIC_METHOD===720;
+    && [...spheres.entries()].every(([key,x])=>Number(key.slice(5,7))<=7
+         ? x.domain===12&&x.method===0 : x.domain===0&&x.method===12)
+    && roles.DOMAIN_SPECIALIZATION===1008&&roles.EPISTEMIC_META===720;
   return Object.freeze({valid,nodes:ALL_NODES.length,houses,spheres:spheres.size,roles,hostVerified:false,
     semanticClaimsConfirmed:0,verifiedResidentAssignments:0});
 }
@@ -75,7 +80,7 @@ export function validateStructuralRule(rule){
   }catch{return false;}
 }
 
-const INPUT_KEYS=Object.freeze(['schema','coordinate','intraSphere','crossHouse','tenant','principal','room',
+const INPUT_KEYS=Object.freeze(['schema','coordinate','intraSphere','crossSphere','crossHouse','tenant','principal','room',
   'mode','purpose','sourceEdition','sourceDigest','rightsRead','rightsReturn','consent',
   'noHarvest','canon','deployment','rawBody','replayCount','issuerEpoch','relation','hostAttested']);
 const INPUT_SET=new Set(INPUT_KEYS);
@@ -83,7 +88,7 @@ const failure=()=>({status:'HOLD',reason:'UNVERIFIED_SCOPE_OR_SOURCE',
   authorityEffect:'NONE',canExecute:false,canPublish:false,hostAttested:false,
   brokerPosts:0,modelCalls:0});
 const prepared=rule=>({status:'PREPARED_LOCAL_ONLY',reason:'STRUCTURAL_TOPOLOGY_NO_SEMANTIC_PROOF',
-  coordinate:rule.coordinate,contrasts:[rule.intraSphere,rule.crossHouse],
+  coordinate:rule.coordinate,contrasts:[rule.intraSphere,rule.crossSphere,rule.crossHouse],
   nodeRole:rule.nodeRole,relation:rule.relation,sourceDigest:rule.sourceDigest,
   sourceEdition:rule.sourceEdition,priorRuleHead:rule.previousAcceptedHead,
   ruleDigest:rule.ruleDigest,authorityEffect:'NONE',canExecute:false,canPublish:false,
@@ -98,9 +103,9 @@ export function prepareNodeProjection(rule, request){
     const names=Object.keys(props);
     if(names.length!==INPUT_KEYS.length||names.some(k=>!INPUT_SET.has(k)||!('value' in props[k])))return failure();
     const v=Object.fromEntries(names.map(k=>[k,props[k].value]));
-    const exact=v.schema==='atlas.symbiosis.inert-request/v1'
+    const exact=v.schema==='atlas.symbiosis.inert-request/v2'
       &&v.coordinate===rule.coordinate
-      &&v.intraSphere===rule.intraSphere&&v.crossHouse===rule.crossHouse
+      &&v.intraSphere===rule.intraSphere&&v.crossSphere===rule.crossSphere&&v.crossHouse===rule.crossHouse
       &&v.tenant==='synthetic-atlas'&&v.principal==='selfdeclared-test-only'
       &&v.room==='synthetic-work-room'&&v.mode==='WORK'&&v.purpose==='REVIEW_ONLY'
       &&v.sourceEdition===rule.sourceEdition&&v.sourceDigest===rule.sourceDigest
@@ -113,8 +118,8 @@ export function prepareNodeProjection(rule, request){
   }catch{return failure();}
 }
 export function inertPositive(rule){
-  return {schema:'atlas.symbiosis.inert-request/v1',coordinate:rule.coordinate,
-    intraSphere:rule.intraSphere,crossHouse:rule.crossHouse,
+  return {schema:'atlas.symbiosis.inert-request/v2',coordinate:rule.coordinate,
+    intraSphere:rule.intraSphere,crossSphere:rule.crossSphere,crossHouse:rule.crossHouse,
     tenant:'synthetic-atlas',principal:'selfdeclared-test-only',room:'synthetic-work-room',
     mode:'WORK',purpose:'REVIEW_ONLY',sourceEdition:rule.sourceEdition,
     sourceDigest:rule.sourceDigest,rightsRead:'HOST_NOT_CHECKED',rightsReturn:'HOST_NOT_CHECKED',

@@ -7,13 +7,13 @@ from pathlib import Path
 
 COORD=re.compile(r'^H(0[1-9]|1[0-2])\.S(0[1-9]|1[0-2])\.N(0[1-9]|1[0-2])$')
 SHA=re.compile(r'^[a-f0-9]{64}$')
-GENESIS=hashlib.sha256(b'ATLAS_SYMBIOSIS_CODE_GENESIS_V1\x00').hexdigest()
+GENESIS=hashlib.sha256(b'ATLAS_SYMBIOSIS_CODE_GENESIS_V2\x00').hexdigest()
 PARENT_100='d02e7faa0b7e42ee8ac4e0c3cb5c412232b9d8af71ed44236f756b20e308646c'
 PARENT_1100='244a8dfb2b37ff38c097ee5414752f5feb2ce2e5e8bdeb3917bca5031e4f490a'
-SCHEMA='atlas.one.code-symbiosis-evolution/v1'
+SCHEMA='atlas.one.code-symbiosis-evolution/v2'
 PREFIX='registered.set('
 def digest(x):return hashlib.sha256(x).hexdigest()
-def code_role(n):return 'DOMAIN_LOCATOR' if n<=7 else 'EPISTEMIC_METHOD'
+def code_role(sphere):return 'DOMAIN_SPECIALIZATION' if sphere<=7 else 'EPISTEMIC_META'
 def coord(h,s,n):return f'H{h:02d}.S{s:02d}.N{n:02d}'
 def synthetic_source_digest(c):return digest(('synthetic-hsn-source-v1:'+c).encode())
 
@@ -54,12 +54,13 @@ def independently_verify(parent_path,code_path,ledger_path,summary_path,require_
             if not m or address in seen or entry.get('coordinate')!=address or obj.get('coordinate')!=address:
                 raise ValueError('coordinate mismatch or duplicated route')
             h,s,n=map(int,m.groups())
-            counterpart=8+(n-1)%5 if n<=7 else 1+(n-8)%7
-            intra=coord(h,s,counterpart)
+            counterpart_sphere=8+(s-1)%5 if s<=7 else 1+(s-8)%7
+            intra=coord(h,s,n%12+1)
+            cross_sphere=coord(h,counterpart_sphere,n)
             cross=coord(h%12+1,s,n)
-            if obj.get('intraSphere')!=intra or obj.get('crossHouse')!=cross:
+            if obj.get('intraSphere')!=intra or obj.get('crossSphere')!=cross_sphere or obj.get('crossHouse')!=cross:
                 raise ValueError('structural topology tampering')
-            if obj.get('nodeRole')!=code_role(n) or obj.get('counterpartRole')!=code_role(counterpart):
+            if obj.get('nodeRole')!=code_role(s) or obj.get('counterpartRole')!=code_role(counterpart_sphere):
                 raise ValueError('7+5 role mismatch')
             if obj.get('relation')!='TOPOLOGICAL_COMPLEMENT_CANDIDATE' or obj.get('semanticMappingApproved') is not False:
                 raise ValueError('semantic authority incorrectly granted')
