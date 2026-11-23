@@ -14,7 +14,8 @@
     "./civilization": "./src/civilizational-contract.mjs",
     "./work-burst": "./src/work-burst.mjs",
     "./whole-144": "./src/whole-144.mjs",
-    "./whole-144-compounding": "./src/whole-144-compounding.mjs"
+    "./whole-144-compounding": "./src/whole-144-compounding.mjs",
+    "./whole-144-scope-ingress": "./src/whole-144-scope-ingress.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
