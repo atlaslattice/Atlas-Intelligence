@@ -12,7 +12,7 @@ This is an **original rewrite** of Atlas's orchestration layer, not another agen
 - Five deterministic journaled stages: `PREPARED -> SOURCE_MAPPED -> EVIDENCE_TRACED -> COUNTER_REVIEW_REQUESTED -> REVIEW_REQUIRED`.
 - Atomic single-local-host event journal with exclusive lock, content-digest replay checks and `NO_REMOTE_RETRY_WITHOUT_WITNESS` for lost acknowledgements.
 - Current-access Work read/return callback contract; no model-provided identity or rights accepted; only minimal source-reference projections exported. Simulated host callbacks do not confer production authentication.
-- Read-only owner-local MCP tool router and bounded optional OpenAI Agents SDK reviewer. SDK tracing is off by default. Model calls are opt-in; **no API credits were spent in this build**.
+- Read-only owner-local MCP tool router and loopback HTTP preview; bounded optional OpenAI Agents SDK reviewer. SDK tracing is off by default. Model calls are opt-in; **no API credits were spent in this build**.
 - Metadata-only, not automatic, legacy memory and agent migration preview. No old memory body is shipped or moved to a new backend.
 
 ## Run
@@ -23,6 +23,7 @@ Node.js 20+; no `npm install` needed for tests or source-only execution.
 npm test
 ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/atlas.json npm run smoke
 ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/atlas.json node src/mcp-stdio.mjs
+ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/atlas.json npm run serve:local
 ```
 
 The original `atlas.json` must match SHA-256:
@@ -40,3 +41,5 @@ The optional reviewer supports `@openai/agents` (install in the authorized **hos
 The new core replaces earlier prototypes as *architecture*. Existing user data and source history stay in their original stores. The opt-in migration API creates only provenance pointers and schema/rights review queues. Legacy `VERIFIED`, `canonical`, previous `Mxx` IDs, old 0-based coordinates, and self-declared agents never become automatically ratified Ariadne or hosted rights.
 
 See `docs/REWRITE_AND_CHERRYPICK.md`, `docs/SWARMCHAT_PUBLISHER_PORT.md`, and `docs/MIGRATION_ACCEPTANCE.md`.
+
+The HTTP preview binds only `127.0.0.1` and returns candidate/source data only. Do **not** expose it through a public reverse proxy without separately installed, signed-in, host-controlled authorization. The legacy Express server remains unmodified until publisher migration acceptance.
