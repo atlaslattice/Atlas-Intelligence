@@ -13,7 +13,8 @@
     "./host": "./src/adapters.mjs",
     "./civilization": "./src/civilizational-contract.mjs",
     "./work-burst": "./src/work-burst.mjs",
-    "./cascade-evolution": "./src/cascade-evolution.mjs"
+    "./cascade-evolution": "./src/cascade-evolution.mjs",
+    "./symbiosis": "./generated/generated-node-routes.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
