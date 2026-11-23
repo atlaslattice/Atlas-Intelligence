@@ -11,7 +11,8 @@
     "./mcp": "./src/mcp.mjs",
     "./agents": "./src/openai.mjs",
     "./host": "./src/adapters.mjs",
-    "./work-search": "./src/work-search.mjs"
+    "./work-search": "./src/work-search.mjs",
+    "./civilization-circuit": "./src/civilization-circuit.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
