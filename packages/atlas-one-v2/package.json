@@ -12,7 +12,8 @@
     "./agents": "./src/openai.mjs",
     "./host": "./src/adapters.mjs",
     "./civilization": "./src/civilizational-contract.mjs",
-    "./next144": "./src/next144.mjs"
+    "./next144": "./src/next144.mjs",
+    "./iron-empire": "./src/iron-empire-circuit.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
