@@ -45,7 +45,23 @@ function snapshotCallerDetail(root){
   };
   const holder={value:null},pending=[{value:root,target:holder,key:'value',depth:1,ancestors:new Set()}];
   while(pending.length){
-    const {value,target,key,depth,ancestors}=pending.pop();
+    const task=pending.pop();
+    let {value,target,key,depth,ancestors}=task;
+    // Preserve historical depth-first accessor evaluation. An eager sibling
+    // read changed receipt-covered details when earlier descendants had
+    // getter effects. Descriptor custody and bounded traversal are retained.
+    if(Object.hasOwn(task,'sourceDescriptor')){
+      try{
+        const descriptor=task.sourceDescriptor;
+        value=!descriptor ? null : Object.hasOwn(descriptor,'value') ? descriptor.value :
+          typeof descriptor.get==='function' ? descriptor.get.call(task.owner) : undefined;
+      }catch(error){
+        if(error instanceof Hold)throw error;
+        const hold=new Hold('JOURNAL_CALLER_DETAIL_INVALID');
+        Object.defineProperty(hold,'forensicCause',{value:error,enumerable:false});
+        throw hold;
+      }
+    }
     nodes++;
     requireValid(nodes<=100_000,'JOURNAL_WRITE_LIMIT');
     if(value===null||typeof value==='string'||typeof value==='boolean'||
@@ -75,16 +91,11 @@ function snapshotCallerDetail(root){
         out=Object.create(null);
       }
       add(2+keys.length);
-      // Extract all values exactly once in canonical key order. A data
-      // descriptor avoids a second property read; accessors are invoked once
-      // to preserve the older R12 source-facing snapshot contract.
+      // Capture own descriptors once in canonical key order. Defer accessors
+      // until each DFS frame, so earlier descendants precede later siblings.
       children=keys.map(k=>{
-        const descriptor=descriptors[k];
-        if(!descriptor){return [k,null];} // array holes serialize to null
         if(!array)add(Buffer.byteLength(JSON.stringify(k),'utf8')+1);
-        const child=Object.hasOwn(descriptor,'value') ? descriptor.value :
-          typeof descriptor.get==='function' ? descriptor.get.call(value) : undefined;
-        return [k,child];
+        return [k,descriptors[k]]; // sparse array holes later become null
       });
     }catch(error){
       if(error instanceof Hold)throw error;
@@ -95,8 +106,9 @@ function snapshotCallerDetail(root){
     target[key]=out;
     const nextAncestors=new Set(ancestors);nextAncestors.add(value);
     for(let i=children.length-1;i>=0;i--){
-      const [childKey,childValue]=children[i];
-      pending.push({value:childValue,target:out,key:childKey,depth:depth+1,ancestors:nextAncestors});
+      const [childKey,sourceDescriptor]=children[i];
+      pending.push({target:out,key:childKey,depth:depth+1,ancestors:nextAncestors,
+                    sourceDescriptor,owner:value});
     }
   }
   return holder.value;
