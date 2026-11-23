@@ -57,3 +57,7 @@ Create the companion branch from **PR #19** (`feat/atlas-whole-burst-parallel-lo
 ## Boundaries
 
 No production room subscription, release, deployment, external posting except an explicit authorized Work peer receipt, resident identity proof, CANON vote, isotope output publication, private Brain/Palace content, Play/Social/Dream/Quiet harvesting, autonomous model wakeup, spent money, or mass assignment of actual residents.
+
+## Additive v0.2 Work compounding module
+
+The separate `src/whole-144-compounding.mjs` adds tested, source-only explicit links, unique node evidence queues and optional resident specialist nominations; see `docs/WHOLE_144_COMPOUNDING.md`. Its local tests and example have separate receipts. This module does not change the original 144 records, Ariadne semantics, verified-gain counters, Work-burst scheduler or SwarmChat host. The `package.json` export is additive. No candidate has acquired a real resident identity, appointment or hosted permission.
