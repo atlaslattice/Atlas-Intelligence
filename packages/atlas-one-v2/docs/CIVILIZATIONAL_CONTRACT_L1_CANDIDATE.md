@@ -9,7 +9,7 @@
 1. `prepareRoomProfile`: validate a chosen WORK room policy against host-reported bounded ceilings (not caller-imposed higher limits). Default to the maximum *permitted* value and allow an explicit smaller request. **No room is created, extended, deleted or implicitly renewed.** Profile fields remain `PREPARED_NOT_APPLIED`.
 2. `prepareWorkSubscription`: fail closed unless the proposed Work room is open and unexpired, the caller supplies host-reported tenant/account/principal/epoch, a matching host-reported join, and explicit per-room event consent. Returns only an intent. Never installs a webhook or asserts resident authentication, notification receipt, model wake or consent at another mode.
 3. `evaluateCanonHsnCandidate`: demand versioned CANON clause digest + Ariadne v0.7 registry/node digest, typed non-authoritative relation, and a source reference. Hold for H01 epoch and H08/music false friends and forged display glyph authority. Output is always `CANDIDATE_REQUIRES_SEMANTIC_REVIEW`, `normativeForce:NONE`, `ratified:false`. Full semantic legitimacy requires independently selected source bytes and human review.
-4. `evaluateTwelveHouseReadiness`: distinguish 1,008 domain and 720 epistemic addresses, require twelve source-backed House reviews, non-offsettable binding rights checks, and dimensioned stock-ledger closure before even returning an unverified candidate. No welfare scalar, scientific proof, legal judgment, or approval is generated.
+4. `evaluateTwelveHouseReadiness`: distinguish 1,008 domain and 720 epistemic addresses, require twelve source-backed House reviews, non-offsettable binding rights checks, and dimensioned stock-ledger closure before even returning an unverified candidate. No welfare scalar, scientific proof, legal judgment, or approval is generated.\n5. `projectTypedHsnCoverage`: validate an entire 1,728-coordinate source-reported structural input, 7 domain and 5 epistemic nodes per Sphere, reject duplicates/missing locations/unsupported evidence assertions, and project to 12 House summaries without confusing method-source counts with welfare. This map is explicitly information-losing and not an original registry byte attestation.
 
 ## Observed broker limit and semantics
 
@@ -33,3 +33,4 @@ Before any publisher mount: signed-in two-account tests; actual Work opt-in, roo
 
 Owner-private editorial working note exists in the user's connected Google Drive. Its link, contents and access controls are not exported into this public source candidate.
 
+\n**Current isolated local evidence:** 27/27 Node.js v22.16.0 tests PASS normally and 27/27 under `--jitless`; full app/CI and hosted permissions remain HOLD.\n
