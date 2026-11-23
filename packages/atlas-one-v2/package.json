@@ -10,7 +10,8 @@
     ".": "./src/index.mjs",
     "./mcp": "./src/mcp.mjs",
     "./agents": "./src/openai.mjs",
-    "./host": "./src/adapters.mjs"
+    "./host": "./src/adapters.mjs",
+    "./work-search": "./src/work-search.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
