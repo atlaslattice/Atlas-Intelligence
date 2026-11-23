@@ -59,6 +59,22 @@ class CircuitTests(unittest.TestCase):
         d=json.loads((OUT/'iron_empire_opt_in_seeds_12.json').read_text())
         self.assertEqual(len(d),12)
         self.assertTrue(all(x['mode']=='IMAGINE_OR_PLAY_ONLY' and x['optInRequired'] and x['privacy']['noWorkHarvest'] and x['canonEffect']=='NONE' for x in d))
+    def test_all_1728_sphere_house_followups_keep_mode_and_source(self):
+        if not (OUT/'house_sphere_followups_1728.jsonl').exists():self.skipTest('owner output not mounted')
+        pairs=[json.loads(line) for line in (OUT/'house_sphere_followups_1728.jsonl').read_text().splitlines()]
+        self.assertEqual(len(pairs),1728)
+        self.assertEqual(len({p['followupId'] for p in pairs}),1728)
+        self.assertEqual(sum(p['actualMacroturnCompleted'] for p in pairs),0)
+        self.assertEqual(sum(p['workPostPerformed'] for p in pairs),0)
+        self.assertEqual(sum(p['sphereRole']=='EPISTEMIC_METHOD' for p in pairs),720)
+        self.assertEqual(sum(p['sphereRole']=='DOMAIN_SUBJECT' for p in pairs),1008)
+        for p in pairs:
+            self.assertEqual(p['sourceSHA256'],m.SOURCE_SHA)
+            self.assertTrue(p['referenceReusedNotFreshComputation'])
+        manifest=json.loads((OUT/'manifest.json').read_text())
+        self.assertEqual(manifest['houseSphereFollowups'],1728)
+        self.assertEqual(manifest['totalLogicalPositionsIncludingReusedHouseReferences'],3234816)
+
     def test_manifest_readback_corruption_caught(self):
         if not (OUT/'manifest.json').exists():self.skipTest('owner output not mounted')
         with tempfile.TemporaryDirectory() as d:
