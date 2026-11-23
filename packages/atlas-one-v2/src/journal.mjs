@@ -97,8 +97,14 @@ export class AtomicJournal {
   // A process may crash after creating a temp file; a recycled PID must not
   // make every subsequent write fail permanently. Always allocate a fresh
   // unpredictable temp name, and never delete or trust abandoned files.
-  #atomicWrite(db){const tmp=this.file+'.tmp.'+process.pid+'.'+randomUUID();const fd=openSync(tmp,'wx',0o600);
-    try{writeFileSync(fd,canonical(db)+'\n','utf8');fsyncSync(fd);}finally{closeSync(fd);}
+  #atomicWrite(db){
+    // The writer must obey its own next-read admission bounds; otherwise one
+    // successful record() could create an irrecoverably unreadable snapshot.
+    let bytes;
+    try{bytes=Buffer.from(canonical(db)+'\n','utf8');preflightJournalRaw(bytes);}
+    catch(error){const hold=new Hold('JOURNAL_WRITE_LIMIT');Object.defineProperty(hold,'forensicCause',{value:error,enumerable:false});throw hold;}
+    const tmp=this.file+'.tmp.'+process.pid+'.'+randomUUID();const fd=openSync(tmp,'wx',0o600);
+    try{writeFileSync(fd,bytes);fsyncSync(fd);}finally{closeSync(fd);}
     renameSync(tmp,this.file);const dd=openSync(dirname(this.file),'r');try{fsyncSync(dd);}finally{closeSync(dd);}
   }
   #guard(fn){requireValid(!this.readOnly,'READ_ONLY_JOURNAL');let fd;

@@ -49,3 +49,10 @@ test('R20 normal first-party journal and explicitly opted-in legacy remain loada
  const lf=F();writeFileSync(lf,'{"version":2, "runs":{}}\n');
  assert.deepEqual(new AtomicJournal(lf,{readOnly:true,legacyRead:true}).list(),[]);
 });
+test('R20 writer refuses to create a journal the R20 reader will reject',()=>{
+ const f=original(),j=new AtomicJournal(f),prior=readFileSync(f);
+ assert.throws(()=>j.record({...entry,requestId:'request-overflow',detail:{bytes:'A'.repeat(2_000_000)}}),e=>e?.code==='JOURNAL_WRITE_LIMIT');
+ assert.deepEqual(readFileSync(f),prior,'write preflight must precede any rename');
+ assert.equal(new AtomicJournal(f,{readOnly:true}).inspect(entry.runId).events.length,1);
+ assert.equal(j.record({...entry,requestId:'request-after-overflow'}).replayed,false);
+});
