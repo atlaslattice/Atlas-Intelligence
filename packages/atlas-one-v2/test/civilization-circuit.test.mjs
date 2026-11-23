@@ -14,7 +14,8 @@ function build(){
   const nodeRecords=fs.readFileSync(path.join(dir,'node_passes_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
   const sphereReviews=JSON.parse(fs.readFileSync(path.join(dir,'sphere_reviews_144.json')));
   const houseFollowups=JSON.parse(fs.readFileSync(path.join(dir,'house_followups_12.json')));
-  instance=new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest,nodeRecords,sphereReviews,houseFollowups});return instance;
+  const houseSphereFollowups=fs.readFileSync(path.join(dir,'house_sphere_followups_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
+  instance=new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest,nodeRecords,sphereReviews,houseFollowups,houseSphereFollowups});return instance;
 }
 test('a registry cannot be invented or caller supplied as a prepared dictionary',()=>{
   assert.throws(()=>new CivilizationCircuit({originalAriadneBytes:{houses:{}}}),e=>e instanceof Hold);
@@ -72,8 +73,9 @@ test('source-carrying forged readiness flags are rejected', {skip:!eligible},()=
   const nodeRecords=fs.readFileSync(path.join(dir,'node_passes_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
   const sphereReviews=JSON.parse(fs.readFileSync(path.join(dir,'sphere_reviews_144.json')));
   const houseFollowups=JSON.parse(fs.readFileSync(path.join(dir,'house_followups_12.json')));
+  const houseSphereFollowups=fs.readFileSync(path.join(dir,'house_sphere_followups_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
   const forged={...manifest,siteDeployments:1};
-  assert.throws(()=>new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest:forged,nodeRecords,sphereReviews,houseFollowups}),e=>e.code==='CIRCUIT_MANIFEST_NOT_SOURCE_LOCKED');
+  assert.throws(()=>new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest:forged,nodeRecords,sphereReviews,houseFollowups,houseSphereFollowups}),e=>e.code==='CIRCUIT_MANIFEST_NOT_SOURCE_LOCKED');
 });
 test('forged original definition is refused even if caller recalculates node receipt', {skip:!eligible},async()=>{
   const {digest}=await import('../src/index.mjs');
@@ -81,9 +83,10 @@ test('forged original definition is refused even if caller recalculates node rec
   const nodeRecords=fs.readFileSync(path.join(dir,'node_passes_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
   const sphereReviews=JSON.parse(fs.readFileSync(path.join(dir,'sphere_reviews_144.json')));
   const houseFollowups=JSON.parse(fs.readFileSync(path.join(dir,'house_followups_12.json')));
+  const houseSphereFollowups=fs.readFileSync(path.join(dir,'house_sphere_followups_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
   const altered={...nodeRecords[0],sourceDefinition:'FORGED SCIENTIFIC EQUIVALENCE'};delete altered.receiptSHA256;
   nodeRecords[0]={...altered,receiptSHA256:digest(altered)};
-  assert.throws(()=>new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest,nodeRecords,sphereReviews,houseFollowups}),e=>e.code==='CIRCUIT_NODE_SOURCE_OR_STATUS_CONFLICT');
+  assert.throws(()=>new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest,nodeRecords,sphereReviews,houseFollowups,houseSphereFollowups}),e=>e.code==='CIRCUIT_NODE_SOURCE_OR_STATUS_CONFLICT');
 });
 test('forged House name cannot borrow valid source digest', {skip:!eligible},async()=>{
   const {digest}=await import('../src/index.mjs');
@@ -91,7 +94,32 @@ test('forged House name cannot borrow valid source digest', {skip:!eligible},asy
   const nodeRecords=fs.readFileSync(path.join(dir,'node_passes_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
   const sphereReviews=JSON.parse(fs.readFileSync(path.join(dir,'sphere_reviews_144.json')));
   const houseFollowups=JSON.parse(fs.readFileSync(path.join(dir,'house_followups_12.json')));
+  const houseSphereFollowups=fs.readFileSync(path.join(dir,'house_sphere_followups_1728.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
   const fake={...houseFollowups[0],houseName:'Unknown Authority'};delete fake.receiptSHA256;
   houseFollowups[0]={...fake,receiptSHA256:digest(fake)};
-  assert.throws(()=>new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest,nodeRecords,sphereReviews,houseFollowups}),e=>e.code==='CIRCUIT_HOUSE_SOURCE_OR_AUTHORITY_CONFLICT');
+  assert.throws(()=>new CivilizationCircuit({originalAriadneBytes:registryBytes,manifest,nodeRecords,sphereReviews,houseFollowups,houseSphereFollowups}),e=>e.code==='CIRCUIT_HOUSE_SOURCE_OR_AUTHORITY_CONFLICT');
+});
+
+test('each sphere has all twelve independent House followup perspectives', {skip:!eligible},()=>{
+  const x=build();assert.equal(x.status().houseSphereFollowups,1728);
+  assert.equal(x.status().reusedPositionReferences,2985984);
+  for(let h=1;h<=12;h++)for(let s=1;s<=12;s++)for(let lens=1;lens<=12;lens++){
+    const sid=`H${String(h).padStart(2,'0')}.S${String(s).padStart(2,'0')}`;
+    const hid=`H${String(lens).padStart(2,'0')}`;
+    const c=x.houseSphereFollowup(sid,hid,{mode:'LOCAL_OWNER_SOURCE'});
+    assert.equal(c.status,'HOUSE_SPHERE_FOLLOWUP_UNREVIEWED');
+    assert.equal(c.data.reusedPerspectiveDataNotNewComputation,true);
+    assert.equal(c.semanticAccepted,false);
+  }
+});
+test('epistemic Sphere cannot be treated as a domain-equivalence followup', {skip:!eligible},()=>{
+  const meta=build().houseSphereFollowup('H01.S08','H10',{mode:'LOCAL_OWNER_SOURCE'});
+  const domain=build().houseSphereFollowup('H01.S07','H10',{mode:'LOCAL_OWNER_SOURCE'});
+  assert.equal(meta.data.sphereRole,'EPISTEMIC_METHOD');
+  assert.equal(meta.data.semanticGate,'EPISTEMIC_METHOD_ONLY_NOT_SAME_AS');
+  assert.equal(domain.data.sphereRole,'DOMAIN_SUBJECT');
+  assert.equal(domain.data.semanticGate,'DOMAIN_CANDIDATE_NOT_SAME_AS');
+});
+test('cross-mode read cannot access House-Sphere review', {skip:!eligible},()=>{
+  assert.equal(build().houseSphereFollowup('H01.S01','H10',{mode:'IMAGINE_LOCAL'}).status,'HOLD');
 });
