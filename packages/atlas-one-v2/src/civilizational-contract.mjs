@@ -150,7 +150,7 @@ export function projectTypedHsnCoverage({registryEdition,registryDigest,records}
     if(isDomain)c.domain++;else c.method++;
     spheres.set(s,c);
   }
-  if(seen.size!==1728||spheres.size!==144||[...spheres.values()].some(x=>x.domain!==7||x.method!==5))return deny('HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
+  if(seen.size!==1728||spheres.size!==144||[...spheres.entries()].some(([id,x])=>Number(id.slice(5,7))<=7?(x.domain!==12||x.method!==0):(x.domain!==0||x.method!==12)))return deny('HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
   if(houses.some(h=>h.domain!==84||h.method!==60))return deny('HSN_HOUSE_ROLE_DISTRIBUTION_INVALID');
   return Object.freeze({schema:'atlas.one.12d-typed-projection/v1',status:'STRUCTURAL_CANDIDATE_ONLY',
     registryEdition,registryDigest,sourceBytesVerified:false,reviewerAccepted:false,
