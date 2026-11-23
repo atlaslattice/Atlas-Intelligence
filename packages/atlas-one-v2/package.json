@@ -12,7 +12,8 @@
     "./agents": "./src/openai.mjs",
     "./host": "./src/adapters.mjs",
     "./civilization": "./src/civilizational-contract.mjs",
-    "./work-burst": "./src/work-burst.mjs"
+    "./work-burst": "./src/work-burst.mjs",
+    "./whole-144": "./src/whole-144.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
