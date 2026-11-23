@@ -137,7 +137,7 @@ export function previewCandidateEvidence({catalogBytes,taskId,record}={}){
   const catalog=readNext144Catalog(catalogBytes);
   const task=catalog.items.find(x=>x.id===taskId);
   if(!task)return hold('TASK_NOT_CANONICALLY_IDENTIFIED');
-  if(!plain(record)||Object.keys(record).some(k=>!new Set(['taskId','mode','rights','consent','sourceRefs','tests','scope','evidenceKind','dataOrigin']).has(k)))return hold('STRICT_WORK_EVIDENCE_ONLY');
+  if(!plain(record)||Object.keys(record).some(k=>!new Set(['taskId','mode','rights','consent','sourceRefs','tests','scope','scopeCells','evidenceKind','dataOrigin']).has(k)))return hold('STRICT_WORK_EVIDENCE_ONLY');
   if(Object.keys(record).some(k=>forbiddenInputKeys.has(k)))return hold('PROTECTED_OR_AUTHORITY_FIELD');
   if(record.taskId!==task.id||record.mode!=='WORK'||task.suggestedMode!=='WORK')return hold('PRIVATE_MODE_NOT_WORK_EVIDENCE');
   if(record.rights==='BLOCK'||record.consent==='BLOCK')return Object.freeze({schema:'atlas.next144.review/v1',status:'BLOCK',reason:'NONOFFSETTABLE_RIGHTS',authorityEffect:'NONE',welfareGainVerified:false});
@@ -145,6 +145,30 @@ export function previewCandidateEvidence({catalogBytes,taskId,record}={}){
   if(!plain(record.scope)||!Array.isArray(record.scope.groups)||!Array.isArray(record.scope.periods)||!Array.isArray(record.scope.scenarios)||
     record.scope.groups.length===0||record.scope.periods.length===0||record.scope.scenarios.length===0||
     [record.scope.groups,record.scope.periods,record.scope.scenarios].some(xs=>xs.some(x=>typeof x!=='string'||x.trim().length<1)))return hold('SCOPE_MISSING_GROUP_PERIOD_SCENARIO');
+  // Scope completeness is a cross-product, not a claim that one reviewed
+  // population/year/scenario stands in for every affected population and future.
+  // These are DECLARED local guard labels, never trusted host or rights proof.
+  const groups=record.scope.groups,periods=record.scope.periods,scenarios=record.scope.scenarios;
+  const combos=groups.length*periods.length*scenarios.length;
+  if(groups.length>8||periods.length>8||scenarios.length>8||combos>64||
+    [groups,periods,scenarios].some(xs=>new Set(xs).size!==xs.length))return hold('SCOPE_DIMENSIONS_AMBIGUOUS_OR_TOO_LARGE');
+  const guardKeys=['RIGHTS','CONSENT','ECOLOGY','GROUP_FLOOR','PHYSICAL_STOCK'];
+  if(!Array.isArray(record.scopeCells)||record.scopeCells.length!==combos)return hold('SCOPE_CELLS_INCOMPLETE');
+  const expected=new Set(groups.flatMap(g=>periods.flatMap(p=>scenarios.map(s=>JSON.stringify([g,p,s])))));
+  const seen=new Set();let unknown=false;
+  for(const cell of record.scopeCells){
+    if(!plain(cell)||Object.keys(cell).sort().join('|')!==['group','guards','period','scenario'].sort().join('|')||
+      !plain(cell.guards)||Object.keys(cell.guards).sort().join('|')!==guardKeys.slice().sort().join('|'))return hold('SCOPE_CELL_SCHEMA');
+    const key=JSON.stringify([cell.group,cell.period,cell.scenario]);
+    if(!expected.has(key)||seen.has(key))return hold('SCOPE_CELL_NOT_DECLARED_OR_DUPLICATED');
+    seen.add(key);
+    for(const g of guardKeys){
+      if(!['PASS','BLOCK','UNKNOWN'].includes(cell.guards[g]))return hold('SCOPE_GUARD_SCHEMA');
+      if(cell.guards[g]==='BLOCK')return Object.freeze({schema:'atlas.next144.review/v1',status:'BLOCK',reason:'SCOPE_GUARD_NONOFFSETTABLE',authorityEffect:'NONE',welfareGainVerified:false});
+      if(cell.guards[g]==='UNKNOWN')unknown=true;
+    }
+  }
+  if(unknown)return hold('SCOPE_MANDATORY_GUARD_UNKNOWN');
   if(!Array.isArray(record.sourceRefs)||record.sourceRefs.length===0||record.sourceRefs.length>8||new Set(record.sourceRefs).size!==record.sourceRefs.length||record.sourceRefs.some(x=>typeof x!=='string'||x.length<8||x.length>256))return hold('EVIDENCE_SOURCE_REFS_INVALID');
   if(!Array.isArray(record.tests)||record.tests.length===0||record.tests.length>24||record.tests.some(t=>!plain(t)||Object.keys(t).some(k=>!['id','result','kind'].includes(k))||!asciiName(t.id)||!['PASS','FAIL'].includes(t.result)||!['POSITIVE','NEGATIVE'].includes(t.kind)))return hold('LOCAL_TEST_DECLARATIONS_INVALID');
   if(record.tests.some(t=>t.result==='FAIL'))return hold('LOCAL_TEST_FAILURE');
@@ -152,7 +176,7 @@ export function previewCandidateEvidence({catalogBytes,taskId,record}={}){
   if(record.dataOrigin!=='SYNTHETIC_OR_PUBLIC_WORK'||record.evidenceKind!=='LOCAL_REVIEW')return hold('SOURCE_BOUNDARY_UNVERIFIED');
   return Object.freeze({schema:'atlas.next144.review/v1',status:'LOCAL_EVIDENCE_CANDIDATE_ONLY',
     taskId:task.id,scopeDimensions:Object.freeze({groups:record.scope.groups.length,periods:record.scope.periods.length,scenarios:record.scope.scenarios.length}),
-    localTestsClaimed:record.tests.length,sourceRefsClaimed:record.sourceRefs.length,
+    localTestsClaimed:record.tests.length,scopeCellsChecked:combos,sourceRefsClaimed:record.sourceRefs.length,
     claimedEvidenceNotIndependentlyAttested:true,hostAuthenticated:false,rightsAtReturnVerified:false,
     demonstratedRealWorldGain:false,welfareGainVerified:false,
     rightsNotConferred:true,privateModeContentUsed:false,authorityEffect:'NONE',canonEffect:'NONE'});
