@@ -28,3 +28,5 @@ test('t22 negative chapter check',()=>assert.equal(previewIronEmpireContinuityEv
 test('t23 fictional AI personhood claims not real',()=>{const x=previewIronEmpireContinuityEvent({...good,sourceId:'IRON-QVERSE-20261030-v02',kind:'QVERSE_SOCIETY'});assert.equal(x.realWorldScienceVerified,false)});
 
 test('t24 cannot forge source authority from a naked prepared node',()=>{const x=proposeIronEmpireNode({coordinate:'H07.S01.N01',nodeName:'Pretend business source',nodeDigest:digest});assert.equal(x.status,'SOURCE_ONLY_FICTION_WORK_CANDIDATE_NOT_CANON');assert.equal(x.sourceContentsVerified,false);assert.equal(x.hostAuthenticated,false)});
+
+test('t25 House review lens tuples immutable after declaration',()=>{assert.ok(Object.isFrozen(IRON_HOUSE_REVIEW_LENSES));assert.ok(IRON_HOUSE_REVIEW_LENSES.every(Object.isFrozen))});
