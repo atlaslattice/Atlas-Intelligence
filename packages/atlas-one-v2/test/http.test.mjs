@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+import {AriadneRegistry} from '../src/index.mjs';import {createLocalPreviewServer,listenLocal} from '../src/http.mjs';
+const source=process.env.ATLAS_ARIADNE_ORIGINAL_FILE;const registry=source?new AriadneRegistry(readFileSync(source)):null;
+const cases=JSON.parse(readFileSync(new URL('../examples/four-source-candidates.json',import.meta.url),'utf8'));
+async function useServer(reg,fn){const srv=createLocalPreviewServer({registry:reg});const where=await listenLocal(srv);try{return await fn('http://127.0.0.1:'+where.port)}finally{await new Promise(resolve=>srv.close(resolve));}}
+test('local status endpoint is non-authorizing',async()=>useServer(null,async base=>{const r=await fetch(base+'/v2/status');const j=await r.json();assert.equal(j.canon,'UNCHANGED');assert.equal(j.hostAuthenticated,false);assert.equal(r.headers.get('cache-control'),'no-store, private');}));
+test('local HTTP missing HSN source returns HOLD',async()=>useServer(null,async base=>{const r=await fetch(base+'/v2/hsn/H01.S05.N09');assert.equal(r.status,503);assert.equal((await r.json()).reason,'REGISTRY_NOT_INSTALLED');}));
+test('local HTTP rejects unknown routes',async()=>useServer(null,async base=>assert.equal((await fetch(base+'/v2/delete-all')).status,404)));
+test('local HTTP refuses fake registry',()=>assert.throws(()=>createLocalPreviewServer({registry:{}})));
+test('local HTTP resolves pinned HSN', {skip:!registry},async()=>useServer(registry,async base=>{const r=await fetch(base+'/v2/hsn/H01.S05.N09');const j=await r.json();assert.equal(j.node.name,'Nuclear instrumentation');assert.equal(j.authorityEffect,'NONE');}));
+test('local HTTP rejects H00 legacy coordinate', {skip:!registry},async()=>useServer(registry,async base=>{const r=await fetch(base+'/v2/hsn/H00.S01.N01');assert.equal(r.status,400);}));
+test('local HTTP prepares no-post candidate', {skip:!registry},async()=>useServer(registry,async base=>{const r=await fetch(base+'/v2/research/preview',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(cases[0])});const j=await r.json();assert.equal(j.status,'CANDIDATE_NOT_ADJUDICATED');assert.equal(j.envelope.posted,false);assert.equal(j.hostAuthenticated,false);assert.equal(r.headers.get('x-atlas-authority'),'NONE');}));
+test('local HTTP rejects duplicate JSON before model', {skip:!registry},async()=>useServer(registry,async base=>{const r=await fetch(base+'/v2/research/preview',{method:'POST',body:'{"mode":"WORK","mode":"PLAY"}'});const j=await r.json();assert.equal(j.reason,'DUPLICATE_OR_UNICODE_ALIAS_KEY');}));
