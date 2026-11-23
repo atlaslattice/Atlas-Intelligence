@@ -43,3 +43,19 @@ The new core replaces earlier prototypes as *architecture*. Existing user data a
 See `docs/REWRITE_AND_CHERRYPICK.md`, `docs/SWARMCHAT_PUBLISHER_PORT.md`, and `docs/MIGRATION_ACCEPTANCE.md`.
 
 The HTTP preview binds only `127.0.0.1` and returns candidate/source data only. Do **not** expose it through a public reverse proxy without separately installed, signed-in, host-controlled authorization. The legacy Express server remains unmodified until publisher migration acceptance.
+
+## Optional complete 1728-dimensional review circuit (owner-private source)
+
+The one-core optional `./civilization-circuit` module validates an independently computed 144 × 1728 Ariadne v0.7 source review. Original SHA256 `07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6`. It does **not** bundle the original source bytes or any private generated review data in this GitHub repository.
+
+```bash
+python3 tools/civilization_circuit.py build --registry /authorized/private/ariadne_v07_atlas.json --out /private/circuit-results
+python3 tools/civilization_circuit.py verify --out /private/circuit-results
+ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/ariadne_v07_atlas.json ATLAS_1728_CIRCUIT_DIR=/private/circuit-results npm test
+```
+
+The full owner-local source sweep executed 248,832 ordered checks, produced 1,728 node analysis receipts, 144 sphere summaries and 12 House followups, with 0 certified resident Macroturns and 0 accepted cross-domain semantic links. Strict candidate shortlists contain 517 UNREVIEWED suggestions across 126 spheres. Reproducibility across two local builds was byte-identical.
+
+SwarmChat and Iron Empire are optional consumers of the **same** source-locked engine. SwarmChat Work projection is **PREPARED_NOT_POSTED**, never an authentication or broker write. Iron Empire seeds are explicitly opt-in FICTION under `IMAGINE_LOCAL`, never empirical science or automatic Work ingestion. See [source/host acceptance](docs/ATLAS_1728_READONLY_INTEGRATION.md) and [Iron Empire creative boundary](docs/IRON_EMPIRE_1728_BRIDGE.md).
+
+The separate already-enabled 1,728 hourly Whole Macroturn automation counts only actual visits. This computational review does not satisfy or replace that schedule.
