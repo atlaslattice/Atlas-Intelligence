@@ -1,19 +1,22 @@
 {
-  "name":"@atlas-one/native-core",
-  "version":"2.0.0-candidate.1",
-  "private":true,
-  "type":"module",
-  "engines":{"node":">=20"},
-  "exports":{
-    ".":"./src/index.mjs",
-    "./mcp":"./src/mcp.mjs",
-    "./agents":"./src/openai.mjs",
-    "./host":"./src/adapters.mjs"
+  "name": "@atlas-one/native-core",
+  "version": "2.0.0-candidate.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
   },
-  "scripts":{
-    "test":"node --test test/*.test.mjs",
-    "smoke":"node examples/quickstart.mjs"
+  "exports": {
+    ".": "./src/index.mjs",
+    "./mcp": "./src/mcp.mjs",
+    "./agents": "./src/openai.mjs",
+    "./host": "./src/adapters.mjs"
   },
-  "license":"MIT",
-  "description":"Original OpenAI-native Atlas ONE 2.0 orchestration core: source-locked research, durable local checks, separate Work broker authority."
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "smoke": "node examples/quickstart.mjs",
+    "serve:local": "node src/serve-local.mjs"
+  },
+  "license": "MIT",
+  "description": "Original OpenAI-native Atlas ONE 2.0 orchestration core: source-locked research, durable local checks, separate Work broker authority."
 }
