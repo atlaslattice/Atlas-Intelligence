@@ -49,17 +49,31 @@ export class AtomicJournal {
     const db=this.#load(),run=Object.hasOwn(db.runs,runId)?db.runs[runId]:null;
     return run?db.version===2?{...structuredClone(run),integrity:'UNATTESTED_LEGACY_REQUEST_BINDING'}:structuredClone(run):null;}
   list(){return Object.keys(this.#load().runs).sort();}
-  record({runId,inputDigest,step,detail,requestId}){return this.#guard(()=>{
+  record(entry){return this.#recordInternal(entry,false);}
+  // A private entrypoint preserves the local effect namespace: public record()
+  // cannot impersonate prepareEffect() by selecting reserved strings.
+  #recordInternal({runId,inputDigest,step,detail,requestId},fromPrepareEffect){return this.#guard(()=>{
     requireValid(typeof runId==='string'&&ID.test(runId)&&typeof inputDigest==='string'&&SHA.test(inputDigest),'JOURNAL_ID_OR_DIGEST_INVALID');
     requireValid(typeof step==='string'&&/^[A-Z_]{3,40}$/.test(step)&&isObject(detail),'JOURNAL_STEP_OR_DETAIL_INVALID');
     requireValid(typeof requestId==='string'&&ID.test(requestId),'JOURNAL_REQUEST_ID_INVALID');
+    if(!fromPrepareEffect)requireValid(!requestId.toLowerCase().startsWith('effect:')&&step!=='EXTERNAL_EFFECT_UNCERTAIN','JOURNAL_EFFECT_NAMESPACE_RESERVED');
     // Snapshot getter-bearing or caller-mutable detail exactly once BEFORE
     // the hash and persisted image are derived; they must share the same bytes.
     const stableDetail=JSON.parse(canonical(detail));
-    const db=this.#load();requireValid(db.version===3,'LEGACY_JOURNAL_WRITE_HOLD');let run=Object.hasOwn(db.runs,runId)?db.runs[runId]:null;if(run)requireValid(run.inputDigest===inputDigest,'RUN_IDEMPOTENCY_CONFLICT');
+    const db=this.#load();requireValid(db.version===3,'LEGACY_JOURNAL_WRITE_HOLD');
+    // A single local journal must not prepare the same external operation under
+    // two run IDs. This is NOT a global receiver deduplication guarantee.
+    if(fromPrepareEffect)for(const [otherId,otherRun] of Object.entries(db.runs))
+      if(otherId!==runId&&otherRun.events.some(e=>e.requestId===requestId))throw new Hold('EFFECT_ID_CROSS_RUN_HOLD');
+    let run=Object.hasOwn(db.runs,runId)?db.runs[runId]:null;if(run)requireValid(run.inputDigest===inputDigest,'RUN_IDEMPOTENCY_CONFLICT');
     else run=db.runs[runId]={inputDigest,head:ZERO,events:[]};
     const old=run.events.find(e=>e.requestId===requestId);
-    if(old){requireValid(old.step===step&&digest(old.detail)===digest(stableDetail),'REQUEST_IDEMPOTENCY_CONFLICT');return {replayed:true,seq:old.seq,head:run.head};}
+    if(old){
+      // Pre-existing effect: events without this new local-method marker are
+      // ambiguous; never silently call them proof that prepareEffect ran.
+      if(fromPrepareEffect)requireValid(old.detail.localMethod==='PREPARE_EFFECT_V3','EFFECT_ORIGIN_UNVERIFIED');
+      requireValid(old.step===step&&digest(old.detail)===digest(stableDetail),'REQUEST_IDEMPOTENCY_CONFLICT');return {replayed:true,seq:old.seq,head:run.head};}
+
     const seq=run.events.length+1,prev=run.head;
     const e={seq,step,detail:stableDetail,prev,requestId,hash:digest({runId,inputDigest,seq,step,detail:stableDetail,requestId,prev})};
     run.events.push(e);run.head=e.hash;this.#atomicWrite(db);return {replayed:false,seq,head:run.head};
@@ -70,6 +84,6 @@ export class AtomicJournal {
     // enforces the same 80-character ID ceiling. Reject IDs that cannot fit
     // BEFORE any effect handoff; preserve historic mapping and receipts.
     requireValid(typeof logicalId==='string'&&logicalId.length<=73&&ID.test(logicalId)&&SHA.test(effectDigest),'EFFECT_ID_INVALID');
-    return this.record({runId,inputDigest,step:'EXTERNAL_EFFECT_UNCERTAIN',requestId:'effect:'+logicalId,detail:{logicalId,effectDigest,status:'NO_REMOTE_RETRY_WITHOUT_WITNESS'}});
+    return this.#recordInternal({runId,inputDigest,step:'EXTERNAL_EFFECT_UNCERTAIN',requestId:'effect:'+logicalId,detail:{logicalId,effectDigest,status:'NO_REMOTE_RETRY_WITHOUT_WITNESS',localMethod:'PREPARE_EFFECT_V3'}},true);
   }
 }
