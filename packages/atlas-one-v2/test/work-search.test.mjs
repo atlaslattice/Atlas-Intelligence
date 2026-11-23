@@ -28,6 +28,8 @@ test('long Work body late token gets DIRECT hit, not reference-neighbor',async()
   assert.equal(result.matched[0].reason,'DIRECT_FULL_BODY_SUBSTRING_MATCH');
   assert.equal(result.matched[0].matchOffsetUtf16,body.indexOf('HOLD_TYPE_MODALITY'));
   assert.equal(result.scannedWindow.fullRoomCoverageProven,false);
+  assert.equal(result.matched[0].renderedDomOffset,null);
+  assert.equal(result.matched[0].rendererSourceMapRequired,true);
   assert.equal(JSON.stringify(result).includes('reviewer objection'),false);
 });
 test('control early token gets same direct source',async()=>{
@@ -105,4 +107,13 @@ test('callback that throws cannot leak content in output',async()=>{
   const synthetic=row(5);Object.defineProperty(synthetic,'bodySHA256',{get(){throw Error('PRIVATE CONTENT')}});
   const {port}=factory({page:{rows:[synthetic],hasMore:false,nextAfterSeq:5}});
   const out=await port.search(req);assert.equal(out.status,'HOLD');assert.equal(JSON.stringify(out).includes('PRIVATE CONTENT'),false);
+});
+
+test('raw grapheme-edge substring offsets cannot assert DOM highlight correctness',async()=>{
+  const text='A\u0301 NOTE HOLD_TYPE_MODALITY';
+  const out=await factory({page:{rows:[row(5,text)],hasMore:false,nextAfterSeq:5}}).port.search({...req,query:'A'});
+  assert.equal(out.status,'HOLD'); // One-character ambiguous query deliberately unsupported.
+  const valid=await factory({page:{rows:[row(5,text)],hasMore:false,nextAfterSeq:5}}).port.search({...req,query:'NOTE'});
+  assert.equal(valid.matched[0].rendererSourceMapRequired,true);
+  assert.equal(valid.matched[0].renderedDomOffset,null);
 });
