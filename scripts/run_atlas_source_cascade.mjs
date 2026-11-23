@@ -6,7 +6,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {SOURCE_BLOB,planEvolution,verifyEvolution} from './atlas_source_cascade.mjs';
+import {SOURCE_BLOB,planEvolution,verifyEvolution,planCompletion} from './atlas_source_cascade.mjs';
 
 function main(argv){
   if(argv.includes('--help')){
@@ -30,18 +30,22 @@ function main(argv){
   const blob=createHash('sha1').update(Buffer.from('blob '+raw.length+'\0')).update(raw).digest('hex');
   if(blob!==SOURCE_BLOB)throw Error('SOURCE_CUT_GIT_BLOB_SHA_MISMATCH');
   const cut=JSON.parse(raw.toString('utf8'));
-  const result=planEvolution(cut,{pilot:100,expansion:named.all?1220:1000});
+  const result=planEvolution(cut,{pilot:100,expansion:1000});
+  const continuation=named.all?planCompletion(cut,result):null;
   const verification=verifyEvolution(cut,result);
   if(!verification.valid)throw Error('DETERMINISTIC_REPLAY_MISMATCH');
   const summary={
     status:'REVIEW_REQUIREMENTS_RECORDED_NOT_PERFORMED',
     source_git_blob_sha1:blob,source_date:result.source_date,
     pilot_steps:result.pilot_rows.length,followon_steps:result.expansion_rows.length,
-    input_items:result.source_items,candidate_review_steps:result.summary.total_steps,
+    supplemental_completion_steps:continuation?.completion_steps.length??0,
+    input_items:result.source_items,candidate_review_steps:result.summary.total_steps+(continuation?.completion_steps.length??0),
     unique_items_touched:result.summary.distinct_items_touched,
-    generated_review_gates:result.summary.review_gate_counts,
-    still_unrequested_gates:result.summary.remaining_unrequested_review_gates,
-    pilot_checkpoint64:result.pilot_checkpoint64,final_checkpoint64:result.final_checkpoint64,
+    generated_review_gates:continuation?.coverage??result.summary.review_gate_counts,
+    still_unrequested_gates:continuation?0:result.summary.remaining_unrequested_review_gates,
+    pilot_checkpoint64:result.pilot_checkpoint64,
+    expansion_checkpoint64:result.final_checkpoint64,
+    final_checkpoint64:continuation?.final_checkpoint64??result.final_checkpoint64,
     exact_replay_pass:verification.valid,
     checksum_warning:'FNV1a64 is a replay checksum, NOT cryptographic provenance or identity attestation',
     host_actions:0,model_calls:0,room_messages:0,real_issues_closed:0,
@@ -51,8 +55,9 @@ function main(argv){
     const filename=resolve(named.prefix);
     const files=[
       [filename+'.pilot.json',{phase:'PILOT_100',source_git_blob_sha1:blob,parent:result.initial_checksum64,checkpoint:result.pilot_checkpoint64,rows:result.pilot_rows}],
-      [filename+'.followon.json',{phase:named.all?'EXPANSION_1220':'EXPANSION_1000',source_git_blob_sha1:blob,parent:result.pilot_checkpoint64,checkpoint:result.final_checkpoint64,rows:result.expansion_rows}]
+      [filename+'.followon.json',{phase:'EXPANSION_1000',source_git_blob_sha1:blob,parent:result.pilot_checkpoint64,checkpoint:result.final_checkpoint64,rows:result.expansion_rows}]
     ];
+    if(continuation)files.push([filename+'.completion.json',{phase:'COMPLETION_220',source_git_blob_sha1:blob,parent:continuation.parent_checkpoint64,checkpoint:continuation.final_checkpoint64,rows:continuation.completion_steps}]);
     for(const [name,obj]of files)writeFileSync(name,JSON.stringify(obj,null,2)+'\n',{encoding:'utf8',flag:'wx'});
   }
   console.log(JSON.stringify(summary,null,2));
