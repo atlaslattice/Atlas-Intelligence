@@ -4,12 +4,14 @@ import argparse
 import json
 import pathlib
 
-def build(index_file,out_file,manifest_file):
+def build(index_file,out_file,manifest_file,pairs_file=None):
     idx=json.loads(pathlib.Path(index_file).read_text('utf8'))
     man=json.loads(pathlib.Path(manifest_file).read_text('utf8'))
     assert len(idx['nodes'])==1728 and len(idx['spheres'])==144 and len(idx['houses'])==12
+    followups=[json.loads(line) for line in pathlib.Path(pairs_file).read_text('utf8').splitlines()] if pairs_file else []
+    assert not followups or (len(followups)==1728 and len({f['followupId'] for f in followups})==1728)
     # JSON embedded inside application script, prevent accidental <script> termination
-    data=json.dumps({'index':idx,'metrics':{k:man[k] for k in ['pairEvaluations','externalPerspectiveEvaluations','nonzeroLexicalSignalsUnreviewed','epistemicMethodCrossPairsNoEquivalence','nodePassRecords','sphereReviewRecords','houseFollowups']}},ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+    data=json.dumps({'index':idx,'followups':followups,'metrics':{k:man[k] for k in ['pairEvaluations','externalPerspectiveEvaluations','nonzeroLexicalSignalsUnreviewed','epistemicMethodCrossPairsNoEquivalence','nodePassRecords','sphereReviewRecords','houseFollowups','houseSphereFollowups']}},ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
     html=r'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>ATLAS ONE • 1,728 Civilizational Circuit</title>
 <style>
@@ -36,7 +38,11 @@ function renderNodes(){const root=el('nodegrid'),q=el('search').value.toLowerCas
 function renderSelected(){const root=el('selected');root.replaceChildren();if(activeNode){const n=byNode[activeNode],s=bySphere[n.sphereId];root.append(h('div','tag','Selected original node'),h('h3','',n.id+' · '+n.name),h('p','muted',`${s.name} · ${n.kind} · SOURCE_ONLY`));const div=h('div','review');div.append(h('strong','','Review-only adjacent perspectives'));if(!n.candidatePerspectives.length)div.append(h('p','muted','No stronger candidate after lexical and false-friend filters. This gap is preserved.'));
 for(const c of n.candidatePerspectives){const x=h('div','candidate');x.append(h('b','',`${c.sphereId} · ${c.sphereName}`),h('span','risk',` · ${c.status}, ${c.reviewRisk}`));div.append(x)}root.append(div,h('div','mono',`Source node SHA256: ${n.nodeSHA256}`));return;}
 if(activeSphere){const s=bySphere[activeSphere];root.append(h('div','tag','Sphere perspective'),h('h3','',s.id+' · '+s.name));const div=h('div','review');div.append(h('strong','','Cross-sphere lexical candidates (UNREVIEWED)'));if(!s.topCandidates.length)div.append(h('p','muted','No shortlisted candidates; no equivalence inferred.'));
-for(const c of s.topCandidates){const b=h('div','candidate');b.append(h('span','mono',c.node+' · '),h('b','',c.nodeName),h('p','subtle',`${c.reviewRisk} · overlap: ${c.overlapTokens.join(', ')||'none'} · score is NOT probability`));div.append(b)}root.append(div);return;}
+for(const c of s.topCandidates){const b=h('div','candidate');b.append(h('span','mono',c.node+' · '),h('b','',c.nodeName),h('p','subtle',`${c.reviewRisk} · overlap: ${c.overlapTokens.join(', ')||'none'} · score is NOT probability`));div.append(b)}root.append(div);
+const lens=h('div','review');lens.append(h('h3','','Twelve House follow-up perspectives'));const follow=DB.followups.filter(p=>p.sphereUnderReview===activeSphere);
+if(follow.length!==12)lens.append(h('p','muted','House follow-ups are not embedded in this preview.'));
+else for(const p of follow){const d=document.createElement('details');d.className='candidate';const sum=document.createElement('summary');sum.textContent=p.housePerspective+' · '+p.housePerspectiveName+(p.sphereRole==='EPISTEMIC_METHOD'?' · method lens':'');d.append(sum,h('p','subtle',p.question),h('p','risk',p.semanticGate+' · UNREVIEWED · no actual Macroturn'));lens.append(d)}
+root.append(lens);return;}
 const house=byHouse[activeHouse];root.append(h('div','tag','Twelve-House follow-up'),h('h3','',house.id+' — '+house.perspective),h('p','muted','A future specialist can challenge each sphere with exact sources, contradictions, native-unit physical stocks, accessibility and binding affected-party rights. No resident assigned by content volume.'))}
 init();
 </script></body></html>'''
@@ -44,4 +50,4 @@ init();
     pathlib.Path(out_file).write_text(html,encoding='utf8')
     return pathlib.Path(out_file).stat().st_size
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--index',required=True);p.add_argument('--manifest',required=True);p.add_argument('--out',required=True);a=p.parse_args();print(build(a.index,a.out,a.manifest))
+    p=argparse.ArgumentParser();p.add_argument('--index',required=True);p.add_argument('--manifest',required=True);p.add_argument('--pairs',required=False);p.add_argument('--out',required=True);a=p.parse_args();print(build(a.index,a.out,a.manifest,a.pairs))
