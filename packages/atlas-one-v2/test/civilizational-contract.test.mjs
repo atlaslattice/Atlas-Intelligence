@@ -41,7 +41,7 @@ test('directional physical stocks reject negative imports, regeneration and rest
 
 const synthetic1728=Array.from({length:12},(_,h)=>Array.from({length:12},(_,s)=>Array.from({length:12},(_,n)=>({
   coordinate:`H${String(h+1).padStart(2,'0')}.S${String(s+1).padStart(2,'0')}.N${String(n+1).padStart(2,'0')}`,
-  kind:n<7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META',hasEvidence:h===0&&s===0&&n===0,
+  kind:s<7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META',hasEvidence:h===0&&s===0&&n===0,
   sourceRefs:h===0&&s===0&&n===0?['synthetic:source-001']:[]
 })))).flat(2);
 test('full candidate HSN projects 1728 into distinct 12D domain/method tracks',()=>{
@@ -57,8 +57,22 @@ test('projector holds partial and duplicated HSN records',()=>{
   assert.equal(projectTypedHsnCoverage({...args,records:[...synthetic1728.slice(1),synthetic1728[1]]}).status,'HOLD');
 });
 test('projector rejects incorrect epistemic/domain assignment',()=>{
-  const records=synthetic1728.map((v,i)=>i===8?{...v,kind:'DOMAIN_SPECIALIZATION'}:v);
+  const records=synthetic1728.map((v,i)=>i===84?{...v,kind:'DOMAIN_SPECIALIZATION'}:v);
   assert.equal(projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records}).reason,'HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
+});
+test('Ariadne v0.7 role topology uses seven domain and five meta SPHERES per House',()=>{
+  const x=projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records:synthetic1728});
+  assert.equal(x.status,'STRUCTURAL_CANDIDATE_ONLY');
+  assert.deepEqual(x.houses.map(h=>[h.domain,h.method]),Array.from({length:12},()=>[84,60]));
+});
+test('obsolete seven domain five meta NODES per Sphere fixture is refused',()=>{
+  const wrong=synthetic1728.map(v=>({...v,kind:Number(v.coordinate.slice(-2))<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META'}));
+  const x=projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records:wrong});
+  assert.equal(x.reason,'HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
+});
+test('swapping complete domain and meta Spheres in one House must fail edition-locked type position',()=>{
+  const wrong=synthetic1728.map(v=>({...v,kind:v.coordinate.startsWith('H01.S01.')?'EPISTEMIC_META':v.coordinate.startsWith('H01.S08.')?'DOMAIN_SPECIALIZATION':v.kind}));
+  assert.equal(projectTypedHsnCoverage({registryEdition:'v0.7',registryDigest:ARIADNE_V07_SHA256,records:wrong}).reason,'HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
 });
 test('claimed domain coverage without a source reference is held',()=>{
   const records=synthetic1728.map((v,i)=>i===0?{...v,sourceRefs:[]}:v);
