@@ -54,7 +54,7 @@ python3 tools/civilization_circuit.py verify --out /private/circuit-results
 ATLAS_ARIADNE_ORIGINAL_FILE=/authorized/private/ariadne_v07_atlas.json ATLAS_1728_CIRCUIT_DIR=/private/circuit-results npm test
 ```
 
-The full owner-local source sweep executed 248,832 ordered checks, produced 1,728 node analysis receipts, 144 sphere summaries and 12 House followups, with 0 certified resident Macroturns and 0 accepted cross-domain semantic links. Strict candidate shortlists contain 517 UNREVIEWED suggestions across 126 spheres. Reproducibility across two local builds was byte-identical.
+The full owner-local source sweep executed 248,832 ordered checks, produced 1,728 node analysis receipts, 144 sphere summaries, 12 House summaries, and an additional **1,728 House-by-Sphere follow-up receipts** (12 House perspectives for each of 144 Spheres). These follow-ups reuse 2,985,984 already-computed logical references: 3,234,816 total addressed logical positions, **not** 3.2 million independent computations or actual resident Macroturns. Certified resident turns=0 and accepted cross-domain semantic links=0. Strict candidate shortlists contain 517 UNREVIEWED suggestions across 126 spheres. Reproducibility across two local builds was byte-identical.
 
 SwarmChat and Iron Empire are optional consumers of the **same** source-locked engine. SwarmChat Work projection is **PREPARED_NOT_POSTED**, never an authentication or broker write. Iron Empire seeds are explicitly opt-in FICTION under `IMAGINE_LOCAL`, never empirical science or automatic Work ingestion. See [source/host acceptance](docs/ATLAS_1728_READONLY_INTEGRATION.md) and [Iron Empire creative boundary](docs/IRON_EMPIRE_1728_BRIDGE.md).
 
