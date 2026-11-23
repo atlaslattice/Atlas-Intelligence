@@ -121,3 +121,36 @@ export function evaluateTwelveHouseReadiness({material,impacts,rights,stocks}={}
     unitPreserving:true,materialOutcomeVerified:false,semanticReviewPerformed:false,
     rightsReviewed:rights.length,stocksChecked:stocks.length,authorityEffect:'NONE',canonEffect:'NONE'});
 }
+
+/** Structural 1728 -> 12 House projection, with irrecoverable information loss.
+ * The `records` are caller-supplied synthetic or source-derived CANDIDATES, not
+ * original Ariadne bytes. No asserted evidence, graph edge or House score can
+ * become a measured civilizational outcome by this operation.
+ */
+export function projectTypedHsnCoverage({registryEdition,registryDigest,records}={}){
+  if(registryEdition!=='v0.7'||registryDigest!==ARIADNE_V07_SHA256||!Array.isArray(records)||records.length!==1728)return deny('FULL_EDITION_LOCKED_HSN_REQUIRED');
+  const seen=new Set();
+  const houses=Array.from({length:12},(_,i)=>({house:`H${String(i+1).padStart(2,'0')}`,domain:0,method:0,domainWithSource:0,methodWithSource:0}));
+  const spheres=new Map();
+  for(const r of records){
+    if(!plain(r)||typeof r.coordinate!=='string'||!HSN.test(r.coordinate)||seen.has(r.coordinate)||!['DOMAIN_SPECIALIZATION','EPISTEMIC_META'].includes(r.kind)||typeof r.hasEvidence!=='boolean')return deny('HSN_RECORD_SHAPE_OR_DUPLICATE');
+    if(r.hasEvidence&&(!Array.isArray(r.sourceRefs)||r.sourceRefs.length===0||r.sourceRefs.length>12||r.sourceRefs.some(x=>typeof x!=='string'||x.length<5||x.length>300)))return deny('HSN_SUPPORTED_WITHOUT_SOURCES');
+    seen.add(r.coordinate);
+    const hi=Number(r.coordinate.slice(1,3))-1;
+    const house=houses[hi];
+    const isDomain=r.kind==='DOMAIN_SPECIALIZATION';
+    if(isDomain){house.domain++;if(r.hasEvidence)house.domainWithSource++;}
+    else{house.method++;if(r.hasEvidence)house.methodWithSource++;}
+    const s=r.coordinate.slice(0,7),c=spheres.get(s)||{domain:0,method:0};
+    if(isDomain)c.domain++;else c.method++;
+    spheres.set(s,c);
+  }
+  if(seen.size!==1728||spheres.size!==144||[...spheres.values()].some(x=>x.domain!==7||x.method!==5))return deny('HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
+  if(houses.some(h=>h.domain!==84||h.method!==60))return deny('HSN_HOUSE_ROLE_DISTRIBUTION_INVALID');
+  return Object.freeze({schema:'atlas.one.12d-typed-projection/v1',status:'STRUCTURAL_CANDIDATE_ONLY',
+    registryEdition,registryDigest,sourceBytesVerified:false,reviewerAccepted:false,
+    informationLosingProjection:true,recoverableFrom12D:false,
+    dimensions:{house:12,sphere:144,hsn:1728,domain:1008,method:720},
+    houses:houses.map(h=>Object.freeze({...h})),measuredWelfareEffect:'NOT_ESTABLISHED',
+    authorityEffect:'NONE',canonEffect:'NONE'});
+}
