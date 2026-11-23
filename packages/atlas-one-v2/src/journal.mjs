@@ -32,6 +32,75 @@ function preflightJournalRaw(raw){
     }else if(byte===0x7d||byte===0x5d)depth--;
   }
 }
+// Snapshot untrusted caller-owned detail without recursively traversing an
+// attacker-supplied graph. The bounded inert clone is the ONLY value later
+// hashed, compared or persisted. Accessor values are sampled once for R12
+// backward compatibility; thrown traps/getters become a controlled Hold.
+// A shared child (DAG) is legal, but an ancestor cycle is not.
+function snapshotCallerDetail(root){
+  let nodes=0,estimatedBytes=0;
+  const add=n=>{
+    estimatedBytes+=n;
+    requireValid(nodes<=100_000&&estimatedBytes<=MAX_JOURNAL_RAW_BYTES,'JOURNAL_WRITE_LIMIT');
+  };
+  const holder={value:null},pending=[{value:root,target:holder,key:'value',depth:1,ancestors:new Set()}];
+  while(pending.length){
+    const {value,target,key,depth,ancestors}=pending.pop();
+    nodes++;
+    requireValid(nodes<=100_000,'JOURNAL_WRITE_LIMIT');
+    if(value===null||typeof value==='string'||typeof value==='boolean'||
+       (typeof value==='number'&&Number.isFinite(value))){
+      // JSON.stringify covers escaped controls and UTF-8 expansion, without
+      // using any recursive serializer on caller-owned containers.
+      const serialized=JSON.stringify(value);
+      add(Buffer.byteLength(serialized,'utf8'));
+      target[key]=value;continue;
+    }
+    requireValid(typeof value==='object','NONCANONICAL_VALUE');
+    requireValid(depth<=MAX_JOURNAL_NESTING,'JOURNAL_WRITE_LIMIT');
+    requireValid(!ancestors.has(value),'JOURNAL_CALLER_DETAIL_INVALID');
+    let keys,children,out;
+    try{
+      const array=Array.isArray(value);
+      const proto=Object.getPrototypeOf(value);
+      requireValid(array ? proto===Array.prototype : (proto===Object.prototype||proto===null),'NONCANONICAL_VALUE');
+      const descriptors=Object.getOwnPropertyDescriptors(value);
+      if(array){
+        const len=descriptors.length?.value;
+        requireValid(Number.isSafeInteger(len)&&len>=0&&len<=100_000,'JOURNAL_WRITE_LIMIT');
+        keys=Array.from({length:len},(_,i)=>String(i));
+        out=new Array(len);
+      }else{
+        keys=Object.keys(descriptors).filter(k=>descriptors[k].enumerable).sort();
+        out=Object.create(null);
+      }
+      add(2+keys.length);
+      // Extract all values exactly once in canonical key order. A data
+      // descriptor avoids a second property read; accessors are invoked once
+      // to preserve the older R12 source-facing snapshot contract.
+      children=keys.map(k=>{
+        const descriptor=descriptors[k];
+        if(!descriptor){return [k,null];} // array holes serialize to null
+        if(!array)add(Buffer.byteLength(JSON.stringify(k),'utf8')+1);
+        const child=Object.hasOwn(descriptor,'value') ? descriptor.value :
+          typeof descriptor.get==='function' ? descriptor.get.call(value) : undefined;
+        return [k,child];
+      });
+    }catch(error){
+      if(error instanceof Hold)throw error;
+      const hold=new Hold('JOURNAL_CALLER_DETAIL_INVALID');
+      Object.defineProperty(hold,'forensicCause',{value:error,enumerable:false});
+      throw hold;
+    }
+    target[key]=out;
+    const nextAncestors=new Set(ancestors);nextAncestors.add(value);
+    for(let i=children.length-1;i>=0;i--){
+      const [childKey,childValue]=children[i];
+      pending.push({value:childValue,target:out,key:childKey,depth:depth+1,ancestors:nextAncestors});
+    }
+  }
+  return holder.value;
+}
 export class AtomicJournal {
   constructor(filepath,{readOnly=false,legacyRead=false}={}) {
     requireValid(typeof filepath==='string'&&filepath.length>0,'JOURNAL_PATH_REQUIRED');
@@ -120,12 +189,13 @@ export class AtomicJournal {
   // cannot impersonate prepareEffect() by selecting reserved strings.
   #recordInternal({runId,inputDigest,step,detail,requestId},fromPrepareEffect){return this.#guard(()=>{
     requireValid(typeof runId==='string'&&ID.test(runId)&&typeof inputDigest==='string'&&SHA.test(inputDigest),'JOURNAL_ID_OR_DIGEST_INVALID');
-    requireValid(typeof step==='string'&&/^[A-Z_]{3,40}$/.test(step)&&isObject(detail),'JOURNAL_STEP_OR_DETAIL_INVALID');
+    let plainDetail=false;try{plainDetail=isObject(detail);}catch{throw new Hold('JOURNAL_CALLER_DETAIL_INVALID');}
+    requireValid(typeof step==='string'&&/^[A-Z_]{3,40}$/.test(step)&&plainDetail,'JOURNAL_STEP_OR_DETAIL_INVALID');
     requireValid(typeof requestId==='string'&&ID.test(requestId),'JOURNAL_REQUEST_ID_INVALID');
     if(!fromPrepareEffect)requireValid(!requestId.toLowerCase().startsWith('effect:')&&step!=='EXTERNAL_EFFECT_UNCERTAIN','JOURNAL_EFFECT_NAMESPACE_RESERVED');
     // Snapshot getter-bearing or caller-mutable detail exactly once BEFORE
     // the hash and persisted image are derived; they must share the same bytes.
-    const stableDetail=JSON.parse(canonical(detail));
+    const stableDetail=snapshotCallerDetail(detail);
     const db=this.#load();requireValid(db.version===3,'LEGACY_JOURNAL_WRITE_HOLD');
     // A single local journal must not prepare the same external operation under
     // two run IDs. This is NOT a global receiver deduplication guarantee.
