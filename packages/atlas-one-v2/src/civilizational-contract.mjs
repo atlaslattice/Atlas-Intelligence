@@ -141,6 +141,11 @@ export function projectTypedHsnCoverage({registryEdition,registryDigest,records}
     if(!plain(r)||typeof r.coordinate!=='string'||!HSN.test(r.coordinate)||seen.has(r.coordinate)||!['DOMAIN_SPECIALIZATION','EPISTEMIC_META'].includes(r.kind)||typeof r.hasEvidence!=='boolean')return deny('HSN_RECORD_SHAPE_OR_DUPLICATE');
     if(r.hasEvidence&&(!Array.isArray(r.sourceRefs)||r.sourceRefs.length===0||r.sourceRefs.length>12||r.sourceRefs.some(x=>typeof x!=='string'||x.length<5||x.length>300)))return deny('HSN_SUPPORTED_WITHOUT_SOURCES');
     seen.add(r.coordinate);
+    // Ariadne v0.7 has 7 DOMAIN Spheres and 5 EPISTEMIC Spheres per House,
+    // each containing 12 uniform-role nodes. It does NOT have 7+5 nodes per Sphere.
+    const si=Number(r.coordinate.slice(5,7));
+    const expectedKind=si<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META';
+    if(r.kind!==expectedKind)return deny('HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
     const hi=Number(r.coordinate.slice(1,3))-1;
     const house=houses[hi];
     const isDomain=r.kind==='DOMAIN_SPECIALIZATION';
@@ -150,7 +155,7 @@ export function projectTypedHsnCoverage({registryEdition,registryDigest,records}
     if(isDomain)c.domain++;else c.method++;
     spheres.set(s,c);
   }
-  if(seen.size!==1728||spheres.size!==144||[...spheres.values()].some(x=>x.domain!==7||x.method!==5))return deny('HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
+  if(seen.size!==1728||spheres.size!==144||[...spheres.values()].some(x=>!((x.domain===12&&x.method===0)||(x.domain===0&&x.method===12))))return deny('HSN_SPHERE_ROLE_DISTRIBUTION_INVALID');
   if(houses.some(h=>h.domain!==84||h.method!==60))return deny('HSN_HOUSE_ROLE_DISTRIBUTION_INVALID');
   return Object.freeze({schema:'atlas.one.12d-typed-projection/v1',status:'STRUCTURAL_CANDIDATE_ONLY',
     registryEdition,registryDigest,sourceBytesVerified:false,reviewerAccepted:false,
