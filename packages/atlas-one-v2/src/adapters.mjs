@@ -39,6 +39,10 @@ export class WorkHostPort {
   // shape. Internal host audits may record causes ONLY in protected telemetry.
   // This does not equalize timing/callback/cache behavior or fence real egress.
   async query(request={},options={}){
+    // Host/caller Proxy and accessor traps must resolve to the same public
+    // HOLD as ordinary denials, not reject the async query or skip auditing.
+    // This does not rewind already-started host egress side effects.
+    try{
     // Cancellation is an optional best-effort source-level stop, NOT a grant,
     // queue cancellation witness or atomically fenced host output.
     if(!isObject(options)||Object.keys(options).some(k=>k!=='signal'))return hold('WORK_UNAVAILABLE');
@@ -87,6 +91,7 @@ export class WorkHostPort {
     // No public scope digest: a stable scope fingerprint is a correlation oracle.
     const publicData={references:refs.sort((a,b)=>a.seq-b.seq),sourceCount:refs.length};
     return {schema:'atlas.one.host-port/v2',status:PORT_STATES.READ,data:publicData,hostAuthenticated:false,rightsProof:'HOST_CALLBACK_REPORTED_NOT_INDEPENDENTLY_ATTESTED',postPerformed:false,canonEffect:'NONE'};
+    }catch{return hold('WORK_UNAVAILABLE');}
   }
 }
 
