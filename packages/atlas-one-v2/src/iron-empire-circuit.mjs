@@ -9,6 +9,15 @@ const SHA=/^[a-f0-9]{64}$/;
 const clean=(x)=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&[Object.prototype,null].includes(Object.getPrototypeOf(x));
 const sha=x=>createHash('sha256').update(x).digest('hex');
 const hold=(reason)=>Object.freeze({status:'HOLD',reason,hostAuthenticated:false,canonEffect:'NONE',storyCanonEffect:'NONE'});
+/** The original JSON is digest-verified, but returned snapshots must not permit later mutation. */
+function freezeJsonTree(root){
+  const stack=[root],seen=new WeakSet();
+  while(stack.length){const v=stack.pop();if(v===null||typeof v!=='object'||seen.has(v))continue;
+    seen.add(v);for(const child of Object.values(v))if(child!==null&&typeof child==='object')stack.push(child);
+    Object.freeze(v);
+  }
+  return root;
+}
 export const ARIADNE_V07_SHA256=SRC;
 export const PUBLIC_FICTION_SOURCE_IDS=Object.freeze([
   'IRON-TREATMENT-20261030-v04','IRON-MARS-DELTA-20261106-v01',
@@ -28,7 +37,7 @@ export const IRON_HOUSE_REVIEW_LENSES=Object.freeze([
   ['Martian community histories and collective agency','IRON-MARS-DELTA-20261106-v01','Do not fabricate authentic affected-party consent'],
   ['rights, dignity, due process and accountability','IRON-QVERSE-20261030-v02','Fictional law never grants real permissions'],
   ['stellar systems, relativity and deep-time habitats','IRON-TREATMENT-20261030-v04','Do not treat FTL or speculative biology as measured science']
-]);
+].map(Object.freeze));
 
 /** Publisher must independently own/read and authorize the full bytes before call.
  * A successful SHA pin validates source identity, NOT permissions or meaning.
@@ -57,7 +66,7 @@ export function validatePinnedAriadneV07(originalBytes){
   if(domain!==1008||method!==720||domainSpheres!==84||methodSpheres!==60)return hold('SPHERE_ROLE_DISTRIBUTION_INVALID');
   return Object.freeze({status:'EXACT_SOURCE_BYTES_VERIFIED',edition:'Ariadne v0.7',digest:SRC,
     domainNodes:1008,methodNodes:720,domainSpheres:84,methodSpheres:60,
-    nodes:Object.freeze(v.nodes),spheres:Object.freeze(v.spheres),
+    nodes:freezeJsonTree(v.nodes),spheres:freezeJsonTree(v.spheres),
     hostAuthenticated:false,canonEffect:'NONE',storyCanonEffect:'NONE',semanticReview:'NOT_PERFORMED'});
 }
 
@@ -87,7 +96,7 @@ export function compilePinnedIronEmpireCandidates(originalBytes){
     rows.push(c);
   }
   return Object.freeze({schema:'atlas.one.iron-empire-circuit/v1',status:'SOURCE_ONLY_COMPILATION_COMPLETE',count:1728,
-    sourceRegistrySha256:SRC,candidates:rows,
+    sourceRegistrySha256:SRC,candidates:Object.freeze(rows),
     realMacroturnsExecuted:0,roomsJoined:0,hostActions:0,storyCanonEffect:'NONE',canonEffect:'NONE'});
 }
 
