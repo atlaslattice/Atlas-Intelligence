@@ -10,12 +10,12 @@ test('Work route rejects forged request principal',async()=>assert.equal((await 
 test('Work route rejects Play',async()=>assert.equal((await make().query({...scope,purpose:'PLAY'})).status,'HOLD'));
 test('Work route rejects negative seq',async()=>assert.equal((await make().query({...scope,sourceSeqs:[-1]})).status,'HOLD'));
 test('Work route rejects overbroad seq',async()=>assert.equal((await make().query({...scope,sourceSeqs:[1,2,3,4,5,6,7]})).status,'HOLD'));
-test('Work route denies missing initial grant',async()=>assert.equal((await make({admit:{allow:false}}).query(scope)).reason,'READ_RIGHTS_MISSING'));
-test('Work route denies revocation on return',async()=>assert.equal((await make({egress:{...lease,allow:false,epoch:8}}).query(scope)).reason,'REVOKED_OR_STALE_EPOCH_AT_RETURN'));
+test('Work route denies missing initial grant',async()=>assert.equal((await make({admit:{allow:false}}).query(scope)).reason,'WORK_UNAVAILABLE'));
+test('Work route denies revocation on return',async()=>assert.equal((await make({egress:{...lease,allow:false,epoch:8}}).query(scope)).reason,'WORK_UNAVAILABLE'));
 test('Work route denies changed lease',async()=>assert.equal((await make({egress:{...lease,leaseId:'lease-02'}}).query(scope)).status,'HOLD'));
 test('Work route denies changed epoch',async()=>assert.equal((await make({egress:{...lease,epoch:8}}).query(scope)).status,'HOLD'));
-test('Work route rejects cross room data',async()=>{const p=make({rows:[{tenant:identity.tenant,account:identity.account,roomId:'other-room',seq:2,sha256:'a'.repeat(64)},{tenant:identity.tenant,account:identity.account,roomId:scope.roomId,seq:3,sha256:'b'.repeat(64)}]});assert.equal((await p.query(scope)).reason,'HOST_SOURCE_IDENTITY_INVALID');});
-test('Work route rejects duplicate sequences',async()=>{const p=make({rows:[{tenant:identity.tenant,account:identity.account,roomId:scope.roomId,seq:2,sha256:'a'.repeat(64)},{tenant:identity.tenant,account:identity.account,roomId:scope.roomId,seq:2,sha256:'b'.repeat(64)}]});assert.equal((await p.query(scope)).reason,'HOST_SOURCE_SEQUENCE_DUPLICATE');});
+test('Work route rejects cross room data',async()=>{const p=make({rows:[{tenant:identity.tenant,account:identity.account,roomId:'other-room',seq:2,sha256:'a'.repeat(64)},{tenant:identity.tenant,account:identity.account,roomId:scope.roomId,seq:3,sha256:'b'.repeat(64)}]});assert.equal((await p.query(scope)).reason,'WORK_UNAVAILABLE');});
+test('Work route rejects duplicate sequences',async()=>{const p=make({rows:[{tenant:identity.tenant,account:identity.account,roomId:scope.roomId,seq:2,sha256:'a'.repeat(64)},{tenant:identity.tenant,account:identity.account,roomId:scope.roomId,seq:2,sha256:'b'.repeat(64)}]});assert.equal((await p.query(scope)).reason,'WORK_UNAVAILABLE');});
 test('Work route denies malformed port',()=>assert.throws(()=>new WorkHostPort({read:()=>[]})));
 test('legacy ports must not trigger automatic migration',()=>{assert.equal(legacyPorts['sheldonbrain-rag-api'].dataMove,'OPT_IN_MIGRATION_ONLY');assert.equal(legacyPorts.swarmchat.dataMove,'NONE');});
 test('draft requires actual source packet',()=>assert.throws(()=>prepareSwarmChatDraft({review:'ACCEPTED'},{roomId:'room-test-01'})));
