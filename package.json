@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "start": "node dist/server.cjs",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "atlas:v2:test": "npm --prefix packages/atlas-one-v2 test",
+    "atlas:v2:serve-local": "node packages/atlas-one-v2/src/serve-local.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

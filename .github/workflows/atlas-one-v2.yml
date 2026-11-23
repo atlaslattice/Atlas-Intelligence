@@ -1,0 +1,37 @@
+name: Atlas ONE v2 isolated source conformance
+on:
+  pull_request:
+    paths:
+      - 'packages/atlas-one-v2/**'
+      - '.github/workflows/atlas-one-v2.yml'
+  push:
+    branches:
+      - 'rewrite/atlas-one-v2-openai-native-20261122'
+    paths:
+      - 'packages/atlas-one-v2/**'
+      - '.github/workflows/atlas-one-v2.yml'
+permissions:
+  contents: read
+jobs:
+  candidate-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check only the new source
+        run: |
+          for f in packages/atlas-one-v2/src/*.mjs packages/atlas-one-v2/test/*.mjs; do node --check "$f"; done
+      - name: Test self-contained source-only contracts
+        run: |
+          cd packages/atlas-one-v2
+          npm test
+      - name: Verify tests did not change repository contents
+        run: git diff --exit-code
+      - name: Clarify private original-source gate
+        run: |
+          echo "CI intentionally does not contain the owner-private Ariadne atlas.json source."
+          echo "Real-source tests are skipped unless ATLAS_ARIADNE_ORIGINAL_FILE is authorized and present."
+          echo "This workflow is source-level evidence, not hosted IAM/SwarmChat acceptance."
