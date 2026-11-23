@@ -43,8 +43,9 @@ function normalizedTask(t){
 }
 
 /** Plan validation does not authenticate source URLs or grant any real rights. */
-export function prepareLocalWorkBurst({tasks,maxParallel=4}={}){
+export function prepareLocalWorkBurst(options={}){
   try{
+    const {tasks,maxParallel=4}=options??{};
     if(!Array.isArray(tasks)||tasks.length<1||tasks.length>MAX_ITEMS
       ||!Number.isSafeInteger(maxParallel)||maxParallel<1||maxParallel>MAX_PARALLEL)
       return deny('BURST_BOUNDS_INVALID');
@@ -74,7 +75,8 @@ function receipt(t,status,resultDigest=null,reason=null){
  * pass, and failures never cancel unrelated independent tasks.
  * The runner cannot enforce timeouts or effects inside arbitrary handlers.
  */
-export async function executeLocalWorkBurst({tasks,maxParallel=4,operators}={}){
+export async function executeLocalWorkBurst(options={}){
+  const {tasks,maxParallel=4,operators}=options??{};
   const plan=prepareLocalWorkBurst({tasks,maxParallel});
   if(plan.status!=='PREPARED_LOCAL_ONLY')return plan;
   if(!plain(operators))return deny('LOCAL_OPERATOR_REGISTRY_REQUIRED');
