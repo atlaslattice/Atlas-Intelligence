@@ -6,11 +6,11 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {SOURCE_BLOB,planEvolution,verifyEvolution,planCompletion} from './atlas_source_cascade.mjs';
+import {SOURCE_BLOB,planEvolution,verifyEvolution,planCompletion,verifyCompactReceipts} from './atlas_source_cascade.mjs';
 
 function main(argv){
   if(argv.includes('--help')){
-    console.log('Usage: node scripts/run_atlas_source_cascade.mjs [--all-three-gates] [--out-prefix PATH] [snapshot.json]');
+    console.log('Usage: node scripts/run_atlas_source_cascade.mjs [--all-three-gates] [--verify-receipts] [--out-prefix PATH] [snapshot.json]');
     return 0;
   }
   const positional=[],named={};
@@ -20,6 +20,7 @@ function main(argv){
       if(i+1>=argv.length||argv[i+1].startsWith('--'))throw Error('MISSING_OUTPUT_PREFIX');
       named.prefix=argv[++i];
     }else if(arg==='--all-three-gates')named.all=true;
+    else if(arg==='--verify-receipts')named.verify=true;
     else if(arg.startsWith('--'))throw Error('UNKNOWN_ARGUMENT');
     else positional.push(arg);
   }
@@ -34,6 +35,12 @@ function main(argv){
   const continuation=named.all?planCompletion(cut,result):null;
   const verification=verifyEvolution(cut,result);
   if(!verification.valid)throw Error('DETERMINISTIC_REPLAY_MISMATCH');
+  const receiptCheck=named.verify?verifyCompactReceipts(cut,{
+    pilot:JSON.parse(readFileSync(new URL('../data/atlas_cascade_100_pilot_20261123.json',import.meta.url),'utf8')),
+    followon:JSON.parse(readFileSync(new URL('../data/atlas_cascade_1000_expansion_20261123.json',import.meta.url),'utf8')),
+    completion:JSON.parse(readFileSync(new URL('../data/atlas_cascade_220_completion_20261123.json',import.meta.url),'utf8'))
+  }):null;
+  if(receiptCheck&&!receiptCheck.valid)throw Error('PUBLISHED_RECEIPT_REPLAY_HOLD');
   const summary={
     status:'REVIEW_REQUIREMENTS_RECORDED_NOT_PERFORMED',
     source_git_blob_sha1:blob,source_date:result.source_date,
@@ -47,6 +54,7 @@ function main(argv){
     expansion_checkpoint64:result.final_checkpoint64,
     final_checkpoint64:continuation?.final_checkpoint64??result.final_checkpoint64,
     exact_replay_pass:verification.valid,
+    published_three_phase_receipts_verified:receiptCheck?.valid??null,
     checksum_warning:'FNV1a64 is a replay checksum, NOT cryptographic provenance or identity attestation',
     host_actions:0,model_calls:0,room_messages:0,real_issues_closed:0,
     real_prs_merged:0,source_rights_verified:false,canon:false,deployed:false
