@@ -21,7 +21,51 @@ const REQUIRED = Object.freeze({
   productionDeployment: 'host'
 });
 const own=(obj,key)=>Object.prototype.hasOwnProperty.call(obj,key);
-const PLAIN=v=>v!==null&&typeof v==='object'&&!Array.isArray(v)&&Object.getPrototypeOf(v)===Object.prototype;
+const PLAIN=v=>v!==null&&typeof v==='object'&&!Array.isArray(v)&&[Object.prototype,null].includes(Object.getPrototypeOf(v));
+
+/** A source manifest has ONE flat JSON object with string values and canPublish
+ * boolean. Keep duplicate/Unicode-alias detection BEFORE building a JS object:
+ * JSON.parse silently chooses the last repeated key. Refuse other JSON types,
+ * unpaired Unicode surrogates, BOMs and unknown trailing bytes. No host claims.
+ */
+export function parseFlatManifestBytes(bytes){
+  if(!Buffer.isBuffer(bytes)||bytes.length>32768)throw new Error('SOURCE_SIZE_LIMIT');
+  const s=new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(bytes);
+  let i=0;
+  const fail=()=>{throw new Error('INVALID_SOURCE_JSON');};
+  const ws=()=>{while(i<s.length && (s[i]===' '||s[i]==='\n'||s[i]==='\r'||s[i]==='\t'))i++;};
+  const str=()=>{
+    if(s[i]!=="\"")fail();
+    const start=i++;let escape=false;
+    while(i<s.length){
+      const c=s[i++];
+      if(!escape&&c==="\""){
+        let v;try{v=JSON.parse(s.slice(start,i));}catch{fail();}
+        if(/[\uD800-\uDFFF]/u.test(v))fail();
+        return v;
+      }
+      if(!escape&&c==='\\'){escape=true;continue;}
+      escape=false;
+    }
+    fail();
+  };
+  ws();if(s[i++]!=='{')fail();
+  const out=Object.create(null),seen=new Set();ws();
+  if(s[i]==='}')i++;
+  else while(true){
+    ws();const key=str(),norm=key.normalize('NFC');
+    if(seen.has(norm))fail();seen.add(norm);
+    ws();if(s[i++]!==':')fail();ws();
+    if(s[i]==='\"')out[key]=str();
+    else if(s.startsWith('false',i)){out[key]=false;i+=5;}
+    else if(s.startsWith('true',i)){out[key]=true;i+=4;}
+    else fail();
+    ws();if(s[i]==='}'){i++;break;}
+    if(s[i++]!==',')fail();
+  }
+  ws();if(i!==s.length)fail();
+  return out;
+}
 
 /** Return immutable SOURCE-ONLY diagnostic; NEVER `canPublish:true`. */
 export function inspectReleaseSource(data){
@@ -45,7 +89,7 @@ export function inspectReleaseSource(data){
 
 export function reviewManifestFile(path){
   try {const bytes=readFileSync(path);if(bytes.length>32768)throw new Error('MAX_BYTES');
-    const data=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
+    const data=parseFlatManifestBytes(bytes);
     return inspectReleaseSource(data);
   } catch {
     return Object.freeze({schema:'atlas.one.source-preflight/v1',status:'INVALID_SOURCE_MANIFEST',reason:'INVALID_FILE_OR_JSON',
