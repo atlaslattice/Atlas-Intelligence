@@ -1,0 +1,29 @@
+# Atlas-wide GitHub Actions admission diagnostic.
+# Public, no credentials, no checkout, no external actions, no deployment.
+# One push trigger on installation/change to this exact file; manual fallback.
+name: Atlas runner admission smoke (no secrets)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/atlas-runner-admission-smoke.yml'
+  workflow_dispatch:
+permissions: {}
+jobs:
+  runner-admission:
+    name: public-ubuntu-no-secrets
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Runner allocation and first executed step
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${RUNNER_OS}" = 'Linux'
+          printf '%s\n' 'ATLAS_RUNNER_ADMITTED_STEP_1'
+      - name: Confirm independent second step
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' 'ATLAS_RUNNER_ADMITTED_STEP_2'
+          python3 -c 'import sys; assert sys.version_info.major == 3'
