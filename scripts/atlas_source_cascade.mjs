@@ -61,7 +61,7 @@ export function planEvolution(cut,{pilot=100,expansion=1000,sourceBlob=SOURCE_BL
    if(ordinal>=n)break;ordinal++;
    const v=STAGES[stage],past=perItem.get(item.key)??null;
    if(stage>0&&(!past||past.review_stage!==STAGES[stage-1].id))throw Error("DEPENDENCY_INCOMPLETE");
-   const phase=ordinal<=pilot?"PILOT_100":"EXPANSION_1000";
+   const phase=ordinal<=pilot?"PILOT_"+pilot:"EXPANSION_"+expansion;
    const row={ordinal,phase,item_key:item.key,repository:item.repository,type:item.type,number:item.number,url:item.url,
      source_observed_date:cut.observed_date,review_stage:v.id,stage_kind:v.kind,previous_ordinal:ordinal-1,
      previous_item_ordinal:past?.ordinal??null,required_action:v.requirement,hold_reason:v.hold,
