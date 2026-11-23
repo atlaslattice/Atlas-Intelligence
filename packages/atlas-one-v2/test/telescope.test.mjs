@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {runTelescope,runTelescopeRounds,verifyTelescope,PIPELINE} from '../src/telescope/core.mjs';
 import {modeAdmit} from '../src/telescope/pass07-protection.mjs';
 import {reviewIronEditorial,PR26_SOURCE_BLOB,HOUSE_THEMES,PUBLIC_SOURCE_IDS} from '../src/telescope/pass05-iron.mjs';
-import {prepareSwarmChatEnvelope} from '../src/telescope/pass10-swarm.mjs';
+import {bindR07WorkSource,prepareSwarmChatEnvelope} from '../src/telescope/pass10-swarm.mjs';
 import {adversarialAdmission} from '../src/telescope/pass09-adversary.mjs';
 import {candidateReceiptKey} from '../src/telescope/pass11-replay.mjs';
 import {R07_EDITION,R07_REGISTRY_SHA} from '../src/r07-workburst-bridge.mjs';
@@ -98,9 +98,13 @@ test('09 constructively adversarial testing rejects 4 x1728 attacks',async()=>{
 test('10 SwarmChat envelope is not posted; getters/body/host assertions denied',async()=>{
  const r=await runTelescope(raw,digest,{steps:10});
  assert.equal(r.brokerIntegrationStatus,'PREPARED_NOT_POSTED_HOST_BINDING_REQUIRED');
- const x=prepareSwarmChatEnvelope(synthetic());
+ assert.equal(prepareSwarmChatEnvelope(synthetic()).status,'HOLD');
+ const token=bindR07WorkSource(raw,digest,source[0].coordinate);
+ const x=prepareSwarmChatEnvelope(token);
  assert.equal(x.status,'PREPARED_NOT_POSTED');assert.equal(x.brokerSeq,null);assert.equal(x.workPosted,false);
  assert.equal(prepareSwarmChatEnvelope({...synthetic(),rawBody:'PRIVATE'}).status,'HOLD');
+ assert.equal(bindR07WorkSource(raw,'f'.repeat(64),source[0].coordinate).status,'HOLD');
+ assert.equal(bindR07WorkSource(raw,digest,source.find(x=>x.suggestedMode!=='WORK').coordinate).status,'HOLD');
  assert.equal(prepareSwarmChatEnvelope({...synthetic(),hostVerified:true}).status,'HOLD');
  assert.equal(prepareSwarmChatEnvelope({...synthetic(),suggestedMode:'PALACE'}).status,'HOLD');
  let accesses=0;const trap={...synthetic()};Object.defineProperty(trap,'coordinate',{get(){accesses++;throw Error('SECRET')}});
@@ -179,4 +183,13 @@ test('chained round 2 actually differs from round 1',async()=>{
 test('mode admission never executes source getters',()=>{
  let reads=0;const x={get suggestedMode(){reads++;throw Error('PRIVATE_SENTINEL')}};
  assert.equal(modeAdmit(x),'HELD');assert.equal(reads,0);
+});
+
+test('source token cannot be forged from an exact but caller-owned digest dictionary',()=>{
+ const trusted=bindR07WorkSource(raw,digest,source[0].coordinate);
+ assert.equal(prepareSwarmChatEnvelope(trusted).status,'PREPARED_NOT_POSTED');
+ const cloned={...trusted};assert.equal(prepareSwarmChatEnvelope(cloned).status,'HOLD');
+ assert.equal(prepareSwarmChatEnvelope(structuredClone(trusted)).status,'HOLD');
+ assert.equal(prepareSwarmChatEnvelope({...trusted,hostVerified:true}).status,'HOLD');
+ assert.equal(Object.isFrozen(trusted),true);
 });
