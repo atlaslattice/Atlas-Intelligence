@@ -11,8 +11,9 @@ const patched=readFileSync(new URL('../src/journal.mjs',import.meta.url),'utf8')
 // Preserve the exact R12 original negative fixture despite additive R13 boundary repair.
 const originalEffectGuard="    requireValid(typeof logicalId==='string'&&ID.test(logicalId)&&SHA.test(effectDigest),'EFFECT_ID_INVALID');";
 const patchedEffectGuard="    // The persisted requestId adds a seven-byte 'effect:' prefix, yet record()\n    // enforces the same 80-character ID ceiling. Reject IDs that cannot fit\n    // BEFORE any effect handoff; preserve historic mapping and receipts.\n    requireValid(typeof logicalId==='string'&&logicalId.length<=73&&ID.test(logicalId)&&SHA.test(effectDigest),'EFFECT_ID_INVALID');";
-const pinnedR12=patched.replace(patchedEffectGuard,originalEffectGuard);
-assert.notEqual(pinnedR12,patched,'R13 guard must be present');
+const pinnedR13=readFileSync(new URL('./fixtures/journal-r13-source.mjs',import.meta.url),'utf8');
+const pinnedR12=pinnedR13.replace(patchedEffectGuard,originalEffectGuard);
+assert.notEqual(pinnedR12,pinnedR13,'R13 guard must be present in pinned original');
 const originalGuard="    if(!readOnly){mkdirSync(dirname(this.file),{recursive:true});if(!existsSync(this.file))this.#atomicWrite({version:3,runs:{}});}";
 const fixedGuard="    if(!readOnly){mkdirSync(dirname(this.file),{recursive:true});\n      // Cold start shares the writer's exclusive lock. Recheck under lock:\n      // a competing constructor must never overwrite a newly committed run.\n      if(!existsSync(this.file))this.#guard(()=>{if(!existsSync(this.file))this.#atomicWrite({version:3,runs:{}});});}";
 const blobSHA=s=>createHash('sha1').update(Buffer.concat([Buffer.from('blob '+Buffer.byteLength(s)+'\0'),Buffer.from(s)])).digest('hex');
@@ -37,6 +38,7 @@ async function interleave(source){
  return new Reader(file,{readOnly:true}).inspect('race-001');
 }
 test('baseline R12: cold-start stale existence decision OVERWRITES committed run',async()=>{
+ assert.equal(blobSHA(pinnedR13),'569736013f4f3fcc8e48ea7377e2614feae51935');
  assert.equal(blobSHA(pinnedR12),'032ae64adba4fb0e75238849eb9d159551245af5');
  assert.equal(patched.split(fixedGuard).length-1,1);
  const original=pinnedR12.replace(fixedGuard,originalGuard);
