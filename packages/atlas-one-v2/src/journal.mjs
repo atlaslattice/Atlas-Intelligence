@@ -15,7 +15,10 @@ export class AtomicJournal {
     this.file=resolve(filepath);this.lock=this.file+'.lock';this.readOnly=readOnly;this.legacyRead=legacyRead;
     // New journals are v3. Never silently rewrite old v2 receipts: their hashes
     // did not cover requestId or inputDigest, so retries could be duplicated.
-    if(!readOnly){mkdirSync(dirname(this.file),{recursive:true});if(!existsSync(this.file))this.#atomicWrite({version:3,runs:{}});}
+    if(!readOnly){mkdirSync(dirname(this.file),{recursive:true});
+      // Cold start shares the writer's exclusive lock. Recheck under lock:
+      // a competing constructor must never overwrite a newly committed run.
+      if(!existsSync(this.file))this.#guard(()=>{if(!existsSync(this.file))this.#atomicWrite({version:3,runs:{}});});}
     requireValid(existsSync(this.file),'JOURNAL_MISSING');this.#load();
   }
   #load(){let db;try{db=JSON.parse(readFileSync(this.file,'utf8'));}catch{throw new Hold('JOURNAL_CORRUPT');}
