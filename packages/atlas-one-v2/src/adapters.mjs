@@ -17,13 +17,14 @@ function hold(code){return {schema:'atlas.one.host-port/v2',status:'HOLD',reason
 // Accessor values could change after authorization/source checks and before
 // returned references are constructed. This does not attest the real host.
 function ownHostData(value,fields){
-  if(!isObject(value))return null;
-  const fixed=Object.create(null);
-  try{for(const key of fields){const descriptor=Object.getOwnPropertyDescriptor(value,key);
-    if(!descriptor||!Object.hasOwn(descriptor,'value'))return null;
-    fixed[key]=descriptor.value;}}
-  catch{return null;}
-  return Object.freeze(fixed);
+  try{
+    if(!isObject(value))return null;
+    const fixed=Object.create(null);
+    for(const key of fields){const descriptor=Object.getOwnPropertyDescriptor(value,key);
+      if(!descriptor||!Object.hasOwn(descriptor,'value'))return null;
+      fixed[key]=descriptor.value;}
+    return Object.freeze(fixed);
+  }catch{return null;}
 }
 const SESSION_FIELDS=['tenant','account','principal','mode','purpose','rightsEpoch'];
 const PERMIT_FIELDS=['tenant','account','principal','allow','leaseId','epoch'];
