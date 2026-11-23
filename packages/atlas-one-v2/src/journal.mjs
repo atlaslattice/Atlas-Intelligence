@@ -9,19 +9,27 @@ const SHA=/^[a-f0-9]{64}$/;
 const ID=/^[A-Za-z][A-Za-z0-9._:-]{2,79}$/;
 const ZERO='0'.repeat(64);
 export class AtomicJournal {
-  constructor(filepath,{readOnly=false}={}) {
+  constructor(filepath,{readOnly=false,legacyRead=false}={}) {
     requireValid(typeof filepath==='string'&&filepath.length>0,'JOURNAL_PATH_REQUIRED');
-    this.file=resolve(filepath);this.lock=this.file+'.lock';this.readOnly=readOnly;
-    if(!readOnly){mkdirSync(dirname(this.file),{recursive:true});if(!existsSync(this.file))this.#atomicWrite({version:2,runs:{}});}
+    requireValid(!legacyRead || readOnly,'LEGACY_JOURNAL_READ_ONLY_REQUIRED');
+    this.file=resolve(filepath);this.lock=this.file+'.lock';this.readOnly=readOnly;this.legacyRead=legacyRead;
+    // New journals are v3. Never silently rewrite old v2 receipts: their hashes
+    // did not cover requestId or inputDigest, so retries could be duplicated.
+    if(!readOnly){mkdirSync(dirname(this.file),{recursive:true});if(!existsSync(this.file))this.#atomicWrite({version:3,runs:{}});}
     requireValid(existsSync(this.file),'JOURNAL_MISSING');this.#load();
   }
   #load(){let db;try{db=JSON.parse(readFileSync(this.file,'utf8'));}catch{throw new Hold('JOURNAL_CORRUPT');}
-    requireValid(isObject(db)&&db.version===2&&isObject(db.runs),'JOURNAL_SCHEMA_INVALID');
+    requireValid(isObject(db)&&(db.version===2||db.version===3)&&isObject(db.runs),'JOURNAL_SCHEMA_INVALID');
+    if(db.version===2)requireValid(this.readOnly&&this.legacyRead,'LEGACY_JOURNAL_HASH_UNBOUND');
     for(const [id,run] of Object.entries(db.runs)){
       requireValid(ID.test(id)&&isObject(run)&&SHA.test(run.inputDigest)&&Array.isArray(run.events)&&SHA.test(run.head),'JOURNAL_RUN_INVALID');
-      let prev=ZERO;for(let i=0;i<run.events.length;i++){
-        const e=run.events[i];requireValid(isObject(e)&&e.seq===i+1&&e.prev===prev&&typeof e.step==='string'&&isObject(e.detail),'JOURNAL_SEQUENCE_INVALID');
-        requireValid(digest({runId:id,seq:e.seq,step:e.step,detail:e.detail,prev:e.prev})===e.hash,'JOURNAL_HASH_CORRUPT');prev=e.hash;
+      let prev=ZERO;const seen=new Set();for(let i=0;i<run.events.length;i++){
+        const e=run.events[i];requireValid(isObject(e)&&e.seq===i+1&&e.prev===prev&&typeof e.step==='string'&&isObject(e.detail)&&typeof e.requestId==='string'&&ID.test(e.requestId),'JOURNAL_SEQUENCE_INVALID');
+        requireValid(!seen.has(e.requestId),'JOURNAL_DUPLICATE_REQUEST_ID');seen.add(e.requestId);
+        const claim=db.version===3
+          ? {runId:id,inputDigest:run.inputDigest,seq:e.seq,step:e.step,detail:e.detail,requestId:e.requestId,prev:e.prev}
+          : {runId:id,seq:e.seq,step:e.step,detail:e.detail,prev:e.prev};
+        requireValid(digest(claim)===e.hash,'JOURNAL_HASH_CORRUPT');prev=e.hash;
       }requireValid(run.head===prev,'JOURNAL_HEAD_CORRUPT');
     }
     return db;
@@ -34,17 +42,20 @@ export class AtomicJournal {
     try{fd=openSync(this.lock,'wx',0o600);}catch{throw new Hold('JOURNAL_BUSY_OR_STALE_LOCK');}
     try{return fn();}finally{closeSync(fd);unlinkSync(this.lock);}
   }
-  inspect(runId){requireValid(typeof runId==='string'&&ID.test(runId),'JOURNAL_RUN_ID_INVALID');const run=this.#load().runs[runId];return run?structuredClone(run):null;}
+  inspect(runId){requireValid(typeof runId==='string'&&ID.test(runId),'JOURNAL_RUN_ID_INVALID');
+    const db=this.#load(),run=db.runs[runId];
+    return run?db.version===2?{...structuredClone(run),integrity:'UNATTESTED_LEGACY_REQUEST_BINDING'}:structuredClone(run):null;}
   list(){return Object.keys(this.#load().runs).sort();}
   record({runId,inputDigest,step,detail,requestId}){return this.#guard(()=>{
     requireValid(typeof runId==='string'&&ID.test(runId)&&typeof inputDigest==='string'&&SHA.test(inputDigest),'JOURNAL_ID_OR_DIGEST_INVALID');
     requireValid(typeof step==='string'&&/^[A-Z_]{3,40}$/.test(step)&&isObject(detail),'JOURNAL_STEP_OR_DETAIL_INVALID');
     requireValid(typeof requestId==='string'&&ID.test(requestId),'JOURNAL_REQUEST_ID_INVALID');
-    const db=this.#load();let run=db.runs[runId];if(run)requireValid(run.inputDigest===inputDigest,'RUN_IDEMPOTENCY_CONFLICT');
+    const db=this.#load();requireValid(db.version===3,'LEGACY_JOURNAL_WRITE_HOLD');let run=db.runs[runId];if(run)requireValid(run.inputDigest===inputDigest,'RUN_IDEMPOTENCY_CONFLICT');
     else run=db.runs[runId]={inputDigest,head:ZERO,events:[]};
     const old=run.events.find(e=>e.requestId===requestId);
     if(old){requireValid(old.step===step&&digest(old.detail)===digest(detail),'REQUEST_IDEMPOTENCY_CONFLICT');return {replayed:true,seq:old.seq,head:run.head};}
-    const seq=run.events.length+1,prev=run.head;const e={seq,step,detail,prev,requestId,hash:digest({runId,seq,step,detail,prev})};
+    const seq=run.events.length+1,prev=run.head;
+    const e={seq,step,detail,prev,requestId,hash:digest({runId,inputDigest,seq,step,detail,requestId,prev})};
     run.events.push(e);run.head=e.hash;this.#atomicWrite(db);return {replayed:false,seq,head:run.head};
   });}
   /** A sender never assumes lack of a local ACK means a remote operation did not commit. */
