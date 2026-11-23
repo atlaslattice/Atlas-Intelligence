@@ -11,6 +11,8 @@
 
 ## Original implementation and interfaces
 
+**Second-stage House × Sphere follow-up:** All 144 Sphere perspectives now receive **12 independent House lenses**, producing **1,728 House–Sphere follow-up records** with verified source/House/Sphere receipt ancestry. They each reference the already computed 1,728-node Sphere study: **2,985,984 logical reuse references**, which, together with the original 248,832 evaluations, are **3,234,816 addressed positions**. This is NOT a further 2,985,984 independently executed experiments or model turns; it is a transparent reuse expansion with zero specialist approvals. Within these 1,728 follow-ups, exactly 1,008 concern domain Spheres and 720 concern epistemic-method Spheres, each tagged with appropriate non-equivalence rules.
+
 **Source-only build command:**
 
 ```bash
@@ -23,7 +25,8 @@ Only a byte-identical original Ariadne source passes. The build emits:
 - `sphere_node_248832.sqlite`: a complete ordered matrix of source-to-perspective assessments, lexical-overlap diagnostics, and risk dispositions.
 - `node_passes_1728.jsonl`: one source-linked local **analysis** receipt per original node, with role, original definition, falsifier, unreviewed cross-sphere suggestions, and explicit no-post/no-authorization status.
 - `sphere_reviews_144.json`: twelve exact home nodes per perspective, top *candidate* review links, epistemic/domain counts, falsification questions and exact-source receipts.
-- `house_followups_12.json`: twelve non-scalar House follow-ups, each covering 12 spheres and 144 home nodes, preserving rights, physical stock constraints, dissent and nonautomatic CANON.
+- `house_followups_12.json`: twelve non-scalar House summaries, each covering 12 spheres and 144 home nodes, preserving rights, physical stock constraints, dissent and nonautomatic CANON.
+- `house_sphere_followups_1728.jsonl`: **twelve House follow-up lenses for every Sphere**, with exact source and House/Sphere review receipt ancestry; no invented resident or review completion.
 - `iron_empire_opt_in_seeds_12.json`: **fictional**, opt-in-only creative seeds derived from the public/editorial House names—not from private Play/Palace experience and not scientific results.
 - `atlas_one_review_index.json` + offline `atlas_1728_observatory.html`: read-only browse and candidate review, no external network, no user accounts or data collection.
 - `manifest.json`: deterministic SHA-256 receipts and explicit remaining gates.
@@ -45,5 +48,5 @@ Only a byte-identical original Ariadne source passes. The build emits:
 ## Verified conformance (this owner-local build)
 
 - Independent Python `verify` checks all 248,832 SQLite rows and 1,728 node receipts (plus 144 sphere and 12 House receipts), the original source digest, typed role separation and explicit false-friend flags.
-- Python `unittest`: **9/9**; new Atlas ONE v2 Node tests **14/14** with exact original; combined previous Atlas ONE v2 local bundle **133/133**; 14 new Node tests also pass `--jitless`; offline Chromium checks all 12 House controls, 12 spheres per House, source-node search and detail selection with no JS errors or external requests. These are local proofs, NOT GitHub runner or host publisher proof.
+- Python `unittest`: **10/10**; new Atlas ONE v2 Node tests **14/14** with exact original; combined previous Atlas ONE v2 local bundle **136/136**; 17 new Node tests also pass `--jitless`; offline Chromium checks all 12 House controls, 12 spheres per House, 12 follow-up lenses per Sphere, source-node search and detail selection with no JS errors or external requests. These are local proofs, NOT GitHub runner or host publisher proof.
 - Public repository packages should **not** include original private `atlas.json`, generated private definitions or the complete private SQLite matrix. Share the code/tests/docs with a separate owner-private artifact for generated outputs. The old Ariadne registry and Iron Empire sources remain intact.
