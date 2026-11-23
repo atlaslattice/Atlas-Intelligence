@@ -1,0 +1,16 @@
+{
+ "schema":"atlas.one.release-gates/v2",
+ "candidateVersion":"2.0.0-candidate.1",
+ "sourceAndLocalTests":"LOCAL_EXECUTED_RECHECK_RECEIPT_REQUIRED",
+ "currentServedSiteHead":"UNVERIFIED",
+ "hostOwnedIssuer":"UNVERIFIED",
+ "twoAccountD1":"UNVERIFIED",
+ "workReadAndReturnRevoke":"UNVERIFIED",
+ "signedConversationCallback":"UNVERIFIED",
+ "actualOpenAIAgentsRun":"NOT_PERFORMED",
+ "externalLiveLiteratureFeed":"NOT_CONNECTED",
+ "independentScientificReview":"NOT_PERFORMED",
+ "canonAdoption":"UNCHANGED",
+ "productionDeployment":"NOT_PERFORMED",
+ "canPublish":false
+}
