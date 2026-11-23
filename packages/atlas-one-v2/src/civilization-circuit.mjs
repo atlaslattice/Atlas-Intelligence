@@ -18,6 +18,10 @@ const noAuthority={hostAuthenticated:false,semanticAccepted:false,canonEffect:'N
 function requireNames(obj,names,code){requireValid(valid(obj)&&names.every(n=>Object.hasOwn(obj,n)),code);}
 function hold(reason){return {schema:'atlas.civilization.readonly-result/v1',status:'HOLD',reason, data:null,...noAuthority};}
 function checkDigest(x){return typeof x==='string'&&SHA.test(x);}
+function snapshot(value){
+  try{return structuredClone(value);}
+  catch{throw new Hold('CIRCUIT_INPUT_NOT_SNAPSHOTABLE');}
+}
 
 export class CivilizationCircuit {
   #registry;#nodes;#spheres;#houses;#houseSphere;#manifest;
@@ -25,6 +29,9 @@ export class CivilizationCircuit {
     this.#registry=new AriadneRegistry(originalAriadneBytes);
     // The entire trusted hierarchy is read ONLY AFTER AriadneRegistry verified original bytes.
     const originalHierarchy=JSON.parse(Buffer.from(originalAriadneBytes).toString('utf8'));
+    // Validate a detached copy so later caller mutation cannot rewrite receipts.
+    ({manifest,nodeRecords,sphereReviews,houseFollowups,houseSphereFollowups}=snapshot(
+      {manifest,nodeRecords,sphereReviews,houseFollowups,houseSphereFollowups}));
     const validReceipt=x=>{if(!valid(x)||!checkDigest(x.receiptSHA256))return false;const clone={...x};delete clone.receiptSHA256;return digest(clone)===x.receiptSHA256;};
     requireNames(manifest,['schema','originalSourceSHA256','pairEvaluations','nodePassRecords','sphereReviewRecords','houseFollowups'],'CIRCUIT_MANIFEST_SHAPE');
     requireValid(manifest.schema===CIRCUIT_SCHEMA&&manifest.originalSourceSHA256===HSN_SHA256
@@ -128,7 +135,7 @@ export class CivilizationCircuit {
   node(nodeId,{mode}={}){
     if(!ownSource(mode))return hold('OWNER_SOURCE_ONLY_NO_LIVE_WORK_RIGHTS');
     if(!validCoord(nodeId)||!this.#nodes.has(nodeId))return hold('INVALID_HSN_OR_NOT_IN_SOURCE');
-    const n=this.#nodes.get(nodeId);
+    const n=snapshot(this.#nodes.get(nodeId));
     return {schema:'atlas.civilization.readonly-result/v1',status:'SOURCE_REVIEW_CARD_UNREVIEWED',data:{
       nodeId:n.nodeId,nodeName:n.nodeName,role:n.role,kind:n.nodeKind,houseId:n.houseId,
       sphereId:n.sphereId,sourceNodeSHA256:n.sourceNodeSHA256,
@@ -138,7 +145,7 @@ export class CivilizationCircuit {
   sphere(sphereId,{mode}={}){
     if(!ownSource(mode))return hold('OWNER_SOURCE_ONLY_NO_LIVE_WORK_RIGHTS');
     if(!SPHERE.test(sphereId)||!this.#spheres.has(sphereId))return hold('INVALID_SPHERE_OR_NOT_IN_SOURCE');
-    const s=this.#spheres.get(sphereId);
+    const s=snapshot(this.#spheres.get(sphereId));
     return {schema:'atlas.civilization.readonly-result/v1',status:'SPHERE_COMPUTED_REVIEW_NOT_ADJUDICATED',data:{
       sphereId,houseId:s.houseId,name:s.sphereName,homeNodes:s.homeNodes,
       shortlist:s.shortlist,reviewQuestion:s.reviewQuestion,falsifiers:s.falsifiers,
@@ -147,7 +154,7 @@ export class CivilizationCircuit {
   house(houseId,{mode}={}){
     if(!ownSource(mode))return hold('OWNER_SOURCE_ONLY_NO_LIVE_WORK_RIGHTS');
     if(!HOUSE.test(houseId)||!this.#houses.has(houseId))return hold('INVALID_HOUSE_OR_NOT_IN_SOURCE');
-    const h=this.#houses.get(houseId);
+    const h=snapshot(this.#houses.get(houseId));
     return {schema:'atlas.civilization.readonly-result/v1',status:'HOUSE_FOLLOWUP_SOURCE_ONLY',data:{
       houseId,name:h.houseName,spheres:h.sphereIds,reviewQuestion:h.followupQuestion,
       rightsConcern:h.rightsConcern,physicalStockConcern:h.physicalStockConcern,
@@ -157,7 +164,7 @@ export class CivilizationCircuit {
     if(!ownSource(mode))return hold('OWNER_SOURCE_ONLY_NO_LIVE_WORK_RIGHTS');
     const key=`${sphereId}::${houseId}`;
     if(!SPHERE.test(sphereId)||!HOUSE.test(houseId)||!this.#houseSphere.has(key))return hold('HOUSE_SPHERE_PAIR_NOT_IN_SOURCE');
-    const f=this.#houseSphere.get(key);
+    const f=snapshot(this.#houseSphere.get(key));
     return {schema:'atlas.civilization.readonly-result/v1',status:'HOUSE_SPHERE_FOLLOWUP_UNREVIEWED',data:{
       followupId:key,housePerspective:houseId,sphereUnderReview:sphereId,
       sphereRole:f.sphereRole,question:f.question,semanticGate:f.semanticGate,
