@@ -87,7 +87,8 @@ export class WorkFullBodySearchPort {
         const offset=foldASCII(row.body).indexOf(needle);
         if(offset!==-1)hits.push({roomId,seq:row.seq,reason:'DIRECT_FULL_BODY_SUBSTRING_MATCH',
           sourceBodySHA256:row.bodySHA256,matchOffsetUtf16:offset,
-          matchOffsetUtf8:utf8length(row.body.slice(0,offset))});
+          matchOffsetUtf8:utf8length(row.body.slice(0,offset)),
+          renderedDomOffset:null,rendererSourceMapRequired:true});
       }
       if(page.nextAfterSeq!==last)return hold('SOURCE_UNAVAILABLE');
     }catch{return hold('SOURCE_UNAVAILABLE');}
