@@ -260,12 +260,50 @@ def build(reg,output):
                   'canonEffect':'NONE','physicalScienceClaim':'NOT_VALIDATED'}
         creative['receiptSHA256']=digest(creative);fiction_seeds.append(creative)
 
+    # Second-stage civilizational lens: twelve distinct Houses review EVERY one
+    # of the 144 Sphere studies. This reuses the exact already-computed Sphere
+    # matrix; it is NOT 2,985,984 additional scientific computations or model turns.
+    house_sphere_records=[]
+    house_map={r['houseId']:r for r in house_records}
+    for sphere in sphere_records:
+        sid=sphere['sphereId']
+        for hid,h in sorted(houses.items()):
+            follow=house_map[hid]
+            home_lens=(hid==sphere['houseId'])
+            source_role='DOMAIN_SUBJECT' if sphere['roleCounts'].get('DOMAIN_SPECIALIZATION',0)==12 else 'EPISTEMIC_METHOD'
+            pair={
+                'schema':'atlas.one.house-sphere-followup/v1',
+                'followupId':f'{sid}::{hid}',
+                'housePerspective':hid,'housePerspectiveName':h['name'],
+                'sphereUnderReview':sid,'sphereName':sphere['sphereName'],
+                'sphereRole':source_role,'withinOriginHouse':home_lens,
+                'sourceSHA256':SOURCE_SHA,'sourceEdition':'Ariadne v0.7',
+                'sphereReviewSHA256':sphere['receiptSHA256'],
+                'houseReviewSHA256':follow['receiptSHA256'],
+                'homeNodeCount':12,'existingSphereEvidenceEvaluationsReferenced':1728,
+                'referenceReusedNotFreshComputation':True,
+                'houseLens':SAFE_LABELS[hid],
+                'question':f'From the independent {h["name"]} perspective: which primary source or affected-party objection would falsify a proposed connection to the {sphere["sphereName"]} Sphere?',
+                'semanticGate':'EPISTEMIC_METHOD_ONLY_NOT_SAME_AS' if source_role=='EPISTEMIC_METHOD' else 'DOMAIN_CANDIDATE_NOT_SAME_AS',
+                'counterexample':f'Reject any unqualified SAME_AS or policy/rights transfer from {sid} to {hid}; exact source and domain/method roles must remain distinct.',
+                'rightsGate':'CURRENT_HOST_READ_AND_RETURN_AND_AFFECTED_PARTY_CONSENT_REQUIRED',
+                'status':'COMPUTED_REVIEW_PROMPT_UNREVIEWED',
+                'humanReviewCount':0,'residentAuthenticated':False,'actualMacroturnCompleted':False,
+                'modelCallPerformed':False,'workPostPerformed':False,'canonEffect':'NONE',
+                'creativeEffect':'NONE',
+            }
+            pair['receiptSHA256']=digest(pair)
+            house_sphere_records.append(pair)
+    assert len(house_sphere_records)==1728
+
     def write_json(name,obj):
         (output/name).write_bytes(json.dumps(obj,ensure_ascii=False,sort_keys=True,indent=2,allow_nan=False).encode('utf8')+b'\n')
     with (output/'node_passes_1728.jsonl').open('w',encoding='utf8') as f:
         for r in node_records:f.write(jbytes(r).decode()+'\n')
     write_json('sphere_reviews_144.json',sphere_records)
     write_json('house_followups_12.json',house_records)
+    with (output/'house_sphere_followups_1728.jsonl').open('w',encoding='utf8') as f:
+        for r in house_sphere_records:f.write(jbytes(r).decode()+'\n')
     write_json('iron_empire_opt_in_seeds_12.json',fiction_seeds)
     # The index is deliberately smaller and easier to consume than the complete matrix.
     public_index={'schema':'atlas.civilization.readonly-index/v1','sourceEdition':'Ariadne v0.7',
@@ -290,7 +328,10 @@ def build(reg,output):
               'nonzeroLexicalSignalsUnreviewed':signals,'weakSignalRisks':weak_links,
               'epistemicMethodCrossPairsNoEquivalence':method_lens_pairs,
               'sphereReviewRecords':len(sphere_records),'houseFollowups':len(house_records),
-              'nodePassRecords':len(node_records),'fictionSeedsOptIn':len(fiction_seeds),
+              'nodePassRecords':len(node_records),'houseSphereFollowups':len(house_sphere_records),
+              'houseSphereReferencedPositionsNotFresh':len(house_sphere_records)*1728,
+              'totalLogicalPositionsIncludingReusedHouseReferences':count+len(house_sphere_records)*1728,
+              'fictionSeedsOptIn':len(fiction_seeds),
               'peerReviewsVerified':0,'genuineResidentMacroturns':0,'semanticallyAcceptedCrossLinks':0,
               'siteDeployments':0,'workPosts':0,'realWorldScientificValidations':0,
               'privateModeBodiesImported':0,'sourceIndexSHA256':public_index['indexSHA256'],
@@ -321,6 +362,7 @@ def verify(output):
     records=[json.loads(s) for s in (out/'node_passes_1728.jsonl').read_text().splitlines()]
     spheres=json.loads((out/'sphere_reviews_144.json').read_text())
     houses=json.loads((out/'house_followups_12.json').read_text())
+    pairs=[json.loads(x) for x in (out/'house_sphere_followups_1728.jsonl').read_text().splitlines()]
     if len(records)!=1728 or len(spheres)!=144 or len(houses)!=12:raise SourceHold('RECEIPT_COUNTS_INVALID')
     for seq,r in enumerate(records,1):
         if r['slot']!=seq or r['nodeId']!=f'H{(seq-1)//144+1:02d}.S{((seq-1)%144)//12+1:02d}.N{((seq-1)%12)+1:02d}' or r.get('reviewState')!='UNREVIEWED' or r.get('workPosted'):
@@ -331,11 +373,19 @@ def verify(output):
         if len(r['homeNodes'])!=12 or r['evaluatedNodes']!=1728 or r['externalEvaluated']!=1716:raise SourceHold('SPHERE_COVERAGE_INVALID')
         c=dict(r);h=c.pop('receiptSHA256')
         if digest(c)!=h:raise SourceHold('SPHERE_RECEIPT_INVALID')
+    if len(pairs)!=1728 or len({p['followupId'] for p in pairs})!=1728:raise SourceHold('HOUSE_SPHERE_FOLLOWUP_COVERAGE_INVALID')
+    paircounts=Counter(p['sphereUnderReview'] for p in pairs)
+    housecounts=Counter(p['housePerspective'] for p in pairs)
+    if set(paircounts.values())!={12} or set(housecounts.values())!={144}:raise SourceHold('HOUSE_SPHERE_LENS_CARDINALITY_INVALID')
+    for p in pairs:
+        x=dict(p);originalReceipt=x.pop('receiptSHA256')
+        if digest(x)!=originalReceipt or p['actualMacroturnCompleted'] or p['residentAuthenticated'] or p['workPostPerformed'] or p['canonEffect']!='NONE':
+            raise SourceHold('HOUSE_SPHERE_RECEIPT_OR_AUTHORITY_INVALID')
     for r in houses:
         if r['nodePasses']!=144 or r['sphereReviews']!=12:raise SourceHold('HOUSE_COUNTS_INVALID')
         c=dict(r);h=c.pop('receiptSHA256')
         if digest(c)!=h:raise SourceHold('HOUSE_RECEIPT_INVALID')
-    return {'verified':True,'schema':VERSION,'rows':count,'home':home,'cross':count-home,'houses':12,'spheres':144,'nodePasses':1728,'originalSourceSHA256':SOURCE_SHA,'release':'NOT_DEPLOYED','actualResidentMacroturns':0}
+    return {'verified':True,'schema':VERSION,'rows':count,'home':home,'cross':count-home,'houses':12,'spheres':144,'nodePasses':1728,'houseSphereFollowups':len(pairs),'logicalReferencedPositionsNotFresh':len(pairs)*1728,'originalSourceSHA256':SOURCE_SHA,'release':'NOT_DEPLOYED','actualResidentMacroturns':0}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('command',choices=['build','verify']);p.add_argument('--registry');p.add_argument('--out',required=True)
