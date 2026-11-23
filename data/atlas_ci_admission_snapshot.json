@@ -1,0 +1,60 @@
+{
+  "schema": "atlas.actions.admission-input/v1",
+  "recorded_date": "2026-11-23",
+  "runs": [
+    {
+      "repository": "atlaslattice/Atlas-Intelligence",
+      "run_id": 45240063934,
+      "workflow": ".github/workflows/atlas-runner-admission-smoke.yml",
+      "head_sha": "a37b2069d350d743c438bd62a68e690770d936fc",
+      "expected_head_sha": "a37b2069d350d743c438bd62a68e690770d936fc",
+      "jobs": [
+        {
+          "id": 137921988371,
+          "name": "public-ubuntu-no-secrets",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "steps": [],
+          "logs_verified": false
+        }
+      ]
+    },
+    {
+      "repository": "atlaslattice/atlas-lattice-providers",
+      "run_id": 45237255178,
+      "workflow": ".github/workflows/eight_gates_check.yml",
+      "head_sha": "785363eeb83c15e9254d6727f4615a4d9aee3497",
+      "expected_head_sha": "785363eeb83c15e9254d6727f4615a4d9aee3497",
+      "jobs": [
+        {
+          "id": 137912144365,
+          "name": "Eight Gates Candidate Safety Scan",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "steps": [],
+          "logs_verified": false
+        }
+      ]
+    },
+    {
+      "repository": "atlaslattice/noosphere-archive",
+      "run_id": 45211955478,
+      "workflow": ".github/workflows/swarmhub-contracts.yml",
+      "head_sha": "8b93495fe886a10787cd0a5ad5c2452c2c6c3bfe",
+      "expected_head_sha": "8b93495fe886a10787cd0a5ad5c2452c2c6c3bfe",
+      "jobs": [
+        {
+          "id": 137822841328,
+          "name": "offline-verify",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "steps": [],
+          "logs_verified": false
+        }
+      ]
+    }
+  ]
+}
