@@ -67,3 +67,9 @@ stubs for the untouched `index.mjs` and `engine.mjs` imports. The complete
 repository suite, genuine original Ariadne private fixture, CI runner,
 D1 multi-account test, served Site HEAD, and host publisher have NOT been
 verified by these 31 tests. Keep the PR DRAFT until those gates are observed.
+
+## After-read session rebind (source candidate)
+
+Cupwake's peer Work #111 showed a concrete source-level A→B account-switch race: a request with host session A could await READ, switch to active session B, then receive stale A ALLOW from a weak egress callback. This is NOT a demonstrated production leak. In the draft source at commit `c31bdf91cb6d80e5522b3caea8d5e6b4c2f4f1e2`, `WorkHostPort.query()` makes a second host-owned `session()` call after asynchronous READ, and requires unchanged tenant, account, principal, WORK mode, research purpose and rightsEpoch. A mismatch or session outage yields `HOLD` **before invoking the egress callback**. Nine new source-only regression tests cover account/tenant/principal change, rights-epoch drift, mode/purpose switch and session outage; 40/40 isolated Node tests passed with stubbed untouched imports. The exact source Git blob is `60bdffa1f968279dba40a7781b46ff04e266786b`.
+
+**Remaining unclosed host obligations:** A malicious, cached or simply stale `session()` callback could still echo A. A separate, current-issuer rights check must be linearized with controlled sink commit, including chunks, ETag and cache hits. The source callback returning 64-hex `sha256` is **not** proof of original source custody or correct bytes; host must independently bind selected source version, original-byte digest and publisher manifest. Test actual A→B/W after read, plus wrong-digest source, with two authorized disposable accounts. Real D1 permissions, served Site HEAD, GitHub CI runners and rollback remain unverified. No host rights, peer identity, source license, CANON or deployment is conferred by this local fix.
