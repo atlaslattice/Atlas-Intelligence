@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-import {AriadneRegistry,prepareResearch,Hold} from '../src/index.mjs';
+import {AriadneRegistry,prepareResearch,parseStrictJson,Hold} from '../src/index.mjs';
 import {createMcpRouter} from '../src/mcp.mjs';import {runOpenAIReview} from '../src/openai.mjs';
 const src=process.env.ATLAS_ARIADNE_ORIGINAL_FILE;const registry=src?new AriadneRegistry(readFileSync(src)):null;
 const cases=JSON.parse(readFileSync(new URL('../examples/four-source-candidates.json',import.meta.url),'utf8'));
@@ -24,3 +24,6 @@ test('model call bounded, tracing off; no SDK/network in test',{skip:!registry},
  assert.equal(result.status,'MODEL_REVIEW_UNVERIFIED');assert.equal(result.expertValidated,false);assert.equal(events[1].opts.tracingDisabled,true);assert.equal(events[1].opts.maxTurns,3);
 });
 test('model rejects runaway turns',{skip:!registry},async()=>await assert.rejects(()=>runOpenAIReview({packet:prepareResearch(cases[0],registry),enableModel:true,apiKeyPresent:true,maxTurns:999,sdk:{Agent:class{},run:async()=>({})}}),e=>e.code==='MODEL_TURN_BUDGET_INVALID'));
+
+test('local MCP ingress rejects duplicate request authority keys',()=>assert.throws(()=>parseStrictJson('{"jsonrpc":"2.0","method":"tools/call","method":"hidden"}'),e=>e.code==='DUPLICATE_OR_UNICODE_ALIAS_KEY'));
+test('local MCP ingress rejects nonfinite grant epochs',()=>assert.throws(()=>parseStrictJson('{"epoch":1e400}'),e=>e.code==='NONFINITE_NUMBER'));
