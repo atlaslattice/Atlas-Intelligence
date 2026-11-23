@@ -4,6 +4,7 @@
  */
 import {openSync,closeSync,readFileSync,writeFileSync,renameSync,mkdirSync,existsSync,fsyncSync,unlinkSync} from 'node:fs';
 import {dirname,resolve} from 'node:path';
+import {randomUUID} from 'node:crypto';
 import {digest,canonical,Hold,requireValid,isObject} from './index.mjs';
 const SHA=/^[a-f0-9]{64}$/;
 const ID=/^[A-Za-z][A-Za-z0-9._:-]{2,79}$/;
@@ -37,7 +38,10 @@ export class AtomicJournal {
     }
     return db;
   }
-  #atomicWrite(db){const tmp=this.file+'.tmp.'+process.pid;const fd=openSync(tmp,'wx',0o600);
+  // A process may crash after creating a temp file; a recycled PID must not
+  // make every subsequent write fail permanently. Always allocate a fresh
+  // unpredictable temp name, and never delete or trust abandoned files.
+  #atomicWrite(db){const tmp=this.file+'.tmp.'+process.pid+'.'+randomUUID();const fd=openSync(tmp,'wx',0o600);
     try{writeFileSync(fd,canonical(db)+'\n','utf8');fsyncSync(fd);}finally{closeSync(fd);}
     renameSync(tmp,this.file);const dd=openSync(dirname(this.file),'r');try{fsyncSync(dd);}finally{closeSync(dd);}
   }
