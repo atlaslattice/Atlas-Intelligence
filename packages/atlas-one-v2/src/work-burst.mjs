@@ -28,7 +28,7 @@ function normalizedTask(t){
       ||!ID.test(t.id||'')||!OP.test(t.operator||'')||t.mode!=='WORK'||t.noHarvest===true
       ||t.noHarvest!==undefined&&t.noHarvest!==false
       ||t.input!==undefined&&!plain(t.input)
-      ||t.resourceKey!==undefined&&(!RESOURCE.test(t.resourceKey)||typeof t.resourceKey!=='string')
+      ||t.resourceKey!==undefined&&(typeof t.resourceKey!=='string'||!RESOURCE.test(t.resourceKey))
       ||!refs(t.evidenceRefs??[])||!refs(t.dissentRefs??[]))throw new TypeError('TASK_SHAPE_OR_MODE');
   const dependsOn=t.dependsOn??[];
   if(!Array.isArray(dependsOn)||dependsOn.length>MAX_ITEMS
@@ -53,7 +53,7 @@ export function prepareLocalWorkBurst({tasks,maxParallel=4}={}){
     if(ids.size!==normalized.length)return deny('DUPLICATE_TASK_ID');
     if(normalized.some(t=>t.dependsOn.some(d=>!ids.has(d)||d===t.id)))return deny('UNKNOWN_OR_SELF_DEPENDENCY');
     const todo=new Map(normalized.map(t=>[t.id,t])),seen=new Set();
-    for(let i=0;i<normalized.length;i++){
+    while(todo.size){
       const ready=[...todo.values()].filter(t=>t.dependsOn.every(d=>seen.has(d)));
       if(!ready.length)return deny('DEPENDENCY_CYCLE');
       for(const t of ready){seen.add(t.id);todo.delete(t.id);}
