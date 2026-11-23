@@ -15,7 +15,8 @@
     "./work-burst": "./src/work-burst.mjs",
     "./cascade-evolution": "./src/cascade-evolution.mjs",
     "./symbiosis": "./generated/generated-node-routes.mjs",
-    "./r07-workburst": "./src/r07-workburst-bridge.mjs"
+    "./r07-workburst": "./src/r07-workburst-bridge.mjs",
+    "./telescope": "./src/telescope/core.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
