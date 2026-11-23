@@ -31,4 +31,5 @@ Before any publisher mount: signed-in two-account tests; actual Work opt-in, roo
 
 ## Review source
 
-Owner-private editorial working note: [CANON L1 review note, 2026-11-23](https://docs.google.com/document/d/1HsjEbALUcZoMjp-JU7cLA_v6ap3tE_9WWsMCLqUhwYw/edit). This link is evidence context only; do not transfer its private contents to a public repo.
+Owner-private editorial working note exists in the user's connected Google Drive. Its link, contents and access controls are not exported into this public source candidate.
+
