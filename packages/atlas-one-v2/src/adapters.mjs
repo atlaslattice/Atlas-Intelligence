@@ -13,6 +13,21 @@ function hold(code){return {schema:'atlas.one.host-port/v2',status:'HOLD',reason
  * source level, even a returned ALLOW is not independent evidence of real IAM.
  * A model/request must not provide tenant, account, principal or issuer epoch.
  */
+// Source-only trust boundary: accepted host records must be plain, own data.
+// Accessor values could change after authorization/source checks and before
+// returned references are constructed. This does not attest the real host.
+function ownHostData(value,fields){
+  if(!isObject(value))return null;
+  const fixed=Object.create(null);
+  try{for(const key of fields){const descriptor=Object.getOwnPropertyDescriptor(value,key);
+    if(!descriptor||!Object.hasOwn(descriptor,'value'))return null;
+    fixed[key]=descriptor.value;}}
+  catch{return null;}
+  return Object.freeze(fixed);
+}
+const SESSION_FIELDS=['tenant','account','principal','mode','purpose','rightsEpoch'];
+const PERMIT_FIELDS=['tenant','account','principal','allow','leaseId','epoch'];
+const ROW_FIELDS=['tenant','account','roomId','seq','sha256'];
 export class WorkHostPort {
   #session;#admission;#read;#egress;
   constructor({session,admission,read,egress}={}){
@@ -31,16 +46,18 @@ export class WorkHostPort {
     const abandoned=()=>signal?.aborted===true;
     if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!isObject(request)||Object.keys(request).some(k=>!['roomId','sourceSeqs','purpose'].includes(k)))return hold('WORK_UNAVAILABLE');
-    const {roomId,sourceSeqs,purpose='research'}=request;
-    if(typeof roomId!=='string'||!ID.test(roomId)||purpose!=='research'||!Array.isArray(sourceSeqs)||sourceSeqs.length<1||sourceSeqs.length>6||sourceSeqs.some(s=>!Number.isInteger(s)||s<1||s>500)||new Set(sourceSeqs).size!==sourceSeqs.length)return hold('WORK_UNAVAILABLE');
+    const {roomId,sourceSeqs:rawSeqs,purpose='research'}=request;
+    // Capture a caller-supplied array only once; avoid validation/use drift.
+    let sourceSeqs;try{sourceSeqs=Array.isArray(rawSeqs)?[...rawSeqs]:null;}catch{return hold('WORK_UNAVAILABLE');}
+    if(typeof roomId!=='string'||!ID.test(roomId)||purpose!=='research'||!sourceSeqs||sourceSeqs.length<1||sourceSeqs.length>6||sourceSeqs.some(s=>!Number.isInteger(s)||s<1||s>500)||new Set(sourceSeqs).size!==sourceSeqs.length)return hold('WORK_UNAVAILABLE');
     let identity;
-    try{identity=await this.#session();}catch{return hold('WORK_UNAVAILABLE');}
+    try{identity=ownHostData(await this.#session(),SESSION_FIELDS);}catch{return hold('WORK_UNAVAILABLE');}
     if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!isObject(identity)||!['tenant','account','principal'].every(k=>typeof identity[k]==='string'&&ID.test(identity[k]))||identity.mode!=='WORK'||identity.purpose!=='research'||!Number.isSafeInteger(identity.rightsEpoch)||identity.rightsEpoch<0)return hold('WORK_UNAVAILABLE');
-    const scope=Object.freeze({tenant:identity.tenant,account:identity.account,principal:identity.principal,roomId,sourceSeqs:Object.freeze([...sourceSeqs]),mode:'WORK',purpose,rightsEpoch:identity.rightsEpoch});
+    const scope=Object.freeze({tenant:identity.tenant,account:identity.account,principal:identity.principal,roomId,sourceSeqs:Object.freeze(sourceSeqs),mode:'WORK',purpose,rightsEpoch:identity.rightsEpoch});
     const bound=r=>isObject(r)&&r.tenant===scope.tenant&&r.account===scope.account&&r.principal===scope.principal;
     let permit,rows,current;
-    try{permit=await this.#admission(scope);}catch{return hold('WORK_UNAVAILABLE');}
+    try{permit=ownHostData(await this.#admission(scope),PERMIT_FIELDS);}catch{return hold('WORK_UNAVAILABLE');}
     if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!bound(permit)||permit.allow!==true||typeof permit.leaseId!=='string'||!ID.test(permit.leaseId)||permit.epoch!==scope.rightsEpoch)return hold('WORK_UNAVAILABLE');
     // Snapshot the grant before read: a callback cannot change the scope or
@@ -52,17 +69,17 @@ export class WorkHostPort {
     // after the asynchronous READ. The host-owned egress callback must still
     // atomically fence its actual sink commit; this does NOT attest live IAM.
     let fresh;
-    try{fresh=await this.#session();}catch{return hold('WORK_UNAVAILABLE');}
+    try{fresh=ownHostData(await this.#session(),SESSION_FIELDS);}catch{return hold('WORK_UNAVAILABLE');}
     if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!bound(fresh)||fresh.mode!=='WORK'||fresh.purpose!==purpose||fresh.rightsEpoch!==scope.rightsEpoch)return hold('WORK_UNAVAILABLE');
     if(!Array.isArray(rows)||rows.length!==scope.sourceSeqs.length)return hold('WORK_UNAVAILABLE');
     const refs=[];
-    for(const row of rows){if(!isObject(row)||row.tenant!==scope.tenant||row.account!==scope.account||row.roomId!==roomId||!scope.sourceSeqs.includes(row.seq)||typeof row.sha256!=='string'||!SHA.test(row.sha256))return hold('WORK_UNAVAILABLE');
+    for(const rawRow of rows){const row=ownHostData(rawRow,ROW_FIELDS);if(!row||row.tenant!==scope.tenant||row.account!==scope.account||row.roomId!==roomId||!scope.sourceSeqs.includes(row.seq)||typeof row.sha256!=='string'||!SHA.test(row.sha256))return hold('WORK_UNAVAILABLE');
       // Deliberately discard full body, identity claims, source metadata, and input URLs.
       refs.push({roomId:row.roomId,seq:row.seq,sourceSHA256:row.sha256});}
     if(new Set(refs.map(r=>r.seq)).size!==scope.sourceSeqs.length)return hold('WORK_UNAVAILABLE');
     if(abandoned())return hold('WORK_UNAVAILABLE');
-    try{current=await this.#egress(scope,admitted);}catch{return hold('WORK_UNAVAILABLE');}
+    try{current=ownHostData(await this.#egress(scope,admitted),PERMIT_FIELDS);}catch{return hold('WORK_UNAVAILABLE');}
     // Already-started host side effects are not undone by this observation.
     if(abandoned())return hold('WORK_UNAVAILABLE');
     if(!bound(current)||current.allow!==true||current.leaseId!==admitted.leaseId||current.epoch!==admitted.epoch)return hold('WORK_UNAVAILABLE');
