@@ -1,0 +1,13 @@
+/inputs/
+/design/
+/runtime*/
+/output/
+/evidence/
+/deliverables/
+/compiled/
+/peer-inputs/*.json
+/integrations/native_projection_inputs.json
+/integrations/reference/
+__pycache__/
+*.pyc
+*.sqlite*
