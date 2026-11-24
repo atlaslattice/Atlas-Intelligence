@@ -7,3 +7,5 @@ The private synthetic sweep depends on the previously authorized, source-derived
 Prior work was read from the user's `atlaslattice/Atlas-Intelligence` source-controlled project (MIT with an additional attribution principle) and the existing private Atlas integration materials; GitHub staging must preserve repository licensing and attribution. This sidecar does not provide source-specific licenses for other research providers.
 
 No claim of worldwide novelty, inventor priority, actual community consent, current host authority, source-rights clearance, empirical accuracy, patented discovery, or native OpenAI endorsement. A synthetic HOLD is not a production data-loss security certification. Never export private Play/Imagine/Dream/Social/Quiet/Brain/Palace/Habitat material into Work.
+
+Source-dto hardening rejects ordinary getter/accessor trick inputs but cannot authenticate a publisher or defend against all adversarial JavaScript Proxy behavior. Work sources must be parsed and rights-checked in a trusted host before calling any lab.
