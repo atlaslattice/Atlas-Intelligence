@@ -56,8 +56,9 @@ export function prepareWorkSubscription({room,join,consent,hostSession,nowMs}={}
   const end=Date.parse(room.expiresAt);
   if(!Number.isFinite(end)||!whole(nowMs,0,Number.MAX_SAFE_INTEGER)||nowMs>=end)return deny('ROOM_EXPIRED');
   if(!plain(hostSession)||!['tenant','account','principal'].every(k=>typeof hostSession[k]==='string'&&ID.test(hostSession[k]))||hostSession.mode!=='WORK'||!whole(hostSession.rightsEpoch,0,Number.MAX_SAFE_INTEGER))return deny('TRUSTED_HOST_SESSION_REQUIRED');
-  if(!plain(join)||join.roomId!==room.roomId||join.account!==hostSession.account||join.principal!==hostSession.principal||join.rightsEpoch!==hostSession.rightsEpoch||join.authenticatedByHost!==true)return deny('HOST_JOIN_REQUIRED');
-  if(!plain(consent)||consent.optIn!==true||consent.roomId!==room.roomId||consent.purpose!=='WORK_EVENT'||consent.principal!==hostSession.principal||typeof consent.termsDigest!=='string'||!hex(consent.termsDigest))return deny('EXPLICIT_ROOM_EVENT_CONSENT_REQUIRED');
+  if(room.tenant!==hostSession.tenant||room.account!==hostSession.account)return deny('WORK_ROOM_SCOPE_MISMATCH');
+  if(!plain(join)||join.roomId!==room.roomId||join.tenant!==hostSession.tenant||join.account!==hostSession.account||join.principal!==hostSession.principal||join.rightsEpoch!==hostSession.rightsEpoch||join.authenticatedByHost!==true)return deny('HOST_JOIN_REQUIRED');
+  if(!plain(consent)||consent.optIn!==true||consent.roomId!==room.roomId||consent.tenant!==hostSession.tenant||consent.account!==hostSession.account||consent.rightsEpoch!==hostSession.rightsEpoch||consent.purpose!=='WORK_EVENT'||consent.principal!==hostSession.principal||typeof consent.termsDigest!=='string'||!hex(consent.termsDigest))return deny('EXPLICIT_ROOM_EVENT_CONSENT_REQUIRED');
   return Object.freeze({schema:'atlas.one.subscription-intent/v1',status:SOURCE_STATES.DRAFT,
     scope:Object.freeze({tenant:hostSession.tenant,account:hostSession.account,principal:hostSession.principal,
       roomId:room.roomId,mode:'WORK',purpose:'WORK_EVENT',rightsEpoch:hostSession.rightsEpoch,
