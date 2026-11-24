@@ -1,0 +1,13 @@
+flowchart TD
+  A[Existing MICA BGE-small neural candidate producer] --> B[Ranked neural-direct candidates]
+  B --> C[Exact source, edition and vector identity preflight]
+  C --> D[Independent source-family and contradiction review]
+  D --> E[Current rights / correction recheck at READ]
+  E --> F[Bounded META145 evidence triage policy]
+  F --> G[Existing trusted host final-return transaction]
+  G --> H{Rights, revision and source span still current?}
+  H -- YES --> I[Eligible source-linked answer references]
+  H -- NO --> J[Abstain / HOLD without protected output]
+  K[Original Ariadne 1728 IDs] -. navigation only .-> C
+  L[Glyph / GF7 / GF8] -. reversible display only .-> I
+  M[Training review ledger] -. explicit rights, split and human labels only .-> F
