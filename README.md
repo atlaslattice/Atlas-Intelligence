@@ -47,3 +47,8 @@ Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. Th
 - `data`: Object
 - `createdAt`: Number
 - `updatedAt`: Number
+
+## Current HyperMatrix project canon
+
+The owner-approved [Atlas Unified HyperMatrix decision](docs/canon/ATLAS_UNIFIED_HYPERMATRIX_20261123.md) establishes independent coordinate systems with typed, source-qualified crosswalks and revisable functional deity profiles. The existing agent allocation cap is distinct from knowledge-matrix cardinality. [Debate mappings and indexing improvements](https://github.com/atlaslattice/Atlas-Intelligence/issues/40). Canon adoption does not establish hosted deployment or scientific validation.
+

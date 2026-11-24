@@ -1,3 +1,5 @@
+> **Architecture amendment — 23 November 2026:** [Decision ATLAS-UHM-CANON-20261123-001](canon/ATLAS_UNIFIED_HYPERMATRIX_20261123.md) supersedes the coordinate-normalization policy in this historical document. The current architecture preserves independent, source-qualified matrices connected by typed crosswalks; it does not force all knowledge onto 12×12+1. Legacy agent-cap and LCP implementation descriptions below are retained for provenance, not reverified as deployment evidence by this amendment. [Amendments and debate](https://github.com/atlaslattice/Atlas-Intelligence/issues/40).
+
 # Unified Architecture & Integration Plan
 **Scope:** Integration of `aluminum-os`, `aluminum-os-v3`, `sheldongemini-GPI`, `sheldonbrain-rag-api`, and `noosphere-defense` into Element 145 / ATLAS.
 
