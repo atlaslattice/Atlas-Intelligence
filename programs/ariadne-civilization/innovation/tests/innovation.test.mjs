@@ -70,3 +70,9 @@ test('meta145 accepts 1728 distinct synthetic source coordinates without grantin
 test('meta145 duplicate coordinate cannot earn extra credit',()=>{
  const a=Array(1728).fill(composeInnovationCircuit(H));assert.equal(meta145InnovationRollup(a).state,'HOLD');
 });
+
+test('META145 detects modified per-node synthetic receipt',()=>{
+ const all=[];for(let h=1;h<=12;h++)for(let s=1;s<=12;s++)for(let n=1;n<=12;n++)all.push(composeInnovationCircuit(`H${String(h).padStart(2,'0')}.S${String(s).padStart(2,'0')}.N${String(n).padStart(2,'0')}`));
+ all[0]={...all[0],unresolvedEvidenceNeeds:0};
+ const verdict=meta145InnovationRollup(all);assert.equal(verdict.state,'HOLD');assert.equal(verdict.reason,'SYNTHETIC_RECEIPT_TAMPERED');
+});
