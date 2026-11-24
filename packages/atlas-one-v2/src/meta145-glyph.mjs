@@ -118,3 +118,22 @@ export class Meta145GlyphCircuit {
     canPost:false,sourceTextsReturned:false,contentIngested:false,rightsVerified:false,
     hostAuthenticated:false,privateModeIngested:false,canonEffect:'NONE'};}
 }
+
+/** Public-safe, reversible DISPLAY-only coordinate helpers. They have no
+ * original-source permission, acoustic semantics, graph ingress or issuer role.
+ */
+export function meta145EncodeDisplayAliases(coordinate){
+ const m=typeof coordinate==='string'?COORD.exec(coordinate):null;require_(m,'INVALID_CANONICAL_HSN');
+ const [h,s,n]=m.slice(1).map(Number);
+ return Object.freeze({coordinate,sourceSHA256:SOURCE_SHA,
+   glyphQ:glyph(h,s,n,'Q'),glyphS:glyph(h,s,n,'S'),gf7VisualPosition:plate(h,s,n),
+   bridgeType:'POSITIONAL_VISUAL_INDEX_ONLY',semanticEquivalence:false,
+   physicalCoupling:false,authorityEffect:'NONE'});
+}
+export function meta145DecodeDisplayAlias(alias){
+ const x=handleAlias(alias);
+ return Object.freeze({coordinate:x.coord,namespace:x.namespace,
+   bridgeType:x.namespace==='GF7_VISUAL_ONLY'?'POSITIONAL_VISUAL_INDEX_ONLY':'HSN_GLYPH_ALIAS_ONLY',
+   originalRegistryBytesChecked:false,sourceSHA256:SOURCE_SHA,
+   permissionGranted:false,semanticEquivalence:false,physicalCoupling:false,authorityEffect:'NONE'});
+}
