@@ -1,0 +1,35 @@
+name: Atlas civilization 12x144x1728 source-free conformance
+on:
+  pull_request:
+    paths:
+      - 'packages/atlas-one-v2/src/civilization-*.mjs'
+      - 'packages/atlas-one-v2/test/civilization-unified.test.mjs'
+      - '.github/workflows/atlas-civilization-unified.yml'
+  push:
+    branches:
+      - 'feature/atlas-civilization-functional-12x144x1728-20261123'
+permissions:
+  contents: read
+jobs:
+  portable-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check all changed JS syntax
+        run: |
+          node --check packages/atlas-one-v2/src/civilization-unified.mjs
+          node --check packages/atlas-one-v2/src/civilization-host-bridge.mjs
+      - name: Public-only functional conformance (private original skipped)
+        working-directory: packages/atlas-one-v2
+        run: node --test test/civilization-unified.test.mjs
+      - name: JIT-disabled public constraints
+        working-directory: packages/atlas-one-v2
+        run: node --jitless --test test/civilization-unified.test.mjs
+      - name: Verify GitHub checkout remains untouched
+        run: git diff --exit-code
+      - name: Reminder that private source and hosted IAM are separate
+        run: echo "Local source-only checks are not live SwarmChat acceptance. Private Ariadne source is excluded."
