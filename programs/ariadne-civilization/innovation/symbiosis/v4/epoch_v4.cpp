@@ -30,11 +30,12 @@ struct Record{uint16_t node,repeat,score[P],minStock[P];uint8_t selected,feasibl
 static_assert(sizeof(Record)==26,"v4 wire 26-byte receipt");
 struct Totals{uint64_t n=0,selected[5]={0,0,0,0,0},feasible[4]={0,0,0,0},sourceHolds=0,subjectHolds=0,stressCases=0,budgetViolation=0;double conditionalScore[4]={0,0,0,0};};
 static string summary(const Totals&c){ostringstream o;o<<setprecision(13)<<"{\"scenarios\":"<<c.n<<",\"wins\":["<<c.selected[0]<<","<<c.selected[1]<<","<<c.selected[2]<<","<<c.selected[3]<<","<<c.selected[4]<<"],\"feasible\":["<<c.feasible[0]<<","<<c.feasible[1]<<","<<c.feasible[2]<<","<<c.feasible[3]<<"],\"sourceHolds\":"<<c.sourceHolds<<",\"subjectHolds\":"<<c.subjectHolds<<",\"stressCases\":"<<c.stressCases<<",\"budgetViolation\":"<<c.budgetViolation<<",\"validScoreSum\":["<<c.conditionalScore[0]<<","<<c.conditionalScore[1]<<","<<c.conditionalScore[2]<<","<<c.conditionalScore[3]<<"]}";return o.str();}
-static bool simulate(const Node&node,int rep,array<Strategy,P>&a,bool&src,bool&bound,bool&stress){
- uint64_t x=node.seed^SALT^(uint64_t(rep+1729)*0x94d049bb133111ebULL);
+static bool simulate(const Node&node,int rep,array<Strategy,P>&a,bool&src,bool&bound,bool&stress,int wave){
+ const uint64_t seedSalt=(wave==0?SALT:(SALT^0xd73ca422fa915105ULL));
+ uint64_t x=node.seed^seedSalt^(uint64_t(rep+1729)*0x94d049bb133111ebULL);
  double align=rnd(x),cross=rnd(x),difficulty=rnd(x),water0=rnd(x),energy0=rnd(x),method=rnd(x),innovation=double(node.changed)/420.0;
  // A common epoch disturbance links House-level outcomes; not an empirical dependence model.
- uint64_t common=SALT^uint64_t(rep+1729)*0x632be59bd9b4e019ULL^uint64_t(node.h)*0x9e3779b97f4a7c15ULL;
+ uint64_t common=seedSalt^uint64_t(rep+1729)*0x632be59bd9b4e019ULL^uint64_t(node.h)*0x9e3779b97f4a7c15ULL;
  stress=(mix(common)%100)<37;
  src=(mix(x)%103)!=0;bound=!node.meta || (mix(x)%23)!=0;
  const double waterFloor=stress?0.22:0.16, energyFloor=stress?0.23:0.17;
@@ -64,8 +65,8 @@ static bool simulate(const Node&node,int rep,array<Strategy,P>&a,bool&src,bool&b
  return src&&bound;
 }
 int main(int argc,char**argv){
- if(argc!=6){cerr<<"usage epoch_v4 SEEDS HOUSE REPEATS OUTPUT.bin OUTPUT.json\n";return 2;}
- int house=atoi(argv[2]),reps=atoi(argv[3]);if(house<1||house>12||reps<1||reps>1728){cerr<<"BAD_SCOPE\n";return 3;}
+ if(argc!=6 && argc!=7){cerr<<"usage epoch_v4 SEEDS HOUSE REPEATS OUTPUT.bin OUTPUT.json [WAVE=0|1]\n";return 2;}
+ int house=atoi(argv[2]),reps=atoi(argv[3]),wave=(argc==7?atoi(argv[6]):0);if(wave<0||wave>1||house<1||house>12||reps<1||reps>1728){cerr<<"BAD_SCOPE\n";return 3;}
  ifstream in(argv[1]);if(!in){cerr<<"SOURCE_UNAVAILABLE\n";return 4;}
  vector<Node> nodes;Node n{};vector<int> seen(N,0);
  while(in>>n.id>>n.h>>n.s>>n.meta>>n.changed>>n.seed){
@@ -77,8 +78,8 @@ int main(int argc,char**argv){
  Totals totals;int houseNodes=0;
  for(const auto&node:nodes){if(node.h!=house)continue;++houseNodes;
   for(int rep=0;rep<reps;rep++){
-   array<Strategy,P> a{};bool src=false,bound=false,stress=false;simulate(node,rep,a,src,bound,stress);
-   Record row{};row.node=uint16_t(node.id);row.repeat=uint16_t(rep);row.selected=4;row.flags=(src?1:0)|(bound?2:0)|(stress?4:0);row.magic=0xA146;
+   array<Strategy,P> a{};bool src=false,bound=false,stress=false;simulate(node,rep,a,src,bound,stress,wave);
+   Record row{};row.node=uint16_t(node.id);row.repeat=uint16_t(rep);row.selected=4;row.flags=(src?1:0)|(bound?2:0)|(stress?4:0);row.magic=uint16_t(0xA146+wave);
    int best=4;double reward=-1;
    for(int i=0;i<P;i++){
     row.score[i]=quant(a[i].score);row.minStock[i]=quant(min(a[i].minWater,a[i].minEnergy));
@@ -93,6 +94,6 @@ int main(int argc,char**argv){
  }
  fclose(out);if(houseNodes!=144||totals.n!=uint64_t(144)*reps){cerr<<"CARDINALITY\n";return 9;}
  ofstream report(argv[5]);if(!report){cerr<<"JSON_WRITE_FAILED\n";return 10;}
- report<<"{\n\"schema\":\"atlas.ariadne.v4.synthetic-epochs/v1\",\n\"status\":\"SYNTHETIC_SIMULATION_ONLY_NOT_HOSTED\",\n\"house\":"<<house<<",\"nodes\":144,\"repeatsPerNode\":"<<reps<<",\"fictionalYearsPerScenario\":1728,\"modeledEpochsPerScenario\":36,\"yearsPerEpoch\":48,\"originalRegistryRehashed\":false,\"modelCalls\":0,\"genuineMacroturns\":0,\"scientificEdgesAccepted\":0,\"hostRightsVerified\":false,\"effects\":0,\"authorityEffect\":\"NONE\",\"summary\":"<<summary(totals)<<"}\n";
+ report<<"{\n\"schema\":\"atlas.ariadne.v4.synthetic-epochs/v1\",\n\"status\":\"SYNTHETIC_SIMULATION_ONLY_NOT_HOSTED\",\n\"house\":"<<house<<",\"wave\":"<<wave<<",\"nodes\":144,\"repeatsPerNode\":"<<reps<<",\"fictionalYearsPerScenario\":1728,\"modeledEpochsPerScenario\":36,\"yearsPerEpoch\":48,\"originalRegistryRehashed\":false,\"modelCalls\":0,\"genuineMacroturns\":0,\"scientificEdgesAccepted\":0,\"hostRightsVerified\":false,\"effects\":0,\"authorityEffect\":\"NONE\",\"summary\":"<<summary(totals)<<"}\n";
  cout<<"H"<<house<<" cases="<<totals.n<<" no_viable="<<totals.selected[4]<<" meta_robust="<<totals.selected[3]<<"\n";
 }
