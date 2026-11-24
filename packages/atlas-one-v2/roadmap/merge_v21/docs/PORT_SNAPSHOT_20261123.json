@@ -1,0 +1,82 @@
+{
+  "schema": "atlas.merge-port-observed-snapshot/v1",
+  "asOf": "2026-11-23 (HST); exact active GitHub read in current merge-test turn",
+  "sourceOfTruth": "connected GitHub, connected Atlas ONE role/queue, connected SwarmChat graph preview; read-only snapshots, no host authorization",
+  "ports": {
+    "atlas_one": {
+      "repo": "atlaslattice/Atlas-Intelligence",
+      "pr": 42,
+      "head": "fc74dd5a6c744bed4a7b454762936f93ca45bb8f",
+      "nativeSourceBlob": "36b9afa15f5ad0298528c62c70da523924eebe92",
+      "openDraft": true,
+      "mergeableWithPRBase": true,
+      "ci": [
+        {
+          "workflow": "Atlas civilization 12x144x1728 source-free conformance",
+          "status": "FAILURE_NO_STEPS"
+        },
+        {
+          "workflow": "Atlas ONE v2 isolated source conformance",
+          "status": "FAILURE_NO_STEPS"
+        }
+      ],
+      "staticHouseContractsPassed": 12
+    },
+    "atlasgpt": {
+      "readOnlyHsnDomainMatches": 12,
+      "readOnlyHsnEpistemicMatches": 12,
+      "hostedResearchBridgeVerified": false
+    },
+    "noosphere": {
+      "repo": "atlaslattice/noosphere-archive",
+      "pr": 44,
+      "head": "c5a9a82995bf5a4f48f76ef1807d2ff61bc5126c",
+      "openDraft": true,
+      "mergeableWithPRBase": true,
+      "ci": "NO_RUN_RETURNED"
+    },
+    "swarmchat_providers": {
+      "repo": "atlaslattice/atlas-lattice-providers",
+      "pr": 67,
+      "head": "6eb67fffd8eb42ada3cb2a94ab3169d7010302e5",
+      "openDraft": true,
+      "mergeableWithMain": false,
+      "ci": "FAILURE_NO_STEPS",
+      "readOnlyGraphPreviewPassed": 5,
+      "signedInTwoAccountRights": false
+    },
+    "librarian_d1": {
+      "plannedExcellenceSteps": 1728,
+      "implementedExcellenceSteps": 0,
+      "verifiedExcellenceSteps": 0,
+      "integratedExcellenceSteps": 0,
+      "completedPublicMetadataAcquisitions": 2,
+      "queuedSourceTasksObserved": 1,
+      "modelCallsObserved": 0,
+      "providerConfigured": false
+    },
+    "alexandria": {
+      "originalPrivateSourceSHA256VerifiedLocally": true,
+      "liveACLChecked": false
+    },
+    "iron_empire": {
+      "repo": "atlaslattice/open-regenerative-compute-standard",
+      "pr": 74,
+      "head": "3814624e40c7a35a360fbc60403cc59455261a98",
+      "openDraft": true,
+      "mergeableWithPRBase": true,
+      "canonRatifiedByThisTest": false
+    }
+  },
+  "statusesAreNotSignatures": true,
+  "noRepoMergePerformed": true,
+  "noHostDeploymentPerformed": true,
+  "criticalBlockers": [
+    "144_REAL_SPHERE_ADAPTERS_MISSING",
+    "NATIVE_CI_FAILED_NO_JOB_STEPS",
+    "PROVIDER_PR67_NOT_MERGEABLE",
+    "HOST_RIGHTS_READ_RETURN_UNVERIFIED",
+    "NO_CURRENT_HOST_PAIRED_BASELINE",
+    "ZERO_EARNED_SUBJECT_QUALITY_GAINS"
+  ]
+}
