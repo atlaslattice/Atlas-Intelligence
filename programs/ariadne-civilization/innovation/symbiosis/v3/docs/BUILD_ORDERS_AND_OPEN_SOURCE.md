@@ -14,7 +14,7 @@
 
 1. Reverify exact original Ariadne v0.7 publisher bytes before any protected retrieval.
 2. Reconcile source-derived CSV, node record hashes, old 420 mesh and current release version.
-3. Replace fixed I18 mutation menu with source-conditioned, fail-closed adaptive challenge proposals (implemented locally here).
+3. Preserve fixed I18 source/rights negative invariants (254,016 executed original HOLD cases); evaluate optional source-conditioned proposals only if they catch distinct real failures under matched cost (prepared locally, no verified benefit).
 4. Bind each negative test to an actual Work source, distinct from self-reported specialist skill (host review pending).
 5. Preserve same-input flat/Sphere/META145 policy budgets, costs and confidence intervals.
 6. Record `NO_VIABLE_PRIME` resource constraints instead of force-fitting an output.
