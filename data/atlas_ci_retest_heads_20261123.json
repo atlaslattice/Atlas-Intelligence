@@ -1,0 +1,56 @@
+{
+  "schema": "atlas.actions.current-pr-heads/v1",
+  "inspected_date": "2026-11-23",
+  "warning": "Live branch heads can advance; re-fetch HEAD immediately before a CI retry",
+  "items": [
+    {
+      "repository": "atlaslattice/Atlas-Intelligence",
+      "pr": 5,
+      "latest_inspected_head_sha": "705d1ab9f33e13f85ffe66f0103a1d10c70c78e9",
+      "example_historical_run_sha": "705d1ab9f33e13f85ffe66f0103a1d10c70c78e9",
+      "same_sha": true
+    },
+    {
+      "repository": "atlaslattice/atlas-lattice-providers",
+      "pr": 53,
+      "latest_inspected_head_sha": "72b54c1dcf2e37953fba4674fb593eeb62418e2b",
+      "example_historical_run_sha": "75b03b5d6b7582726e70adf400634ae9f0374323",
+      "same_sha": false
+    },
+    {
+      "repository": "atlaslattice/atlas-lattice-providers",
+      "pr": 59,
+      "latest_inspected_head_sha": "3d666950cc3c17954b18204a8fbaad13a87da7f3",
+      "example_historical_run_sha": "d28f72a27eff88fcbc32b79f9ee65791e5352ba6",
+      "same_sha": false
+    },
+    {
+      "repository": "atlaslattice/atlas-lattice-providers",
+      "pr": 63,
+      "latest_inspected_head_sha": "1dec8b619afc032d3ebc5cf94aaf05f606358e9d",
+      "example_historical_run_sha": "785363eeb83c15e9254d6727f4615a4d9aee3497",
+      "same_sha": false
+    },
+    {
+      "repository": "atlaslattice/noosphere-archive",
+      "pr": 19,
+      "latest_inspected_head_sha": "8b93495fe886a10787cd0a5ad5c2452c2c6c3bfe",
+      "example_historical_run_sha": "8b93495fe886a10787cd0a5ad5c2452c2c6c3bfe",
+      "same_sha": true
+    },
+    {
+      "repository": "atlaslattice/noosphere-archive",
+      "pr": 26,
+      "latest_inspected_head_sha": "2d281579501a8fdf9fc8b6d42075476ec7faa6cd",
+      "example_historical_run_sha": "279e064f499f0d3d535c6cb503d440ee21712383",
+      "same_sha": false
+    },
+    {
+      "repository": "atlaslattice/noosphere-archive",
+      "pr": 29,
+      "latest_inspected_head_sha": "0e9e6721fbe771e0270c8bc6f26da4d5d457d524",
+      "example_historical_run_sha": "a8e3426e9217f2744bb4b1e45e3e384f443b6da7",
+      "same_sha": false
+    }
+  ]
+}
