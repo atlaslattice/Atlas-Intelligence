@@ -68,3 +68,26 @@ Run `npm run excellence:status` to inspect the hash-verified bundled program, `n
 The [canonical R01 source package](programs/civilization-r01/README.md) implements twelve bounded reusable kernels and an optional Work-scoped adapter. Its recorded local synthetic comparison retains eleven gain candidates and one H02 regression; the release adapter uses H02's scan fallback by default. These observations complete no specialized knowledge-node contracts and award no original 1,728 primary metric credit.
 
 Run `npm run civilization:status` for the source catalog and release policy, or `npm run test:civilization` for the JavaScript and source-reference tests. Noosphere and Providers can prepare optional immutable source references to this package without carrying duplicate kernel engines. Current host authorization and return checks remain separate from source metadata validation.
+
+## Optional corpus synthesis
+
+[Corpus synthesis](programs/corpus-synthesis/README.md) adds twenty source-grounded
+retrieval, provenance, and context mechanisms through the existing context entry
+point. It uses explicitly supplied owner-bound sources, exact citations,
+version and counterevidence retention, and a current authorization callback.
+A+B=C produces a falsifiable hypothesis record with two cited inputs; it does not
+promote source claims into accepted facts. The package includes generic code and
+invented fixtures, with no personal corpus or automatic source loading.
+
+Run `npm run test:corpus-synthesis`. [Aggregate development results and their
+limits](programs/corpus-synthesis/docs/evaluation.md) are separate from live
+application behavior and general model-quality claims.
+
+An optional [Node classifier](programs/corpus-synthesis/classification/README.md)
+uses caller-supplied original Ariadne bytes to produce source-pinned, exact-span
+review candidates while preserving all original node scopes and exclusions.
+Large corpora use a metadata manifest and streaming per-hash text files.
+`npm run test:corpus-classification` runs its generic controls; exact-source cases
+require `ATLAS_ARIADNE_ORIGINAL_FILE`. The classifier entry remains separate from
+the browser-compatible context API, and every generated semantic link remains
+unreviewed.

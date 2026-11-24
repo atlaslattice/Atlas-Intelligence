@@ -147,3 +147,40 @@ method-subject, mutation, source/task corruption, HOLD and late-close boundaries
 The callback fixtures are synthetic local structural tests, not provider calls
 or live host authentication. The existing core's broader parity/performance
 evidence is separate. This package makes no new timing or domain-quality claim.
+
+## Optional corpus retrieval and A+B=C synthesis
+
+This entry point also exports `CorpusEngine`, `CORPUS_FEATURES`,
+`CORPUS_ENGINE_VERSION`, `CORPUS_SYNTHESIS_SCHEMA`, and
+`createCorpusSynthesisAdapter` from the additive
+[corpus-synthesis package](../corpus-synthesis/README.md). Callers explicitly supply
+source documents and a trusted owner binding. The optional port requires a current
+synchronous host authorization callback before and after source-returning methods.
+
+The twenty mechanisms provide lexical retrieval, source-qualified identifier
+boosts, duplicate/version/counterevidence preservation, exact citations, bounded
+context, and falsifiable A+B=C hypothesis records. They neither replace the
+original Ariadne source adapter nor reinterpret legacy LCP addresses. Generic
+runtime code and invented fixtures are included; private source bodies, account
+identifiers, encryption material, and model credentials are not.
+
+Run `npm run test:corpus-synthesis` for the new package. The existing
+`npm run test:context-integration` gate remains unchanged.
+
+## Optional Node classification
+
+`programs/context-integration/classification.mjs` separately exports the generic
+source-pinned classifier, metadata admission helpers, streaming UTF-8 loader,
+evidence validator, and graph/index functions. This Node-only entry is separate
+from `index.mjs` because it uses Node crypto and the filesystem; the frontend
+continues to import the browser-compatible context entry.
+
+Callers provide the exact original ontology bytes and explicitly authorized
+source bodies. Generated links remain unreviewed candidates, preserve original
+source scopes and exclusion text, and carry alias-specific method-subject gates.
+The classifier does not establish session identity, provider rights, or semantic
+truth. See the [classifier contract](../corpus-synthesis/classification/README.md)
+for v3 streaming input, bounds, generated artifacts, and CLI usage.
+
+Run `npm run test:corpus-classification`. Exact-source and end-to-end classification
+fixtures require `ATLAS_ARIADNE_ORIGINAL_FILE`; unconfigured cases are skipped.

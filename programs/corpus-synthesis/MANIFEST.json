@@ -1,0 +1,152 @@
+{
+  "schema": "atlas.public-corpus-synthesis-manifest/v1",
+  "version": "0.2.0",
+  "entry": "programs/corpus-synthesis/index.mjs",
+  "featureCount": 20,
+  "runtime": "atlas.corpus.engine/1.0.0",
+  "privateSourceBodiesBundled": false,
+  "privateSourceIdentifiersBundled": false,
+  "currentAccountIdentifiersBundled": false,
+  "encryptionKeysBundled": false,
+  "sealedAssetsBundled": false,
+  "automaticSourceLoading": false,
+  "modelCalls": 0,
+  "modelTraining": false,
+  "canonPromotion": false,
+  "hostAuthenticationByModule": false,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "23d86f1c3372bc623f843758e3c1f6312a5bb9bebcb6494058f9e9f9be3e9754",
+      "bytes": 8312
+    },
+    {
+      "path": "classification/README.md",
+      "sha256": "983a8f15e3c359ef03df759e071ab85157cc62df240fd97e0aabd679fe06d029",
+      "bytes": 14552
+    },
+    {
+      "path": "classification/classifier.mjs",
+      "sha256": "b00d3c35bbe7324de9b033f3f69c506c7d2d9baa76a7c3f776bd00f11f62d714",
+      "bytes": 25675
+    },
+    {
+      "path": "classification/classifier.test.mjs",
+      "sha256": "8a9cc6f098a115f45adf41f467ba44ac23820fea8fd50ceae6ee6bb5699067eb",
+      "bytes": 11777
+    },
+    {
+      "path": "classification/classify-corpus.mjs",
+      "sha256": "80a15a66a3268339870a417d2a298680022f2e4685c7377b81f3aed3d9749168",
+      "bytes": 12631
+    },
+    {
+      "path": "classification/cli.test.mjs",
+      "sha256": "b24c3684cbbe49bf18f9813d30c5a748812b0d3d40ea6381044b5484129199e2",
+      "bytes": 10936
+    },
+    {
+      "path": "classification/documents-file.mjs",
+      "sha256": "28abb3e673043639b46e54172eacda9634c141dae68922927a91eb0a6d8e0726",
+      "bytes": 2725
+    },
+    {
+      "path": "classification/documents-file.test.mjs",
+      "sha256": "81ed7b3242433cba759a97d793164b34e73df451cc75a0dd45fe51360533a3fa",
+      "bytes": 4297
+    },
+    {
+      "path": "classification/independent.test.mjs",
+      "sha256": "23a9f0fc8c0e070377d668956d33ae4457245e6316ccb9e7fdde20cf1c787d85",
+      "bytes": 5079
+    },
+    {
+      "path": "classification/index.mjs",
+      "sha256": "a405b62d3126991f1cf0a3bf5720db5038ee9b6fc9630430725525a5a21e006a",
+      "bytes": 503
+    },
+    {
+      "path": "classification/text-files.mjs",
+      "sha256": "ebdbdaa1062009057f53f634bec84c7139d6530cb4588e3bf6202eb321fb60c5",
+      "bytes": 3903
+    },
+    {
+      "path": "classification/text-files.test.mjs",
+      "sha256": "4bad3e058771d285a7ec46003baed7524feaf80b01658caf80dfd103a320f434",
+      "bytes": 5766
+    },
+    {
+      "path": "docs/evaluation.md",
+      "sha256": "0f9ace4fbc0b224c06f94931a1ebbe514c3e84562ab2b69e4230b960dc5f975f",
+      "bytes": 3115
+    },
+    {
+      "path": "docs/methodology.md",
+      "sha256": "9ec815ff07f7de8af70b95b0724763b71a78cf64fa80e7faaabed4cce6f4dac9",
+      "bytes": 4714
+    },
+    {
+      "path": "index.mjs",
+      "sha256": "b4dbc7b8310997092bc8257fe0023ae3ec83d7a3e9edea44b9ef5b508e0c22e3",
+      "bytes": 2347
+    },
+    {
+      "path": "runtime/README.md",
+      "sha256": "db4993841cda2714075d45090ac5ef759b3e6fd8c9829f48c1a2806e45e9e837",
+      "bytes": 18284
+    },
+    {
+      "path": "runtime/features.mjs",
+      "sha256": "5c62ca0ca6f234389a0880a783edcc33c75b0c5dba10875ab1a570d961e995e7",
+      "bytes": 4075
+    },
+    {
+      "path": "runtime/index.mjs",
+      "sha256": "b19768402cbae80997b744ef21b4beb2daa317571a7fc15f4760ced3f5e542c4",
+      "bytes": 41925
+    },
+    {
+      "path": "runtime/text.mjs",
+      "sha256": "22f664b1fc2bec339419765b2d1debd6258d1e42909a2fdd7be1f05c8e143f21",
+      "bytes": 6209
+    },
+    {
+      "path": "test/adapter.test.mjs",
+      "sha256": "1469a17756ec2d9d9733dda81990e469365f2b9129d73e4d8da148f25daf1244",
+      "bytes": 3930
+    },
+    {
+      "path": "test/features.test.mjs",
+      "sha256": "5196b1dc718458926694bcad13a3742ebdadc60a52f377227f224b97a3b273ed",
+      "bytes": 15056
+    },
+    {
+      "path": "test/independent-integrity.test.mjs",
+      "sha256": "ec07bb46e92ebabe272a519df7d7d19f40ec4fb87afcaa8e1b6d76fc644137ce",
+      "bytes": 394
+    },
+    {
+      "path": "test/integrity-fixtures.mjs",
+      "sha256": "97d799dede96b70b3283d5716fb8bcda370ab88996a5e4f3422ad232ea85dfb9",
+      "bytes": 20903
+    },
+    {
+      "path": "test/text-primitives.test.mjs",
+      "sha256": "c761b5e51e7dd32ea7d32e4f69d2124e382a498e87871c47a0ee1450efac3d7d",
+      "bytes": 2060
+    }
+  ],
+  "optionalClassification": {
+    "entry": "programs/corpus-synthesis/classification/index.mjs",
+    "contextEntry": "programs/context-integration/classification.mjs",
+    "runtime": "NODE_ONLY_EXPLICIT_INPUTS",
+    "sourceBytesBundled": false,
+    "sourceRegistryGeneratedOnlyFromCallerInput": true,
+    "nodeCount": 1728,
+    "semanticEdgesAccepted": 0,
+    "canonPromotions": 0,
+    "automaticSourceLoading": false,
+    "metadataAndBodyStreamingSupported": true,
+    "indexFormat": "PREFIX_SHARDED_FULL_TEXT_SHA256_LOOKUP"
+  }
+}
