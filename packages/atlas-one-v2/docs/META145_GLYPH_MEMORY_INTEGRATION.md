@@ -16,7 +16,7 @@
 
 ## Actual computing gains, not multiplication theater
 
-On the same machine/process, using nine alternating paired CPU benchmark runs, exhaustive comparison of all 144 source profiles against all 1,728 node token sets took **270.025 ms median**; inverted postings scoring of **the same matrix** took **3.890 ms median**, a **69.42× median improvement in the isolated integer scoring operation**. The output parity is bit-for-bit exact. Timings vary by machine; the full source builder separately performs expensive parity checks and database work, so this speedup does **not** directly represent end-to-end build throughput or hosted SwarmChat latency.
+On the same machine/process, using twenty-five alternating paired CPU benchmark runs, exhaustive comparison of all 144 source profiles against all 1,728 node token sets took **267.899 ms median**; inverted postings scoring of **the same matrix** took **3.831 ms median**, a **69.937× median improvement in the isolated integer scoring operation**. The output parity is bit-for-bit exact. Timings vary by machine; the full source builder separately performs expensive parity checks and database work, so this speedup does **not** directly represent end-to-end build throughput or hosted SwarmChat latency.
 
 The prior [Noosphere META145 source-only PR #35](https://github.com/atlaslattice/noosphere-archive/pull/35) reports a **different** local Chromium broad-search DOM improvement (12.17× median and 19.25× p95). It is a source-reported historic layer and was *not remeasured in this build*. The CPU gain and DOM gain must **not** be multiplied into a fake "cognitive gain."
 
@@ -33,12 +33,12 @@ python3 src/meta145_glyph_memory.py bench --registry "$ATLAS_ARIADNE_ORIGINAL_FI
 python3 src/meta145_glyph_memory.py memory --registry "$ATLAS_ARIADNE_ORIGINAL_FILE" --out "$ATLAS_META145_GLYPH_OUTPUT"
 python3 src/build_observatory.py --registry "$ATLAS_ARIADNE_ORIGINAL_FILE" --out "$ATLAS_META145_GLYPH_OUTPUT"
 python3 -m unittest discover -s tests
-node --test integration/test/meta145-glyph.test.mjs
-node --jitless --test integration/test/meta145-glyph.test.mjs
+node --test integration/test/meta145-glyph.test.mjs integration/test/meta145-glyph-public.test.mjs
+node --jitless --test integration/test/meta145-glyph.test.mjs integration/test/meta145-glyph-public.test.mjs
 python3 tests/browser_smoke.py # requires Chromium + Playwright
 ```
 
-Local test counts: **38/38 Python**, **18/18 Node** normal and `--jitless`, **40/40 desktop+mobile Chromium assertions**. Fresh deterministic build hashes match for all core output files including the SQLite database. The previous rendered-label bug was caught by independent browser inspection, repaired and added to tests.
+Local test counts: **38/38 owner-source Python + 9/9 source-free Python**, **18/18 owner-source Node + 8/8 source-free Node** normal and `--jitless`, **40/40 desktop+mobile Chromium assertions**. Fresh deterministic build hashes match for all core output files including the SQLite database. The previous rendered-label bug was caught by independent browser inspection, repaired and added to tests.
 
 ## Source/host integration and role separation
 
