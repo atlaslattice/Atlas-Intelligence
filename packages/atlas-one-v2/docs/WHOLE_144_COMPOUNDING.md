@@ -75,3 +75,62 @@ prefix. A derived topic facet may remove that exact prefix for discovery, while
 full titles and coordinate identities remain intact. It is not a semantic join.
 Private registry bytes and project-fiction bodies are not embedded in this code.
 
+## Bounded source-bound batch review
+
+`proposeSourceBoundCandidateBatch(program, referenceIndex, inputs)` is an additive
+synchronous entry point for up to 144 ordered requests. Each request uses the
+same shape as `proposeSourceBoundCandidateGraph`; the original single-request
+API remains available. The batch accepts at most 1,728 bindings and 6,912 links
+across its requests. It rejects an empty, sparse, oversized or augmented request
+array, and rejects an aggregate over budget without truncating any request.
+
+The batch validates the program and all supplied source records once, copies
+the program's allowed positions and source pins, and shares those detached
+values only inside that invocation. Every request, six-field endpoint, typed
+link, reference and dissent is still checked. There is no persistent cache,
+caller-provided prevalidated state, authenticated catalog, or new permission.
+The next invocation validates the current inputs again. As with the existing
+single API, callers must supply inert ordinary data; this is not a Proxy sandbox.
+The batch additionally requires primitive-string program digest, source edition
+and source digest fields. Boxed strings are rejected even when frozen, so the
+copied receipt metadata cannot retain those caller-owned objects.
+
+Results retain input order. Each entry of `results` is the exact graph or HOLD
+returned for that request by the single API on the same valid shared source.
+`SOURCE_BOUND_BATCH_CANDIDATE_ONLY` means no request was held;
+`SOURCE_BOUND_BATCH_WITH_HOLDS` explicitly exposes one or more held requests.
+`candidateGraphCount` and `heldRequestCount` describe those results. A malformed
+shared program or index holds the entire batch with the existing validation
+reason. A bad request is never dropped or represented by a neighboring graph.
+The envelope and all returned nested data are frozen and detached from the
+caller. The ordered envelope has a deterministic `batchDigest`.
+
+This removes repeated source-index validation when reviewing 144 groups of
+twelve bindings. A single private graph implementation serves both APIs. The
+single-request path retains its original preparation, exact six-field matching,
+sorting and digest algorithm; only the batch's private call can supply its
+detached context. A public extra argument cannot bypass fresh validation. The new
+API does not batch the original-byte scope matcher, alter its 128-node cap,
+or imply that caller-supplied reference pins authenticate original bytes.
+
+The batch retains zero verified gains, scientific endorsements, semantic
+equivalences, assignments, publication, rights, hosted or CANON effects. The
+144 requests are review inputs, not 144 implemented evolutions or peer returns.
+
+```js
+const review = proposeSourceBoundCandidateBatch(program, referenceIndex, inputs);
+// Inspect review.status, heldRequestCount and every ordered result before use.
+// Keep existing source authenticity, consent and host handoff gates in place.
+```
+
+Synthetic tests cover the complete 144-by-12 workload, full 1,728-node input,
+all six pin substitutions, request ordering, a bad middle request, shared
+scope failures, private modes, forged cache/authority fields, collection and
+aggregate bounds, revalidation between calls and detached immutable outputs.
+They are local checks and do not claim hosted or production performance.
+
+```sh
+node --test test/whole-144*.test.mjs
+node --jitless --test test/whole-144*.test.mjs
+```
+

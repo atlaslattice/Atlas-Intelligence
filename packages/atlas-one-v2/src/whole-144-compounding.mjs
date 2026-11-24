@@ -188,29 +188,36 @@ function reviewRefs(value,min=0){
  * Inputs must be inert, ordinary data. This is not a Proxy sandbox.
  */
 export function proposeSourceBoundCandidateGraph(program,referenceIndex,input={}){
+  return sourceBoundGraph(program,referenceIndex,input);
+}
+// One graph implementation serves both APIs. Only the batch's private call can
+// supply a detached context; public callers cannot skip fresh validation.
+function sourceBoundGraph(program,referenceIndex,input,context){
   try{
-    if(!valid(program))return hold('PROGRAM_UNVERIFIED');
-    const index=dataRecord(referenceIndex,['namespace','edition','registrySha256','records']);
+    if(!context&&!valid(program))return hold('PROGRAM_UNVERIFIED');
+    const index=context?context.index:dataRecord(referenceIndex,['namespace','edition','registrySha256','records']);
     const request=dataRecord(input,['mode','bindings','links','projectReviewContext']);
     if(!index||!request||typeof index.namespace!=='string'||!PIN_NAMESPACE.test(index.namespace)||
       index.edition!==program.sourceEdition||index.registrySha256!==program.sourceDigest||
       request.mode!=='WORK')return hold('SOURCE_BOUND_SCOPE_INVALID');
     const projectReviewContext=request.projectReviewContext===undefined?'GENERAL_WORK_REVIEW':request.projectReviewContext;
     if(!PROJECT_CONTEXTS.has(projectReviewContext))return hold('PROJECT_REVIEW_CONTEXT_INVALID');
-    const records=denseArray(index.records,1728),bindings=denseArray(request.bindings,1728),
+    const records=context?context.records:denseArray(index.records,1728),bindings=denseArray(request.bindings,1728),
       links=denseArray(request.links===undefined?[]:request.links,6912);
     if(!records||!records.length||!bindings||!links)return hold('SOURCE_BOUND_COLLECTION_INVALID');
-    const known=new Map();
-    for(const record of records){
-      const pin=nodePin(record,index,true);
-      if(!pin||known.has(pin.nodeId))return hold('SOURCE_INDEX_INVALID_OR_DUPLICATE');
-      known.set(pin.nodeId,pin);
+    const known=context?context.known:new Map();
+    if(!context){
+      for(const record of records){
+        const pin=nodePin(record,index,true);
+        if(!pin||known.has(pin.nodeId))return hold('SOURCE_INDEX_INVALID_OR_DUPLICATE');
+        known.set(pin.nodeId,pin);
+      }
     }
     const matchedPin=value=>{
       const pin=nodePin(value,index),expected=pin&&known.get(pin.nodeId);
       return expected&&pinKey(pin)===pinKey(expected)?pin:null;
     };
-    const tasks=new Map(program.tasks.map(task=>[task.id,task]));
+    const tasks=context?context.tasks:new Map(program.tasks.map(task=>[task.id,task]));
     const selected=new Map(),nodes=[];
     for(const binding of bindings){
       const b=dataRecord(binding,['candidateId','node']);
@@ -251,4 +258,74 @@ export function proposeSourceBoundCandidateGraph(program,referenceIndex,input={}
       rightsVerified:false,hostedVerified:false,canPublish:false,authorityEffect:'NONE',canonEffect:'NONE'};
     return Object.freeze({...core,graphDigest:digest(core)});
   }catch(_){return hold('SOURCE_BOUND_INPUT_INVALID');}
+}
+
+
+function sourceBoundRequest(input){
+  const request=dataRecord(input,['mode','bindings','links','projectReviewContext']);
+  if(!request||request.mode!=='WORK')return hold('SOURCE_BOUND_SCOPE_INVALID');
+  const projectReviewContext=request.projectReviewContext===undefined?'GENERAL_WORK_REVIEW':request.projectReviewContext;
+  if(!PROJECT_CONTEXTS.has(projectReviewContext))return hold('PROJECT_REVIEW_CONTEXT_INVALID');
+  const bindings=denseArray(request.bindings,1728),links=denseArray(request.links===undefined?[]:request.links,6912);
+  if(!bindings||!links)return hold('SOURCE_BOUND_COLLECTION_INVALID');
+  return {mode:'WORK',bindings,links,projectReviewContext};
+}
+
+/** Up to 144 ordered requests, sharing one freshly validated source snapshot.
+ * Aggregate budgets: 1,728 bindings and 6,912 links. Each request still receives
+ * its own exact single-call graph or HOLD; any HOLD is visible in the envelope.
+ * This is local candidate review, not a runner, rights cache, or evolution count.
+ */
+export function proposeSourceBoundCandidateBatch(program,referenceIndex,inputs){
+  try{
+    if(!valid(program))return hold('PROGRAM_UNVERIFIED');
+    const programDigest=program.programDigest,sourceEdition=program.sourceEdition,sourceDigest=program.sourceDigest;
+    if(typeof programDigest!=='string'||typeof sourceEdition!=='string'||typeof sourceDigest!=='string')
+      return hold('PROGRAM_UNVERIFIED');
+    // Snapshot only once in the batch path. Single calls keep their original
+    // preparation and algorithm; they do not build detached slot Sets/maps.
+    const programSnapshot=Object.freeze({programDigest,sourceEdition,sourceDigest});
+    const tasks=new Map(program.tasks.map(task=>[task.id,Object.freeze({id:task.id,
+      nodeSlots:Object.freeze([...task.nodeSlots])})]));
+    const index=dataRecord(referenceIndex,['namespace','edition','registrySha256','records']);
+    if(!index||typeof index.namespace!=='string'||!PIN_NAMESPACE.test(index.namespace)||
+      index.edition!==programSnapshot.sourceEdition||index.registrySha256!==programSnapshot.sourceDigest)
+      return hold('SOURCE_BOUND_SCOPE_INVALID');
+    const records=denseArray(index.records,1728);
+    if(!records||!records.length)return hold('SOURCE_BOUND_COLLECTION_INVALID');
+    const known=new Map();
+    for(const record of records){
+      const pin=nodePin(record,index,true);
+      if(!pin||known.has(pin.nodeId))return hold('SOURCE_INDEX_INVALID_OR_DUPLICATE');
+      known.set(pin.nodeId,pin);
+    }
+    const sourceRecords=Object.freeze([...known.values()]);
+    const sourcePin=Object.freeze({namespace:index.namespace,edition:index.edition,registrySha256:index.registrySha256});
+    const indexSnapshot=Object.freeze(dataRecord({...sourcePin,records:sourceRecords},
+      ['namespace','edition','registrySha256','records']));
+    const context={index:indexSnapshot,records:sourceRecords,known,tasks};
+    const requests=denseArray(inputs,144);
+    if(!requests||!requests.length)return hold('SOURCE_BOUND_BATCH_COLLECTION_INVALID');
+    const prepared=[];let bindingCount=0,linkCount=0;
+    for(const input of requests){
+      let request;
+      try{request=sourceBoundRequest(input);}catch{request=hold('SOURCE_BOUND_INPUT_INVALID');}
+      if(request.status!=='HOLD'){
+        bindingCount+=request.bindings.length;linkCount+=request.links.length;
+        if(bindingCount>1728||linkCount>6912)return hold('SOURCE_BOUND_BATCH_BUDGET_EXCEEDED');
+      }
+      prepared.push(request);
+    }
+    const results=Object.freeze(prepared.map(request=>request.status==='HOLD'?request:
+      sourceBoundGraph(programSnapshot,indexSnapshot,request,context)));
+    const heldRequestCount=results.filter(result=>result.status==='HOLD').length;
+    const core={schema:'atlas.one.whole-144-source-bound-candidate-batch/v1',
+      status:heldRequestCount?'SOURCE_BOUND_BATCH_WITH_HOLDS':'SOURCE_BOUND_BATCH_CANDIDATE_ONLY',
+      programDigest:programSnapshot.programDigest,mode:'WORK',sourcePin,
+      results,requestCount:results.length,candidateGraphCount:results.length-heldRequestCount,heldRequestCount,
+      sourceIndexComparison:'CALLER_SUPPLIED_PIN_MATCH',sourceOriginalBytesVerified:false,
+      scientificEndorsement:false,semanticEquivalencesEstablished:0,actualResidentAssignments:0,verifiedGains:0,
+      rightsVerified:false,hostedVerified:false,canPublish:false,authorityEffect:'NONE',canonEffect:'NONE'};
+    return Object.freeze({...core,batchDigest:digest(core)});
+  }catch{return hold('SOURCE_BOUND_INPUT_INVALID');}
 }
