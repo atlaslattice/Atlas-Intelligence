@@ -1,0 +1,28 @@
+name: Focused improvement
+description: Propose a concrete change with a verifiable result.
+title: "improve: "
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: User task and current obstacle
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance condition
+      description: Explain what a reviewer can run or observe to confirm completion.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Existing work and dependencies
+      description: Link overlapping issues, PRs and exact source revisions; preserve alternative approaches.

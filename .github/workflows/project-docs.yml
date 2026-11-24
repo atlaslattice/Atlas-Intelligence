@@ -1,0 +1,60 @@
+name: Contributor documentation
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'docs/README.md'
+      - '.github/pull_request_template.md'
+      - '.github/ISSUE_TEMPLATE/bug_report.yml'
+      - '.github/ISSUE_TEMPLATE/improvement.yml'
+      - 'package.json'
+      - 'scripts/check_project_docs.py'
+      - 'tests/test_check_project_docs.py'
+      - '.github/workflows/project-docs.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'docs/README.md'
+      - '.github/pull_request_template.md'
+      - '.github/ISSUE_TEMPLATE/bug_report.yml'
+      - '.github/ISSUE_TEMPLATE/improvement.yml'
+      - 'package.json'
+      - 'scripts/check_project_docs.py'
+      - 'tests/test_check_project_docs.py'
+      - '.github/workflows/project-docs.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: project-docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out contributor files
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /README.md
+            /CONTRIBUTING.md
+            /docs/README.md
+            /.github/pull_request_template.md
+            /.github/ISSUE_TEMPLATE/bug_report.yml
+            /.github/ISSUE_TEMPLATE/improvement.yml
+            /package.json
+            /scripts/check_project_docs.py
+            /tests/test_check_project_docs.py
+      - name: Verify contributor documentation
+        run: python3 scripts/check_project_docs.py
+      - name: Test the documentation checker
+        run: python3 -m unittest discover -s tests -p test_check_project_docs.py -v
