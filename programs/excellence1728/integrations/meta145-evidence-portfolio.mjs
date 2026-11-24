@@ -1,4 +1,5 @@
 /** Atlas META145 HSN evidence/Work portfolio — local, review-only.
+ * V08 exact-coordinate ordinal indexing: no global sort or 144 full-array scans.
  * Complements existing PR45 and PR49 without replacing either authoritative host.
  * DETACHED typed normalization, exact node/output/dependency/epoch binding, no execution.
  * A matching SHA receipt is not an issuer signature or independent review.
@@ -47,7 +48,7 @@ export function compileEvidencePortfolio(expectedNodes,reviews,scope){
   }
   if(Reflect.ownKeys(expectedNodes).some(k=>k!=='length'&&(!/^(0|[1-9]\d*)$/.test(String(k))||Number(k)>=1728))||
      Reflect.ownKeys(reviews).some(k=>k!=='length'&&(!/^(0|[1-9]\d*)$/.test(String(k))||Number(k)>=1728)))return DENY;
-  const rows=[],seen=new Set(),ticketSet=new Set();
+  const rows=new Array(1728),seen=new Set(),ticketSet=new Set();
   for(let i=0;i<1728;i++){
     const r=owned(reviews[i],reviewFields);
     if(!r||typeof r.hsn!=='string'||!nodes.has(r.hsn)||seen.has(r.hsn)||!STATES.includes(r.status))return DENY;
@@ -60,15 +61,19 @@ export function compileEvidencePortfolio(expectedNodes,reviews,scope){
     if(!['PASS','FAIL'].includes(r.status)&&r.evidenceSha256!==null)return DENY;
     if(r.status==='N_A'?!NAREASONS.includes(r.naReason):r.naReason!==null)return DENY;
     seen.add(r.hsn);ticketSet.add(ticket);
-    rows.push(Object.freeze({hsn:r.hsn,house:r.hsn.slice(0,3),sphere:r.hsn.slice(0,7),role:n.role,
+    // Canonical zero-padded HSN coordinate maps to a unique validated slot.
+    // Do not depend on untrusted input ordering or run an O(144*N) filter.
+    const h=Number(r.hsn.slice(1,3)),sp=Number(r.hsn.slice(5,7)),nn=Number(r.hsn.slice(9,11));
+    const ordinal=(h-1)*144+(sp-1)*12+(nn-1);
+    rows[ordinal]=Object.freeze({hsn:r.hsn,house:r.hsn.slice(0,3),sphere:r.hsn.slice(0,7),role:n.role,
       status:r.status,recordSha256:n.recordSha256,ticketSha256:ticket,
-      evidenceSha256:r.evidenceSha256,naReason:r.naReason}));
+      evidenceSha256:r.evidenceSha256,naReason:r.naReason});
   }
-  const sorted=rows.sort((a,b)=>a.hsn.localeCompare(b.hsn));
+  const sorted=rows; // Fully covered by 1,728 unique validated HSN identities.
   const groups=[];const totals=Object.fromEntries(STATES.map(state=>[state,0]));
   for(let h=1;h<=12;h++)for(let sp=1;sp<=12;sp++){
     const id=`H${String(h).padStart(2,'0')}.S${String(sp).padStart(2,'0')}`;
-    const part=sorted.filter(x=>x.sphere===id);
+    const part=sorted.slice((h-1)*144+(sp-1)*12,(h-1)*144+sp*12);
     if(part.length!==12)return DENY;
     const counts=Object.fromEntries(STATES.map(state=>[state,part.filter(x=>x.status===state).length]));
     for(const st of STATES)totals[st]+=counts[st];
@@ -76,7 +81,7 @@ export function compileEvidencePortfolio(expectedNodes,reviews,scope){
       result:counts.FAIL>0?'FAIL':(counts.HOLD+counts.UNREVIEWED>0)?'HOLD':counts.N_A>0?'REVIEWED_WITH_N_A':'REPORTED_PASS_NOT_ATTESTED'});
   }
   const houses=Array.from({length:12},(_,i)=>{
-    const house=`H${String(i+1).padStart(2,'0')}`,sub=groups.filter(x=>x.house===house);
+    const house=`H${String(i+1).padStart(2,'0')}`,sub=groups.slice(i*12,(i+1)*12);
     const counts=Object.fromEntries(STATES.map(st=>[st,sub.reduce((n,x)=>n+x.counts[st],0)]));
     return {house,counts,result:counts.FAIL>0?'FAIL':counts.HOLD+counts.UNREVIEWED>0?'HOLD':counts.N_A>0?'REVIEWED_WITH_N_A':'REPORTED_PASS_NOT_ATTESTED'};
   });
