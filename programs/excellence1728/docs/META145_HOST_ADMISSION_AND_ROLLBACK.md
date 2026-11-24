@@ -61,3 +61,7 @@ npm run test:excellence
 ```
 
 The known executable local evidence is a signed **fixture** issuer using HMAC for tests. That synthetic fixture is NOT the production issuer. Full real-host canary awaits actual authorized host callbacks, current Work database access, CI runner admission, and publisher control. Never claim a source-only `allowed:true` call proves signed-in principal authentication.
+
+### Fresh PR #45 runner test, current branch
+
+On the new draft workflow from Git head `d88ce8327226c5bc592899294ce423639bb56762`, GitHub recorded [run 45327690877](https://github.com/atlaslattice/Atlas-Intelligence/actions/runs/45327690877), job `138221113369` (`source-and-admission`) as **failure before any step** (`steps=[]`). The job-log endpoint returned `404 BlobNotFound`. No first-step output or test output exists. This is fresh corroboration of issue #15, not a diagnosis of the account-level cause; compare account settings, checks annotations and GitHub Support before deciding a remedy.
