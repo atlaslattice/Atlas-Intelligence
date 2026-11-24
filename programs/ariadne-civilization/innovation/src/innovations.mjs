@@ -14,6 +14,42 @@ const SPHERE=/^H(0[1-9]|1[0-2])\.S(0[1-9]|1[0-2])$/;
 const HOUSE=/^H(0[1-9]|1[0-2])$/;
 const hash=o=>createHash('sha256').update(JSON.stringify(o)).digest('hex');
 const isObj=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
+
+/**
+ * Detach only plain JSON-shaped *data descriptors* before using source fields.
+ * No property getter is invoked, arrays must be dense/no side props, no symbols.
+ * A malicious JS Proxy can still lie to reflection: this is a local DTO guard,
+ * NOT a security boundary or replacement for host-side decoding/authorization.
+ */
+function detachedJson(value,seen=new WeakSet(),depth=0,budget={objects:0}){
+ if(value===null||typeof value==='string'||typeof value==='boolean')return value;
+ if(typeof value==='number'){if(!Number.isFinite(value))throw Error('NONFINITE_INPUT');return value;}
+ if(typeof value!=='object'||depth>9||++budget.objects>1500)throw Error('INVALID_TYPE');
+ if(seen.has(value))throw Error('CIRCULAR_INPUT');seen.add(value);
+ if(Array.isArray(value)){
+  const ds=Object.getOwnPropertyDescriptors(value),keys=Reflect.ownKeys(value);
+  if(!Object.hasOwn(ds,'length')||!Number.isInteger(ds.length.value)||ds.length.value>500||
+     keys.some(k=>typeof k==='symbol'||(k!=='length'&&!/^(0|[1-9][0-9]*)$/.test(k)))||
+     Object.keys(ds).filter(k=>k!=='length').length!==ds.length.value)throw Error('ARRAY_SHAPE');
+  const out=[];
+  for(let i=0;i<ds.length.value;i++){
+   const d=ds[String(i)];if(!d||!d.enumerable||!Object.hasOwn(d,'value'))throw Error('ACCESSOR_ARRAY');
+   out.push(detachedJson(d.value,seen,depth+1,budget));
+  }
+  seen.delete(value);return out;
+ }
+ if(Object.getPrototypeOf(value)!==Object.prototype)throw Error('NOT_PLAIN_OBJECT');
+ const descriptors=Object.getOwnPropertyDescriptors(value),keys=Reflect.ownKeys(value);
+ if(keys.length>250)throw Error('TOO_MANY_FIELDS');
+ const out={};
+ for(const key of keys){
+  if(typeof key!=='string'||['__proto__','prototype','constructor'].includes(key))throw Error('UNSAFE_OBJECT_KEY');
+  const d=descriptors[key];if(!d||!d.enumerable||!Object.hasOwn(d,'value'))throw Error('ACCESSOR_OBJECT');
+  out[key]=detachedJson(d.value,seen,depth+1,budget);
+ }
+ seen.delete(value);return out;
+}
+
 const finite=x=>typeof x==='number'&&Number.isFinite(x);
 const short=x=>typeof x==='string'&&x.length>0&&x.length<=160;
 const unique=a=>[...new Set(a)];
@@ -208,15 +244,22 @@ const implementations={questionPrism,negativeSpace,sourceKinship,evidenceTides,c
 /** Optional dispatcher for the current Atlas ONE source adapter. No imports or host actions. */
 export function runInnovation(id,input={}){
  if(typeof id!=='string'||!INNOVATIONS.some(x=>x.id===id))return hold('UNKNOWN_OPERATOR');
- if(!isObj(input))return hold('BAD_INPUT_TYPE');
- let encoded;try{encoded=JSON.stringify(input);}catch{return hold('UNSERIALIZABLE_INPUT');}
+ let safe;
+ try{safe=detachedJson(input);}catch{return hold('UNTRUSTED_DTO');}
+ if(!isObj(safe))return hold('BAD_INPUT_TYPE');
+ const encoded=JSON.stringify(safe);
  if(!encoded||encoded.length>16000)return hold('INPUT_LIMIT');
- if(forbiddenField(input))return hold('NO_PRIVATE_INPUT');
- if(input.originMode!==undefined&&input.originMode!=='WORK')return hold('NO_WORK_HARVEST');
- const def=INNOVATIONS.find(x=>x.id===id);try{return implementations[def.exportName](input);}catch{return hold('INVALID_FIXTURE');}
+ if(forbiddenField(safe))return hold('NO_PRIVATE_INPUT');
+ if(safe.originMode!==undefined&&safe.originMode!=='WORK')return hold('NO_WORK_HARVEST');
+ const def=INNOVATIONS.find(x=>x.id===id);
+ try{return implementations[def.exportName](safe);}catch{return hold('INVALID_FIXTURE');}
 }
 /** Exact non-posting Work source pointer preparation, not an authenticated permission decision. */
-export function prepareWorkCandidate({id,coordinate,sourceDigest,originMode='WORK'}={}){
+export function prepareWorkCandidate(input={}){
+ let safe;
+ try{safe=detachedJson(input);}catch{return hold('WORK_SOURCE_SCOPE');}
+ if(!isObj(safe))return hold('WORK_SOURCE_SCOPE');
+ const {id,coordinate,sourceDigest,originMode='WORK'}=safe;
  if(!INNOVATIONS.some(x=>x.id===id)||!coord(coordinate)||originMode!=='WORK'||sourceDigest!==ORIGINAL_SHA256)return hold('WORK_SOURCE_SCOPE');
  return {schema:'atlas.one.innovation-work-pointer/v0.1',state:'PREPARED_NOT_SENT',id,coordinate,
    source:{namespace:'ariadne',edition:'v0.7',digest:ORIGINAL_SHA256},hostIdentityVerified:false,
