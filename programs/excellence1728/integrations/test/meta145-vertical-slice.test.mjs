@@ -1,0 +1,43 @@
+import test,{before} from 'node:test';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
+import {createExcellenceProgram} from '../excellence-program.mjs';
+import {compressedPlan,publishedProgram} from '../excellence-plan-data.mjs';
+import {createMeta145VerticalSliceBridge,validateVerticalSliceManifest} from '../meta145-vertical-slice.mjs';
+const S='07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6';
+const hash=x=>createHash('sha256').update(x).digest('hex');
+const modules=['constraint-ledger','resource-closure','resilience-connectivity','observational-evidence-fence','typed-knowledge-edge','revocable-rights-lease','double-entry-governance','cultural-consent','dissent-preservation','sovereignty-consent','noncompensatory-rights','dimensional-feasibility'];
+const coord=i=>`H${String((i/144|0)+1).padStart(2,'0')}.S${String(((i%144)/12|0)+1).padStart(2,'0')}.N${String((i%12)+1).padStart(2,'0')}`;
+const role=id=>Number(id.slice(5,7))<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META';
+function fixture(){
+ const slices=Array.from({length:1728},(_,i)=>{
+   const id=coord(i),h=i/144|0,kind=role(id),rec=hash('fixture:'+id),mod=modules[h],out=hash('result:'+id),sub=kind==='EPISTEMIC_META'?id.slice(0,3)+'.S01.N01':null,target=coord(((h+1)%12)*144+i%144),score=1250;
+   const tag=['ATLAS_VERTICAL_V09',id,S,rec,kind,mod,out,sub,target,score,'SOURCE_PINNED_LOCAL_E2E_PASS','HOLD_REAL_ISSUER_AND_WORK_ACL',true];
+   return {schema:'atlas.vertical.source-bound-slice/v09',id,sourceSha256:S,recordSha256:rec,role:kind,module:mod,moduleOutputSha256:out,subjectNodeId:sub,crossCandidateId:target,crossSimilarityBp:score,localStatus:'SOURCE_PINNED_LOCAL_E2E_PASS',hostStatus:'HOLD_REAL_ISSUER_AND_WORK_ACL',negativeProbeHold:true,receiptSha256:hash(JSON.stringify(tag))};
+ });
+ const sph=Array.from({length:144},(_,i)=>hash(JSON.stringify(slices.slice(i*12,i*12+12).map(x=>x.receiptSha256))));
+ const houses=Array.from({length:12},(_,i)=>hash(JSON.stringify(sph.slice(i*12,i*12+12))));
+ return {schema:'atlas.vertical.export/v09',sourceSha256:S,slices,recordRoot:hash(JSON.stringify(slices.map(x=>x.receiptSha256))),sphereRoot:hash(JSON.stringify(sph)),houseRoot:hash(JSON.stringify(houses)),metaRoot:hash('local synthetic meta'),exportRoot:hash(JSON.stringify(['ATLAS_VERTICAL_EXPORT_V09',S,hash(JSON.stringify(slices.map(x=>x.receiptSha256))),hash(JSON.stringify(sph)),hash(JSON.stringify(houses)),1728,0])),localPass:1728,hostedPass:0,workPosts:0,modelCalls:0,peerTurns:0,canonChanged:false,sourceOnly:true};
+}
+const raw=x=>Buffer.from(JSON.stringify(x));
+const make=(x)=>validateVerticalSliceManifest(raw(x),hash(raw(x)));
+let program;
+before(async()=>{const bytes=gunzipSync(Buffer.from(compressedPlan.gzip_base64,'base64'));program=await createExcellenceProgram(bytes,publishedProgram.planSha256);});
+test('1728 exact local slice shapes, 144 Spheres, 12 Houses, and one source-only meta',()=>{const x=make(fixture());assert.equal(x.rows.length,1728);assert.equal(x.hostedPass,0);});
+test('real exact official Excellence object admits typed Work preview only',()=>{const x=fixture(),b=createMeta145VerticalSliceBridge(program,raw(x),hash(raw(x)));assert.equal(b.status().sourceMetrics,1728);assert.equal(b.status().realHostPass,0);const r=b.prepareWorkSlice({hsn:'H05.S05.N03',taskId:'EX.W05.C03.P01',roomId:'work-review-room'});assert.equal(r.workPosted,false);assert.equal(r.executionAuthorized,false);assert.equal(r.node.id,'H05.S05.N03');assert.equal(r.relationship,'SOURCE_ONLY_PROPOSED_ASSOCIATION_NOT_SAME_AS')});
+test('must be official program, not caller mock',()=>assert.throws(()=>createMeta145VerticalSliceBridge({descriptor:()=>program.descriptor()},raw(fixture()),'a'.repeat(64)),/OFFICIAL_EXCELLENCE_REQUIRED/));
+test('independent trusted pin must exist and match exact bytes',()=>{const x=raw(fixture());assert.throws(()=>validateVerticalSliceManifest(x,null),/INDEPENDENT_PIN_REQUIRED/);assert.throws(()=>validateVerticalSliceManifest(x,'0'.repeat(64)),/INDEPENDENT_PIN_MISMATCH/)});
+test('wrong source registry SHA rejected',()=>{const x=fixture();x.sourceSha256='a'.repeat(64);assert.throws(()=>make(x),/MANIFEST_CLAIMS_OR_SOURCE_INVALID/)});
+test('local pass cannot turn into hosted completion',()=>{const x=fixture();x.hostedPass=1728;assert.throws(()=>make(x),/MANIFEST_CLAIMS_OR_SOURCE_INVALID/)});
+test('fake peer or CANON changes are rejected',()=>{const x=fixture();x.peerTurns=20;assert.throws(()=>make(x),/MANIFEST_CLAIMS_OR_SOURCE_INVALID/);x.peerTurns=0;x.canonChanged=true;assert.throws(()=>make(x),/MANIFEST_CLAIMS_OR_SOURCE_INVALID/)});
+test('a sparse wire input becomes a null row and cannot pass',()=>{const x=fixture();delete x.slices[7];assert.throws(()=>make(x),/SLICE_OR_SOURCE_IDENTITY_INVALID/)});
+test('JSON wire-format cannot carry array side properties into the source parser',()=>{const x=fixture();const before=raw(x);x.slices.exfiltration='no';assert.deepEqual(raw(x),before);assert.equal(make(x).rows.length,1728)});
+test('host-supplied raw bytes freeze the snapshot before caller object mutation',()=>{const x=fixture(),bytes=raw(x);let observed=0;Object.defineProperty(x.slices[4],'recordSha256',{get(){observed++;return 'a'.repeat(64)},enumerable:true});const out=validateVerticalSliceManifest(bytes,hash(bytes));assert.equal(out.rows.length,1728);assert.equal(observed,0)});
+test('forged proof receipt rejected',()=>{const x=fixture();x.slices[444].receiptSha256='a'.repeat(64);assert.throws(()=>make(x),/LEAF_RECEIPT_MISMATCH/)});
+test('House role and subject negative tests',()=>{const x=fixture();x.slices[7].role='EPISTEMIC_META';assert.throws(()=>make(x),/SLICE_AUTHORITY_OR_CONTRACT_INVALID/);const y=fixture();y.slices[84].subjectNodeId=null;assert.throws(()=>make(y),/METHOD_SUBJECT_REQUIRED/)});
+test('same-House candidate or wrong role is not a cross-domain edge',()=>{const x=fixture();x.slices[0].crossCandidateId='H01.S02.N01';assert.throws(()=>make(x),/CROSS_HOUSE_CANDIDATE_INVALID/);const y=fixture();y.slices[0].crossCandidateId='H02.S08.N01';assert.throws(()=>make(y),/CROSS_HOUSE_CANDIDATE_INVALID/)});
+test('changing any collective root is rejected',()=>{const x=fixture();x.sphereRoot='a'.repeat(64);assert.throws(()=>make(x),/SOURCE_OR_GROUP_ROOT_MISMATCH/)});
+test('META145 export root is independently recomputed, not a decorative label',()=>{const x=fixture();x.exportRoot='a'.repeat(64);assert.throws(()=>make(x),/EXPORT_META145_ROOT_MISMATCH/)});
+test('unsafe private mode never opens a Work preview',()=>{const x=fixture(),b=createMeta145VerticalSliceBridge(program,raw(x),hash(raw(x)));assert.throws(()=>b.prepareWorkSlice({hsn:'H01.S01.N01',taskId:'EX.W01.C01.P01',roomId:'work-review-room',mode:'PALACE'}),/PRIVATE_MODE_BLOCKED/)});
+test('Node, Sphere and House inspectors are bounded and never grant host rights',()=>{const x=fixture(),b=createMeta145VerticalSliceBridge(program,raw(x),hash(raw(x)));assert.equal(b.inspectNode('H12.S12.N12').hostAuthenticated,false);assert.equal(b.inspectSphere('H01.S01').nodeCount,12);assert.equal(b.inspectHouse('H10').nodes,144);assert.throws(()=>b.inspectSphere('H00.S01'),/SPHERE_UNKNOWN/)});
