@@ -74,3 +74,6 @@ export const legacyPorts=Object.freeze({
  'swarmchat':{role:'EXISTING_PRIVATE_BROKER',dataMove:'NONE',authority:'HOST_OWNS_AUTH'},
  'atlasgpt':{role:'RESEARCH_CLIENT_AND_AGENTS_SDK_PORT',dataMove:'NONE',authority:'HOST_OWNS_AUTH'}
 });
+
+// Source-only Work retrieval extension; no new broker, hosted tool or trust grant.
+export {WorkFullBodySearchPort,WORK_SEARCH_SCHEMA} from './work-search.mjs';
