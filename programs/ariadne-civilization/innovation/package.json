@@ -1,0 +1,10 @@
+{
+  "name":"@atlas-one/ariadne-twenty-invention-labs",
+  "version":"0.1.0",
+  "private":true,
+  "type":"module",
+  "description":"20 additive source-only Ariadne research methods; no production effects",
+  "scripts":{"test":"node --test tests/*.test.mjs", "simulate":"node scripts/run-1728.mjs"},
+  "engines":{"node":">=22"},
+  "license":"MIT"
+}
