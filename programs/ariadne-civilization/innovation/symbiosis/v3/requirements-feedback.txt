@@ -1,0 +1,2 @@
+# Optional offline feedback analysis only; no API, model, telemetry or paid service.
+numpy>=2.0,<3.0
