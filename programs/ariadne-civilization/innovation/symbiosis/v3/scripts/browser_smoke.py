@@ -33,6 +33,7 @@ with sync_playwright() as pw:
   page.close()
  browser.close()
 report={'schema':'atlas.ariadne.play.browser-smoke/v1','checks':len(results),'passed':sum(x['pass'] for x in results),'failed':[x for x in results if not x['pass']],'offlineOnly':True,'results':results}
+(ROOT/'reports').mkdir(parents=True,exist_ok=True)
 (ROOT/'reports/play_browser_smoke.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({k:report[k] for k in ['checks','passed','failed','offlineOnly']},indent=2))
 if report['failed']:raise SystemExit(1)
