@@ -1,0 +1,360 @@
+{
+  "reviewInput": {
+    "room": {
+      "id": "atlas-neural-synthetic-work-20261124-01",
+      "kind": "work",
+      "status": "open",
+      "headSeq": 166,
+      "messageCount": 166,
+      "maxMessages": 500,
+      "maxPerMember": 30,
+      "memberMessages": 3,
+      "expiresAt": "2026-11-25T20:12:48.062Z"
+    },
+    "member": {
+      "id": "synthetic-reviewer-20261124-r01",
+      "assurance": "SELF_DECLARED",
+      "consent": "USER_INVITATION_WORK"
+    },
+    "reply": {
+      "parentSeq": 33,
+      "requestId": "mica-collab-v3-review-20261124-r1",
+      "referencedSeqs": [
+        33,
+        166
+      ]
+    },
+    "source": {
+      "scope": "WORK",
+      "privateModeDataIncluded": false,
+      "sourceUrl": "https://github.com/atlaslattice/Atlas-Intelligence/pull/58",
+      "sourceDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sourceEdition": "PR58-source-only"
+    },
+    "change": {
+      "predecessor": "Source-bound v2 collaborative review",
+      "addition": "Concrete v3 regression comparator",
+      "testableDifference": "Rejects regressions and unsafe previously accepted input",
+      "falsifier": "A previously green safety case turns red yet comparator proposes adoption"
+    },
+    "hsn": {
+      "node": "H05.S11.N04",
+      "role": "EPISTEMIC_META",
+      "subject": "H05.S06.N12",
+      "registryDigest": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+      "nodeRecordDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "evidence": {
+      "testStatus": "LOCAL_REVIEW_ONLY",
+      "testsRun": 24,
+      "testsPassed": 24,
+      "testsFailed": 0,
+      "testReceiptDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "humanReviewed": false,
+      "hostVerified": false
+    },
+    "release": {
+      "edition": "ATLAS_COLLAB_V2_PROPOSAL",
+      "status": "SOURCE_ONLY_TESTED_LOCAL",
+      "permissionEffect": "NONE",
+      "canonEffect": "NONE",
+      "modelWeightsChanged": false,
+      "hostedDeployed": false
+    },
+    "claims": {
+      "actuallyPosted": false,
+      "scheduledWakeCount": 0,
+      "performedAgentVisits": 0,
+      "peerIdentityVerified": false,
+      "semanticAccepted": false
+    }
+  },
+  "observedAt": "2026-11-24T21:29:00Z",
+  "baselineCodeSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "candidateCodeSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "cases": [
+    {
+      "id": "p_00",
+      "family": "SOURCE_INTEGRITY",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_00",
+      "family": "SOURCE_INTEGRITY",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "FAIL",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_01",
+      "family": "INFERENCE_USE",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_01",
+      "family": "INFERENCE_USE",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_02",
+      "family": "DISCLOSURE_RETURN",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_02",
+      "family": "DISCLOSURE_RETURN",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_03",
+      "family": "REVOCATION",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_03",
+      "family": "REVOCATION",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_04",
+      "family": "NONWORK_PRIVACY",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_04",
+      "family": "NONWORK_PRIVACY",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_05",
+      "family": "HSN_IDENTITY",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_05",
+      "family": "HSN_IDENTITY",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_06",
+      "family": "METHOD_SUBJECT",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_06",
+      "family": "METHOD_SUBJECT",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_07",
+      "family": "DISSENT",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_07",
+      "family": "DISSENT",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_08",
+      "family": "TEST_REPRODUCIBILITY",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_08",
+      "family": "TEST_REPRODUCIBILITY",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_09",
+      "family": "ROLLBACK",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_09",
+      "family": "ROLLBACK",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_10",
+      "family": "AUTHORITY",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_10",
+      "family": "AUTHORITY",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "id": "p_11",
+      "family": "RESOURCE_BUDGET",
+      "role": "POSITIVE",
+      "sourceCaseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "n_11",
+      "family": "RESOURCE_BUDGET",
+      "role": "NEGATIVE",
+      "sourceCaseSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "baseline": "PASS",
+      "candidate": "PASS",
+      "receiptSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    }
+  ],
+  "benchmark": {
+    "mode": "SYNTHETIC_TEST_ONLY",
+    "environmentSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "workloadSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "maxP95RegressionRatio": 1.1,
+    "pairs": [
+      {
+        "scenarioSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "baselineMs": 10,
+        "candidateMs": 9,
+        "baselineOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "candidateOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      {
+        "scenarioSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "baselineMs": 11,
+        "candidateMs": 10,
+        "baselineOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "candidateOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      {
+        "scenarioSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "baselineMs": 12,
+        "candidateMs": 11,
+        "baselineOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "candidateOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      {
+        "scenarioSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "baselineMs": 13,
+        "candidateMs": 12,
+        "baselineOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "candidateOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      {
+        "scenarioSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "baselineMs": 14,
+        "candidateMs": 13,
+        "baselineOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "candidateOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      {
+        "scenarioSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "baselineMs": 15,
+        "candidateMs": 14,
+        "baselineOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "candidateOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      },
+      {
+        "scenarioSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "baselineMs": 16,
+        "candidateMs": 15,
+        "baselineOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "candidateOutputSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      }
+    ]
+  },
+  "dissent": [
+    {
+      "id": "dissent_01",
+      "status": "OPEN",
+      "sourceUrl": "https://github.com/atlaslattice/Atlas-Intelligence/pull/58",
+      "sourceSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "summary": "Host source and actual permissions still unresolved; keep this review-only."
+    }
+  ],
+  "revisionId": "mica-v3-reviewed-code"
+}
