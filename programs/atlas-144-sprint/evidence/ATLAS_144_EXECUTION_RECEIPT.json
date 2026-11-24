@@ -1,0 +1,74 @@
+{
+  "schema": "atlas.neural.144-acceptance-sprint/v1",
+  "status": "LOCAL_EXECUTED_144_ACCEPTANCE_TASKS",
+  "createdUtc": "2026-11-24T23:18:17.805023+00:00",
+  "taskCount": 144,
+  "workstreamCount": 12,
+  "taskDistribution": {
+    "Source & reproducible build": 12,
+    "Ariadne identity & roles": 12,
+    "Neural activation & geometry": 12,
+    "Typed graph & cross-domain dissent": 12,
+    "Workboard memory & revocation": 12,
+    "Quality-first family evaluation": 12,
+    "Shared component / OSS mapping": 12,
+    "Release & human-authority boundaries": 12,
+    "Exact retrieval / cache keys": 12,
+    "Train/eval separation": 12,
+    "Spiking event numerics": 12,
+    "Evidence permission & strict tools": 12
+  },
+  "results": {
+    "PASS": 144
+  },
+  "completeChainSha256": "8e63fd7a21c0ade3ebfff41d6b144507da2b65fd25099ece3a76a0734788452d",
+  "nodeRunnerExitCode": 0,
+  "sourcePins": {
+    "WorkLearning_Source_ZIP": "6825c1f83dc3502b0d153c3d4bd925be823a67a6a350b919f4be5c56a2828d9f",
+    "AriadneOriginalRegistry": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "UnifiedFabricSource": "e172a23a93ac97077824ddba96d9618ec2077c2356dcd47df71c7a22839e73b9",
+    "UnifiedQualitySource": "c5c853c2b614dc4515c5431c4ef306db843275ad2555c34e43507bb692510c55",
+    "UnifiedGraphSource": "1b8794180c2ea3123d7fb8eb86a042468c0c6e382f14edaa48bd2893b3d84de1",
+    "UnifiedWorkboardSource": "2ed8a9061b42bc3a45820b518ede93176588ba70ba315537c96a2f4bd42182d2",
+    "OSS_Native_Baseline": "dbe475c2d4a87e41c4d96dd35821745bc232e75485e8d7f54180a28d306fc09b",
+    "OSS_Native_Candidate": "1abf2f9a29a06bf73889c1931c5ab70590c98334b1d69a2e9602d5b16b7816e0",
+    "LIF_Overflow_Patch": "de1dde67fc3e9d9be94ebbcdd2fe36c6e0fa73d2f7453d9dc42473ba8c8b34c3",
+    "ComponentRegistry": "27c51875774a0d8a528ca9d9b3e29725553300abe3301255400745873314ea61",
+    "OSS144_Catalogue": "1970ba2035a6950f3b8e8de62e475747813296c28c0ec5f94a11ded5e273e93f"
+  },
+  "predecessorSourceCommit": "76e6eeefeafbcc1cc4c6f94c00afcb9700fc19ba",
+  "predecessorPR62Head": "f0a831281fac5a75632111591b676c4e834aaadf",
+  "baselineMaterialRed": {
+    "id": "A144.11.10",
+    "behavior": "finite inputs overflow to Infinity in LIF",
+    "observed": true,
+    "fix": "reject nonfinite intermediate and voltage without clamping",
+    "peerAttribution": "GF9 SwarmChat #236 first reported the overflow case"
+  },
+  "initialIncorrectTestAssumptions": [
+    {
+      "id": "A144.07.04",
+      "correction": "Three real neural ports are intentionally represented as isNeuron=true"
+    },
+    {
+      "id": "A144.07.05",
+      "correction": "Eight protected slots intentionally have scope=PRIVATE and ingestBodies=false"
+    }
+  ],
+  "qualityClaim": "NO_NEW_HUMAN_LABEL_OR_NEURAL_QUALITY_EVALUATION",
+  "featureImplementations": 1,
+  "acceptedOntologicalLinks": 0,
+  "residentMacroturnsCreated": 0,
+  "newModelTrainingRuns": 0,
+  "newModelWeightUpdates": 0,
+  "newHostedDeployments": 0,
+  "hostIAMTested": false,
+  "workboardMessagesPosted": 0,
+  "publicSafe": "SOURCE_FREE_TEST_CONTRACTS_ONLY",
+  "limitations": [
+    "144 obligations are tests/audits, NOT 144 added neural algorithms",
+    "Only the LIF overflow reference code was changed",
+    "Future host, model, corpus, and rights validation requires authorized current runtime",
+    "Source ZIP contains pre-existing Atlas Work Learning code and is excluded from public export"
+  ]
+}
