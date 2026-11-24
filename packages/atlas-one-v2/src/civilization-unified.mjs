@@ -120,8 +120,10 @@ export class CivilizationUnifiedBuild {
    if(gate.status!=='LOCAL_SCHEMA_REVIEW_ONLY')throw new Hold('MODULE_FIXTURE_FAILED');
    return {schema:CIVILIZATION_SCHEMA,buildUnit:`SPHERE-${id}`,house:h,sphere:id,name:src.name,kind:p.sourceRole,moduleId:mod.moduleId,moduleCapability:mod.capability,
     sourceEdition:'Ariadne v0.7',sourceRegistrySha256:ARIADNE_SHA,sourcePerspectiveSha256:p.perspectiveSha256,
-    homeNodes:src.children,homeNodeRecordSha256:src.children.map(c=>this.#source.lookup(c).sourceNodeSHA256),
-    anchorTerms:p.anchorTerms,reviewQuestion:`${mod.prompt} Perspective: ${src.name}. Which original evidence and counterexample would distinguish it from adjacent Spheres?`,
+    // The caller owns this result. Its edits must not mutate the source that
+    // will be used to compute subsequent Sphere and cumulative receipts.
+    homeNodes:structuredClone(src.children),homeNodeRecordSha256:src.children.map(c=>this.#source.lookup(c).sourceNodeSHA256),
+    anchorTerms:structuredClone(p.anchorTerms),reviewQuestion:`${mod.prompt} Perspective: ${src.name}. Which original evidence and counterexample would distinguish it from adjacent Spheres?`,
     execution:{kind:'EXACT_SOURCE_REVIEW_AND_LOCAL_MODULE_FIXTURE',fixtureVerified:true,realWorldClaimsVerified:false,independentSubjectExpert:false,
       semanticLinksAccepted:0,externalModelCalls:0,hostEffects:0},
     candidateEdges:r.lexicalCandidates?.length??0,gateStatus:gate.status,reviewStatus:'MODULE_EXECUTED_LOCALLY_REVIEW_REQUIRED',

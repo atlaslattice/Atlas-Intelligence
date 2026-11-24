@@ -3,6 +3,7 @@
  * Original Ariadne bytes and all review artifacts must be injected by the owner.
  */
 import {createHash} from 'node:crypto';
+import {types as utilTypes} from 'node:util';
 import {AriadneRegistry,canonical,Hold} from './index.mjs';
 
 export const SCHEMA='atlas.one.meta145-glyph.v2';
@@ -36,6 +37,35 @@ function handleAlias(alias){
  throw new Hold('UNKNOWN_COORDINATE_NAMESPACE');
 }
 const flags=()=>({hostAuthenticated:false,rightsVerified:false,canonAuthority:false,workPosted:false,modelWeightsChanged:false,residentAuthenticated:false,sourceOnly:true});
+
+function memorySnapshot(policy,metaDigest){
+ if(!policy)return null;
+ require_(typeof policy==='object'&&!Array.isArray(policy)&&!utilTypes.isProxy(policy),'MEMORY_SCOPE_INVALID');
+ // Read only data properties needed by this adapter. Cloning an entire caller
+ // object would execute unrelated getters while source validation is in flight.
+ const read=(key,optional=false)=>{
+   const d=Object.getOwnPropertyDescriptor(policy,key);
+   if(!d&&optional)return undefined;
+   require_(d&&Object.hasOwn(d,'value'),'MEMORY_SCOPE_INVALID');return d.value;
+ };
+ const out={selected:read('selected'),sourceSHA256:read('sourceSHA256'),
+   sourceInputDigest:read('sourceInputDigest'),siteDeployed:read('siteDeployed')};
+ require_(out.selected==='POSTINGS_INDEX'&&out.sourceSHA256===SOURCE_SHA&&
+   out.sourceInputDigest===metaDigest&&out.siteDeployed===false,'MEMORY_SCOPE_INVALID');
+ const ids=read('evidenceEventIds',true);out.evidenceEventIds=[];
+ if(ids!==undefined&&ids!==null){
+   require_(Array.isArray(ids)&&!utilTypes.isProxy(ids),'MEMORY_EVIDENCE_IDS_INVALID');
+   // Dense string IDs have no shared storage or behavior-bearing elements.
+   // Count own keys as well so unrelated array metadata cannot escape later.
+   require_(Reflect.ownKeys(ids).length===ids.length+1,'MEMORY_EVIDENCE_IDS_INVALID');
+   for(let i=0;i<ids.length;i++){
+     const d=Object.getOwnPropertyDescriptor(ids,String(i));
+     require_(d&&Object.hasOwn(d,'value')&&typeof d.value==='string','MEMORY_EVIDENCE_IDS_INVALID');
+     out.evidenceEventIds.push(d.value);
+   }
+ }
+ return out;
+}
 
 export class Meta145GlyphCircuit {
  #registry;#meta;#node;#perspectives;#reviews;#houses;#followups;#memory;
@@ -84,8 +114,9 @@ export class Meta145GlyphCircuit {
        &&f.semanticStatus==='UNREVIEWED'&&!f.rightsGranted&&f.newIndependentEvaluations===0,'HOUSE_FOLLOWUP_FALSE_COMPLETION');
      require_(jsonDigest(withoutHash(f,'receiptSha256'))===f.receiptSha256,'FOLLOWUP_HASH_MISMATCH');
    }
-   this.#memory=memoryPolicy;
-   if(memoryPolicy)require_(memoryPolicy.selected==='POSTINGS_INDEX'&&memoryPolicy.sourceSHA256===SOURCE_SHA&&memoryPolicy.sourceInputDigest===m.meta145Digest&&memoryPolicy.siteDeployed===false,'MEMORY_SCOPE_INVALID');
+   // Retain validated data, never the caller's mutable policy or arbitrary
+   // metadata. Functional memory cannot change after source validation.
+   this.#memory=memorySnapshot(memoryPolicy,m.meta145Digest);
    this.#meta=Object.freeze({...m});Object.freeze(this);
  }
  status(){return {schema:SCHEMA,status:'LOCAL_SOURCE_VERIFIED_CANDIDATE',sourceSHA256:SOURCE_SHA,perspectives:144,nodes:1728,
@@ -100,15 +131,15 @@ export class Meta145GlyphCircuit {
      cymaticRelation:'POSITIONAL_VISUAL_INDEX_ONLY',physicalMeaningFromHSN:false,...flags()};}
  sphereReview(id){require_(SPHERE.test(id)&&this.#perspectives.has(id),'SPHERE_UNKNOWN');const p=this.#perspectives.get(id),r=this.#reviews.get(id);
    return {schema:SCHEMA,status:'COMPUTED_PERSPECTIVE_UNREVIEWED',sphere:id,perspectiveSha256:p.perspectiveSha256,
-     role:p.sourceRole,anchorTerms:p.anchorTerms,homeNodes:p.homeNodes,
-     candidateNodeRefs:r.topCandidateNodeIds,unreviewedCandidates:r.lexicalCandidates.length,
+     role:p.sourceRole,anchorTerms:structuredClone(p.anchorTerms),homeNodes:structuredClone(p.homeNodes),
+     candidateNodeRefs:structuredClone(r.topCandidateNodeIds),unreviewedCandidates:r.lexicalCandidates.length,
      semanticEdgesAccepted:0,...flags()};}
  houseReview(id){const h=this.#houses.get(id);require_(h,'HOUSE_UNKNOWN');return {schema:SCHEMA,status:'HOUSE_REVIEW_CANDIDATE',house:id,sphereCount:h.sphereIds.length,
-  houseName:h.houseName,sourcePerspectiveDigests:h.sourcePerspectiveDigests,proposedCrossHouseQuestion:h.crossHouseQuestion,
+  houseName:h.houseName,sourcePerspectiveDigests:structuredClone(h.sourcePerspectiveDigests),proposedCrossHouseQuestion:h.crossHouseQuestion,
   semanticEdgesAccepted:0,...flags()};}
  functionalMemory(){return {schema:SCHEMA,status:this.#memory?'VERIFIED_LOCAL_FEEDBACK_REPLAYED':'NO_VERIFIED_FEEDBACK_ATTACHED',
    sourceMeta145Digest:this.#meta.meta145Digest,selectedPolicy:this.#memory?.selected||'BASELINE_SCAN',
-   evidenceEventIds:this.#memory?.evidenceEventIds||[],hasModifiedModelWeights:false,
+   evidenceEventIds:structuredClone(this.#memory?.evidenceEventIds||[]),hasModifiedModelWeights:false,
    continuousBackgroundLearning:false,...flags()};}
  prepareWorkDraft(alias,roomId){require_(typeof roomId==='string'&&ROOM.test(roomId),'ROOM_ID_INVALID');const source=this.resolve(alias);
    return {schema:'atlas.one.meta145.work-review-draft/v1',status:'PREPARED_NOT_POSTED',mode:'WORK',roomId,
