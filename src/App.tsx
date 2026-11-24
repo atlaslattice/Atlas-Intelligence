@@ -14,7 +14,7 @@ import { useAuth } from './lib/AuthContext';
 import { saveMemory, MemoryEntry } from './lib/firestore-utils';
 import { spawnHouseAgents } from './lib/agent-utils';
 import { createIntelligenceNode } from './lib/intelligence-utils';
-import { ingestContext, generateSynthesisPrompt } from './lib/lcp';
+import { ingestContext, generateSynthesisPrompt, LEGACY_LCP_NAMESPACE } from './lib/lcp';
 
 type Role = 'user' | 'model' | 'system';
 
@@ -30,7 +30,7 @@ function VerificationPanel({ result }: { result: VerificationResult }) {
     <div className="mt-4 border-t border-white/10 pt-4 flex flex-col gap-2">
       <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white/50 mb-1">
         {result.overall_passed ? <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> : <ShieldAlert className="w-3.5 h-3.5 text-red-400" />}
-        <span>Post-Generation Verification</span>
+        <span>Output format checks</span>
       </div>
       <div className="flex flex-col gap-1.5">
         {result.checks.map((check, i) => (
@@ -165,6 +165,8 @@ export default function App() {
             tier: 'working',
             houseId: primaryHouse,
             sphereId: primarySphere,
+            metadata: { classificationNamespace: LEGACY_LCP_NAMESPACE,
+              classificationMethod: 'LEGACY_NAME_SUBSTRING', semanticCrosswalkAccepted: false },
             createdAt: Date.now(),
             confidenceTier: 'NOT_VERIFIED'
           } as MemoryEntry);
@@ -175,6 +177,8 @@ export default function App() {
             tier: 'working',
             houseId: primaryHouse,
             sphereId: primarySphere,
+            metadata: { classificationNamespace: LEGACY_LCP_NAMESPACE,
+              classificationMethod: 'LEGACY_NAME_SUBSTRING', semanticCrosswalkAccepted: false },
             createdAt: Date.now(),
             confidenceTier: 'NOT_VERIFIED'
           } as MemoryEntry);
