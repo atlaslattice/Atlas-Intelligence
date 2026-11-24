@@ -1,0 +1,65 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 4466,
+      "sha256": "b972d38c3d109a72b304febeac84c72e00e6e885b3fc7c2736a4b4c9dfcab2b0"
+    },
+    "docs/PEER_HANDOFF.md": {
+      "bytes": 2039,
+      "sha256": "ffde482b4e251150c1204e81f06d5c0c4f593cfd1f1e40b82b60c0b52c639b54"
+    },
+    "examples/benchmark.mjs": {
+      "bytes": 1560,
+      "sha256": "f9525b8599117ccdd931eba7da6b277b0e35d8c8bade23077b32b88a9e966901"
+    },
+    "fixtures/benchmark-result.json": {
+      "bytes": 1666,
+      "sha256": "c24b7994031d737455169f1815e7cfa377e20d8e47fa041b5f3b64da4c2f7918"
+    },
+    "fixtures/execution-receipt.json": {
+      "bytes": 1300,
+      "sha256": "f77480cdfe8ddb3eeb6d8ad38ca0f0ce7693defb2c2cb5ebab668911497ff922"
+    },
+    "fixtures/initial-parity.tap": {
+      "bytes": 7865,
+      "sha256": "cee527c89393c3b2b13f336806b6a7239fe3a5b48f25465ce395703cdc4b6b1d"
+    },
+    "fixtures/jitless-all.tap": {
+      "bytes": 10134,
+      "sha256": "aced4b74bb38291e9b3bcebed07573fea1653f0883874b924638c895ae21cba4"
+    },
+    "fixtures/negative-red-green.tap": {
+      "bytes": 2188,
+      "sha256": "1dea197a2f849d5c72bc3022a9d9febabed7d629ea434b3a22c26df7adb836d5"
+    },
+    "fixtures/normal-all.tap": {
+      "bytes": 9938,
+      "sha256": "dcb41af991e1a088170689271358a9da7cf086b5e7978b07159a63556496fd58"
+    },
+    "fixtures/sample-review.json": {
+      "bytes": 13633,
+      "sha256": "e9a087ee715a498897bcfc4c75077d4ecc7c4fae63dcacbd80a39e7850d4a8c2"
+    },
+    "fixtures/v2-inherited-jitless.tap": {
+      "bytes": 5216,
+      "sha256": "b556bfd9fe81829be99e732343728c8e2b27a7ba5c4da16b9aa9e8bb16a8f01d"
+    },
+    "fixtures/v2-inherited.tap": {
+      "bytes": 5088,
+      "sha256": "47dfff820f117e7d17de4e0434b82fdd20b6e99e38fd5c6d152f6258be7ef40b"
+    },
+    "src/rule-revision-snapshot.mjs": {
+      "bytes": 10231,
+      "sha256": "8ffedaed53c47ccd923820b36306efbb6faacb3e11a6940ac4baf1ec03fea2b3"
+    },
+    "test/inherited-v3.test.mjs": {
+      "bytes": 10959,
+      "sha256": "d5232bb07aa5180ec9b813601a265e06d3e263bd76a27454a8d7ad6f2eb5dc6e"
+    },
+    "test/snapshot-differential.test.mjs": {
+      "bytes": 4761,
+      "sha256": "6f5d3d2410872868eb22fbda8629db00d51e656882988363a4a160dcb600a686"
+    }
+  },
+  "schema": "atlas.collaboration.v4-artifact-integrity/v1"
+}

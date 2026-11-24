@@ -1,0 +1,67 @@
+{
+  "schema": "atlas.collaboration.v4.local-benchmark/v1",
+  "mode": "OFFLINE_AUDIT_ONLY",
+  "node": "v22.16.0",
+  "pairs": 11,
+  "callsPerSeries": 250,
+  "baseline": {
+    "p50_us": 568.1014560000003,
+    "p95_us": 726.2537040000002,
+    "min_us": 518.9792200000011,
+    "max_us": 726.2537040000002
+  },
+  "candidate": {
+    "p50_us": 597.4847480000003,
+    "p95_us": 689.2807520000001,
+    "min_us": 560.0042400000002,
+    "max_us": 689.2807520000001
+  },
+  "relativeP50": 1.051721909334448,
+  "raw": [
+    {
+      "v3.1-baseline": 681.4892919999999,
+      "v4-snapshot": 689.2807520000001
+    },
+    {
+      "v4-snapshot": 680.5213519999998,
+      "v3.1-baseline": 726.2537040000002
+    },
+    {
+      "v3.1-baseline": 542.8243159999997,
+      "v4-snapshot": 597.4847480000003
+    },
+    {
+      "v4-snapshot": 583.7184520000001,
+      "v3.1-baseline": 568.1014560000003
+    },
+    {
+      "v3.1-baseline": 606.7566040000002,
+      "v4-snapshot": 631.2217879999998
+    },
+    {
+      "v4-snapshot": 603.3822359999995,
+      "v3.1-baseline": 585.203644000001
+    },
+    {
+      "v3.1-baseline": 518.9792200000011,
+      "v4-snapshot": 560.0042400000002
+    },
+    {
+      "v4-snapshot": 560.1337160000003,
+      "v3.1-baseline": 540.5349839999999
+    },
+    {
+      "v3.1-baseline": 599.6104599999999,
+      "v4-snapshot": 621.3293599999997
+    },
+    {
+      "v4-snapshot": 565.7702840000002,
+      "v3.1-baseline": 521.9298680000011
+    },
+    {
+      "v3.1-baseline": 533.9559119999994,
+      "v4-snapshot": 585.8765799999983
+    }
+  ],
+  "note": "This is exact same audit fixture/operation, not neural model inference or hosting. A ratio above 1 is slower."
+}
