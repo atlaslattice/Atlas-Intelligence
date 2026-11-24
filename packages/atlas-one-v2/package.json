@@ -12,7 +12,8 @@
     "./agents": "./src/openai.mjs",
     "./host": "./src/adapters.mjs",
     "./work-search": "./src/work-search.mjs",
-    "./civilization-circuit": "./src/civilization-circuit.mjs"
+    "./civilization-circuit": "./src/civilization-circuit.mjs",
+    "./meta145-glyph": "./src/meta145-glyph.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",

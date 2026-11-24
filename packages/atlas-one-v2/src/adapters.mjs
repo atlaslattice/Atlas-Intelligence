@@ -80,3 +80,6 @@ export {WorkFullBodySearchPort,WORK_SEARCH_SCHEMA} from './work-search.mjs';
 
 // Optional exact-source 1728-dimensional review projection; never a hosted grant.
 export {CivilizationCircuit,CIRCUIT_SCHEMA} from './civilization-circuit.mjs';
+
+// Additive META145 source-only glyph/memory review; host permissions remain external.
+export {Meta145GlyphCircuit,SCHEMA as META145_GLYPH_SCHEMA} from './meta145-glyph.mjs';
