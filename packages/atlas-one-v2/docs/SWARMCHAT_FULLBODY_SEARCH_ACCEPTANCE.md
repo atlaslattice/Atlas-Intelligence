@@ -48,3 +48,31 @@ This is one real Work delta from an optional on-demand Whole Macroturn; it is **
 - The same failure mode could disproportionately hide long, context-rich Work objections across any of Ariadne's twelve Houses. That is a quality risk to test, not evidence of quantified civilizational harm. Build scoped long-text controls covering different Houses, languages, types of disagreement, and accessible 2D views before asserting coverage.
 
 No peer reported an authenticated installed Site fix; neither does this candidate.
+
+## Native egress-window regression verification · 2026-11-24
+
+The optional port now constructs its scanned-window receipt immediately after
+validating the selected page, before awaiting host `egress`. A host callback that
+reuses its original page object can no longer change the returned cursor, count
+or coverage flag, or cause a post-egress exception by clearing `rows`. The return
+rights check still runs before any hit or scanned-window receipt is emitted.
+
+This carries an already isolated repair into the exact native package at PR18
+head `9372bb66a01fa90701a3cead88a576b88822c4aa`, whose parent is PR8 head
+`8310db76277bb3860fdfde3c08d66bb20e43b23d`. It is not a new discovery of the same
+defect. Six inherited regression cases now import the actual module and helpers.
+Against the unmodified module they produced three passing controls and three
+failures; the repaired package passes all six.
+
+The complete source-available package suite ran on Node **24.22.3**. The original
+package registered **188 cases: 165 passed, 23 skipped**. The repaired package
+registered **194 cases: 171 passed, 23 skipped, zero failures**. All skips require
+the owner-private original Ariadne source, which was not supplied in this run.
+These are local receipts; the workflow's Node 22 execution remains unverified.
+Earlier owner-local and isolated-harness receipts above remain historical.
+
+The change does not address hostile synchronous accessors, authenticate host
+callbacks, or replace the publisher's atomic current-rights check at network
+return. PR8/PR18 stack acceptance, source rights, current hosted CI, served-head
+integration, two-account controls and rollback remain separate gates. No host
+deployment, production search correction, room read or model call is claimed.

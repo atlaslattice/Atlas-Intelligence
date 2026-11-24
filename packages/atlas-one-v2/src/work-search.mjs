@@ -68,7 +68,7 @@ export class WorkFullBodySearchPort {
     if(!identityValid(fresh)||!samePrincipal(fresh,scope)||fresh.rightsEpoch!==scope.rightsEpoch)
       return hold('ACCESS_UNAVAILABLE');
 
-    let hits=[],bytes=0,last=afterSeq;
+    let hits=[],bytes=0,last=afterSeq,scannedWindow;
     try{
       if(!isObject(page)||!Array.isArray(page.rows)||page.rows.length>pageSize
         ||typeof page.hasMore!=='boolean'||!Number.isInteger(page.nextAfterSeq)
@@ -91,6 +91,12 @@ export class WorkFullBodySearchPort {
           renderedDomOffset:null,rendererSourceMapRequired:true});
       }
       if(page.nextAfterSeq!==last)return hold('SOURCE_UNAVAILABLE');
+      // Bind the receipt to the validated page before awaiting host egress.
+      // The callback may reuse or mutate its original page object.
+      scannedWindow={roomId,afterSeq,nextAfterSeq:last,hasMore:page.hasMore,
+        recordsScanned:page.rows.length,bodyBytesScanned:bytes,
+        coverage:'FULL_BODIES_FOR_RETURNED_ROWS_ONLY',
+        fullRoomCoverageProven:false,sourceWindowNotGlobalConclusion:true};
     }catch{return hold('SOURCE_UNAVAILABLE');}
 
     // This check MUST be implemented by a host that owns actual current rights.
@@ -103,10 +109,7 @@ export class WorkFullBodySearchPort {
       schema:WORK_SEARCH_SCHEMA,
       status:hits.length?'DIRECT_MATCHES_IN_AUTHORIZED_PAGE':'NO_MATCH_IN_SCANNED_PAGE_NOT_GLOBAL_ABSENCE',
       matched:hits,
-      scannedWindow:{roomId,afterSeq,nextAfterSeq:page.nextAfterSeq,hasMore:page.hasMore,
-        recordsScanned:page.rows.length,bodyBytesScanned:bytes,
-        coverage:'FULL_BODIES_FOR_RETURNED_ROWS_ONLY',
-        fullRoomCoverageProven:false,sourceWindowNotGlobalConclusion:true},
+      scannedWindow,
       hostAuthenticated:false,rightsVerified:false,
       rightsProof:'HOST_CALLBACK_REPORTED_NOT_ATTESTED',
       privateContentReturned:false,postPerformed:false,canonEffect:'NONE'
