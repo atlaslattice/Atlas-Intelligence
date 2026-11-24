@@ -14,7 +14,7 @@
 
 `runInnovation(id, syntheticInput)` returns `LOCAL_SYNTHETIC_CANDIDATE` or constant-shaped `HOLD`. The returned schema explicitly says `authorityEffect: NONE`, `hostVerified: false`, `scientificAcceptance: false`. No host READ/RETURN is inferred by passing `originMode:'WORK'`; this is merely a negative mode filter. Data must already be verified by an existing trusted host before any candidate may be used with sensitive sources. The runner only uses source-derived labels and synthetic toy fixtures. `prepareWorkCandidate` returns `PREPARED_NOT_SENT` with explicit `readRightsVerified:false` and `returnRightsVerified:false`.
 
-`composeInnovationCircuit(HSN)` runs exactly 20 local synthetic operators and creates **one** non-authorizing META145-inspired advisory receipt. `meta145InnovationRollup(cards)` verifies 1728 distinct HSN receipts grouped into 144 Spheres and 12 Houses; it never creates semantic edges or claim truth. Future real rights-bearing Work integration must use the **existing** Atlas ONE host port, not an injected model callback or a second issuer.
+`composeInnovationCircuit(HSN)` runs exactly 20 local synthetic operators and creates **one** non-authorizing META145-inspired advisory receipt. `meta145InnovationRollup(cards)` checks each local synthetic receipt SHA (tamper evidence, not publisher identity), then verifies 1728 distinct HSN receipts grouped into 144 Spheres and 12 Houses; it never creates semantic edges or claim truth. Future real rights-bearing Work integration must use the **existing** Atlas ONE host port, not an injected model callback or a second issuer.
 
 ## Component slots
 
