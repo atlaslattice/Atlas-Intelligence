@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M10",
+  "title": "10 Security, Rights & Integrity",
+  "features": [
+    {
+      "id": "NEURO.M10.F01",
+      "reviewSlotOnly": "H10.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Uncited allowed-use source wrongly requires quotation permission"
+    },
+    {
+      "id": "NEURO.M10.F02",
+      "reviewSlotOnly": "H10.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Hidden forbidden dependency still shapes answer"
+    },
+    {
+      "id": "NEURO.M10.F03",
+      "reviewSlotOnly": "H10.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Hidden item denial bypasses source-level checks"
+    },
+    {
+      "id": "NEURO.M10.F04",
+      "reviewSlotOnly": "H10.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Permission revoked after compute yet body escapes"
+    },
+    {
+      "id": "NEURO.M10.F05",
+      "reviewSlotOnly": "H10.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/huggingface_hub",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A source card with no explicit license is admitted to training"
+    },
+    {
+      "id": "NEURO.M10.F06",
+      "reviewSlotOnly": "H10.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Untrusted pickle activates arbitrary code path"
+    },
+    {
+      "id": "NEURO.M10.F07",
+      "reviewSlotOnly": "H10.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "High neural score auto-grants deployment permission"
+    },
+    {
+      "id": "NEURO.M10.F08",
+      "reviewSlotOnly": "H10.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A source snippet triggers a plugin action"
+    },
+    {
+      "id": "NEURO.M10.F09",
+      "reviewSlotOnly": "H10.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/qdrant/qdrant",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Same vector from another tenant returns with rights"
+    },
+    {
+      "id": "NEURO.M10.F10",
+      "reviewSlotOnly": "H10.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/tokenizers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Emoji spans highlight the wrong underlying source"
+    },
+    {
+      "id": "NEURO.M10.F11",
+      "reviewSlotOnly": "H10.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/huggingface_hub",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Archived or GPL project auto-imported as permissive"
+    },
+    {
+      "id": "NEURO.M10.F12",
+      "reviewSlotOnly": "H10.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/langchain-ai/langgraph",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Rollback restores a revoked source permission"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}

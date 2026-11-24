@@ -1,0 +1,16 @@
+{
+  "name": "@atlas-lattice/neural-oss-forge",
+  "version": "0.1.0-review",
+  "private": true,
+  "type": "module",
+  "description": "Atlas neural OSS 144 feature review and original reference kernels; source-only, no host/weights",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:jitless": "node --jitless --test test/*.test.mjs",
+    "smoke": "node examples/demo.mjs",
+    "plan": "node examples/demo.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

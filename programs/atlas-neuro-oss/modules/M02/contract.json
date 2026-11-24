@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M02",
+  "title": "02 Embeddings & Retrieval",
+  "features": [
+    {
+      "id": "NEURO.M02.F01",
+      "reviewSlotOnly": "H02.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Swapped prompts retain an unsupported parity claim"
+    },
+    {
+      "id": "NEURO.M02.F02",
+      "reviewSlotOnly": "H02.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Dimension savings are claimed despite lost eligible recall"
+    },
+    {
+      "id": "NEURO.M02.F03",
+      "reviewSlotOnly": "H02.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/stanford-futuredata/ColBERT",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Higher token score grants source access"
+    },
+    {
+      "id": "NEURO.M02.F04",
+      "reviewSlotOnly": "H02.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Contradiction disappears solely due rank cutoffs"
+    },
+    {
+      "id": "NEURO.M02.F05",
+      "reviewSlotOnly": "H02.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A graph neighbor inflates direct-neural Hit@10"
+    },
+    {
+      "id": "NEURO.M02.F06",
+      "reviewSlotOnly": "H02.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/facebookresearch/faiss",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A tie changes source order across backends"
+    },
+    {
+      "id": "NEURO.M02.F07",
+      "reviewSlotOnly": "H02.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/facebookresearch/faiss",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "ANN is called complete without exact-ID audit"
+    },
+    {
+      "id": "NEURO.M02.F08",
+      "reviewSlotOnly": "H02.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/deepset-ai/haystack",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Revoked high-score route leaks via fusion"
+    },
+    {
+      "id": "NEURO.M02.F09",
+      "reviewSlotOnly": "H02.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/optimum",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Low-bit cache silently changes source ranking"
+    },
+    {
+      "id": "NEURO.M02.F10",
+      "reviewSlotOnly": "H02.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Opposite supplier/buyer semantics score as identical facts"
+    },
+    {
+      "id": "NEURO.M02.F11",
+      "reviewSlotOnly": "H02.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/text-embeddings-inference",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Same vector key grants a different source identity"
+    },
+    {
+      "id": "NEURO.M02.F12",
+      "reviewSlotOnly": "H02.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/text-embeddings-inference",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Removing revoked candidate retains its old influence"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}
