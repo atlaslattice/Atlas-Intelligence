@@ -1,0 +1,89 @@
+{
+  "batch": 16,
+  "entries": [
+    {
+      "macroturn": 46,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/52",
+        "title": "Beyond Q v1.4.1: A-first startup and one-year tritium fuel banking",
+        "state": "open",
+        "head_sha": "f15f5349a944b17f5353ed001cad35cc9e0027de",
+        "base": "research/beyond-q-multiscale-v1.4",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/245",
+        "title": "Repo Cartography Pilot Slice: first 12 atlaslattice repositories",
+        "state": "open",
+        "relation": "COMPANION_BACKLOG_NOT_MERGE_DEPENDENCY"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_SOURCE",
+        "HOSTED_CI_NOT_OBSERVED",
+        "EVIDENCE_QUALIFICATION_REQUIRED"
+      ],
+      "disposition": "HOLD",
+      "work_beats": 6,
+      "voluntary_beats": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "macroturn": 47,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/51",
+        "title": "Beyond Q v1.4: slowing/DT benchmarks and eight-hour fuel-cycle scenarios",
+        "state": "open",
+        "head_sha": "971172185a57cd610dcce80326669e4ef222ca23",
+        "base": "research/beyond-q-kinetic-source-v1.3",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/242",
+        "title": "Swarm Hub: 12 modules × 12 tasks to complete open work",
+        "state": "open",
+        "relation": "COMPANION_BACKLOG_NOT_MERGE_DEPENDENCY"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_SOURCE",
+        "HOSTED_CI_NOT_OBSERVED",
+        "EVIDENCE_QUALIFICATION_REQUIRED"
+      ],
+      "disposition": "HOLD",
+      "work_beats": 6,
+      "voluntary_beats": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "macroturn": 48,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/50",
+        "title": "Execute WarpX p–B benchmark and magnetic orbit qualification v0.1",
+        "state": "open",
+        "head_sha": "f7469b355f1182fcb5b746bfbec2d803a62bf108",
+        "base": "gptwork/laser-acoustic-pocket-v0-1",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/241",
+        "title": "Build path: boring local reference engine for artifact governance gates",
+        "state": "open",
+        "relation": "COMPANION_BACKLOG_NOT_MERGE_DEPENDENCY"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_SOURCE",
+        "HOSTED_CI_NOT_OBSERVED",
+        "EVIDENCE_QUALIFICATION_REQUIRED"
+      ],
+      "disposition": "HOLD",
+      "work_beats": 6,
+      "voluntary_beats": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}

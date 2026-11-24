@@ -1,0 +1,100 @@
+{
+  "batch": 10,
+  "records": [
+    {
+      "macroturn": 28,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/288",
+        "title": "DJK-001: portable QOL + ecological accounting companion v0.1 (non-crediting)",
+        "state": "open",
+        "head_sha": "62f82cabbe1081e2adef958608a701645e207663",
+        "draft": true,
+        "mergeable": false,
+        "base": "master"
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/259",
+        "title": "MissingReceipt: GPTDream++ 63 tests passing",
+        "state": "open",
+        "relationship": "BACKLOG_COMPANION_NOT_CAUSAL"
+      },
+      "ci": [
+        {
+          "id": 38100991805,
+          "name": "Dongjiakou simulator validation",
+          "result": "failure"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "DRAFT",
+        "NOT_MERGEABLE",
+        "HOSTED_CI_FAILURE",
+        "SCIENTIFIC_OR_RIGHTS_REVIEW"
+      ],
+      "work_beats": 6,
+      "reserved": 14
+    },
+    {
+      "macroturn": 29,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/70",
+        "title": "Audit: evidence-gated integration sequence for stacked ORCS PRs #64/#67/#68",
+        "state": "open",
+        "head_sha": "60ac57427d026ad7faef5458b4a72fdea06dfe87",
+        "draft": true,
+        "mergeable": true,
+        "base": "main"
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/issues/69",
+        "title": "Open review: Somalia 24-factory nutrition sovereignty | SoDMA, WFP, FAO, UNICEF, OCHA, Somali manufacturers",
+        "state": "open",
+        "relationship": "BACKLOG_COMPANION_NOT_CAUSAL"
+      },
+      "ci": [
+        {
+          "id": 45054058795,
+          "name": "ORCS Evidence Vector Gate",
+          "result": "failure"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "DRAFT",
+        "HOSTED_CI_FAILURE",
+        "SCIENTIFIC_OR_RIGHTS_REVIEW"
+      ],
+      "work_beats": 6,
+      "reserved": 14
+    },
+    {
+      "macroturn": 30,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/68",
+        "title": "Execute laser wall-plug and containment cost sweeps for the cold pB control",
+        "state": "open",
+        "head_sha": "ae75e78aa0e2d8e615c0cb96afc26d958a1cbbae",
+        "draft": true,
+        "mergeable": true,
+        "base": "gptwork/hollow-sphere-solvers-v0-1"
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/issues/6",
+        "title": "Obtain Texas 2024–2026 commercial fertilizer N/P/K tonnage and origin trade-flow ledger",
+        "state": "open",
+        "relationship": "BACKLOG_COMPANION_NOT_CAUSAL"
+      },
+      "ci": [],
+      "status": "HOLD",
+      "holds": [
+        "DRAFT",
+        "STACKED",
+        "CI_UNOBSERVED",
+        "SCIENTIFIC_OR_RIGHTS_REVIEW"
+      ],
+      "work_beats": 6,
+      "reserved": 14
+    }
+  ]
+}

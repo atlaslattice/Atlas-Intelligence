@@ -1,0 +1,147 @@
+{
+  "schema": "atlas.actual-50-work-macroturns/v0.1",
+  "batch": "01",
+  "timestamp_scope": "2026-11-22",
+  "status": "SOURCE_REVIEW_NOT_RELEASE",
+  "work_fraction": "6/20",
+  "entries": [
+    {
+      "turn": 1,
+      "pr": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/pull/53",
+        "title": "ci: verify candidate evidence, coordinate and Packet96 modules on two Python versions",
+        "state": "open",
+        "head_sha": "75b03b5d6b7582726e70adf400634ae9f0374323",
+        "head": "ci/candidate-contract-tests-20261122",
+        "base": "main",
+        "draft": false,
+        "merged": false,
+        "mergeable": true,
+        "changed_files": 1
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/issues/43",
+        "title": "GPT Children of the Swarm — 12×12 candidate execution backlog and receipt gates",
+        "state": "open"
+      },
+      "workflow_runs": [
+        {
+          "id": 45054220992,
+          "name": "Eight Gates Check",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 45054220943,
+          "name": "Candidate Contracts — offline regression",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "disposition": "HOLD_REVIEW",
+      "holds": [
+        "CI_NOT_GREEN",
+        "REVIEW_HUMAN_RIGHTS_CLAIMS"
+      ],
+      "work_beats": [
+        "PR_HEAD_SOURCE_READ",
+        "RELATED_ISSUE_SOURCE_READ",
+        "PR_WORKFLOW_SOURCE_READ",
+        "REF_AND_DEPENDENCY_AUDIT",
+        "RELEASE_RIGHTS_SCREEN",
+        "GITHUB_RECORDED"
+      ],
+      "nonwork_slots": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 2,
+      "pr": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/pull/52",
+        "title": "P0 candidate: fail-closed Sentinel review gate and 27 offline tests",
+        "state": "open",
+        "head_sha": "13eb7a18c67ad5aa71cbe76f46a1433f81c9b4d1",
+        "head": "feat/sentinel-candidate-review-v01-20261122",
+        "base": "main",
+        "draft": true,
+        "merged": false,
+        "mergeable": true,
+        "changed_files": 3
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/issues/15",
+        "title": "OpenAI-Grade P0: Implement Sentinel constitutional gate",
+        "state": "open"
+      },
+      "workflow_runs": [
+        {
+          "id": 45054642504,
+          "name": "Eight Gates Check",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "disposition": "HOLD_REVIEW",
+      "holds": [
+        "DRAFT",
+        "CI_NOT_GREEN",
+        "REVIEW_HUMAN_RIGHTS_CLAIMS"
+      ],
+      "work_beats": [
+        "PR_HEAD_SOURCE_READ",
+        "RELATED_ISSUE_SOURCE_READ",
+        "PR_WORKFLOW_SOURCE_READ",
+        "REF_AND_DEPENDENCY_AUDIT",
+        "RELEASE_RIGHTS_SCREEN",
+        "GITHUB_RECORDED"
+      ],
+      "nonwork_slots": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 3,
+      "pr": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/pull/4",
+        "title": "OpenAI interop hardening baseline",
+        "state": "open",
+        "head_sha": "fcbad6b0a7993d2bd7528aa6e076c3101559898e",
+        "head": "openai-interop-current",
+        "base": "main",
+        "draft": false,
+        "merged": false,
+        "mergeable": true,
+        "changed_files": 14
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/issues/26",
+        "title": "OPENAI_PLANE_001 — Reasoning, extraction, evals, agents, and tool spine for federated KG",
+        "state": "open"
+      },
+      "workflow_runs": [
+        {
+          "id": 45054075265,
+          "name": "Eight Gates Check",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "id": 45054075226,
+          "name": "OpenAI Interop CI",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "disposition": "HOLD_REVIEW",
+      "holds": [
+        "CI_NOT_GREEN"
+      ],
+      "work_beats": [
+        "PR_HEAD_SOURCE_READ",
+        "RELATED_ISSUE_SOURCE_READ",
+        "PR_WORKFLOW_SOURCE_READ",
+        "REF_AND_DEPENDENCY_AUDIT",
+        "RELEASE_RIGHTS_SCREEN",
+        "GITHUB_RECORDED"
+      ],
+      "nonwork_slots": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "batch": "09",
+  "entries": [
+    {
+      "turn": 25,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/291",
+        "title": "research(djk): v0.3 Qingdao-vs-Dongjiakou evidence audit and BIO01-E geo guards",
+        "head_sha": "7611a3435385fe635af8871f38e641f8bb81c9e0",
+        "base": "master",
+        "head": "research/djk-qingdao-evidence-material-ledger-v03-20261010",
+        "draft": true,
+        "state": "open",
+        "mergeable": false
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/262",
+        "title": "Mirror control: Notion Drive OneDrive GitHub 12D index completeness",
+        "state": "open",
+        "pairing": "INDEPENDENT_REPO_BACKLOG"
+      },
+      "ci": [
+        {
+          "id": 38104796588,
+          "name": "DJK Geo and Material Guards v0.3",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "result": "HOLD",
+      "holds": [
+        "DRAFT",
+        "CONFLICT_OR_NOT_MERGEABLE",
+        "CI_FAILED",
+        "ADMISSION_REVIEW"
+      ],
+      "work_beats": 6,
+      "other_modes": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 26,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/290",
+        "title": "DragonSeek 2.0: PRC industrial platform/standards landscape and DeepSeek review packet",
+        "head_sha": "2181f841d6ae15af1cb1dfa22e41fbf7dfa012fa",
+        "base": "research/djk-v2-first-class-qol-20261010",
+        "head": "research/djk-landscape-standards-review-20261010",
+        "draft": true,
+        "state": "open",
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/261",
+        "title": "[VERIFICATION] 019e945ad388 Grok CLI 12x12 verification packet",
+        "state": "open",
+        "pairing": "INDEPENDENT_REPO_BACKLOG"
+      },
+      "ci": [],
+      "result": "HOLD",
+      "holds": [
+        "DRAFT",
+        "STACKED_PR",
+        "CI_NOT_FOUND",
+        "ADMISSION_REVIEW"
+      ],
+      "work_beats": 6,
+      "other_modes": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 27,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/289",
+        "title": "DJK v2.0-alpha: unified simulator with first-class QOL, ECO and public-benefit FUND",
+        "head_sha": "76ee9630e4b97adbd346503390857c0956f1eb7c",
+        "base": "master",
+        "head": "research/djk-v2-first-class-qol-20261010",
+        "draft": true,
+        "state": "open",
+        "mergeable": false
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/260",
+        "title": "MissingReceipt: KG coverage 5.2 percent and 288 orphaned files",
+        "state": "open",
+        "pairing": "INDEPENDENT_REPO_BACKLOG"
+      },
+      "ci": [
+        {
+          "id": 38101146572,
+          "name": "Dongjiakou simulator validation",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "result": "HOLD",
+      "holds": [
+        "DRAFT",
+        "CONFLICT_OR_NOT_MERGEABLE",
+        "CI_FAILED",
+        "ADMISSION_REVIEW"
+      ],
+      "work_beats": 6,
+      "other_modes": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}

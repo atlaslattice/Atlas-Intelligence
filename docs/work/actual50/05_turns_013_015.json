@@ -1,0 +1,104 @@
+{
+  "schema": "atlas.actual-50-work-macroturns/v0.1",
+  "batch": "05",
+  "records": [
+    {
+      "turn": 13,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/304",
+        "title": "DragonSeek OS v1.6.2: constitutional registry, integrity boot, UWS full-tool bridge & dual-brain review",
+        "state": "open",
+        "head_sha": "e22e2190d14144b1f12c14ad6bcaf66d4f184345",
+        "base": "master",
+        "draft": true,
+        "mergeable": false
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/279",
+        "title": "Next phase: connect v0.6 outcome ledgers to Dongjiakou simulator",
+        "state": "open",
+        "relation": "BACKLOG_PAIR_NOT_DIRECT_DEPENDENCY"
+      },
+      "workflow": [
+        {
+          "id": 38164357757,
+          "name": "DragonSeek Constitutional Corpus Tests",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "holds": [
+        "DRAFT",
+        "NONMERGEABLE",
+        "HOSTED_CI_FAILED",
+        "SCIENTIFIC_OR_RIGHTS_REVIEW"
+      ],
+      "disposition": "HELD",
+      "work_completed": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 14,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/302",
+        "title": "DragonSeek v1.2: runnable USGS seismic + feed health + RES07 comparison",
+        "state": "open",
+        "head_sha": "e5770742d6599358ef518830e2c9ed3ff8220ea5",
+        "base": "research/dragonseek-v11-indra-space-seismic-biowatch-20261011",
+        "draft": true,
+        "mergeable": true
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/275",
+        "title": "Emergency quarantine: Grok and Claude material containment sweep",
+        "state": "open",
+        "relation": "BACKLOG_PAIR_NOT_DIRECT_DEPENDENCY"
+      },
+      "workflow": [],
+      "holds": [
+        "DRAFT",
+        "NO_HOSTED_CI_RECEIPT",
+        "STACKED_PARENT",
+        "SCIENTIFIC_OR_RIGHTS_REVIEW"
+      ],
+      "disposition": "HELD",
+      "work_completed": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 15,
+      "pr": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/pull/301",
+        "title": "research(Dongjiakou): 2026 verified desal sources + captive-demand economics",
+        "state": "open",
+        "head_sha": "8c674a14e2ee893568d6458c220ae88207dcbb17",
+        "base": "master",
+        "draft": true,
+        "mergeable": false
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/274",
+        "title": "Emergency quarantine: all Grok and Claude materials pending contamination audit",
+        "state": "open",
+        "relation": "BACKLOG_PAIR_NOT_DIRECT_DEPENDENCY"
+      },
+      "workflow": [
+        {
+          "id": 38149445688,
+          "name": "Dongjiakou simulator validation",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "holds": [
+        "DRAFT",
+        "NONMERGEABLE",
+        "HOSTED_CI_FAILED",
+        "SCIENTIFIC_OR_RIGHTS_REVIEW"
+      ],
+      "disposition": "HELD",
+      "work_completed": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}

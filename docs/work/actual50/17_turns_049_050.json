@@ -1,0 +1,61 @@
+{
+  "schema": "atlas.actual-50-work-macroturns/v0.1",
+  "batch": 17,
+  "entries": [
+    {
+      "turn": 49,
+      "pr": {
+        "url": "https://github.com/atlaslattice/sheldonbrain-rag-api/pull/1",
+        "title": "chore: rename splitmerge420 → atlaslattice across all GitHub references",
+        "state": "open",
+        "draft": true,
+        "head_sha": "fa69ef3708241089c48614ce45525d61042fe097",
+        "base": "master",
+        "mergeable": false
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/sheldonbrain-rag-api/issues/3",
+        "title": "Implement OpenAI-grade memory lifecycle and retrieval receipts",
+        "state": "open",
+        "related": "CONCURRENT_OPEN_BACKLOG_NOT_CLOSURE_PROOF"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "MERGEABILITY_FALSE",
+        "CI_ABSENT",
+        "RIGHTS_DEPENDENCY_REVIEW"
+      ],
+      "result": "HOLD",
+      "work_slots": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 50,
+      "pr": {
+        "url": "https://github.com/atlaslattice/SNRS-v2-v3-Distribution/pull/1",
+        "title": "Bootstrap repo for Claude read/write access via Zapier",
+        "state": "open",
+        "draft": true,
+        "head_sha": "a6c6131137bbc147a1285f7b20dcf9a7b910be50",
+        "base": "main",
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/240",
+        "title": "Batch A export/hash gate: durable exports + SHA-256 required before synthesis",
+        "state": "open",
+        "related": "CONCURRENT_OPEN_BACKLOG_NOT_CLOSURE_PROOF"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "CI_ABSENT",
+        "RIGHTS_DEPENDENCY_REVIEW"
+      ],
+      "result": "HOLD",
+      "work_slots": 6,
+      "nonwork": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}

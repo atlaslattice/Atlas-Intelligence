@@ -1,0 +1,113 @@
+{
+  "batch": "03",
+  "schema": "atlas.actual-50-work-macroturns/v0.1",
+  "entries": [
+    {
+      "cycle": 7,
+      "pr": {
+        "url": "https://github.com/atlaslattice/noosphere-archive/pull/14",
+        "title": "DRAFT companion: stricter source/rights schema & 28 tests for PRs #15/#17",
+        "state": "open",
+        "draft": true,
+        "mergeable": true,
+        "head": "10434503f11eb2efb22a641d6c99211cf16a60f1",
+        "base": "main",
+        "changed_files": 6
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/noosphere-archive/issues/2",
+        "title": "Spec capture: Forkable persistent memory and digital-continuity protocols",
+        "state": "open",
+        "relation": "COMPANION_REVIEW_ONLY"
+      },
+      "ci": [
+        {
+          "run": 45054164476,
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "holds": [
+        "DRAFT",
+        "CI_FAILED",
+        "RELEASE_GATES_OPEN"
+      ],
+      "decision": "HOLD",
+      "beats": {
+        "work": 6,
+        "private_reserved": 14
+      }
+    },
+    {
+      "cycle": 8,
+      "pr": {
+        "url": "https://github.com/atlaslattice/aluminum-os/pull/17",
+        "title": "docs: add OpenAI Boundary Charter (Module 01 — KRAKOA_OPENAI_INTEGRATION)",
+        "state": "open",
+        "draft": true,
+        "mergeable": true,
+        "head": "54da7be57b99e2bcabee66c6d83c51de3700bf05",
+        "base": "master",
+        "changed_files": 1
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/aluminum-os/issues/9",
+        "title": "Module 01: Add OpenAI Boundary Charter",
+        "state": "open",
+        "relation": "COMPANION_REVIEW_ONLY"
+      },
+      "ci": [
+        {
+          "run": 45052775235,
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "holds": [
+        "DRAFT",
+        "CI_FAILED",
+        "RELEASE_GATES_OPEN"
+      ],
+      "decision": "HOLD",
+      "beats": {
+        "work": 6,
+        "private_reserved": 14
+      }
+    },
+    {
+      "cycle": 9,
+      "pr": {
+        "url": "https://github.com/atlaslattice/aluminum-os/pull/8",
+        "title": "Add GROKBRAIN-INTEGRATION.md — Grok CLI as Native Substrate for Aluminum OS Memory Layer",
+        "state": "open",
+        "draft": false,
+        "mergeable": false,
+        "head": "e1dfc5e6717448131ffded12802d7c5a9b76331f",
+        "base": "master",
+        "changed_files": 88
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/aluminum-os/issues/11",
+        "title": "Next wave: implement CoordinateResolver + Sentinel split + INV-0 state wrapper",
+        "state": "open",
+        "relation": "COMPANION_REVIEW_ONLY"
+      },
+      "ci": [
+        {
+          "run": 26797821190,
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "holds": [
+        "NOT_MERGEABLE",
+        "CI_FAILED"
+      ],
+      "decision": "HOLD",
+      "beats": {
+        "work": 6,
+        "private_reserved": 14
+      }
+    }
+  ]
+}

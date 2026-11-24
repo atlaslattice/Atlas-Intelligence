@@ -1,0 +1,89 @@
+{
+  "batch": 15,
+  "entries": [
+    {
+      "cycle": 43,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/55",
+        "title": "Execute one-way WarpX boundary-to-boron coupling v0.2",
+        "state": "open",
+        "head": "ccd944f4496ae98c68c916269edc4fdd8dfed01a",
+        "base": "gptwork/source-field-admission-v0-1",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/249",
+        "title": "Review OpenAI-adjacent tools integration register and staged KG lanes",
+        "state": "open",
+        "relation": "PARALLEL_TASK_ONLY"
+      },
+      "ci": [],
+      "hold": [
+        "DRAFT",
+        "STACKED",
+        "NO_CI",
+        "SCIENTIFIC_REVIEW"
+      ],
+      "outcome": "HOLD",
+      "work_6": "SOURCE_PR;SOURCE_TASK;CI;REFS;EVIDENCE;RECEIPT",
+      "other_14": "RESERVED_NOT_PERFORMED"
+    },
+    {
+      "cycle": 44,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/54",
+        "title": "Beyond Q v1.5–v1.5.1: wall-plug accounting for eight-hour and staged-year fuel cycles",
+        "state": "open",
+        "head": "bcc987d7ea9f796e3aae949dcddfdeb79d094d1a",
+        "base": "research/beyond-q-startup-year-v1.4.1",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/248",
+        "title": "Inventory: OpenAI-adjacent useful Git forks and synthesis gates v0.1",
+        "state": "open",
+        "relation": "PARALLEL_TASK_ONLY"
+      },
+      "ci": [],
+      "hold": [
+        "DRAFT",
+        "STACKED",
+        "NO_CI",
+        "SCIENTIFIC_REVIEW"
+      ],
+      "outcome": "HOLD",
+      "work_6": "SOURCE_PR;SOURCE_TASK;CI;REFS;EVIDENCE;RECEIPT",
+      "other_14": "RESERVED_NOT_PERFORMED"
+    },
+    {
+      "cycle": 45,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/53",
+        "title": "Add joint source adapter, FEMM field-scale audit and Coulomb qualification",
+        "state": "open",
+        "head": "3095e5a18d2507bd453c7ae356c3c5b57da0ae12",
+        "base": "gptwork/warpx-pb-kinetic-v0-1",
+        "draft": true,
+        "mergeable": true
+      },
+      "task": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/247",
+        "title": "Graph safety receipt: China benchmark boundary and non-participation guardrail",
+        "state": "closed",
+        "relation": "PARALLEL_TASK_ONLY"
+      },
+      "ci": [],
+      "hold": [
+        "DRAFT",
+        "STACKED",
+        "NO_CI",
+        "SCIENTIFIC_REVIEW"
+      ],
+      "outcome": "HOLD",
+      "work_6": "SOURCE_PR;SOURCE_TASK;CI;REFS;EVIDENCE;RECEIPT",
+      "other_14": "RESERVED_NOT_PERFORMED"
+    }
+  ]
+}

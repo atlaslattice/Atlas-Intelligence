@@ -1,0 +1,105 @@
+{
+  "schema": "atlas.actual-50-work-macroturns/v0.1",
+  "batch": "02",
+  "date": "2026-11-22",
+  "scope": "LIVE_GITHUB_PUBLIC_REVIEW_NO_AUTO_MERGE",
+  "entries": [
+    {
+      "turn": 4,
+      "pr": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/pull/32",
+        "title": "Add one-command world-class proof for CONTINUUM OS",
+        "state": "open",
+        "head_sha": "3c6d87904479005000aea4ff2d285b2853854fde",
+        "base": "main",
+        "head": "one-command-world-class-proof",
+        "draft": false,
+        "merged": false,
+        "mergeable": false,
+        "files": 5
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/atlas-lattice-providers/issues/37",
+        "title": "CONTINUUM OS GPT NATIVE: local cockpit, one-command rehydrate, crash fossilizer",
+        "state": "open",
+        "pairing": "BACKLOG_COMPANION_NOT_CLOSURE_PROOF"
+      },
+      "checks": [],
+      "holds": [
+        "NOT_MERGEABLE",
+        "NO_PR_WORKFLOW_EVIDENCE",
+        "HUMAN_RIGHTS_OR_REVIEW_GATE"
+      ],
+      "disposition": "HOLD_REVIEW",
+      "work_beats": 6,
+      "nonwork_beats": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 5,
+      "pr": {
+        "url": "https://github.com/atlaslattice/noosphere-archive/pull/19",
+        "title": "Draft: quarantine false raw-export completeness claims; add voluntary 1/3 Work rhythm",
+        "state": "open",
+        "head_sha": "99121a27db87fae1db4e6fe6458e2963ee870673",
+        "base": "main",
+        "head": "beast/ingestion-completeness-rhythm-20261122",
+        "draft": true,
+        "merged": false,
+        "mergeable": true,
+        "files": 4
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/noosphere-archive/issues/4",
+        "title": "SwarmHub: Children of GPT Swarm master task index",
+        "state": "open",
+        "pairing": "BACKLOG_COMPANION_NOT_CLOSURE_PROOF"
+      },
+      "checks": [
+        {
+          "id": 45054251418,
+          "name": "SwarmHub source-only contracts",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ],
+      "holds": [
+        "DRAFT",
+        "CI_NOT_GREEN",
+        "HUMAN_RIGHTS_OR_REVIEW_GATE"
+      ],
+      "disposition": "HOLD_REVIEW",
+      "work_beats": 6,
+      "nonwork_beats": "14_RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 6,
+      "pr": {
+        "url": "https://github.com/atlaslattice/noosphere-archive/pull/17",
+        "title": "COMPANION / HOLD: strict evidence packet + byte-preserving quarantine (14/14 tested)",
+        "state": "open",
+        "head_sha": "9a489d4b08ef51f36a83b5ae7cc9cd4065fec508",
+        "base": "main",
+        "head": "atlas-beast-evidence-contract-20261122",
+        "draft": true,
+        "merged": false,
+        "mergeable": true,
+        "files": 6
+      },
+      "issue": {
+        "url": "https://github.com/atlaslattice/noosphere-archive/issues/3",
+        "title": "Wire Atlas repo constellation into Noosphere / GPTBrain registry",
+        "state": "open",
+        "pairing": "BACKLOG_COMPANION_NOT_CLOSURE_PROOF"
+      },
+      "checks": [],
+      "holds": [
+        "DRAFT",
+        "NO_PR_WORKFLOW_EVIDENCE",
+        "HUMAN_RIGHTS_OR_REVIEW_GATE"
+      ],
+      "disposition": "HOLD_REVIEW",
+      "work_beats": 6,
+      "nonwork_beats": "14_RESERVED_NOT_PERFORMED"
+    }
+  ]
+}

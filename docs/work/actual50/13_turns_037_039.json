@@ -1,0 +1,89 @@
+{
+  "batch": 13,
+  "entries": [
+    {
+      "turn": 37,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/61",
+        "title": "Published TMX collector benchmark: 19 recovered measurements, signed power and preserved fit discrepancy",
+        "head_sha": "34c4a8c3f3994805958395a48787be9cda56f00c",
+        "base": "gptwork/planar-collector-v0-1",
+        "state": "open",
+        "draft": true,
+        "mergeable": true
+      },
+      "paired_issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/257",
+        "title": "[WORKPLAN] S6 best-in-world 12x12 execution ledger",
+        "state": "open",
+        "relationship": "PARALLEL_BACKLOG_NOT_DEPENDENCY"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_PARENT",
+        "NO_CI_EVIDENCE",
+        "SCIENTIFIC_HUMAN_REVIEW"
+      ],
+      "disposition": "HOLD",
+      "actual_work_beats": 6,
+      "other_14": "RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 38,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/60",
+        "title": "Beyond Q v1.7: paired ARC/laser annual energy and isotope accounting",
+        "head_sha": "e0736554b1c68d84cf1018df9fc5f4ce12fdc6ac",
+        "base": "research/beyond-q-isotope-value-v1.6",
+        "state": "open",
+        "draft": true,
+        "mergeable": true
+      },
+      "paired_issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/255",
+        "title": "P0: Add external reviewer checklist for Bundle 0001",
+        "state": "closed",
+        "relationship": "PARALLEL_BACKLOG_NOT_DEPENDENCY"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_PARENT",
+        "NO_CI_EVIDENCE",
+        "SCIENTIFIC_HUMAN_REVIEW"
+      ],
+      "disposition": "HOLD",
+      "actual_work_beats": 6,
+      "other_14": "RESERVED_NOT_PERFORMED"
+    },
+    {
+      "turn": 39,
+      "pr": {
+        "url": "https://github.com/atlaslattice/open-regenerative-compute-standard/pull/59",
+        "title": "Planar alpha collector v0.1: relativistic acceptance, work ledger and executed WarpX checks",
+        "head_sha": "f2ddab320f72e6407b0e68309bf90059dd3c828c",
+        "base": "gptwork/finite-alpha-transport-v0-1",
+        "state": "open",
+        "draft": true,
+        "mergeable": true
+      },
+      "paired_issue": {
+        "url": "https://github.com/atlaslattice/manus-artifacts/issues/254",
+        "title": "P0: Bundle 0001 forkability hardening — reconcile surfaces, SHAs, validation, reviewer path",
+        "state": "open",
+        "relationship": "PARALLEL_BACKLOG_NOT_DEPENDENCY"
+      },
+      "ci": [],
+      "holds": [
+        "DRAFT",
+        "STACKED_PARENT",
+        "NO_CI_EVIDENCE",
+        "SCIENTIFIC_HUMAN_REVIEW"
+      ],
+      "disposition": "HOLD",
+      "actual_work_beats": 6,
+      "other_14": "RESERVED_NOT_PERFORMED"
+    }
+  ]
+}
