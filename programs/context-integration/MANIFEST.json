@@ -1,6 +1,6 @@
 {
   "schema": "atlas.public-context-integration-manifest/v1",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "entry": "programs/context-integration/index.mjs",
   "source": {
     "namespace": "ARIADNE_HSN",
@@ -25,5 +25,24 @@
   "hostAuthorityGranted": false,
   "privateWorkBodiesBundled": false,
   "domainMetricContractsCompleted": 0,
-  "performanceMeasuredByThisManifest": false
+  "performanceMeasuredByThisManifest": false,
+  "optionalCorpusSynthesis": {
+    "entry": "programs/corpus-synthesis/index.mjs",
+    "schema": "atlas.corpus-synthesis.port/v1",
+    "featureCount": 20,
+    "genericRuntimeCodeBundled": true,
+    "privateCorpusBundled": false,
+    "automaticSourceLoading": false,
+    "automaticModelCalls": false,
+    "hostAuthorization": "CALLER_SUPPLIED_CURRENT_CHECK_REQUIRED"
+  },
+  "optionalCorpusClassification": {
+    "entry": "programs/context-integration/classification.mjs",
+    "nodeOnly": true,
+    "importedByBrowserEntry": false,
+    "requiresCallerSuppliedOriginalOntology": true,
+    "privateCorpusBundled": false,
+    "semanticAdmission": false,
+    "currentHostRightsCheckRequired": true
+  }
 }

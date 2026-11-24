@@ -135,3 +135,7 @@ export function createAtlasContextAdapter({source,runtime,scope}={}){
     close(){closed=true;}
   });
 }
+
+// Optional, explicit corpus input. Importing these ports performs no source loading.
+export {CorpusEngine, FEATURE_REGISTRY as CORPUS_FEATURES, CORPUS_ENGINE_VERSION,
+  CORPUS_SYNTHESIS_SCHEMA, createCorpusSynthesisAdapter} from '../corpus-synthesis/index.mjs';
