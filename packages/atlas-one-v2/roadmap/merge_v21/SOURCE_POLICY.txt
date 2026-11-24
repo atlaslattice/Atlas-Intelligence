@@ -1,0 +1,1 @@
+No owner-private Ariadne/OpenAlex source bytes; the source-only compiler needs separately authorized original input for meaningful source outputs.
