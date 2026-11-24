@@ -1,0 +1,21 @@
+{
+  "baselineMedianNumericMs": 0.068949,
+  "baselineParity": 144,
+  "canClaimQualityImprovement": false,
+  "canonicalNodeCount": 1728,
+  "encoderWeightsChanged": false,
+  "hostedRightsVerified": false,
+  "humanSemanticClaims": 0,
+  "matchedShuffledChangedTop1": 0,
+  "realSourceBodiesExported": 0,
+  "schema": "atlas.one.neural-replay-summary/v1",
+  "selfDefinitionTop1": 144,
+  "semanticEmbeddingWidth": 384,
+  "shuffledRouterMedianNumericMs": 0.13311,
+  "sourceAndNodeAssetByteHashesVerifiedPrivately": true,
+  "status": "LOCAL_ORIGINAL_SOURCE_REPLAY_PASSED",
+  "testKind": "SELF_QUERY_POSITIVE_CONTROL_ONLY",
+  "testedCanaries": 144,
+  "trueGeometreeChangedTop1": 0,
+  "trueRouterMedianNumericMs": 0.14612
+}

@@ -1,0 +1,22 @@
+{
+  "status": "PREPARED_NOT_REGISTERED",
+  "schema": "atlas.one.native-openai-tool/v1",
+  "type": "function",
+  "name": "atlas_one_neural_preview",
+  "description": "Prepare a source-bound 1,728-node neural computation through the existing Atlas WorkLearning and Ariadne permissions gateway. No host rights, model training, or publication are granted by this descriptor.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {"type": "string", "description": "Work-scoped query; authorized host must check source and purpose before encoding."},
+      "limit": {"type": "integer", "minimum": 1, "maximum": 20},
+      "routingProfile": {"type": "string", "enum": ["BASELINE", "GEOMETREE", "SHUFFLED_MATCHED"]}
+    },
+    "required": ["query", "limit", "routingProfile"],
+    "additionalProperties": false
+  },
+  "registeredInHost": false,
+  "actualGatewayBindingVerified": false,
+  "canTrain": false,
+  "canPublish": false
+}

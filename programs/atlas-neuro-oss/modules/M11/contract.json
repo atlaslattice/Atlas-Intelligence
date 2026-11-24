@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M11",
+  "title": "11 Glyph, 3D & Human Interface",
+  "features": [
+    {
+      "id": "NEURO.M11.F01",
+      "reviewSlotOnly": "H11.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/transformers.js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Display shuffle changes direct-neural rank"
+    },
+    {
+      "id": "NEURO.M11.F02",
+      "reviewSlotOnly": "H11.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/jeshraghian/snntorch",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Matching syllable becomes a physical/semantic proof"
+    },
+    {
+      "id": "NEURO.M11.F03",
+      "reviewSlotOnly": "H11.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/transformers.js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Unverified Sphere shown as validated because it is drawn"
+    },
+    {
+      "id": "NEURO.M11.F04",
+      "reviewSlotOnly": "H11.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/transformers.js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Keyboard-only user cannot reach a node"
+    },
+    {
+      "id": "NEURO.M11.F05",
+      "reviewSlotOnly": "H11.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/tokenizers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Rendered text may differ from verified original bytes"
+    },
+    {
+      "id": "NEURO.M11.F06",
+      "reviewSlotOnly": "H11.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Lower-ranked contradiction silently hidden"
+    },
+    {
+      "id": "NEURO.M11.F07",
+      "reviewSlotOnly": "H11.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/deepset-ai/haystack",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Graph neighbor is advertised as direct model insight"
+    },
+    {
+      "id": "NEURO.M11.F08",
+      "reviewSlotOnly": "H11.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/jeshraghian/snntorch",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Chart reports measured hardware power from simulation"
+    },
+    {
+      "id": "NEURO.M11.F09",
+      "reviewSlotOnly": "H11.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/transformers.js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Mobile browser eagerly allocates whole corpus"
+    },
+    {
+      "id": "NEURO.M11.F10",
+      "reviewSlotOnly": "H11.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Preview writes canonical source silently"
+    },
+    {
+      "id": "NEURO.M11.F11",
+      "reviewSlotOnly": "H11.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/getzep/graphiti",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Two descendants shown as two independent studies"
+    },
+    {
+      "id": "NEURO.M11.F12",
+      "reviewSlotOnly": "H11.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Thumbs-up immediately trains on unlicensed data"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}

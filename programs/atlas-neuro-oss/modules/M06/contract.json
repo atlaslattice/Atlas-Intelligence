@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M06",
+  "title": "06 Temporal Memory & Replay",
+  "features": [
+    {
+      "id": "NEURO.M06.F01",
+      "reviewSlotOnly": "H06.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/getzep/graphiti",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Old fact shown as newly verified current"
+    },
+    {
+      "id": "NEURO.M06.F02",
+      "reviewSlotOnly": "H06.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mem0ai/mem0",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Duplicate family counted as independent memory"
+    },
+    {
+      "id": "NEURO.M06.F03",
+      "reviewSlotOnly": "H06.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mem0ai/mem0",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Same vector grants permissions after rights withdrawal"
+    },
+    {
+      "id": "NEURO.M06.F04",
+      "reviewSlotOnly": "H06.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/langchain-ai/langgraph",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Earlier correction silently overwritten"
+    },
+    {
+      "id": "NEURO.M06.F05",
+      "reviewSlotOnly": "H06.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/langchain-ai/langgraph",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Hypothetical branch published as current source"
+    },
+    {
+      "id": "NEURO.M06.F06",
+      "reviewSlotOnly": "H06.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/langchain-ai/langgraph",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Longer fork reintroduces prior revoked source"
+    },
+    {
+      "id": "NEURO.M06.F07",
+      "reviewSlotOnly": "H06.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/langchain-ai/langgraph",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Retry posts a second identical result"
+    },
+    {
+      "id": "NEURO.M06.F08",
+      "reviewSlotOnly": "H06.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mem0ai/mem0",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Forgetting score improves via deleting hard counterexamples"
+    },
+    {
+      "id": "NEURO.M06.F09",
+      "reviewSlotOnly": "H06.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Consensus-only compression drops objection"
+    },
+    {
+      "id": "NEURO.M06.F10",
+      "reviewSlotOnly": "H06.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/getzep/graphiti",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Past query bypasses current source access"
+    },
+    {
+      "id": "NEURO.M06.F11",
+      "reviewSlotOnly": "H06.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mem0ai/mem0",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Superseded source remains in cached answers"
+    },
+    {
+      "id": "NEURO.M06.F12",
+      "reviewSlotOnly": "H06.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mem0ai/mem0",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Private Imagine content becomes training material"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}
