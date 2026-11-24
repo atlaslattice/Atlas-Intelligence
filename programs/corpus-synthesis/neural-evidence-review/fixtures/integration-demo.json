@@ -1,0 +1,36 @@
+{
+  "schema": "atlas.mica.demo/v1",
+  "baseline": {
+    "schema": "atlas.mica.neural-source-gated-review/v2",
+    "status": "LOCAL_REVIEW_CANDIDATE",
+    "releaseSha256": "0000000000000000000000000000000000000000000000000000000000000065",
+    "receiptDigest": "a96bfcc29e3ef4cca96197ff28413a5672b6faf65085150ecb5d91dd265b1de5",
+    "returnedRecordCount": 3,
+    "dependencyCount": 3,
+    "independentFamilyCount": 2,
+    "unknownFamilyCount": 0,
+    "dissentBearingCount": 1,
+    "routeCounts": {
+      "neural": 3,
+      "graph": 0,
+      "lexical": 0
+    },
+    "passagesReturned": 0,
+    "canPublish": false,
+    "canTrain": false,
+    "hostVerified": false,
+    "currentHostRightsProven": false,
+    "actualNetworkEgress": false,
+    "weightsModified": false,
+    "modelModified": false,
+    "authorityEffect": "NONE",
+    "warning": "LOCAL_MOCK_ONLY: requires exact MICA entry and atomic host-owned final release"
+  },
+  "offResultUseRevoked": "HOLD_HOST_BOUNDARY_UNVERIFIED",
+  "uncitedQuoteDenied": "LOCAL_REVIEW_CANDIDATE",
+  "corpusStatus": "HOLD_COVERAGE_OR_RIGHTS",
+  "modelCalls": 0,
+  "trainingPerformed": false,
+  "hostedVerified": false,
+  "warning": "Synthetic mock callbacks, no real MICA serving integration"
+}
