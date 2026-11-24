@@ -11,12 +11,16 @@
       "sha256": "1586dc0382fb90e9fb8c39826301fe75d81abc8ac5bcf22441ac275444799b25"
     },
     "v3/README.md": {
-      "bytes": 5800,
-      "sha256": "3aedae8a5dc450927cf6ad4190848208eb17f67f0b00d889e29c15c8575c69fd"
+      "bytes": 6507,
+      "sha256": "628e7fd14ee0443fb22153246aeaffeba284115bffcba83125fce38dcad2bd5c"
+    },
+    "v3/docs/PEER_174_FALSIFIER.md": {
+      "bytes": 2264,
+      "sha256": "5bc79f0994e7f75bc1eba769135f7b4ab03287f0e975576e63e3bdc5e25df81a"
     },
     "v3/docs/PEER_HANDOFF.md": {
-      "bytes": 3108,
-      "sha256": "8e65d824121ad5b29c2944bc00d5317732cd09f6f3cd1c87efaf1f51ab44da72"
+      "bytes": 3634,
+      "sha256": "4809ddcfa484efe11cc41ff3435bf1d37826547984a0184130fa36f4e2193c93"
     },
     "v3/docs/REVIEW_REQUEST.md": {
       "bytes": 1447,
@@ -39,40 +43,40 @@
       "sha256": "4385d7f935fcd18d8342f70f9c2010cbc2709516b4c5ba4f6ef6a98ab859fc82"
     },
     "v3/fixtures/local-microbenchmark.json": {
-      "bytes": 581,
-      "sha256": "f0add019cf76ff99744e6e730ae99fa52e80bd4e2af149d282e1e2877145c49e"
+      "bytes": 577,
+      "sha256": "aba37a903f7d681f5f8b15b1a84149257e40a1cc9a27ff8a3a5e1e64bc200d5f"
     },
     "v3/fixtures/run-receipt.json": {
-      "bytes": 1388,
-      "sha256": "fc30b9c1c98e2bc3ae72a6494f547ce14b4eb450a48d5f0b969ae17411dd6d8a"
+      "bytes": 1677,
+      "sha256": "4db91d8265bbc5b326145933403f9b44bbf4d32bd5372ac5ba656e491aa9fe4b"
     },
     "v3/fixtures/sample-review.json": {
       "bytes": 13633,
       "sha256": "e9a087ee715a498897bcfc4c75077d4ecc7c4fae63dcacbd80a39e7850d4a8c2"
     },
     "v3/fixtures/v2-inherited-jitless.tap": {
-      "bytes": 5218,
-      "sha256": "30d1a6101b9cde7420a954d239d25572e0227b9f66a50a4eb25b37fec9a9b7da"
+      "bytes": 5217,
+      "sha256": "5314f5a2d4996ad88e9876f80918aefda2752b1a412deb0181c562d5b412ac91"
     },
     "v3/fixtures/v2-inherited-normal.tap": {
       "bytes": 5087,
-      "sha256": "426bb7061d425ecfbeaef36529ce9461529dc716a531891a6d6aadb36aa8e6dc"
+      "sha256": "66ef1a6636f505ce83f0dbfb5b4b7422dd563a6944bd610599ceb880e2ad3d66"
     },
     "v3/fixtures/v3-green-jitless.tap": {
-      "bytes": 6552,
-      "sha256": "4ab051b6c9c7866e9a26085c8fe8ab8b4a15fdd9806e584cfaa97429dcc1e2a1"
+      "bytes": 7990,
+      "sha256": "d6ff172e57c592b748c000a08288bfb032622944c79305284742934d4f4520d7"
     },
     "v3/fixtures/v3-green-normal.tap": {
-      "bytes": 6427,
-      "sha256": "5257e29ba27770072723f83aeb4043c68c80a74e2c73a299b9466fecc50b1f92"
+      "bytes": 7865,
+      "sha256": "86c8b836f4c22deab3751a60a870e528bbc5b942b796b50be34a3aae8d3226ea"
     },
     "v3/src/rule-revision-gate.mjs": {
-      "bytes": 8857,
-      "sha256": "626e2dc1b2418525511bbc31ea7c7b85a9c303ab9721bb6701191bcc0aeeda54"
+      "bytes": 9386,
+      "sha256": "c1ec9de8e2e2e745d9c49e5eb29670ebfdcde7695d6e1b82021492c24f5a9b7e"
     },
     "v3/test/rule-revision-gate.test.mjs": {
-      "bytes": 8647,
-      "sha256": "1cf93f9f45b420b7c027112537f092deaf8de5c7b9639cd669dcc8f9d041e121"
+      "bytes": 10955,
+      "sha256": "ee020f3f9f66ee3f02a2b4e876031280414ced6bdc12638f13911f1b022ec03c"
     }
   },
   "hostVerified": false,

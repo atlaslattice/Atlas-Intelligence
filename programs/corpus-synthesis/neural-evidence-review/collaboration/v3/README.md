@@ -36,9 +36,9 @@ A revision also needs a source-code baseline/candidate digest, non-empty dissent
 ## Actual current-turn evidence
 
 * 35/35 inherited Node tests PASS normal and `--jitless`.
-* 40/40 new Node tests PASS normal and `--jitless`. One test contains 2,048 malformed source-digest probes, so these are **not 2,048 model visits**.
+* 48/48 new Node tests PASS normal and `--jitless`. One test contains 2,048 malformed source-digest probes, so these are **not 2,048 model visits**.
 * Initial candidate audit test had 39 PASS/1 FAIL: a candidate safety HOLD after baseline PASS should be `REJECT_LOCAL_REGRESSION`, not `HOLD_UNRESOLVED_CONTROLS`. Its expectation was corrected; code retained a strict rejection. Original failure log preserved separately.
-* Exact local Node v22 benchmark on one synthetic 24-case/12-family review fixture, 9 paired batches × 300 invocations: median v2 metadata preparation 21.50 µs, median v3 rule audit 340.75 µs, p95 25.99 and 399.19 µs respectively. **Different work is being performed**; v3 incurs additional offline review overhead. No serving-latency, model-quality or end-to-end gain is claimed.
+* Exact local Node v22 benchmark on one synthetic 24-case/12-family review fixture, 9 paired batches × 300 invocations: median v2 metadata preparation 23.00 µs, median v3 rule audit 685.32 µs, p95 40.83 and 794.66 µs respectively. **Different work is being performed**; v3 incurs additional offline review overhead. No serving-latency, model-quality or end-to-end gain is claimed.
 * Local output reports one synthetic red-to-green case, zero reported safety regressions, one open dissent and `LOCAL_REVIEW_CANDIDATE_ONLY`; no actual host permission, model training, CANON or deployment.
 
 ## Release and collaboration gates
@@ -48,3 +48,7 @@ Review exact source and failure receipts against the existing MICA workshop, Ome
 Original ontology: Ariadne v0.7 SHA256 `07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6`. Enumerated one-based 12×12×12 identities are structural, not semantic equivalences. Test application H05.S11.N04 (agent experience methodology) to H05.S06.N12 (research software engineering subject) is an editorial scoping example.
 
 Source and peer provenance: https://github.com/atlaslattice/Atlas-Intelligence/pull/58 ; Owner-private SwarmChat Work contribution #166 (link retained in private handoff, not embedded as a public room identifier). No private room bodies are distributed by this bundle.
+
+## Peer #174 evidence binding (v3.1)
+
+The same workshop peer independently found that v2's reviewDigest omits testReceiptDigest, nodeRecordDigest and change description. We reproduced this directly: mutate each field and the v2 fingerprint stays unchanged. **V3.1 now includes completeReviewInputDigest, caseMatrixDigest, dissentRecordsDigest, benchmarkSamplesDigest and observedAt** in its audit receipt. Eight new tests prove that changing these inputs changes the v3 evidenceDigest even when coverage counts and p50/p95 remain unchanged. The digest remains a caller-supplied content fingerprint, not a signature. The peer's separate ZIP verification A/B file-swap issue is NOT corrected by this module.

@@ -108,6 +108,14 @@ export function compareRuleRevision(input){
   const breach=p95After>p95Before*b.maxP95RegressionRatio;
   // The caller's reported measurements are NOT independently attested.
   const out={schema:SCHEMA,revisionId:input.revisionId,sourceReviewDigest:previous.reviewDigest,
+   // V2's digest covers a selected projection only; V3 binds ALL supplied evidence
+   // fields, including testReceiptDigest, nodeRecordDigest, descriptions and dissent.
+   // These are local content pins, never a signature or independently verified proof.
+   completeReviewInputDigest:digest(canonical(input.reviewInput)),
+   caseMatrixDigest:digest(canonical(input.cases)),
+   dissentRecordsDigest:digest(canonical(input.dissent)),
+   benchmarkSamplesDigest:digest(canonical(input.benchmark)),
+   observedAt:input.observedAt,
    sourceEdition:input.reviewInput.source.sourceEdition,sourceCodePins:{baseline:input.baselineCodeSha256,candidate:input.candidateCodeSha256},
    totals:{cases:input.cases.length,guardFamilies:coverage.size,improvements,regressions,failedCandidateCases:failures,heldCandidateCases:holds,openDissent:open},
    benchmark:{mode:b.mode,samples:bp.length,baselineP50Ms:p50Before,candidateP50Ms:p50After,baselineP95Ms:p95Before,candidateP95Ms:p95After,
