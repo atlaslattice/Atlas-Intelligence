@@ -100,9 +100,11 @@ export function createMeta145ExcellenceBridge(program,manifest){
 }
 
 /**
- * Optional route handler for EXISTING HTTP hosts. It does not launch a server.
- * A host-controlled rights callback must be injected and rechecked at READ and
- * RETURN. Even successful callback tests are NOT independent issuer attestation.
+ * @deprecated Demonstration-only callback route. Caller-controlled {allowed:true}
+ * is not issuer proof or tenant/room binding. DO NOT mount this in production.
+ * Use the strict `createMeta145HostBoundHandler` from `meta145-host-admission.mjs`
+ * with genuine host issuer and current room ACL, exact source pin, and runtime
+ * rollback gate. Kept for existing source-only test backward compatibility.
  */
 export function createMeta145HttpHandler(program,manifest,{authorize}={}){
   const bridge=createMeta145ExcellenceBridge(program,manifest);
