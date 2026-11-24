@@ -24,8 +24,8 @@ class AdmissionTests(unittest.TestCase):
         self.assertEqual(result["jobs"][0]["job_state"], "HELD_PRE_RUNNER_UNKNOWN")
         self.assertEqual(result["release_gate"], "HELD")
 
-    def test_null_steps_same(self):
-        self.assertEqual(ci.evaluate_job({"id": 1, "conclusion": "failure", "steps": None}), "HELD_PRE_RUNNER_UNKNOWN")
+    def test_null_steps_are_incomplete_observation(self):
+        self.assertEqual(ci.evaluate_job({"id": 1, "conclusion": "failure", "steps": None}), "HELD_INCOMPLETE_OBSERVATION")
 
     def test_no_runner_not_accepted_even_if_steps_claimed(self):
         self.assertNotEqual(ci.evaluate_job({
@@ -77,8 +77,8 @@ class AdmissionTests(unittest.TestCase):
             ci.github_json("https://api.github.com/repos/unknown/private/actions/runs/1")
 
     def test_cross_repo_pattern_is_not_root_cause(self):
-        a = input_for({"id": 1, "runner_id": 0, "conclusion": "failure", "steps": []})["runs"][0]
-        b = input_for({"id": 2, "runner_id": 0, "conclusion": "failure", "steps": []},
+        a = input_for({"id": 1, "status": "completed", "runner_id": 0, "conclusion": "failure", "steps": []})["runs"][0]
+        b = input_for({"id": 2, "status": "completed", "runner_id": 0, "conclusion": "failure", "steps": []},
                       repo="atlaslattice/noosphere-archive")["runs"][0]
         result = ci.evaluate_snapshot({"runs": [a, b]})
         self.assertTrue(result["cross_repository_admission_pattern"])
