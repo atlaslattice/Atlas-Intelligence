@@ -41,7 +41,7 @@ def _claim_shape(c):
     if not HSN.fullmatch(str(c.get('hsn', ''))): return False
     if c.get('sourceRegistrySha') != ARIADNE_SHA: return False
     if c.get('route') not in ROUTES: return False
-    if not isinstance(c.get('score'), (int, float)): return False
+    if isinstance(c.get('score'), bool) or not isinstance(c.get('score'), (int, float)): return False
     import math
     if not math.isfinite(c['score']) or not 0 <= c['score'] <= 1: return False
     if not isinstance(c.get('sourceId'), str) or not c['sourceId']: return False
@@ -97,7 +97,7 @@ def evaluate_neural_return(
             try: authoritative = source_record(c['sourceId'])
             except Exception: authoritative = None
             if not isinstance(authoritative, Mapping): reason = 'NO_TRUSTED_SOURCE_RECORD'
-            elif any(c[k] != authoritative.get(k) for k in ('documentId','revision','sourceSha256','semanticDigest','citation')):
+            elif any(c[k] != authoritative.get(k) for k in ('sourceId','documentId','revision','sourceSha256','semanticDigest','citation')):
                 reason = 'SOURCE_IDENTITY_OR_REVISION_DRIFT'
             elif authoritative.get('workAllowed') is not True or authoritative.get('mode') != 'WORK':
                 reason = 'NOT_WORK_ELIGIBLE'
@@ -115,7 +115,7 @@ def evaluate_neural_return(
                 else:
                     try: postread = source_record(c['sourceId'])
                     except Exception: postread = None
-                    if not isinstance(postread,Mapping) or any(postread.get(k) != before_authorize.get(k) for k in ('documentId','revision','sourceSha256','semanticDigest','citation','familyRoot','correctedBy','active','validFrom','validUntil','workAllowed','mode','rightsEpoch')):
+                    if not isinstance(postread,Mapping) or any(postread.get(k) != before_authorize.get(k) for k in ('sourceId','documentId','revision','sourceSha256','semanticDigest','citation','familyRoot','correctedBy','active','validFrom','validUntil','workAllowed','mode','rightsEpoch')):
                         reason='READ_SOURCE_OR_RIGHTS_DRIFT'
         if reason:
             denied[reason] = denied.get(reason,0)+1
@@ -129,6 +129,7 @@ def evaluate_neural_return(
         prepared.append((dict(c), {k:before_authorize.get(k) for k in ('documentId','sourceId','revision','sourceSha256','semanticDigest','citation','familyRoot','relation','correctedBy','active','validFrom','validUntil','workAllowed','mode','rightsEpoch')}, relation, i))
     chosen=[]
     seen_family=set()
+    seen_exact_source=set()
     while prepared and len(chosen) < policy.max_items:
         def rank(z):
             c,a,rel,i=z
@@ -139,10 +140,14 @@ def evaluate_neural_return(
         win=max(prepared,key=rank)
         prepared.remove(win)
         c,a,rel,i=win
+        exact_source_key=(c['sourceId'],c['documentId'],c['revision'])
+        if exact_source_key in seen_exact_source:
+            denied['DUPLICATE_EXACT_SOURCE']=denied.get('DUPLICATE_EXACT_SOURCE',0)+1
+            continue
         # Current evidence + rights check AGAIN at RETURN; mock result is never host proof.
         try: fresh=source_record(c['sourceId'])
         except Exception: fresh=None
-        if not isinstance(fresh,Mapping) or any(fresh.get(k) != a.get(k) for k in ('documentId','revision','sourceSha256','semanticDigest','citation','familyRoot','correctedBy','active','validFrom','validUntil','workAllowed','mode','rightsEpoch')):
+        if not isinstance(fresh,Mapping) or any(fresh.get(k) != a.get(k) for k in ('sourceId','documentId','revision','sourceSha256','semanticDigest','citation','familyRoot','correctedBy','active','validFrom','validUntil','workAllowed','mode','rightsEpoch')):
             denied['RETURN_SOURCE_OR_RIGHTS_DRIFT']=denied.get('RETURN_SOURCE_OR_RIGHTS_DRIFT',0)+1
             continue
         try: allowed=authorize(fresh,'RETURN') is True
@@ -153,10 +158,11 @@ def evaluate_neural_return(
         # Detect source mutation performed inside an otherwise ALLOW callback.
         try: latest=source_record(c['sourceId'])
         except Exception: latest=None
-        if not isinstance(latest,Mapping) or any(latest.get(k) != a.get(k) for k in ('documentId','revision','sourceSha256','semanticDigest','citation','familyRoot','correctedBy','active','validFrom','validUntil','workAllowed','mode','rightsEpoch')):
+        if not isinstance(latest,Mapping) or any(latest.get(k) != a.get(k) for k in ('sourceId','documentId','revision','sourceSha256','semanticDigest','citation','familyRoot','correctedBy','active','validFrom','validUntil','workAllowed','mode','rightsEpoch')):
             denied['RETURN_SOURCE_OR_RIGHTS_DRIFT']=denied.get('RETURN_SOURCE_OR_RIGHTS_DRIFT',0)+1
             continue
         seen_family.add(a['familyRoot'])
+        seen_exact_source.add(exact_source_key)
         # No raw text/embedding/acl token, never promote a review proposal.
         chosen.append({'documentId':c['documentId'],'sourceId':c['sourceId'],'citation':c['citation'],'score':c['score'],
                        'route':c['route'],'sourceSha256':c['sourceSha256'], 'revision':c['revision'],
@@ -184,3 +190,19 @@ def eligible_training_pair(evidence: Mapping, trusted: Mapping, rights_for_train
     if evidence.get('split') not in ('TRAIN','VALIDATION'):return {'status':'HOLD'}
     if trusted.get('mode')!='WORK' or trusted.get('active') is not True:return {'status':'HOLD'}
     return {'status':'PREPARED_SOURCE_REF_ONLY_NOT_TRAINED','sourceId':trusted['sourceId'],'familyRoot':trusted['familyRoot'],'split':evidence['split']}
+
+
+def eligible_training_pair_strict(evidence: Mapping, trusted: Mapping, rights_for_training: bool,
+                                  trusted_family_splits: Mapping[str, list[str]] | None) -> dict:
+    """Source-reference-only family-split guard; caller must bind manifest from trusted admission.
+
+    A supplied map is NOT itself evidence of authority or permission. A real exporter
+    must acquire and pin this independently of the optimization candidate.
+    """
+    base = eligible_training_pair(evidence,trusted,rights_for_training)
+    if base['status'] != 'PREPARED_SOURCE_REF_ONLY_NOT_TRAINED':return base
+    if not isinstance(trusted_family_splits, Mapping):return {'status':'HOLD_FAMILY_SPLIT_UNVERIFIED'}
+    splits=trusted_family_splits.get(trusted['familyRoot'])
+    if not isinstance(splits,list) or not splits:return {'status':'HOLD_FAMILY_SPLIT_UNVERIFIED'}
+    if set(splits) != {evidence['split']}:return {'status':'HOLD_FAMILY_SPLIT_COLLISION'}
+    return base
