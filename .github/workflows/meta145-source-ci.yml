@@ -1,0 +1,35 @@
+# Source-safe META145 integration acceptance. No provider calls or credentials.
+name: META145 source and host-admission checks
+on:
+  pull_request:
+    paths:
+      - 'programs/excellence1728/integrations/**'
+      - '.github/workflows/meta145-source-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-admission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Runner admission evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "META145_RUNNER_STEP_EXECUTED"
+          test "${RUNNER_OS}" = 'Linux'
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact source-bound META145 admission suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test programs/excellence1728/integrations/meta145-native-source-port.test.mjs programs/excellence1728/integrations/test/meta145-native-excellence.integration.test.mjs programs/excellence1728/integrations/test/meta145-host-admission.test.mjs
+      - name: Existing Excellence suite (Node and Python)
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run test:excellence
