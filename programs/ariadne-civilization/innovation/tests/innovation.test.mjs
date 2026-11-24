@@ -76,3 +76,26 @@ test('META145 detects modified per-node synthetic receipt',()=>{
  all[0]={...all[0],unresolvedEvidenceNeeds:0};
  const verdict=meta145InnovationRollup(all);assert.equal(verdict.state,'HOLD');assert.equal(verdict.reason,'SYNTHETIC_RECEIPT_TAMPERED');
 });
+test('getter cannot change value during source validation',()=>{
+ let calls=0;const a={facets:[]};Object.defineProperty(a,'originMode',{enumerable:true,get(){calls++;return calls===1?'WORK':'PALACE'}});
+ assert.equal(runInnovation('I01',a).state,'HOLD');assert.equal(calls,0);
+});
+test('private nonenumerable field cannot hide from DTO boundary',()=>{
+ const x={facets:[]};Object.defineProperty(x,'body',{value:'NEVER_ECHO',enumerable:false});
+ const v=runInnovation('I01',x);assert.equal(v.state,'HOLD');assert.ok(!JSON.stringify(v).includes('NEVER_ECHO'));
+});
+test('array side keys cannot pass DTO cloning',()=>{
+ const x={required:['A'],observed:[]};x.required.hidden='PSEUDO_PRIVATE';assert.equal(runInnovation('I02',x).state,'HOLD');
+});
+test('revoked proxy does not throw from dispatcher',()=>{const q=Proxy.revocable({facets:[]},{});q.revoke();assert.equal(runInnovation('I01',q.proxy).state,'HOLD');});
+test('hostile ownKeys proxy is held, not executed',()=>{
+ const p=new Proxy({facets:[]},{ownKeys(){throw Error('BAD_PROXY');}});assert.equal(runInnovation('I01',p).state,'HOLD');
+});
+test('untrusted accessor denied on Work port',()=>{
+ let called=0;const p={id:'I01',coordinate:'H03.S06.N02',sourceDigest:ORIGINAL_SHA256};Object.defineProperty(p,'originMode',{enumerable:true,get(){called++;return 'WORK';}});
+ assert.equal(prepareWorkCandidate(p).state,'HOLD');assert.equal(called,0);
+});
+test('prototype keys are not trusted Work inputs',()=>{
+ const x={facets:[]};Object.defineProperty(x,'__proto__',{value:{admin:true},enumerable:true});assert.equal(runInnovation('I01',x).state,'HOLD');
+});
+test('ordinary Work fixtures still pass after detached copy',()=>assert.equal(runInnovation('I01',syntheticFixture('I01','H03.S06.N02')).state,'LOCAL_SYNTHETIC_CANDIDATE'));
