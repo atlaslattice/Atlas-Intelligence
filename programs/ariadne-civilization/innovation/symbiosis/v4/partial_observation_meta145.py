@@ -92,11 +92,20 @@ def simulate(value,valid):
     for name,history in models.items():
         assert history['selectedCount']==TRAIN*N
         assert int(history['counts'].sum())==TRAIN*S
+    # Preserve exact policy choices so an independently reseeded challenge can be
+    # evaluated WITHOUT retraining or reading its counterfactual outcomes.
+    frozen={'schema':'atlas.ariadne.v4.frozen-actions/v1','originalSourceSha256':'07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6',
+        'sourcePublisherAttested':False,'trainingGenerations':TRAIN,'holdoutGenerations':G-TRAIN,
+        'actionsBySphere':{'flat':[0]*S,**{name:models[name]['actions'].reshape(S,12)[:,0].tolist() for name in models}},
+        'newHoldoutEvaluatedDuringTraining':False,'actualModelCalls':0}
+    frozenRaw=json.dumps(frozen,sort_keys=True,separators=(',',':'))+'\n'
+    (OUT/'V4_FROZEN_ACTIONS.json').write_text(frozenRaw)
+    frozenDigest=hashlib.sha256(frozenRaw.encode()).hexdigest()
     for t in range(TRAIN,G):
         lines.append({'generation':t+1,'phase':'HELD_OUT_FROZEN_NO_TRAINING','sourceNodeOpportunities':N,'simulatedYearsPerNode':1728,'modelCalls':0,'realMacroturns':0})
     trace=''.join(json.dumps(x,sort_keys=True,separators=(',',':'))+'\n' for x in lines)
     (OUT/'PARTIAL_OBSERVATION_1728.jsonl').write_text(trace)
-    report={'schema':'atlas.ariadne.v4.partial-observation-meta145/v1','status':'SIMULATED_BANDIT_NOT_HOSTED_OR_REAL_LEARNING','scenarios':N*G,'generations':G,'trainingGenerations':TRAIN,'heldoutGenerations':G-TRAIN,'fictionalYearsPerScenario':1728,'nodePositions':N,'sphereRoles':S,'houseRoles':12,'policies':4,'competingArms':['flat','sphere','meta145','resource_aware_meta145'],'evaluation':final,'pairedHouseBlockContrasts':paired,'trainingObservationBudgetPerComparedPolicy':TRAIN*N,'trainingCounterfactualsUsedInUpdates':False,'sourceRegistrySha256':'07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6','originalSourceRehashedInThisRun':False,'modelCalls':0,'semanticLinksAccepted':0,'hostRightsVerified':False,'actualPeerMacroturns':0,'authorityEffect':'NONE','noClaimsOfGeneralAIImprovement':True,'traceSha256':hashlib.sha256(trace.encode()).hexdigest(),'trainingRecords':{name:{'uniqueEpochActionsObserved':int(h['counts'].sum()),'trainingHeld':h['heldTraining'],'uniqueArmCounts':h['counts'].sum(axis=0).tolist()} for name,h in models.items()}}
+    report={'schema':'atlas.ariadne.v4.partial-observation-meta145/v1','status':'SIMULATED_BANDIT_NOT_HOSTED_OR_REAL_LEARNING','scenarios':N*G,'generations':G,'trainingGenerations':TRAIN,'heldoutGenerations':G-TRAIN,'fictionalYearsPerScenario':1728,'nodePositions':N,'sphereRoles':S,'houseRoles':12,'policies':4,'competingArms':['flat','sphere','meta145','resource_aware_meta145'],'evaluation':final,'pairedHouseBlockContrasts':paired,'trainingObservationBudgetPerComparedPolicy':TRAIN*N,'trainingCounterfactualsUsedInUpdates':False,'sourceRegistrySha256':'07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6','frozenActionsSha256':frozenDigest,'originalSourceRehashedInThisRun':False,'modelCalls':0,'semanticLinksAccepted':0,'hostRightsVerified':False,'actualPeerMacroturns':0,'authorityEffect':'NONE','noClaimsOfGeneralAIImprovement':True,'traceSha256':hashlib.sha256(trace.encode()).hexdigest(),'trainingRecords':{name:{'uniqueEpochActionsObserved':int(h['counts'].sum()),'trainingHeld':h['heldTraining'],'uniqueArmCounts':h['counts'].sum(axis=0).tolist()} for name,h in models.items()}}
     (OUT/'V4_PARTIAL_OBSERVATION_BENCHMARK.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 if __name__=='__main__':
