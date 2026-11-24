@@ -5,6 +5,9 @@
  */
 const ORIGINAL='07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6';
 const SHA=/^[a-f0-9]{64}$/;
+const validSha=v=>typeof v==='string'&&SHA.test(v);
+const denseHouseDigests=v=>Array.isArray(v)&&v.length===12&&
+ Array.from({length:12},(_,i)=>i).every(i=>Object.hasOwn(v,i)&&validSha(v[i]));
 const HSN=/^H(0[1-9]|1[0-2])\.S(0[1-9]|1[0-2])\.N(0[1-9]|1[0-2])$/;
 const EX=/^EX\.W(0[1-9]|1[0-2])\.C(0[1-9]|1[0-2])\.P(0[1-9]|1[0-2])$/;
 const PROTECTED_KEYS=new Set(['body','raw','text','content','secret','token','password','api_key','private','palace','imagine']);
@@ -25,8 +28,7 @@ export function verifySyntheticMeta145Receipt(receipt){
    receipt.semanticRelationsAccepted!==0||receipt.genuineMacroTurns!==0||receipt.modelCalls!==0||
    receipt.authorizationGranted!==false||receipt.canonEdited!==false||receipt.authorityEffect!=='NONE'||
    receipt.status!=='LOCAL_SIMULATION_COMPLETE_HOST_AND_SEMANTIC_ACCEPTANCE_HELD'||
-   !SHA.test(receipt.receiptSha256??'')||!Array.isArray(receipt.houseReceipts)||
-   receipt.houseReceipts.length!==12||receipt.houseReceipts.some(v=>!SHA.test(v)))return bad();
+   !validSha(receipt.receiptSha256)||!denseHouseDigests(receipt.houseReceipts))return bad();
  return {schema:'atlas.ariadne.meta145-import-check/v1',state:'SOURCE_SHAPE_MATCHES_NOT_AUTHENTICATED',
    sourceRegistrySha256:ORIGINAL,simulationReceiptSha256:receipt.receiptSha256,
    actualModelCallsVerified:0,scientificEdgesAccepted:0,hostAuthorityGranted:false,

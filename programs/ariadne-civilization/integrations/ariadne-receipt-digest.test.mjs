@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {verifySyntheticMeta145Receipt as verify,prepareAtlasOneWorkGraft as graft} from './ariadne-strategy-port.mjs';
+const fixture={schema:'atlas.meta145.strategy-integration/v2',sourceRegistrySha256:'07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6',graphEdition:'ariadne-reader/v0.7',simulatedStrategies:1728,simulatedOptionEvaluations:5184,spheresCovered:144,housesCovered:12,crossHouseReviewCandidates:144,semanticRelationsAccepted:0,genuineMacroTurns:0,modelCalls:0,authorizationGranted:false,canonEdited:false,authorityEffect:'NONE',status:'LOCAL_SIMULATION_COMPLETE_HOST_AND_SEMANTIC_ACCEPTANCE_HELD',receiptSha256:'a'.repeat(64),houseReceipts:Array.from({length:12},(_,i)=>i.toString(16).repeat(64))};
+const hsn='H01.S01.N01';
+const hold=(m)=>assert.equal(verify(m).state,'HOLD');
+test('valid plain string digests remain shape-only',()=>{const r=verify(fixture);assert.equal(r.state,'SOURCE_SHAPE_MATCHES_NOT_AUTHENTICATED');assert.equal(r.runtimeReady,false);});
+test('receipt digest array must not coerce to string',()=>hold({...fixture,receiptSha256:[fixture.receiptSha256]}));
+test('House digest array must not coerce to string',()=>hold({...fixture,houseReceipts:fixture.houseReceipts.map(x=>[x])}));
+test('all-sparse House digest array rejected',()=>hold({...fixture,houseReceipts:Array(12)}));
+test('single missing House digest rejected',()=>{const a=fixture.houseReceipts.slice();delete a[5];hold({...fixture,houseReceipts:a});});
+test('malformed digest cannot reach Work pointer',()=>assert.equal(graft({meta145:{...fixture,receiptSha256:[fixture.receiptSha256]},hsn,originMode:'WORK'}).state,'HOLD'));
+test('valid pointer stays nonposting',()=>{const r=graft({meta145:fixture,hsn,originMode:'WORK'});assert.equal(r.state,'PREPARED_NOT_SENT');assert.equal(r.hostSessionVerified,false);assert.equal(r.externalEffects,0);});
+test('null or uppercase digests held',()=>{hold({...fixture,receiptSha256:null});hold({...fixture,receiptSha256:'A'.repeat(64)});});
+test('private origin held',()=>assert.equal(graft({meta145:fixture,hsn,originMode:'IMAGINE'}).state,'HOLD'));
