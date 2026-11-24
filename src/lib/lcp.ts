@@ -1,5 +1,9 @@
 // Lattice Context Protocol (LCP)
-// Facilitates INGEST, ACTIVATE, ROUTE, and SYNTHESIZE over the 12x12+1 Ontology
+// Historical application labels, separate from the original Ariadne registry.
+// The Nov23 HyperMatrix amendment forbids assuming ordinal identity between them.
+export const LEGACY_LCP_NAMESPACE = 'ATLAS_LCP_LEGACY';
+export { ARIADNE_SOURCE, ariadneNodeReference, validateAriadneReference,
+  createAriadneSourceAdapter, createAtlasContextAdapter } from '../../programs/context-integration/index.mjs';
 
 export const HOUSES: Record<string, string> = {
   H01: 'Consciousness',
@@ -19,23 +23,23 @@ export const HOUSES: Record<string, string> = {
 export interface ClassificationResult {
   houseId: string;
   sphereId: string;
-  confidence: number;
+  namespace: typeof LEGACY_LCP_NAMESPACE;
+  confidence: null;
+  semanticCrosswalkAccepted: false;
 }
 
 /**
- * INGEST (Classify input -> Spheres)
- * Replaces Noosphere IntentEngine keyword patterns and 
- * legacy Grokbrain v4 Academic schemas.
+ * Select historical application labels by literal name substring.
+ * This is not a semantic classifier or an original Ariadne crosswalk.
  */
 export const ingestContext = async (prompt: string): Promise<ClassificationResult[]> => {
-  // In a robust integration, this proxies to a classification endpoint embedding
-  // matching against `lattice_ontology.yaml` space.
   const lowerPrompt = prompt.toLowerCase();
   const results: ClassificationResult[] = [];
 
   for (const [houseId, name] of Object.entries(HOUSES)) {
     if (lowerPrompt.includes(name.toLowerCase())) {
-        results.push({ houseId, sphereId: `${houseId}.S01`, confidence: 0.85 });
+        results.push({ houseId, sphereId: `${houseId}.S01`, namespace: LEGACY_LCP_NAMESPACE,
+          confidence: null, semanticCrosswalkAccepted: false });
     }
   }
 
@@ -43,13 +47,13 @@ export const ingestContext = async (prompt: string): Promise<ClassificationResul
 };
 
 /**
- * SYNTHESIZE (Element 145 Coordination)
- * Maps cross-domain interactions from active spheres and detects emergent risks/blind spots.
+ * Prepare a cross-domain prompt from historical labels.
+ * This function does not run a model or verify the resulting analysis.
  */
 export const generateSynthesisPrompt = (activeHouses: string[], query: string): string => {
   const houseNames = activeHouses.map(id => HOUSES[id]).join(', ');
   return `[SYSTEM PING - ELEMENT 145 SYNTHESIZER]
-You are operating in the Synthesis Layer. The following Houses have been ACTIVATED for this task: ${houseNames || 'None strictly detected'}.
+You are operating in the Synthesis Layer. The following historical application labels were selected in namespace ATLAS_LCP_LEGACY: ${houseNames || 'None strictly detected'}. These labels are not original Ariadne HSN identities or verified semantic classifications.
 Query: "${query}"
 Task: Perform a cross-domain analysis. Identify blind spots in the non-activated houses and construct structured, deeply reasoned outputs tagged explicitly with confidence tiers.`;
 };

@@ -15,7 +15,8 @@
     "excellence:build": "node scripts/build_excellence1728.mjs",
     "test:excellence": "npm run excellence:build && node --test programs/excellence1728/integrations/test/*.test.mjs && python3 -m unittest discover -s programs/excellence1728/tests -p test_engine.py -v",
     "civilization:status": "node scripts/run_civilization_r01.mjs status",
-    "test:civilization": "npm --prefix programs/civilization-r01 test && npm --prefix programs/civilization-r01 run test:source-reference"
+    "test:civilization": "npm --prefix programs/civilization-r01 test && npm --prefix programs/civilization-r01 run test:source-reference",
+    "test:context-integration": "node --test programs/context-integration/test/*.test.mjs tests/provider-boundary.test.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

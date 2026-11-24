@@ -1,6 +1,6 @@
 # Element 145 / ATLAS
 
-Firebase-backed multi-provider AI substrate with strict data-layer invariants. Currently routing primary calls to Gemini; multi-provider proxy scaffold ready for SDK wiring.
+Firebase-backed AI application with an existing frontend Gemini SDK path. The separate server multi-provider proxy reports unavailable until a real provider adapter is configured; credential presence alone does not establish readiness.
 
 Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. This kernel is different.
 
@@ -16,8 +16,8 @@ Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. Th
 - It doesn't treat AI as infallible. It surfaces uncertainty, rejects unsupported facts, and actively tracks conflict of interest by explicitly tracking the multi-model `provider` of each spawned agent record.
 
 ### Key Refinements Active
-- **Provider Norm:** `server.ts` scales responses generically as `{ provider, text, tokens_used, finish_reason }`.
-- **Token Boundaries:** `max_tokens` limits explicitly managed.
+- **Server Provider Boundary:** `server.ts` returns an explicit `provider_unavailable` error while its SDK adapter is unconfigured. It fabricates no response text or token usage.
+- **Token Boundaries:** Server `max_tokens` accepts integers from 1 to 16,000.
 - **COI Transparent:** `provider` field tracks agent records continuously.
 
 ## Schema Summary
@@ -51,6 +51,10 @@ Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. Th
 ## Current HyperMatrix project canon
 
 The owner-approved [Atlas Unified HyperMatrix decision](docs/canon/ATLAS_UNIFIED_HYPERMATRIX_20261123.md) establishes independent coordinate systems with typed, source-qualified crosswalks and revisable functional deity profiles. The existing agent allocation cap is distinct from knowledge-matrix cardinality. [Debate mappings and indexing improvements](https://github.com/atlaslattice/Atlas-Intelligence/issues/40). Canon adoption does not establish hosted deployment or scientific validation.
+
+## Source-qualified context integration
+
+[The context integration adapter](programs/context-integration/README.md) verifies explicitly supplied Ariadne v0.7 bytes and preserves complete original node records. It optionally delegates context preparation to an owner-injected local `AtlasIntegratedModule`, checking returned source/task fidelity, scope and digests. The registry, private Work bodies, database and local runtime are not bundled here. Existing LCP labels remain explicitly `ATLAS_LCP_LEGACY`; matching H/S numbers are not a semantic crosswalk. Run `npm run test:context-integration`; source-dependent fixtures require the owner's exact `ATLAS_ARIADNE_ORIGINAL_FILE` and are otherwise reported as skipped.
 
 ## Source-defined 1,728-step engineering program
 
