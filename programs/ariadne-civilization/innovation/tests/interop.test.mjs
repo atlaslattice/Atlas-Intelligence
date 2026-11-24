@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {prepareExistingGrokSeekPlan,prepareOpenAIToolDescriptors,prepareMcpDescriptors,prepareSwarmChatProposal,prepareGraphFabricCandidates} from '../src/interop.mjs';
+import {runInnovation} from '../src/innovations.mjs';import {syntheticFixture} from '../src/synthetic-fixtures.mjs';
+test('one prepared GrokSeek DAG with 20 tasks and explicit prerequisites',()=>{const p=prepareExistingGrokSeekPlan();assert.equal(p.taskCount,20);assert.equal(p.nodes.length,20);assert.equal(p.nodes.find(x=>x.taskId==='I20').dependsOn.length,3);assert.equal(p.state,'PREPARED_NOT_QUEUED')});
+test('GrokSeek DAG follows every prerequisite',()=>{const p=prepareExistingGrokSeekPlan();for(const x of p.nodes)for(const d of x.dependsOn)assert.ok(p.topologicalOrder.indexOf(d)<p.topologicalOrder.indexOf(x.taskId))});
+test('GrokSeek planner never modifies existing EX tasks',()=>assert.equal(prepareExistingGrokSeekPlan().existingAtlasExcellenceTaskCountModified,0));
+test('OpenAI declarations are 20 source-only tools',()=>{const p=prepareOpenAIToolDescriptors();assert.equal(p.tools.length,20);assert.equal(p.state,'DESCRIPTORS_NOT_REGISTERED');assert.equal(p.tools.every(x=>x.hostCallable===false),true)});
+test('MCP source descriptors are not hosted MCP tools',()=>{const p=prepareMcpDescriptors();assert.equal(p.tools.length,20);assert.equal(p.hostRegistered,false);assert.equal(p.toolCalls,0)});
+test('valid Work proposal is not a real post',()=>{const p=prepareSwarmChatProposal({id:'I02',coordinate:'H03.S06.N02',existingSourceRef:'https://github.com/atlaslattice/Atlas-Intelligence/pull/48'});assert.equal(p.state,'PREPARED_NOT_POSTED');assert.equal(p.posted,false);assert.equal(p.currentReturnRightsVerified,false)});
+test('untrusted external link is refused in Work candidate',()=>assert.equal(prepareSwarmChatProposal({id:'I02',coordinate:'H03.S06.N02',existingSourceRef:'https://evil.invalid/secret'}).state,'HOLD'));
+test('H00 founder symbol is not a valid research assignment',()=>assert.equal(prepareSwarmChatProposal({id:'I01',coordinate:'H00.S00.N00',existingSourceRef:'https://github.com/atlaslattice/Atlas-Intelligence/pull/48'}).state,'HOLD'));
+test('Graph Fabric receives candidate edges only',()=>{const r=runInnovation('I06',syntheticFixture('I06','H03.S06.N02'));const p=prepareGraphFabricCandidates({result:r});assert.equal(p.state,'PREPARED_NOT_INGESTED');assert.equal(p.acceptedSemanticEdges,0);assert.equal(p.edges.every(e=>e.independentReview===false),true)});
+test('Graph Fabric malformed result refuses ingestion',()=>assert.equal(prepareGraphFabricCandidates({result:{operatorId:'I01'}}).state,'HOLD'));
