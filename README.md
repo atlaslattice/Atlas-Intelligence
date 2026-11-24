@@ -52,3 +52,9 @@ Most "agent frameworks" wrap an LLM call in retry logic and call it autonomy. Th
 
 The owner-approved [Atlas Unified HyperMatrix decision](docs/canon/ATLAS_UNIFIED_HYPERMATRIX_20261123.md) establishes independent coordinate systems with typed, source-qualified crosswalks and revisable functional deity profiles. The existing agent allocation cap is distinct from knowledge-matrix cardinality. [Debate mappings and indexing improvements](https://github.com/atlaslattice/Atlas-Intelligence/issues/40). Canon adoption does not establish hosted deployment or scientific validation.
 
+## Source-defined 1,728-step engineering program
+
+The executable program, authored capability catalog, dependency scheduler, evidence ledger, functional memory and META145 integration logic live in [programs/excellence1728](programs/excellence1728/README.md). The initial release contains 1,728 planned steps and zero completed production steps. Original Ariadne coverage remains separately identified by its source digest and coordinates.
+
+Run `npm run excellence:status` to inspect the hash-verified bundled program, `npm run excellence:ready` to list initial dependency roots, and `npm run test:excellence` to rebuild the exact plan and verify the source package. These entry points do not execute task text, post to rooms or grant host permissions.
+

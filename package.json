@@ -9,7 +9,11 @@
     "preview": "vite preview",
     "start": "node dist/server.cjs",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "excellence:status": "node scripts/run_excellence1728.mjs status",
+    "excellence:ready": "node scripts/run_excellence1728.mjs ready 12",
+    "excellence:build": "node scripts/build_excellence1728.mjs",
+    "test:excellence": "npm run excellence:build && node --test programs/excellence1728/integrations/test/*.test.mjs && python3 -m unittest discover -s programs/excellence1728/tests -p test_engine.py -v"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

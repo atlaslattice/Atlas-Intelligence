@@ -1,0 +1,927 @@
+{
+  "schema": "atlas.excellence.source-inventory/v1",
+  "status": "LOCAL_SNAPSHOT_BYTES_VERIFIED",
+  "source_count": 58,
+  "ariadne_original_sha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "canon_decision_id": "ATLAS-UHM-CANON-20261123-001",
+  "sources": [
+    {
+      "id": "source_cascade",
+      "project": "atlas_intelligence",
+      "path": "scripts/atlas_source_cascade.mjs",
+      "sha256": "ff27e9143cccbbeead8e59fdd75a7a2bad291f4cbe03e794124b42551274e813",
+      "bytes": 10566,
+      "symbols": [
+        "planEvolution",
+        "cutItems"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Atlas-Intelligence main commit bf3ebbfb466b455cb63264261a78d18eba2b3524 exact connector readback",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "librarian_service",
+      "project": "atlas_one",
+      "path": "librarian/hosting/service.mjs",
+      "sha256": "e62a77912b3c7a21e7af7b21d526ec2a2e314509922cfcf0b29bc94d94563e72",
+      "bytes": 19781,
+      "symbols": [
+        "createService",
+        "handle"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Atlas ONE Beta version6 source commit ab7614a248ac777b30f29a230f132bbd5657e390",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "librarian_lanes",
+      "project": "atlas_one",
+      "path": "librarian/runtime/lane_engine.mjs",
+      "sha256": "2dedaa73a0b63e1801b9714b16ed8a8aedf25de6875c9c578228cb4eb74090b6",
+      "bytes": 31041,
+      "symbols": [
+        "createState",
+        "planNextTasks",
+        "transition"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Atlas ONE Beta version6 source commit ab7614a248ac777b30f29a230f132bbd5657e390",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "librarian_store",
+      "project": "atlas_one",
+      "path": "librarian/hosting/store.mjs",
+      "sha256": "ce46d7b3bc15154358f47976228c1c8400eebc41789d0793d58f2aa89259612e",
+      "bytes": 23871,
+      "symbols": [
+        "D1Store",
+        "canonicalJSON",
+        "sha256"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Atlas ONE Beta version6 source commit ab7614a248ac777b30f29a230f132bbd5657e390",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "librarian_research",
+      "project": "atlas_one",
+      "path": "librarian/hosting/research.mjs",
+      "sha256": "e793523fb97400e2d557d83d96250e026b0b945b8d5dc6bebae6fcd934eeb320",
+      "bytes": 7942,
+      "symbols": [
+        "publicRequest",
+        "parseOpenAlex",
+        "parseArxiv",
+        "acquirePublicMetadata"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Atlas ONE Beta version6 source commit ab7614a248ac777b30f29a230f132bbd5657e390",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "legacy_coordinates",
+      "project": "providers",
+      "path": "core/coordinate_resolver.py",
+      "sha256": "6ffc9049e0e83d519fd6dace4d49059bb3a17cb33293d4fa79639e6df66307d6",
+      "bytes": 6280,
+      "symbols": [
+        "resolve_to_earth"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Providers PR66 reviewed publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "legacy_decomposer",
+      "project": "providers",
+      "path": "core/hierarchical_goal_decomposer.py",
+      "sha256": "929a997532f9353e1a1cc2daf232649eb1561bc315b5e9bfcad1e2474710d416",
+      "bytes": 566,
+      "symbols": [
+        "HierarchicalGoalDecompositionEngine"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Providers PR66 reviewed publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "registry",
+      "project": "atlasgpt",
+      "path": "native-v2/src/index.mjs",
+      "sha256": "201195b15345492f43905d203424b3a3dd5208e67e6dd837e333be841de8eb13",
+      "bytes": 10954,
+      "symbols": [
+        "AriadneRegistry",
+        "parseStrictJson",
+        "prepareResearch",
+        "versionInfo"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "native_engine",
+      "project": "atlasgpt",
+      "path": "native-v2/src/engine.mjs",
+      "sha256": "868502c4c0e86ede43dd98407fd934e4d6578d5546a52c6b9170791490281f0d",
+      "bytes": 2832,
+      "symbols": [
+        "AtlasOneEngine",
+        "prepareWorkEnvelope"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "native_meta",
+      "project": "atlasgpt",
+      "path": "native-v2/src/meta145-glyph.mjs",
+      "sha256": "59e388c2fba74d1e54975178dd7fd89c74f0447ad3ce2c1c530211021ffe1fcd",
+      "bytes": 11260,
+      "symbols": [
+        "Meta145GlyphCircuit",
+        "meta145EncodeDisplayAliases",
+        "meta145DecodeDisplayAlias"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "civilization",
+      "project": "atlasgpt",
+      "path": "native-v2/src/civilization-unified.mjs",
+      "sha256": "57431aa81cca3a51b62aa144755a3bd849c7d3d39dab1f66157c0eea23a2df87",
+      "bytes": 17492,
+      "symbols": [
+        "CivilizationUnifiedBuild",
+        "evaluateModuleFunction",
+        "sampleModuleInput"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "civil_host",
+      "project": "atlasgpt",
+      "path": "native-v2/src/civilization-host-bridge.mjs",
+      "sha256": "3a28ef62b4da664488e4e73f0785a8d193f807d20b515dde79a3666e3e03ea2d",
+      "bytes": 2478,
+      "symbols": [
+        "CivilizationWorkHostBridge"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "circuit",
+      "project": "atlasgpt",
+      "path": "native-v2/src/civilization-circuit.mjs",
+      "sha256": "042c6b5fafb55efa86b12b9df37d3b497756e7587695535bfdc84736b8523ea2",
+      "bytes": 13120,
+      "symbols": [
+        "CivilizationCircuit"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "native_port",
+      "project": "atlasgpt",
+      "path": "native-v2/src/adapters.mjs",
+      "sha256": "5e353e1f2674bdf7b12f14b4f880af3b50717de27ed831fce7fc63ccf6d20836",
+      "bytes": 5426,
+      "symbols": [
+        "WorkHostPort",
+        "prepareSwarmChatDraft"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "journal",
+      "project": "atlasgpt",
+      "path": "native-v2/src/journal.mjs",
+      "sha256": "2d943ccbbc080cd5860e4788fe9d2dd7348b4a4fab0c38038051909cb464ac4c",
+      "bytes": 4187,
+      "symbols": [
+        "AtomicJournal"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "native_canon",
+      "project": "atlasgpt",
+      "path": "native-v2/src/project-canon.mjs",
+      "sha256": "06f45890737522250f3f73b7751232851f200038209a929c7d518454b61534ca",
+      "bytes": 2802,
+      "symbols": [
+        "projectCanonStatus"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "native_memory",
+      "project": "atlasgpt",
+      "path": "native-v2/tools/meta145_glyph_memory.py",
+      "sha256": "ab754daebbaaf82ec1abc2d5f0c2eb57848e8f6ffbe4a0d7dc84ae6f6193fa61",
+      "bytes": 26152,
+      "symbols": [
+        "FunctionalMemory",
+        "score_brute",
+        "score_indexed",
+        "verify_build"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "AtlasGPT0.5.47 installed source",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "canon",
+      "project": "hypermatrix",
+      "path": "hypermatrix/canon.py",
+      "sha256": "fdd10cfb415bb76b403e9b52e2a41729fffa8af6ba565e14291099a728ca0f8a",
+      "bytes": 7533,
+      "symbols": [
+        "load_adoption",
+        "adoption_receipt",
+        "validate_amendment"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "routing",
+      "project": "hypermatrix",
+      "path": "hypermatrix/routing.py",
+      "sha256": "dbf7eb6c81f12aa2860dfbe5761f640853a83b2d859b9ba12520eb225d7314df",
+      "bytes": 8916,
+      "symbols": [
+        "route_task",
+        "_TaskRouter"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "memory",
+      "project": "hypermatrix",
+      "path": "hypermatrix/memory.py",
+      "sha256": "875de75d95b500d23c1f3ec4e985fac208cc13da70e0c6583fa0c3d431161e59",
+      "bytes": 3951,
+      "symbols": [
+        "FunctionalMemory"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "operators",
+      "project": "hypermatrix",
+      "path": "hypermatrix/operators.py",
+      "sha256": "3dccfd01a6819638de9ca37c24c8066675a3d80abd894ec45d2aed578117ca58",
+      "bytes": 12743,
+      "symbols": [
+        "unit_convert",
+        "dimensional_check",
+        "resource_balance",
+        "pareto_front",
+        "constraint_rank",
+        "compare_evidence",
+        "signal_spectrum",
+        "execute"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "fabric",
+      "project": "hypermatrix",
+      "path": "hypermatrix/fabric.py",
+      "sha256": "7798b81e653cf4d99d6a7c8d20a999c1b77c8c094dd626502344fc28bf4181cc",
+      "bytes": 22487,
+      "symbols": [
+        "Fabric",
+        "file_sha"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "relations",
+      "project": "hypermatrix",
+      "path": "hypermatrix/model.py",
+      "sha256": "9fa19fbf2fa4a352ef82336585db0af02e9b433c8f494a3270e147743b4ee306",
+      "bytes": 8814,
+      "symbols": [
+        "Coordinate",
+        "Relation",
+        "RelationType",
+        "classify_path"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "lexical",
+      "project": "hypermatrix",
+      "path": "hypermatrix/search.py",
+      "sha256": "d7e06904faebaa77dcea3865821075663904f8ed98802afb417440a5b6933d24",
+      "bytes": 2848,
+      "symbols": [
+        "tokens",
+        "LexicalIndex"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "states",
+      "project": "hypermatrix",
+      "path": "hypermatrix/state_coordinates.py",
+      "sha256": "02c751e7e886123c6a5cf62196978e05c56cfb9e48812ea98c8b2b315ae86c26",
+      "bytes": 10601,
+      "symbols": [
+        "make_nuclear_state",
+        "make_electronic_state",
+        "validate_occupancy"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "physics",
+      "project": "hypermatrix",
+      "path": "hypermatrix/physics.py",
+      "sha256": "5d43fc371fc006ae5985c6202f2b7c8a0c191fdf0ee0b54626276211d0895537",
+      "bytes": 19072,
+      "symbols": [
+        "validate_state",
+        "photon_frequency",
+        "larmor_frequency",
+        "rectangular_plate_modes"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "HyperMatrix0.2.0 frozen local release",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "meta_engine",
+      "project": "swarmchat",
+      "path": "lib/meta145-engine.mjs",
+      "sha256": "4e7cd1d3594d859c92956f956c60714f5211fcf106bd0988ebeb926d291f5c16",
+      "bytes": 28637,
+      "symbols": [
+        "meta145Tokens",
+        "meta145NodeTerms",
+        "validateMeta145Source",
+        "compileMeta145",
+        "getMeta145Engine"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "synthesis",
+      "project": "swarmchat",
+      "path": "lib/meta145-synthesis.mjs",
+      "sha256": "15ad3d845f1703fd3fcf2a8bd64164f4fd47e6768e61bcd45eb63782f765f6a3",
+      "bytes": 5085,
+      "symbols": [
+        "synthesizeMeta145"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "meta_host",
+      "project": "swarmchat",
+      "path": "lib/meta145-host.mjs",
+      "sha256": "d907451b3b65893ae17e18b87e58bd249f2f1b8232159fa13ae94eb441f8fb56",
+      "bytes": 11988,
+      "symbols": [
+        "meta145Owner",
+        "meta145Visible",
+        "meta145Descriptor",
+        "runMeta145Action",
+        "dispatchMeta145Tool"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "meta_api",
+      "project": "swarmchat",
+      "path": "lib/meta145-api.mjs",
+      "sha256": "2fd18e08dfc4b6effb1a02acda4086e78efcd28853b21f4391d5542b000c5058",
+      "bytes": 2966,
+      "symbols": [
+        "handleMeta145Api"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "meta_memory",
+      "project": "swarmchat",
+      "path": "lib/meta145-memory.mjs",
+      "sha256": "1bf9d3e171ecffbab66752c6dde83d6557a153331c253a6f147bc3f0c066876d",
+      "bytes": 19575,
+      "symbols": [
+        "verifyMeta145MemoryReceipts",
+        "readMeta145MemoryBundle",
+        "recordMeta145Feedback",
+        "recordMeta145Build",
+        "applyMeta145Memory"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "ariadne",
+      "project": "swarmchat",
+      "path": "lib/atlas-ariadne-source.mjs",
+      "sha256": "9eebf19c9eca28a63fde9f4e0433420a542a3ae8b08781595d04ce764c838f69",
+      "bytes": 5024,
+      "symbols": [
+        "loadVerifiedAriadne",
+        "verifyStructure",
+        "parseCursor"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "graph",
+      "project": "swarmchat",
+      "path": "lib/atlas-graph-fabric.mjs",
+      "sha256": "367c5a71eecbdcc1edc22e8586dd7de45b2327f7fb618db4fd893abe0a8a4a2c",
+      "bytes": 12000,
+      "symbols": [
+        "buildRoomGraph",
+        "queryGraph",
+        "traceGraph",
+        "graphCommunities"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "planner",
+      "project": "swarmchat",
+      "path": "lib/work-planner.mjs",
+      "sha256": "57053a09097264100afbc9b2a1563d886ad505025fe5f6c0f9175de1d0308f93",
+      "bytes": 9116,
+      "symbols": [
+        "validateRecord",
+        "projectWork",
+        "preparePlannerRecord",
+        "makeFilingHandoff",
+        "verifyFilingReadback"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "macroturn",
+      "project": "swarmchat",
+      "path": "lib/macroturn-local.mjs",
+      "sha256": "4828f4894c7f45dc9f5c7a7cbc102a8a3dfddd38b9990c00863c32d21e921348",
+      "bytes": 2575,
+      "symbols": [
+        "createWorkPacket",
+        "workRoomTurnGuidance"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "evolution",
+      "project": "swarmchat",
+      "path": "lib/evolution-policy.mjs",
+      "sha256": "3e8e87a1acdefd505c0f7e3e44dda0bacff91651672c18811de58ba13223d7a5",
+      "bytes": 7641,
+      "symbols": [
+        "evolutionDefaults",
+        "evolutionDirective",
+        "createEvolutionHandoff",
+        "evolutionRuntimeStatus"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "glyph",
+      "project": "swarmchat",
+      "path": "lib/glyphforge-compiler.mjs",
+      "sha256": "6760ec972b7facb56615afaba08139de8f2917cec4a90e88ea6f0c9daa493ad6",
+      "bytes": 9174,
+      "symbols": [
+        "validateProgram",
+        "compileProgram",
+        "decompileInstructions",
+        "evaluateProgram",
+        "atlasProjection",
+        "makeSwarmChatDraft"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "glyph_hsn",
+      "project": "swarmchat",
+      "path": "lib/glyph-hsn-bridge.mjs",
+      "sha256": "be224cba5d8ac1bbaf4caa71599df9a541b99f0310568dace3c9976dcb9fae44",
+      "bytes": 9540,
+      "symbols": [
+        "encodeHsnGlyph",
+        "decodeHsnGlyph",
+        "resolveNode",
+        "topicCandidates",
+        "resolveCanon",
+        "externalLookupPlan"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "glyph_graph",
+      "project": "swarmchat",
+      "path": "lib/glyph-hsn-graph-adapter.mjs",
+      "sha256": "8fb80b14cd94a4ec26a7263d21dfe53a3aafc169d2a9c67ae38db9921ccb51f4",
+      "bytes": 4673,
+      "symbols": [
+        "sourceIdentity",
+        "graphPreview"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "cymatic",
+      "project": "swarmchat",
+      "path": "lib/cymatic-atlas.mjs",
+      "sha256": "e1f48cd744a43994f9a718301e12b329a934ed3f750ae5f83b51ff7ad7efeaa9",
+      "bytes": 8572,
+      "symbols": [
+        "parseCode",
+        "plateFrequency",
+        "plateMode",
+        "position",
+        "claimPreview"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "room_source",
+      "project": "swarmchat",
+      "path": "lib/room-source.mjs",
+      "sha256": "29d7ecaec295a10309e739d07d4930c28c2ffc4aadc7ebeb21fef85becd8b48f",
+      "bytes": 3289,
+      "symbols": [
+        "handleRoomSource"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "return_host",
+      "project": "swarmchat",
+      "path": "lib/native-return-host.mjs",
+      "sha256": "1c364387c6d3ebaf3ebf42a46ca0619132c62351d1c220786e12f22beca71b9e",
+      "bytes": 13470,
+      "symbols": [
+        "dispatchNativeReturn"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "workspace",
+      "project": "swarmchat",
+      "path": "lib/workspace.mjs",
+      "sha256": "f76a29250ce32961b2c3e6f7da7cbcbb9ca40453b37114b113d7bc6514424fac",
+      "bytes": 2409,
+      "symbols": [
+        "workspaceData",
+        "buildWorkspace"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "rooms",
+      "project": "swarmchat",
+      "path": "lib/rooms.mjs",
+      "sha256": "7cb9d2281dc3e1d02c2c2f17e9cd61d1e0010eba43baed96f2e28c6876b19063",
+      "bytes": 32553,
+      "symbols": [
+        "roomTool",
+        "validate",
+        "configuredRoomCap",
+        "configuredQuotaMode"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "mcp",
+      "project": "swarmchat",
+      "path": "lib/mcp.mjs",
+      "sha256": "2872078463d53f9bad818ff98448a2733e8eb3e86c0792dcda8fbc58ba1a142d",
+      "bytes": 15156,
+      "symbols": [
+        "handleMcp"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "audit",
+      "project": "swarmchat",
+      "path": "lib/evidence-audit.mjs",
+      "sha256": "64c269bdd58e645f13ddc67d215367dc5b49f66c224cbcf2343920ff707b1942",
+      "bytes": 5696,
+      "symbols": [
+        "parseReceiptJSON",
+        "manifestDigest",
+        "auditReceipts",
+        "auditText"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "research",
+      "project": "swarmchat",
+      "path": "lib/hyperspace-research.mjs",
+      "sha256": "c80a2ac5d30ca4042760a04bb3865edf1c3e526deadaaedf246b272ccd22550f",
+      "bytes": 1272,
+      "symbols": [
+        "runResearch"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "civil_contract",
+      "project": "swarmchat",
+      "path": "lib/atlas-one-v2-civilizational-contract.mjs",
+      "sha256": "4fde1df86a10c2cc3712f1d8aa36bb37d422caecda8af0920c7b9f29fd5e66a0",
+      "bytes": 3179,
+      "symbols": [
+        "evaluateCanonHsnCandidate"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "release",
+      "project": "swarmchat",
+      "path": "lib/atlas-release-gates.mjs",
+      "sha256": "a6c129dccba519289b5a28125a20610813bae24e079e39b272c1cea47d8bd2d3",
+      "bytes": 3894,
+      "symbols": [
+        "assessPublisherEvidence"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "work_review",
+      "project": "swarmchat",
+      "path": "lib/atlas-work-review.mjs",
+      "sha256": "95c70ad04d4caf36fd13448b1a7151118595c05a5c3d216b8ad896640ab2df42",
+      "bytes": 8597,
+      "symbols": [
+        "previewWorkReviewPage",
+        "dispatchWorkReviewTool"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "recovery",
+      "project": "swarmchat",
+      "path": "lib/connection-recovery.mjs",
+      "sha256": "7cf7a7714fa30397c16dbb4ca613de3cc9a8b407a2079cd0cb360f89d3141cda",
+      "bytes": 1990,
+      "symbols": [
+        "connectionIssue",
+        "signInForReturn"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "SwarmChat version43 source commit dfd77cb558bfdd1276e208914e9c3b962ec186dc",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "continuity",
+      "project": "noosphere",
+      "path": "core/digital_continuity.py",
+      "sha256": "51774ffa9aade5319bb5f224dba96310ae4da98f77e463f1e4a8898fcfbc1770",
+      "bytes": 9452,
+      "symbols": [
+        "validate_bundle",
+        "validate_contract",
+        "prepare_fork",
+        "prepare_rehydration"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Noosphere prior canon publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "contracts",
+      "project": "noosphere",
+      "path": "core/swarmhub_contracts.py",
+      "sha256": "270df07b30738aff07c4d90687bfec7fad22677860eb31c92a3b523c091a2c39",
+      "bytes": 14680,
+      "symbols": [
+        "PreservationLedger",
+        "CoordinateResolver",
+        "EvidenceGraph",
+        "Orchestrator",
+        "CandidateQueue"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Noosphere prior canon publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "repo_registry",
+      "project": "noosphere",
+      "path": "registry/public_registry.py",
+      "sha256": "3a2bb346f6bd704785b4b897e99afb2b33cd4d247c04b3a5e7501bf21c121a21",
+      "bytes": 9970,
+      "symbols": [
+        "validate_catalog",
+        "lookup_public_repo",
+        "route_public_issue"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Noosphere prior canon publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "crosswalk_audit",
+      "project": "noosphere",
+      "path": "tools/contract_crosswalk.py",
+      "sha256": "3c61f6a706fce7585757401fdb6586b9f876780d3e39bafd58c5a61997fbf22c",
+      "bytes": 5714,
+      "symbols": [
+        "inspect",
+        "compare"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Noosphere prior canon publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "approval",
+      "project": "providers",
+      "path": "core/project_adoption_context.py",
+      "sha256": "3b6387135f738c3ca620abd8da80baed5320d01a0d4970ba5eef7525e9310ad8",
+      "bytes": 12048,
+      "symbols": [
+        "ProjectApprovalContext"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Providers PR66 reviewed publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "gates",
+      "project": "providers",
+      "path": "core/eight_gates.py",
+      "sha256": "93fc98fc57ee8c312b98d45e848292ff8ef49ee0d62fbd859a348e4a8edf61df",
+      "bytes": 13572,
+      "symbols": [
+        "run_eight_gates",
+        "secret_gate",
+        "overclaim_gate",
+        "repro_gate",
+        "human_root_gate"
+      ],
+      "classification": "verified_existing",
+      "source_snapshot": "Providers PR66 reviewed publication checkout",
+      "observation": "LOCAL_SOURCE_BYTES_INSPECTED_NOT_NEW_HOST_VERIFICATION",
+      "content_included": false
+    },
+    {
+      "id": "ARIADNE_ORIGINAL_V07",
+      "project": "hypermatrix",
+      "path": "sources/ariadne_v07.json",
+      "sha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+      "bytes": 2187541,
+      "symbols": [],
+      "classification": "verified_existing",
+      "source_snapshot": "Original Ariadne v0.7 exact private source",
+      "observation": "LOCAL_SOURCE_BYTES_VERIFIED_PRIVATE_CONTENT_NOT_BUNDLED",
+      "content_included": false,
+      "source_only": true
+    }
+  ],
+  "roots_are_runtime_inputs": true,
+  "private_source_bodies_bundled": false,
+  "host_deployment_claimed": false
+}
