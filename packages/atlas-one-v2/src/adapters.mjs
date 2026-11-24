@@ -83,3 +83,7 @@ export {CivilizationCircuit,CIRCUIT_SCHEMA} from './civilization-circuit.mjs';
 
 // Additive META145 source-only glyph/memory review; host permissions remain external.
 export {Meta145GlyphCircuit,SCHEMA as META145_GLYPH_SCHEMA} from './meta145-glyph.mjs';
+
+// Optional source-pinned civilization functions; host authority is unchanged.
+export {CivilizationUnifiedBuild,CIVILIZATION_SCHEMA,MODULES,evaluateModuleFunction,sampleModuleInput} from './civilization-unified.mjs';
+export {CivilizationWorkHostBridge,SWARMCHAT_CIVILIZATION_BRIDGE} from './civilization-host-bridge.mjs';
