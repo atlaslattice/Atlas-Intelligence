@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {auditMutationInvariance} from '../src/mutation-oracle.mjs';
+const c='H03.S06.N02';
+test('original I18 input shape preserves correct invariance',()=>assert.equal(auditMutationInvariance(c,'I01',300).correctStaticMenuInvariance,true));
+test('seven actually executed original negatives HOLD',()=>assert.equal(auditMutationInvariance(c,'I01',300).originalNegativeCasesHeld,7));
+test('additional three are proposals, not proven gains',()=>assert.equal(auditMutationInvariance(c,'I01',300).adaptivePerformanceGainDemonstrated,false));
+test('missing source is distinct from explicit null',()=>assert.equal(auditMutationInvariance(c,'I01',300).originalNegativeCasesActuallyExercised,7));
+test('all houses valid',()=>{for(let h=1;h<=12;h++){let x=`H${String(h).padStart(2,'0')}.S01.N01`;assert.equal(auditMutationInvariance(x,'M145',0).state,'LOCAL_ORIGINAL_INVARIANCE_AUDITED');}});
+test('H00 founder not a node',()=>assert.equal(auditMutationInvariance('H00.S00.N00','I01',0).state,'HOLD'));
+test('private root name rejected',()=>assert.equal(auditMutationInvariance(c,'PRIVATE',0).state,'HOLD'));
+test('invalid signal rejected',()=>assert.equal(auditMutationInvariance(c,'I01',Infinity).state,'HOLD'));
+test('no external model calls',()=>assert.equal(auditMutationInvariance(c,'I01',0).modelCalls,0));
+test('no hosting claims',()=>assert.equal(auditMutationInvariance(c,'I01',0).adaptiveHostTested,false));
