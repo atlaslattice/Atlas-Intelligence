@@ -1,0 +1,77 @@
+{
+  "schema": "atlas.neural.composed-service-paired/v1",
+  "workload": "SYNTHETIC_WORK_3252_neural_only",
+  "source": "original WorkLearning service v0.1 vs composed 664a..; same runtime, fixed-seed untrained model",
+  "query": {
+    "query": "water and resilience",
+    "target": "corpus",
+    "limit": 10
+  },
+  "pairs": [
+    {
+      "pair": 1,
+      "order": "AB",
+      "baseline_ms": 22.997546,
+      "candidate_ms": 19.960173,
+      "equal": true,
+      "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+    },
+    {
+      "pair": 2,
+      "order": "BA",
+      "baseline_ms": 23.082276,
+      "candidate_ms": 18.7528,
+      "equal": true,
+      "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+    },
+    {
+      "pair": 3,
+      "order": "AB",
+      "baseline_ms": 23.775901,
+      "candidate_ms": 19.497104,
+      "equal": true,
+      "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+    },
+    {
+      "pair": 4,
+      "order": "BA",
+      "baseline_ms": 23.311521,
+      "candidate_ms": 18.556854,
+      "equal": true,
+      "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+    },
+    {
+      "pair": 5,
+      "order": "AB",
+      "baseline_ms": 23.472765,
+      "candidate_ms": 19.00472,
+      "equal": true,
+      "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+    },
+    {
+      "pair": 6,
+      "order": "BA",
+      "baseline_ms": 22.844857,
+      "candidate_ms": 18.703496,
+      "equal": true,
+      "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+    },
+    {
+      "pair": 7,
+      "order": "AB",
+      "baseline_ms": 22.888873,
+      "candidate_ms": 19.19054,
+      "equal": true,
+      "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+    }
+  ],
+  "all_outputs_equal": true,
+  "medians_ms": {
+    "baseline": 23.082276,
+    "candidate": 19.00472
+  },
+  "trainingPerformed": false,
+  "hostedTest": false,
+  "usesMicaBge": false,
+  "median_ratio": 1.214554910569585
+}

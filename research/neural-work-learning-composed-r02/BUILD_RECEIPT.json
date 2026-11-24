@@ -1,0 +1,118 @@
+{
+  "disposition": "REVIEW_ONLY_HOST_HOLD",
+  "freshPairedBenchmark": {
+    "all_outputs_equal": true,
+    "hostedTest": false,
+    "median_ratio": 1.214554910569585,
+    "medians_ms": {
+      "baseline": 23.082276,
+      "candidate": 19.00472
+    },
+    "pairs": [
+      {
+        "baseline_ms": 22.997546,
+        "candidate_ms": 19.960173,
+        "equal": true,
+        "order": "AB",
+        "pair": 1,
+        "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+      },
+      {
+        "baseline_ms": 23.082276,
+        "candidate_ms": 18.7528,
+        "equal": true,
+        "order": "BA",
+        "pair": 2,
+        "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+      },
+      {
+        "baseline_ms": 23.775901,
+        "candidate_ms": 19.497104,
+        "equal": true,
+        "order": "AB",
+        "pair": 3,
+        "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+      },
+      {
+        "baseline_ms": 23.311521,
+        "candidate_ms": 18.556854,
+        "equal": true,
+        "order": "BA",
+        "pair": 4,
+        "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+      },
+      {
+        "baseline_ms": 23.472765,
+        "candidate_ms": 19.00472,
+        "equal": true,
+        "order": "AB",
+        "pair": 5,
+        "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+      },
+      {
+        "baseline_ms": 22.844857,
+        "candidate_ms": 18.703496,
+        "equal": true,
+        "order": "BA",
+        "pair": 6,
+        "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+      },
+      {
+        "baseline_ms": 22.888873,
+        "candidate_ms": 19.19054,
+        "equal": true,
+        "order": "AB",
+        "pair": 7,
+        "result_sha256": "f63039c3f3547abbcd02b10c3a342ed3a6426b3eba510d8bcf3b0b9e63e48e74"
+      }
+    ],
+    "query": {
+      "limit": 10,
+      "query": "water and resilience",
+      "target": "corpus"
+    },
+    "schema": "atlas.neural.composed-service-paired/v1",
+    "source": "original WorkLearning service v0.1 vs composed 664a..; same runtime, fixed-seed untrained model",
+    "trainingPerformed": false,
+    "usesMicaBge": false,
+    "workload": "SYNTHETIC_WORK_3252_neural_only"
+  },
+  "limitations": [
+    "Synthetic Work Learning checkpoint, not MICA BGE release",
+    "Purpose separation source-only, no authenticated host authority or network egress",
+    "Unmerged GitHub CI unverified",
+    "No new neural quality evaluation or model training",
+    "One synthetic warm corpus, not hosted p95"
+  ],
+  "node": {
+    "jitless": {
+      "passed": 83,
+      "skipped": 2
+    },
+    "normal": {
+      "passed": 83,
+      "skipped": 2
+    }
+  },
+  "python": {
+    "normal": {
+      "passed": 176,
+      "skipped": 0
+    },
+    "optimized": {
+      "passed": 176,
+      "skipped": 0
+    }
+  },
+  "schema": "atlas.neural.composed-r02.build-receipt/v1",
+  "sourceParity": {
+    "AriadneRegistrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "composedServiceSha256": "664a6628604eb56c5a3954f27b037df400365f02344710947902259976c05485"
+  },
+  "status": "SOURCE_ONLY_COMPOSED_TEST_PASS",
+  "syntheticRealPythonBridge": {
+    "passed": true,
+    "purposeStrictLocal": true,
+    "realHostRightsAttested": false
+  }
+}

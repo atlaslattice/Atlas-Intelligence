@@ -1,0 +1,38 @@
+{
+  "baseLocalCommit": "b01a94254feac81364d2b99b6a26a3f5717e09a6",
+  "composedServiceSha256": "664a6628604eb56c5a3954f27b037df400365f02344710947902259976c05485",
+  "hostedDeployment": false,
+  "humanGoldEvaluated": false,
+  "inputs": {
+    "Atlas-synthesis": {
+      "fileName": "neural_only_scan.patch",
+      "sha256": "1f3f2e09899b7b8f0a9cf185c2104beaae288b1c474f90e83ca8182734700763"
+    },
+    "Corpus-synthesis": {
+      "fileName": "serving_policy.patch",
+      "sha256": "da6721994100159c981a277920ca1155b904fd1d301114b1190f3b8faff68f0d"
+    },
+    "Fieldlark-Peer15": {
+      "fileName": "ATLAS_NEURAL_META145_PEER15_SOURCE_HARDENING.zip",
+      "sha256": "98021cf1f7e71464e3f0fafa9bcace7d68c5bb7d91f36428d1d2a6b20b2f7930"
+    },
+    "Native1728": {
+      "fileName": "MICA_GATEWAY_ITEM_BINDING.patch",
+      "sha256": "5ba88db67067603c426cbf57e1539a231ac5687309300e602d114ea19fc8ac52"
+    },
+    "Omega-comparison": {
+      "fileName": "atlas_work_learning_comparison_R01.patch",
+      "sha256": "d15867bcad21cd7f8610a55f469dfb8081dc9ee894cc0d6ba0289b6a40eda7a4"
+    },
+    "R01-training-view": {
+      "fileName": "training_view_preflight.patch",
+      "sha256": "1f24463262403826d7b587b2f7345e323ba4f6d924abb1b3f9d49fb15ee1cdf2"
+    }
+  },
+  "micaExactBgeModelUsed": false,
+  "modelTrainingPerformed": false,
+  "originalAriadneSha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "purposeBoundGatewaySha256": "b60761055913848ba2fe82a3c486447b8fa0802155ba9faf3da84b7d25c32300",
+  "schema": "atlas.neural.composed-r02.source-provenance/v1",
+  "sourceCommitLocal": "27744929601ba1b0270bd9d15ba7c8db39f6be2a"
+}
