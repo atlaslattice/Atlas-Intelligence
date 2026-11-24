@@ -1,0 +1,216 @@
+{
+  "schema": "atlas.excellence.phases/v1",
+  "status": "PLANNED",
+  "engineering_namespace": "EX1728",
+  "phase_count": 12,
+  "phases": [
+    {
+      "id": "P01",
+      "ordinal": 1,
+      "title": "Bind source and scope",
+      "depends_on": [],
+      "mutates_sources": false,
+      "action": "Inspect exact source targets and bind this capability to the selected project decision and permitted inputs.",
+      "artifact": "source_bindings/{capability_id}.json",
+      "acceptance_template": "Every existing target matches the expected source inventory digest; source edition purpose and unresolved scope are explicit.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P02",
+      "ordinal": 2,
+      "title": "Specify the executable contract",
+      "depends_on": [
+        "P01"
+      ],
+      "mutates_sources": false,
+      "action": "Write typed input output failure and effect contracts for the capability-specific behavior.",
+      "artifact": "contracts/{capability_id}.json",
+      "acceptance_template": "The contract states all capability input and output obligations and negative cases; unspecified authority remains absent.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P03",
+      "ordinal": 3,
+      "title": "Capture the independent baseline",
+      "depends_on": [
+        "P02"
+      ],
+      "mutates_sources": false,
+      "action": "Create source-derived positive fixtures and independent expected outputs before changing implementation.",
+      "artifact": "baselines/{capability_id}.json",
+      "acceptance_template": "Baseline fixture provenance is explicit and expected outputs do not call the future optimized path; held-out task labels stay outside indexed sources.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P04",
+      "ordinal": 4,
+      "title": "Implement or verify existing behavior",
+      "depends_on": [
+        "P03"
+      ],
+      "mutates_sources": true,
+      "action": "Implement the capability-specific change where required; if the exact baseline already meets the objective record evidence-backed NO_CHANGE_REQUIRED or verified reuse instead of forcing a rewrite.",
+      "artifact": "implementation/{capability_id}.json",
+      "acceptance_template": "The selected implementation satisfies the capability-specific output contract with exact source and test evidence; either a real patch or a verified no-change result is admissible, and neither alone establishes a measured improvement.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "VERIFIED_IMPLEMENTATION",
+        "NO_CHANGE_REQUIRED",
+        "VERIFIED_REUSE"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P05",
+      "ordinal": 5,
+      "title": "Reject invalid and incompatible inputs",
+      "depends_on": [
+        "P04"
+      ],
+      "mutates_sources": true,
+      "action": "Implement and execute the capability-specific negative cases without partial state publication.",
+      "artifact": "checks/{capability_id}/negative.json",
+      "acceptance_template": "Every declared negative case is exercised and fails in the intended bounded manner while prior committed state remains intact.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P06",
+      "ordinal": 6,
+      "title": "Evaluate data-access optimization",
+      "depends_on": [
+        "P04"
+      ],
+      "mutates_sources": true,
+      "action": "Measure avoidable data access and preserve exact reference outputs; retain the baseline when a proposed optimization does not improve the matched workload.",
+      "artifact": "checks/{capability_id}/access_parity.json",
+      "acceptance_template": "Optimized access must preserve complete declared outputs; BASELINE_RETAINED_NO_GAIN is valid when the candidate loses or is unnecessary, and all losses and unsupported cases remain explicit.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "OPTIMIZATION_SUPPORTED",
+        "BASELINE_RETAINED_NO_GAIN"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P07",
+      "ordinal": 7,
+      "title": "Bind reusable functional memory",
+      "depends_on": [
+        "P04"
+      ],
+      "mutates_sources": true,
+      "action": "Add explicit dependency keys invalidation and reuse rules appropriate to this capability.",
+      "artifact": "checks/{capability_id}/memory.json",
+      "acceptance_template": "Reusable outputs are keyed by every output-affecting source implementation and parameter; current host rights are checked independently at use.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P08",
+      "ordinal": 8,
+      "title": "Compose existing module interfaces",
+      "depends_on": [
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "mutates_sources": true,
+      "action": "Connect this capability to its declared adjacent interfaces with typed handoffs and shared-source conflict handling.",
+      "artifact": "checks/{capability_id}/integration.json",
+      "acceptance_template": "The end-to-end handoff produces the capability output under real local interfaces; preparing a host action remains distinct from an observed authorized effect.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P09",
+      "ordinal": 9,
+      "title": "Measure comparative workloads",
+      "depends_on": [
+        "P08"
+      ],
+      "mutates_sources": false,
+      "action": "Benchmark the capability against the captured baseline on matched representative held-out inputs.",
+      "artifact": "benchmarks/{capability_id}.json",
+      "acceptance_template": "All declared capability metrics include measurement scope input identity sample count and losses; quality and integrity constraints pass before speedup is considered.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P10",
+      "ordinal": 10,
+      "title": "Stress falsifiers and recovery",
+      "depends_on": [
+        "P08"
+      ],
+      "mutates_sources": false,
+      "action": "Exercise the capability losing case maximum supported sizes interruption and stale-source conditions.",
+      "artifact": "checks/{capability_id}/stress.json",
+      "acceptance_template": "Counterexamples and resource limits are explicit; invalid state and failed dependencies cannot be promoted through stress or recovery paths.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P11",
+      "ordinal": 11,
+      "title": "Review exact evidence and tradeoffs",
+      "depends_on": [
+        "P09",
+        "P10"
+      ],
+      "mutates_sources": false,
+      "action": "Review the source diff capability-specific positive and negative results integrated tradeoffs and unresolved domain obligations.",
+      "artifact": "reviews/{capability_id}.json",
+      "acceptance_template": "A review receipt identifies the exact implementation and checks; assistant review is not independent domain validation or community consensus.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    },
+    {
+      "id": "P12",
+      "ordinal": 12,
+      "title": "Stage a reversible META145 contribution",
+      "depends_on": [
+        "P11"
+      ],
+      "mutates_sources": false,
+      "action": "Package the verified compatible capability delta with predecessor source pins migration and rollback information for the 145th integration.",
+      "artifact": "contributions/{capability_id}.json",
+      "acceptance_template": "The contribution is bound to this plan and exact accepted evidence; deployment canon changes and completed resident turns each require their own explicit receipt.",
+      "completion_requires": "CAPABILITY_SPECIFIC_REGISTERED_EXECUTION_EVIDENCE",
+      "completion_outcomes": [
+        "CONTRACT_SATISFIED"
+      ],
+      "benefit_claim_requires_measurement": true
+    }
+  ]
+}

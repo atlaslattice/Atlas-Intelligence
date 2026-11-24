@@ -1,0 +1,9 @@
+{
+  "decision_id": "ATLAS-UHM-CANON-20261123-001",
+  "status": "OWNER_APPROVED_PROJECT_CANON",
+  "canon_release": "0.2.0",
+  "public_adoption_sha256": "d3aeaf3aee92c7c7f61809652476d5ee267d449b3027b270fff3a276adc301c1",
+  "public_mapping_projection_sha256": "47a7e21dcfa43132991377f047452115cc008df547e5602730c532eb61225306",
+  "scope": "Existing project canon; this engineering plan does not amend accepted mappings",
+  "url": "https://github.com/atlaslattice/Atlas-Intelligence/blob/main/docs/canon/ATLAS_UNIFIED_HYPERMATRIX_20261123.md"
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "atlas.excellence.runtime-verification.v1",
+  "scope": "LOCAL_STDLIB_ENGINE_AND_SYNTHETIC_FIXTURES",
+  "status": "PASSED",
+  "tests": 37,
+  "test_command": "python3 -m unittest discover -s tests -p test_engine.py -v",
+  "test_log_sha256": "dc93446755db94b0de99556b112f660ccfb622eecda2f8539dbc29962226f95b",
+  "canonical_plan_sha256": "47084b895a6317db16275a92c3878a340d31af15fb9ab479db7101953c18e49c",
+  "plan_reproduced_byte_identical": true,
+  "planned_steps": 1728,
+  "completed_production_steps": 0,
+  "genuine_macroturns_completed": 0,
+  "host_execution_authorized": false,
+  "python_source_sha256": {
+    "runtime/excellence1728/__init__.py": "96ee3fc4c84f0cd06c04384cab544f1ea3784f786820946529a42815b79d6dec",
+    "runtime/excellence1728/__main__.py": "e2915a16a3c6f055bfd424b0478cd986be213985d0e32d68bce5c3a8c4cd1cbf",
+    "runtime/excellence1728/ledger.py": "8c30e6e32a1cc71b35835c283aee9577eeec3766dc7c18ce4e6443284065eae3",
+    "runtime/excellence1728/memory.py": "0b01d96456cb41aeb08edd01ea3fcf77b53072d7937ef83843ff6b3b417b846f",
+    "runtime/excellence1728/meta145.py": "7d56dda1237929c46cedd1332e645717b5f1348ca61d68da67b1ee4cb4ea2a59",
+    "runtime/excellence1728/model.py": "d450d344ca1b773f855fd3f8ce97df85e8575552c7dc99639ecf6ee9aa5b8afb",
+    "runtime/excellence1728/runner.py": "7927a6ffe53526ba748eed3c6269436523fcb62178004c2bdd709f7f67cd821a"
+  },
+  "tests_source_sha256": "cab3926643780f022930a45b112eb865c069d594451796baa5761eb23b1a56a6",
+  "meta145_baseline_sha256": "5a785c57152604322023a95d4a97b4ed17b2a26ec74767fef8a76bdd015cc075",
+  "concrete_repairs": [
+    "full reviewed task union required for META145 integration readiness",
+    "command executable and implementation/test bytes pinned and rechecked",
+    "phase acceptance separate from final capability acceptance",
+    "no-change and baseline-retained outcomes excluded from gain candidates"
+  ],
+  "limitations": [
+    "HMAC authenticates receipts within a trusted host process; it is not owner identity or malicious in-process isolation",
+    "No production acceptance checks registered by this release",
+    "Source plan and synthetic tests do not count as 1728 completed jobs",
+    "No global performance or hosted permission claim"
+  ]
+}

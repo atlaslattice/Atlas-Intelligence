@@ -66,11 +66,31 @@ pull-request jobs and the isolated historical smoke job explicitly returned
 `runner_id=0`, `steps=[]` and a failure conclusion. No test execution is inferred
 from that symptom. The other push jobs were not individually inspected.
 
+## Verified admission diagnosis — 24 November 2026
+
+The public [Actions summary for run 45472798169](https://github.com/atlaslattice/Atlas-Intelligence/actions/runs/45472798169)
+attributes the job's non-start to an account lock associated with billing. This
+annotation was read directly in the GitHub UI. It is a new observed cause for
+that run, replacing the earlier unknown-cause status for this observation.
+
+The matching job is `138724960074`, on source
+`17332eb5a86bc138c1e0eebaf8adf9d79ae78397`. Its authenticated API record reports
+`runner_id=0`, no executed steps and failure. The annotation does not establish
+that every historical failure had the same cause. No account, payment, budget
+or Actions policy was changed, and no financial details were retrieved.
+
+Current-main integration preserves both source histories. Its scoped CI and
+contributor-check environment passed 95 inherited tests locally. Those results
+do not clear the account lock or establish hosted execution.
+
 ## What unblocks release
 
-1. Read the exact annotation for [isolated smoke job 137921988371](https://github.com/atlaslattice/Atlas-Intelligence/actions/runs/45240063934/job/137921988371).
-   The connected annotation endpoint currently returns a tool-level `400`; no
-   annotation text has been read. Its absence is not an infrastructure diagnosis.
+1. Have the account owner resolve the GitHub account lock through the authorized
+   account interface or GitHub support. The public annotation above supplies the
+   observed diagnosis; it does not authorize a payment, spending change or policy
+   change. Preserve the earlier [isolated smoke job](https://github.com/atlaslattice/Atlas-Intelligence/actions/runs/45240063934/job/137921988371)
+   as historical evidence. Its connected annotation route returned a tool-level
+   `400`; that earlier limitation is separate from the newly observed UI result.
 2. Obtain the actual required-check policy through an authorized owner interface.
    The connected required-status-checks endpoint returned `403: Resource not
    accessible by integration`. That response does not mean no checks are required.

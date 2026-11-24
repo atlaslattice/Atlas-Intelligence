@@ -1,0 +1,48 @@
+{
+  "schema": "atlas.public-context-integration-manifest/v1",
+  "version": "0.3.0",
+  "entry": "programs/context-integration/index.mjs",
+  "source": {
+    "namespace": "ARIADNE_HSN",
+    "edition": "ariadne-reader/v0.7",
+    "sha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "sourceBytesBundled": false
+  },
+  "optionalRuntime": {
+    "construction": "CALLER_INJECTED_LOCAL_MODULE",
+    "compatibleExport": "AtlasIntegratedModule",
+    "compatibleRuntimeVersion": "atlas.integration.runtime/v1",
+    "requiredFacet": "atlasgpt.prepareContext",
+    "requiredSourceIdentity": "ariadne.sourceSha256",
+    "responseSchema": "atlas.quality-context/v1",
+    "automaticImport": false,
+    "runtimeCodeBundled": false
+  },
+  "legacyNamespace": "ATLAS_LCP_LEGACY",
+  "ordinalEquivalenceInferred": false,
+  "providerCalls": 0,
+  "automaticRoomPosts": false,
+  "hostAuthorityGranted": false,
+  "privateWorkBodiesBundled": false,
+  "domainMetricContractsCompleted": 0,
+  "performanceMeasuredByThisManifest": false,
+  "optionalCorpusSynthesis": {
+    "entry": "programs/corpus-synthesis/index.mjs",
+    "schema": "atlas.corpus-synthesis.port/v1",
+    "featureCount": 20,
+    "genericRuntimeCodeBundled": true,
+    "privateCorpusBundled": false,
+    "automaticSourceLoading": false,
+    "automaticModelCalls": false,
+    "hostAuthorization": "CALLER_SUPPLIED_CURRENT_CHECK_REQUIRED"
+  },
+  "optionalCorpusClassification": {
+    "entry": "programs/context-integration/classification.mjs",
+    "nodeOnly": true,
+    "importedByBrowserEntry": false,
+    "requiresCallerSuppliedOriginalOntology": true,
+    "privateCorpusBundled": false,
+    "semanticAdmission": false,
+    "currentHostRightsCheckRequired": true
+  }
+}

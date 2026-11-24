@@ -1,0 +1,1999 @@
+{
+  "schema": "atlas.source-cascade.receipt/v1",
+  "source_git_blob_sha1": "165a59bfeefbeeeaf314b1db8b071e8f8de3f6af",
+  "source_date": "2026-11-22",
+  "source_kind": "HISTORICAL_2026-11-22_PUBLIC_GITHUB_METADATA",
+  "phase": "COMPLETION_220",
+  "parent_checkpoint64": "b03d9322902e100a",
+  "final_checkpoint64": "32d8fcce0ee6cd28",
+  "steps": [
+    {
+      "step": 1101,
+      "item": "issue:atlaslattice/manus-artifacts#95",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1100,
+      "prior_item_step": 661,
+      "previous_checksum64": "b03d9322902e100a",
+      "checksum64": "258f1b4b0b5b1a86"
+    },
+    {
+      "step": 1102,
+      "item": "issue:atlaslattice/manus-artifacts#96",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1101,
+      "prior_item_step": 662,
+      "previous_checksum64": "258f1b4b0b5b1a86",
+      "checksum64": "6d94424315af86e0"
+    },
+    {
+      "step": 1103,
+      "item": "issue:atlaslattice/manus-artifacts#97",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1102,
+      "prior_item_step": 663,
+      "previous_checksum64": "6d94424315af86e0",
+      "checksum64": "747c8035089077a2"
+    },
+    {
+      "step": 1104,
+      "item": "issue:atlaslattice/manus-artifacts#99",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1103,
+      "prior_item_step": 664,
+      "previous_checksum64": "747c8035089077a2",
+      "checksum64": "04fc6f0ac946ead3"
+    },
+    {
+      "step": 1105,
+      "item": "issue:atlaslattice/manus-artifacts#100",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1104,
+      "prior_item_step": 665,
+      "previous_checksum64": "04fc6f0ac946ead3",
+      "checksum64": "610d6747f47404bb"
+    },
+    {
+      "step": 1106,
+      "item": "issue:atlaslattice/manus-artifacts#101",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1105,
+      "prior_item_step": 666,
+      "previous_checksum64": "610d6747f47404bb",
+      "checksum64": "c1ed3d1f79c2bce5"
+    },
+    {
+      "step": 1107,
+      "item": "issue:atlaslattice/manus-artifacts#103",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1106,
+      "prior_item_step": 667,
+      "previous_checksum64": "c1ed3d1f79c2bce5",
+      "checksum64": "1979c3fcbd63d29e"
+    },
+    {
+      "step": 1108,
+      "item": "issue:atlaslattice/manus-artifacts#104",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1107,
+      "prior_item_step": 668,
+      "previous_checksum64": "1979c3fcbd63d29e",
+      "checksum64": "6ef128646cbf9416"
+    },
+    {
+      "step": 1109,
+      "item": "issue:atlaslattice/manus-artifacts#105",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1108,
+      "prior_item_step": 669,
+      "previous_checksum64": "6ef128646cbf9416",
+      "checksum64": "89fdbe40eb4a985e"
+    },
+    {
+      "step": 1110,
+      "item": "issue:atlaslattice/manus-artifacts#108",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1109,
+      "prior_item_step": 670,
+      "previous_checksum64": "89fdbe40eb4a985e",
+      "checksum64": "cc5b68029f18ce2e"
+    },
+    {
+      "step": 1111,
+      "item": "issue:atlaslattice/manus-artifacts#109",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1110,
+      "prior_item_step": 671,
+      "previous_checksum64": "cc5b68029f18ce2e",
+      "checksum64": "513a07bfcdc7b71b"
+    },
+    {
+      "step": 1112,
+      "item": "issue:atlaslattice/manus-artifacts#110",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1111,
+      "prior_item_step": 672,
+      "previous_checksum64": "513a07bfcdc7b71b",
+      "checksum64": "e26b4b963794265c"
+    },
+    {
+      "step": 1113,
+      "item": "issue:atlaslattice/manus-artifacts#111",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1112,
+      "prior_item_step": 673,
+      "previous_checksum64": "e26b4b963794265c",
+      "checksum64": "264870b5408b1044"
+    },
+    {
+      "step": 1114,
+      "item": "issue:atlaslattice/manus-artifacts#112",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1113,
+      "prior_item_step": 674,
+      "previous_checksum64": "264870b5408b1044",
+      "checksum64": "4cd57d30fd377056"
+    },
+    {
+      "step": 1115,
+      "item": "issue:atlaslattice/manus-artifacts#114",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1114,
+      "prior_item_step": 675,
+      "previous_checksum64": "4cd57d30fd377056",
+      "checksum64": "7394aeeb718baf51"
+    },
+    {
+      "step": 1116,
+      "item": "issue:atlaslattice/manus-artifacts#115",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1115,
+      "prior_item_step": 676,
+      "previous_checksum64": "7394aeeb718baf51",
+      "checksum64": "21cf0ba4880c803b"
+    },
+    {
+      "step": 1117,
+      "item": "issue:atlaslattice/manus-artifacts#116",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1116,
+      "prior_item_step": 677,
+      "previous_checksum64": "21cf0ba4880c803b",
+      "checksum64": "875678cbb0892053"
+    },
+    {
+      "step": 1118,
+      "item": "issue:atlaslattice/manus-artifacts#117",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1117,
+      "prior_item_step": 678,
+      "previous_checksum64": "875678cbb0892053",
+      "checksum64": "06078b1d96ea9cc7"
+    },
+    {
+      "step": 1119,
+      "item": "issue:atlaslattice/manus-artifacts#118",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1118,
+      "prior_item_step": 679,
+      "previous_checksum64": "06078b1d96ea9cc7",
+      "checksum64": "3b55905c4fbbb2b7"
+    },
+    {
+      "step": 1120,
+      "item": "issue:atlaslattice/manus-artifacts#119",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1119,
+      "prior_item_step": 680,
+      "previous_checksum64": "3b55905c4fbbb2b7",
+      "checksum64": "12c8b8aea0b144a7"
+    },
+    {
+      "step": 1121,
+      "item": "issue:atlaslattice/manus-artifacts#120",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1120,
+      "prior_item_step": 681,
+      "previous_checksum64": "12c8b8aea0b144a7",
+      "checksum64": "45524fd723b2ddf5"
+    },
+    {
+      "step": 1122,
+      "item": "issue:atlaslattice/manus-artifacts#121",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1121,
+      "prior_item_step": 682,
+      "previous_checksum64": "45524fd723b2ddf5",
+      "checksum64": "f062f16ac499794f"
+    },
+    {
+      "step": 1123,
+      "item": "issue:atlaslattice/manus-artifacts#122",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1122,
+      "prior_item_step": 683,
+      "previous_checksum64": "f062f16ac499794f",
+      "checksum64": "dbf315a9087f814f"
+    },
+    {
+      "step": 1124,
+      "item": "issue:atlaslattice/manus-artifacts#123",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1123,
+      "prior_item_step": 684,
+      "previous_checksum64": "dbf315a9087f814f",
+      "checksum64": "9f3bfe56e6ad125f"
+    },
+    {
+      "step": 1125,
+      "item": "issue:atlaslattice/manus-artifacts#124",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1124,
+      "prior_item_step": 685,
+      "previous_checksum64": "9f3bfe56e6ad125f",
+      "checksum64": "0be66a229a5ee25d"
+    },
+    {
+      "step": 1126,
+      "item": "issue:atlaslattice/manus-artifacts#127",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1125,
+      "prior_item_step": 686,
+      "previous_checksum64": "0be66a229a5ee25d",
+      "checksum64": "66299e6eb4cf52a7"
+    },
+    {
+      "step": 1127,
+      "item": "issue:atlaslattice/manus-artifacts#128",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1126,
+      "prior_item_step": 687,
+      "previous_checksum64": "66299e6eb4cf52a7",
+      "checksum64": "544ca3d63200b45f"
+    },
+    {
+      "step": 1128,
+      "item": "issue:atlaslattice/manus-artifacts#129",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1127,
+      "prior_item_step": 688,
+      "previous_checksum64": "544ca3d63200b45f",
+      "checksum64": "eb8d8d9aba40da0b"
+    },
+    {
+      "step": 1129,
+      "item": "issue:atlaslattice/manus-artifacts#130",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1128,
+      "prior_item_step": 689,
+      "previous_checksum64": "eb8d8d9aba40da0b",
+      "checksum64": "0ea81d0e7fee8fc0"
+    },
+    {
+      "step": 1130,
+      "item": "issue:atlaslattice/manus-artifacts#131",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1129,
+      "prior_item_step": 690,
+      "previous_checksum64": "0ea81d0e7fee8fc0",
+      "checksum64": "2cca6679a4a9cd1e"
+    },
+    {
+      "step": 1131,
+      "item": "issue:atlaslattice/manus-artifacts#142",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1130,
+      "prior_item_step": 691,
+      "previous_checksum64": "2cca6679a4a9cd1e",
+      "checksum64": "16ba1c668e0f9fac"
+    },
+    {
+      "step": 1132,
+      "item": "issue:atlaslattice/manus-artifacts#144",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1131,
+      "prior_item_step": 692,
+      "previous_checksum64": "16ba1c668e0f9fac",
+      "checksum64": "bbcc6b2484676801"
+    },
+    {
+      "step": 1133,
+      "item": "issue:atlaslattice/manus-artifacts#146",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1132,
+      "prior_item_step": 693,
+      "previous_checksum64": "bbcc6b2484676801",
+      "checksum64": "4402b752d77388f0"
+    },
+    {
+      "step": 1134,
+      "item": "issue:atlaslattice/manus-artifacts#147",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1133,
+      "prior_item_step": 694,
+      "previous_checksum64": "4402b752d77388f0",
+      "checksum64": "1e92383c04b6b27e"
+    },
+    {
+      "step": 1135,
+      "item": "issue:atlaslattice/manus-artifacts#148",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1134,
+      "prior_item_step": 695,
+      "previous_checksum64": "1e92383c04b6b27e",
+      "checksum64": "dcc8d4cba99ad438"
+    },
+    {
+      "step": 1136,
+      "item": "issue:atlaslattice/manus-artifacts#149",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1135,
+      "prior_item_step": 696,
+      "previous_checksum64": "dcc8d4cba99ad438",
+      "checksum64": "0642bab43b80511c"
+    },
+    {
+      "step": 1137,
+      "item": "issue:atlaslattice/manus-artifacts#150",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1136,
+      "prior_item_step": 697,
+      "previous_checksum64": "0642bab43b80511c",
+      "checksum64": "b061f577a9642345"
+    },
+    {
+      "step": 1138,
+      "item": "issue:atlaslattice/manus-artifacts#151",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1137,
+      "prior_item_step": 698,
+      "previous_checksum64": "b061f577a9642345",
+      "checksum64": "dd2e06c5b7fedd51"
+    },
+    {
+      "step": 1139,
+      "item": "issue:atlaslattice/manus-artifacts#152",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1138,
+      "prior_item_step": 699,
+      "previous_checksum64": "dd2e06c5b7fedd51",
+      "checksum64": "dddade9e915920f3"
+    },
+    {
+      "step": 1140,
+      "item": "issue:atlaslattice/manus-artifacts#153",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1139,
+      "prior_item_step": 700,
+      "previous_checksum64": "dddade9e915920f3",
+      "checksum64": "915f933575c0bdb0"
+    },
+    {
+      "step": 1141,
+      "item": "issue:atlaslattice/manus-artifacts#154",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1140,
+      "prior_item_step": 701,
+      "previous_checksum64": "915f933575c0bdb0",
+      "checksum64": "304f3b7999b29c89"
+    },
+    {
+      "step": 1142,
+      "item": "issue:atlaslattice/manus-artifacts#155",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1141,
+      "prior_item_step": 702,
+      "previous_checksum64": "304f3b7999b29c89",
+      "checksum64": "a07afdc2c09f9b3f"
+    },
+    {
+      "step": 1143,
+      "item": "issue:atlaslattice/manus-artifacts#156",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1142,
+      "prior_item_step": 703,
+      "previous_checksum64": "a07afdc2c09f9b3f",
+      "checksum64": "a7dbce1df2cf3abd"
+    },
+    {
+      "step": 1144,
+      "item": "issue:atlaslattice/manus-artifacts#157",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1143,
+      "prior_item_step": 704,
+      "previous_checksum64": "a7dbce1df2cf3abd",
+      "checksum64": "70253ad0d685bf29"
+    },
+    {
+      "step": 1145,
+      "item": "issue:atlaslattice/manus-artifacts#158",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1144,
+      "prior_item_step": 705,
+      "previous_checksum64": "70253ad0d685bf29",
+      "checksum64": "7251f51476a8a699"
+    },
+    {
+      "step": 1146,
+      "item": "issue:atlaslattice/manus-artifacts#159",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1145,
+      "prior_item_step": 706,
+      "previous_checksum64": "7251f51476a8a699",
+      "checksum64": "5d610831e16e9e59"
+    },
+    {
+      "step": 1147,
+      "item": "issue:atlaslattice/manus-artifacts#160",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1146,
+      "prior_item_step": 707,
+      "previous_checksum64": "5d610831e16e9e59",
+      "checksum64": "3f31a0053b337a04"
+    },
+    {
+      "step": 1148,
+      "item": "issue:atlaslattice/manus-artifacts#163",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1147,
+      "prior_item_step": 708,
+      "previous_checksum64": "3f31a0053b337a04",
+      "checksum64": "290267f1fe8f814c"
+    },
+    {
+      "step": 1149,
+      "item": "issue:atlaslattice/manus-artifacts#164",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1148,
+      "prior_item_step": 709,
+      "previous_checksum64": "290267f1fe8f814c",
+      "checksum64": "51497a5028701934"
+    },
+    {
+      "step": 1150,
+      "item": "issue:atlaslattice/manus-artifacts#165",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1149,
+      "prior_item_step": 710,
+      "previous_checksum64": "51497a5028701934",
+      "checksum64": "4cbe89a27462a0a4"
+    },
+    {
+      "step": 1151,
+      "item": "issue:atlaslattice/manus-artifacts#168",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1150,
+      "prior_item_step": 711,
+      "previous_checksum64": "4cbe89a27462a0a4",
+      "checksum64": "529d3616c2e91265"
+    },
+    {
+      "step": 1152,
+      "item": "issue:atlaslattice/manus-artifacts#169",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1151,
+      "prior_item_step": 712,
+      "previous_checksum64": "529d3616c2e91265",
+      "checksum64": "cd05ca7c730af159"
+    },
+    {
+      "step": 1153,
+      "item": "issue:atlaslattice/manus-artifacts#170",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1152,
+      "prior_item_step": 713,
+      "previous_checksum64": "cd05ca7c730af159",
+      "checksum64": "a4a7b59373f400b2"
+    },
+    {
+      "step": 1154,
+      "item": "issue:atlaslattice/manus-artifacts#171",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1153,
+      "prior_item_step": 714,
+      "previous_checksum64": "a4a7b59373f400b2",
+      "checksum64": "90ae6a2612b67b4e"
+    },
+    {
+      "step": 1155,
+      "item": "issue:atlaslattice/manus-artifacts#172",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1154,
+      "prior_item_step": 715,
+      "previous_checksum64": "90ae6a2612b67b4e",
+      "checksum64": "113be267c1435b00"
+    },
+    {
+      "step": 1156,
+      "item": "issue:atlaslattice/manus-artifacts#173",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1155,
+      "prior_item_step": 716,
+      "previous_checksum64": "113be267c1435b00",
+      "checksum64": "f4282209769dfcc4"
+    },
+    {
+      "step": 1157,
+      "item": "issue:atlaslattice/manus-artifacts#174",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1156,
+      "prior_item_step": 717,
+      "previous_checksum64": "f4282209769dfcc4",
+      "checksum64": "6277ce624d8bca54"
+    },
+    {
+      "step": 1158,
+      "item": "issue:atlaslattice/manus-artifacts#175",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1157,
+      "prior_item_step": 718,
+      "previous_checksum64": "6277ce624d8bca54",
+      "checksum64": "f551515e44ddee44"
+    },
+    {
+      "step": 1159,
+      "item": "issue:atlaslattice/manus-artifacts#176",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1158,
+      "prior_item_step": 719,
+      "previous_checksum64": "f551515e44ddee44",
+      "checksum64": "38057ebea19dbefc"
+    },
+    {
+      "step": 1160,
+      "item": "issue:atlaslattice/manus-artifacts#180",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1159,
+      "prior_item_step": 720,
+      "previous_checksum64": "38057ebea19dbefc",
+      "checksum64": "22960abf7ecd9348"
+    },
+    {
+      "step": 1161,
+      "item": "issue:atlaslattice/manus-artifacts#181",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1160,
+      "prior_item_step": 721,
+      "previous_checksum64": "22960abf7ecd9348",
+      "checksum64": "d9eed2262f37fdd7"
+    },
+    {
+      "step": 1162,
+      "item": "issue:atlaslattice/manus-artifacts#183",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1161,
+      "prior_item_step": 722,
+      "previous_checksum64": "d9eed2262f37fdd7",
+      "checksum64": "7de04a2786ca5a36"
+    },
+    {
+      "step": 1163,
+      "item": "issue:atlaslattice/manus-artifacts#184",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1162,
+      "prior_item_step": 723,
+      "previous_checksum64": "7de04a2786ca5a36",
+      "checksum64": "dd98480fc54b8348"
+    },
+    {
+      "step": 1164,
+      "item": "issue:atlaslattice/manus-artifacts#185",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1163,
+      "prior_item_step": 724,
+      "previous_checksum64": "dd98480fc54b8348",
+      "checksum64": "65e85ba27e3ca08e"
+    },
+    {
+      "step": 1165,
+      "item": "issue:atlaslattice/manus-artifacts#186",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1164,
+      "prior_item_step": 725,
+      "previous_checksum64": "65e85ba27e3ca08e",
+      "checksum64": "00f3b6a66ca611c6"
+    },
+    {
+      "step": 1166,
+      "item": "issue:atlaslattice/manus-artifacts#187",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1165,
+      "prior_item_step": 726,
+      "previous_checksum64": "00f3b6a66ca611c6",
+      "checksum64": "fd259f3683aa7df4"
+    },
+    {
+      "step": 1167,
+      "item": "issue:atlaslattice/manus-artifacts#188",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1166,
+      "prior_item_step": 727,
+      "previous_checksum64": "fd259f3683aa7df4",
+      "checksum64": "3189fe9f71f793d8"
+    },
+    {
+      "step": 1168,
+      "item": "issue:atlaslattice/manus-artifacts#189",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1167,
+      "prior_item_step": 728,
+      "previous_checksum64": "3189fe9f71f793d8",
+      "checksum64": "7d8e140704e7587a"
+    },
+    {
+      "step": 1169,
+      "item": "issue:atlaslattice/manus-artifacts#191",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1168,
+      "prior_item_step": 729,
+      "previous_checksum64": "7d8e140704e7587a",
+      "checksum64": "80e1dbeb686de560"
+    },
+    {
+      "step": 1170,
+      "item": "issue:atlaslattice/manus-artifacts#192",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1169,
+      "prior_item_step": 730,
+      "previous_checksum64": "80e1dbeb686de560",
+      "checksum64": "d3b75d34cc50e7da"
+    },
+    {
+      "step": 1171,
+      "item": "issue:atlaslattice/manus-artifacts#193",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1170,
+      "prior_item_step": 731,
+      "previous_checksum64": "d3b75d34cc50e7da",
+      "checksum64": "c81567a1d7ebb467"
+    },
+    {
+      "step": 1172,
+      "item": "issue:atlaslattice/manus-artifacts#194",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1171,
+      "prior_item_step": 732,
+      "previous_checksum64": "c81567a1d7ebb467",
+      "checksum64": "f5104a7df6ff05db"
+    },
+    {
+      "step": 1173,
+      "item": "issue:atlaslattice/manus-artifacts#195",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1172,
+      "prior_item_step": 733,
+      "previous_checksum64": "f5104a7df6ff05db",
+      "checksum64": "eb094c384fc7e711"
+    },
+    {
+      "step": 1174,
+      "item": "issue:atlaslattice/manus-artifacts#196",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1173,
+      "prior_item_step": 734,
+      "previous_checksum64": "eb094c384fc7e711",
+      "checksum64": "fa5e83b9ff051a31"
+    },
+    {
+      "step": 1175,
+      "item": "issue:atlaslattice/manus-artifacts#197",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1174,
+      "prior_item_step": 735,
+      "previous_checksum64": "fa5e83b9ff051a31",
+      "checksum64": "cf3aa47548acdae7"
+    },
+    {
+      "step": 1176,
+      "item": "issue:atlaslattice/manus-artifacts#198",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1175,
+      "prior_item_step": 736,
+      "previous_checksum64": "cf3aa47548acdae7",
+      "checksum64": "fb3ad88dcd32179b"
+    },
+    {
+      "step": 1177,
+      "item": "issue:atlaslattice/manus-artifacts#199",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1176,
+      "prior_item_step": 737,
+      "previous_checksum64": "fb3ad88dcd32179b",
+      "checksum64": "ba522a4bd5418689"
+    },
+    {
+      "step": 1178,
+      "item": "issue:atlaslattice/manus-artifacts#200",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1177,
+      "prior_item_step": 738,
+      "previous_checksum64": "ba522a4bd5418689",
+      "checksum64": "f5b49a61b04ca44f"
+    },
+    {
+      "step": 1179,
+      "item": "issue:atlaslattice/manus-artifacts#201",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1178,
+      "prior_item_step": 739,
+      "previous_checksum64": "f5b49a61b04ca44f",
+      "checksum64": "094af808a114c385"
+    },
+    {
+      "step": 1180,
+      "item": "issue:atlaslattice/manus-artifacts#202",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1179,
+      "prior_item_step": 740,
+      "previous_checksum64": "094af808a114c385",
+      "checksum64": "d6c5d9aae39dcae3"
+    },
+    {
+      "step": 1181,
+      "item": "issue:atlaslattice/manus-artifacts#203",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1180,
+      "prior_item_step": 741,
+      "previous_checksum64": "d6c5d9aae39dcae3",
+      "checksum64": "b3a7f207d89d89b6"
+    },
+    {
+      "step": 1182,
+      "item": "issue:atlaslattice/manus-artifacts#204",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1181,
+      "prior_item_step": 742,
+      "previous_checksum64": "b3a7f207d89d89b6",
+      "checksum64": "cc38686f7c8674d8"
+    },
+    {
+      "step": 1183,
+      "item": "issue:atlaslattice/manus-artifacts#205",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1182,
+      "prior_item_step": 743,
+      "previous_checksum64": "cc38686f7c8674d8",
+      "checksum64": "65059b34321b48ae"
+    },
+    {
+      "step": 1184,
+      "item": "issue:atlaslattice/manus-artifacts#206",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1183,
+      "prior_item_step": 744,
+      "previous_checksum64": "65059b34321b48ae",
+      "checksum64": "bce1d37012fe9678"
+    },
+    {
+      "step": 1185,
+      "item": "issue:atlaslattice/manus-artifacts#208",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1184,
+      "prior_item_step": 745,
+      "previous_checksum64": "bce1d37012fe9678",
+      "checksum64": "52a7c2079d542343"
+    },
+    {
+      "step": 1186,
+      "item": "issue:atlaslattice/manus-artifacts#209",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1185,
+      "prior_item_step": 746,
+      "previous_checksum64": "52a7c2079d542343",
+      "checksum64": "98f5f9ebf89aa52b"
+    },
+    {
+      "step": 1187,
+      "item": "issue:atlaslattice/manus-artifacts#210",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1186,
+      "prior_item_step": 747,
+      "previous_checksum64": "98f5f9ebf89aa52b",
+      "checksum64": "2086d15a0870080c"
+    },
+    {
+      "step": 1188,
+      "item": "issue:atlaslattice/manus-artifacts#211",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1187,
+      "prior_item_step": 748,
+      "previous_checksum64": "2086d15a0870080c",
+      "checksum64": "20a0b7728468dfc2"
+    },
+    {
+      "step": 1189,
+      "item": "issue:atlaslattice/manus-artifacts#212",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1188,
+      "prior_item_step": 749,
+      "previous_checksum64": "20a0b7728468dfc2",
+      "checksum64": "9dbf943de5078850"
+    },
+    {
+      "step": 1190,
+      "item": "issue:atlaslattice/manus-artifacts#213",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1189,
+      "prior_item_step": 750,
+      "previous_checksum64": "9dbf943de5078850",
+      "checksum64": "0841de58050733f6"
+    },
+    {
+      "step": 1191,
+      "item": "issue:atlaslattice/manus-artifacts#214",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1190,
+      "prior_item_step": 751,
+      "previous_checksum64": "0841de58050733f6",
+      "checksum64": "35cab6f9be207cc7"
+    },
+    {
+      "step": 1192,
+      "item": "issue:atlaslattice/manus-artifacts#218",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1191,
+      "prior_item_step": 752,
+      "previous_checksum64": "35cab6f9be207cc7",
+      "checksum64": "2678f0a609be5354"
+    },
+    {
+      "step": 1193,
+      "item": "issue:atlaslattice/manus-artifacts#219",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1192,
+      "prior_item_step": 753,
+      "previous_checksum64": "2678f0a609be5354",
+      "checksum64": "76e29467fe801744"
+    },
+    {
+      "step": 1194,
+      "item": "issue:atlaslattice/manus-artifacts#221",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1193,
+      "prior_item_step": 754,
+      "previous_checksum64": "76e29467fe801744",
+      "checksum64": "4bc9d179d64e5980"
+    },
+    {
+      "step": 1195,
+      "item": "issue:atlaslattice/manus-artifacts#222",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1194,
+      "prior_item_step": 755,
+      "previous_checksum64": "4bc9d179d64e5980",
+      "checksum64": "fa5fed3c2f516f56"
+    },
+    {
+      "step": 1196,
+      "item": "issue:atlaslattice/manus-artifacts#224",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1195,
+      "prior_item_step": 756,
+      "previous_checksum64": "fa5fed3c2f516f56",
+      "checksum64": "30013023fd6eae55"
+    },
+    {
+      "step": 1197,
+      "item": "issue:atlaslattice/manus-artifacts#225",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1196,
+      "prior_item_step": 757,
+      "previous_checksum64": "30013023fd6eae55",
+      "checksum64": "909c078d34ef39b5"
+    },
+    {
+      "step": 1198,
+      "item": "issue:atlaslattice/manus-artifacts#227",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1197,
+      "prior_item_step": 758,
+      "previous_checksum64": "909c078d34ef39b5",
+      "checksum64": "a19fdaa6561ed2a6"
+    },
+    {
+      "step": 1199,
+      "item": "issue:atlaslattice/manus-artifacts#228",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1198,
+      "prior_item_step": 759,
+      "previous_checksum64": "a19fdaa6561ed2a6",
+      "checksum64": "36ea1656414c94fe"
+    },
+    {
+      "step": 1200,
+      "item": "issue:atlaslattice/manus-artifacts#233",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1199,
+      "prior_item_step": 760,
+      "previous_checksum64": "36ea1656414c94fe",
+      "checksum64": "8e2b4cb6e127455a"
+    },
+    {
+      "step": 1201,
+      "item": "issue:atlaslattice/manus-artifacts#234",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1200,
+      "prior_item_step": 761,
+      "previous_checksum64": "8e2b4cb6e127455a",
+      "checksum64": "0574bbc591681846"
+    },
+    {
+      "step": 1202,
+      "item": "issue:atlaslattice/manus-artifacts#236",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1201,
+      "prior_item_step": 762,
+      "previous_checksum64": "0574bbc591681846",
+      "checksum64": "264ba6a19084036f"
+    },
+    {
+      "step": 1203,
+      "item": "issue:atlaslattice/manus-artifacts#239",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1202,
+      "prior_item_step": 763,
+      "previous_checksum64": "264ba6a19084036f",
+      "checksum64": "fad8c61c5a1590eb"
+    },
+    {
+      "step": 1204,
+      "item": "issue:atlaslattice/manus-artifacts#240",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1203,
+      "prior_item_step": 764,
+      "previous_checksum64": "fad8c61c5a1590eb",
+      "checksum64": "6452ab48d3fef7a4"
+    },
+    {
+      "step": 1205,
+      "item": "issue:atlaslattice/manus-artifacts#241",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1204,
+      "prior_item_step": 765,
+      "previous_checksum64": "6452ab48d3fef7a4",
+      "checksum64": "72d3c5d617b92b5a"
+    },
+    {
+      "step": 1206,
+      "item": "issue:atlaslattice/manus-artifacts#242",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1205,
+      "prior_item_step": 766,
+      "previous_checksum64": "72d3c5d617b92b5a",
+      "checksum64": "c056d8903212f4e6"
+    },
+    {
+      "step": 1207,
+      "item": "issue:atlaslattice/manus-artifacts#245",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1206,
+      "prior_item_step": 767,
+      "previous_checksum64": "c056d8903212f4e6",
+      "checksum64": "f6eecf2829cf7b78"
+    },
+    {
+      "step": 1208,
+      "item": "issue:atlaslattice/manus-artifacts#247",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1207,
+      "prior_item_step": 768,
+      "previous_checksum64": "f6eecf2829cf7b78",
+      "checksum64": "e874530eeed13025"
+    },
+    {
+      "step": 1209,
+      "item": "issue:atlaslattice/manus-artifacts#248",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1208,
+      "prior_item_step": 769,
+      "previous_checksum64": "e874530eeed13025",
+      "checksum64": "fac40d3c96862c93"
+    },
+    {
+      "step": 1210,
+      "item": "issue:atlaslattice/manus-artifacts#249",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1209,
+      "prior_item_step": 770,
+      "previous_checksum64": "fac40d3c96862c93",
+      "checksum64": "4353d1f037f84cbb"
+    },
+    {
+      "step": 1211,
+      "item": "issue:atlaslattice/manus-artifacts#250",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1210,
+      "prior_item_step": 771,
+      "previous_checksum64": "4353d1f037f84cbb",
+      "checksum64": "da47ecde36bceaf1"
+    },
+    {
+      "step": 1212,
+      "item": "issue:atlaslattice/manus-artifacts#251",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1211,
+      "prior_item_step": 772,
+      "previous_checksum64": "da47ecde36bceaf1",
+      "checksum64": "b3e4ced3e330a753"
+    },
+    {
+      "step": 1213,
+      "item": "issue:atlaslattice/manus-artifacts#252",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1212,
+      "prior_item_step": 773,
+      "previous_checksum64": "b3e4ced3e330a753",
+      "checksum64": "a19ee1a9e4c26f7f"
+    },
+    {
+      "step": 1214,
+      "item": "issue:atlaslattice/manus-artifacts#253",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1213,
+      "prior_item_step": 774,
+      "previous_checksum64": "a19ee1a9e4c26f7f",
+      "checksum64": "5917d44a33453f69"
+    },
+    {
+      "step": 1215,
+      "item": "issue:atlaslattice/manus-artifacts#254",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1214,
+      "prior_item_step": 775,
+      "previous_checksum64": "5917d44a33453f69",
+      "checksum64": "a1b54edd1ef46d33"
+    },
+    {
+      "step": 1216,
+      "item": "issue:atlaslattice/manus-artifacts#255",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1215,
+      "prior_item_step": 776,
+      "previous_checksum64": "a1b54edd1ef46d33",
+      "checksum64": "bab2f567a6d3232f"
+    },
+    {
+      "step": 1217,
+      "item": "issue:atlaslattice/manus-artifacts#256",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1216,
+      "prior_item_step": 777,
+      "previous_checksum64": "bab2f567a6d3232f",
+      "checksum64": "07704d06cbfa4a43"
+    },
+    {
+      "step": 1218,
+      "item": "issue:atlaslattice/manus-artifacts#257",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1217,
+      "prior_item_step": 778,
+      "previous_checksum64": "07704d06cbfa4a43",
+      "checksum64": "fead084a30a48bf3"
+    },
+    {
+      "step": 1219,
+      "item": "issue:atlaslattice/manus-artifacts#258",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1218,
+      "prior_item_step": 779,
+      "previous_checksum64": "fead084a30a48bf3",
+      "checksum64": "aaac183d27daee67"
+    },
+    {
+      "step": 1220,
+      "item": "issue:atlaslattice/manus-artifacts#259",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1219,
+      "prior_item_step": 780,
+      "previous_checksum64": "aaac183d27daee67",
+      "checksum64": "8d79faadfb4ee781"
+    },
+    {
+      "step": 1221,
+      "item": "issue:atlaslattice/manus-artifacts#260",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1220,
+      "prior_item_step": 781,
+      "previous_checksum64": "8d79faadfb4ee781",
+      "checksum64": "3276c82535bd934f"
+    },
+    {
+      "step": 1222,
+      "item": "issue:atlaslattice/manus-artifacts#261",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1221,
+      "prior_item_step": 782,
+      "previous_checksum64": "3276c82535bd934f",
+      "checksum64": "d2cb60b1d51c2d47"
+    },
+    {
+      "step": 1223,
+      "item": "issue:atlaslattice/manus-artifacts#262",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1222,
+      "prior_item_step": 783,
+      "previous_checksum64": "d2cb60b1d51c2d47",
+      "checksum64": "72d0f050b2ac8a57"
+    },
+    {
+      "step": 1224,
+      "item": "issue:atlaslattice/manus-artifacts#263",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1223,
+      "prior_item_step": 784,
+      "previous_checksum64": "72d0f050b2ac8a57",
+      "checksum64": "ea4515a7c50f02b1"
+    },
+    {
+      "step": 1225,
+      "item": "issue:atlaslattice/manus-artifacts#264",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1224,
+      "prior_item_step": 785,
+      "previous_checksum64": "ea4515a7c50f02b1",
+      "checksum64": "8f86d8f4e8652727"
+    },
+    {
+      "step": 1226,
+      "item": "issue:atlaslattice/manus-artifacts#265",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1225,
+      "prior_item_step": 786,
+      "previous_checksum64": "8f86d8f4e8652727",
+      "checksum64": "cbe12d21c613b90f"
+    },
+    {
+      "step": 1227,
+      "item": "issue:atlaslattice/manus-artifacts#266",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1226,
+      "prior_item_step": 787,
+      "previous_checksum64": "cbe12d21c613b90f",
+      "checksum64": "c8f49699b1e9d1c3"
+    },
+    {
+      "step": 1228,
+      "item": "issue:atlaslattice/manus-artifacts#267",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1227,
+      "prior_item_step": 788,
+      "previous_checksum64": "c8f49699b1e9d1c3",
+      "checksum64": "b91b96454c23f337"
+    },
+    {
+      "step": 1229,
+      "item": "issue:atlaslattice/manus-artifacts#268",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1228,
+      "prior_item_step": 789,
+      "previous_checksum64": "b91b96454c23f337",
+      "checksum64": "dc8037db8587e879"
+    },
+    {
+      "step": 1230,
+      "item": "issue:atlaslattice/manus-artifacts#269",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1229,
+      "prior_item_step": 790,
+      "previous_checksum64": "dc8037db8587e879",
+      "checksum64": "33b62ef43940f84f"
+    },
+    {
+      "step": 1231,
+      "item": "issue:atlaslattice/manus-artifacts#270",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1230,
+      "prior_item_step": 791,
+      "previous_checksum64": "33b62ef43940f84f",
+      "checksum64": "dc89bee6ef4d79e9"
+    },
+    {
+      "step": 1232,
+      "item": "issue:atlaslattice/manus-artifacts#273",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1231,
+      "prior_item_step": 792,
+      "previous_checksum64": "dc89bee6ef4d79e9",
+      "checksum64": "256d1bf308da27cf"
+    },
+    {
+      "step": 1233,
+      "item": "issue:atlaslattice/manus-artifacts#274",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1232,
+      "prior_item_step": 793,
+      "previous_checksum64": "256d1bf308da27cf",
+      "checksum64": "db44fe1ad293ff19"
+    },
+    {
+      "step": 1234,
+      "item": "issue:atlaslattice/manus-artifacts#275",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1233,
+      "prior_item_step": 794,
+      "previous_checksum64": "db44fe1ad293ff19",
+      "checksum64": "ab20873af67eb7f3"
+    },
+    {
+      "step": 1235,
+      "item": "issue:atlaslattice/manus-artifacts#279",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1234,
+      "prior_item_step": 795,
+      "previous_checksum64": "ab20873af67eb7f3",
+      "checksum64": "f52603842fd6674a"
+    },
+    {
+      "step": 1236,
+      "item": "pull_request:atlaslattice/manus-artifacts#2",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1235,
+      "prior_item_step": 796,
+      "previous_checksum64": "f52603842fd6674a",
+      "checksum64": "306d2c5e28e16ee0"
+    },
+    {
+      "step": 1237,
+      "item": "pull_request:atlaslattice/manus-artifacts#15",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1236,
+      "prior_item_step": 797,
+      "previous_checksum64": "306d2c5e28e16ee0",
+      "checksum64": "654f7ebc76757de5"
+    },
+    {
+      "step": 1238,
+      "item": "pull_request:atlaslattice/manus-artifacts#20",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1237,
+      "prior_item_step": 798,
+      "previous_checksum64": "654f7ebc76757de5",
+      "checksum64": "0d375f6054a51056"
+    },
+    {
+      "step": 1239,
+      "item": "pull_request:atlaslattice/manus-artifacts#21",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1238,
+      "prior_item_step": 799,
+      "previous_checksum64": "0d375f6054a51056",
+      "checksum64": "15c97caad92743ce"
+    },
+    {
+      "step": 1240,
+      "item": "pull_request:atlaslattice/manus-artifacts#24",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1239,
+      "prior_item_step": 800,
+      "previous_checksum64": "15c97caad92743ce",
+      "checksum64": "5bbbdc7fbb89d1bf"
+    },
+    {
+      "step": 1241,
+      "item": "pull_request:atlaslattice/manus-artifacts#44",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1240,
+      "prior_item_step": 801,
+      "previous_checksum64": "5bbbdc7fbb89d1bf",
+      "checksum64": "990ede1b229cb23b"
+    },
+    {
+      "step": 1242,
+      "item": "pull_request:atlaslattice/manus-artifacts#47",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1241,
+      "prior_item_step": 802,
+      "previous_checksum64": "990ede1b229cb23b",
+      "checksum64": "239497c25eb03d73"
+    },
+    {
+      "step": 1243,
+      "item": "pull_request:atlaslattice/manus-artifacts#48",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1242,
+      "prior_item_step": 803,
+      "previous_checksum64": "239497c25eb03d73",
+      "checksum64": "359b4505b644698d"
+    },
+    {
+      "step": 1244,
+      "item": "pull_request:atlaslattice/manus-artifacts#50",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1243,
+      "prior_item_step": 804,
+      "previous_checksum64": "359b4505b644698d",
+      "checksum64": "6e5436349a9244ed"
+    },
+    {
+      "step": 1245,
+      "item": "pull_request:atlaslattice/manus-artifacts#52",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1244,
+      "prior_item_step": 805,
+      "previous_checksum64": "6e5436349a9244ed",
+      "checksum64": "656783dd903df166"
+    },
+    {
+      "step": 1246,
+      "item": "pull_request:atlaslattice/manus-artifacts#54",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1245,
+      "prior_item_step": 806,
+      "previous_checksum64": "656783dd903df166",
+      "checksum64": "e65108d1a022f7f3"
+    },
+    {
+      "step": 1247,
+      "item": "pull_request:atlaslattice/manus-artifacts#55",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1246,
+      "prior_item_step": 807,
+      "previous_checksum64": "e65108d1a022f7f3",
+      "checksum64": "5de7accd9549b4ab"
+    },
+    {
+      "step": 1248,
+      "item": "pull_request:atlaslattice/manus-artifacts#56",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1247,
+      "prior_item_step": 808,
+      "previous_checksum64": "5de7accd9549b4ab",
+      "checksum64": "74f2100f10eefaa7"
+    },
+    {
+      "step": 1249,
+      "item": "pull_request:atlaslattice/manus-artifacts#57",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1248,
+      "prior_item_step": 809,
+      "previous_checksum64": "74f2100f10eefaa7",
+      "checksum64": "c3614d7f80a4b567"
+    },
+    {
+      "step": 1250,
+      "item": "pull_request:atlaslattice/manus-artifacts#60",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1249,
+      "prior_item_step": 810,
+      "previous_checksum64": "c3614d7f80a4b567",
+      "checksum64": "9074978bb02c78e8"
+    },
+    {
+      "step": 1251,
+      "item": "pull_request:atlaslattice/manus-artifacts#61",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1250,
+      "prior_item_step": 811,
+      "previous_checksum64": "9074978bb02c78e8",
+      "checksum64": "ba4a929820dd9c65"
+    },
+    {
+      "step": 1252,
+      "item": "pull_request:atlaslattice/manus-artifacts#62",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1251,
+      "prior_item_step": 812,
+      "previous_checksum64": "ba4a929820dd9c65",
+      "checksum64": "3c5610ae3782abb9"
+    },
+    {
+      "step": 1253,
+      "item": "pull_request:atlaslattice/manus-artifacts#63",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1252,
+      "prior_item_step": 813,
+      "previous_checksum64": "3c5610ae3782abb9",
+      "checksum64": "929702d8e08fe15d"
+    },
+    {
+      "step": 1254,
+      "item": "pull_request:atlaslattice/manus-artifacts#64",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1253,
+      "prior_item_step": 814,
+      "previous_checksum64": "929702d8e08fe15d",
+      "checksum64": "b7f7e51f52f90459"
+    },
+    {
+      "step": 1255,
+      "item": "pull_request:atlaslattice/manus-artifacts#65",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1254,
+      "prior_item_step": 815,
+      "previous_checksum64": "b7f7e51f52f90459",
+      "checksum64": "41c01a56684365d5"
+    },
+    {
+      "step": 1256,
+      "item": "pull_request:atlaslattice/manus-artifacts#69",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1255,
+      "prior_item_step": 816,
+      "previous_checksum64": "41c01a56684365d5",
+      "checksum64": "46f92826ee11f31a"
+    },
+    {
+      "step": 1257,
+      "item": "pull_request:atlaslattice/manus-artifacts#98",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1256,
+      "prior_item_step": 817,
+      "previous_checksum64": "46f92826ee11f31a",
+      "checksum64": "04eb827f091232b3"
+    },
+    {
+      "step": 1258,
+      "item": "pull_request:atlaslattice/manus-artifacts#102",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1257,
+      "prior_item_step": 818,
+      "previous_checksum64": "04eb827f091232b3",
+      "checksum64": "ad3b871fda938a96"
+    },
+    {
+      "step": 1259,
+      "item": "pull_request:atlaslattice/manus-artifacts#106",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1258,
+      "prior_item_step": 819,
+      "previous_checksum64": "ad3b871fda938a96",
+      "checksum64": "d16741c9f13c1c0b"
+    },
+    {
+      "step": 1260,
+      "item": "pull_request:atlaslattice/manus-artifacts#107",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1259,
+      "prior_item_step": 820,
+      "previous_checksum64": "d16741c9f13c1c0b",
+      "checksum64": "7cf54150982eb01f"
+    },
+    {
+      "step": 1261,
+      "item": "pull_request:atlaslattice/manus-artifacts#113",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1260,
+      "prior_item_step": 821,
+      "previous_checksum64": "7cf54150982eb01f",
+      "checksum64": "ef9d60cf723a887e"
+    },
+    {
+      "step": 1262,
+      "item": "pull_request:atlaslattice/manus-artifacts#125",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1261,
+      "prior_item_step": 822,
+      "previous_checksum64": "ef9d60cf723a887e",
+      "checksum64": "c2ec84a492c9dd32"
+    },
+    {
+      "step": 1263,
+      "item": "pull_request:atlaslattice/manus-artifacts#126",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1262,
+      "prior_item_step": 823,
+      "previous_checksum64": "c2ec84a492c9dd32",
+      "checksum64": "2a7b8422add4dd48"
+    },
+    {
+      "step": 1264,
+      "item": "pull_request:atlaslattice/manus-artifacts#132",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1263,
+      "prior_item_step": 824,
+      "previous_checksum64": "2a7b8422add4dd48",
+      "checksum64": "a4cbb62afcc07d62"
+    },
+    {
+      "step": 1265,
+      "item": "pull_request:atlaslattice/manus-artifacts#133",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1264,
+      "prior_item_step": 825,
+      "previous_checksum64": "a4cbb62afcc07d62",
+      "checksum64": "c4204d83cd9462e0"
+    },
+    {
+      "step": 1266,
+      "item": "pull_request:atlaslattice/manus-artifacts#134",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1265,
+      "prior_item_step": 826,
+      "previous_checksum64": "c4204d83cd9462e0",
+      "checksum64": "8a8953137e58fd42"
+    },
+    {
+      "step": 1267,
+      "item": "pull_request:atlaslattice/manus-artifacts#135",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1266,
+      "prior_item_step": 827,
+      "previous_checksum64": "8a8953137e58fd42",
+      "checksum64": "31b77b47074e84ba"
+    },
+    {
+      "step": 1268,
+      "item": "pull_request:atlaslattice/manus-artifacts#136",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1267,
+      "prior_item_step": 828,
+      "previous_checksum64": "31b77b47074e84ba",
+      "checksum64": "a179eb73cc0ebd90"
+    },
+    {
+      "step": 1269,
+      "item": "pull_request:atlaslattice/manus-artifacts#137",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1268,
+      "prior_item_step": 829,
+      "previous_checksum64": "a179eb73cc0ebd90",
+      "checksum64": "4bfc37e93f82d85a"
+    },
+    {
+      "step": 1270,
+      "item": "pull_request:atlaslattice/manus-artifacts#138",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1269,
+      "prior_item_step": 830,
+      "previous_checksum64": "4bfc37e93f82d85a",
+      "checksum64": "03a3ab26798333b0"
+    },
+    {
+      "step": 1271,
+      "item": "pull_request:atlaslattice/manus-artifacts#139",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1270,
+      "prior_item_step": 831,
+      "previous_checksum64": "03a3ab26798333b0",
+      "checksum64": "2c7e5ccd02db57a7"
+    },
+    {
+      "step": 1272,
+      "item": "pull_request:atlaslattice/manus-artifacts#140",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1271,
+      "prior_item_step": 832,
+      "previous_checksum64": "2c7e5ccd02db57a7",
+      "checksum64": "c332f495973ec5ac"
+    },
+    {
+      "step": 1273,
+      "item": "pull_request:atlaslattice/manus-artifacts#141",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1272,
+      "prior_item_step": 833,
+      "previous_checksum64": "c332f495973ec5ac",
+      "checksum64": "839968c0e1afa54a"
+    },
+    {
+      "step": 1274,
+      "item": "pull_request:atlaslattice/manus-artifacts#143",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1273,
+      "prior_item_step": 834,
+      "previous_checksum64": "839968c0e1afa54a",
+      "checksum64": "8eb244b65a21b743"
+    },
+    {
+      "step": 1275,
+      "item": "pull_request:atlaslattice/manus-artifacts#145",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1274,
+      "prior_item_step": 835,
+      "previous_checksum64": "8eb244b65a21b743",
+      "checksum64": "8dedb28ca35acb2a"
+    },
+    {
+      "step": 1276,
+      "item": "pull_request:atlaslattice/manus-artifacts#161",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1275,
+      "prior_item_step": 836,
+      "previous_checksum64": "8dedb28ca35acb2a",
+      "checksum64": "c459f3a3ce6ba659"
+    },
+    {
+      "step": 1277,
+      "item": "pull_request:atlaslattice/manus-artifacts#162",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1276,
+      "prior_item_step": 837,
+      "previous_checksum64": "c459f3a3ce6ba659",
+      "checksum64": "f025e61c2cd8f921"
+    },
+    {
+      "step": 1278,
+      "item": "pull_request:atlaslattice/manus-artifacts#166",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1277,
+      "prior_item_step": 838,
+      "previous_checksum64": "f025e61c2cd8f921",
+      "checksum64": "d94f268c67735128"
+    },
+    {
+      "step": 1279,
+      "item": "pull_request:atlaslattice/manus-artifacts#177",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1278,
+      "prior_item_step": 839,
+      "previous_checksum64": "d94f268c67735128",
+      "checksum64": "35047526cf1f1075"
+    },
+    {
+      "step": 1280,
+      "item": "pull_request:atlaslattice/manus-artifacts#178",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1279,
+      "prior_item_step": 840,
+      "previous_checksum64": "35047526cf1f1075",
+      "checksum64": "5fc0042ab91a1cbd"
+    },
+    {
+      "step": 1281,
+      "item": "pull_request:atlaslattice/manus-artifacts#179",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1280,
+      "prior_item_step": 841,
+      "previous_checksum64": "5fc0042ab91a1cbd",
+      "checksum64": "0da6d36cab271c40"
+    },
+    {
+      "step": 1282,
+      "item": "pull_request:atlaslattice/manus-artifacts#182",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1281,
+      "prior_item_step": 842,
+      "previous_checksum64": "0da6d36cab271c40",
+      "checksum64": "4c831c421837f3c5"
+    },
+    {
+      "step": 1283,
+      "item": "pull_request:atlaslattice/manus-artifacts#190",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1282,
+      "prior_item_step": 843,
+      "previous_checksum64": "4c831c421837f3c5",
+      "checksum64": "1232f800c6a1c57b"
+    },
+    {
+      "step": 1284,
+      "item": "pull_request:atlaslattice/manus-artifacts#207",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1283,
+      "prior_item_step": 844,
+      "previous_checksum64": "1232f800c6a1c57b",
+      "checksum64": "cfe080191358e13b"
+    },
+    {
+      "step": 1285,
+      "item": "pull_request:atlaslattice/manus-artifacts#217",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1284,
+      "prior_item_step": 845,
+      "previous_checksum64": "cfe080191358e13b",
+      "checksum64": "fd2452e4d64cbf91"
+    },
+    {
+      "step": 1286,
+      "item": "pull_request:atlaslattice/manus-artifacts#220",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1285,
+      "prior_item_step": 846,
+      "previous_checksum64": "fd2452e4d64cbf91",
+      "checksum64": "c130c0487124ae14"
+    },
+    {
+      "step": 1287,
+      "item": "pull_request:atlaslattice/manus-artifacts#223",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1286,
+      "prior_item_step": 847,
+      "previous_checksum64": "c130c0487124ae14",
+      "checksum64": "758f897058327b22"
+    },
+    {
+      "step": 1288,
+      "item": "pull_request:atlaslattice/manus-artifacts#226",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1287,
+      "prior_item_step": 848,
+      "previous_checksum64": "758f897058327b22",
+      "checksum64": "53a8fe8e8726a758"
+    },
+    {
+      "step": 1289,
+      "item": "pull_request:atlaslattice/manus-artifacts#237",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1288,
+      "prior_item_step": 849,
+      "previous_checksum64": "53a8fe8e8726a758",
+      "checksum64": "edc106bea8974c15"
+    },
+    {
+      "step": 1290,
+      "item": "pull_request:atlaslattice/manus-artifacts#238",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1289,
+      "prior_item_step": 850,
+      "previous_checksum64": "edc106bea8974c15",
+      "checksum64": "c944c4210ff871e7"
+    },
+    {
+      "step": 1291,
+      "item": "pull_request:atlaslattice/manus-artifacts#246",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1290,
+      "prior_item_step": 851,
+      "previous_checksum64": "c944c4210ff871e7",
+      "checksum64": "7612c81b59888ba8"
+    },
+    {
+      "step": 1292,
+      "item": "pull_request:atlaslattice/manus-artifacts#271",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1291,
+      "prior_item_step": 852,
+      "previous_checksum64": "7612c81b59888ba8",
+      "checksum64": "44a2412a8368eecd"
+    },
+    {
+      "step": 1293,
+      "item": "pull_request:atlaslattice/manus-artifacts#272",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1292,
+      "prior_item_step": 853,
+      "previous_checksum64": "44a2412a8368eecd",
+      "checksum64": "92a4f8b28e65a037"
+    },
+    {
+      "step": 1294,
+      "item": "pull_request:atlaslattice/manus-artifacts#276",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1293,
+      "prior_item_step": 854,
+      "previous_checksum64": "92a4f8b28e65a037",
+      "checksum64": "aa4b1ff56600656e"
+    },
+    {
+      "step": 1295,
+      "item": "pull_request:atlaslattice/manus-artifacts#277",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1294,
+      "prior_item_step": 855,
+      "previous_checksum64": "aa4b1ff56600656e",
+      "checksum64": "a56acc79636c1ddc"
+    },
+    {
+      "step": 1296,
+      "item": "pull_request:atlaslattice/manus-artifacts#278",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1295,
+      "prior_item_step": 856,
+      "previous_checksum64": "a56acc79636c1ddc",
+      "checksum64": "20e14542c1d427f2"
+    },
+    {
+      "step": 1297,
+      "item": "pull_request:atlaslattice/manus-artifacts#280",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1296,
+      "prior_item_step": 857,
+      "previous_checksum64": "20e14542c1d427f2",
+      "checksum64": "477e9cb2c733f96c"
+    },
+    {
+      "step": 1298,
+      "item": "pull_request:atlaslattice/manus-artifacts#281",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1297,
+      "prior_item_step": 858,
+      "previous_checksum64": "477e9cb2c733f96c",
+      "checksum64": "35f6a95a52f127e0"
+    },
+    {
+      "step": 1299,
+      "item": "pull_request:atlaslattice/manus-artifacts#282",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1298,
+      "prior_item_step": 859,
+      "previous_checksum64": "35f6a95a52f127e0",
+      "checksum64": "dd5cf07751499ef8"
+    },
+    {
+      "step": 1300,
+      "item": "pull_request:atlaslattice/manus-artifacts#283",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1299,
+      "prior_item_step": 860,
+      "previous_checksum64": "dd5cf07751499ef8",
+      "checksum64": "7f1f49c76926dffb"
+    },
+    {
+      "step": 1301,
+      "item": "pull_request:atlaslattice/manus-artifacts#284",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1300,
+      "prior_item_step": 861,
+      "previous_checksum64": "7f1f49c76926dffb",
+      "checksum64": "e6a9560d67b86c0b"
+    },
+    {
+      "step": 1302,
+      "item": "pull_request:atlaslattice/manus-artifacts#285",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1301,
+      "prior_item_step": 862,
+      "previous_checksum64": "e6a9560d67b86c0b",
+      "checksum64": "4ca938d7dfa96c95"
+    },
+    {
+      "step": 1303,
+      "item": "pull_request:atlaslattice/manus-artifacts#286",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1302,
+      "prior_item_step": 863,
+      "previous_checksum64": "4ca938d7dfa96c95",
+      "checksum64": "cd8d6c5dbb974d9f"
+    },
+    {
+      "step": 1304,
+      "item": "pull_request:atlaslattice/manus-artifacts#287",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1303,
+      "prior_item_step": 864,
+      "previous_checksum64": "cd8d6c5dbb974d9f",
+      "checksum64": "8b714b7de0bf2919"
+    },
+    {
+      "step": 1305,
+      "item": "pull_request:atlaslattice/manus-artifacts#288",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1304,
+      "prior_item_step": 865,
+      "previous_checksum64": "8b714b7de0bf2919",
+      "checksum64": "28ad806440d55939"
+    },
+    {
+      "step": 1306,
+      "item": "pull_request:atlaslattice/manus-artifacts#289",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1305,
+      "prior_item_step": 866,
+      "previous_checksum64": "28ad806440d55939",
+      "checksum64": "a9261f257e9ac54d"
+    },
+    {
+      "step": 1307,
+      "item": "pull_request:atlaslattice/manus-artifacts#290",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1306,
+      "prior_item_step": 867,
+      "previous_checksum64": "a9261f257e9ac54d",
+      "checksum64": "376bebeee66ad2d4"
+    },
+    {
+      "step": 1308,
+      "item": "pull_request:atlaslattice/manus-artifacts#291",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1307,
+      "prior_item_step": 868,
+      "previous_checksum64": "376bebeee66ad2d4",
+      "checksum64": "20bb718312e584d0"
+    },
+    {
+      "step": 1309,
+      "item": "pull_request:atlaslattice/manus-artifacts#292",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1308,
+      "prior_item_step": 869,
+      "previous_checksum64": "20bb718312e584d0",
+      "checksum64": "08d0c90933b878cc"
+    },
+    {
+      "step": 1310,
+      "item": "pull_request:atlaslattice/manus-artifacts#293",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1309,
+      "prior_item_step": 870,
+      "previous_checksum64": "08d0c90933b878cc",
+      "checksum64": "50ed245836ec0f32"
+    },
+    {
+      "step": 1311,
+      "item": "pull_request:atlaslattice/manus-artifacts#294",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1310,
+      "prior_item_step": 871,
+      "previous_checksum64": "50ed245836ec0f32",
+      "checksum64": "97034cc7808317af"
+    },
+    {
+      "step": 1312,
+      "item": "pull_request:atlaslattice/manus-artifacts#295",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1311,
+      "prior_item_step": 872,
+      "previous_checksum64": "97034cc7808317af",
+      "checksum64": "728ea650ceaa11db"
+    },
+    {
+      "step": 1313,
+      "item": "pull_request:atlaslattice/manus-artifacts#296",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1312,
+      "prior_item_step": 873,
+      "previous_checksum64": "728ea650ceaa11db",
+      "checksum64": "1039ff745e3f2ae9"
+    },
+    {
+      "step": 1314,
+      "item": "pull_request:atlaslattice/manus-artifacts#297",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1313,
+      "prior_item_step": 874,
+      "previous_checksum64": "1039ff745e3f2ae9",
+      "checksum64": "c2c2b43b3ca9bcfb"
+    },
+    {
+      "step": 1315,
+      "item": "pull_request:atlaslattice/manus-artifacts#298",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1314,
+      "prior_item_step": 875,
+      "previous_checksum64": "c2c2b43b3ca9bcfb",
+      "checksum64": "8b6f7e0777e73035"
+    },
+    {
+      "step": 1316,
+      "item": "pull_request:atlaslattice/manus-artifacts#299",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1315,
+      "prior_item_step": 876,
+      "previous_checksum64": "8b6f7e0777e73035",
+      "checksum64": "c44236bba033edb3"
+    },
+    {
+      "step": 1317,
+      "item": "pull_request:atlaslattice/manus-artifacts#300",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1316,
+      "prior_item_step": 877,
+      "previous_checksum64": "c44236bba033edb3",
+      "checksum64": "55dc8c9344f8939b"
+    },
+    {
+      "step": 1318,
+      "item": "pull_request:atlaslattice/manus-artifacts#301",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1317,
+      "prior_item_step": 878,
+      "previous_checksum64": "55dc8c9344f8939b",
+      "checksum64": "d3eb1d5e07809d61"
+    },
+    {
+      "step": 1319,
+      "item": "pull_request:atlaslattice/manus-artifacts#302",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1318,
+      "prior_item_step": 879,
+      "previous_checksum64": "d3eb1d5e07809d61",
+      "checksum64": "b414bee30eb3252d"
+    },
+    {
+      "step": 1320,
+      "item": "pull_request:atlaslattice/manus-artifacts#304",
+      "stage": "PROVE_ACCEPTANCE",
+      "parent_step": 1319,
+      "prior_item_step": 880,
+      "previous_checksum64": "b414bee30eb3252d",
+      "checksum64": "32d8fcce0ee6cd28"
+    }
+  ],
+  "note": "220 additional source-linked review REQUIREMENTS, not 220 validated task completions. No model calls or host actions.",
+  "final_coverage": {
+    "PIN_CURRENT_SOURCE": 440,
+    "VERIFY_RIGHTS_SCOPE": 440,
+    "PROVE_ACCEPTANCE": 440
+  },
+  "evidence_claims_granted": 0,
+  "canon_or_deployment_grants": 0
+}

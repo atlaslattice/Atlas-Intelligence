@@ -1,0 +1,42 @@
+test_all_spheres_reviewing_one_task_do_not_complete_coverage (test_engine.EngineTests.test_all_spheres_reviewing_one_task_do_not_complete_coverage) ... ok
+test_artifact_changed_by_command_cannot_inherit_test_result (test_engine.EngineTests.test_artifact_changed_by_command_cannot_inherit_test_result) ... ok
+test_artifact_changes_invalidate_completed_work_and_descendants (test_engine.EngineTests.test_artifact_changes_invalidate_completed_work_and_descendants) ... ok
+test_command_output_and_timeout_are_bounded (test_engine.EngineTests.test_command_output_and_timeout_are_bounded) ... ok
+test_command_script_must_be_explicitly_pinned (test_engine.EngineTests.test_command_script_must_be_explicitly_pinned) ... ok
+test_conflicting_writes_are_not_cobatched (test_engine.EngineTests.test_conflicting_writes_are_not_cobatched) ... ok
+test_cycle_and_unknown_dependency_rejected (test_engine.EngineTests.test_cycle_and_unknown_dependency_rejected) ... ok
+test_duck_typed_and_subclass_runners_rejected (test_engine.EngineTests.test_duck_typed_and_subclass_runners_rejected) ... ok
+test_exact_dimensions_and_determinism (test_engine.EngineTests.test_exact_dimensions_and_determinism) ... ok
+test_export_restore_requires_matching_checkpoint_and_key (test_engine.EngineTests.test_export_restore_requires_matching_checkpoint_and_key) ... ok
+test_failed_check_does_not_advance_state (test_engine.EngineTests.test_failed_check_does_not_advance_state) ... ok
+test_forged_receipt_and_wrong_stage_are_rejected (test_engine.EngineTests.test_forged_receipt_and_wrong_stage_are_rejected) ... ok
+test_incompatible_metrics_stay_separate_and_regressions_remain (test_engine.EngineTests.test_incompatible_metrics_stay_separate_and_regressions_remain) ... ok
+test_invalid_measurement_does_not_become_a_gain (test_engine.EngineTests.test_invalid_measurement_does_not_become_a_gain) ... ok
+test_ledger_snapshot_mutation_cannot_forge_states (test_engine.EngineTests.test_ledger_snapshot_mutation_cannot_forge_states) ... ok
+test_missing_host_check_does_not_complete_work (test_engine.EngineTests.test_missing_host_check_does_not_complete_work) ... ok
+test_no_change_required_can_complete_evidenced_step_without_gain (test_engine.EngineTests.test_no_change_required_can_complete_evidenced_step_without_gain) ... ok
+test_no_ordinal_semantic_identity (test_engine.EngineTests.test_no_ordinal_semantic_identity) ... ok
+test_nonfinite_and_duplicate_json_keys_rejected (test_engine.EngineTests.test_nonfinite_and_duplicate_json_keys_rejected) ... ok
+test_one_third_work_budget_and_zero_macroturn_claim (test_engine.EngineTests.test_one_third_work_budget_and_zero_macroturn_claim) ... ok
+test_permission_revoked_during_acceptance_is_rechecked (test_engine.EngineTests.test_permission_revoked_during_acceptance_is_rechecked) ... ok
+test_planned_meta145_keeps_all_work_pending (test_engine.EngineTests.test_planned_meta145_keeps_all_work_pending) ... ok
+test_policy_mutation_after_construction_has_no_effect (test_engine.EngineTests.test_policy_mutation_after_construction_has_no_effect) ... ok
+test_read_and_query_are_bounded_and_return_copies (test_engine.EngineTests.test_read_and_query_are_bounded_and_return_copies) ... ok
+test_source_change_invalidates_affected_work (test_engine.EngineTests.test_source_change_invalidates_affected_work) ... ok
+test_source_tampering_prevents_acceptance (test_engine.EngineTests.test_source_tampering_prevents_acceptance) ... ok
+test_stale_perspective_checkpoint_rejected (test_engine.EngineTests.test_stale_perspective_checkpoint_rejected) ... ok
+test_status_string_cannot_complete_plan (test_engine.EngineTests.test_status_string_cannot_complete_plan) ... ok
+test_tampered_plan_hash_rejected (test_engine.EngineTests.test_tampered_plan_hash_rejected) ... ok
+test_unverified_and_duplicate_perspectives_rejected (test_engine.EngineTests.test_unverified_and_duplicate_perspectives_rejected) ... ok
+test_unverified_dependency_is_blocked (test_engine.EngineTests.test_unverified_dependency_is_blocked) ... ok
+test_permissions_never_cached (test_engine.MemoryTests.test_permissions_never_cached) ... ok
+test_return_revocation_blocks_cached_value (test_engine.MemoryTests.test_return_revocation_blocks_cached_value) ... ok
+test_reuse_and_copy_isolation (test_engine.MemoryTests.test_reuse_and_copy_isolation) ... ok
+test_source_and_implementation_staleness_rejected (test_engine.MemoryTests.test_source_and_implementation_staleness_rejected) ... ok
+test_source_invalidation_and_miss (test_engine.MemoryTests.test_source_invalidation_and_miss) ... ok
+test_tampered_payload_rejected (test_engine.MemoryTests.test_tampered_payload_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 53.277s
+
+OK
