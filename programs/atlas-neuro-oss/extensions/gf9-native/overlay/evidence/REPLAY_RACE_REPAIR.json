@@ -1,0 +1,15 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "df558885d8ac52ec022be87848a935497d1bef7a99fc7fec69bee9c79f530a5d",
+  "projection": "No owner/source bodies. Original observed receipt.",
+  "originalReceipt": {
+    "schema": "atlas.oss.replay-race-repair/v1",
+    "predecessorHelperSha256": "63e87b3fc3de2fd6c0d9075c5887b54f2e5ce45df11739a02f5a22569fe093c6",
+    "candidateHelperSha256": "b5eed64d76e6035b19482fbebdb85f82fa78a099699207cac4b77d154da1cd75",
+    "redExitCode": 1,
+    "greenExitCode": 0,
+    "greenTests": 3,
+    "scope": "Synthetic temporary files only; verified bytes captured once and checked after write",
+    "baselineOwnerFilesMutated": false
+  }
+}
