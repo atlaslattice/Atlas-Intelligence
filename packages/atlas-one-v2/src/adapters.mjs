@@ -77,3 +77,6 @@ export const legacyPorts=Object.freeze({
 
 // Source-only Work retrieval extension; no new broker, hosted tool or trust grant.
 export {WorkFullBodySearchPort,WORK_SEARCH_SCHEMA} from './work-search.mjs';
+
+// Optional exact-source 1728-dimensional review projection; never a hosted grant.
+export {CivilizationCircuit,CIRCUIT_SCHEMA} from './civilization-circuit.mjs';
