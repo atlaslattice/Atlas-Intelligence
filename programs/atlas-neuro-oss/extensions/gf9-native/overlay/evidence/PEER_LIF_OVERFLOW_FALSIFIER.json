@@ -1,0 +1,26 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "13d14d77ac962d82a62852831b265c39e1afdd0dd234a8a9d05311ed8ea3ae9a",
+  "projection": "Workspace paths replaced; numeric observations and limitations retained.",
+  "originalReceipt": {
+    "schema": "atlas.oss.peer-lif-overflow-falsifier/v1",
+    "peerCommit": "8e1493c95e8528fede68730a7db492ad91b0e652",
+    "path": "programs/atlas-neuro-oss/src/native_core.mjs",
+    "sourceSha256": "f8f516b2512039bdae45fd0e96c7a3c55ba1910d6a6965d764dca75c304cfc73",
+    "input": {
+      "state": 1e+308,
+      "input": 1e+308,
+      "beta": 1
+    },
+    "observed": {
+      "integrated": "Infinity",
+      "voltage": "Infinity",
+      "spike": 1
+    },
+    "finiteInput": true,
+    "finiteOutput": false,
+    "outcome": "NONFINITE_OUTPUT_REPRODUCED",
+    "scope": "LOCAL_PUBLIC_SOURCE_FALSIFIER_ONLY",
+    "modelCalls": 0
+  }
+}

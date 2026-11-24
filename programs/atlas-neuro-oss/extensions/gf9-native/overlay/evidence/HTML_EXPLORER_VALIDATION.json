@@ -1,0 +1,211 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "41a619a215e03ae39d17ef83fb18e1f515bc77ec7ff4d35b6b27ec638a1e861b",
+  "projection": "Workspace paths replaced; numeric observations and limitations retained.",
+  "originalReceipt": {
+    "schema": "atlas.oss144.offline-explorer-validation/v1",
+    "created_at_utc": "2026-11-24T22:36:41.472575+00:00",
+    "status": "STATIC_AND_FILTER_CHECKS_PASS_RENDERING_UNVERIFIED",
+    "html_path": "docs/oss144/Atlas_144_Feature_Explorer.html",
+    "html_sha256": "d4e4afda98239d459d0ebbef436c77996ad6eccd4ccd300694ae83ac67abf39a",
+    "html_bytes": 584429,
+    "builder_sha256": "5066bc66aa4592f7a4342ae2b4a77b4e30290278cc85e07dc223f86e0f1e8181",
+    "input_sha256": {
+      "catalog": "753bc4d4e8d1b7575f3250394db640def4c41e3ada0d744a591ccf9596760ce4",
+      "registry": "99427725fe4f997b0c7bd31f22fcab2601aa9c11c2557d82364b8efddffb582b"
+    },
+    "source_files_unchanged": {
+      "catalog": true,
+      "registry": true
+    },
+    "embedded_feature_ids": "Exactly F001–F144, original order",
+    "engineering_modules": 12,
+    "sources": 29,
+    "prototype_records": 6,
+    "javascript_syntax": {
+      "tool": "node --check",
+      "exit_code": 0
+    },
+    "functional_filter_checks": {
+      "checks": [
+        {
+          "name": "all_144",
+          "passed": true
+        },
+        {
+          "name": "module_1_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_2_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_3_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_4_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_5_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_6_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_7_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_8_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_9_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_10_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_11_exact12",
+          "passed": true
+        },
+        {
+          "name": "module_12_exact12",
+          "passed": true
+        },
+        {
+          "name": "exact_feature_id_search",
+          "passed": true
+        },
+        {
+          "name": "combined_module_priority",
+          "passed": true
+        },
+        {
+          "name": "known_source_membership",
+          "passed": true
+        },
+        {
+          "name": "case_insensitive_multiword_search",
+          "passed": true
+        },
+        {
+          "name": "empty_result",
+          "passed": true
+        },
+        {
+          "name": "quantization_local_evidence",
+          "passed": true
+        },
+        {
+          "name": "peer_handoff_separate",
+          "passed": true
+        },
+        {
+          "name": "hold_filter_matches_onnx_reference",
+          "passed": true
+        },
+        {
+          "name": "candidate_only_excludes_attached_evidence",
+          "passed": true
+        },
+        {
+          "name": "held_source_license_not_verified",
+          "passed": true
+        },
+        {
+          "name": "adversarial_loss_preserved",
+          "passed": true
+        },
+        {
+          "name": "rejected_url_javascript:alert(1)",
+          "passed": true
+        },
+        {
+          "name": "rejected_url_data:text/html,hello",
+          "passed": true
+        },
+        {
+          "name": "rejected_url_file:///etc/passwd",
+          "passed": true
+        },
+        {
+          "name": "rejected_url_//example.org",
+          "passed": true
+        },
+        {
+          "name": "https_reference_allowed",
+          "passed": true
+        }
+      ],
+      "passed": 29,
+      "total": 29,
+      "source_hold_feature_ids": [
+        "F101",
+        "F102"
+      ],
+      "local_evidence_feature_ids": [
+        "F025",
+        "F032",
+        "F036",
+        "F049",
+        "F052",
+        "F054",
+        "F061",
+        "F068",
+        "F069",
+        "F078",
+        "F088",
+        "F089",
+        "F109",
+        "F110",
+        "F111",
+        "F120",
+        "F121",
+        "F141",
+        "F144"
+      ],
+      "peer_handoff_feature_ids": [
+        "F013",
+        "F070",
+        "F098"
+      ]
+    },
+    "static_checks": {
+      "embedded_json_matches_authoritative_files": true,
+      "all_five_controls_have_labels": true,
+      "native_keyboard_controls_and_details": true,
+      "polite_result_count_live_region": true,
+      "responsive_css_and_focus_styles_present": true,
+      "data_insertion_uses_textContent": true,
+      "unsafe_dom_html_sinks_absent": true,
+      "https_only_user_activated_source_links": true,
+      "external_resource_tags_absent": true,
+      "network_APIs_absent": true,
+      "CSP_blocks_connections": true
+    },
+    "headless_browser": {
+      "status": "NOT_RUN_BROWSER_BINARY_UNAVAILABLE",
+      "observed": "Playwright bindings available; their Chromium, Firefox and WebKit executable paths were absent. No browser or package was installed.",
+      "visual_layout_and_full_DOM_behavior_verified": false
+    },
+    "effects": {
+      "network_requests_by_explorer": 0,
+      "runtime_code_changed": false,
+      "catalog_or_source_registry_changed": false,
+      "deployment": false
+    },
+    "limits": [
+      "Actual filter functions and inline JavaScript syntax were executed in Node; the DOM was not rendered in a browser.",
+      "144 entries are engineering candidates, not implemented capabilities, ontology coverage or executed simulations.",
+      "Local prototype evidence and source holds are displayed separately; no evidence record is promoted to adoption."
+    ]
+  }
+}

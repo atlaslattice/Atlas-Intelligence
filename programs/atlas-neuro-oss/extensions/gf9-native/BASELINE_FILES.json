@@ -1,0 +1,537 @@
+{
+  "schema": "atlas.oss.baseline-files/v1",
+  "sourceCommit": "76e6eeefeafbcc1cc4c6f94c00afcb9700fc19ba",
+  "runtimeManifestSha256": "12ebee51314e983581452cab0bc90faaa5971258af915d6f2c66a8a85b235821",
+  "READMEVariants": "Only the observed installed/repository packaging-link difference is accepted.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "acceptedSha256": [
+        "f3d7d1a9164d69b1abb5171c09af8e7f21f718061b31e27c1bf05ab55429f130"
+      ]
+    },
+    {
+      "path": "IMPLEMENTATION_CONTRACT.md",
+      "acceptedSha256": [
+        "3b0f12aac6b838b25f6d1f7ab9a13d490ca451dbcecad90d3b9c99fd62d22a30"
+      ]
+    },
+    {
+      "path": "README.md",
+      "acceptedSha256": [
+        "c24c7f3923da3d9bfacdb7d0036d0fb933296511631a252e6e43b152e39edece",
+        "805543aba7cd2a35fa92dad4b423c26227d24cef600b24c096037aa57819f011"
+      ]
+    },
+    {
+      "path": "docs/COMMON_NEURAL_DIAGNOSTIC.md",
+      "acceptedSha256": [
+        "0296e32705636f8225e96542612fb7471e9166eb7ea7298a4a9cb259fb606283"
+      ]
+    },
+    {
+      "path": "docs/NEURAL_INTEGRATION.md",
+      "acceptedSha256": [
+        "840077ca122b6344d0c5818331e2bc59451308df7523d22c7e59c4db2eccf410"
+      ]
+    },
+    {
+      "path": "docs/UPSTREAM_COMPOSITION.json",
+      "acceptedSha256": [
+        "32532eb620ad08f90db152c72887fe4fb414dd3ad38c76a68de64a98bd89b948"
+      ]
+    },
+    {
+      "path": "docs/peer-runtime/CORE_INTEGRATION.md",
+      "acceptedSha256": [
+        "5ca865dbbfd4b82bf995e9e2435588ddac4d55626ed3067ad1d1b17a1aa33acc"
+      ]
+    },
+    {
+      "path": "docs/peer-runtime/EXACT_TOPK.md",
+      "acceptedSha256": [
+        "f8c0f9427bc4095c9e5234dd4442ff59e64e376b00c41a2941c3b894ac1a3046"
+      ]
+    },
+    {
+      "path": "docs/peer-runtime/META145_COMPOSED_RELEASE.md",
+      "acceptedSha256": [
+        "326cee12134eebd7c4e7fb234ff08ae0ebda1d4c74725d579951ff636949d1a3"
+      ]
+    },
+    {
+      "path": "docs/peer-runtime/META145_ENGINE_ADAPTER.md",
+      "acceptedSha256": [
+        "2835a941c09930cd1af7d97b1a1edd3e30faac2aac94169983fedf6ed8d5d0a8"
+      ]
+    },
+    {
+      "path": "docs/peer-runtime/USE_AND_RELEASE_CONTRACT.md",
+      "acceptedSha256": [
+        "bd3230652766fc0f5d74048f1f10fb9782ff1e46b7fe3de3d75a5fbc8254d34c"
+      ]
+    },
+    {
+      "path": "integration/assemble_bundle.py",
+      "acceptedSha256": [
+        "2252fff815b661cd64c84d7ab90ae3ea2d8c95a18af6cb2f1391b48e0be49fb8"
+      ]
+    },
+    {
+      "path": "integration/run_runtime_verification.mjs",
+      "acceptedSha256": [
+        "7aba64c34ffdafb22f5356d92ccd80f8fcb1b4147bdeb3295f56dca0858e16e9"
+      ]
+    },
+    {
+      "path": "integration/run_semantic_comparison.py",
+      "acceptedSha256": [
+        "91d5ed40f8be5571244944b2d2515a403736592e16e8a06e116f51f530e432c7"
+      ]
+    },
+    {
+      "path": "package.json",
+      "acceptedSha256": [
+        "c06577103c538d8bb2219a4dff11dbbcc551f2d27854c05e915b717574b726d7"
+      ]
+    },
+    {
+      "path": "pyproject.toml",
+      "acceptedSha256": [
+        "55ae56a21b83f02e85bdc5c30ed904e3ed1a6a6f5a94d576471c54186aded9ee"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/__init__.py",
+      "acceptedSha256": [
+        "10246c93770f88994c74caec8f78e05c4b744608f826151cd30d49207021877c"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/__main__.py",
+      "acceptedSha256": [
+        "ced8dfd17cab54eb87a31df0069409a3f5384eb642fd750fc22390dc93ff40c0"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/bundles.py",
+      "acceptedSha256": [
+        "3a5f75e7cff43c2183ddcf7c0888cb361d7324b8888f5f9eb291651ebf490c81"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/cli.py",
+      "acceptedSha256": [
+        "0b58fc8efd528b6a334d94239b731d180af5f670a4099cb0cbeeebd5cee33038"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/comparison.py",
+      "acceptedSha256": [
+        "75eacf73716f11350090f15a2242f0d993d2655f3f41367120103f76c75df6d7"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/comparison_io.py",
+      "acceptedSha256": [
+        "5c07f12390fe0b27a2d76d656298e9f2ee938a4b2313d17b215a11976008868c"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/corpus.py",
+      "acceptedSha256": [
+        "599bfd86fa1d04829f5871ce4f6a54d6684d6f44834a982e0256b26e9aacfc47"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/episodes.py",
+      "acceptedSha256": [
+        "7ee88c7b72e167e55b0c59da6a41c2611353f5e4e074c1d45191c6ae53dfe63f"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/evaluation.py",
+      "acceptedSha256": [
+        "3c91683c82c064a4bd18d3d79d55b906b4541b0e50a5cf42550148afe2b77672"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/integration.py",
+      "acceptedSha256": [
+        "b59e9faac730a8470dd20c70e78c219a3451bf0b834724bbce8f8f70b25e7f9d"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/integration_evaluation.py",
+      "acceptedSha256": [
+        "0282a7bd903ceaa261b142ab6f36c2deb37532dbb15d3cf9e4249ad1a35b8e17"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/model.py",
+      "acceptedSha256": [
+        "e07af3a94779f2223111883696aef9e3dbf867cacc3a5c53674dbccd6b558c70"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/registry.py",
+      "acceptedSha256": [
+        "07426e3d15d883a1e7605a794c7639497663e229550b0ead348bccc25329df06"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/relations.py",
+      "acceptedSha256": [
+        "169bd0293b4cd8a8f4afc7f784c51b7fd5c3dad7c0ba8ff0e6e6006b08d5f25f"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/semantic.py",
+      "acceptedSha256": [
+        "2895d8695375b3392aa1f4461fa145575403c856417f8304f31be5783cfba649"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/semantic_training.py",
+      "acceptedSha256": [
+        "4349751fe2797ff74750635307443b942c9b39c70df9edf1cf67d75f9cfa5d3a"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/service.py",
+      "acceptedSha256": [
+        "ebeab2fd7a65775a93a10770e7496a93af601871375b7a23483c5eecd9645214"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/training.py",
+      "acceptedSha256": [
+        "49665cd49a68f9266ba67ebb7306ba563bab08d42c9cea578ef5f850f1315dc9"
+      ]
+    },
+    {
+      "path": "python/atlas_work_learning/workspace.py",
+      "acceptedSha256": [
+        "73e974864647e797d32e998710537983578f8ea4eba56ab79360fe1b53d5932d"
+      ]
+    },
+    {
+      "path": "src/adapters.mjs",
+      "acceptedSha256": [
+        "6cfc76acd9061e84ed49edb0db79097872e5b831aee6d6db57e3bc9d86beb557"
+      ]
+    },
+    {
+      "path": "src/contracts.mjs",
+      "acceptedSha256": [
+        "34aa1604bf4e299588f3f69cfce72be2dd9a086023270e178a5631bbfa7c474a"
+      ]
+    },
+    {
+      "path": "src/gateway.mjs",
+      "acceptedSha256": [
+        "9a286e5af0f74eb400009b8674cc5f2d2ff95ab4d845d533cd950d3aa2c9ad73"
+      ]
+    },
+    {
+      "path": "src/index.d.ts",
+      "acceptedSha256": [
+        "09f3021570d9f66b92a45d1a8af7da8d3a7853e8444a5fc4fd6a25f2a5799b00"
+      ]
+    },
+    {
+      "path": "src/index.mjs",
+      "acceptedSha256": [
+        "3437041ef8cceb477cf8a3d442c91215a505da68570210d5ff213b08c8186a70"
+      ]
+    },
+    {
+      "path": "src/mcp-stdio.mjs",
+      "acceptedSha256": [
+        "f6b7b51c72b5d799581a299924acfc691fc8d758b658b4a2d4ed386ae58e2032"
+      ]
+    },
+    {
+      "path": "src/mcp.mjs",
+      "acceptedSha256": [
+        "950bd036b3b4f839c9cbc180cc662500df0dace4f6ca87e2c3f5290756d24b61"
+      ]
+    },
+    {
+      "path": "src/meta145-engine-adapter.mjs",
+      "acceptedSha256": [
+        "8ad56a3c59082f92a755402d8ba9e7ef8102d6a89d1e1009ec7bc7a4d1405d97"
+      ]
+    },
+    {
+      "path": "src/neural-synthesis.mjs",
+      "acceptedSha256": [
+        "5481dd89cdccef78168263586f0cc288033c55f5501392e78271cd13b83b505f"
+      ]
+    },
+    {
+      "path": "src/openai.mjs",
+      "acceptedSha256": [
+        "705c8e532aac2c25ff4037082013d97874f9a7eb3a1406606ce1d7010b289f55"
+      ]
+    },
+    {
+      "path": "src/python-bridge.mjs",
+      "acceptedSha256": [
+        "f19719660aa69dc72c29e0f17fce038f149269c391dc56fe9e982954badb62d9"
+      ]
+    },
+    {
+      "path": "test/contracts.test.mjs",
+      "acceptedSha256": [
+        "cbdb023034dc63163dac36278a2c681d9ec4e17f61c031580526ce70440bab81"
+      ]
+    },
+    {
+      "path": "test/evidence-metadata.test.mjs",
+      "acceptedSha256": [
+        "31346dea93821ef5eda652446efbe0a8b4bd951092242385f01defa87920ec25"
+      ]
+    },
+    {
+      "path": "test/final-return.test.mjs",
+      "acceptedSha256": [
+        "8d5036adb4595c014e3a00853401d8e878fd4e6ca9225aa6c18440e4fcfbd90c"
+      ]
+    },
+    {
+      "path": "test/integrated-output-contract.test.mjs",
+      "acceptedSha256": [
+        "5183c0f6fd25037ece6dd21caed922bc3f7584b078ce1b9ab08ae9c175d2331c"
+      ]
+    },
+    {
+      "path": "test/meta145-composed-boundary.test.mjs",
+      "acceptedSha256": [
+        "0b7a587f031b2e3902b6723622c78c0c3e3a391c2f39c4e8e5ccef2de583df37"
+      ]
+    },
+    {
+      "path": "test/meta145-composed-release.test.mjs",
+      "acceptedSha256": [
+        "c685895f1b5261a2040b886b7a083263e3c269b636fca2d621d649e5628c8086"
+      ]
+    },
+    {
+      "path": "test/meta145-engine-adapter.test.mjs",
+      "acceptedSha256": [
+        "e922945914ed9e2d3d20df71aa408546dcd077b1ee2686b501c4f332aae4bf7b"
+      ]
+    },
+    {
+      "path": "test/meta145-engine-adversarial.test.mjs",
+      "acceptedSha256": [
+        "cc175e47058a7bf38b4ab9ce188e367ea39fffb9ba16b0f90d479331a340b8df"
+      ]
+    },
+    {
+      "path": "test/neural-synthesis.test.mjs",
+      "acceptedSha256": [
+        "e9b20a981704ea7f31cbacb54a8f85b12cc54c850dec90a79a8525b06c3844bd"
+      ]
+    },
+    {
+      "path": "test/node-output-contract.test.mjs",
+      "acceptedSha256": [
+        "540977af0e61d3ef16b6e5fa0783a9fa0d9c9518c18bbe76edec7b404152bc11"
+      ]
+    },
+    {
+      "path": "test/runtime-binding.test.mjs",
+      "acceptedSha256": [
+        "2e5a779837e75d6c5baa1f81e7ea15ec8cc9f159b3559817ffe4618b8efdd21a"
+      ]
+    },
+    {
+      "path": "test/search-provenance.test.mjs",
+      "acceptedSha256": [
+        "cf89d98b0f401bc89a2b6c2365fcec43bbb4fe89e9a47fb7256a186ce74b5533"
+      ]
+    },
+    {
+      "path": "test/semantic-bridge.test.mjs",
+      "acceptedSha256": [
+        "9c367b012aea429c63df18bfe726a19f63a26a18e97e08ce6b51aff7fc43aee6"
+      ]
+    },
+    {
+      "path": "test/source-use.test.mjs",
+      "acceptedSha256": [
+        "4e55d6d2836647f89616776bff0c57aa60b2c162769282f1b11c5635f6ae3b01"
+      ]
+    },
+    {
+      "path": "test/transport.test.mjs",
+      "acceptedSha256": [
+        "21114d77a1dfb644dc8a8538d8a9e532fcce20d8cf3dca1086e505df8dbb2c95"
+      ]
+    },
+    {
+      "path": "tests/audit_fixture.py",
+      "acceptedSha256": [
+        "9971c415ca6d146cf6e76e5719030a46f3171901e0b388af78b8995574f83ee7"
+      ]
+    },
+    {
+      "path": "tests/fixtures/base_40608656_model.py",
+      "acceptedSha256": [
+        "e52078958b9c6972c3a2f301dec95b804068277f736f44dabdc1df4fdbfe21b9"
+      ]
+    },
+    {
+      "path": "tests/fixtures/base_40608656_service.py",
+      "acceptedSha256": [
+        "6269dddb0c99fecca3787e93bd4582254670e3070ffe1393a5bff22edaffae9b"
+      ]
+    },
+    {
+      "path": "tests/test_bundles.py",
+      "acceptedSha256": [
+        "3900fcfb904a962e5f71c0cd3cc092acc3e5001441d069697f581bfd95e92c2c"
+      ]
+    },
+    {
+      "path": "tests/test_comparison.py",
+      "acceptedSha256": [
+        "c9fa1795a4dde711c59e9e4ac5b35c3eabe60e6517cb63bf5e07be8d3ebe9e37"
+      ]
+    },
+    {
+      "path": "tests/test_corpus.py",
+      "acceptedSha256": [
+        "1aeab00b26f18fff2137cb9309e59b09ceb62a979b46cf312fd265813bb7fc3c"
+      ]
+    },
+    {
+      "path": "tests/test_episodes.py",
+      "acceptedSha256": [
+        "4649b8066c6a1bcf1be1d92885a490a75523d2bb69d722ef761facc3ad0e8fd7"
+      ]
+    },
+    {
+      "path": "tests/test_evidence_metadata_manifest.py",
+      "acceptedSha256": [
+        "7f896cff064122e284aa6cc80830bd4f696332dfb38016fca8b75fbce6f02929"
+      ]
+    },
+    {
+      "path": "tests/test_exact_topk.py",
+      "acceptedSha256": [
+        "9fc0a163d783e2d9f56f9ad2953c21023393dcc86cc44fb126c566feb1a38613"
+      ]
+    },
+    {
+      "path": "tests/test_hierarchy_reuse.py",
+      "acceptedSha256": [
+        "a770a4f7211b17394138b1551c4b4445f4b4658a63cb5b183ea86ffb338092d9"
+      ]
+    },
+    {
+      "path": "tests/test_integration_evaluation.py",
+      "acceptedSha256": [
+        "9a9392d48f78a1889172b8b82504c84d1a1126bd5def9a97fdad61ce30f5066f"
+      ]
+    },
+    {
+      "path": "tests/test_integration_runtime.py",
+      "acceptedSha256": [
+        "6b650d3e0eee9861c5686fb7829924fdeb73bc44101e1baf82fe3bff1b11e22f"
+      ]
+    },
+    {
+      "path": "tests/test_item_manifest.py",
+      "acceptedSha256": [
+        "e3ecbdef488fe225f199be801a0b1441bb95e7409403ed096dae413389b908a3"
+      ]
+    },
+    {
+      "path": "tests/test_ledger_continuity.py",
+      "acceptedSha256": [
+        "2b8c7eae4bfd3cd188ca2797533c3da44427db448ca9a77b2440a49faa3df413"
+      ]
+    },
+    {
+      "path": "tests/test_model.py",
+      "acceptedSha256": [
+        "fc9f0da3cce5a0c9e14865986f9899aa1863077226934ba7e5e7ba6b6c0b9b46"
+      ]
+    },
+    {
+      "path": "tests/test_neural_scan.py",
+      "acceptedSha256": [
+        "cd47cf9065adcd5feba5b4e9683baf7484af0ed501ec16134a4fcd7a8e481833"
+      ]
+    },
+    {
+      "path": "tests/test_registry.py",
+      "acceptedSha256": [
+        "b47b393696ea641ecc612ef85545b5e0a08cea8940bf31ea979c045795218369"
+      ]
+    },
+    {
+      "path": "tests/test_relations.py",
+      "acceptedSha256": [
+        "60b8455af70cffe225675cccdaa849acb6c87399f23afff0c9d95ee4ed6836ef"
+      ]
+    },
+    {
+      "path": "tests/test_semantic.py",
+      "acceptedSha256": [
+        "50f714df8737ac69e6ff5050834e4d677412e81eee4d9831def065b40eaf3d92"
+      ]
+    },
+    {
+      "path": "tests/test_service.py",
+      "acceptedSha256": [
+        "45d2e755351e841f6baf3e8de64add38a3b73b154bd5f538bfa2dc4e7ac0f4c7"
+      ]
+    },
+    {
+      "path": "tests/test_serving_policy.py",
+      "acceptedSha256": [
+        "04be8c6ccaae006a38c37ae628e61b06ba064b6ec97ebf41bf0deafe6ab7fd20"
+      ]
+    },
+    {
+      "path": "tests/test_training.py",
+      "acceptedSha256": [
+        "679787f44215f11a070f22dab4a2bdaf3815d7c8b65f9d0035a70af581f8a84e"
+      ]
+    },
+    {
+      "path": "tests/test_training_preflight_cli.py",
+      "acceptedSha256": [
+        "e607e7d662743123e057b8c7726f66f56c88848fbd8587887651d227a85d0f87"
+      ]
+    },
+    {
+      "path": "tests/test_training_publication.py",
+      "acceptedSha256": [
+        "5bb4bab97f59d57aa46e0e236d0964678edae9b710e6329aa06782c720f4f0f8"
+      ]
+    },
+    {
+      "path": "tests/test_training_sources.py",
+      "acceptedSha256": [
+        "7a5fcad6e47d65fdaaf1476a8bfe12703af7e8d4272d1c9eda42d214f204e6fb"
+      ]
+    },
+    {
+      "path": "tests/test_training_view_preflight.py",
+      "acceptedSha256": [
+        "c8fd1fd7400386d4ed2d485e73d7b534986a00b44a7f855d48574761e3d988ae"
+      ]
+    },
+    {
+      "path": "tests/test_workspace_write_recovery.py",
+      "acceptedSha256": [
+        "8e6c00fa131d3d83b3dbd263eba1562bbab6df095edbc7141e8ea15d1b526bdf"
+      ]
+    }
+  ]
+}

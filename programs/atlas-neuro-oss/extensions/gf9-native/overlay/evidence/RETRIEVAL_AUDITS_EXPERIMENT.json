@@ -1,0 +1,840 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "64576cbae7f8e33d937575f02e9e25d96b35022658a4cc2fc8f779efb9d83d1b",
+  "projection": "Workspace paths replaced; numeric observations and limitations retained.",
+  "originalReceipt": {
+    "schema": "atlas.oss-retrieval-audits-experiment/v1",
+    "created_at_utc": "2026-11-24T22:23:25.980288+00:00",
+    "baseline_source_commit": "76e6eeefeafbcc1cc4c6f94c00afcb9700fc19ba",
+    "scope": "OFFLINE_SYNTHETIC_NUMERIC_AND_RANKING_DIAGNOSTIC",
+    "source_pins_before": {
+      "candidate-package/python/atlas_work_learning/__init__.py": "10246c93770f88994c74caec8f78e05c4b744608f826151cd30d49207021877c",
+      "candidate-package/python/atlas_work_learning/retrieval_audits.py": "b2dc0a4a39cf17c968c186613e9271e39f29bece0c258c28875ce8a1d18b8563",
+      "candidate-package/tests/test_retrieval_audits.py": "0aeb8439958d45055768a922ff2eb2374d9f560855e52e7b52fa4c2d72ef089e"
+    },
+    "source_pins_after": {
+      "candidate-package/python/atlas_work_learning/__init__.py": "10246c93770f88994c74caec8f78e05c4b744608f826151cd30d49207021877c",
+      "candidate-package/python/atlas_work_learning/retrieval_audits.py": "b2dc0a4a39cf17c968c186613e9271e39f29bece0c258c28875ce8a1d18b8563",
+      "candidate-package/tests/test_retrieval_audits.py": "0aeb8439958d45055768a922ff2eb2374d9f560855e52e7b52fa4c2d72ef089e"
+    },
+    "source_snapshot_stable": true,
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "observed_unit_test_invocation": {
+      "command": "PYTHONPATH=python python -m unittest discover -s tests -p test_retrieval_audits.py -v",
+      "working_directory": "review-artifacts/candidate/packages/atlas-work-learning",
+      "tests_run": 15,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "evidence_basis": "Observed successful tool invocation immediately before these two experiment panels; not rerun to inflate counts."
+    },
+    "experiment_panel_runs": 2,
+    "panels": {
+      "paired_synthetic_384": {
+        "schema": "atlas.retrieval-quantization-audit/v1",
+        "codec": "symmetric-int8-row-maxabs-f64-le/v1",
+        "status": "COMPLETED",
+        "input_sha256": "ceade26379da1561d912c8001d7b4796c81631a78766d2b79f835740ed70f2a9",
+        "codec_payload_sha256": "b23bc9310ddefd3d369fd551fc6e17842c3357d92835022bc8670fc6611b8125",
+        "configuration": {
+          "top_k": 5,
+          "near_tie_tolerance": 1e-05,
+          "dimensions": 384,
+          "expected_dimension": 384,
+          "query_quantization": false
+        },
+        "counts": {
+          "corpus_rows": 24,
+          "query_rows": 12,
+          "zero_corpus_rows": 0,
+          "scored_queries": 12,
+          "held_queries": 0
+        },
+        "numeric": {
+          "reference_math": "UNQUANTIZED_BINARY64_COSINE_WITH_STABLE_ID_TIES",
+          "maximum_absolute_error": 0.0003542993364371652,
+          "global_rms_absolute_error": 0.00019981629553785952,
+          "maximum_error_over_row_maximum": 0.003937007874015774,
+          "ideal_nearest_rounding_normalized_error_bound": 0.003937007874015748,
+          "bound_scope": "IDEAL_REAL_ARITHMETIC_ONLY; binary64 subnormal reconstruction can exceed it"
+        },
+        "ranking": {
+          "top1_agreement_count": 12,
+          "ordered_top_k_agreement_count": 12,
+          "mean_top_k_overlap_recall": 1.0,
+          "order_flip_count": 0,
+          "near_tie_flip_count": 0,
+          "outside_near_tie_flip_count": 0
+        },
+        "payload": {
+          "int8_code_bytes": 9216,
+          "binary64_row_header_bytes": 192,
+          "actual_codec_payload_bytes": 9408,
+          "hypothetical_float32_vector_payload_bytes": 36864,
+          "hypothetical_float64_vector_payload_bytes": 73728,
+          "ratio_to_hypothetical_float32_payload": 0.2552083333333333,
+          "excludes": [
+            "IDs",
+            "dimensions",
+            "index structures",
+            "Python object overhead",
+            "alignment",
+            "query vectors"
+          ],
+          "process_memory_measured": false
+        },
+        "rows": [
+          {
+            "id": "synthetic-corpus-00",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003486950331785532,
+            "rms_absolute_error": 0.00020315322749575446,
+            "rms_error_over_row_maximum": 0.0022937403179842247,
+            "maximum_error_over_row_maximum": 0.003937007874015731,
+            "angular_error_degrees": 0.2280377087946338
+          },
+          {
+            "id": "synthetic-corpus-01",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003542993364371652,
+            "rms_absolute_error": 0.0002035129750794581,
+            "rms_error_over_row_maximum": 0.00226145550654819,
+            "maximum_error_over_row_maximum": 0.003937007874015747,
+            "angular_error_degrees": 0.2283930065011909
+          },
+          {
+            "id": "synthetic-corpus-02",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00035003998030827543,
+            "rms_absolute_error": 0.00019856712025269032,
+            "rms_error_over_row_maximum": 0.0022243743420198073,
+            "maximum_error_over_row_maximum": 0.003921192742725982,
+            "angular_error_degrees": 0.22294435432763646
+          },
+          {
+            "id": "synthetic-corpus-03",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003503564026529392,
+            "rms_absolute_error": 0.00020540835929937185,
+            "rms_error_over_row_maximum": 0.0023035578444387224,
+            "maximum_error_over_row_maximum": 0.003929081768791373,
+            "angular_error_degrees": 0.2304804474575039
+          },
+          {
+            "id": "synthetic-corpus-04",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003472011257696344,
+            "rms_absolute_error": 0.00020345103339602604,
+            "rms_error_over_row_maximum": 0.0023023399968371073,
+            "maximum_error_over_row_maximum": 0.003929078292024611,
+            "angular_error_degrees": 0.22826117449785152
+          },
+          {
+            "id": "synthetic-corpus-05",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034675527158684744,
+            "rms_absolute_error": 0.00020000123038062956,
+            "rms_error_over_row_maximum": 0.002270784277389615,
+            "maximum_error_over_row_maximum": 0.003937007874015763,
+            "angular_error_degrees": 0.22438430507589566
+          },
+          {
+            "id": "synthetic-corpus-06",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003432341389299383,
+            "rms_absolute_error": 0.00020034427947414435,
+            "rms_error_over_row_maximum": 0.0022887867581806737,
+            "maximum_error_over_row_maximum": 0.003921198819354228,
+            "angular_error_degrees": 0.22476546277901838
+          },
+          {
+            "id": "synthetic-corpus-07",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034645892034365633,
+            "rms_absolute_error": 0.00018552920111184585,
+            "rms_error_over_row_maximum": 0.002082880039427687,
+            "maximum_error_over_row_maximum": 0.003889589160848239,
+            "angular_error_degrees": 0.2078644176806888
+          },
+          {
+            "id": "synthetic-corpus-08",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034645805502031557,
+            "rms_absolute_error": 0.0002011393538217626,
+            "rms_error_over_row_maximum": 0.0022764827180835486,
+            "maximum_error_over_row_maximum": 0.003921190755606635,
+            "angular_error_degrees": 0.22577583585921127
+          },
+          {
+            "id": "synthetic-corpus-09",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034728640411782474,
+            "rms_absolute_error": 0.00020055895567031235,
+            "rms_error_over_row_maximum": 0.002269030789918632,
+            "maximum_error_over_row_maximum": 0.003929036931957424,
+            "angular_error_degrees": 0.22491651449379224
+          },
+          {
+            "id": "synthetic-corpus-10",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034730819853272255,
+            "rms_absolute_error": 0.00019913200831057673,
+            "rms_error_over_row_maximum": 0.0022573158019287298,
+            "maximum_error_over_row_maximum": 0.003937007874015774,
+            "angular_error_degrees": 0.22295975817255576
+          },
+          {
+            "id": "synthetic-corpus-11",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003493515349279261,
+            "rms_absolute_error": 0.00019844987666358684,
+            "rms_error_over_row_maximum": 0.0022364256312289808,
+            "maximum_error_over_row_maximum": 0.003937007874015773,
+            "angular_error_degrees": 0.2225464009391979
+          },
+          {
+            "id": "synthetic-corpus-12",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003438173081931131,
+            "rms_absolute_error": 0.00019103812550432518,
+            "rms_error_over_row_maximum": 0.0021875530592115624,
+            "maximum_error_over_row_maximum": 0.003937007874015707,
+            "angular_error_degrees": 0.214416870848901
+          },
+          {
+            "id": "synthetic-corpus-13",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003466148545422931,
+            "rms_absolute_error": 0.00020186044969227186,
+            "rms_error_over_row_maximum": 0.002283641524513626,
+            "maximum_error_over_row_maximum": 0.0039212439883727,
+            "angular_error_degrees": 0.22651946254226588
+          },
+          {
+            "id": "synthetic-corpus-14",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.000344618333606269,
+            "rms_absolute_error": 0.00019933428972207897,
+            "rms_error_over_row_maximum": 0.0022726514029311833,
+            "maximum_error_over_row_maximum": 0.003929064790799734,
+            "angular_error_degrees": 0.22347347119713643
+          },
+          {
+            "id": "synthetic-corpus-15",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.000343453285731668,
+            "rms_absolute_error": 0.000200109932130846,
+            "rms_error_over_row_maximum": 0.002284647730352007,
+            "maximum_error_over_row_maximum": 0.003921193522846842,
+            "angular_error_degrees": 0.2244834613489165
+          },
+          {
+            "id": "synthetic-corpus-16",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003518246290251936,
+            "rms_absolute_error": 0.00020546426755982917,
+            "rms_error_over_row_maximum": 0.0022991978743875665,
+            "maximum_error_over_row_maximum": 0.003937007874015716,
+            "angular_error_degrees": 0.23065926569269382
+          },
+          {
+            "id": "synthetic-corpus-17",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003425959703021175,
+            "rms_absolute_error": 0.0001999812306462172,
+            "rms_error_over_row_maximum": 0.0022794634582587723,
+            "maximum_error_over_row_maximum": 0.003905041451774647,
+            "angular_error_degrees": 0.2245039415845508
+          },
+          {
+            "id": "synthetic-corpus-18",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003484140010917274,
+            "rms_absolute_error": 0.00019839383049470623,
+            "rms_error_over_row_maximum": 0.002223801027053236,
+            "maximum_error_over_row_maximum": 0.0039053805833351505,
+            "angular_error_degrees": 0.22174492166501114
+          },
+          {
+            "id": "synthetic-corpus-19",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034666900325008854,
+            "rms_absolute_error": 0.00019759582202849102,
+            "rms_error_over_row_maximum": 0.0022440319148971303,
+            "maximum_error_over_row_maximum": 0.003937007874015708,
+            "angular_error_degrees": 0.221639160485427
+          },
+          {
+            "id": "synthetic-corpus-20",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034799048398423404,
+            "rms_absolute_error": 0.00020056577597078208,
+            "rms_error_over_row_maximum": 0.0022691110119287708,
+            "maximum_error_over_row_maximum": 0.003937007874015751,
+            "angular_error_degrees": 0.22486655145169457
+          },
+          {
+            "id": "synthetic-corpus-21",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00033737792391476396,
+            "rms_absolute_error": 0.00019620710094566803,
+            "rms_error_over_row_maximum": 0.0022896249179482474,
+            "maximum_error_over_row_maximum": 0.003937007874015716,
+            "angular_error_degrees": 0.21984234867006724
+          },
+          {
+            "id": "synthetic-corpus-22",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.00034687497953730245,
+            "rms_absolute_error": 0.00019999909745459663,
+            "rms_error_over_row_maximum": 0.0022699764120349673,
+            "maximum_error_over_row_maximum": 0.003937007874015741,
+            "angular_error_degrees": 0.22427301819592463
+          },
+          {
+            "id": "synthetic-corpus-23",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.0003488996894810137,
+            "rms_absolute_error": 0.00020469803897123448,
+            "rms_error_over_row_maximum": 0.0023098266221563556,
+            "maximum_error_over_row_maximum": 0.003937007874015741,
+            "angular_error_degrees": 0.22979190230024896
+          }
+        ],
+        "queries": [
+          {
+            "query_id": "synthetic-query-00",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-00",
+              "synthetic-corpus-03",
+              "synthetic-corpus-05",
+              "synthetic-corpus-10",
+              "synthetic-corpus-22"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-00",
+              "synthetic-corpus-03",
+              "synthetic-corpus-05",
+              "synthetic-corpus-10",
+              "synthetic-corpus-22"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0005196263174195997,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-01",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-02",
+              "synthetic-corpus-22",
+              "synthetic-corpus-23",
+              "synthetic-corpus-06",
+              "synthetic-corpus-20"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-02",
+              "synthetic-corpus-22",
+              "synthetic-corpus-23",
+              "synthetic-corpus-06",
+              "synthetic-corpus-20"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0006332760464360793,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-02",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-04",
+              "synthetic-corpus-12",
+              "synthetic-corpus-01",
+              "synthetic-corpus-02",
+              "synthetic-corpus-21"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-04",
+              "synthetic-corpus-12",
+              "synthetic-corpus-01",
+              "synthetic-corpus-02",
+              "synthetic-corpus-21"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0006332355221847739,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-03",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-06",
+              "synthetic-corpus-02",
+              "synthetic-corpus-22",
+              "synthetic-corpus-09",
+              "synthetic-corpus-14"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-06",
+              "synthetic-corpus-02",
+              "synthetic-corpus-22",
+              "synthetic-corpus-09",
+              "synthetic-corpus-14"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.00043797839085497545,
+            "mean_absolute_rank_displacement": 0.08333333333333333,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-04",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-08",
+              "synthetic-corpus-19",
+              "synthetic-corpus-10",
+              "synthetic-corpus-17",
+              "synthetic-corpus-12"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-08",
+              "synthetic-corpus-19",
+              "synthetic-corpus-10",
+              "synthetic-corpus-17",
+              "synthetic-corpus-12"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.000366669499004265,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-05",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-10",
+              "synthetic-corpus-08",
+              "synthetic-corpus-18",
+              "synthetic-corpus-14",
+              "synthetic-corpus-00"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-10",
+              "synthetic-corpus-08",
+              "synthetic-corpus-18",
+              "synthetic-corpus-14",
+              "synthetic-corpus-00"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.000404483786486224,
+            "mean_absolute_rank_displacement": 0.08333333333333333,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-06",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-12",
+              "synthetic-corpus-04",
+              "synthetic-corpus-17",
+              "synthetic-corpus-16",
+              "synthetic-corpus-01"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-12",
+              "synthetic-corpus-04",
+              "synthetic-corpus-17",
+              "synthetic-corpus-16",
+              "synthetic-corpus-01"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0004157349661463722,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-07",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-14",
+              "synthetic-corpus-17",
+              "synthetic-corpus-10",
+              "synthetic-corpus-15",
+              "synthetic-corpus-06"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-14",
+              "synthetic-corpus-17",
+              "synthetic-corpus-10",
+              "synthetic-corpus-15",
+              "synthetic-corpus-06"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0004093110878652072,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-08",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-16",
+              "synthetic-corpus-21",
+              "synthetic-corpus-12",
+              "synthetic-corpus-22",
+              "synthetic-corpus-20"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-16",
+              "synthetic-corpus-21",
+              "synthetic-corpus-12",
+              "synthetic-corpus-22",
+              "synthetic-corpus-20"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0017691014601261355,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-09",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-18",
+              "synthetic-corpus-17",
+              "synthetic-corpus-10",
+              "synthetic-corpus-03",
+              "synthetic-corpus-07"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-18",
+              "synthetic-corpus-17",
+              "synthetic-corpus-10",
+              "synthetic-corpus-03",
+              "synthetic-corpus-07"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.00038971177270134827,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-10",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-20",
+              "synthetic-corpus-21",
+              "synthetic-corpus-19",
+              "synthetic-corpus-22",
+              "synthetic-corpus-02"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-20",
+              "synthetic-corpus-21",
+              "synthetic-corpus-19",
+              "synthetic-corpus-22",
+              "synthetic-corpus-02"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0004556323188811967,
+            "mean_absolute_rank_displacement": 0.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          },
+          {
+            "query_id": "synthetic-query-11",
+            "status": "SCORED",
+            "effective_k": 5,
+            "original_top_ids": [
+              "synthetic-corpus-22",
+              "synthetic-corpus-21",
+              "synthetic-corpus-23",
+              "synthetic-corpus-02",
+              "synthetic-corpus-13"
+            ],
+            "quantized_top_ids": [
+              "synthetic-corpus-22",
+              "synthetic-corpus-21",
+              "synthetic-corpus-23",
+              "synthetic-corpus-02",
+              "synthetic-corpus-13"
+            ],
+            "top1_agreement": true,
+            "ordered_top_k_agreement": true,
+            "top_k_overlap_recall": 1.0,
+            "maximum_cosine_score_error": 0.0003632447678436068,
+            "mean_absolute_rank_displacement": 0.08333333333333333,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 10,
+            "order_flip_count": 0,
+            "near_tie_flip_count": 0,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": []
+          }
+        ],
+        "limits": {
+          "synthetic_or_real_input_authority_verified": false,
+          "serving_admission": "NOT_EVALUATED",
+          "statistically_independent_trials": false,
+          "model_inference_calls": 0,
+          "training_updates": 0,
+          "files_written_by_audit": 0,
+          "semantic_understanding_established": false
+        },
+        "audit_sha256": "7f1997f20649399861140b7fd7c884cb4943b3245bc2c34e6e793bbdf7080459"
+      },
+      "adversarial_near_tie_384": {
+        "schema": "atlas.retrieval-quantization-audit/v1",
+        "codec": "symmetric-int8-row-maxabs-f64-le/v1",
+        "status": "COMPLETED",
+        "input_sha256": "3383f5ded1c87c930c4f45f15137cf6a4a728967eb76b4ab80b19e3239e4f5e2",
+        "codec_payload_sha256": "45bf52af3155caa2b0172db7799e5eb7cfc0760951a1fbf5f0708f74506e9ef9",
+        "configuration": {
+          "top_k": 1,
+          "near_tie_tolerance": 0.002,
+          "dimensions": 384,
+          "expected_dimension": 384,
+          "query_quantization": false
+        },
+        "counts": {
+          "corpus_rows": 2,
+          "query_rows": 1,
+          "zero_corpus_rows": 0,
+          "scored_queries": 1,
+          "held_queries": 0
+        },
+        "numeric": {
+          "reference_math": "UNQUANTIZED_BINARY64_COSINE_WITH_STABLE_ID_TIES",
+          "maximum_absolute_error": 0.002,
+          "global_rms_absolute_error": 8.068715304598787e-05,
+          "maximum_error_over_row_maximum": 0.002,
+          "ideal_nearest_rounding_normalized_error_bound": 0.003937007874015748,
+          "bound_scope": "IDEAL_REAL_ARITHMETIC_ONLY; binary64 subnormal reconstruction can exceed it"
+        },
+        "ranking": {
+          "top1_agreement_count": 0,
+          "ordered_top_k_agreement_count": 0,
+          "mean_top_k_overlap_recall": 0.0,
+          "order_flip_count": 1,
+          "near_tie_flip_count": 1,
+          "outside_near_tie_flip_count": 0
+        },
+        "payload": {
+          "int8_code_bytes": 768,
+          "binary64_row_header_bytes": 16,
+          "actual_codec_payload_bytes": 784,
+          "hypothetical_float32_vector_payload_bytes": 3072,
+          "hypothetical_float64_vector_payload_bytes": 6144,
+          "ratio_to_hypothetical_float32_payload": 0.2552083333333333,
+          "excludes": [
+            "IDs",
+            "dimensions",
+            "index structures",
+            "Python object overhead",
+            "alignment",
+            "query vectors"
+          ],
+          "process_memory_measured": false
+        },
+        "rows": [
+          {
+            "id": "a-near",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.001,
+            "rms_absolute_error": 5.103103630798288e-05,
+            "rms_error_over_row_maximum": 5.103103630798288e-05,
+            "maximum_error_over_row_maximum": 0.001,
+            "angular_error_degrees": 0.057295760416576934
+          },
+          {
+            "id": "b-near",
+            "zero_vector": false,
+            "maximum_absolute_error": 0.002,
+            "rms_absolute_error": 0.00010206207261596576,
+            "rms_error_over_row_maximum": 0.00010206207261596576,
+            "maximum_error_over_row_maximum": 0.002,
+            "angular_error_degrees": 0.11459140623312136
+          }
+        ],
+        "queries": [
+          {
+            "query_id": "near-query",
+            "status": "SCORED",
+            "effective_k": 1,
+            "original_top_ids": [
+              "b-near"
+            ],
+            "quantized_top_ids": [
+              "a-near"
+            ],
+            "top1_agreement": false,
+            "ordered_top_k_agreement": false,
+            "top_k_overlap_recall": 0.0,
+            "maximum_cosine_score_error": 0.0019999960000120004,
+            "mean_absolute_rank_displacement": 1.0,
+            "pair_scope": "UNION_OF_ORIGINAL_AND_RECONSTRUCTED_TOP_K",
+            "pair_comparisons": 1,
+            "order_flip_count": 1,
+            "near_tie_flip_count": 1,
+            "outside_near_tie_flip_count": 0,
+            "original_exact_score_tie_flip_count": 0,
+            "order_flips": [
+              {
+                "ids": [
+                  "a-near",
+                  "b-near"
+                ],
+                "original_score_gap": 0.0009999965000116254,
+                "near_tie": true,
+                "original_exact_score_tie": false
+              }
+            ]
+          }
+        ],
+        "limits": {
+          "synthetic_or_real_input_authority_verified": false,
+          "serving_admission": "NOT_EVALUATED",
+          "statistically_independent_trials": false,
+          "model_inference_calls": 0,
+          "training_updates": 0,
+          "files_written_by_audit": 0,
+          "semantic_understanding_established": false
+        },
+        "audit_sha256": "607843ec7afd33620dbbc535a982c5a6b1c164baf9049db15103e4eebd4c3f66"
+      }
+    },
+    "feature_mapping": {
+      "F025": "Original per-row symmetric int8 diagnostic primitive only; no served codec adoption.",
+      "F032": "Unquantized-versus-reconstructed full-corpus ranking audit only; no ANN candidate retrieval.",
+      "F036": "Explicit vector/header payload accounting and rank-loss report only; no production latency/memory frontier."
+    },
+    "upstream_inspiration": {
+      "project": "Sentence Transformers",
+      "commit_sha": "f1aeaea05afc91dcc47179e00f9f4f313fab7e9a",
+      "source_url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/util/quantization.py",
+      "root_code_license": "Apache-2.0",
+      "original_implementation": true,
+      "difference": "Upstream inspected helper uses per-dimension calibration ranges; this audit uses independent per-row maximum-absolute-value headers."
+    },
+    "held_out_definition": "The frozen queries are not inputs to any corpus-row scale; no shared calibration is fitted. Paired synthetic queries are not independent samples or evidence of semantic generalization.",
+    "interpretation": "A pure audit can pass its software tests while exposing genuine ranking loss. The adversarial panel deliberately retains a top-1 failure.",
+    "current_bge_serving_changed": false,
+    "model_calls": 0,
+    "weights_changed": false,
+    "training_updates": 0,
+    "new_gf9_sphere_batch": false,
+    "source_authorization_or_host_integration_verified": false,
+    "reproduction": {
+      "working_directory": "candidate/packages/atlas-work-learning",
+      "environment": {
+        "PYTHONPATH": "python"
+      },
+      "python": "import json, runpy\nfrom atlas_work_learning.retrieval_audits import audit_symmetric_int8\nfixtures = runpy.run_path(\"tests/test_retrieval_audits.py\", run_name=\"frozen_quantization_fixture\")\nfor factory, settings in [(\"frozen_synthetic_384_fixture\", {\"top_k\":5,\"near_tie_tolerance\":1e-5}), (\"frozen_near_tie_384_fixture\", {\"top_k\":1,\"near_tie_tolerance\":.002})]:\n    corpus, queries = fixtures[factory]()\n    print(json.dumps(audit_symmetric_int8(corpus, queries, expected_dimension=384, **settings), sort_keys=True, allow_nan=False))\n"
+    },
+    "next_falsifier": "With separately authorized frozen real embeddings and independently labelled query families, test whether the measured near-tie rank losses stay below a predeclared quality floor; do not adopt compression on these fixtures alone."
+  }
+}

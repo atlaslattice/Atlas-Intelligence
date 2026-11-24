@@ -1,0 +1,2096 @@
+{
+  "schema": "atlas.oss.sources/v1",
+  "baselineCommit": "76e6eeefeafbcc1cc4c6f94c00afcb9700fc19ba",
+  "reviewDate": "2026-11-24",
+  "scope": "SOURCE_REFERENCE_REVIEW_ONLY",
+  "counts": {
+    "projects": 29,
+    "pinned_source_and_license_inspected": 28,
+    "source_holds": 1
+  },
+  "licenseInterpretation": "Verified means the named license text or component map was inspected at the observed commit, not that all files, dependencies, model weights, datasets or intended uses are cleared. Exact source pins are review snapshots, not asserted software releases.",
+  "sourceReusePolicy": "Reference patterns informed original proposals and local primitives. No upstream repository code was installed or adopted by this catalog; peer source composition execution is recorded separately.",
+  "sourceInputReceipts": [
+    {
+      "scope": "PREDECESSOR_RESEARCH_ARTIFACT_DIGEST",
+      "path": "research/neural_sources.json",
+      "sha256": "71ea99e270c7ab46a4b3ec8c2fbd16fceae9588e01d8c235ec4a7abbabecd3ac",
+      "preserved_unchanged": true
+    },
+    {
+      "scope": "PREDECESSOR_RESEARCH_ARTIFACT_DIGEST",
+      "path": "research/neuromorphic_sources.json",
+      "sha256": "91037d8849b4d2503bbcc33207ebc59324353f93b38e5a023a7242811001ffc1",
+      "preserved_unchanged": true
+    },
+    {
+      "scope": "PREDECESSOR_RESEARCH_ARTIFACT_DIGEST",
+      "path": "research/serving_sources.json",
+      "sha256": "f9e495df7f80f0f444e44ebf17e31644126b5df75d03d31cb08930acaed901e1",
+      "preserved_unchanged": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "NEURAL-ST",
+      "project": "Sentence Transformers",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/huggingface/sentence-transformers",
+      "docs_url": "https://sbert.net/docs/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "f1aeaea05afc91dcc47179e00f9f4f313fab7e9a",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "sentence_transformers/multi_vector_encoder/model.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/multi_vector_encoder/model.py",
+          "inspected_line_ranges": [
+            [
+              79,
+              125
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Token-level multi-vector representation and MaxSim modes."
+        },
+        {
+          "path": "sentence_transformers/multi_vector_encoder/scoring/colbert.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/multi_vector_encoder/scoring/colbert.py",
+          "inspected_line_ranges": [
+            [
+              26,
+              56
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "MaxSim distillation and length-normalization contract."
+        },
+        {
+          "path": "sentence_transformers/base/modules/router.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/base/modules/router.py",
+          "inspected_line_ranges": [
+            [
+              460,
+              505
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Task/modality keyed route resolution and module execution."
+        },
+        {
+          "path": "sentence_transformers/sentence_transformer/modules/weighted_layer_pooling.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/sentence_transformer/modules/weighted_layer_pooling.py",
+          "inspected_line_ranges": [
+            [
+              33,
+              45
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Layer-weighted token pooling."
+        },
+        {
+          "path": "sentence_transformers/multi_vector_encoder/modules/token_pooling.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/multi_vector_encoder/modules/token_pooling.py",
+          "inspected_line_ranges": [
+            [
+              279,
+              379
+            ],
+            [
+              424,
+              432
+            ],
+            [
+              482,
+              525
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Ward-style document token compression with finite factor and token budget."
+        },
+        {
+          "path": "sentence_transformers/sentence_transformer/losses/matryoshka.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/sentence_transformer/losses/matryoshka.py",
+          "inspected_line_ranges": [
+            [
+              15,
+              27
+            ],
+            [
+              89,
+              105
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Prefix-dimension normalized loss composition."
+        },
+        {
+          "path": "sentence_transformers/sentence_transformer/losses/matryoshka_2d.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/sentence_transformer/losses/matryoshka_2d.py",
+          "inspected_line_ranges": [
+            [
+              14,
+              39
+            ],
+            [
+              121,
+              139
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Depth and dimension adaptive loss composition."
+        },
+        {
+          "path": "sentence_transformers/util/hard_negatives.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/util/hard_negatives.py",
+          "inspected_line_ranges": [
+            [
+              26,
+              50
+            ],
+            [
+              73,
+              106
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Rank windows and absolute/relative margin negative-candidate selection."
+        },
+        {
+          "path": "sentence_transformers/sentence_transformer/losses/gist_embed.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/sentence_transformer/losses/gist_embed.py",
+          "inspected_line_ranges": [
+            [
+              193,
+              248
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Teacher-guided false-negative masking preserves the positive pair."
+        },
+        {
+          "path": "sentence_transformers/sentence_transformer/losses/cached_multiple_negatives_ranking.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/sentence_transformer/losses/cached_multiple_negatives_ranking.py",
+          "inspected_line_ranges": [
+            [
+              26,
+              40
+            ],
+            [
+              61,
+              86
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Cached contrastive mini-batch controls; no execution performed."
+        },
+        {
+          "path": "sentence_transformers/sentence_transformer/losses/margin_mse.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/sentence_transformer/losses/margin_mse.py",
+          "inspected_line_ranges": [
+            [
+              174,
+              221
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Relative teacher-score margins used as distillation targets."
+        },
+        {
+          "path": "sentence_transformers/util/quantization.py",
+          "url": "https://github.com/huggingface/sentence-transformers/blob/f1aeaea05afc91dcc47179e00f9f4f313fab7e9a/sentence_transformers/util/quantization.py",
+          "inspected_line_ranges": [
+            [
+              24,
+              45
+            ],
+            [
+              434,
+              469
+            ],
+            [
+              469,
+              565
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Scalar range calibration, binary packing and rescore contracts."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F001",
+        "F005",
+        "F006",
+        "F007",
+        "F008",
+        "F009",
+        "F013",
+        "F014",
+        "F015",
+        "F016",
+        "F017",
+        "F024",
+        "F025",
+        "F026",
+        "F032",
+        "F036"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NEURAL-HF-TRANSFORMERS",
+      "project": "Transformers",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/huggingface/transformers",
+      "docs_url": "https://huggingface.co/docs/transformers/main_classes/data_collator",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/huggingface/transformers/blob/fa9c04ea60c5e1d2ecc38064442973fa1ddccc72/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "fa9c04ea60c5e1d2ecc38064442973fa1ddccc72",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "src/transformers/data/data_collator.py",
+          "url": "https://github.com/huggingface/transformers/blob/fa9c04ea60c5e1d2ecc38064442973fa1ddccc72/src/transformers/data/data_collator.py",
+          "inspected_line_ranges": [
+            [
+              624,
+              650
+            ],
+            [
+              804,
+              837
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Seedable whole-word masking with special-token protection and ignored non-target labels."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F023"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NEURAL-HF-DATASETS",
+      "project": "Datasets",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/huggingface/datasets",
+      "docs_url": "https://huggingface.co/docs/datasets/stream",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/huggingface/datasets/blob/39fd698d619816099ffa8eb07b5c79b0f4f5f299/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "39fd698d619816099ffa8eb07b5c79b0f4f5f299",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "src/datasets/iterable_dataset.py",
+          "url": "https://github.com/huggingface/datasets/blob/39fd698d619816099ffa8eb07b5c79b0f4f5f299/src/datasets/iterable_dataset.py",
+          "inspected_line_ranges": [
+            [
+              300,
+              319
+            ],
+            [
+              1258,
+              1278
+            ],
+            [
+              2025,
+              2074
+            ],
+            [
+              2766,
+              2835
+            ],
+            [
+              3989,
+              4038
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Interleaving, buffered shuffle and iterator state; buffer-content replay warning is explicit."
+        },
+        {
+          "path": "src/datasets/fingerprint.py",
+          "url": "https://github.com/huggingface/datasets/blob/39fd698d619816099ffa8eb07b5c79b0f4f5f299/src/datasets/fingerprint.py",
+          "inspected_line_ranges": [
+            [
+              205,
+              216
+            ],
+            [
+              235,
+              279
+            ],
+            [
+              378,
+              397
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Transform/argument cache fingerprints use xxhash; this is not a cryptographic provenance guarantee."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F020",
+        "F021",
+        "F022",
+        "F024"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NEURAL-HF-PEFT",
+      "project": "PEFT",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/huggingface/peft",
+      "docs_url": "https://huggingface.co/docs/peft/package_reference/lora",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/huggingface/peft/blob/99fadba7425dbf09bb84e3bf0686bed0e8d253db/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "99fadba7425dbf09bb84e3bf0686bed0e8d253db",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "src/peft/tuners/lora/layer.py",
+          "url": "https://github.com/huggingface/peft/blob/99fadba7425dbf09bb84e3bf0686bed0e8d253db/src/peft/tuners/lora/layer.py",
+          "inspected_line_ranges": [
+            [
+              223,
+              291
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Adapter-specific A/B factors and rank-stabilized scaling."
+        },
+        {
+          "path": "src/peft/tuners/lora/config.py",
+          "url": "https://github.com/huggingface/peft/blob/99fadba7425dbf09bb84e3bf0686bed0e8d253db/src/peft/tuners/lora/config.py",
+          "inspected_line_ranges": [
+            [
+              529,
+              610
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Target modules, rank and alpha patterns, initialization and separate adapter configuration."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F011",
+        "F018",
+        "F019"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NEURAL-FLAG",
+      "project": "FlagEmbedding",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/FlagOpen/FlagEmbedding",
+      "docs_url": "https://bge-model.com/bge/bge_m3",
+      "license": "MIT",
+      "license_url": "https://github.com/FlagOpen/FlagEmbedding/blob/897baa67c0ffddbfccf4e6776ff55310d67809d4/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "897baa67c0ffddbfccf4e6776ff55310d67809d4",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "FlagEmbedding/finetune/embedder/encoder_only/m3/modeling.py",
+          "url": "https://github.com/FlagOpen/FlagEmbedding/blob/897baa67c0ffddbfccf4e6776ff55310d67809d4/FlagEmbedding/finetune/embedder/encoder_only/m3/modeling.py",
+          "inspected_line_ranges": [
+            [
+              116,
+              171
+            ],
+            [
+              173,
+              237
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Sparse token weights, masked token vectors and dense/sparse/late-interaction score composition."
+        },
+        {
+          "path": "FlagEmbedding/inference/reranker/encoder_only/base.py",
+          "url": "https://github.com/FlagOpen/FlagEmbedding/blob/897baa67c0ffddbfccf4e6776ff55310d67809d4/FlagEmbedding/inference/reranker/encoder_only/base.py",
+          "inspected_line_ranges": [
+            [
+              15,
+              50
+            ],
+            [
+              163,
+              200
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Query-passage cross-encoder scores with optional sigmoid; sigmoid output is not evidence of calibration."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F012"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NEURAL-FAISS",
+      "project": "FAISS",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/facebookresearch/faiss",
+      "docs_url": "https://github.com/facebookresearch/faiss/wiki/Guidelines-to-choose-an-index",
+      "license": "MIT",
+      "license_url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "6074b69e98a736f5be370c69043b346370a1b3be",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "faiss/IndexIVF.h",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/IndexIVF.h",
+          "inspected_line_ranges": [
+            [
+              96,
+              117
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Coarse-index query budgets nprobe/max_codes."
+        },
+        {
+          "path": "faiss/IndexIVFPQ.h",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/IndexIVFPQ.h",
+          "inspected_line_ranges": [
+            [
+              23,
+              59
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Residual product-quantizer search/table controls."
+        },
+        {
+          "path": "faiss/IndexIVFPQ.cpp",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/IndexIVFPQ.cpp",
+          "inspected_line_ranges": [
+            [
+              76,
+              113
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Product quantizer training and residual encoding path."
+        },
+        {
+          "path": "faiss/IndexHNSW.h",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/IndexHNSW.h",
+          "inspected_line_ranges": [
+            [
+              30,
+              80
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Graph-backed index storage/search interface."
+        },
+        {
+          "path": "faiss/IndexHNSW.cpp",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/IndexHNSW.cpp",
+          "inspected_line_ranges": [
+            [
+              431,
+              450
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Explicit efSearch per-query budget."
+        },
+        {
+          "path": "faiss/VectorTransform.h",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/VectorTransform.h",
+          "inspected_line_ranges": [
+            [
+              180,
+              209
+            ],
+            [
+              249,
+              286
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "PCA whitening/projection and OPQ transform declarations."
+        },
+        {
+          "path": "faiss/VectorTransform.cpp",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/VectorTransform.cpp",
+          "inspected_line_ranges": [
+            [
+              804,
+              821
+            ],
+            [
+              1005,
+              1014
+            ],
+            [
+              1394,
+              1414
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "PCA fitting, epsilon-stabilized eigenvalue scaling and OPQ training."
+        },
+        {
+          "path": "faiss/impl/IDSelector.h",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/impl/IDSelector.h",
+          "inspected_line_ranges": [
+            [
+              124,
+              188
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Stable-ID membership selector, bitmap and boolean composition."
+        },
+        {
+          "path": "faiss/invlists/OnDiskInvertedLists.h",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/invlists/OnDiskInvertedLists.h",
+          "inspected_line_ranges": [
+            [
+              37,
+              79
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Mapped inverted lists and read-only flag; writes remain separate."
+        },
+        {
+          "path": "faiss/IndexIDMap.cpp",
+          "url": "https://github.com/facebookresearch/faiss/blob/6074b69e98a736f5be370c69043b346370a1b3be/faiss/IndexIDMap.cpp",
+          "inspected_line_ranges": [
+            [
+              127,
+              137
+            ],
+            [
+              334,
+              352
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "External ID mapping retained around internal index rows."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F010",
+        "F027",
+        "F028",
+        "F029",
+        "F030",
+        "F031",
+        "F032",
+        "F033",
+        "F034",
+        "F035",
+        "F036"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NEURAL-PYG",
+      "project": "PyTorch Geometric",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/pyg-team/pytorch_geometric",
+      "docs_url": "https://pytorch-geometric.readthedocs.io/en/stable/tutorial/heterogeneous.html",
+      "license": "MIT",
+      "license_url": "https://github.com/pyg-team/pytorch_geometric/blob/d1f2f8642387b6e0563d6aee227c39130746c738/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "d1f2f8642387b6e0563d6aee227c39130746c738",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "torch_geometric/nn/conv/hetero_conv.py",
+          "url": "https://github.com/pyg-team/pytorch_geometric/blob/d1f2f8642387b6e0563d6aee227c39130746c738/torch_geometric/nn/conv/hetero_conv.py",
+          "inspected_line_ranges": [
+            [
+              13,
+              39
+            ],
+            [
+              117,
+              169
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Relation-keyed message modules, edge-level arguments and aggregation."
+        },
+        {
+          "path": "torch_geometric/transforms/random_link_split.py",
+          "url": "https://github.com/pyg-team/pytorch_geometric/blob/d1f2f8642387b6e0563d6aee227c39130746c738/torch_geometric/transforms/random_link_split.py",
+          "inspected_line_ranges": [
+            [
+              17,
+              82
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Disjoint supervision and inverse-relation split controls."
+        },
+        {
+          "path": "torch_geometric/loader/link_neighbor_loader.py",
+          "url": "https://github.com/pyg-team/pytorch_geometric/blob/d1f2f8642387b6e0563d6aee227c39130746c738/torch_geometric/loader/link_neighbor_loader.py",
+          "inspected_line_ranges": [
+            [
+              10,
+              58
+            ],
+            [
+              80,
+              180
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Typed fanout, temporal sampling and warning that sampling alone does not remove supervision-edge leakage."
+        },
+        {
+          "path": "torch_geometric/explain/algorithm/gnn_explainer.py",
+          "url": "https://github.com/pyg-team/pytorch_geometric/blob/d1f2f8642387b6e0563d6aee227c39130746c738/torch_geometric/explain/algorithm/gnn_explainer.py",
+          "inspected_line_ranges": [
+            [
+              24,
+              53
+            ],
+            [
+              86,
+              115
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Edge-mask explanation interface; explanation is model sensitivity, not a causal certificate."
+        },
+        {
+          "path": "torch_geometric/metrics/link_pred.py",
+          "url": "https://github.com/pyg-team/pytorch_geometric/blob/d1f2f8642387b6e0563d6aee227c39130746c738/torch_geometric/metrics/link_pred.py",
+          "inspected_line_ranges": [
+            [
+              289,
+              309
+            ],
+            [
+              522,
+              545
+            ],
+            [
+              619,
+              690
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Link-ranking metrics including coverage and category diversity."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F012",
+        "F037",
+        "F039",
+        "F040",
+        "F041",
+        "F042",
+        "F044",
+        "F045",
+        "F046",
+        "F048"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NEURAL-DGL",
+      "project": "DGL",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/dmlc/dgl",
+      "docs_url": "https://www.dgl.ai/dgl_docs/api/python/dgl.sampling.html",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/dmlc/dgl/blob/3d16000b4170fa741ed9e9667f22ba84d3493026/LICENSE",
+      "license_verified": true,
+      "license_scope": "Observed root repository license at pinned commit. Model weights, datasets, dependencies and per-file third-party material require separate eligibility review; no license grant is inferred for them.",
+      "commit_sha": "3d16000b4170fa741ed9e9667f22ba84d3493026",
+      "commit_observation": "GitHub branches API, observed 2026-11-24; branch head is pinned only for this source review, not asserted to be a release.",
+      "inspected_code_files": [
+        {
+          "path": "python/dgl/dataloading/negative_sampler.py",
+          "url": "https://github.com/dmlc/dgl/blob/3d16000b4170fa741ed9e9667f22ba84d3493026/python/dgl/dataloading/negative_sampler.py",
+          "inspected_line_ranges": [
+            [
+              79,
+              127
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Typed complement sampling can return fewer pairs on dense graphs; nonedge does not prove semantic falsehood."
+        },
+        {
+          "path": "python/dgl/nn/pytorch/conv/hgtconv.py",
+          "url": "https://github.com/dmlc/dgl/blob/3d16000b4170fa741ed9e9667f22ba84d3493026/python/dgl/nn/pytorch/conv/hgtconv.py",
+          "inspected_line_ranges": [
+            [
+              13,
+              40
+            ],
+            [
+              95,
+              120
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Type-specific attention and relation-message parameters."
+        },
+        {
+          "path": "python/dgl/sampling/randomwalks.py",
+          "url": "https://github.com/dmlc/dgl/blob/3d16000b4170fa741ed9e9667f22ba84d3493026/python/dgl/sampling/randomwalks.py",
+          "inspected_line_ranges": [
+            [
+              11,
+              83
+            ]
+          ],
+          "inspection": "Pinned source retrieved; named declarations and listed implementation sections inspected; upstream code not executed.",
+          "finding": "Canonical relation metapaths, nonnegative transition weights and restart controls."
+        }
+      ],
+      "execution": "SOURCE_REVIEW_ONLY",
+      "supports_feature_ids": [
+        "F038",
+        "F039",
+        "F043",
+        "F045",
+        "F047"
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance."
+    },
+    {
+      "id": "NM01",
+      "project": "snnTorch",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/jeshraghian/snntorch",
+      "docs_url": "https://snntorch.readthedocs.io/en/latest/",
+      "license": "MIT",
+      "license_url": "https://github.com/jeshraghian/snntorch/blob/74cc79b411a38378a32e135c52bfdbec593b5cd8/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "4d367ba8318bd33d67d04f3dc06e7995133522c6",
+      "commit_sha": "74cc79b411a38378a32e135c52bfdbec593b5cd8",
+      "observed_branch": "master",
+      "inspected_code_files": [
+        {
+          "path": "snntorch/_neurons/leaky.py",
+          "url": "https://github.com/jeshraghian/snntorch/blob/74cc79b411a38378a32e135c52bfdbec593b5cd8/snntorch/_neurons/leaky.py",
+          "git_blob_sha": "e0e8437ea5c3f7c897278e4a1b0bd1677d6c51b3",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "snntorch/spikegen.py",
+          "url": "https://github.com/jeshraghian/snntorch/blob/74cc79b411a38378a32e135c52bfdbec593b5cd8/snntorch/spikegen.py",
+          "git_blob_sha": "29b0cd4bd7d2f4f65c1d75c853f7c8be1fea898c",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "The code license is MIT; the repository separately labels its documentation CC BY-SA 3.0. Inspected reset timing, explicit membrane state, and rate/latency/delta encoders.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F050",
+        "F052",
+        "F057",
+        "F060",
+        "F061",
+        "F062",
+        "F063",
+        "F071",
+        "F080",
+        "F093"
+      ]
+    },
+    {
+      "id": "NM02",
+      "project": "Norse",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/norse/norse",
+      "docs_url": "https://norse.github.io/norse/",
+      "license": "LGPL-3.0 (version 3 text; later-version option not asserted)",
+      "license_url": "https://github.com/norse/norse/blob/e4a273b05aee28ad599141ad79baf13d4ed090a5/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "84337b4c5819b141373f8a5140250f29aed36862",
+      "commit_sha": "e4a273b05aee28ad599141ad79baf13d4ed090a5",
+      "observed_branch": "main",
+      "inspected_code_files": [
+        {
+          "path": "norse/torch/functional/lif.py",
+          "url": "https://github.com/norse/norse/blob/e4a273b05aee28ad599141ad79baf13d4ed090a5/norse/torch/functional/lif.py",
+          "git_blob_sha": "35fe9f949791a9669bd66d1e35228c6a452120eb",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "norse/torch/functional/stdp.py",
+          "url": "https://github.com/norse/norse/blob/e4a273b05aee28ad599141ad79baf13d4ed090a5/norse/torch/functional/stdp.py",
+          "git_blob_sha": "778b464c47d74490501f19e270ac6e265b9948d4",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Inspected dense and sparse Euler LIF, explicit state tuples, and bounded STDP traces. Reference only; no package linking or code copying.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F051",
+        "F053",
+        "F056",
+        "F059",
+        "F060",
+        "F069",
+        "F070",
+        "F072",
+        "F073",
+        "F074",
+        "F075",
+        "F076",
+        "F087",
+        "F092",
+        "F093"
+      ]
+    },
+    {
+      "id": "NM03",
+      "project": "SpikingJelly",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/fangwei123456/spikingjelly",
+      "docs_url": "https://spikingjelly.readthedocs.io/zh-cn/latest/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/fangwei123456/spikingjelly/blob/ea10208738a48d905f78589040593d886bacb067/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "commit_sha": "ea10208738a48d905f78589040593d886bacb067",
+      "observed_branch": "master",
+      "inspected_code_files": [
+        {
+          "path": "spikingjelly/activation_based/neuron/lif.py",
+          "url": "https://github.com/fangwei123456/spikingjelly/blob/ea10208738a48d905f78589040593d886bacb067/spikingjelly/activation_based/neuron/lif.py",
+          "git_blob_sha": "dbe7928fa00a349f82b2b0787d707203cbec2f5e",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "spikingjelly/activation_based/base.py",
+          "url": "https://github.com/fangwei123456/spikingjelly/blob/ea10208738a48d905f78589040593d886bacb067/spikingjelly/activation_based/base.py",
+          "git_blob_sha": "ef91df1817919b7ab5b5218c89ef50cdc6416560",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "spikingjelly/activation_based/encoding.py",
+          "url": "https://github.com/fangwei123456/spikingjelly/blob/ea10208738a48d905f78589040593d886bacb067/spikingjelly/activation_based/encoding.py",
+          "git_blob_sha": "0a1e26fc65d2b296dc66aaaefe2c9ae8c08d899f",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Inspected the current split neuron/lif.py path, functional memory/state APIs, and encoders. Root license does not clear every third-party file or dependency; no code vendored.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F052",
+        "F053",
+        "F060",
+        "F062",
+        "F063",
+        "F078",
+        "F079",
+        "F080",
+        "F088"
+      ]
+    },
+    {
+      "id": "NM04",
+      "project": "Lava",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/lava-nc/lava",
+      "docs_url": "https://lava-nc.org/",
+      "license": "BSD-3-Clause for inspected proc files; LGPL-2.1-or-later for compiler/runtime",
+      "license_url": "https://github.com/lava-nc/lava/blob/646fa535764c3b0bd1bf24b956aaf64561bf97f6/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "372dabcd4e4d9743d5de24df1e56a82120dfc037",
+      "commit_sha": "646fa535764c3b0bd1bf24b956aaf64561bf97f6",
+      "observed_branch": "main",
+      "inspected_code_files": [
+        {
+          "path": "src/lava/proc/lif/models.py",
+          "url": "https://github.com/lava-nc/lava/blob/646fa535764c3b0bd1bf24b956aaf64561bf97f6/src/lava/proc/lif/models.py",
+          "git_blob_sha": "72f02be9b287d483f216ecafe1184870f90ec2b5",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "src/lava/proc/sparse/models.py",
+          "url": "https://github.com/lava-nc/lava/blob/646fa535764c3b0bd1bf24b956aaf64561bf97f6/src/lava/proc/sparse/models.py",
+          "git_blob_sha": "d553868e2b1ef7e411bb5ff52d0944ffea9d0953",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Repository explicitly archived. Inspected CPU process-model code and sparse models carry BSD-3-Clause headers. Proprietary Loihi extensions are excluded; no hardware capability or energy claim.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F050",
+        "F052",
+        "F054",
+        "F055",
+        "F057",
+        "F059",
+        "F070",
+        "F071",
+        "F072",
+        "F075",
+        "F083",
+        "F084",
+        "F086",
+        "F087",
+        "F091",
+        "F092",
+        "F093",
+        "F094",
+        "F095"
+      ]
+    },
+    {
+      "id": "NM05",
+      "project": "Rockpool",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/synsense/rockpool",
+      "docs_url": "https://rockpool.ai/",
+      "license": "AGPL-3.0 (version 3 text; later-version option not asserted)",
+      "license_url": "https://github.com/synsense/rockpool/blob/661f88509df78d8d6faf004677ca91dd9d8a15e9/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e",
+      "commit_sha": "661f88509df78d8d6faf004677ca91dd9d8a15e9",
+      "observed_branch": "develop",
+      "inspected_code_files": [
+        {
+          "path": "rockpool/nn/modules/native/lif.py",
+          "url": "https://github.com/synsense/rockpool/blob/661f88509df78d8d6faf004677ca91dd9d8a15e9/rockpool/nn/modules/native/lif.py",
+          "git_blob_sha": "040d4288a46e6d94603c2b57295d3f114aed833a",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Inspected native NumPy LIF, exponential decays, subtractive reset and graph export hook. Native evolve warns only batch zero state is retained. No Samna SDK inspected or admitted.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F049",
+        "F051",
+        "F058",
+        "F069",
+        "F072",
+        "F077",
+        "F079",
+        "F083",
+        "F090",
+        "F092",
+        "F093"
+      ]
+    },
+    {
+      "id": "NM06",
+      "project": "Sinabs",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/synsense/sinabs",
+      "docs_url": "https://sinabs.readthedocs.io/develop/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/synsense/sinabs/blob/904eb89398cc4006af4a8ec2d5b7e48fc17b4ba1/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "commit_sha": "904eb89398cc4006af4a8ec2d5b7e48fc17b4ba1",
+      "observed_branch": "develop",
+      "inspected_code_files": [
+        {
+          "path": "sinabs/layers/lif.py",
+          "url": "https://github.com/synsense/sinabs/blob/904eb89398cc4006af4a8ec2d5b7e48fc17b4ba1/sinabs/layers/lif.py",
+          "git_blob_sha": "5fd2b9e5be56945405294205ca0277b9a00db8b4",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "sinabs/layers/stateful_layer.py",
+          "url": "https://github.com/synsense/sinabs/blob/904eb89398cc4006af4a8ec2d5b7e48fc17b4ba1/sinabs/layers/stateful_layer.py",
+          "git_blob_sha": "85c99f50f49d665af353c0be533b6c78338fb433",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Inspected LIF exponential decay and StatefulLayer lifecycle. Batch-size mismatch helper can resample retained states; Atlas candidates instead require stable explicit stream identities.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F053",
+        "F056",
+        "F058",
+        "F068",
+        "F077",
+        "F078",
+        "F080",
+        "F081",
+        "F083",
+        "F093"
+      ]
+    },
+    {
+      "id": "NM07",
+      "project": "Brian2",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/brian-team/brian2",
+      "docs_url": "https://brian2.readthedocs.io/en/stable/",
+      "license": "CECILL-2.1",
+      "license_url": "https://github.com/brian-team/brian2/blob/81804b18cc2cf0d8159f972f8f6585c906ce4bdc/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "afe137b832060c06183445cd54f40148bee8f4df",
+      "commit_sha": "81804b18cc2cf0d8159f972f8f6585c906ce4bdc",
+      "observed_branch": "master",
+      "inspected_code_files": [
+        {
+          "path": "brian2/stateupdaters/exact.py",
+          "url": "https://github.com/brian-team/brian2/blob/81804b18cc2cf0d8159f972f8f6585c906ce4bdc/brian2/stateupdaters/exact.py",
+          "git_blob_sha": "301343d9455afc6ae7139043e1438c33fc46ce30",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "examples/synapses/STDP.py",
+          "url": "https://github.com/brian-team/brian2/blob/81804b18cc2cf0d8159f972f8f6585c906ce4bdc/examples/synapses/STDP.py",
+          "git_blob_sha": "5ba959b7fe2e4999305a79950c8ad50505641061",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Inspected exact affine-linear updater and the declared event-driven STDP example. Used as mathematical reference; no simulator execution or example training.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F049",
+        "F050",
+        "F051",
+        "F054",
+        "F073",
+        "F074",
+        "F076",
+        "F082",
+        "F084",
+        "F093",
+        "F096"
+      ]
+    },
+    {
+      "id": "NM08",
+      "project": "Tonic",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/neuromorphs/tonic",
+      "docs_url": "https://tonic.readthedocs.io/",
+      "license": "GPL-3.0 (version 3 text; later-version option not asserted)",
+      "license_url": "https://github.com/neuromorphs/tonic/blob/d1f1ced331ad10093f8d496eded643b76044d7cb/LICENSE.txt",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "commit_sha": "d1f1ced331ad10093f8d496eded643b76044d7cb",
+      "observed_branch": "develop",
+      "inspected_code_files": [
+        {
+          "path": "tonic/functional/to_frame.py",
+          "url": "https://github.com/neuromorphs/tonic/blob/d1f1ced331ad10093f8d496eded643b76044d7cb/tonic/functional/to_frame.py",
+          "git_blob_sha": "2aa9ed1c3c467416631ec5d1f42b7c9979b84c37",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        },
+        {
+          "path": "tonic/functional/to_timesurface.py",
+          "url": "https://github.com/neuromorphs/tonic/blob/d1f1ced331ad10093f8d496eded643b76044d7cb/tonic/functional/to_timesurface.py",
+          "git_blob_sha": "8f80fbe9a9ea6a2fc6be76975a0929f8155e7fe7",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Inspected event-to-frame and exponential time-surface transforms. Frame counts use int16 and single-polarity handling writes the supplied event array; original candidates specify checked counts and immutable input.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F064",
+        "F065",
+        "F066",
+        "F067",
+        "F068",
+        "F071",
+        "F082"
+      ]
+    },
+    {
+      "id": "NM09",
+      "project": "NIR",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/neuromorphs/NIR",
+      "docs_url": "https://neuroir.org/docs",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/neuromorphs/NIR/blob/3f4b259d2c51cb3bd03d6fe9280e8b69bb988ba6/LICENSE",
+      "license_verified": true,
+      "license_verification_scope": "License header/map inspected at exact observed commit; not a dependency-license clearance or legal conclusion",
+      "license_git_blob_sha": "c02c992b50d5fe71afc04431a15aeb63a89e043e",
+      "commit_sha": "3f4b259d2c51cb3bd03d6fe9280e8b69bb988ba6",
+      "observed_branch": "main",
+      "inspected_code_files": [
+        {
+          "path": "nir/ir/graph.py",
+          "url": "https://github.com/neuromorphs/NIR/blob/3f4b259d2c51cb3bd03d6fe9280e8b69bb988ba6/nir/ir/graph.py",
+          "git_blob_sha": "77b586b063b3d097cdb9f3ee034368dc24966eb2",
+          "inspection": "Full file retrieved as text; targeted functions reviewed; never imported or executed"
+        }
+      ],
+      "inspection_notes": "Inspected graph metadata, serialization, endpoint/duplicate-edge validation and type inference. Interchange metadata alone does not establish numerical or hardware equivalence.",
+      "code_reuse_status": "REFERENCE_ONLY_NO_UPSTREAM_CODE_COPIED",
+      "execution_status": "NOT_EXECUTED",
+      "observed_date": "2026-11-24",
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F067",
+        "F079",
+        "F081",
+        "F085",
+        "F086",
+        "F087",
+        "F088",
+        "F089",
+        "F090",
+        "F091",
+        "F095",
+        "F096"
+      ]
+    },
+    {
+      "id": "OSS_CURSOR_PLUGINS",
+      "project": "Cursor create-plugin public plugin",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/cursor/plugins",
+      "docs_url": "https://github.com/cursor/plugins/tree/main/create-plugin",
+      "license": "MIT (reviewed create-plugin subtree only)",
+      "license_url": "https://github.com/cursor/plugins/blob/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/create-plugin/LICENSE",
+      "license_verified": true,
+      "commit_sha": "ca782ed8b3c2c521cead8e1720d55c3a5dbf2347",
+      "inspected_code_files": [
+        {
+          "path": "create-plugin/rules/plugin-quality-gates.mdc",
+          "url": "https://github.com/cursor/plugins/blob/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/create-plugin/rules/plugin-quality-gates.mdc",
+          "raw_url": "https://raw.githubusercontent.com/cursor/plugins/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/create-plugin/rules/plugin-quality-gates.mdc",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_CURSOR_PLUGINS/create-plugin/rules/plugin-quality-gates.mdc"
+          },
+          "bytes": 789,
+          "sha256": "79efb4b9a58f4565609b52df2f61eb83ea677ab5de96932df0b160341676d1e8"
+        },
+        {
+          "path": "create-plugin/skills/review-plugin-submission/SKILL.md",
+          "url": "https://github.com/cursor/plugins/blob/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/create-plugin/skills/review-plugin-submission/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/cursor/plugins/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/create-plugin/skills/review-plugin-submission/SKILL.md",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_CURSOR_PLUGINS/create-plugin/skills/review-plugin-submission/SKILL.md"
+          },
+          "bytes": 1777,
+          "sha256": "ff7411fc0426934871ac18f8ed55edcfc49f19443701dbe9109a3395ccded61d"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "create-plugin/LICENSE",
+          "url": "https://github.com/cursor/plugins/blob/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/create-plugin/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/cursor/plugins/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/create-plugin/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_CURSOR_PLUGINS/create-plugin/LICENSE"
+          },
+          "bytes": 1063,
+          "sha256": "702f5f331b56aff0e33d8c7826df5202559f894145eb70355c6477b55b5bb8a0"
+        }
+      ],
+      "license_conditions": "Keep the license and copyright notice with copied or substantial source portions; retain upstream attribution.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F139",
+        "F140",
+        "F141",
+        "F142",
+        "F144"
+      ]
+    },
+    {
+      "id": "OSS_DEEPEVAL",
+      "project": "DeepEval",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/confident-ai/deepeval",
+      "docs_url": "https://deepeval.com/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/confident-ai/deepeval/blob/9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2/LICENSE.md",
+      "license_verified": true,
+      "commit_sha": "9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2",
+      "inspected_code_files": [
+        {
+          "path": "deepeval/metrics/answer_relevancy/answer_relevancy.py",
+          "url": "https://github.com/confident-ai/deepeval/blob/9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2/deepeval/metrics/answer_relevancy/answer_relevancy.py",
+          "raw_url": "https://raw.githubusercontent.com/confident-ai/deepeval/9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2/deepeval/metrics/answer_relevancy/answer_relevancy.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_DEEPEVAL/deepeval/metrics/answer_relevancy/answer_relevancy.py"
+          },
+          "bytes": 11293,
+          "sha256": "2918a713dbccb446b31edc145a9467c5541572a90193cb81982fb5330db45d3c"
+        },
+        {
+          "path": "deepeval/evaluate/configs.py",
+          "url": "https://github.com/confident-ai/deepeval/blob/9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2/deepeval/evaluate/configs.py",
+          "raw_url": "https://raw.githubusercontent.com/confident-ai/deepeval/9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2/deepeval/evaluate/configs.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_DEEPEVAL/deepeval/evaluate/configs.py"
+          },
+          "bytes": 1449,
+          "sha256": "52033cb6e9deaae88c559c71c98a34a76d85a6d86cb75a3ebb306a2ffae2b067"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/confident-ai/deepeval/blob/9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2/LICENSE.md",
+          "raw_url": "https://raw.githubusercontent.com/confident-ai/deepeval/9397b6269483cdcb79f3e0e39f5ce28fd43b6dd2/LICENSE.md",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_DEEPEVAL/LICENSE.md"
+          },
+          "bytes": 11352,
+          "sha256": "d004e4b8bbfa420b094c13835070b945a93f3c0ac0ea0bf6b7b8a72733533f7f"
+        }
+      ],
+      "license_conditions": "Retain Apache-2.0 license, relevant copyright/attribution and NOTICE content when present; mark modifications; inspect separate dependency and asset licenses.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F113",
+        "F114",
+        "F116",
+        "F118"
+      ]
+    },
+    {
+      "id": "OSS_GUIDANCE",
+      "project": "Guidance",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/guidance-ai/guidance",
+      "docs_url": "https://github.com/guidance-ai/guidance",
+      "license": "MIT",
+      "license_url": "https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/LICENSE.md",
+      "license_verified": true,
+      "commit_sha": "21b1d90dfbebff4b141df70c714c8af15aa5f4af",
+      "inspected_code_files": [
+        {
+          "path": "guidance/library/_substring.py",
+          "url": "https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/guidance/library/_substring.py",
+          "raw_url": "https://raw.githubusercontent.com/guidance-ai/guidance/21b1d90dfbebff4b141df70c714c8af15aa5f4af/guidance/library/_substring.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_GUIDANCE/guidance/library/_substring.py"
+          },
+          "bytes": 1051,
+          "sha256": "35688ffa350b18b6ef463f569b62b7ebda252204c9575ff00138ca0a8067fd34"
+        },
+        {
+          "path": "guidance/_grammar.py",
+          "url": "https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/guidance/_grammar.py",
+          "raw_url": "https://raw.githubusercontent.com/guidance-ai/guidance/21b1d90dfbebff4b141df70c714c8af15aa5f4af/guidance/_grammar.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_GUIDANCE/guidance/_grammar.py"
+          },
+          "bytes": 7021,
+          "sha256": "3bbb2afd4504a2fe1c6f1ec68a4e2e8dfc8bb7093e9dd592cfa463dd651bc54d"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE.md",
+          "url": "https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/LICENSE.md",
+          "raw_url": "https://raw.githubusercontent.com/guidance-ai/guidance/21b1d90dfbebff4b141df70c714c8af15aa5f4af/LICENSE.md",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_GUIDANCE/LICENSE.md"
+          },
+          "bytes": 1077,
+          "sha256": "26626ff4cdf0ff458d8c5bfde70003dceb6bb57d9e691923d349aa7e6a015677"
+        }
+      ],
+      "license_conditions": "Keep the license and copyright notice with copied or substantial source portions; retain upstream attribution.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [
+        {
+          "path": "LICENSE",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F115",
+        "F123",
+        "F130",
+        "F138",
+        "F143"
+      ]
+    },
+    {
+      "id": "OSS_INSPECT",
+      "project": "Inspect AI",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/UKGovernmentBEIS/inspect_ai",
+      "docs_url": "https://inspect.aisi.org.uk/",
+      "license": "MIT",
+      "license_url": "https://github.com/UKGovernmentBEIS/inspect_ai/blob/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/LICENSE",
+      "license_verified": true,
+      "commit_sha": "a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb",
+      "inspected_code_files": [
+        {
+          "path": "src/inspect_ai/scorer/_metric.py",
+          "url": "https://github.com/UKGovernmentBEIS/inspect_ai/blob/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metric.py",
+          "raw_url": "https://raw.githubusercontent.com/UKGovernmentBEIS/inspect_ai/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metric.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_INSPECT/src/inspect_ai/scorer/_metric.py"
+          },
+          "bytes": 23731,
+          "sha256": "f0864c2a95f02c281d0e23629ea62887923ea7dadd17b8e7b6ba8055f6e74dd1"
+        },
+        {
+          "path": "src/inspect_ai/scorer/_metrics/grouped.py",
+          "url": "https://github.com/UKGovernmentBEIS/inspect_ai/blob/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metrics/grouped.py",
+          "raw_url": "https://raw.githubusercontent.com/UKGovernmentBEIS/inspect_ai/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metrics/grouped.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_INSPECT/src/inspect_ai/scorer/_metrics/grouped.py"
+          },
+          "bytes": 4284,
+          "sha256": "c187fe95b5150578a95a74b7f18bfca940229254b576a3021c1392c75fb7eef8"
+        },
+        {
+          "path": "src/inspect_ai/scorer/_metrics/krippendorff.py",
+          "url": "https://github.com/UKGovernmentBEIS/inspect_ai/blob/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metrics/krippendorff.py",
+          "raw_url": "https://raw.githubusercontent.com/UKGovernmentBEIS/inspect_ai/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metrics/krippendorff.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_INSPECT/src/inspect_ai/scorer/_metrics/krippendorff.py"
+          },
+          "bytes": 8037,
+          "sha256": "edf785510825ac8934594af804157f42d31c1ce04f2b0da56c5496e54cf7ae9a"
+        },
+        {
+          "path": "src/inspect_ai/scorer/_metrics/std.py",
+          "url": "https://github.com/UKGovernmentBEIS/inspect_ai/blob/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metrics/std.py",
+          "raw_url": "https://raw.githubusercontent.com/UKGovernmentBEIS/inspect_ai/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/src/inspect_ai/scorer/_metrics/std.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_INSPECT/src/inspect_ai/scorer/_metrics/std.py"
+          },
+          "bytes": 22713,
+          "sha256": "e2d605ec523763dd2c3acbf11636f83fe537eda6daf66739e8d4b90dedd0dee3"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/UKGovernmentBEIS/inspect_ai/blob/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/UKGovernmentBEIS/inspect_ai/a0694fadca4e1b5dd5944bd79c1aa79ca1beeefb/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_INSPECT/LICENSE"
+          },
+          "bytes": 1081,
+          "sha256": "c593c2afc81388521eaeb03f0d1a4b01bc3e5147ed9cb16c1f129e5be353b6af"
+        }
+      ],
+      "license_conditions": "Keep the license and copyright notice with copied or substantial source portions; retain upstream attribution.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [
+        {
+          "path": "src/inspect_ai/scorer/_metrics.py",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F109",
+        "F110",
+        "F111",
+        "F112",
+        "F113",
+        "F115",
+        "F116",
+        "F117",
+        "F118",
+        "F119",
+        "F120",
+        "F132",
+        "F141"
+      ]
+    },
+    {
+      "id": "OSS_LANGGRAPH",
+      "project": "LangGraph checkpoint/store",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/langchain-ai/langgraph",
+      "docs_url": "https://github.com/langchain-ai/langgraph/tree/main/libs/checkpoint",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langgraph/blob/f96105368f9e9385d4c9e38bffaa457aba17f095/LICENSE",
+      "license_verified": true,
+      "commit_sha": "f96105368f9e9385d4c9e38bffaa457aba17f095",
+      "inspected_code_files": [
+        {
+          "path": "libs/checkpoint/langgraph/checkpoint/base/__init__.py",
+          "url": "https://github.com/langchain-ai/langgraph/blob/f96105368f9e9385d4c9e38bffaa457aba17f095/libs/checkpoint/langgraph/checkpoint/base/__init__.py",
+          "raw_url": "https://raw.githubusercontent.com/langchain-ai/langgraph/f96105368f9e9385d4c9e38bffaa457aba17f095/libs/checkpoint/langgraph/checkpoint/base/__init__.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_LANGGRAPH/libs/checkpoint/langgraph/checkpoint/base/__init__.py"
+          },
+          "bytes": 32051,
+          "sha256": "e1b412fb541b47cf9ab0657f5c160c955c71ce929d8ac786f0bcc94d356481e9"
+        },
+        {
+          "path": "libs/checkpoint/langgraph/store/base/__init__.py",
+          "url": "https://github.com/langchain-ai/langgraph/blob/f96105368f9e9385d4c9e38bffaa457aba17f095/libs/checkpoint/langgraph/store/base/__init__.py",
+          "raw_url": "https://raw.githubusercontent.com/langchain-ai/langgraph/f96105368f9e9385d4c9e38bffaa457aba17f095/libs/checkpoint/langgraph/store/base/__init__.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_LANGGRAPH/libs/checkpoint/langgraph/store/base/__init__.py"
+          },
+          "bytes": 46438,
+          "sha256": "b44aef2b8aa293fdf6c9dac2bc003ab6108da7127e4a45e3611cb619997b1b8c"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/langchain-ai/langgraph/blob/f96105368f9e9385d4c9e38bffaa457aba17f095/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/langchain-ai/langgraph/f96105368f9e9385d4c9e38bffaa457aba17f095/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_LANGGRAPH/LICENSE"
+          },
+          "bytes": 1072,
+          "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7"
+        },
+        {
+          "path": "libs/checkpoint/LICENSE",
+          "url": "https://github.com/langchain-ai/langgraph/blob/f96105368f9e9385d4c9e38bffaa457aba17f095/libs/checkpoint/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/langchain-ai/langgraph/f96105368f9e9385d4c9e38bffaa457aba17f095/libs/checkpoint/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_LANGGRAPH/libs/checkpoint/LICENSE"
+          },
+          "bytes": 1072,
+          "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7"
+        }
+      ],
+      "license_conditions": "Keep the license and copyright notice with copied or substantial source portions; retain upstream attribution.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [
+        {
+          "path": "libs/langgraph/langgraph/store/base/__init__.py",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F124",
+        "F125",
+        "F126",
+        "F128",
+        "F129",
+        "F131"
+      ]
+    },
+    {
+      "id": "OSS_LMCACHE",
+      "project": "LMCache",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/LMCache/LMCache",
+      "docs_url": "https://docs.lmcache.ai/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/LMCache/LMCache/blob/c5655cb60f85b296bff38918e1d65eda3adddb7b/LICENSE",
+      "license_verified": true,
+      "commit_sha": "c5655cb60f85b296bff38918e1d65eda3adddb7b",
+      "inspected_code_files": [
+        {
+          "path": "lmcache/utils.py",
+          "url": "https://github.com/LMCache/LMCache/blob/c5655cb60f85b296bff38918e1d65eda3adddb7b/lmcache/utils.py",
+          "raw_url": "https://raw.githubusercontent.com/LMCache/LMCache/c5655cb60f85b296bff38918e1d65eda3adddb7b/lmcache/utils.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_LMCACHE/lmcache/utils.py"
+          },
+          "bytes": 18730,
+          "sha256": "539108a3c71b9d61a4628ecd899d6b1937c3aa56468557e4ac64c1bff7b63c72"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/LMCache/LMCache/blob/c5655cb60f85b296bff38918e1d65eda3adddb7b/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/LMCache/LMCache/c5655cb60f85b296bff38918e1d65eda3adddb7b/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_LMCACHE/LICENSE"
+          },
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "license_conditions": "Retain Apache-2.0 license, relevant copyright/attribution and NOTICE content when present; mark modifications; inspect separate dependency and asset licenses.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [
+        {
+          "path": "lmcache/v1/cache_engine.py",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F102",
+        "F103",
+        "F105",
+        "F106",
+        "F107",
+        "F108"
+      ]
+    },
+    {
+      "id": "OSS_MCP_TS",
+      "project": "MCP TypeScript SDK",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/modelcontextprotocol/typescript-sdk",
+      "docs_url": "https://modelcontextprotocol.io/",
+      "license": "Apache-2.0 new/consented code; MIT un-relicensed prior contributions; CC-BY-4.0 non-spec docs",
+      "license_url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/5ee54ee30ddc00a914a3d981880f87fdce0e6246/LICENSE",
+      "license_verified": true,
+      "commit_sha": "5ee54ee30ddc00a914a3d981880f87fdce0e6246",
+      "inspected_code_files": [
+        {
+          "path": "packages/core-internal/src/shared/protocol.ts",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/5ee54ee30ddc00a914a3d981880f87fdce0e6246/packages/core-internal/src/shared/protocol.ts",
+          "raw_url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/5ee54ee30ddc00a914a3d981880f87fdce0e6246/packages/core-internal/src/shared/protocol.ts",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_MCP_TS/packages/core-internal/src/shared/protocol.ts"
+          },
+          "bytes": 106961,
+          "sha256": "07d6bf0c8bb656010f57189eeabdbce14fcc2b29163a5ec6ec34f3a6cc74dc8b"
+        },
+        {
+          "path": "packages/server/src/server/mcp.ts",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/5ee54ee30ddc00a914a3d981880f87fdce0e6246/packages/server/src/server/mcp.ts",
+          "raw_url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/5ee54ee30ddc00a914a3d981880f87fdce0e6246/packages/server/src/server/mcp.ts",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_MCP_TS/packages/server/src/server/mcp.ts"
+          },
+          "bytes": 74580,
+          "sha256": "0ee0919815fc3e5132e1eba93b3f9d4740aaa290576e48cbfd744fd71c55d019"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/5ee54ee30ddc00a914a3d981880f87fdce0e6246/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/5ee54ee30ddc00a914a3d981880f87fdce0e6246/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_MCP_TS/LICENSE"
+          },
+          "bytes": 12227,
+          "sha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a"
+        }
+      ],
+      "license_conditions": "Use the pinned mixed-license statement per contribution: Apache-2.0 for new/consented code, MIT for prior contributions without relicensing consent, CC-BY-4.0 for non-spec documentation. No blanket MIT/Apache relicense; retain applicable notices and attribution.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [
+        {
+          "path": "src/shared/protocol.ts",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "src/server/mcp.ts",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F104",
+        "F133",
+        "F136",
+        "F137",
+        "F142",
+        "F144"
+      ]
+    },
+    {
+      "id": "OSS_ONNXRT",
+      "project": "ONNX Runtime",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/microsoft/onnxruntime",
+      "docs_url": "https://onnxruntime.ai/docs/",
+      "license": "UNVERIFIED_CURRENT_SNAPSHOT",
+      "license_url": "https://github.com/microsoft/onnxruntime/blob/main/LICENSE",
+      "license_verified": false,
+      "commit_sha": null,
+      "inspected_code_files": [],
+      "license_files": [],
+      "license_conditions": "Live API, raw code and license requests returned 404. Indexed primary code advertises MIT, but current license bytes and commit were not recovered; require a new exact source/license snapshot before integration.",
+      "qualification": "SOURCE_SNAPSHOT_UNAVAILABLE",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [
+        {
+          "stage": "commit",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "LICENSE",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "onnxruntime/python/onnxruntime_inference_collection.py",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "onnxruntime/python/tools/transformers/benchmark_helper.py",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "review_status": "HOLD",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F101",
+        "F102"
+      ],
+      "hold_reason": "Exact source revision and license bytes unavailable in this review. Recover both before integration; a documentation or indexed search result is insufficient."
+    },
+    {
+      "id": "OSS_OPENAI_AGENTS",
+      "project": "OpenAI Agents SDK",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/openai/openai-agents-python",
+      "docs_url": "https://openai.github.io/openai-agents-python/",
+      "license": "MIT",
+      "license_url": "https://github.com/openai/openai-agents-python/blob/4e162c79a4a951c6fc8b698d5c8279c1963c099b/LICENSE",
+      "license_verified": true,
+      "commit_sha": "4e162c79a4a951c6fc8b698d5c8279c1963c099b",
+      "inspected_code_files": [
+        {
+          "path": "src/agents/memory/session.py",
+          "url": "https://github.com/openai/openai-agents-python/blob/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/memory/session.py",
+          "raw_url": "https://raw.githubusercontent.com/openai/openai-agents-python/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/memory/session.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OPENAI_AGENTS/src/agents/memory/session.py"
+          },
+          "bytes": 8805,
+          "sha256": "18d9f222d5cb0ba70ae3af2e1d2f5ad7cd1336677cced9a4e5a23c2cac9caf7a"
+        },
+        {
+          "path": "src/agents/memory/sqlite_session.py",
+          "url": "https://github.com/openai/openai-agents-python/blob/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/memory/sqlite_session.py",
+          "raw_url": "https://raw.githubusercontent.com/openai/openai-agents-python/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/memory/sqlite_session.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OPENAI_AGENTS/src/agents/memory/sqlite_session.py"
+          },
+          "bytes": 24083,
+          "sha256": "72ce2ac5d41fa11da09e3ed95e58cb1b6d780690640da4f46b5c6d3b0c8355e9"
+        },
+        {
+          "path": "src/agents/usage.py",
+          "url": "https://github.com/openai/openai-agents-python/blob/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/usage.py",
+          "raw_url": "https://raw.githubusercontent.com/openai/openai-agents-python/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/usage.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OPENAI_AGENTS/src/agents/usage.py"
+          },
+          "bytes": 20305,
+          "sha256": "1be084179faa5f3230e597fcec90c13ea8e9265958bb70ebf8e960b231aa6a81"
+        },
+        {
+          "path": "src/agents/memory/openai_responses_compaction_session.py",
+          "url": "https://github.com/openai/openai-agents-python/blob/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/memory/openai_responses_compaction_session.py",
+          "raw_url": "https://raw.githubusercontent.com/openai/openai-agents-python/4e162c79a4a951c6fc8b698d5c8279c1963c099b/src/agents/memory/openai_responses_compaction_session.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OPENAI_AGENTS/src/agents/memory/openai_responses_compaction_session.py"
+          },
+          "bytes": 43369,
+          "sha256": "5e432d063f307ff56f2a0477896e53bb531882bd036ffa53e940a86bc401be21"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/openai/openai-agents-python/blob/4e162c79a4a951c6fc8b698d5c8279c1963c099b/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/openai/openai-agents-python/4e162c79a4a951c6fc8b698d5c8279c1963c099b/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OPENAI_AGENTS/LICENSE"
+          },
+          "bytes": 1063,
+          "sha256": "13df7812ca53ecaae1cb4a868844bb598373047ae1d580e4debfbef1dd5b6915"
+        }
+      ],
+      "license_conditions": "Keep the license and copyright notice with copied or substantial source portions; retain upstream attribution.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F117",
+        "F121",
+        "F122",
+        "F123",
+        "F125",
+        "F127",
+        "F129",
+        "F132",
+        "F133",
+        "F134",
+        "F135",
+        "F138"
+      ]
+    },
+    {
+      "id": "OSS_OUTLINES",
+      "project": "Outlines",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/dottxt-ai/outlines",
+      "docs_url": "https://dottxt-ai.github.io/outlines/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/LICENSE",
+      "license_verified": true,
+      "commit_sha": "c52af8472c6fe8a607a733ec11b709476af77a96",
+      "inspected_code_files": [
+        {
+          "path": "src/outlines/generator.py",
+          "url": "https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/src/outlines/generator.py",
+          "raw_url": "https://raw.githubusercontent.com/dottxt-ai/outlines/c52af8472c6fe8a607a733ec11b709476af77a96/src/outlines/generator.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OUTLINES/src/outlines/generator.py"
+          },
+          "bytes": 12178,
+          "sha256": "4468c1e513bb03c56edb17c929b828ff502a95965db5a39c807904c54600168b"
+        },
+        {
+          "path": "src/outlines/types/dsl.py",
+          "url": "https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/src/outlines/types/dsl.py",
+          "raw_url": "https://raw.githubusercontent.com/dottxt-ai/outlines/c52af8472c6fe8a607a733ec11b709476af77a96/src/outlines/types/dsl.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OUTLINES/src/outlines/types/dsl.py"
+          },
+          "bytes": 31986,
+          "sha256": "7aa7b22523ee0453606c6cefd0d2dd1e69c8e3454ac29e79c2e8669867637dd6"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/dottxt-ai/outlines/c52af8472c6fe8a607a733ec11b709476af77a96/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_OUTLINES/LICENSE"
+          },
+          "bytes": 11354,
+          "sha256": "f71078ee8aaa3d5670488756f1993b9de3ae64c9546a0232ebbbdd595c5375d7"
+        }
+      ],
+      "license_conditions": "Retain Apache-2.0 license, relevant copyright/attribution and NOTICE content when present; mark modifications; inspect separate dependency and asset licenses.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [
+        {
+          "path": "outlines/generator.py",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        },
+        {
+          "path": "outlines/types/dsl.py",
+          "error": "HTTPError",
+          "detail": "HTTP Error 404: Not Found"
+        }
+      ],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F134",
+        "F136",
+        "F138",
+        "F143"
+      ]
+    },
+    {
+      "id": "OSS_SGLANG",
+      "project": "SGLang",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/sgl-project/sglang",
+      "docs_url": "https://docs.sglang.ai/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sgl-project/sglang/blob/970b3650939e35d019cef4bf482de3fb39e22410/LICENSE",
+      "license_verified": true,
+      "commit_sha": "970b3650939e35d019cef4bf482de3fb39e22410",
+      "inspected_code_files": [
+        {
+          "path": "python/sglang/srt/mem_cache/radix_cache.py",
+          "url": "https://github.com/sgl-project/sglang/blob/970b3650939e35d019cef4bf482de3fb39e22410/python/sglang/srt/mem_cache/radix_cache.py",
+          "raw_url": "https://raw.githubusercontent.com/sgl-project/sglang/970b3650939e35d019cef4bf482de3fb39e22410/python/sglang/srt/mem_cache/radix_cache.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_SGLANG/python/sglang/srt/mem_cache/radix_cache.py"
+          },
+          "bytes": 31689,
+          "sha256": "221c4fec25357dc351acd9c73f1f26229432110c4f8eaaf82b6c69a99973997b"
+        },
+        {
+          "path": "python/sglang/srt/managers/schedule_policy.py",
+          "url": "https://github.com/sgl-project/sglang/blob/970b3650939e35d019cef4bf482de3fb39e22410/python/sglang/srt/managers/schedule_policy.py",
+          "raw_url": "https://raw.githubusercontent.com/sgl-project/sglang/970b3650939e35d019cef4bf482de3fb39e22410/python/sglang/srt/managers/schedule_policy.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_SGLANG/python/sglang/srt/managers/schedule_policy.py"
+          },
+          "bytes": 109876,
+          "sha256": "a94c0068be304688b873465873931cb238a2e2f72f58644b39a2794b5295f5d5"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/sgl-project/sglang/blob/970b3650939e35d019cef4bf482de3fb39e22410/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/sgl-project/sglang/970b3650939e35d019cef4bf482de3fb39e22410/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_SGLANG/LICENSE"
+          },
+          "bytes": 11346,
+          "sha256": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747"
+        }
+      ],
+      "license_conditions": "Retain Apache-2.0 license, relevant copyright/attribution and NOTICE content when present; mark modifications; inspect separate dependency and asset licenses.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F097",
+        "F098",
+        "F099",
+        "F100",
+        "F105",
+        "F107",
+        "F121",
+        "F127"
+      ]
+    },
+    {
+      "id": "OSS_VLLM",
+      "project": "vLLM",
+      "platform": "GitHub",
+      "repo_url": "https://github.com/vllm-project/vllm",
+      "docs_url": "https://docs.vllm.ai/",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/vllm-project/vllm/blob/3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0/LICENSE",
+      "license_verified": true,
+      "commit_sha": "3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0",
+      "inspected_code_files": [
+        {
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "url": "https://github.com/vllm-project/vllm/blob/3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0/vllm/v1/core/sched/scheduler.py",
+          "raw_url": "https://raw.githubusercontent.com/vllm-project/vllm/3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0/vllm/v1/core/sched/scheduler.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_VLLM/vllm/v1/core/sched/scheduler.py"
+          },
+          "bytes": 189163,
+          "sha256": "1ff59f40a91071d8a1cf6aa37f0ac9bbe11c3d12d522325909f484c0da061695"
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_manager.py",
+          "url": "https://github.com/vllm-project/vllm/blob/3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0/vllm/v1/core/kv_cache_manager.py",
+          "raw_url": "https://raw.githubusercontent.com/vllm-project/vllm/3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0/vllm/v1/core/kv_cache_manager.py",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_VLLM/vllm/v1/core/kv_cache_manager.py"
+          },
+          "bytes": 41413,
+          "sha256": "a57a34b9f14ab2b056d1d25105c6907c53ca6c80b234a536e6f6f8cc00ce0bd3"
+        }
+      ],
+      "license_files": [
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/vllm-project/vllm/blob/3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0/LICENSE",
+          "raw_url": "https://raw.githubusercontent.com/vllm-project/vllm/3ef6b78dc3e01bd3e47a4b5ab61aef861b3c56e0/LICENSE",
+          "review_artifact": {
+            "scope": "REVIEW_BUNDLE_RELATIVE",
+            "path": "research/upstream-code/OSS_VLLM/LICENSE"
+          },
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "license_conditions": "Retain Apache-2.0 license, relevant copyright/attribution and NOTICE content when present; mark modifications; inspect separate dependency and asset licenses.",
+      "qualification": "PINNED_SELECTED_CODE_AND_LICENSE_INSPECTED",
+      "inspection_scope": "Selected implementation symbols, file structure and license text; no upstream install or execution.",
+      "snapshot_errors": [],
+      "review_status": "PINNED_SOURCE_AND_LICENSE_INSPECTED",
+      "adoption_status": "REFERENCE_ONLY_NOT_ADOPTED",
+      "reference_scope": "Selected code and declared license text only; no dependency, asset, model-weight or dataset clearance.",
+      "supports_feature_ids": [
+        "F097",
+        "F098",
+        "F099",
+        "F103",
+        "F104",
+        "F105",
+        "F106",
+        "F108"
+      ]
+    }
+  ],
+  "projection_of_file_sha256": "99427725fe4f997b0c7bd31f22fcab2601aa9c11c2557d82364b8efddffb582b",
+  "public_projection": {
+    "schema": "atlas.oss.public-projection/v1",
+    "scope": "PUBLIC_SOURCE_REVIEW",
+    "predecessor": "Preserved private source-registry.json",
+    "projection_of_file_sha256": "99427725fe4f997b0c7bd31f22fcab2601aa9c11c2557d82364b8efddffb582b",
+    "byte_identical_to_predecessor": false,
+    "description": "Public projection of a preserved private predecessor. This file is not byte-identical to that predecessor: private session provenance and literal baseline source-line snippets were removed; candidate semantics, source associations, statuses, code hashes and actual numerical metrics are retained.",
+    "removed_or_generalized_fields": [
+      "Private session member identifiers and discussion/message references.",
+      "Session-derived handoff identifiers and coordination notes, replaced by generalized contributor attribution.",
+      "Literal baseline source-line text under evidence.matches; file paths, hashes, search terms, line numbers and scoped findings are retained."
+    ],
+    "private_predecessor_modified": false
+  }
+}
