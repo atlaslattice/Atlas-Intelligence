@@ -1,0 +1,33 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {compileEvidencePortfolio,computeReviewTicket} from '../meta145-evidence-portfolio.mjs';
+const hash=s=>createHash('sha256').update(String(s)).digest('hex');
+const src='07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6';
+const scope={sourceSha256:src,outputSha256:hash('output-candidate'),dependencySha256:hash('dependencies'),rightsEpoch:'acl-epoch-001',originMode:'WORK',reportedHostAuthenticated:false};
+function data(){let nodes=[],reviews=[];for(let h=1;h<=12;h++)for(let s=1;s<=12;s++)for(let n=1;n<=12;n++){
+ const hsn=`H${String(h).padStart(2,'0')}.S${String(s).padStart(2,'0')}.N${String(n).padStart(2,'0')}`;
+ const recordSha256=hash(hsn),role=s<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META';
+ nodes.push({hsn,recordSha256,role});reviews.push({hsn,status:'UNREVIEWED',sourceSha256:src,outputSha256:scope.outputSha256,recordSha256,dependencySha256:scope.dependencySha256,rightsEpoch:scope.rightsEpoch,ticketSha256:computeReviewTicket({hsn,sourceSha256:src,outputSha256:scope.outputSha256,recordSha256,dependencySha256:scope.dependencySha256,rightsEpoch:scope.rightsEpoch}),evidenceSha256:null,naReason:null});
+ }return {nodes,reviews}}
+const ok=(nodes,reviews,s=scope)=>compileEvidencePortfolio(nodes,reviews,s);
+const negative=x=>assert.equal(x.data,null);
+const mutate=(f)=>{let d=data();f(d);return ok(d.nodes,d.reviews)};
+test('complete 1,728/144/12 provenance-preserving source-only coverage',()=>{const {nodes,reviews}=data();const p=ok(nodes,reviews);assert.equal(p.status,'SOURCE_ONLY_REVIEW_ENVELOPE');assert.equal(p.summary.nodes,1728);assert.equal(p.summary.sphereSummaries.length,144);assert.equal(p.summary.houseSummaries.length,12);assert.equal(p.summary.counts.UNREVIEWED,1728);assert.equal(p.summary.result,'HOLD');assert.equal(p.summary.hostAuthenticated,false);});
+test('status PASS is explicitly self-reported, never publisher authority',()=>{const {nodes,reviews}=data();for(let i=0;i<reviews.length;i++){reviews[i].status='PASS';reviews[i].evidenceSha256=hash('external-proof-'+i)}const p=ok(nodes,reviews);assert.equal(p.summary.result,'REPORTED_PASS_NOT_ATTESTED');assert.equal(p.summary.authorityEffect,'NONE');assert.equal(p.summary.scienceAccepted,0);assert.equal(p.summary.independentlyAuthenticatedReviewers,0)});
+test('FAIL outranks HOLD and apparent completeness',()=>{const d=data();d.reviews[0].status='FAIL';d.reviews[0].evidenceSha256=hash('failed');const p=ok(d.nodes,d.reviews);assert.equal(p.summary.result,'FAIL');assert.equal(p.summary.counts.FAIL,1)});
+test('HOLD never equals a PASS',()=>{const d=data();d.reviews[0].status='HOLD';assert.equal(ok(d.nodes,d.reviews).summary.result,'HOLD')});
+test('N_A requires an explicit constrained reason',()=>{let d=data();d.reviews[0].status='N_A';negative(ok(d.nodes,d.reviews));d.reviews[0].naReason='NO_METHOD_SUBJECT';assert.equal(ok(d.nodes,d.reviews).summary.counts.N_A,1)});
+test('reject duplicate HSN, empty entry, or missing review',()=>{negative(mutate(d=>d.reviews[1]=d.reviews[0]));negative(mutate(d=>delete d.reviews[3]));negative(mutate(d=>d.nodes[17]=d.nodes[18]));});
+test('reject wrong role, wrong record digest, source and dependency revision',()=>{negative(mutate(d=>d.nodes[7].role='EPISTEMIC_META'));negative(mutate(d=>d.reviews[0].recordSha256=hash('wrong')));negative(mutate(d=>d.reviews[0].sourceSha256=hash('other')));negative(mutate(d=>d.reviews[0].dependencySha256=hash('new deps')));});
+test('ticket cannot be copied to another coordinate or output',()=>{negative(mutate(d=>d.reviews[1].ticketSha256=d.reviews[0].ticketSha256));negative(mutate(d=>d.reviews[1].outputSha256=hash('other-output')))});
+test('epoch drift or stale ticket rejected',()=>{negative(mutate(d=>d.reviews[0].rightsEpoch='old-epoch'));negative(mutate(d=>d.reviews[0].ticketSha256=hash('stale')))});
+test('private mode or forged host issuer rejected',()=>{let d=data();negative(ok(d.nodes,d.reviews,{...scope,originMode:'PALACE'}));negative(ok(d.nodes,d.reviews,{...scope,reportedHostAuthenticated:true}))});
+test('source record mutation after review changes source root only after rebinding ticket',()=>{const d=data();const a=ok(d.nodes,d.reviews);d.nodes[0].recordSha256=hash('new source');negative(ok(d.nodes,d.reviews));d.reviews[0].recordSha256=d.nodes[0].recordSha256;d.reviews[0].ticketSha256=computeReviewTicket(d.reviews[0]);const b=ok(d.nodes,d.reviews);assert.notEqual(a.summary.sourceRoot,b.summary.sourceRoot)});
+test('getter cannot cause source snapshots to change between admission and output',()=>{const d=data();let calls=0;Object.defineProperty(d.reviews[0],'rightsEpoch',{get(){calls++;return 'acl-epoch-001'},enumerable:true});negative(ok(d.nodes,d.reviews));assert.equal(calls,0)});
+test('prototype-inherited PASS and side keys reject',()=>{negative(mutate(d=>{let x=Object.create({status:'PASS'});Object.assign(x,d.reviews[0]);delete x.status;d.reviews[0]=x}));negative(mutate(d=>{d.reviews[0].sensitiveBody='NEVER LEAK'}))});
+test('array side keys and sparse arrays reject',()=>{negative(mutate(d=>{d.reviews.exfil='secret'}));negative(mutate(d=>{d.nodes.someField='secret'}))});
+test('self-reported evidence PASS must name a digest',()=>{negative(mutate(d=>{d.reviews[0].status='PASS';d.reviews[0].evidenceSha256=null}));negative(mutate(d=>{d.reviews[0].status='FAIL';d.reviews[0].evidenceSha256={}}))});
+test('invalid evidence for HOLD/UNREVIEWED must not earn credit',()=>{negative(mutate(d=>d.reviews[0].evidenceSha256=hash('fake-protection')))});
+test('different House and Sphere aggregations retain different counts',()=>{const d=data();d.reviews[0].status='PASS';d.reviews[0].evidenceSha256=hash('proof');const x=ok(d.nodes,d.reviews);assert.equal(x.summary.houseSummaries[0].counts.PASS,1);assert.equal(x.summary.sphereSummaries[0].counts.PASS,1);assert.equal(x.summary.houseSummaries[1].counts.PASS,0)});
+test('portable snapshot does not embed source bodies or passwords',()=>{const d=data(),x=ok(d.nodes,d.reviews);assert.ok(!JSON.stringify(x).includes('sensitiveBody'));assert.equal(x.summary.sourceRows,undefined)});
+test('malformed SHA or rights revision holds',()=>{const d=data();negative(ok(d.nodes,d.reviews,{...scope,rightsEpoch:'x'}));negative(ok(d.nodes,d.reviews,{...scope,outputSha256:['x'.repeat(64)]}))});
