@@ -1,0 +1,202 @@
+{
+  "actual_model_turns": 0,
+  "attestation": "NO_INDEPENDENT_SIGNATURE_OR_HOST_READBACK",
+  "authority_effect": "NONE",
+  "canon": false,
+  "deployed": false,
+  "events": [
+    {
+      "index": 0,
+      "kind": "FABRIC_PREFLIGHT",
+      "payload": {
+        "authority": "NONE",
+        "hosted": false,
+        "manifest_sha256": "96608c9843415c5f28a65891fba05dc3f1fd8bb6ee830307e2c3ddd32071585e"
+      },
+      "previous_sha256": "GENESIS",
+      "sha256": "8de31cb9508382bfd6d0aacfa8dadd36db03d22c35d21287bbc450649e760c31"
+    },
+    {
+      "index": 1,
+      "kind": "SOURCE_METADATA_BOUND",
+      "payload": {
+        "completeness": "NOT_INDEPENDENTLY_ATTESTED",
+        "digests": {
+          "aluminum_ontology": "fb879f37dcffd3ac6d60a2e50bf3331ab985a5c9",
+          "orcs_h01": "17516ab06bdd09b5e45ef2477bc69915e19f34d6"
+        },
+        "raw_export_status": "raw_partial",
+        "source_ids": [
+          "orcs_h01",
+          "aluminum_ontology"
+        ]
+      },
+      "previous_sha256": "8de31cb9508382bfd6d0aacfa8dadd36db03d22c35d21287bbc450649e760c31",
+      "sha256": "c8699126c07a00d78545ffb98eb0340ca290ee1fc714b345f585a36dc6cb8e3c"
+    },
+    {
+      "index": 2,
+      "kind": "COORDINATES_TYPED",
+      "payload": {
+        "A": {
+          "address": "H01.S03",
+          "claim_sha256": "bb5d80ce18b0c8f9a67dd0ededa3b5ae22a78e145436e965995b82d2147c32a1",
+          "coordinates": [
+            1,
+            3
+          ],
+          "edition": "historical",
+          "label_sha256": "7699edc6984f85fe82c0ed4cccbf1a0a47c55014a48b3b5410b5d32d6e58979d",
+          "namespace": "orcs.legacy",
+          "role": "NODE",
+          "source_ref": "orcs_h01"
+        },
+        "B": {
+          "address": "H01.S03",
+          "claim_sha256": "b9a356911f778e706a798ef24538cce575cd3c3ab04de4de9f38c5289f3a25a0",
+          "coordinates": [
+            1,
+            3
+          ],
+          "edition": "v4.0-draft.6",
+          "label_sha256": "91039c7e16c0132907562a9b5a232b1abc2deef11baf3c090335cb193428fe20",
+          "namespace": "aluminum.draft4",
+          "role": "NODE",
+          "source_ref": "aluminum_ontology"
+        },
+        "cross_namespace_same_as": "NOT_AUTHORIZED"
+      },
+      "previous_sha256": "c8699126c07a00d78545ffb98eb0340ca290ee1fc714b345f585a36dc6cb8e3c",
+      "sha256": "98f9c6567feab69886b6ad14d86f5313e4bbb5629fea8af9a3a463c32162727a"
+    },
+    {
+      "index": 3,
+      "kind": "A_PLUS_B_EQUALS_C_CANDIDATE",
+      "payload": {
+        "evaluation": "CANDIDATE_UNREVIEWED",
+        "hypothesis_sha256": "9e24d24909834b630433a72888d953ff81a013ff05f2bdf5bca4687a3c76835b",
+        "relation": "EDITION_COLLISION_CANDIDATE"
+      },
+      "previous_sha256": "98f9c6567feab69886b6ad14d86f5313e4bbb5629fea8af9a3a463c32162727a",
+      "sha256": "2b5d91fae2706bf533f0eadd5591616ca00686a286d4c223c2c561945e71e6d7"
+    },
+    {
+      "index": 4,
+      "kind": "COUNTEREVIDENCE_PRESERVED",
+      "payload": {
+        "counterevidence_sha256": [
+          "3aef667a42f333b5d434d311d27d76995eab9109dd86f6f04be038e202fb64c9",
+          "95e74bb1bd0a0abc358f40123886dc210f8c5956dea92cb565ff2f4ba2f58292"
+        ],
+        "falsification_sha256": [
+          "cce646e49c2a98aaeffe0d4ca52b72e66eb4c5db695940d482b399fadb2ad60a",
+          "e582008cd35ebe033e9cedf2c560e1757bbcb6027de0976503ae9620357c023b",
+          "53a718ae4e35d707526ccf0c918a1c3aad1c82a0230ac790d31c7c391d66d518"
+        ],
+        "preserved": true
+      },
+      "previous_sha256": "2b5d91fae2706bf533f0eadd5591616ca00686a286d4c223c2c561945e71e6d7",
+      "sha256": "cebf00cfe7ec75369db00d7f652d8b2cb1f494c63b2624a672e5f417606ab3ea"
+    },
+    {
+      "index": 5,
+      "kind": "TWELVE_HOUSE_REVIEW",
+      "payload": {
+        "cross_house_scoring": "NOT_PERFORMED",
+        "evidence": {
+          "H01": "NOT_VALIDATED",
+          "H02": "NOT_VALIDATED",
+          "H03": "NOT_VALIDATED",
+          "H04": "NOT_VALIDATED",
+          "H05": "NOT_VALIDATED",
+          "H06": "NOT_VALIDATED",
+          "H07": "NOT_VALIDATED",
+          "H08": "NOT_VALIDATED",
+          "H09": "NOT_VALIDATED",
+          "H10": "NOT_VALIDATED",
+          "H11": "NOT_VALIDATED",
+          "H12": "NOT_VALIDATED"
+        },
+        "risk_sha256": {
+          "H01": "9833a703b44a8673048bc6c1b07783835abf1c3967f87b40a96b01f432e5d001",
+          "H02": "b4c2c5eb4c11bbf37806b39c8f017352d3ff82330b20dd9d14f9ff10434e46e6",
+          "H03": "ef60ffb64ac166ebb8f8b744b35734923ea0d1d9c60a0f96065acedf46a56781",
+          "H04": "d1368859f4abd3d89699119dfe26e52bca0b17ac4c1899227e091a22eef202f1",
+          "H05": "e71b6a0eadbfaf4dc5612f7927dc579ac762b588f1dcc392c306f978fe396b2d",
+          "H06": "d7c63362d873cced2ad269297888e32ca7d3111eaff3a921f05a095bab5b3865",
+          "H07": "5e2517f746ac863b3162e77f83e5d47e71afd6269e871c7fb48e1f52757701ae",
+          "H08": "d69e38e11adf174711a1dccc2c006985faf08fee2038bb084330f4e3f5a5c3b0",
+          "H09": "5df6d015ddc1508c603a18b06ba72f2c71876c96abde5f13f146d5fb44dc60e2",
+          "H10": "e74136bb2e23cda44d12f63892cebe8115cc9358565939647c568bd893ea521a",
+          "H11": "a4dfc8136237417670407f7137a7f8bb4a8d74806ec0058492de860a779f13c7",
+          "H12": "b7c1f0a032ce80875318e9b21e023bd48a38d47eef12ac70324735b0be1b072e"
+        },
+        "roles": {
+          "H01": "DIRECT",
+          "H02": "ENABLER",
+          "H03": "ENABLER",
+          "H04": "ENABLER",
+          "H05": "DIRECT",
+          "H06": "ENABLER",
+          "H07": "ENABLER",
+          "H08": "GATE",
+          "H09": "GATE",
+          "H10": "GATE",
+          "H11": "GATE",
+          "H12": "DIRECT"
+        }
+      },
+      "previous_sha256": "cebf00cfe7ec75369db00d7f652d8b2cb1f494c63b2624a672e5f417606ab3ea",
+      "sha256": "3664e54be1eb9203e4af52dfd741c3b21cf9f3ebf6bda4bceb2312f82765c0b4"
+    },
+    {
+      "index": 6,
+      "kind": "HUMAN_AND_HOST_HOLDS",
+      "payload": {
+        "authenticated_principal": "NOT_VERIFIED",
+        "held_host_gates": [
+          "A2A-INBOX",
+          "AUTH-CALLBACK",
+          "AUTH-D1",
+          "AUTH-PRINCIPAL",
+          "CANON-RATIFY",
+          "GRAPH-ACL",
+          "ORCS-REAL-DATA",
+          "PLAY-BOUNDARY",
+          "PUBLISH-OWNER",
+          "REPAIR-OBSERVED",
+          "SRC-DEPENDENCIES",
+          "SRC-LICENSE",
+          "WORK-CAS"
+        ],
+        "human_review": "NOT_REQUESTED",
+        "peer_read": "NOT_VERIFIED",
+        "work_room_post": "NOT_ATTEMPTED"
+      },
+      "previous_sha256": "3664e54be1eb9203e4af52dfd741c3b21cf9f3ebf6bda4bceb2312f82765c0b4",
+      "sha256": "9391dedddc20c1ce777b881febf725ce7fe4a4ddefe68fc0b70d26ee80a124e2"
+    },
+    {
+      "index": 7,
+      "kind": "LOCAL_RECEIPT",
+      "payload": {
+        "authority_effect": "NONE",
+        "model_calls": 0,
+        "packet_sha256": "4183ed9b4ac87fd6ee14700d8ec4761c68a35b34ac3cfbd64757e3c67fdf4274",
+        "result": "LOCAL_PREPARED_UNPOSTED",
+        "rollback": "STOP_NO_MUTATIONS"
+      },
+      "previous_sha256": "9391dedddc20c1ce777b881febf725ce7fe4a4ddefe68fc0b70d26ee80a124e2",
+      "sha256": "5bec8616f83d53f6023f572a2d22af0fd6a920b0727a46a5550dcf92f751c939"
+    }
+  ],
+  "hosted": false,
+  "human_review": "NOT_REQUESTED",
+  "packet_id": "h01-ontology-edition-collision-20261122",
+  "peer_read": "NOT_VERIFIED",
+  "post_count": 0,
+  "run_state": "LOCAL_PREPARED_UNPOSTED",
+  "schema": "atlas.one.circuit-receipt/v0.2",
+  "source_scope": "PUBLIC_WORK_METADATA",
+  "terminal_sha256": "5bec8616f83d53f6023f572a2d22af0fd6a920b0727a46a5550dcf92f751c939"
+}
