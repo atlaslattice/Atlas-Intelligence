@@ -17,11 +17,34 @@ const MAX_URI = 512;
 const DENIED = Object.freeze({schema:'atlas.meta145.http-result/v2',status:'HOLD',reason:'UNAUTHORIZED_OR_UNAVAILABLE',data:null});
 
 function safeText(x){return typeof x==='string' && PRINCIPAL.test(x) && x!=='undefined' && x!=='null';}
-function validIdentity(x){return x && x.verified===true && ['subject','tenant','issuer','session'].every(k=>safeText(x[k]));}
-function validGrant(x,scope){
-  return x && x.allowed===true && x.purpose==='ATLAS_META145_WORK_SOURCE_READ' &&
-    x.scope==='ATLAS_META145_READ_ONLY' && safeText(x.permissionRevision) &&
-    (scope.roomId ? x.roomId===scope.roomId : x.roomId===null);
+/** Detach the precise own-data properties observed at each privilege boundary.
+ * A callback may reuse/mutate its result object after READ; comparing that same
+ * mutable reference at RETURN would silently turn an ACL revision change into
+ * an accepted recheck. Accessors/inherited fields are not a source of authority.
+ * JavaScript Proxy objects within the host trust domain are still out of scope;
+ * the actual issuer/ACL implementations must remain trusted and independently tested.
+ */
+function ownDataSnapshot(value,keys){
+  if(value===null||typeof value!=='object'||Array.isArray(value))return null;
+  const prototype=Object.getPrototypeOf(value);
+  if(prototype!==Object.prototype&&prototype!==null)return null;
+  const descriptors=Object.getOwnPropertyDescriptors(value);
+  const result=Object.create(null);
+  for(const key of keys){
+    if(!Object.hasOwn(descriptors,key)||!Object.hasOwn(descriptors[key],'value'))return null;
+    result[key]=descriptors[key].value;
+  }
+  return Object.freeze(result);
+}
+function snapshotIdentity(raw){
+  const x=ownDataSnapshot(raw,['verified','subject','tenant','issuer','session']);
+  return x?.verified===true&&['subject','tenant','issuer','session'].every(k=>safeText(x[k]))?x:null;
+}
+function snapshotGrant(raw,scope){
+  const x=ownDataSnapshot(raw,['allowed','purpose','scope','permissionRevision','roomId']);
+  return x?.allowed===true&&x.purpose==='ATLAS_META145_WORK_SOURCE_READ'&&
+    x.scope==='ATLAS_META145_READ_ONLY'&&safeText(x.permissionRevision)&&
+    (scope.roomId?x.roomId===scope.roomId:x.roomId===null)?x:null;
 }
 function sameIdentity(a,b){return ['subject','tenant','issuer','session'].every(k=>a[k]===b[k]);}
 function sameGrant(a,b){return ['purpose','scope','permissionRevision','roomId'].every(k=>a[k]===b[k]);}
@@ -68,20 +91,20 @@ export function createMeta145HostBoundHandler(program,manifest,{authenticate,aut
     const scope=Object.freeze({purpose:'ATLAS_META145_WORK_SOURCE_READ',...choice});
     let firstIdentity,firstGrant;
     try{
-      firstIdentity=await authenticate({phase:'READ',req,scope});
-      if(!validIdentity(firstIdentity))return deny(res);
-      firstGrant=await authorize({phase:'READ',identity:firstIdentity,req,scope});
-      if(!validGrant(firstGrant,scope))return deny(res);
+      firstIdentity=snapshotIdentity(await authenticate({phase:'READ',req,scope}));
+      if(!firstIdentity)return deny(res);
+      firstGrant=snapshotGrant(await authorize({phase:'READ',identity:firstIdentity,req,scope}),scope);
+      if(!firstGrant)return deny(res);
     }catch{return deny(res);}
     let result;
     try{
       result=choice.operation==='status'?bridge.status():bridge.prepareJointReview(choice);
     }catch{return deny(res,400);}
     try{
-      const lastIdentity=await authenticate({phase:'RETURN',req,scope});
-      if(!validIdentity(lastIdentity)||!sameIdentity(firstIdentity,lastIdentity))return deny(res);
-      const lastGrant=await authorize({phase:'RETURN',identity:lastIdentity,req,scope});
-      if(!validGrant(lastGrant,scope)||!sameGrant(firstGrant,lastGrant))return deny(res);
+      const lastIdentity=snapshotIdentity(await authenticate({phase:'RETURN',req,scope}));
+      if(!lastIdentity||!sameIdentity(firstIdentity,lastIdentity))return deny(res);
+      const lastGrant=snapshotGrant(await authorize({phase:'RETURN',identity:lastIdentity,req,scope}),scope);
+      if(!lastGrant||!sameGrant(firstGrant,lastGrant))return deny(res);
       if(liveGate()!==true)return deny(res);
     }catch{return deny(res);}
     // Authority effects remain NONE even when a controlled local host callback passes.
