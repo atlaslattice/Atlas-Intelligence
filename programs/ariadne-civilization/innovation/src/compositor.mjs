@@ -31,6 +31,12 @@ export function composeInnovationCircuit(coordinate){
 /** One aggregation from 1728 Node receipt shapes, 144 Sphere + 12 House rollups. */
 export function meta145InnovationRollup(cards){
  if(!Array.isArray(cards)||cards.length!==1728||cards.some(c=>!c||c.schema!=='atlas.one.meta145-twenty-probe-advisory/v0.1'||c.registrySha256!==ORIGINAL_SHA256||c.completedSyntheticOperators!==20||c.gate!=='REVIEW_REQUIRED_SOURCE_ONLY'||c.authorityEffect!=='NONE'))return {state:'HOLD',reason:'UNPINNED_CARD_SET',authorityEffect:'NONE'};
+ // This is a local tamper-evidence checksum, NOT a trusted issuer signature.
+ for(const c of cards){
+  const {workCandidate,receiptSha256,...source}=c;
+  if(typeof receiptSha256!=='string'||receiptSha256!==sha(source))
+   return {state:'HOLD',reason:'SYNTHETIC_RECEIPT_TAMPERED',authorityEffect:'NONE'};
+ }
  const ids=cards.map(c=>c.coordinate);
  if(new Set(ids).size!==1728||ids.some(x=>!isHSN(x)))return {state:'HOLD',reason:'INVALID_TOPOLOGY',authorityEffect:'NONE'};
  const spheres={},houses={};for(const c of cards){const sphere=c.coordinate.slice(0,7),house=c.coordinate.slice(0,3);(spheres[sphere]??=[]).push(c);(houses[house]??=[]).push(c);}
