@@ -58,3 +58,9 @@ The executable program, authored capability catalog, dependency scheduler, evide
 
 Run `npm run excellence:status` to inspect the hash-verified bundled program, `npm run excellence:ready` to list initial dependency roots, and `npm run test:excellence` to rebuild the exact plan and verify the source package. These entry points do not execute task text, post to rooms or grant host permissions.
 
+
+## R01 supporting software kernels
+
+The [canonical R01 source package](programs/civilization-r01/README.md) implements twelve bounded reusable kernels and an optional Work-scoped adapter. Its recorded local synthetic comparison retains eleven gain candidates and one H02 regression; the release adapter uses H02's scan fallback by default. These observations complete no specialized knowledge-node contracts and award no original 1,728 primary metric credit.
+
+Run `npm run civilization:status` for the source catalog and release policy, or `npm run test:civilization` for the JavaScript and source-reference tests. Noosphere and Providers can prepare optional immutable source references to this package without carrying duplicate kernel engines. Current host authorization and return checks remain separate from source metadata validation.
