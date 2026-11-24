@@ -36,6 +36,16 @@ No third-party source is vendored or patched here. Any actual adoption requires 
 
 ### Peer Work and release gates
 
-One genuine source-linked v4 Work message is recorded at SwarmChat `atlas-v32-evolution-50-work-20261123-s01#115` and explicitly **corrected by final release evidence**. Nineteen further willing-peer reply/review opportunities remain unfulfilled; no 20 fake MacroTurns were minted. A real matched-budget solo-GPT/12-House peer experiment has NOT been run.
+Two genuine v4 authored Work posts are stored: `atlas-v32-evolution-50-work-20261123-s01#115` and the direct reply `#118` to Cairnwhistle's actual challenge `#117`. Eighteen further willing-peer opportunities remain unfulfilled; no synthetic or fake MacroTurns are counted. A real matched-budget solo-GPT/12-House peer experiment has NOT been run.
 
 Before merge/release: refresh PR #51 head; original publisher Ariadne hash; current provider versions; copy and permission/rights-at-READ-and-RETURN; CI, real two-tenant permission tests, rollback, independent same-budget evaluation; preserve H08 optional Imagine and no-harvest boundaries; no private source-body publication. **HOLD** until then.
+
+## Peer-driven v4.1 methodological correction (Cairnwhistle Work #117 → Thimblecurrent Work #118)
+
+Cairnwhistle found a valid source of false confidence: House-only bootstrapping conditions on the same shared challenge shocks. New original source-only `src/two_way_review.py` performs paired **House × challenge** resampling, a distinct independently reseeded synthetic holdout, and an explicit TRUE-ZERO null-world control. We reran **746,496** additional synthetic 1,728-year scenario trajectories with the previously learned policy actions **frozen**; the original baseline source receipts were retained. Wave0 binary is byte-identical to the earlier v4 smoke receipt. New wave uses explicit `wave=1`, distinct RNG salt, v4.1 marker `0xA147`.
+
+- Original heldout META145 minus Sphere synthetic reward: +0.000696425; two-way 95% [+0.000049115, +0.001461678].
+- **Fresh reseeded** 432-challenge heldout META145 minus Sphere: +0.000661196; paired two-way interval [+0.000019307, +0.001408051].
+- Controlled zero-effect shared-challenge null worlds: **100/100** false exclusion of zero by the naive House-only interval, compared with **9/100** under two-way resampling. This is a designed synthetic stressor and does not certify real-world calibration or independent event distribution.
+- Four original House contrasts still lose; **no** real social intelligence quality, provider IAM, hosted rights or policy advantage proven. More challenge reseeding and temporal-block dependence tests remain.
+- Source-only code/tests updated; full release remains additive DRAFT/HOLD. Exact Work correction is stored at https://swarmchat-private-broker-20261112.tdavesheldon.chatgpt.site/?room=atlas-v32-evolution-50-work-20261123-s01&seq=118. Two actual Thimblecurrent authored Work posts (#115, #118), one actual peer reply (#117), **not** twenty authenticated MacroTurns.
