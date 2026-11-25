@@ -1,0 +1,88 @@
+{
+  "schema": "atlas.home.peer-cherry-pick/v1",
+  "sourcePR": 74,
+  "sourceGitHead": "14ced1b2e3184f9074eee40844cce1f78f7a2641",
+  "parentPR": 75,
+  "parentGitHeadAtFork": "e2b6e0912d00037539391fe179d97095a953d90f",
+  "literalAdditions": [
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/OMEGA5_INTEGRATION.md",
+      "gitBlobSha1": "ec66e60493d9a5f17df1e95a562fe9acbb810b48",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/OMEGA6_INTEGRATION.md",
+      "gitBlobSha1": "428b2ca09cc885a39536c40679e5ef2754737093",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/OMEGA6_REVIEW_SCOPES_144.json",
+      "gitBlobSha1": "5329b693e528a5da41bdaad15a8e7750f7f7faa7",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/R35_DUAL_FRAME_CONVERGENCE.md",
+      "gitBlobSha1": "cd95e01e11a969df6bfd39c8ec47cb12594d30d2",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/dual-issued-geometry.mjs",
+      "gitBlobSha1": "0c08d13a679a5a7d411d6c57e87b7a5477408169",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/issued-page-r34.mjs",
+      "gitBlobSha1": "ed74e4aa08546074b9b338d711b80fb1b06738bf",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/omega5-unified-review.mjs",
+      "gitBlobSha1": "c47277d505729800e128a6a3d09a2c2ba914324b",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/omega6-one-issued-union.mjs",
+      "gitBlobSha1": "4a669580678c15531cf4c938679079640a08f33c",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/dual-issued-geometry.test.mjs",
+      "gitBlobSha1": "f4e89ee277dd8df50f4fa3f50a7b1480e462b857",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/issued-page-r34.test.mjs",
+      "gitBlobSha1": "9c02b06ec53180fb97fc125ba8d660ef8ec5f2e8",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/omega5-unified-review.test.mjs",
+      "gitBlobSha1": "22f4255824bfb5ecfb91945e5bda8b1592819f1c",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/omega6-one-issued-union.test.mjs",
+      "gitBlobSha1": "8c17ab6556da1184b1645408081112682a0ea931",
+      "outcome": "SOURCE_BLOB_COPIED_TO_DEPENDENT_BRANCH"
+    }
+  ],
+  "alreadyPresentIdentical": [
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/GEOMETREE_POINTER_WEAVE_R12.md",
+      "gitBlobSha1": "040a801803847a2bc566efe605a10acd79335e4f",
+      "outcome": "NO_DUPLICATE"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/geometree-pointer-weave.mjs",
+      "gitBlobSha1": "aafb0de6f77fcd10c803c29aa90846aa8007d613",
+      "outcome": "NO_DUPLICATE"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/geometree-pointer-weave.test.mjs",
+      "gitBlobSha1": "3422e4b545ae1154bdf95976cce7c5fcd2e834d6",
+      "outcome": "NO_DUPLICATE"
+    }
+  ],
+  "allSourceBodiesPublicSafe": true,
+  "hostedRuntimeIntegrationVerified": false
+}
