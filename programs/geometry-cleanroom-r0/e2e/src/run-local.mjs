@@ -1,0 +1,13 @@
+import {resolve} from 'node:path';
+import {createAtlasLocalHost,createMutableLocalAuthority} from './host.mjs';
+import {startPrivateSelectedWorker} from './worker-bridge.mjs';
+const {ATLAS_OWNER_LOCAL_TOKEN,ATLAS_OWNER_WORKSPACE,ATLAS_OWNER_R06}=process.env;
+if(!ATLAS_OWNER_LOCAL_TOKEN||ATLAS_OWNER_LOCAL_TOKEN.length<32||!ATLAS_OWNER_WORKSPACE||!ATLAS_OWNER_R06)throw Error('PRIVATE_HOST_ENV_REQUIRED');
+const sourceRoot=resolve(new URL('../',import.meta.url).pathname);
+const worker=startPrivateSelectedWorker({python:process.env.ATLAS_PYTHON??'python',sourceRoot,privateR06Root:ATLAS_OWNER_R06,workspace:ATLAS_OWNER_WORKSPACE});
+await worker.ready;
+const authority=createMutableLocalAuthority();
+const host=createAtlasLocalHost({infer:worker.infer,token:ATLAS_OWNER_LOCAL_TOKEN,policyAuthority:authority});
+const addr=await host.listen();
+console.log(JSON.stringify({status:'READY_LOCAL_LOOPBACK',schema:'atlas.local.host/v1',bind:'127.0.0.1',port:addr.port,publicDeployment:false,remoteRights:false}));
+for(const sig of ['SIGINT','SIGTERM'])process.once(sig,()=>{worker.close();host.close().finally(()=>process.exit(0));});
