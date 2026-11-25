@@ -1,0 +1,16 @@
+{
+  "schema": "atlas.indras-hearth.peer-source-links/v1",
+  "sourceRepo": "atlaslattice/Atlas-Intelligence",
+  "sourceHeads": {
+    "PR75": "e2b6e0912d00037539391fe179d97095a953d90f",
+    "PR74": "14ced1b2e3184f9074eee40844cce1f78f7a2641",
+    "PR61": "e610aee6a3d0809a6b4dda6c52a141fd9b241cd4",
+    "PR62": "bea18c77c07108b931b2c3fff5c41a1eea14f079",
+    "PR65": "8b7ad6cea520659b08974541ca6ccb164443cae1",
+    "PR67": "348b28a09287ba5c47fa8ad470ec97a5b35d19cd"
+  },
+  "basis": "SOURCE_CONTENT_INHERITED_OR_BLOB_PRESERVED",
+  "automaticAcceptance": false,
+  "qualifiedHostPermissions": false,
+  "newModelCalls": 0
+}

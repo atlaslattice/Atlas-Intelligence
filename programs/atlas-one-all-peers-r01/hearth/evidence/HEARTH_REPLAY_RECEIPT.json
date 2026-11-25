@@ -1,0 +1,58 @@
+{
+  "schema": "atlas.indras-hearth.test-receipt/v1",
+  "date": "2026-11-24 (America/Honolulu)",
+  "status": "LOCAL_REPLAY_COMPLETE_PUBLIC_SHELL_AND_OWNER_SOURCE",
+  "canonicalSha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "sourceProof": {
+    "twoOriginalArchivedCopiesIdentical": true,
+    "originalBytes": 2187541,
+    "houses": 12,
+    "spheres": 144,
+    "nodes": 1728,
+    "domain": 1008,
+    "method": 720,
+    "ownerPrivateLabelsNotPublished": true
+  },
+  "tests": {
+    "nodeNormal": {
+      "pass": 56,
+      "fail": 0
+    },
+    "nodeJitless": {
+      "pass": 56,
+      "fail": 0
+    },
+    "originalSourceAudits": {
+      "pass": 13,
+      "fail": 0
+    },
+    "chromiumDesktopMobileAssertions": {
+      "pass": 24,
+      "fail": 0
+    },
+    "jsSyntaxChecks": {
+      "pass": 2,
+      "fail": 0
+    }
+  },
+  "totalDistinctAssertions": 95,
+  "sourcePeerStaging": {
+    "existingPR75Paths": 319,
+    "newExactBlobImports": 12,
+    "twelveGitBlobsMatched": true,
+    "existingCriticalBlobsUnchanged": true,
+    "productionImportedAllCapabilities": false
+  },
+  "nonClaims": {
+    "currentModel0_3InferenceExecuted": false,
+    "trueHostPermissionsVerified": false,
+    "independentRequiredClosureVerified": false,
+    "hostedCIPassed": false,
+    "oneMillionYearsActuallySimulated": false,
+    "learnedTopologySuperiority": false,
+    "canonChanged": false,
+    "residentsWoken": false,
+    "userSecretsRead": false,
+    "sourceBodiesPublished": false
+  }
+}
