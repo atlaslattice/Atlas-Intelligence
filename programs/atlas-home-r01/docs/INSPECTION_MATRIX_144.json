@@ -1,0 +1,1304 @@
+{
+  "schema": "atlas.home.inspection-matrix/v1",
+  "status": "PROPOSED_NOT_EXECUTED",
+  "source": "original PR75+PR74 source-workbench review",
+  "count": 144,
+  "entries": [
+    {
+      "id": "HOME.C01.P01",
+      "port": "ARIADNE",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P02",
+      "port": "ARIADNE",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P03",
+      "port": "ARIADNE",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P04",
+      "port": "ARIADNE",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P05",
+      "port": "ARIADNE",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P06",
+      "port": "ARIADNE",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P07",
+      "port": "ARIADNE",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P08",
+      "port": "ARIADNE",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P09",
+      "port": "ARIADNE",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P10",
+      "port": "ARIADNE",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P11",
+      "port": "ARIADNE",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C01.P12",
+      "port": "ARIADNE",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ARIADNE, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P01",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P02",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P03",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P04",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P05",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P06",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P07",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P08",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P09",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P10",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P11",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C02.P12",
+      "port": "NEURAL_HEAD",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For NEURAL_HEAD, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P01",
+      "port": "GEOMETREE",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P02",
+      "port": "GEOMETREE",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P03",
+      "port": "GEOMETREE",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P04",
+      "port": "GEOMETREE",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P05",
+      "port": "GEOMETREE",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P06",
+      "port": "GEOMETREE",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P07",
+      "port": "GEOMETREE",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P08",
+      "port": "GEOMETREE",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P09",
+      "port": "GEOMETREE",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P10",
+      "port": "GEOMETREE",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P11",
+      "port": "GEOMETREE",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C03.P12",
+      "port": "GEOMETREE",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GEOMETREE, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P01",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P02",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P03",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P04",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P05",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P06",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P07",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P08",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P09",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P10",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P11",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C04.P12",
+      "port": "GRAPH_FABRIC",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GRAPH_FABRIC, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P01",
+      "port": "META145",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P02",
+      "port": "META145",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P03",
+      "port": "META145",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P04",
+      "port": "META145",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P05",
+      "port": "META145",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P06",
+      "port": "META145",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P07",
+      "port": "META145",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P08",
+      "port": "META145",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P09",
+      "port": "META145",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P10",
+      "port": "META145",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P11",
+      "port": "META145",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C05.P12",
+      "port": "META145",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For META145, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P01",
+      "port": "GLYPH",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P02",
+      "port": "GLYPH",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P03",
+      "port": "GLYPH",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P04",
+      "port": "GLYPH",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P05",
+      "port": "GLYPH",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P06",
+      "port": "GLYPH",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P07",
+      "port": "GLYPH",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P08",
+      "port": "GLYPH",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P09",
+      "port": "GLYPH",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P10",
+      "port": "GLYPH",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P11",
+      "port": "GLYPH",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C06.P12",
+      "port": "GLYPH",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GLYPH, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P01",
+      "port": "ATLASGPT",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P02",
+      "port": "ATLASGPT",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P03",
+      "port": "ATLASGPT",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P04",
+      "port": "ATLASGPT",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P05",
+      "port": "ATLASGPT",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P06",
+      "port": "ATLASGPT",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P07",
+      "port": "ATLASGPT",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P08",
+      "port": "ATLASGPT",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P09",
+      "port": "ATLASGPT",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P10",
+      "port": "ATLASGPT",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P11",
+      "port": "ATLASGPT",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C07.P12",
+      "port": "ATLASGPT",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For ATLASGPT, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P01",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P02",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P03",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P04",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P05",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P06",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P07",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P08",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P09",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P10",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P11",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C08.P12",
+      "port": "SWARMCHAT_WORK",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For SWARMCHAT_WORK, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P01",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P02",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P03",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P04",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P05",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P06",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P07",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P08",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P09",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P10",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P11",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C09.P12",
+      "port": "WORK_LEARNING",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For WORK_LEARNING, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P01",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P02",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P03",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P04",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P05",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P06",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P07",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P08",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P09",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P10",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P11",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C10.P12",
+      "port": "EVIDENCE_MEMORY",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For EVIDENCE_MEMORY, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P01",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P02",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P03",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P04",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P05",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P06",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P07",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P08",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P09",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P10",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P11",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C11.P12",
+      "port": "RESEARCH_LAB",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For RESEARCH_LAB, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P01",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "SOURCE_PIN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify source pin against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P02",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "CANONICAL_HSN",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify canonical hsn against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P03",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "ROLE_SUBJECT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify role subject against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P04",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "FULL_FRAME",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify full frame against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P05",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "EXPLICIT_PURPOSE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify explicit purpose against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P06",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "READ_RIGHTS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify read rights against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P07",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "NUMERIC_NEGATIVE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify numeric negative against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P08",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "REQUIRED_OBJECTIONS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify required objections against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P09",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "CROSS_HOST_DIVERGENCE",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify cross host divergence against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P10",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "RETURN_WITHDRAWAL",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify return withdrawal against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P11",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "HUMAN_HELDOUT",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify human heldout against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    },
+    {
+      "id": "HOME.C12.P12",
+      "port": "GOVERNANCE",
+      "engineeringPhase": "FINAL_BYTE_EGRESS",
+      "status": "PROPOSED_NOT_EXECUTED",
+      "acceptanceCondition": "For GOVERNANCE, independently verify final byte egress against a pinned source and deny or preserve a recorded negative",
+      "hostedVerified": false,
+      "roleSemanticCoverage": false
+    }
+  ]
+}
