@@ -75,3 +75,28 @@ test('result fingerprint stable on same issued bytes and task',()=>{
  assert.equal(a.sourceFrameFingerprint,b.sourceFrameFingerprint);
  assert.equal(a.hostRightsAttested,false);assert.equal(a.semanticAccepted,false);
 });
+
+test('taskId must equal original node ordinal, not merely look plausible',()=>{
+ const h=prepareHearthSnapshot(homeFixture(),request(),{selectedHsn:'H05.S06.N12'});
+ const t=node();t.taskId='AF1728-0647';
+ assert.equal(composeHearthWorkRef(t,h).status,'HOLD_NO_WORK_VIEW');
+});
+test('all 1728 canonical nodes bind to one original Hearth local frame without reranking or egress',()=>{
+ const input=homeFixture(),r=request();let completed=0,negativeHeld=0,methodFixtures=0;
+ for(let h=1;h<=12;h++)for(let s=1;s<=12;s++)for(let n=1;n<=12;n++){
+  const hsn=`H${String(h).padStart(2,'0')}.S${String(s).padStart(2,'0')}.N${String(n).padStart(2,'0')}`;
+  const ordinal=(h-1)*144+(s-1)*12+n;
+  const subject=s>=8?`H${String(h).padStart(2,'0')}.S01.N01`:null;
+  const home=prepareHearthSnapshot(input,r,{selectedHsn:hsn,subjectHsn:subject});
+  assert.equal(home.status,'PREPARED_NOT_RELEASED');
+  const t=node(hsn);t.taskId=`AF1728-${String(ordinal).padStart(4,'0')}`;
+  const projection=composeHearthWorkRef(t,home);
+  assert.equal(projection.status,'LOCAL_STRUCTURAL_WORK_REF_ONLY');
+  assert.equal(projection.hsn,hsn);assert.equal(projection.taskId,t.taskId);
+  assert.equal(projection.releaseAuthorized,false);
+  const swapped={...t,taskId:`AF1728-${String(ordinal===1?2:1).padStart(4,'0')}`};
+  assert.equal(composeHearthWorkRef(swapped,home).status,'HOLD_NO_WORK_VIEW');
+  completed++;negativeHeld++;if(subject)methodFixtures++;
+ }
+ assert.equal(completed,1728);assert.equal(negativeHeld,1728);assert.equal(methodFixtures,720);
+});
