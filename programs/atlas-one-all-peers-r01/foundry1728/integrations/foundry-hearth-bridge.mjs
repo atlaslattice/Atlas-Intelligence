@@ -29,7 +29,10 @@ export function composeHearthWorkRef(publicTask,hearthView,{mode='WORK',expected
   if(mode!=='WORK')throw Error('PROTECTED_MODE');
   const node=own(publicTask,['hsn','parent','kind','taskId','status','workOrderSha256']);
   const view=own(hearthView);
-  if(!HSN.test(node.hsn)||node.parent!==node.hsn.slice(0,7)|| !/^AF1728-(0\d{3}|1[0-6]\d{2}|17[0-2][0-8])$/.test(node.taskId)||!SHA.test(node.workOrderSha256))throw Error('SOURCE_WORKORDER_INVALID');
+  const match=HSN.exec(node.hsn);
+  if(!match)throw Error('SOURCE_WORKORDER_INVALID');
+  const rowNumber=(Number(match[1])-1)*144+(Number(match[2])-1)*12+Number(match[3]);
+  if(node.parent!==node.hsn.slice(0,7)|| node.taskId!==`AF1728-${String(rowNumber).padStart(4,'0')}` || !SHA.test(node.workOrderSha256))throw Error('SOURCE_WORKORDER_INVALID');
   if(node.status!=='STRUCTURAL_TESTED_IN_OWNER_RUNTIME'||expectedSourceSha256!==ORIGINAL)throw Error('ORIGINAL_SOURCE_UNPINNED');
   const hs=Number(node.hsn.slice(5,7));
   const expectedKind=hs<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META';
