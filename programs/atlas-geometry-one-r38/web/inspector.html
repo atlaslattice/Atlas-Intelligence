@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Atlas Geometry ONE — Inspect the 12³ structure</title>
+<style>
+:root{--ink:#e7f5f6;--muted:#8eabb7;--bg:#08131c;--surface:#10232d;
+--line:#25505a;--cyan:#53d9c5;--gold:#f4c976;--focus:#f4c976}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);background:
+radial-gradient(ellipse at 65% 10%,#173b4c 0%,transparent 45%),
+radial-gradient(ellipse at 20% 85%,#1e263a 0%,transparent 38%),var(--bg);
+font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1120px;margin:auto;padding:clamp(18px,4vw,44px)}
+header{display:flex;align-items:flex-start;justify-content:space-between;
+gap:18px;flex-wrap:wrap;margin-bottom:22px}
+h1{font-size:clamp(27px,4vw,43px);letter-spacing:-.04em;margin:0}
+h2{font-size:18px;margin:0 0 12px}
+p{color:var(--muted);margin:6px 0 12px;max-width:70ch}
+small,.sub{color:var(--muted)}
+.kicker{font-weight:700;letter-spacing:.19em;color:var(--cyan);font-size:11px}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:40px;
+padding:6px 12px;font-size:12px;color:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.stat,.panel{border:1px solid var(--line);background:rgba(16,35,45,.82);
+border-radius:16px;box-shadow:0 16px 42px #0003}
+.stat{padding:16px}.stat strong{font-size:27px;display:block;color:var(--cyan)}
+.stat span{font-size:12px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(180px,270px) 1fr;gap:16px;
+margin-top:20px}
+.panel{padding:20px;min-width:0}
+.house-grid,.sphere-grid,.node-grid{display:grid;gap:9px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.sphere-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.node-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+button{appearance:none;min-height:46px;border:1px solid #2b5561;background:#15313c;
+color:var(--ink);border-radius:10px;cursor:pointer;padding:8px 4px;font:inherit}
+button:hover{border-color:var(--cyan)}button:focus-visible,input:focus-visible{
+outline:3px solid var(--focus);outline-offset:3px}
+button[aria-pressed=true]{background:var(--cyan);border-color:var(--cyan);
+color:#05262c;font-weight:750}
+.control-head{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;
+align-items:center;margin-bottom:18px}
+input{border:1px solid var(--line);padding:10px 12px;border-radius:9px;
+background:#091b24;color:var(--ink);width:min(100%,320px);font:inherit}
+.gold{color:var(--gold)}.divider{border-top:1px solid var(--line);margin:24px 0}
+.value{font:600 18px ui-monospace,SFMono-Regular,monospace;letter-spacing:.04em}
+.right{display:grid;gap:16px}.footnote{font-size:12px;padding-top:13px}
+.result{min-height:24px;color:var(--gold)}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.layout{grid-template-columns:1fr}.node-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:360px){.sphere-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.node-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div><div class="kicker">ATLAS · ONE FABRIC · INSPECTION</div>
+<h1>Geometry from the first line.</h1>
+<p>One reversible 12 × 12 × 12 address space. Explore the structural lattice
+without inventing scientific facts, training results or resident activity.</p></div>
+<span class="pill">R38 · DRAFT · NO HOST CONNECTION</span>
+</header>
+<section class="stats" aria-label="Structural counts">
+<div class="stat"><strong>12</strong><span>Original Houses</span></div>
+<div class="stat"><strong>144</strong><span>Source-addressed Spheres</span></div>
+<div class="stat"><strong>1,728</strong><span>Node identities</span></div>
+<div class="stat"><strong>12</strong><span>Engineering ports (not Houses)</span></div>
+</section>
+<div class="layout">
+<aside class="panel" aria-label="Select House">
+<h2>01 · House</h2>
+<p>Choose one House; no label is inferred from glyph or cultural analogy.</p>
+<div class="house-grid" id="houses"></div>
+<div class="divider"></div>
+<div class="value" id="house-value">H01</div>
+<p class="sub">Twelve independent Sphere addresses per House.</p>
+</aside>
+<div class="right">
+<section class="panel" aria-label="Sphere selection">
+<div class="control-head">
+<div><h2>02 · Sphere</h2><p>Pick one of twelve Spheres in the current House.</p></div>
+<label class="sub">Jump to HSN
+<input id="jump" aria-label="Jump to HSN, for example H02.S05.N09"
+placeholder="H02.S05.N09" spellcheck="false"></label>
+</div>
+<div class="sphere-grid" id="spheres"></div>
+</section>
+<section class="panel" aria-label="Node selection">
+<h2>03 · Node</h2>
+<p>All twelve structural identities are selectable. Subject-verified domain
+or method meaning belongs to the original pinned source.</p>
+<div class="node-grid" id="nodes"></div>
+<div class="divider"></div>
+<div class="control-head">
+<div><span class="sub">Selected canonical address</span>
+<div class="value gold" id="selected" aria-live="polite">H01.S01.N01</div></div>
+<button id="copy">Copy address</button>
+</div>
+<div class="result" id="status" role="status" aria-live="polite"></div>
+</section>
+</div>
+</div>
+<p class="footnote">Source registry edition: Ariadne v0.7 · SHA-256
+07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6.
+The UI contains only structural coordinates; no original source bodies, evidence
+assertions, cultural endorsement, model weights or external requests.
+No private-mode content is loaded. All rights and release controls remain with
+the existing authorized host.</p>
+</main>
+<script>
+'use strict';
+const pad=n=>String(n).padStart(2,'0');
+const id=(h,s,n)=>`H${pad(h)}.S${pad(s)}.N${pad(n)}`;
+const state={h:1,s:1,n:1};
+const make=(container,label,pressed,onClick)=>{
+  const b=document.createElement('button');
+  b.type='button';b.textContent=label;b.setAttribute('aria-pressed',String(pressed));
+  b.addEventListener('click',onClick);container.appendChild(b);
+};
+function refresh(){
+  document.querySelector('#houses').replaceChildren();
+  for(let h=1;h<=12;h++)make(document.querySelector('#houses'),
+    'H'+pad(h),state.h===h,()=>{state.h=h;state.s=1;state.n=1;refresh()});
+  document.querySelector('#spheres').replaceChildren();
+  for(let s=1;s<=12;s++)make(document.querySelector('#spheres'),
+    'S'+pad(s),state.s===s,()=>{state.s=s;state.n=1;refresh()});
+  document.querySelector('#nodes').replaceChildren();
+  for(let n=1;n<=12;n++)make(document.querySelector('#nodes'),
+    'N'+pad(n),state.n===n,()=>{state.n=n;refresh()});
+  document.querySelector('#house-value').textContent='H'+pad(state.h);
+  document.querySelector('#selected').textContent=id(state.h,state.s,state.n);
+  document.querySelector('#status').textContent='';
+}
+document.querySelector('#jump').addEventListener('change',e=>{
+  const m=/^H(0[1-9]|1[0-2])\.S(0[1-9]|1[0-2])\.N(0[1-9]|1[0-2])$/.exec(e.target.value.trim());
+  if(!m){document.querySelector('#status').textContent='Enter a valid H01.S01.N01–H12.S12.N12 address.';return}
+  state.h=Number(m[1]);state.s=Number(m[2]);state.n=Number(m[3]);refresh();
+});
+document.querySelector('#copy').addEventListener('click',()=>{
+  // Clipboard needs a secure context; do not imply success if unavailable.
+  const value=id(state.h,state.s,state.n);
+  if(navigator.clipboard?.writeText){navigator.clipboard.writeText(value)
+    .then(()=>{document.querySelector('#status').textContent='Address copied.'})
+    .catch(()=>{document.querySelector('#status').textContent='Copy unavailable. Select the address above.'})}
+  else document.querySelector('#status').textContent='Copy unavailable. Select the address above.';
+});
+refresh();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "@atlas/geometry-one-r38",
+  "private": true,
+  "version": "0.0.0-inspection",
+  "type": "module",
+  "description": "Inspection-only clean-sheet 12x12x12 Atlas geometry runtime",
+  "scripts": {
+    "inspect": "node examples/inspect.mjs",
+    "test:later": "node --test test/*.test.mjs"
+  },
+  "engines": {"node": ">=20"},
+  "dependencies": {}
+}
