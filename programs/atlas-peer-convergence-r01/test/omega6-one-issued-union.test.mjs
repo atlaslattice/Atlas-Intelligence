@@ -231,3 +231,39 @@ test('cross-Sphere and House ordering stays exactly 12 x 12 x 12',()=>{
  const roles={domain:0,method:0};for(const id of HSN){const sphere=Number(id.slice(5,7));sphere<=7?roles.domain++:roles.method++;}
  assert.deepEqual(roles,{domain:1008,method:720});
 });
+
+// R13 additive falsifiers from the exact original PR73 type-capture defect.
+test('R13 omega6 rejects hostile iterator before numeric peer fusion',async()=>{
+ const x=supplied();let count=0;
+ Object.defineProperty(x.issuedFrame.scores,Symbol.iterator,{value:function*(){count++;for(let i=0;i<1728;i++)yield 42;}});
+ const r=await run(x);assert.equal(r.status,'HOLD');assert.equal(count,0);
+ assert.deepEqual(x.state.calls,['READ']);
+});
+test('R13 omega6 rejects shadowed buffer getter without invocation',async()=>{
+ const x=supplied();let count=0;
+ Object.defineProperty(x.issuedFrame.scores,'buffer',{get(){count++;throw Error('invalid read')}});
+ const r=await run(x);assert.equal(r.status,'HOLD');assert.equal(count,0);
+ assert.deepEqual(x.state.calls,['READ']);
+});
+test('R13 omega6 rejects shadowed length getter without invocation',async()=>{
+ const x=supplied();let count=0;
+ Object.defineProperty(x.issuedFrame.scores,'length',{get(){count++;return 1728}});
+ const r=await run(x);assert.equal(r.status,'HOLD');assert.equal(count,0);
+});
+test('R13 omega6 rejects string-coercible sourceId without callback',async()=>{
+ const x=supplied();let count=0;
+ x.issuedFrame.sourceId={toString(){count++;return 'work:synthetic'}};
+ const r=await run(x);assert.equal(r.status,'HOLD');assert.equal(count,0);
+});
+test('R13 omega6 rejects string-coercible source digest without callback',async()=>{
+ const x=supplied();let count=0;
+ x.issuedFrame.sourceSha256={toString(){count++;return x.omega5Input.queryBinding.sourceSha256}};
+ const r=await run(x);assert.equal(r.status,'HOLD');assert.equal(count,0);
+});
+test('R13 omega6 f32 and f64 normal frames still pass unchanged',async()=>{
+ for(const encoding of ['f32','f64']){
+  const x=supplied({encoding}),r=await run(x);
+  assert.equal(r.status,'LOCAL_PEER_UNION_PREPARED_NOT_RELEASED',r.reason);
+  assert.equal(r.rightsAuthenticated,false);assert.equal(r.hostEgressAttested,false);
+ }
+});
