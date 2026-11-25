@@ -1,0 +1,25 @@
+{
+  "schema": "atlas.foundry.peer-lines.v1",
+  "project": "atlaslattice/Atlas-Intelligence",
+  "sourcePr": 75,
+  "referenceHead": "e2b6e0912d00037539391fe179d97095a953d90f",
+  "sourceAdditionsClaimedByPinnedPeerLedger": 319,
+  "claimsAreNotPeerTurnsOrInstalledFeatures": true,
+  "lanes": [
+    {"sourcePr":38,"name":"Glyph-memory continuity","sourcePaths":4,"installedInProduction":false},
+    {"sourcePr":39,"name":"META145 glyph routing","sourcePaths":6,"installedInProduction":false},
+    {"sourcePr":58,"name":"MICA evidence","sourcePaths":47,"installedInProduction":false},
+    {"sourcePr":59,"name":"Neural META145","sourcePaths":15,"installedInProduction":false},
+    {"sourcePr":60,"name":"Peer15 hardening","sourcePaths":5,"installedInProduction":false},
+    {"sourcePr":61,"name":"Neural Work Learning","sourcePaths":54,"installedInProduction":false},
+    {"sourcePr":62,"name":"Atlas ONE neural fabric","sourcePaths":79,"installedInProduction":false},
+    {"sourcePr":63,"name":"GF9 geometric engineering","sourcePaths":45,"installedInProduction":false},
+    {"sourcePr":64,"name":"Numerical recovery","sourcePaths":5,"installedInProduction":false},
+    {"sourcePr":66,"name":"Geometree MacroTurn revisions","sourcePaths":38,"installedInProduction":false},
+    {"sourcePr":71,"name":"Current parent R12 source additions","sourcePaths":19,"installedInProduction":false},
+    {"sourcePr":75,"name":"Original single-frame composer and tests","sourcePaths":2,"installedInProduction":false}
+  ],
+  "sourceLedgerVerifiedForActualBlobCoverage": false,
+  "sourceLedgerKnownFromPR75": true,
+  "noAuthorityClaim": true
+}
