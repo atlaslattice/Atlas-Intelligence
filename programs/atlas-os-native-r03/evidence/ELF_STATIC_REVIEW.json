@@ -1,0 +1,17 @@
+{
+  "arch": "i386",
+  "authenticatedRing3": false,
+  "bytes": 17816,
+  "entry": 1048640,
+  "linuxImageBuilt": false,
+  "magicChecksumValid": true,
+  "memoryProtection": false,
+  "multiboot1FileOffset": 4096,
+  "observedQemuBoot": false,
+  "physicalHardwareTested": false,
+  "schema": "atlas.os.r03.elf-inspection/v1",
+  "sha256": "3dca7ca500073603a7153a151e5b4a11a4d3b06923c22893a7f0a66735580410",
+  "type": "x86_32-freestanding-experimental",
+  "ubuntuInstallerBuilt": false,
+  "undefinedSymbols": 0
+}

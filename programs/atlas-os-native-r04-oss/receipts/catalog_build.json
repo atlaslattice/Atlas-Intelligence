@@ -1,0 +1,9 @@
+{
+  "schema": "atlas.os.catalog.build/v1",
+  "count": 37,
+  "artcraft": 18,
+  "pinned": 36,
+  "licenseReviewNeeded": 4,
+  "readyForAutoInstall": 0,
+  "sha256": "c84287c3311118e5cc3e8595f4cfcef54c378ce17d26b7dfeec7a24c3e54bddd"
+}
