@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M07",
+  "title": "07 Learning & Curriculum",
+  "features": [
+    {
+      "id": "NEURO.M07.F01",
+      "reviewSlotOnly": "H07.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Known family without TRAIN permission becomes positive pair"
+    },
+    {
+      "id": "NEURO.M07.F02",
+      "reviewSlotOnly": "H07.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Contradictory-but-relevant source trained as hard negative"
+    },
+    {
+      "id": "NEURO.M07.F03",
+      "reviewSlotOnly": "H07.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Sampled diverse Houses share one originating family"
+    },
+    {
+      "id": "NEURO.M07.F04",
+      "reviewSlotOnly": "H07.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/trl",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Easy duplicate paraphrases dominate memory replay"
+    },
+    {
+      "id": "NEURO.M07.F05",
+      "reviewSlotOnly": "H07.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A known relevant off-diagonal gets negative gradient"
+    },
+    {
+      "id": "NEURO.M07.F06",
+      "reviewSlotOnly": "H07.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Synthetic model-authored panel labeled expert validation"
+    },
+    {
+      "id": "NEURO.M07.F07",
+      "reviewSlotOnly": "H07.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/peft",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Interrupted training differs from uninterrupted baseline"
+    },
+    {
+      "id": "NEURO.M07.F08",
+      "reviewSlotOnly": "H07.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Empty Sphere class reported as validated"
+    },
+    {
+      "id": "NEURO.M07.F09",
+      "reviewSlotOnly": "H07.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/trl",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Council agreement alone creates training positive"
+    },
+    {
+      "id": "NEURO.M07.F10",
+      "reviewSlotOnly": "H07.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Final queries leak into training through mined negatives"
+    },
+    {
+      "id": "NEURO.M07.F11",
+      "reviewSlotOnly": "H07.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/trl",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Revoked item withheld is claimed forgotten by model"
+    },
+    {
+      "id": "NEURO.M07.F12",
+      "reviewSlotOnly": "H07.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/optuna/optuna",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Many trials reported as independent external confirmations"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}
