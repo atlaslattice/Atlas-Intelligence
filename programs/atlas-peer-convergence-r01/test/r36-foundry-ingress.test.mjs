@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {makeDualIssuedGeometry} from '../src/dual-issued-geometry.mjs';
+import {makeIssuedPageFromExistingFrame} from '../src/issued-page-r34.mjs';
+import {ARIADNE_SHA256} from '../../atlas-geometry-one-r38/src/addresses.mjs';
+const h=c=>c.repeat(64);
+const inputs=scores=>({issuer:'demo',modelSha256:h('a'),querySha256:h('b'),sourceId:'source',sourceSha256:h('c'),sourceEdition:'evidence-v1',registrySha256:ARIADNE_SHA256,scores});
+const dual=scores=>makeDualIssuedGeometry({...inputs(scores),requestId:'req',tenant:'t',logicalTarget:'core',contractVersion:'v1',scope:'WORK',purpose:'INFERENCE'});
+const page=scores=>makeIssuedPageFromExistingFrame(inputs(scores));
+test('RED: own iterator 1→42 now HOLD, no callback invoked',()=>{const s=new Float64Array(1728);s[0]=1;let called=0;Object.defineProperty(s,Symbol.iterator,{value:function*(){called++;for(let i=0;i<1728;i++)yield 42;}});assert.equal(page(s).status,'HOLD');assert.equal(dual(s).status,'HOLD');assert.equal(called,0);});
+test('RED: short iterator now HOLD without evaluating it',()=>{const s=new Float64Array(1728);let called=0;Object.defineProperty(s,Symbol.iterator,{value:function*(){called++;yield 99;}});assert.equal(page(s).status,'HOLD');assert.equal(dual(s).status,'HOLD');assert.equal(called,0);});
+test('RED: shadowed buffer getter cannot execute',()=>{const s=new Float64Array(1728);let called=0;Object.defineProperty(s,'buffer',{get(){called++;throw Error('unsafe')}});assert.equal(page(s).status,'HOLD');assert.equal(dual(s).status,'HOLD');assert.equal(called,0);});
+test('RED: shadowed length getter cannot execute',()=>{const s=new Float64Array(1728);let called=0;Object.defineProperty(s,'length',{get(){called++;return 1728;}});assert.equal(page(s).status,'HOLD');assert.equal(dual(s).status,'HOLD');assert.equal(called,0);});
+test('RED: expectedBinding getter cannot run before HOLD',()=>{const raw={...inputs(new Float64Array(1728)),requestId:'req',tenant:'t',logicalTarget:'core',contractVersion:'v1',scope:'WORK',purpose:'INFERENCE'};let called=0;const options={get expectedBinding(){called++;return h('e');}};assert.equal(makeDualIssuedGeometry(raw,options).status,'HOLD');assert.equal(called,0);});
+test('RED: expectedBinding Proxy refuses traps',()=>{const raw={...inputs(new Float64Array(1728)),requestId:'req',tenant:'t',logicalTarget:'core',contractVersion:'v1',scope:'WORK',purpose:'INFERENCE'};let called=0;const options=new Proxy({expectedBinding:null},{get(){called++;throw Error('unsafe')}});assert.equal(makeDualIssuedGeometry(raw,options).status,'HOLD');assert.equal(called,0);});
+test('native float samples keep shared outputs and zero new model calls',()=>{for(const T of [Float32Array,Float64Array]){const s=new T(1728);s[0]=1;const r=dual(s);assert.equal(r.status,'PREPARED_NOT_HOSTED');assert.equal(r.pr66.scores[0],1);assert.strictEqual(r.pr66.scores,r.pr67.scores);assert.equal(r.modelCallsAdded,0);assert.equal(r.releaseAuthorized,false);}});
+test('negative zero hidden score has distinct byte identity',()=>{const a=new Float64Array(1728),b=new Float64Array(1728);b[1727]=-0;assert.equal(JSON.stringify(Array.from(a)),JSON.stringify(Array.from(b)));assert.notEqual(dual(a).binaryScoreDigest,dual(b).binaryScoreDigest);});
+test('no private mode or training release',()=>{const raw={...inputs(new Float64Array(1728)),requestId:'req',tenant:'t',logicalTarget:'core',contractVersion:'v1',scope:'PLAY',purpose:'INFERENCE'};assert.equal(makeDualIssuedGeometry(raw).status,'HOLD');raw.scope='WORK';raw.purpose='TRAINING';assert.equal(makeDualIssuedGeometry(raw).status,'HOLD');});
