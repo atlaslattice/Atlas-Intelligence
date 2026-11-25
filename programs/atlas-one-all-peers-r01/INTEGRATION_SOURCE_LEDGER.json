@@ -1,0 +1,1880 @@
+{
+  "schema": "atlas.one.all-peers.source-intake/v1",
+  "status": "UNMERGED_SOURCE_CONVERGENCE_REVIEW_ONLY",
+  "repository": "atlaslattice/Atlas-Intelligence",
+  "branch": "review/atlas-one-geometree-all-peers-r01-20261124",
+  "latestParent": {
+    "branch": "review/atlas-geometree-yijing-r11-20261124",
+    "sha": "8009c5995f2fe35200c1e0bbb63928855aee08af",
+    "baseHistoryIsAncestor": false,
+    "sourceContentReconciled": true
+  },
+  "integrationHead": "2f0aee6009cef1577e877211207c93d23e7c1065",
+  "sourceSourcePins": {
+    "ariadneRegistrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "trainedHeadStateSha256": "736fdd341778468d32d89ca3cb60b71d415f678dae7b2efdcec978a08b7432d8"
+  },
+  "additions": 300,
+  "filesChangedByRemovalOrOverwrite": 0,
+  "counts": {
+    "PR38_39_GLYPH": 10,
+    "PR59_60_META145": 20,
+    "PR61_WORK_LEARNING": 49,
+    "PR62_ATLAS_ONE_NEURAL": 79,
+    "UNCLASSIFIED_REVIEW": 13,
+    "PR63_GF9_OVERLAY": 45,
+    "PR64_UNIFIED144_RECOVERY": 5,
+    "NEW_ONE_FRAME_COMPOSER": 2,
+    "PR58_MICA_EVIDENCE": 47,
+    "PR66_MT02_MT03": 30
+  },
+  "files": [
+    {
+      "path": "packages/atlas-one-v2/docs/META145_GLYPH_MEMORY_INTEGRATION.md",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/docs/SPHERE145_GLYPH_MEMORY_R11.md",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/docs/SPHERE145_R11_META145C_INTEROP.md",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/package.json",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/README.md",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/README_PEER15.md",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/docs/ARCHITECTURE.mmd",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/docs/INTEGRATION_CONTRACT_PUBLIC.md",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/docs/STRATEGY_PROTOCOL.md",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/examples/synthetic_demo.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/js/peer15_hardening.test.mjs",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/js/pretrained-evidence-sidecar.mjs",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/js/pretrained-evidence-sidecar.test.mjs",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/results/INDEPENDENT_COMPATIBILITY.json",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/results/PEER15_RECEIPT.json",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/src/__init__.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/src/audit.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/src/evidence.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/src/simulate.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/src/viewer.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/tests/browser_smoke.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/tests/test_evidence.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/tests/test_peer15.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/research/neural-meta145-v01/tools/package.py",
+      "lane": "PR59_60_META145",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/src/adapters.mjs",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/src/atlas_glyph_memory.py",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/src/meta145-glyph.mjs",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/test/meta145-glyph-public.test.mjs",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/test/meta145-glyph.test.mjs",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-one-v2/test/test_sphere145_glyph_memory.py",
+      "lane": "PR38_39_GLYPH",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/.gitignore",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/IMPLEMENTATION_CONTRACT.md",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/README.md",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/package.json",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/pyproject.toml",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/__init__.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/__main__.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/cli.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/comparison.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/comparison_io.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/corpus.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/episodes.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/evaluation.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/model.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/neural_evidence.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/neural_simulate.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/registry.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/service.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/training.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/python/atlas_work_learning/workspace.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/adapters.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/contracts.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/gateway.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/index.d.ts",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/index.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/mcp-stdio.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/mcp.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/openai.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/pretrained-evidence-sidecar.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/src/python-bridge.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/contracts.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/learned-node-purpose.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/peer15_hardening.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/pretrained-evidence-sidecar.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/purpose-integration.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/search-provenance.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/strict-e2e.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/test/transport.test.mjs",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_comparison.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_corpus.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_episodes.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_evidence.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_item_manifest.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_model.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_peer15.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_registry.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_service.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_training.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "packages/atlas-work-learning/tests/test_training_view_preflight.py",
+      "lane": "PR61_WORK_LEARNING",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/README.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/atlas144/__init__.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/atlas144/cases.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/docs/ADOPTION_AND_PEER_REVIEW.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/docs/SOURCE_REQUIRED_FOR_REPLAY.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/evidence/ATLAS_144_EXECUTION_RECEIPT.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/evidence/ATLAS_144_TASKS.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/evidence/DIFFERENTIAL_RED_GREEN.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/evidence/EXPLORER_BROWSER_CHECKS.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/evidence/RELEASE_SCOPE.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/examples/ATLAS_144_Engineering_Explorer.html",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/js/native_core.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/js/native_core_baseline.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/js/run_48.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/patches/lif_nonfinite_intermediate.patch",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/run_sprint.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-144-sprint/tests/test_receipts.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-geometry-one-r38/docs/OMEGA4_PEER_REVIEW.md",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-geometry-one-r38/src/omega4-peer-review.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-geometry-one-r38/test/omega4-peer-review.test.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/README.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/atlas_neural_unified/__init__.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/atlas_neural_unified/fabric.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/atlas_neural_unified/graph.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/atlas_neural_unified/quality.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/atlas_neural_unified/workboard.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/atlas_neural_unified/worklearning_bridge.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/data/COMPONENT_PORTS.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/data/OPENAI_TOOL_DESCRIPTOR.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/docs/ACCEPTANCE_GATES.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/docs/INTEGRATION_MAP.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/docs/QUALITY_FIRST_COLLABORATION.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/evidence/PUBLIC_REPLAY_SUMMARY.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/evidence/QUALITY_FIRST_SELECTION_RECEIPT.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/evidence/TOPOLOGY_SOURCE_EQUIVALENCE.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/evidence/UNIFIED_EXECUTION_RECEIPT.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/examples/demo_synthetic.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/examples/quality_first_demo.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/integration/stage_worklearning.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/src/one-brain-port.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/one-brain-port.test.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/test_bridge.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/test_fabric.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/test_graph.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/test_ports.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/test_quality.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/test_workboard.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neural-unified/test/worklearning-actual-gateway.test.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/.cursor/rules/atlas-neural-native.mdc",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/AGENTS.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/README.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/data/compile_receipt.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/data/feature_candidates_144.csv",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/data/feature_candidates_144.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/data/source_registry.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/docs/ARCHITECTURE.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/docs/LICENSE_POLICY.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/docs/PRIORITY_12.md",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/examples/ATLAS_Neural_OSS_144_Offline_Explorer.html",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/examples/demo.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/BASELINE_FILES.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/OVERLAY_MANIFEST.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/README.md",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/build_feature_explorer.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/Atlas_144_Feature_Explorer.html",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/FEATURES_144.csv",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/FEATURES_144.md",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/INTEGRATION.md",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/SOURCE_ATTRIBUTION.md",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/context_boundary_review.md",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/feature-catalog.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/retrieval_audit_independent_review.md",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/docs/oss144/source-registry.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/CATALOG_VALIDATION.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/CONTEXT_PACK_EXPERIMENT.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/DISCOVERY_BOUNDARY_REVIEW.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/FRESH_OVERLAY_REPLAY.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/HOST_TEST_SOURCE_PINS.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/HTML_EXPLORER_VALIDATION.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/NODE_COMPOSED_TESTS_SOURCE_BOUND.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/PEER_COMPOSITION_REVIEW.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/PEER_LIF_OVERFLOW_FALSIFIER.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/RELOCATED_BOUNDARY_REPRODUCER.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/REPLAY_RACE_REPAIR.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/RETRIEVAL_AUDITS_EXPERIMENT.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/SELECTIVE_EVALUATION_EXPERIMENT.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/SELECTIVE_EVALUATION_EXPERIMENT_R2.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/SELECTIVE_SOURCE_OVERLAP_RED.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/evidence/event_lattice_experiment.json",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/integration/peer_composition_probe.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/integration/run_context_pack_benchmark.mjs",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/python/atlas_work_learning/event_lattice.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/python/atlas_work_learning/retrieval_audits.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/python/atlas_work_learning/selective_evaluation.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/src/context-pack.mjs",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/src/discovery-tools.mjs",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/test/context-pack.test.mjs",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/test/discovery-final-boundary.test.mjs",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/test/discovery-tools.test.mjs",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/test/oss-catalog.test.mjs",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/tests/test_event_lattice.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/tests/test_retrieval_audits.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/overlay/tests/test_selective_evaluation.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/replay_overlay.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/gf9-native/test_replay_overlay.py",
+      "lane": "PR63_GF9_OVERLAY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/unified144-recovery/README.md",
+      "lane": "PR64_UNIFIED144_RECOVERY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/unified144-recovery/RECOVERY_MANIFEST.json",
+      "lane": "PR64_UNIFIED144_RECOVERY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/unified144-recovery/corpus_audit/test_numeric_port.py",
+      "lane": "PR64_UNIFIED144_RECOVERY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/unified144-recovery/overlay/src/unified144-numeric-executor.mjs",
+      "lane": "PR64_UNIFIED144_RECOVERY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/extensions/unified144-recovery/python/atlas_unified144/numeric_port.py",
+      "lane": "PR64_UNIFIED144_RECOVERY",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/BUILD_ORDER.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M01/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M02/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M03/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M04/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M05/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M06/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M07/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M08/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M09/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M10/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M11/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/modules/M12/contract.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/package.json",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/src/index.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/src/module_graph.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/src/native_core.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/src/workboard.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/test/catalog.test.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/test/module_graph.test.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/test/native_kernels.test.mjs",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-neuro-oss/test/test_compiler.py",
+      "lane": "PR62_ATLAS_ONE_NEURAL",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-one-all-peers-r01/src/one-frame-composer.mjs",
+      "lane": "NEW_ONE_FRAME_COMPOSER",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-one-all-peers-r01/test/one-frame-composer.test.mjs",
+      "lane": "NEW_ONE_FRAME_COMPOSER",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/GEOMETREE_POINTER_WEAVE_R12.md",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/R03_PEER_CONVERGENCE.md",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/scripts/replay-r03.sh",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/frame-byte-witness.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/geometree-pointer-weave.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/one-frame-r03.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/pinned-one-frame-r03.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/frame-byte-witness.test.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/geometree-pointer-weave.test.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/one-frame-r03.test.mjs",
+      "lane": "UNCLASSIFIED_REVIEW",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/README.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/README.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/docs/COLLABORATION_RULES_V2_REVIEW.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/fixtures/mica-source-audit.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/fixtures/omega-source-audit.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/run_receipt.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/src/verify_source_subsets.py",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/src/work-review-contract.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/test/test_verify_source_subsets.py",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/test/work-review-contract.test.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/README.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/docs/PEER_174_FALSIFIER.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/docs/PEER_HANDOFF.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/docs/REVIEW_REQUEST.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/examples/benchmark.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/examples/preview.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/fixtures/build-sample.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/fixtures/local-microbenchmark.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/fixtures/run-receipt.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/fixtures/sample-review.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/fixtures/source-integrity-manifest.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/src/rule-revision-gate.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v3/test/rule-revision-gate.test.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/README.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/docs/PEER_HANDOFF.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/examples/benchmark.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/fixtures/benchmark-result.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/fixtures/execution-receipt.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/fixtures/integrity-manifest.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/fixtures/sample-review.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/src/rule-revision-snapshot.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/test/inherited-v3.test.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/collaboration/v4/test/snapshot-differential.test.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/docs/HANDOFF.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/docs/INTEGRATION_STATUS.md",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/examples/three-source-integration-demo.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/fixtures/INTEGRATION_LEDGER.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/fixtures/PAIRWISE_BOUNDS.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/fixtures/integration-demo.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/integrity_manifest.json",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/src/corpus-coverage-preflight.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/src/frozen_panel_bounds.py",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/src/neural-integration-seam.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/src/postrank-lineage-fixture.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/test/neural-integration-seam.test.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/test/postrank-lineage-fixture.test.mjs",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/corpus-synthesis/neural-evidence-review/test/test_frozen_panel_bounds.py",
+      "lane": "PR58_MICA_EVIDENCE",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/INDRA_R34_REVIEW.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/MT02_YIJING_CYMATIC_README.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/docs/MT02_COMPATIBILITY.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/docs/MT02_PEER_REVIEW_REQUEST.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/README.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/docs/ACCEPTANCE_MATRIX.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/docs/HUMAN_EVALUATION_PROTOCOL.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/docs/RELEASE_AND_ROLLBACK.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/eval/quality-gate.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/evidence/REAL_MODEL_REDACTED_RECEIPT.json",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/physics/ATLAS_PLATE_MEASUREMENT_TEMPLATE.csv",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/physics/PHYSICAL_VALIDATION_PROTOCOL.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/physics/chladni_check.py",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/physics/published_chladni_2026.json",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/physics/test_chladni.py",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/private-tests/run-real-http.py",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/scripts/reproduce-public.sh",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/src/host.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/src/run-local.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/src/verify-real-panel.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/src/worker-bridge.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/test/host.test.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/test/quality-gate.test.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/e2e/worker/selected_model_worker.py",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/evidence/MT02_OWNER_EXPLORER_STRUCTURAL_PARITY.json",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/evidence/MT02_SOURCE_MANIFEST_ARCHIVE_ONLY.json",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/peer_closure/required-closure.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/peer_r38/addresses.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/peer_r38/ports.mjs",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    },
+    {
+      "path": "programs/geometry-cleanroom-r0/protocol/EVOLVING_MACROTURN_v2.md",
+      "lane": "PR66_MT02_MT03",
+      "change": "ADDED_ONLY",
+      "status": "SOURCE_STAGED_REVIEW_NOT_MOUNTED"
+    }
+  ],
+  "tests": {
+    "nodeNormal": {
+      "total": 721,
+      "passed": 716,
+      "skipped": 5,
+      "failed": 0
+    },
+    "nodeJitlessSupported": {
+      "total": 710,
+      "passed": 705,
+      "skipped": 5,
+      "failed": 0
+    },
+    "workLearningPython": {
+      "total": 176,
+      "passed": 167,
+      "skipped": 9,
+      "failed": 0
+    },
+    "atlasOnePythonAvailableSubset": {
+      "total": 77,
+      "passed": 77,
+      "skipped": 0,
+      "failed": 0
+    },
+    "note": "Different modes re-execute overlapping cases. Some private fixtures and full current-host tests remain unavailable."
+  },
+  "authority": {
+    "mountedOnCurrentPublicHost": false,
+    "merged": false,
+    "publiclyDeployed": false,
+    "externalRightsAttested": false,
+    "requiredSetIndependentlyComplete": false,
+    "trainedWeightUpdates": 0,
+    "humanQualityGainVerified": false,
+    "atlasGlyphPhysicalCalibrationVerified": false
+  },
+  "knownHolds": [
+    "PR71 parent history advanced independently; source content reconciled but history merge pending",
+    "Host issuer and current provider-specific READ/USE/DISCLOSE/RETURN unverified",
+    "Independent required adverse-set closure and source-context parity unverified",
+    "Current Model 0.3 full combined hosted 1-query ABI unresolved",
+    "Independent source-family/time-heldout human relevance evaluation pending",
+    "Physical glyph-to-frequency plate experiment absent",
+    "Several private corpus/registry suites skipped, model training not authorized",
+    "Distinct peer research functions require matched-numeric domains and rights before mounting"
+  ]
+}
