@@ -1,0 +1,720 @@
+{
+  "count": 100,
+  "current_room_review_is_distinct_from_tests": true,
+  "host_issuer_verified": false,
+  "hosted_boot_verified": false,
+  "macroturns_created": 0,
+  "model_calls_added": 0,
+  "output_sha256": "122800dd1d6693fdf88a9b9840cb0882cd02dd9f21305783a63d9437c1db7adb",
+  "peer_room": "atlas-os-native-r03-20261125",
+  "real_swarmchat_posts_derived_from_tests": 0,
+  "schema": "atlas.native-r03.peer100.review-receipt/v1",
+  "tests": [
+    {
+      "case": 1,
+      "family": "hsn-valid",
+      "pass": 1,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "hsn-valid",
+      "pass": 2,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "hsn-valid",
+      "pass": 3,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "hsn-valid",
+      "pass": 4,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "hsn-valid",
+      "pass": 5,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "hsn-valid",
+      "pass": 6,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "hsn-valid",
+      "pass": 7,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "hsn-valid",
+      "pass": 8,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "hsn-valid",
+      "pass": 9,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "hsn-valid",
+      "pass": 10,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "hsn-malformed",
+      "pass": 11,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "hsn-malformed",
+      "pass": 12,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "hsn-malformed",
+      "pass": 13,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "hsn-malformed",
+      "pass": 14,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "hsn-malformed",
+      "pass": 15,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "hsn-malformed",
+      "pass": 16,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "hsn-malformed",
+      "pass": 17,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "hsn-malformed",
+      "pass": 18,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "hsn-malformed",
+      "pass": 19,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "hsn-malformed",
+      "pass": 20,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "quota-delegate",
+      "pass": 21,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "quota-delegate",
+      "pass": 22,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "quota-delegate",
+      "pass": 23,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "quota-delegate",
+      "pass": 24,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "quota-delegate",
+      "pass": 25,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "quota-delegate",
+      "pass": 26,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "quota-delegate",
+      "pass": 27,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "quota-delegate",
+      "pass": 28,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "quota-delegate",
+      "pass": 29,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "quota-delegate",
+      "pass": 30,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "quota-overdraft",
+      "pass": 31,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "quota-overdraft",
+      "pass": 32,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "quota-overdraft",
+      "pass": 33,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "quota-overdraft",
+      "pass": 34,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "quota-overdraft",
+      "pass": 35,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "quota-overdraft",
+      "pass": 36,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "quota-overdraft",
+      "pass": 37,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "quota-overdraft",
+      "pass": 38,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "quota-overdraft",
+      "pass": 39,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "quota-overdraft",
+      "pass": 40,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "ipc-destination",
+      "pass": 41,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "ipc-destination",
+      "pass": 42,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "ipc-destination",
+      "pass": 43,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "ipc-destination",
+      "pass": 44,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "ipc-destination",
+      "pass": 45,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "ipc-destination",
+      "pass": 46,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "ipc-destination",
+      "pass": 47,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "ipc-destination",
+      "pass": 48,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "ipc-destination",
+      "pass": 49,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "ipc-destination",
+      "pass": 50,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "ipc-replay",
+      "pass": 51,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "ipc-replay",
+      "pass": 52,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "ipc-replay",
+      "pass": 53,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "ipc-replay",
+      "pass": 54,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "ipc-replay",
+      "pass": 55,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "ipc-replay",
+      "pass": 56,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "ipc-replay",
+      "pass": 57,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "ipc-replay",
+      "pass": 58,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "ipc-replay",
+      "pass": 59,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "ipc-replay",
+      "pass": 60,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "cascading-revoke",
+      "pass": 61,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "cascading-revoke",
+      "pass": 62,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "cascading-revoke",
+      "pass": 63,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "cascading-revoke",
+      "pass": 64,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "cascading-revoke",
+      "pass": 65,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "cascading-revoke",
+      "pass": 66,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "cascading-revoke",
+      "pass": 67,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "cascading-revoke",
+      "pass": 68,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "cascading-revoke",
+      "pass": 69,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "cascading-revoke",
+      "pass": 70,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "page-reuse",
+      "pass": 71,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "page-reuse",
+      "pass": 72,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "page-reuse",
+      "pass": 73,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "page-reuse",
+      "pass": 74,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "page-reuse",
+      "pass": 75,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "page-reuse",
+      "pass": 76,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "page-reuse",
+      "pass": 77,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "page-reuse",
+      "pass": 78,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "page-reuse",
+      "pass": 79,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "page-reuse",
+      "pass": 80,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "scheduler-exhaustion",
+      "pass": 81,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "scheduler-exhaustion",
+      "pass": 82,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "scheduler-exhaustion",
+      "pass": 83,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "scheduler-exhaustion",
+      "pass": 84,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "scheduler-exhaustion",
+      "pass": 85,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "scheduler-exhaustion",
+      "pass": 86,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "scheduler-exhaustion",
+      "pass": 87,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "scheduler-exhaustion",
+      "pass": 88,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "scheduler-exhaustion",
+      "pass": 89,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "scheduler-exhaustion",
+      "pass": 90,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 1,
+      "family": "malformed-ipc",
+      "pass": 91,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 2,
+      "family": "malformed-ipc",
+      "pass": 92,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 3,
+      "family": "malformed-ipc",
+      "pass": 93,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 4,
+      "family": "malformed-ipc",
+      "pass": 94,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 5,
+      "family": "malformed-ipc",
+      "pass": 95,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 6,
+      "family": "malformed-ipc",
+      "pass": 96,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 7,
+      "family": "malformed-ipc",
+      "pass": 97,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 8,
+      "family": "malformed-ipc",
+      "pass": 98,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 9,
+      "family": "malformed-ipc",
+      "pass": 99,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    },
+    {
+      "case": 10,
+      "family": "malformed-ipc",
+      "pass": 100,
+      "source": "unchanged original Atlas Native R03 C",
+      "status": "LOCAL_TEST"
+    }
+  ],
+  "toolchains": [
+    "gcc-O2",
+    "clang-O2",
+    "gcc-asan-ubsan"
+  ],
+  "total_assertions_each_build": 10811
+}
