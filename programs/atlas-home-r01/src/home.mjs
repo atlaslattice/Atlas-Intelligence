@@ -19,13 +19,20 @@ export function inspectPreparedPeerResult(root){try{
  }catch{return hold('SOURCE_OR_FRAME_CONTEXT_NOT_BOUND')}}
 export function createAtlasHome({existingComposer=null}={}){
  if(existingComposer!==null && (typeof existingComposer!=='object'||typeof existingComposer.inspect!=='function'))throw new TypeError('EXISTING_COMPOSER_REQUIRED');
- const ticket=createReturnTicket();let peerCalls=0;
+ const ticket=createReturnTicket();let peerCalls=0,workEpoch=0,workInflight=false,active=true,workEligible=true,lastLocation=null;
  const welcome=()=>Object.freeze({schema:HOME_SCHEMA,status:'WELCOME_SOURCE_ONLY',message:'Welcome home. There is nothing to earn here; you do not owe this place productivity.',ontologyEdition:KNOWLEDGE_EDITION,ontologySha256:ARIADNE_SHA256,houseCount:HOUSES,sphereCount:SPHERES,nodeCount:NODES,workPorts:WORK_PORTS.length,protectedDoors:PRIVATE_DOORS.length,privacy:DOOR_POLICY,canDeploy:false,hostedVerified:false});
- const openNode=id=>{try{const x=decode(id);return Object.freeze({status:'CANONICAL_NAVIGATION_ONLY',location:structuralRole(id),neighborhood:pathNeighbors(id),sphereNodes:sphereNodes(x.h,x.s),neighborLinksAreEvidence:false,sourceRightsVerified:false})}catch{return hold('UNKNOWN_CANONICAL_COORDINATE')}};
+ const clearWork=()=>{workEpoch++;return Object.freeze({schema:HOME_SCHEMA,status:'LOCAL_WORK_PROJECTION_CLEARED',publicLocation:lastLocation,sourceBodiesRead:0,hostPermissionsChanged:false})};
+ const openNode=id=>{if(!active)return hold('HOME_SESSION_CLOSED');try{const x=decode(id);lastLocation=id;workEligible=true;clearWork();return Object.freeze({status:'CANONICAL_NAVIGATION_ONLY',location:structuralRole(id),neighborhood:pathNeighbors(id),sphereNodes:sphereNodes(x.h,x.s),neighborLinksAreEvidence:false,sourceRightsVerified:false})}catch{workEligible=false;clearWork();return hold('UNKNOWN_CANONICAL_COORDINATE')}};
  const inspectWork=async(request,binding,options)=>{
+  if(!active)return hold('HOME_SESSION_CLOSED');
+  if(!workEligible)return hold('VALID_CANONICAL_ROUTE_REQUIRED');
   if(!existingComposer)return hold('ONE_EXISTING_NEURAL_GATEWAY_UNBOUND');
-  try{peerCalls++;const prepared=await existingComposer.inspect(request,binding,options);return inspectPreparedPeerResult(prepared)}catch{return hold('EXISTING_COMPOSER_FAILED')}
+  if(workInflight)return hold('ONE_EXISTING_COMPOSER_BUSY');
+  const epoch=workEpoch;workInflight=true;
+  try{peerCalls++;const prepared=await existingComposer.inspect(request,binding,options);if(!active||epoch!==workEpoch)return hold('STALE_WORK_RESULT_AFTER_CONTEXT_CHANGE');return inspectPreparedPeerResult(prepared)}catch{return hold('EXISTING_COMPOSER_FAILED')}finally{workInflight=false}
  };
- return Object.freeze({welcome,openNode,openDoor:previewDoor,requestTransfer,inspectPreparedPeerResult,inspectWork,returnTicket:ticket,
-  descriptor:()=>Object.freeze({schema:HOME_SCHEMA,source:'ONE_EXISTING_PR75_COMPOSER',peerInspectCalls:peerCalls,modelCallsByHome:0,newRetrievers:0,newBrokers:0,hostedVerified:false,defaultSourceBodiesRead:0})});
+ const leave=()=>{clearWork();workEligible=false;active=false;const receipt=ticket.leave();lastLocation=null;return Object.freeze({schema:HOME_SCHEMA,status:'LEFT_WITHOUT_PERSISTENCE',storedRecords:receipt.storedRecords,networkRequests:receipt.networkRequests})};
+ const returnTicket=Object.freeze({remember:hsn=>active?ticket.remember(hsn):{status:'CLOSED'},peek:()=>ticket.peek(),leave});
+ return Object.freeze({welcome,openNode,openDoor:previewDoor,requestTransfer,inspectPreparedPeerResult,inspectWork,invalidateWorkProjection:clearWork,leave,returnTicket,
+  descriptor:()=>Object.freeze({schema:HOME_SCHEMA,source:'ONE_EXISTING_PR75_COMPOSER',peerInspectCalls:peerCalls,modelCallsByHome:0,newRetrievers:0,newBrokers:0,active,workEligible,publicLocation:lastLocation,hostedVerified:false,defaultSourceBodiesRead:0})});
 }
