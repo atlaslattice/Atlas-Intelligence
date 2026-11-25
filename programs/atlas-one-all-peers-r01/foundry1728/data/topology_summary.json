@@ -1,0 +1,10 @@
+{
+  "degreePerNode": 12,
+  "directedStructuralEdges": 20736,
+  "neuralWeightUpdates": 0,
+  "nodeCount": 1728,
+  "role": "STORAGE_AND_DISPLAY_TOPOLOGY_ONLY",
+  "schema": "atlas.foundry.geometry-reference/v1",
+  "semanticEdgeAcceptances": 0,
+  "undirectedStructuralEdges": 10368
+}

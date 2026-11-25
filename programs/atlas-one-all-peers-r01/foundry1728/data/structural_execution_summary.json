@@ -1,0 +1,27 @@
+{
+  "domainNodes": 1008,
+  "evidenceRootSha256": "a975225d7508cda94a55e1cd29a5007011f48db952f5804939cd1c1dace86d4d",
+  "hostedAcceptanceVerified": false,
+  "houseRollupsChecked": 12,
+  "individualWorkOrdersStructurallyChecked": 1728,
+  "methodNodes": 720,
+  "neuralWeightUpdates": 0,
+  "nodeWorkOrdersPrepared": 1728,
+  "offlineOnly": true,
+  "productionSourceRightsGranted": false,
+  "realCollaboratorTurnsCounted": 0,
+  "realHostedIntegrationCompletions": 0,
+  "rollbacksApplied": 0,
+  "schema": "atlas.foundry.execution.v1",
+  "semanticAdoptions": 0,
+  "sourceSha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "sphereRollupsChecked": 144,
+  "status": "LOCAL_STRUCTURAL_VERIFICATION_COMPLETE",
+  "symbolicEditionsCompared": [
+    "cupwake-x4/v1",
+    "symbiosis-x3/v0.3"
+  ],
+  "symbolicPairsDiffering": 1720,
+  "uniqueNodeChecksRun": 20736,
+  "workOrderMerkleRoot": "74d56daf099acbf19e8fe8f6b2c4d12ef607d880f32c00eb13fe040d79dbf27f"
+}
