@@ -1,0 +1,25 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "3c5ba5382a2fdd7ca3e3b9a98575b7d31a8bceff25997d6c213645b7485d6378",
+  "projection": "Workspace paths replaced; numeric observations and limitations retained.",
+  "originalReceipt": {
+    "schema": "atlas.oss.node-composed-tests/v1",
+    "returncode": 0,
+    "elapsedSeconds": 1.9058933559972502,
+    "summary": [
+      "# tests 265",
+      "# suites 0",
+      "# pass 264",
+      "# fail 0",
+      "# cancelled 0",
+      "# skipped 1",
+      "# todo 0",
+      "# duration_ms 1812.72015"
+    ],
+    "logSha256": "ba5401e2cc31e9963a14be0648a70a93b035d68aecd22ceb457c51f47171b1f7",
+    "sourcePinReceiptSha256": "91cb54dd531e45ed628043d129bf648ffdb6e2199eb678063c26cb6c8927af5e",
+    "initialMissingDependencyFailurePreserved": true,
+    "providerCalls": 0,
+    "ownerModelInference": 0
+  }
+}
