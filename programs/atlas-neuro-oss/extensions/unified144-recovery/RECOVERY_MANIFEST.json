@@ -1,0 +1,80 @@
+{
+  "schema": "atlas.unified144.exact-recovery/v1",
+  "state": "PARTIAL_EXACT_RECOVERY_FULL_INTEGRATION_HOLD",
+  "repository": "atlaslattice/Atlas-Intelligence",
+  "parentPullRequest": 63,
+  "parentCommit": "2bd3201ec20e33dd7745cdbf4162a143d8a12b71",
+  "recoveredFiles": [
+    {
+      "path": "overlay/src/unified144-numeric-executor.mjs",
+      "sha256": "27abe534f2904c612edbbfdd55b57bf42e1bb65adbd6f0ae26c3436d05851aba",
+      "bytes": 7012,
+      "historicalFinalHashMatched": true
+    },
+    {
+      "path": "python/atlas_unified144/numeric_port.py",
+      "sha256": "903aa310b50ace255e1ecfea47e975368672651371b3381197d5a66d044e2bb8",
+      "bytes": 13192,
+      "historicalFinalHashMatched": true
+    },
+    {
+      "path": "corpus_audit/test_numeric_port.py",
+      "sha256": "59cff9a76bbedaeead111291d730ed5d1e1b64521e94b720a7504776aa096ce2",
+      "bytes": 19523,
+      "historicalFinalHashMatched": true
+    }
+  ],
+  "recoveredCompleteModule": false,
+  "recoveredCatalog": false,
+  "originalCompletePayloadPublished": false,
+  "preResetObservedReplay": {
+    "nodeMethodsPassed": 29,
+    "numericPythonMethodsPassed": 23,
+    "corpusPythonMethodsPassed": 22,
+    "totalMethodsPassed": 74,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "LOCAL_SYNTHETIC_COMPONENT_INTEGRATION",
+    "status": "OBSERVED_BEFORE_RESET_RAW_LOGS_NOT_RECOVERED",
+    "rawReceiptHistoricalSha256": "a3298b06f97da4f734ec1209d3bda0b24028650c4df328d627e55bf7492b2b6d",
+    "freshReplayOfThisRecovery": false
+  },
+  "missingExactSources": [
+    {
+      "path": "data/unified-feature-catalog.json",
+      "sha256": "b07ca8e07f803096886b0ac4c21f414c3247cb248bbdc0d43a5cddd47b384431"
+    },
+    {
+      "path": "overlay/src/unified144-module.mjs",
+      "sha256": "9312547bf23e9a433740883b37cb3a1133c5e3c767af9078c4893c97984406e5"
+    },
+    {
+      "path": "python/atlas_unified144/corpus_coverage.py",
+      "sha256": "b43e646e2d8ab7f75b817027011cf0bc692053aa6c7846bd1c34f77158f90cee"
+    },
+    {
+      "path": "corpus_audit/test_corpus_coverage.py",
+      "sha256": "bc311fe3381cf0bf8ed8de52e1fedbc67b282cc642a11e0778fdfe51d9a8ad08"
+    },
+    {
+      "path": "integration/numeric-fixtures.json",
+      "sha256": "1735179fa22dc97635c1c5364e036de70946ae37ccfd975517c383d967f87b09"
+    }
+  ],
+  "otherMissingInputs": [
+    "Exact selected 19-file core and its complete source-requirements manifest",
+    "Complete original public R4 payload and manifest",
+    "Original complete replay and private corpus audit receipts"
+  ],
+  "historicalOriginalPublicPayloadManifestSha256": "d243d4bdfef6b87f13ac584b9a32e69745bf80c0a4d03fef8b3c200a4afd5e68",
+  "currentGate": "RESTORE_EXACT_DEPENDENCIES_AND_RECEIPTS_OR_CREATE_EXPLICIT_NEW_EDITION_AND_RETEST",
+  "newBehavioralTestsInRecovery": 0,
+  "modelCallsInThisIteration": 0,
+  "optimizerUpdates": 0,
+  "providerCalls": 0,
+  "hostActivated": false,
+  "productionReady": false,
+  "completeCorpusVerified": false,
+  "gf9BatchIncrement": 0,
+  "gf9ExperimentChain": "HOLD_UNCHANGED"
+}
