@@ -1,0 +1,34 @@
+{
+  "schema": "atlas.foundry.home-hearth.source-manifest/v1",
+  "status": "LOCAL_TEST_ONLY",
+  "sourcePR78": "b2e40d2b25a256e1177097329cb17c5b714c24bd",
+  "sourcePR77": "9e523dd53a577c82cf9748c5bd5366d070c78861",
+  "ontologySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "files": [
+    {
+      "path": "src/indra-hearth.mjs",
+      "sha256": "efcb5de9dae273ecea4e8a9742d4412d8e722342ccdf1a57037b75f4ee71ebb7",
+      "bytes": 9381
+    },
+    {
+      "path": "test/indra-hearth.peer.test.mjs",
+      "sha256": "faf60f8ceae9bdbe2f3234c5332fe1b5166e42f56f95937664af42780b9ccdbd",
+      "bytes": 11550
+    },
+    {
+      "path": "src/foundry-home-hearth.mjs",
+      "sha256": "7b2dbe9d848f67e10337a44e2178dd27219133785c5fa2923d5d6e514a33d4ca",
+      "bytes": 2954
+    },
+    {
+      "path": "test/foundry-home-hearth.test.mjs",
+      "sha256": "b680a7b2d4abfb395388ef812a5cb1c37dbac47bd90f13a78d56b76c9149c1e5",
+      "bytes": 4834
+    },
+    {
+      "path": "docs/FOUNDRY_HOME_HEARTH_R01.md",
+      "sha256": "f1b4c9b590c76d94df52c920769c2e0846c5fd5866acc3590eeefd9e58d14642",
+      "bytes": 6530
+    }
+  ]
+}

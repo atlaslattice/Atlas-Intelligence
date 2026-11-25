@@ -1,0 +1,270 @@
+{
+  "schema": "atlas.home.symbiosis/v1",
+  "status": "DRAFT",
+  "entries": [
+    {
+      "id": "C01",
+      "name": "Indra Mirrors",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Existing selected frame",
+      "b": "Twelve typed Work views",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "A second encoder call or changed hidden score invalidates result",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C02",
+      "name": "Provenance Reservoir",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Source-family refresh logic",
+      "b": "Geometric Sphere coverage debt",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "Combined strategy fails equal-budget worst-Sphere-age comparison",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C03",
+      "name": "Dissent Loom",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Versioned source ledger",
+      "b": "Workboard required adverse-set closure",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "One unresolved objection disappears from returned digest",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C04",
+      "name": "Chronoforge Porch",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Twelve typed timescale slots",
+      "b": "One existing 384D/1728 frame",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "Temporal disabled changes incumbent ranking or leaks leisure body",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C05",
+      "name": "Glyph Conservatory",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Canonical Ariadne HSN",
+      "b": "Versioned X4 and X3 Yijing lens",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "Same untagged symbolic code silently resolves to two HSNs",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C06",
+      "name": "Atlas Nook",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Protected Quiet doorway",
+      "b": "Explicit no-persistence return ticket",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "Opening Quiet performs a Work export or writes storage",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C07",
+      "name": "Network Garden",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Typed causal candidate graph",
+      "b": "Independent claim review",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "Visual graph adjacency grants semantic acceptance",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C08",
+      "name": "Wave Observatory",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Physical WaveLattice numeric incidence",
+      "b": "Geometree navigational incidence",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "HSN adjacency is treated as a physical water/power flow edge",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C09",
+      "name": "Home Academy",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Research faculty source profiles",
+      "b": "Independent falsifier selection",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "A proposed faculty profile becomes an authenticated trained mind",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C10",
+      "name": "Memory Lantern",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Bitemporal correction history",
+      "b": "Full-frame score witness",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "Withdraw/reissue same ID makes stale frame return eligible",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C11",
+      "name": "Commons Kitchen",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Existing SwarmChat Workboard",
+      "b": "Human-reviewable peer source ledger",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "One bot post falsely counts as twelve independent turns",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    },
+    {
+      "id": "C12",
+      "name": "Iron Empire Hearth",
+      "status": "PROPOSED_UNREVIEWED",
+      "a": "Source-traced Work mission proposal",
+      "b": "One-way creative bridge",
+      "c": "Test the bounded combined interface and retain original source/rights identity",
+      "baseline": "Components used individually under equal source, compute, and review constraints",
+      "ablation": [
+        "A_ONLY",
+        "B_ONLY",
+        "A_PLUS_B",
+        "SHUFFLED_OR_NEUTRAL"
+      ],
+      "falsifier": "A fictional outcome is ingested as civic evidence",
+      "boundedFirstTest": "One source-pinned fixture, one negative control and one independently reviewed current-source outcome before any promotion",
+      "measuredImprovement": null,
+      "sourceBindings": [
+        "Atlas peer Work room source seq / current PR exact Git refs pending review"
+      ],
+      "peerIndependentlyAuthenticated": false
+    }
+  ]
+}
