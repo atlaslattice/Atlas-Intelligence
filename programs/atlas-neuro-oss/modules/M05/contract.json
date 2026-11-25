@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M05",
+  "title": "05 Neuromorphic & Event Dynamics",
+  "features": [
+    {
+      "id": "NEURO.M05.F01",
+      "reviewSlotOnly": "H05.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/jeshraghian/snntorch",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Spike threshold or reset violates source-independent oracle"
+    },
+    {
+      "id": "NEURO.M05.F02",
+      "reviewSlotOnly": "H05.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/jeshraghian/snntorch",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Spike counts shift under equivalent reset reference"
+    },
+    {
+      "id": "NEURO.M05.F03",
+      "reviewSlotOnly": "H05.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/fangwei123456/spikingjelly",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Window-edge spikes appear twice"
+    },
+    {
+      "id": "NEURO.M05.F04",
+      "reviewSlotOnly": "H05.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/jeshraghian/snntorch",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Out-of-order arrival changes exact log without hold"
+    },
+    {
+      "id": "NEURO.M05.F05",
+      "reviewSlotOnly": "H05.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/fangwei123456/spikingjelly",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Synthetic surrogate learning claimed deployed in BGE"
+    },
+    {
+      "id": "NEURO.M05.F06",
+      "reviewSlotOnly": "H05.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/BindsNET/bindsnet",
+      "licenseGate": "REVIEW_ONLY",
+      "disproofTest": "AGPL source is copied into public runtime or synthetic becomes empirical"
+    },
+    {
+      "id": "NEURO.M05.F07",
+      "reviewSlotOnly": "H05.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/BindsNET/bindsnet",
+      "licenseGate": "REVIEW_ONLY",
+      "disproofTest": "Simulated reward labeled human-confirmed feedback"
+    },
+    {
+      "id": "NEURO.M05.F08",
+      "reviewSlotOnly": "H05.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/neuromorphs/tonic",
+      "licenseGate": "REVIEW_ONLY",
+      "disproofTest": "GPL implementation copied without authorization"
+    },
+    {
+      "id": "NEURO.M05.F09",
+      "reviewSlotOnly": "H05.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/jeshraghian/snntorch",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Model restart resurrects a revoked policy decision"
+    },
+    {
+      "id": "NEURO.M05.F10",
+      "reviewSlotOnly": "H05.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/fangwei123456/spikingjelly",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "SynOps are presented as measured watts"
+    },
+    {
+      "id": "NEURO.M05.F11",
+      "reviewSlotOnly": "H05.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/lava-nc/lava",
+      "licenseGate": "REVIEW_ONLY",
+      "disproofTest": "Archived code is called maintained or hardware-verified"
+    },
+    {
+      "id": "NEURO.M05.F12",
+      "reviewSlotOnly": "H05.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/brian-team/brian2",
+      "licenseGate": "REVIEW_ONLY",
+      "disproofTest": "Alias frequency or zero-spike artifact claimed physical gain"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}
