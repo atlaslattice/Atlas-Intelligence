@@ -5,7 +5,7 @@ source=[]
 for p in root.rglob('*'):
  if not p.is_file():continue
  r=p.relative_to(root).as_posix()
- if r=='SOURCE_MANIFEST.json' or r.startswith('evidence/home-') or r.startswith('evidence/upstream-'):continue
+ if r=='SOURCE_MANIFEST.json' or r.startswith('evidence/'):continue
  source.append((r,p.read_bytes()))
 source.sort()
 manifest={'schema':'atlas.home.source-manifest/v1','status':'LOCAL_TESTED_SOURCE_ONLY','ontology':{'sourceEdition':'ariadne-reader/v0.7','sourceSha256':'07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6','coordinateShape':[12,12,12],'nodeCount':1728,'domainNodeCount':1008,'methodNodeCount':720},'gitParent':{'repository':'atlaslattice/Atlas-Intelligence','pullRequest':75,'headBranch':'review/atlas-one-geometree-all-peers-r01-20261124','headSha':'e2b6e0912d00037539391fe179d97095a953d90f'},'peerPullRequest':74,'localPassNormal':107,'localPassJitless':107,'browserInteractionCases':22,'hostDeploymentVerified':False,'pins':[{'path':n,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for n,b in source]}
