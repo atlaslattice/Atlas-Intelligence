@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M12",
+  "title": "12 Developer Workflows & OpenAI Interop",
+  "features": [
+    {
+      "id": "NEURO.M12.F01",
+      "reviewSlotOnly": "H12.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/PatrickJS/awesome-cursorrules",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Cursor instructions silently bypass source/permission gates"
+    },
+    {
+      "id": "NEURO.M12.F02",
+      "reviewSlotOnly": "H12.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Draft tool schema claimed installed by ChatGPT host"
+    },
+    {
+      "id": "NEURO.M12.F03",
+      "reviewSlotOnly": "H12.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Local preview automatically posts to SwarmChat"
+    },
+    {
+      "id": "NEURO.M12.F04",
+      "reviewSlotOnly": "H12.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Adapter crosses account boundary without signed grant"
+    },
+    {
+      "id": "NEURO.M12.F05",
+      "reviewSlotOnly": "H12.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mlflow/mlflow",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Runner zero-step called a passing integration"
+    },
+    {
+      "id": "NEURO.M12.F06",
+      "reviewSlotOnly": "H12.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/huggingface_hub",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A proposal with no source pin called implemented"
+    },
+    {
+      "id": "NEURO.M12.F07",
+      "reviewSlotOnly": "H12.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A missing proposal silently shrinks 144 matrix"
+    },
+    {
+      "id": "NEURO.M12.F08",
+      "reviewSlotOnly": "H12.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Feature flag ON silently changes existing answers"
+    },
+    {
+      "id": "NEURO.M12.F09",
+      "reviewSlotOnly": "H12.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Different hardware or corpus counted as measured improvement"
+    },
+    {
+      "id": "NEURO.M12.F10",
+      "reviewSlotOnly": "H12.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A final-test example leaks into training fixture"
+    },
+    {
+      "id": "NEURO.M12.F11",
+      "reviewSlotOnly": "H12.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-js",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Source-only export silently activates model or agent"
+    },
+    {
+      "id": "NEURO.M12.F12",
+      "reviewSlotOnly": "H12.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/PatrickJS/awesome-cursorrules",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Unverified proposal bypasses host release or human authority"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}

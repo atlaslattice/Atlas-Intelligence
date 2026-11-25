@@ -1,0 +1,35 @@
+{
+  "schema": "atlas.one.144-sprint-release-check/v1",
+  "date": "2026-11-24",
+  "status": "LOCAL_EXECUTION_AND_REPLAY_VERIFIED",
+  "sourceEdition": "Atlas Work Learning v0.2.0 historical source (pre-ff912 successor)",
+  "sourcePin": "6825c1f83dc3502b0d153c3d4bd925be823a67a6a350b919f4be5c56a2828d9f",
+  "arianePin": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "tasksSelected": 144,
+  "tasksExecuted": 144,
+  "tasksPassed": 144,
+  "newActualCodePathsCorrected": 1,
+  "baselineDefectsReproduced": 1,
+  "pythonReceiptIntegrityTestsPassed": 22,
+  "ossInheritedNodeTestsNormal": 171,
+  "ossInheritedNodeTestsJitless": 171,
+  "ossInheritedPythonTests": 16,
+  "chromiumExplorerChecksPassed": 7,
+  "hostVerified": false,
+  "userCorpusRead": false,
+  "modelWeightsTrained": false,
+  "actualMacroTurnsCreated": 0,
+  "deployed": false,
+  "canAdoptWithoutNewReview": false,
+  "technicalFailuresRetained": [
+    "LIF_INF_OVERFLOW_RED",
+    "INCORRECT_TEST_ASSUMPTIONS_3_NEURAL_8_PRIVATE"
+  ],
+  "newPeerEvidence": "GF9 SwarmChat #236 disclosed LIF overflow first; this local patch supplies fail-closed calculation",
+  "remaining": [
+    "Current ff912 successor source/ABI rerun",
+    "human family/time-disjoint semantic evaluation",
+    "actual host current-use/return/revocation",
+    "code review and merge decision"
+  ]
+}

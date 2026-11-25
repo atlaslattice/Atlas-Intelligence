@@ -1,0 +1,25 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "c7b46a7e2bc2abd4a291a31d49d52ab5af930d890d7cf9ed7185ef03a0353a91",
+  "projection": "Workspace paths replaced; numeric observations and limitations retained.",
+  "originalReceipt": {
+    "schema": "atlas.oss.discovery-independent-boundary-review/v1",
+    "recorded_at": "2026-11-24T22:27:11.887404+00:00",
+    "classification": "SYNTHETIC_LOCAL_CONTROL_NO_PROVIDER_CALLS",
+    "source_pins": {
+      "candidate-package/src/context-pack.mjs": "1367d2a2798b2a5d618c7a3fd01e526f35f6a935fa91795904ba20df419634c7",
+      "candidate-package/src/discovery-tools.mjs": "c6f08c973390f7198a8ced23e69506ae9b5464265c995a91531302ab8dd6d288",
+      "candidate-package/src/gateway.mjs": "9a286e5af0f74eb400009b8674cc5f2d2ff95ab4d845d533cd950d3aa2c9ad73",
+      "candidate-package/src/contracts.mjs": "34aa1604bf4e299588f3f69cfce72be2dd9a086023270e178a5631bbfa7c474a",
+      "review-artifacts/evidence/discovery-final-boundary.test.mjs": "5df390c5dd4f8202db300dc9d7c1af6c871963352944ab8f5ee14321e1a94e44"
+    },
+    "source_stable_before_after": true,
+    "exit_code": 0,
+    "stdout": "✔ queued withdrawal after context preparation blocks the exact combined MCP payload at handoff (16.954926ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 196.487059\n",
+    "stderr": "",
+    "scope": "One queued-revocation control on exact outer MCP context payload; not a host transport certification or 144-Sphere run.",
+    "provider_calls": 0,
+    "model_calls": 0,
+    "learning_updates": 0
+  }
+}

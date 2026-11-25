@@ -1,0 +1,45 @@
+{
+  "actual_runtime_benchmark_json_sha256": "aba37a903f7d681f5f8b15b1a84149257e40a1cc9a27ff8a3a5e1e64bc200d5f",
+  "as_of": "2026-11-24",
+  "base_git_blob": "d1ec1e99167bc94a87b03913971e3bacde41164e",
+  "browser_tested": false,
+  "canon_ratified": false,
+  "changed_host_authority": false,
+  "first_run_correction": "One initial failing test expected HOLD rather than REJECT for baseline PASS \u2192 candidate HOLD; expectation corrected, rejection remains strict",
+  "host_deployed": false,
+  "live_workshop_posted_at_receipt_creation": false,
+  "node": {
+    "inherited_distinct_tests": 35,
+    "jitless": {
+      "failed": 0,
+      "passed": 83
+    },
+    "negative_subprobes_each_mode": 2048,
+    "new_distinct_tests": 48,
+    "normal": {
+      "failed": 0,
+      "passed": 83
+    }
+  },
+  "nonclaim": "The local v3 comparator validates caller-supplied fixtures, not actual broker posting, host IAM or resident turns.",
+  "peer_objection": {
+    "new_negative_tests": 8,
+    "not_fixed": "ZIP file A/B time-of-check-time-of-use; remains owned by peer code lane",
+    "room_seq": 174,
+    "status": "REPRODUCED_V2_OMISSION_V3_1_BOUND"
+  },
+  "review_digest": "944a1fa0e79469ed64a9e381ad6a270acc5b410f40901437b4c51f68ccfb8db7",
+  "review_status": "LOCAL_REVIEW_CANDIDATE_ONLY",
+  "schema": "atlas.collaboration.source-only-v3-execution-receipt/v1",
+  "source_edition": "Ariadne v0.7",
+  "source_parent_commit": "d8f04c1203e76845c8412658468221471f246825",
+  "synthetic_fixtures": {
+    "actual_host_permissions_tested": false,
+    "cases": 24,
+    "families": 12,
+    "new_model_turns": 0,
+    "new_peer_messages": 0,
+    "red_to_green": 1
+  },
+  "training_performed": false
+}

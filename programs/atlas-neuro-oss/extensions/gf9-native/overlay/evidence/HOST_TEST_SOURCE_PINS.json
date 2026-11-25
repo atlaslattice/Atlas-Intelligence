@@ -1,0 +1,29 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "91cb54dd531e45ed628043d129bf648ffdb6e2199eb678063c26cb6c8927af5e",
+  "projection": "Workspace paths replaced; numeric observations and limitations retained.",
+  "originalReceipt": {
+    "schema": "atlas.oss.host-test-dependencies/v1",
+    "baseCommit": "76e6eeefeafbcc1cc4c6f94c00afcb9700fc19ba",
+    "files": {
+      "lib/atlas-graph-fabric.mjs": {
+        "sha256": "367c5a71eecbdcc1edc22e8586dd7de45b2327f7fb618db4fd893abe0a8a4a2c",
+        "localMatches": true
+      },
+      "lib/glyph-hsn-bridge.mjs": {
+        "sha256": "be224cba5d8ac1bbaf4caa71599df9a541b99f0310568dace3c9976dcb9fae44",
+        "localMatches": true
+      },
+      "lib/glyph-hsn-dataset.mjs": {
+        "sha256": "5a1af635f6d58a3450dc3318aafc9beb870f212e5f34510d3702c2ee3d3536a0",
+        "localMatches": true
+      },
+      "lib/meta145-engine.mjs": {
+        "sha256": "830c9409351ca2e3c872deb382d9c17e5d7e5faff45185c5dd3e0c8f06e70052",
+        "localMatches": true
+      }
+    },
+    "registrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "scope": "Read-only source tests; no hosted process or model inference"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M04",
+  "title": "04 Neural Model Design",
+  "features": [
+    {
+      "id": "NEURO.M04.F01",
+      "reviewSlotOnly": "H04.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/peft",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Checkpoint claim lacks parameter/optimizer pins"
+    },
+    {
+      "id": "NEURO.M04.F02",
+      "reviewSlotOnly": "H04.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/peft",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Wider hidden layer alone claimed to prove HSN alignment"
+    },
+    {
+      "id": "NEURO.M04.F03",
+      "reviewSlotOnly": "H04.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/peft",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Adapter from another encoder revision silently activates"
+    },
+    {
+      "id": "NEURO.M04.F04",
+      "reviewSlotOnly": "H04.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Shuffled routing beats true matching under same budget"
+    },
+    {
+      "id": "NEURO.M04.F05",
+      "reviewSlotOnly": "H04.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/candle",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Unused weights counted as equal active compute"
+    },
+    {
+      "id": "NEURO.M04.F06",
+      "reviewSlotOnly": "H04.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/peft",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Re-labeling units changes output under inverse permutation"
+    },
+    {
+      "id": "NEURO.M04.F07",
+      "reviewSlotOnly": "H04.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/trl",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Unreviewed consensus becomes a positive label"
+    },
+    {
+      "id": "NEURO.M04.F08",
+      "reviewSlotOnly": "H04.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/peft",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "New head replaces the original checkpoint"
+    },
+    {
+      "id": "NEURO.M04.F09",
+      "reviewSlotOnly": "H04.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/candle",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Backends silently change tie ranking"
+    },
+    {
+      "id": "NEURO.M04.F10",
+      "reviewSlotOnly": "H04.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/sentence-transformers",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "One query with multiple relevant sources is trained as negatives"
+    },
+    {
+      "id": "NEURO.M04.F11",
+      "reviewSlotOnly": "H04.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Apparent ontology gain disappears under shuffle control"
+    },
+    {
+      "id": "NEURO.M04.F12",
+      "reviewSlotOnly": "H04.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/accelerate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "More epochs automatically counted as more progress"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}

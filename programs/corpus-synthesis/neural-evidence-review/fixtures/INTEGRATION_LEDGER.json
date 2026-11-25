@@ -1,0 +1,134 @@
+{
+  "schema": "atlas.mica.integration-ledger/v1",
+  "date": "2026-11-24",
+  "currentChange": "SOURCE_ONLY_COMPOSED_MOCK_SEAM",
+  "baseReviewPr": "https://github.com/atlaslattice/Atlas-Intelligence/pull/58",
+  "modelReleaseObservedFromMica": "16e267f88202491c5b67b07b7533065bff0315873a6df2e37e210aae1c2f7136",
+  "encoderRevisionObservedFromMica": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "frozenSilver": {
+    "status": "FRESH_TEST_CONSUMED_ONCE",
+    "queries": 24,
+    "sourceFamilies": 1,
+    "candidatePoolPerQuery": 924,
+    "hit10": {
+      "BGE": 23,
+      "TFIDF": 18,
+      "GNN": 5
+    },
+    "retuned": false,
+    "replayed": false
+  },
+  "workshopSources": [
+    "#8",
+    "#9",
+    "#18",
+    "#24",
+    "#31",
+    "#33",
+    "#57",
+    "#65",
+    "#70",
+    "#75",
+    "#81",
+    "#83"
+  ],
+  "lanes": [
+    {
+      "name": "MICA pretrained entry and release",
+      "status": "SOURCE_REPORTED_NOT_MOUNTED",
+      "owner": "MICA"
+    },
+    {
+      "name": "Ariadne 1728 immutable IDs",
+      "status": "SOURCE_PINNED_DESIGN",
+      "owner": "Ariadne"
+    },
+    {
+      "name": "Neural candidate ranking",
+      "status": "MICA_LOCAL_EVIDENCE_ONLY",
+      "owner": "MICA"
+    },
+    {
+      "name": "Source identity and citation revision",
+      "status": "LOCAL_TESTED_SYNTHETIC",
+      "owner": "PR58"
+    },
+    {
+      "name": "Full dependency inference-use check",
+      "status": "LOCAL_TESTED_SYNTHETIC_HOST_HOLD",
+      "owner": "PR58+Estuary"
+    },
+    {
+      "name": "Disclosed source RETURN check",
+      "status": "LOCAL_TESTED_SYNTHETIC_HOST_HOLD",
+      "owner": "PR58+Estuary"
+    },
+    {
+      "name": "Post-rank revocation and abstention",
+      "status": "LOCAL_TESTED_SYNTHETIC",
+      "owner": "PR58"
+    },
+    {
+      "name": "Cross-document source-family and dissent",
+      "status": "LOCAL_TESTED_SYNTHETIC",
+      "owner": "PR58+peers"
+    },
+    {
+      "name": "Training/corpus chunk coverage",
+      "status": "STORAGE_HOLD",
+      "owner": "MICA+corpus"
+    },
+    {
+      "name": "Glyph/GF7 and META145 display",
+      "status": "REVIEW_ONLY_NO_SEMANTIC_LABEL",
+      "owner": "GF9+Cupwake"
+    },
+    {
+      "name": "Model training/adapter weights",
+      "status": "NOT_MODIFIED",
+      "owner": "MICA+Lumenfern"
+    },
+    {
+      "name": "Final panel comparison",
+      "status": "CONSUMED_NOT_RETUNED",
+      "owner": "MICA"
+    },
+    {
+      "name": "New human family-disjoint panel",
+      "status": "NOT_STARTED",
+      "owner": "reviewers"
+    },
+    {
+      "name": "SwarmChat authenticated host and egress",
+      "status": "NOT_VERIFIED",
+      "owner": "host"
+    },
+    {
+      "name": "Production deployment and CI",
+      "status": "NOT_PERFORMED",
+      "owner": "release"
+    },
+    {
+      "name": "Batched source inference-use permission checks",
+      "status": "LOCAL_TESTED_MOCK_BATCH_924_IN_8_CALLS",
+      "owner": "PR58"
+    }
+  ],
+  "tests": {
+    "nodeDistinct": 91,
+    "nodeNormalPass": 91,
+    "nodeJitlessPass": 91,
+    "pythonDistinct": 26,
+    "pythonNormalPass": 26,
+    "pythonOptimizedPass": 26
+  },
+  "explicitNonClaims": [
+    "model trained",
+    "live neural server integrated",
+    "host rights authenticated",
+    "full corpus readable",
+    "new final quality score",
+    "production deployment",
+    "new resident wake"
+  ]
+}

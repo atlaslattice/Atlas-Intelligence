@@ -1,0 +1,29 @@
+{
+  "controls": [
+    {
+      "elementwiseIdentical": true,
+      "housePeers": false,
+      "portAssignments": 13824,
+      "shape": [
+        8,
+        1728
+      ]
+    },
+    {
+      "elementwiseIdentical": true,
+      "housePeers": true,
+      "portAssignments": 20736,
+      "shape": [
+        12,
+        1728
+      ]
+    }
+  ],
+  "originalInputSourceUntouched": true,
+  "originalRegistrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "schema": "atlas.one.upstream-geometree-source-equivalence/v1",
+  "semanticEquivalenceTested": false,
+  "sourceCodeIncluded": false,
+  "sourceFileSha256": "7b86a89be24eb172bf43326366a3e15a020ff2586c435d0a1fb5274538455be4",
+  "sourceVariant": "ORIGINAL_GEOMETREE_PROTOTYPE"
+}

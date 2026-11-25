@@ -1,0 +1,47 @@
+{
+  "schema": "atlas.one.144-explorer-browser-check/v1",
+  "browser": "headless Chromium",
+  "checks": [
+    {
+      "name": "all_144_rows_render",
+      "pass": true,
+      "actual": 144
+    },
+    {
+      "name": "case_insensitive_source_search",
+      "pass": true,
+      "actual": 1
+    },
+    {
+      "name": "lane_filter_12_cases",
+      "pass": true,
+      "actual": 12
+    },
+    {
+      "name": "reset_restores_all",
+      "pass": true,
+      "actual": 144
+    },
+    {
+      "name": "failure_filter_obeys_green_receipt",
+      "pass": true,
+      "actual": 0
+    },
+    {
+      "name": "mobile_width_no_page_overflow",
+      "pass": true,
+      "actual": {
+        "rows": 144,
+        "noPageOverflow": true
+      }
+    },
+    {
+      "name": "no_javascript_exceptions",
+      "pass": true,
+      "actual": []
+    }
+  ],
+  "pass": 7,
+  "total": 7,
+  "title": "Offline 144-task acceptance explorer"
+}

@@ -1,0 +1,86 @@
+{
+  "codeSha256": {
+    "atlas_neural_unified/quality.py": "c5c853c2b614dc4515c5431c4ef306db843275ad2555c34e43507bb692510c55",
+    "docs/QUALITY_FIRST_COLLABORATION.md": "fb4604ec385bce1c0718a53b9ab44773983ebddfa09c9971d9eca12a2a66e1e3",
+    "examples/quality_first_demo.py": "8b0ef29a50be3458122c95dce2b4d54e26439a4edbd10e5ae04d2b6b599ca689",
+    "test/test_quality.py": "b43173e7b0553c85b67b275a8221ed9559ebdfdda26d2ba0f7ad4bfd23689638"
+  },
+  "date": "2026-11-24",
+  "localReviewOnlyRuntime": {
+    "hardware": "shared local container; unisolated; no model inference",
+    "medianMs": 11.691537499999999,
+    "p95Ms": 12.300605,
+    "repeats": 100
+  },
+  "nonclaims": {
+    "canAuthorize": false,
+    "canDeploy": false,
+    "canonUpdated": false,
+    "hostedIntegrated": false,
+    "humanQualityEvaluated": false,
+    "modelWeightsChanged": false,
+    "trainingPerformed": false
+  },
+  "originalRegistrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "policy": "Quality first; can accept higher latency if verified quality gains and hard limits satisfied, always source/rights fail-closed.",
+  "qualitySamples": [
+    {
+      "baselineP50Ms": 32,
+      "baselineP95Ms": 37,
+      "canDeploy": false,
+      "candidateP50Ms": 52,
+      "candidateP95Ms": 57,
+      "candidatePromoted": false,
+      "fixture": "quality_gain_slow",
+      "houseClusterCI95": [
+        0.63093,
+        0.63093
+      ],
+      "nDCGGain": 0.63093,
+      "status": "REVIEW_QUALITY_GAIN_WITH_LATENCY_COST"
+    },
+    {
+      "baselineP50Ms": 32,
+      "baselineP95Ms": 37,
+      "canDeploy": false,
+      "candidateP50Ms": 27,
+      "candidateP95Ms": 32,
+      "candidatePromoted": false,
+      "fixture": "quality_gain_fast",
+      "houseClusterCI95": [
+        0.63093,
+        0.63093
+      ],
+      "nDCGGain": 0.63093,
+      "status": "REVIEW_QUALITY_GAIN_WITHOUT_P95_COST"
+    },
+    {
+      "baselineP50Ms": 32,
+      "baselineP95Ms": 37,
+      "canDeploy": false,
+      "candidateP50Ms": 52,
+      "candidateP95Ms": 57,
+      "candidatePromoted": false,
+      "fixture": "no_gain",
+      "houseClusterCI95": [
+        0.0,
+        0.0
+      ],
+      "nDCGGain": 0.0,
+      "status": "HOLD_INSUFFICIENT_QUALITY_GAIN"
+    }
+  ],
+  "schema": "atlas.one.quality-first-local-receipt/v1",
+  "srcBaseline": "atlaslattice/Atlas-Intelligence PR62 head da3e753ba9d5a1f49d7bfc78dad51477ad887123",
+  "state": "LOCAL_OFFLINE_TESTED_REVIEW_ONLY",
+  "suite": {
+    "failures": 0,
+    "nodeGatewaySource": "staged WorkLearning 0.2.0",
+    "nodeJitlessPassed": 12,
+    "nodeNormalPassed": 12,
+    "pythonNewQualityTests": 36,
+    "pythonNormalPassed": 113,
+    "pythonOptimizedPassed": 113,
+    "skips": 0
+  }
+}

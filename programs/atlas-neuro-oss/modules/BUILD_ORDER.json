@@ -1,0 +1,35 @@
+{
+  "status": "PREPARED_REVIEW_DAG_ONLY",
+  "order": [
+    "NEURO.M01",
+    "NEURO.M02",
+    "NEURO.M03",
+    "NEURO.M04",
+    "NEURO.M05",
+    "NEURO.M06",
+    "NEURO.M07",
+    "NEURO.M08",
+    "NEURO.M09",
+    "NEURO.M10",
+    "NEURO.M11",
+    "NEURO.M12"
+  ],
+  "edges": 26,
+  "canExecute": false,
+  "canPublish": false,
+  "canonEffect": "NONE",
+  "files": [
+    "./modules/M01/contract.json",
+    "./modules/M02/contract.json",
+    "./modules/M03/contract.json",
+    "./modules/M04/contract.json",
+    "./modules/M05/contract.json",
+    "./modules/M06/contract.json",
+    "./modules/M07/contract.json",
+    "./modules/M08/contract.json",
+    "./modules/M09/contract.json",
+    "./modules/M10/contract.json",
+    "./modules/M11/contract.json",
+    "./modules/M12/contract.json"
+  ]
+}

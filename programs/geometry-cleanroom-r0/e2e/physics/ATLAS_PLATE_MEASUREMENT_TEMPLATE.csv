@@ -1,0 +1,1 @@
+run_id,plate_id,plate_material,thickness_mm,length_mm,width_mm,boundary_conditions,drive_location,drive_frequency_hz,reference_frequency_hz,temperature_c,mode_image_sha256,analysis_method,reviewer_id,calibration_date_utc,rights_reference,source_edition

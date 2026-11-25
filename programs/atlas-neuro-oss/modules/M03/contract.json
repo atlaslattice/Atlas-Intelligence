@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M03",
+  "title": "03 Typed Graph Learning",
+  "features": [
+    {
+      "id": "NEURO.M03.F01",
+      "reviewSlotOnly": "H03.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A reversed dependency is scored as the same causal edge"
+    },
+    {
+      "id": "NEURO.M03.F02",
+      "reviewSlotOnly": "H03.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A META method becomes an unsupported domain subject"
+    },
+    {
+      "id": "NEURO.M03.F03",
+      "reviewSlotOnly": "H03.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/getzep/graphiti",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Superseded edge presented as current fact"
+    },
+    {
+      "id": "NEURO.M03.F04",
+      "reviewSlotOnly": "H03.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Shared glyph ordinal creates a validated semantic link"
+    },
+    {
+      "id": "NEURO.M03.F05",
+      "reviewSlotOnly": "H03.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Neighbor hit credited as direct neural retrieval"
+    },
+    {
+      "id": "NEURO.M03.F06",
+      "reviewSlotOnly": "H03.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Quality claim holds despite untested topology ablation"
+    },
+    {
+      "id": "NEURO.M03.F07",
+      "reviewSlotOnly": "H03.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Shuffled internal HSN assignments outperform true topology"
+    },
+    {
+      "id": "NEURO.M03.F08",
+      "reviewSlotOnly": "H03.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Two paraphrases double independent family count"
+    },
+    {
+      "id": "NEURO.M03.F09",
+      "reviewSlotOnly": "H03.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A lower-score contradiction vanishes on summary"
+    },
+    {
+      "id": "NEURO.M03.F10",
+      "reviewSlotOnly": "H03.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Lexical match automatically becomes SAME_AS"
+    },
+    {
+      "id": "NEURO.M03.F11",
+      "reviewSlotOnly": "H03.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A spike event is admitted as a research source"
+    },
+    {
+      "id": "NEURO.M03.F12",
+      "reviewSlotOnly": "H03.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Unattributed path labeled as independently verified"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}

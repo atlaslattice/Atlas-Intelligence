@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M01",
+  "title": "01 Corpus & Source Admission",
+  "features": [
+    {
+      "id": "NEURO.M01.F01",
+      "reviewSlotOnly": "H01.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/huggingface_hub",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Moving a remote tag silently reuses an old approval"
+    },
+    {
+      "id": "NEURO.M01.F02",
+      "reviewSlotOnly": "H01.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A missing page is treated as the end of the corpus"
+    },
+    {
+      "id": "NEURO.M01.F03",
+      "reviewSlotOnly": "H01.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Same originating family appears in train and final test"
+    },
+    {
+      "id": "NEURO.M01.F04",
+      "reviewSlotOnly": "H01.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "A missing chunk is still called complete"
+    },
+    {
+      "id": "NEURO.M01.F05",
+      "reviewSlotOnly": "H01.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/huggingface_hub",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Public visibility is mistaken for re-use permission"
+    },
+    {
+      "id": "NEURO.M01.F06",
+      "reviewSlotOnly": "H01.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/huggingface_hub",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Missing license treated as MIT by default"
+    },
+    {
+      "id": "NEURO.M01.F07",
+      "reviewSlotOnly": "H01.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Derived document SHA stands in for original Ariadne record"
+    },
+    {
+      "id": "NEURO.M01.F08",
+      "reviewSlotOnly": "H01.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Unchanged semantic text bypasses new rights epoch"
+    },
+    {
+      "id": "NEURO.M01.F09",
+      "reviewSlotOnly": "H01.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/huggingface_hub",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "One unavailable shard yields FULL ready"
+    },
+    {
+      "id": "NEURO.M01.F10",
+      "reviewSlotOnly": "H01.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Retry creates duplicated snippets or silently drops a page"
+    },
+    {
+      "id": "NEURO.M01.F11",
+      "reviewSlotOnly": "H01.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mem0ai/mem0",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Work query can retrieve a private creative body"
+    },
+    {
+      "id": "NEURO.M01.F12",
+      "reviewSlotOnly": "H01.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Unknown eligibility is falsely counted as complete"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}

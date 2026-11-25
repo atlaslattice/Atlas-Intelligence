@@ -1,0 +1,39 @@
+{
+  "CANONRatified": false,
+  "archivalWorkAndFullCorpusMigrated": false,
+  "ariadneRegistrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "baselineManifestSha256": "12ebee51314e983581452cab0bc90faaa5971258af915d6f2c66a8a85b235821",
+  "baselineParityQueries": 144,
+  "canaryTop1Queries": 144,
+  "candidateGates": 156,
+  "candidateGatesTrainedOnRealCorpus": false,
+  "fabricId": "ATLAS_ONE_ARIADNE_v0.7_1728",
+  "humanSemanticEvaluation": false,
+  "inheritedExistingGatewayTransportTests": 52,
+  "installedExistingRuntimeModified": false,
+  "neuralModelWeightsModified": false,
+  "notes": [
+    "One source-owned numeric core and typed ports; many source artifacts do not become neurons",
+    "Original user corpus, full registry, BGE weights and source texts absent from public deliverable",
+    "Original Geometree neighbor assignments reproduced exactly; matched shuffled topology has not shown gain",
+    "All source-dependent permissions and final egress still require trusted current host"
+  ],
+  "proposedOssExtensions": 144,
+  "protectedIsolations": 8,
+  "remoteAtlasGPTHostInstalled": false,
+  "schema": "atlas.one.unified-local-release/v1",
+  "sourceBaselineCommit": "76e6eeefeafbcc1cc4c6f94c00afcb9700fc19ba",
+  "sourceComponentPorts": 33,
+  "stagedGatewayUnchanged": true,
+  "stagedWorkLearningOriginalChangedFiles": 1,
+  "stagedWorkLearningOriginalUnchangedFiles": 87,
+  "status": "SOURCE_ONLY_REVIEW_NOT_DEPLOYED",
+  "swarmChatHostBindingVerified": false,
+  "testsPassedPerMode": {
+    "nodeJitless": 12,
+    "nodeNormal": 12,
+    "pythonNormal": 77,
+    "pythonOptimized": 77
+  },
+  "verifiedMacroturnsCredited": 0
+}

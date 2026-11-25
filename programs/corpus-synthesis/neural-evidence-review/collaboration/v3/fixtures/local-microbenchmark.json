@@ -1,0 +1,22 @@
+{
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "callsPerSeries": 300,
+    "pairs": 9,
+    "localOnly": true
+  },
+  "v2": {
+    "p50_us": 23.003530000000108,
+    "p95_us": 40.829219999999964,
+    "min_us": 18.532293333332746,
+    "max_us": 40.829219999999964
+  },
+  "v3": {
+    "p50_us": 685.3167266666666,
+    "p95_us": 794.6624866666665,
+    "min_us": 532.4424433333336,
+    "max_us": 794.6624866666665
+  },
+  "note": "Different functions and scope: v3 does more review work; these are local microcosts, not serving latency or inference speedup."
+}

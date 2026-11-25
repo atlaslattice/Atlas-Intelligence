@@ -1,0 +1,58 @@
+{
+  "repoCount": 57,
+  "features": 144,
+  "modules": 12,
+  "byStatus": {
+    "CANDIDATE_REQUIRES_EXACT_GAP_REVIEW": 124,
+    "EXISTING_CAPABILITY_EXTEND_OR_ABLATE": 20
+  },
+  "byLicenseGate": {
+    "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE": 139,
+    "REVIEW_ONLY": 5
+  },
+  "byPriority": {
+    "P0": 36,
+    "P1": 77,
+    "P2": 31
+  },
+  "bySourceUse": {
+    "huggingface/huggingface_hub": 7,
+    "huggingface/datasets": 13,
+    "mem0ai/mem0": 6,
+    "huggingface/sentence-transformers": 8,
+    "stanford-futuredata/ColBERT": 1,
+    "facebookresearch/faiss": 5,
+    "deepset-ai/haystack": 3,
+    "huggingface/optimum": 2,
+    "huggingface/text-embeddings-inference": 3,
+    "pyg-team/pytorch_geometric": 8,
+    "getzep/graphiti": 4,
+    "microsoft/graphrag": 8,
+    "huggingface/peft": 6,
+    "huggingface/transformers": 2,
+    "huggingface/candle": 3,
+    "huggingface/trl": 4,
+    "huggingface/accelerate": 1,
+    "jeshraghian/snntorch": 6,
+    "fangwei123456/spikingjelly": 3,
+    "BindsNET/bindsnet": 2,
+    "neuromorphs/tonic": 1,
+    "lava-nc/lava": 1,
+    "brian-team/brian2": 1,
+    "langchain-ai/langgraph": 5,
+    "huggingface/evaluate": 8,
+    "optuna/optuna": 2,
+    "openai/openai-agents-python": 8,
+    "mlflow/mlflow": 2,
+    "prometheus/client_python": 1,
+    "nmslib/hnswlib": 1,
+    "qdrant/qdrant": 2,
+    "asg017/sqlite-vec": 1,
+    "vllm-project/vllm": 1,
+    "ml-explore/mlx": 1,
+    "openai/openai-agents-js": 6,
+    "huggingface/tokenizers": 2,
+    "huggingface/transformers.js": 4,
+    "PatrickJS/awesome-cursorrules": 2
+  }
+}

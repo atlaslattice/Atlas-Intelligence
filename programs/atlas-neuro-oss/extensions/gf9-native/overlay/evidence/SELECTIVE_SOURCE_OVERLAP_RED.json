@@ -1,0 +1,28 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "ca010a8e13dd97a795018522a68cb8d78e81649c60a4f4def959c5382c8a8ab8",
+  "projection": "Workspace paths replaced; numeric observations and limitations retained.",
+  "originalReceipt": {
+    "outcome": "KNOWN_SOURCE_HASH_OVERLAP_ACCEPTED",
+    "accepted_by_evaluator": true,
+    "metrics": {
+      "rows": 60,
+      "accepted_rows": 40,
+      "row_coverage": 0.6666666666666666,
+      "row_errors": 10,
+      "row_selective_risk": 0.25,
+      "families": 60,
+      "accepted_families": 40,
+      "family_coverage": 0.6666666666666666,
+      "family_errors": 10,
+      "family_any_error_risk": 0.25,
+      "family_risk_wilson_upper": 0.3759729404598169,
+      "label_kinds": {
+        "synthetic": 60
+      }
+    },
+    "schema": "atlas.oss.selective-source-overlap-falsifier/v1",
+    "dataKind": "SYNTHETIC",
+    "sourceSha256": "38cc1300581f2b2be96ef5ac494baaaf325e2baf7f50fd171b1e9fd8127e26cc"
+  }
+}

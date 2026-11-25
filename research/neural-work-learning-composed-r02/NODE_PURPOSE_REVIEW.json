@@ -1,0 +1,39 @@
+{
+  "allAdmittedSourcesInferenceUseChecked": true,
+  "basedOnPR": "https://github.com/atlaslattice/Atlas-Intelligence/pull/61",
+  "cases": [
+    "node source dependencies checked before and after computation",
+    "missing dependency USE denies before backend",
+    "USE-only revocation after model computation with disclosure still allowed denies before final return",
+    "permitted inference/denied quotation on non-emitted dependency does not force denial"
+  ],
+  "disclosureOnlyOnEmittedSources": true,
+  "fullSuite": {
+    "failed": 0,
+    "normalAndJitless": true,
+    "passed": 87,
+    "skipped": 2,
+    "total": 89
+  },
+  "hostedRightsVerified": false,
+  "logs": {
+    "jitlessSha256": "55a84c478c5d30781e8c5e8daa05068cd45ce59191b9920cdd83110b8a2e11d1",
+    "normalSha256": "17cd9b7ad1bf148f840259cda11fd9d78a40382b6c930bbe223a93ffde2ff4f1"
+  },
+  "modelWeightUpdated": false,
+  "nodeTests": {
+    "jitlessPassed": 4,
+    "normalPassed": 4
+  },
+  "remainingHolds": [
+    "Trusted publisher purpose semantics and atomic network/Responses release not authenticated",
+    "MICA BGE predecessor source subset lacks trained weights and corpus",
+    "Learned node does not verify semantic correctness",
+    "New test fixtures are synthetic"
+  ],
+  "revision": "R02.1 additive",
+  "schema": "atlas.neural.work-learning.node-purpose-regression/v1",
+  "singleNodeApiPath": "atlas_work_learning_node",
+  "sourceOnly": true,
+  "sourceTestSha256": "393eef37271416b368cb22be38b32a3a74f3ca3b83addc2a5776ba5e07fa7688"
+}

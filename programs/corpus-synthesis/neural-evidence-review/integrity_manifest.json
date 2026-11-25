@@ -1,0 +1,166 @@
+{
+  "canPublish": false,
+  "date": "2026-11-24",
+  "files": {
+    "README.md": {
+      "bytes": 1491,
+      "gitBlobSha1": "ad7b2fc424cee56ca94447dae0708dbf89bb06bc",
+      "sha256": "df7145daffbde1e0ad1c3b9d44ec698238243e5ec0cb25830e9bfef5e8538449"
+    },
+    "docs/HANDOFF.md": {
+      "bytes": 4104,
+      "gitBlobSha1": "6184982a344a311afc55d9ab13c52cd60dfcf2b7",
+      "sha256": "577cd770f2cdc835510e91624cdf1b2f4633acb45816f8494b64687087c1b792"
+    },
+    "docs/INTEGRATION_STATUS.md": {
+      "bytes": 7046,
+      "gitBlobSha1": "379e3209c9866e0e5bb2f37201263dc4eb725b86",
+      "sha256": "6c753a8f74fb246978fe4b51c7d0c080bb77dda2c15949f3df765f74b5c89e97"
+    },
+    "examples/three-source-integration-demo.mjs": {
+      "bytes": 3474,
+      "gitBlobSha1": "bfc1397607a73819575152898aa89cb095a0a2c8",
+      "sha256": "9ae9ebee3582c5d80e52159d72a1a3b07cddd674638d7e61d6e84cc8d16538ee"
+    },
+    "fixtures/INTEGRATION_LEDGER.json": {
+      "bytes": 3326,
+      "gitBlobSha1": "7b527186c2286c46e98e521c198e283056eb6147",
+      "sha256": "d48997a106e72dcd6904c88263f5d7ad6f1b9e26a842739c2c869d6b53a9e122"
+    },
+    "fixtures/PAIRWISE_BOUNDS.json": {
+      "bytes": 2328,
+      "gitBlobSha1": "03f7e1ba3d273de92fdd02d2558b09cb2c2ab1d3",
+      "sha256": "0bc0c0fcc515dcb26c51dd4d9f89734f23d53a14f8c474a52141430452f99790"
+    },
+    "fixtures/combined-node-jitless-stderr.txt": {
+      "bytes": 63,
+      "gitBlobSha1": "87fe727605eae9a17167159729a15eb7c8dfc523",
+      "sha256": "62f7ca75234d5db36ee6e8d5b9cc49594789d5f418457f167c0b5e8db1324567"
+    },
+    "fixtures/combined-node-jitless.tap": {
+      "bytes": 14588,
+      "gitBlobSha1": "94e990dcd7abd314c809518ffbe456c6464cb1d1",
+      "sha256": "c9aad225d9292a6276cb268c7db6b92d26511d1ba0505aa450371b9cf8557f2e"
+    },
+    "fixtures/combined-node-normal.tap": {
+      "bytes": 14456,
+      "gitBlobSha1": "f1e309d6ee3a3a0e5b2c97d86c2f335d2d0d46f6",
+      "sha256": "3ae200ab020f6d975a55a51c41e2b8c74f77bd34533e38a0cfdca7bed23a5d6b"
+    },
+    "fixtures/integration-demo.json": {
+      "bytes": 1229,
+      "gitBlobSha1": "86ae0160ae96210b0af3554b91cc735208c33143",
+      "sha256": "da32536ed9d2a38fb6fd1fce876d3223bbebcf03991e2cbdaa215b83868436cc"
+    },
+    "fixtures/integration-jitless.tap": {
+      "bytes": 8090,
+      "gitBlobSha1": "848074e570dbb7280dcf1c1a579b90e20bf31866",
+      "sha256": "3e6cdcf92299c0b10df2d4ee081f54b8acc061503588c21f14fe545570753953"
+    },
+    "fixtures/integration-normal.tap": {
+      "bytes": 7958,
+      "gitBlobSha1": "31267c5f8c98fcc5d5207a1be805de8fc05783ab",
+      "sha256": "f1340244f419da991abfce96eae9d75c7ba44f0fd8d94d63eed6fba2a2a1080a"
+    },
+    "fixtures/node_jitless.tap": {
+      "bytes": 5553,
+      "gitBlobSha1": "9d69e1f490bceb45a861e21054e3c3287edff43e",
+      "sha256": "d39d62679bc87f0c4a61b6ce0989e3d3176ac29917620a1e9df0a720e8c677d0"
+    },
+    "fixtures/node_jitless_stderr.txt": {
+      "bytes": 63,
+      "gitBlobSha1": "87fe727605eae9a17167159729a15eb7c8dfc523",
+      "sha256": "62f7ca75234d5db36ee6e8d5b9cc49594789d5f418457f167c0b5e8db1324567"
+    },
+    "fixtures/node_normal.tap": {
+      "bytes": 5488,
+      "gitBlobSha1": "e45733b5fc4abd42ced25886f7e63d853bb150ef",
+      "sha256": "170ff65bb7dad881106ae579af744a8016d4d06481ded06e37b0422b38e8e06d"
+    },
+    "fixtures/python-replay-normal.txt": {
+      "bytes": 3109,
+      "gitBlobSha1": "cee0c9de5fe36585dd859d51ddd10e4debb3babd",
+      "sha256": "da49447c184a2f4fa81b036fdbd5083186870bf4fedbf989684155d0fa882238"
+    },
+    "fixtures/python-replay-optimized.txt": {
+      "bytes": 3109,
+      "gitBlobSha1": "cee0c9de5fe36585dd859d51ddd10e4debb3babd",
+      "sha256": "da49447c184a2f4fa81b036fdbd5083186870bf4fedbf989684155d0fa882238"
+    },
+    "fixtures/python_normal.txt": {
+      "bytes": 3109,
+      "gitBlobSha1": "cee0c9de5fe36585dd859d51ddd10e4debb3babd",
+      "sha256": "da49447c184a2f4fa81b036fdbd5083186870bf4fedbf989684155d0fa882238"
+    },
+    "fixtures/python_optimized.txt": {
+      "bytes": 3109,
+      "gitBlobSha1": "cee0c9de5fe36585dd859d51ddd10e4debb3babd",
+      "sha256": "da49447c184a2f4fa81b036fdbd5083186870bf4fedbf989684155d0fa882238"
+    },
+    "src/corpus-coverage-preflight.mjs": {
+      "bytes": 2716,
+      "gitBlobSha1": "a9deeac491fdadf6c4242864acc7021e67fd245a",
+      "sha256": "2c46d1102b678372890b6fe8cc5d39f8460545c34725bf6e2477e36e53542aa6"
+    },
+    "src/frozen_panel_bounds.py": {
+      "bytes": 6674,
+      "gitBlobSha1": "99ac09382ce5bfc4b84b2ea42bf66218883ff063",
+      "sha256": "2013b569e6bff7712f9dd2909593601fc8d422f9d70f7ebd29409ebd63104f57"
+    },
+    "src/neural-integration-seam.mjs": {
+      "bytes": 10011,
+      "gitBlobSha1": "73b270cc22d0d77b32f164afc867a36bab803f17",
+      "sha256": "5567002c7820b7698cebbd921e4609542787729599615948ec060f6cbbae7f23"
+    },
+    "src/postrank-lineage-fixture.mjs": {
+      "bytes": 5812,
+      "gitBlobSha1": "5a6012b51cc1786ef5d78539a7103494c2d0079d",
+      "sha256": "296badadc984b620fdd0e2ba18f6d23018ba98cde58545a6d10b0366ee17179e"
+    },
+    "test/neural-integration-seam.test.mjs": {
+      "bytes": 14659,
+      "gitBlobSha1": "3a0b7f71c86a76d90f8fd87294e9d4a5d46f2cb1",
+      "sha256": "4b801eca11e4d72b415cb62d960cf5f66e6a3f21155cd606423a0bbd112d4d82"
+    },
+    "test/postrank-lineage-fixture.test.mjs": {
+      "bytes": 7873,
+      "gitBlobSha1": "db05961cb3cf2e3c73cdcb52518f3ca0f6fe1a70",
+      "sha256": "4cd305c31d59a37c0c81349b7babf291721b4da20334533988d0fdcede32d8a1"
+    },
+    "test/test_frozen_panel_bounds.py": {
+      "bytes": 5692,
+      "gitBlobSha1": "f0e44bb406e78be720b6f4c694b2043dba21760b",
+      "sha256": "654cc04bffdcf7dd5979b8c8c7886b760c6d625fb33cf20283a3b823cc2a830e"
+    }
+  },
+  "frozenSilverPanelReused": false,
+  "hostVerified": false,
+  "mockBatchTransport": {
+    "batchSize": 256,
+    "callsAcrossTwoChecks": 8,
+    "hostLatencyMeasured": false,
+    "sources": 924
+  },
+  "modelsTrained": 0,
+  "schema": "atlas.mica.neural-integration-receipt/v2",
+  "sourceProvenance": "MICA#8/#9, Workroom#31/#33/#75/#81/#83; owner model NOT available",
+  "status": "SOURCE_ONLY_LOCAL_TESTED_DRAFT",
+  "tests": {
+    "nodeJitless": {
+      "failed": 0,
+      "passed": 91
+    },
+    "nodeNormal": {
+      "failed": 0,
+      "passed": 91
+    },
+    "pythonNormal": {
+      "failed": 0,
+      "passed": 26
+    },
+    "pythonOptimized": {
+      "failed": 0,
+      "passed": 26
+    }
+  }
+}

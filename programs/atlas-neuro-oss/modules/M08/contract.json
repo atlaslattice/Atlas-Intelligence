@@ -1,0 +1,109 @@
+{
+  "schema": "atlas.neuro.native.module-contract/v1",
+  "moduleId": "NEURO.M08",
+  "title": "08 Evaluation & Discovery",
+  "features": [
+    {
+      "id": "NEURO.M08.F01",
+      "reviewSlotOnly": "H08.S01",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Same-origin queries counted as independent observations"
+    },
+    {
+      "id": "NEURO.M08.F02",
+      "reviewSlotOnly": "H08.S02",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/pyg-team/pytorch_geometric",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Any missing matched active-parameter arm called superiority"
+    },
+    {
+      "id": "NEURO.M08.F03",
+      "reviewSlotOnly": "H08.S03",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "System hallucinates a source after full revocation"
+    },
+    {
+      "id": "NEURO.M08.F04",
+      "reviewSlotOnly": "H08.S04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/microsoft/graphrag",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Higher score silently erases contradiction"
+    },
+    {
+      "id": "NEURO.M08.F05",
+      "reviewSlotOnly": "H08.S05",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Changed citation with same text accepted without review"
+    },
+    {
+      "id": "NEURO.M08.F06",
+      "reviewSlotOnly": "H08.S06",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/datasets",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Revision derivative crosses final into train"
+    },
+    {
+      "id": "NEURO.M08.F07",
+      "reviewSlotOnly": "H08.S07",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/facebookresearch/faiss",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "ANN result count called semantic recall"
+    },
+    {
+      "id": "NEURO.M08.F08",
+      "reviewSlotOnly": "H08.S08",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/openai/openai-agents-python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Filtered return keeps coupled revoked score influence"
+    },
+    {
+      "id": "NEURO.M08.F09",
+      "reviewSlotOnly": "H08.S09",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/huggingface/evaluate",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Stored width equated to trained capacity"
+    },
+    {
+      "id": "NEURO.M08.F10",
+      "reviewSlotOnly": "H08.S10",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/mlflow/mlflow",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Stale green test qualifies changed model"
+    },
+    {
+      "id": "NEURO.M08.F11",
+      "reviewSlotOnly": "H08.S11",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/prometheus/client_python",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Isolated selector speed multiplied by other patch ratios"
+    },
+    {
+      "id": "NEURO.M08.F12",
+      "reviewSlotOnly": "H08.S12",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "sourceUrl": "https://github.com/optuna/optuna",
+      "licenseGate": "PERMISSIVE_UPSTREAM_INSPIRED_CLEAN_REWRITE",
+      "disproofTest": "Failed test omitted to manufacture perfect iteration"
+    }
+  ],
+  "sourceRights": "EXTERNAL_HOST_TO_VERIFY",
+  "implementedMethods": 0,
+  "hostedVerified": false,
+  "canTrain": false,
+  "canPublish": false,
+  "canonEffect": "NONE"
+}

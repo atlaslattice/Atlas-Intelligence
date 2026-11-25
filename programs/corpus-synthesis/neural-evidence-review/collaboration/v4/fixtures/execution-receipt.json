@@ -1,0 +1,45 @@
+{
+  "baseline_review_p50_microseconds": 568.1014560000003,
+  "benchmark_scope": "NODE_OFFLINE_REVIEW_ONLY_NOT_INFERENCE",
+  "candidate_over_baseline_p50_ratio": 1.051721909334448,
+  "candidate_review_p50_microseconds": 597.4847480000003,
+  "canon_ratified": false,
+  "date": "2026-11-24",
+  "deployed": false,
+  "file_swap_toctou_fixed": false,
+  "host_verified": false,
+  "inherited_v2_distinct_cases": 35,
+  "inherited_v3_distinct_cases": 48,
+  "kind": "LOCAL_TESTED_REVIEW_ALTERNATIVE",
+  "local_tests": {
+    "jitless-all.tap": {
+      "fail": 0,
+      "pass": 58,
+      "tests": 58
+    },
+    "normal-all.tap": {
+      "fail": 0,
+      "pass": 58,
+      "tests": 58
+    },
+    "v2-inherited-jitless.tap": {
+      "fail": 0,
+      "pass": 35,
+      "tests": 35
+    },
+    "v2-inherited.tap": {
+      "fail": 0,
+      "pass": 35,
+      "tests": 35
+    }
+  },
+  "macroturns_performed_by_test_compiler": 0,
+  "malicious_proxy_supported": false,
+  "model_trained": false,
+  "new_v4_distinct_cases": 10,
+  "no_concurrent_broker_or_scheduler_created": true,
+  "predecessor_git_blob_v2": "d1ec1e99167bc94a87b03913971e3bacde41164e",
+  "predecessor_git_blob_v3_1": "1e6f9fd61216f93fcf0a7c1e0427518815d3b4fe",
+  "private_corpus_used": false,
+  "schema": "atlas.collaboration.v4-source-review-receipt/v1"
+}
