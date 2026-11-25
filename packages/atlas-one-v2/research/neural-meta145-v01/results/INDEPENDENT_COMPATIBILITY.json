@@ -1,0 +1,20 @@
+{
+  "matchedCases": 144,
+  "changed": [],
+  "selectedPolicy": {
+    "dissent_bonus": 0.0,
+    "family_bonus": 0.3,
+    "max_items": 3,
+    "min_score": 0.38
+  },
+  "outputDigest": "9bb8d1e62b4a15a41dce2b146a415c326def64ef8cb316e11889d76a41c5ff8c",
+  "fileSha256": {
+    "src/evidence.py": "31a43384db0814a8cfbc5e95885bed32da41f449648a06ef65c50fd51ce38ec3",
+    "js/pretrained-evidence-sidecar.mjs": "f7a3cd335d2e4c45bbc141cc6d64bc47692fa71b002cf3e2df3699226bcf2b14",
+    "tests/test_peer15.py": "69219ede97dea1ac92b970651f703e276c4d3a1e0fde1c1faa1b6270c460a8ac",
+    "js/peer15_hardening.test.mjs": "ef11dd6c931dbf72b335ebc899ee5813695ce4e84277ab9c3cb7f74ca7d62a87",
+    "tests/test_evidence.py": "2ce0d53e058b1e43afb013aad43706be4f99f5a42a1c8ccb91e7d4cfdf70fc7c",
+    "js/pretrained-evidence-sidecar.test.mjs": "a67209d5434a0cbdf5ea7ab6af1877627fd3a1b7bb912059d79da1e84dce3481"
+  },
+  "sourceScope": "LOCAL_SYNTHETIC_NO_PRIVATE_MODEL"
+}
