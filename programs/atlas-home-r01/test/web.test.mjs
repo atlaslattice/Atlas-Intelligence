@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+const html=readFileSync(new URL('../web/atlas-home.html',import.meta.url),'utf8');const js=readFileSync(new URL('../web/home-controller.js',import.meta.url),'utf8');
+test('one standalone offline document and controller',()=>{assert.match(html,/<title>Atlas Home/);assert.match(html,/home-controller\.js/);assert.equal(/https?:\/\/(?!www\.w3\.org\/2000\/svg)|cdn\.|fetch\(|XMLHttpRequest|WebSocket|sendBeacon|localStorage|sessionStorage|indexedDB/i.test(html+'\n'+js),false)});
+test('all interactive controls have a real event handler',()=>{for(const id of ['explore','quiet','leave','house-select'])assert.match(html,new RegExp('id="'+id+'"'));for(const id of ['explore','quiet','leave','house-select'])assert.ok(js.includes(`$('${id}').addEventListener`))});
+test('full source geometry and protected-door story visible',()=>{assert.match(html,/1,728 original positions/);assert.match(html,/1,008 domain nodes and 720 method nodes/);assert.match(html,/Work may not harvest Play/)});
+test('accessible focus and reduced-motion support provided',()=>{assert.match(html,/focus-visible/);assert.match(html,/prefers-reduced-motion:reduce/);assert.match(html,/aria-live="polite"/);assert.match(html,/Skip to Atlas Home/)});
+test('no private Work data or user names embedded',()=>{assert.ok(!html.includes('Dave'));assert.ok(!html.includes('sk-proj'));assert.ok(!js.includes('document.cookie'))});
