@@ -1,0 +1,18 @@
+{
+  "schema": "atlas.yijing.owner-peer.structural-compare/v1",
+  "peerFileSha256": "bc8be363b4b667ef70966f2851cfd93c350dd55a9bffc5095d4c94e4844b49b5",
+  "sourceRole": "OWNER_LOCAL_WORK_EXPLORER_NOT_REDISTRIBUTED",
+  "registrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "peerRowsCompared": 1728,
+  "comparisonsPerRow": 6,
+  "comparisonTotal": 10368,
+  "mismatchCount": 0,
+  "firstMismatches": [],
+  "peerBGEQueryReuse": "NOT_TESTED_BY_THIS_COMPARISON",
+  "derivedCymaticSemanticOrPhysicalParity": "NOT_CLAIMED",
+  "peerRoleCounts": {
+    "DOMAIN_SPECIALIZATION": 1008,
+    "EPISTEMIC_META": 720
+  },
+  "validity": "LOCAL_STRUCTURAL_PARITY_ONLY"
+}
