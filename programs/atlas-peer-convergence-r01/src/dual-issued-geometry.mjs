@@ -29,17 +29,26 @@ function plain(x,keys){
  return obj;
 }
 const hash=(x)=>createHash('sha256').update(x).digest('hex');
-export function makeDualIssuedGeometry(untrusted,{expectedBinding=null}={}){
+export function makeDualIssuedGeometry(untrusted, options={}){
  try{
+  // In particular, destructuring {expectedBinding} outside this try block
+  // would call a getter before the HOLD boundary.
+  if(!options||typeof options!=='object'||Array.isArray(options)||
+     utilTypes.isProxy(options)||Object.getPrototypeOf(options)!==Object.prototype)
+    throw Error('INVALID_OPTIONS');
+  const optionDescriptors=Object.getOwnPropertyDescriptors(options);
+  const optionKeys=Reflect.ownKeys(optionDescriptors);
+  if(optionKeys.length>1||optionKeys.some(k=>k!=='expectedBinding'||
+      !Object.hasOwn(optionDescriptors[k],'value')||!optionDescriptors[k].enumerable))
+    throw Error('INVALID_OPTIONS');
+  const expectedBinding=optionKeys.length?optionDescriptors.expectedBinding.value:null;
   const x=plain(untrusted,KEYS);
   if(![x.issuer,x.sourceId,x.sourceEdition,x.requestId,x.tenant,
          x.logicalTarget,x.contractVersion].every(v=>typeof v==='string'&&ID.test(v))||
       ![x.modelSha256,x.querySha256,x.sourceSha256,x.registrySha256].every(v=>typeof v==='string'&&HEX.test(v))||
       x.registrySha256!==ARIADNE_SHA256||x.scope!=='WORK'||!['INFERENCE','CITATION'].includes(x.purpose))throw Error('SOURCE_OR_SCOPE_HOLD');
-  // Concurrent writes to shared underlying buffers cannot establish a snapshot.
-  if(utilTypes.isProxy(x.scores)||!(x.scores instanceof Float32Array||x.scores instanceof Float64Array)||
-      ![Float32Array.prototype,Float64Array.prototype].includes(Object.getPrototypeOf(x.scores)))throw Error('UNTRUSTED_SCORE_VIEW');
-  if(typeof SharedArrayBuffer!=='undefined' && x.scores.buffer instanceof SharedArrayBuffer)throw Error('SHARED_MUTABLE_FRAME');
+  // R34's imported PR77 native capture is the only score ingress.
+  // Never read caller-defined .length, .buffer or Symbol.iterator here.
   const r34=makeIssuedPageFromExistingFrame({
    issuer:x.issuer,modelSha256:x.modelSha256,querySha256:x.querySha256,
    sourceId:x.sourceId,sourceSha256:x.sourceSha256,sourceEdition:x.sourceEdition,
