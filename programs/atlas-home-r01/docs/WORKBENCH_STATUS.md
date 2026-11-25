@@ -27,3 +27,9 @@
 7. Human review of cultural and Indigenous attribution where referenced; geometric numerology is design inspiration, never science by itself.
 
 The Home is **not** an authenticated copy of a real resident's Brain or Palace. No real user content was imported. No CANON effects, physical actuator, spending, artificial peer turns, autonomous wake loops, model updates, or published production deployment.
+
+## R02 new source-only status
+
+- Exact HSN entry is now a real accessible browser control (not just selector values). Invalid address holds Work preview while retaining the prior public location; reopening does not revive Work context.
+- Inherited local composer has epoch-based stale-response denial and Work-ineligible gating. No real distributed host, proof of cancellation at egress, external authorization or authenticated browser granted.
+- New local tests 114/114 Node per mode; 30+4 Chromium inline assertions; provenance in `docs/R02_ROUTE_SCOPE_REPAIR.md`. Previous R01 receipts remain immutable.
