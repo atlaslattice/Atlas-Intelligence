@@ -1,0 +1,27 @@
+{
+  "schema": "atlas.os.native-control-plane/preview-v1",
+  "status": "SPECIFICATION_NOT_HOSTED",
+  "scope": "WORK_ONLY_PREPARED_INTENT",
+  "input": {
+    "principal": "HOST_AUTHENTICATED_REQUIRED",
+    "room": "EXACT_ROOM_PIN_REQUIRED",
+    "sourceSha256": "HOST_SOURCE_RIGHTS_REQUIRED",
+    "registrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "canonR13ReviewManifestSha256": "0670fac32fab8c4cc8f1e1abc30af26acb788b68fd4c31dbfd605f9368fd3b0a",
+    "request": "BOUNDED_TYPED_INSTRUCTION_ONLY",
+    "methodSubject": "REQUIRED_FOR_S08_TO_S12_METHOD_SCOPE",
+    "rights": "CURRENT_READ_INFERENCE_USE_AND_OUTPUT_RETURN_SEPARATE",
+    "adverseClosure": "INDEPENDENT_HOST_REQUIRED",
+    "recovery": "HUMAN_CONTROLLED"
+  },
+  "outputs": {
+    "prepared": "NO_PRIVILEGE_EFFECT",
+    "hostActivated": false,
+    "privateModeImport": false,
+    "sourceBodyReleased": false,
+    "modelCallsPerformed": 0,
+    "newSchedulerCreated": false,
+    "osKernelPrivilegeGranted": false
+  },
+  "rollback": "ABORT_PENDING_OPERATION_AND_PRESERVE_HUMAN_RECOVERY"
+}
