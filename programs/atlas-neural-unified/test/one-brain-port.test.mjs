@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createOneBrainPort} from '../src/one-brain-port.mjs';
+const a='a'.repeat(64),orig='07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6';
+const fabricate=()=>({schema:'atlas.one.shared-neural-fabric/v1',status:'PREPARED_NUMERIC_REVIEW_ONLY',registrySha256:orig,addressedNodes:1728,neuralDimension:384,nodeVectorAssetSha256:a,encoderRevision:'synthetic-encoder',sourceBodiesReturned:false,canPublish:false,canTrain:false,hits:[{hsn:'H05.S06.N12',score:0.8,semanticAccepted:false}],sourceVerified:false});
+const page=()=>({target:'nodes',hits:[{hsn:'H05.S06.N12',score:0.7}],provenance:{registrySha256:orig,sourceRefs:[{id:'ariadne:v0.7',version:'v0.7',sha256:orig,uri:'atlas-source://ariadne/v0.7'}]}});
+const port=()=>createOneBrainPort({authorizedResultMetadata:r=>{if(!r.authBrand)throw Error('FAKE');return {owner:'synthetic'}},revalidateAuthorizedResult:async r=>{if(!r.authBrand)throw Error('AUTH')}});
+test('original result remains byte unchanged',async()=>{const r=page();r.authBrand=true;const before=JSON.stringify(r);const x=await port().prepare(r,fabricate());assert.equal(x.status,'PREPARED_NOT_RELEASED');assert.equal(JSON.stringify(r),before)});
+test('no host claim from mock',async()=>{const r=page();r.authBrand=true;const x=await port().prepare(r,fabricate());assert.equal(x.hostVerified,false);assert.equal(x.canPublish,false)});
+test('unbranded result denied',async()=>{const x=await port().prepare(page(),fabricate());assert.equal(x.status,'HOLD_NOT_GATEWAY_AUTHORIZED')});
+test('fabric cannot override a semantic claim',async()=>{const r=page();r.authBrand=true;const f=fabricate();f.hits[0].semanticAccepted=true;assert.equal((await port().prepare(r,f)).status,'HOLD_NOT_GATEWAY_AUTHORIZED')});
+test('fabric cannot change source reference',async()=>{const r=page();r.authBrand=true;const f=fabricate();f.registrySha256=a;assert.equal((await port().prepare(r,f)).status,'HOLD_NOT_GATEWAY_AUTHORIZED')});
+test('fabric duplicate HSN rejected',async()=>{const r=page();r.authBrand=true;const f=fabricate();f.hits.push({...f.hits[0]});assert.equal((await port().prepare(r,f)).status,'HOLD_NOT_GATEWAY_AUTHORIZED')});
+test('original source registry drift denied',async()=>{const r=page();r.authBrand=true;r.provenance.registrySha256=a;assert.equal((await port().prepare(r,fabricate())).status,'HOLD_NOT_GATEWAY_AUTHORIZED')});
+test('body content not returned by adapter',async()=>{const r=page();r.authBrand=true;r.secret='should-not-move';const x=await port().prepare(r,fabricate());assert.equal(x.sourceBodiesIncluded,false);assert.equal(JSON.stringify(x).includes('should-not-move'),false)});
+test('late source/result mutation denied',async()=>{const r=page();r.authBrand=true;const adapter=createOneBrainPort({authorizedResultMetadata:()=>({owner:'x'}),revalidateAuthorizedResult:async r=>{r.hits[0].score=900;}});assert.equal((await adapter.prepare(r,fabricate())).status,'HOLD_NOT_GATEWAY_AUTHORIZED')});
+test('constructor requires gateway',()=>assert.throws(()=>createOneBrainPort(),/EXISTING_GATEWAY_REQUIRED/));
