@@ -37,6 +37,11 @@ export function snapshotIssuedScores(value){
   const proto=Object.getPrototypeOf(value);
   const format=proto===Float32Array.prototype?'f32be':proto===Float64Array.prototype?'f64be':null;
   if(format===null)fail('SCORE_WRONG_PROTOTYPE');
+  // An attacker can assign Float32Array.prototype to a Uint32Array.
+  // Prototype and byte width are insufficient; require native V8 float brand.
+  const nativeFloat=utilTypes.isFloat32Array(value)?'f32be':
+    utilTypes.isFloat64Array(value)?'f64be':null;
+  if(nativeFloat!==format)fail('SCORE_NATIVE_BRAND_MISMATCH');
   const length=intrinsic.length.call(value),byteLen=intrinsic.byteLength.call(value);
   const byteOff=intrinsic.byteOffset.call(value),buffer=intrinsic.buffer.call(value);
   const bytesPer=format==='f32be'?4:8;
