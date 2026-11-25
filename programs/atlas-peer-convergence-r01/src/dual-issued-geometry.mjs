@@ -37,7 +37,9 @@ export function makeDualIssuedGeometry(untrusted,{expectedBinding=null}={}){
       ![x.modelSha256,x.querySha256,x.sourceSha256,x.registrySha256].every(v=>typeof v==='string'&&HEX.test(v))||
       x.registrySha256!==ARIADNE_SHA256||x.scope!=='WORK'||!['INFERENCE','CITATION'].includes(x.purpose))throw Error('SOURCE_OR_SCOPE_HOLD');
   // Concurrent writes to shared underlying buffers cannot establish a snapshot.
-  if(typeof SharedArrayBuffer!=='undefined' && x.scores && x.scores.buffer instanceof SharedArrayBuffer)throw Error('SHARED_MUTABLE_FRAME');
+  if(utilTypes.isProxy(x.scores)||!(x.scores instanceof Float32Array||x.scores instanceof Float64Array)||
+      ![Float32Array.prototype,Float64Array.prototype].includes(Object.getPrototypeOf(x.scores)))throw Error('UNTRUSTED_SCORE_VIEW');
+  if(typeof SharedArrayBuffer!=='undefined' && x.scores.buffer instanceof SharedArrayBuffer)throw Error('SHARED_MUTABLE_FRAME');
   const r34=makeIssuedPageFromExistingFrame({
    issuer:x.issuer,modelSha256:x.modelSha256,querySha256:x.querySha256,
    sourceId:x.sourceId,sourceSha256:x.sourceSha256,sourceEdition:x.sourceEdition,
