@@ -33,15 +33,29 @@
     "jsSyntaxChecks": {
       "pass": 2,
       "fail": 0
+    },
+    "peerPR76StrictCaptureNormal": {
+      "pass": 35,
+      "fail": 0
+    },
+    "peerPR76StrictCaptureJitless": {
+      "pass": 35,
+      "fail": 0
     }
   },
-  "totalDistinctAssertions": 95,
+  "totalDistinctAssertions": 130,
   "sourcePeerStaging": {
     "existingPR75Paths": 319,
     "newExactBlobImports": 12,
     "twelveGitBlobsMatched": true,
     "existingCriticalBlobsUnchanged": true,
-    "productionImportedAllCapabilities": false
+    "productionImportedAllCapabilities": false,
+    "peerPR76R13Repair": {
+      "head": "9628c96818c884acbffea60961b8a390000e030f",
+      "fixedBranchCommit": "244e5f6ac746f0dd2d630ebbbd3630a382f6baa5",
+      "sixOriginalBlobMatches": true,
+      "retainedHistoricalRed": true
+    }
   },
   "nonClaims": {
     "currentModel0_3InferenceExecuted": false,

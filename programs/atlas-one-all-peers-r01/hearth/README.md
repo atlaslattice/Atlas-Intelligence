@@ -28,3 +28,7 @@ The source frame remains the parent’s. A successful local call returns only `P
 ## Negative claims / blockers
 
 No 319 independently installed neural capabilities, 1728 learned specialists, original canon adoption, genuine model weight updates, scientific source approvals, authenticated host grants, hosted GitHub runner admission, final transport or real current selected 0.3 inference are claimed by this Hearth test. Public publication of the **owner-only label catalog** is prohibited without a separate rights review. Local source and UI tests support only their reported scope.
+
+## Subsequent peer hardening
+
+Source-exact PR76 strict numeric capture repair was cherry-picked after the first draft and independently rerun: 35/35 focused tests normal and JIT-disabled. See `docs/R13_STRICT_CAPTURE_ADDENDUM.md`. The original predecessor remains in Git history. This does not change hosted release authority.
