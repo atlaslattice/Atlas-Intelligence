@@ -11,6 +11,7 @@ import {createHash} from 'node:crypto';
 import {types as utilTypes} from 'node:util';
 import {makeIssuedPageFromExistingFrame} from './issued-page-r34.mjs';
 import {ARIADNE_SHA256,EDITION,decode} from '../../atlas-geometry-one-r38/src/addresses.mjs';
+import {primitiveMetadata,snapshotIssuedScores} from './strict-issued-capture.mjs';
 
 export const SCHEMA = 'atlas.indra.dual-issued-frame.review/v1';
 const ID = /^[A-Za-z0-9][A-Za-z0-9_.:/@-]{0,127}$/;
@@ -29,21 +30,26 @@ function plain(x,keys){
  return obj;
 }
 const hash=(x)=>createHash('sha256').update(x).digest('hex');
-export function makeDualIssuedGeometry(untrusted,{expectedBinding=null}={}){
+export function makeDualIssuedGeometry(untrusted,options={}){
  try{
+  if(!options||typeof options!=='object'||utilTypes.isProxy(options)||Array.isArray(options)||Object.getPrototypeOf(options)!==Object.prototype)throw Error('UNTRUSTED_OPTIONS');
+  const opts=Object.getOwnPropertyDescriptors(options), optionKeys=Reflect.ownKeys(opts);
+  if(optionKeys.length>1||optionKeys.some(k=>k!=='expectedBinding')||
+    (opts.expectedBinding&&(!Object.hasOwn(opts.expectedBinding,'value')||!opts.expectedBinding.enumerable)))throw Error('UNTRUSTED_OPTIONS');
+  const expectedBinding=opts.expectedBinding?.value??null;
   const x=plain(untrusted,KEYS);
-  if(![x.issuer,x.sourceId,x.sourceEdition,x.requestId,x.tenant,
-         x.logicalTarget,x.contractVersion].every(v=>typeof v==='string'&&ID.test(v))||
-      ![x.modelSha256,x.querySha256,x.sourceSha256,x.registrySha256].every(v=>typeof v==='string'&&HEX.test(v))||
-      x.registrySha256!==ARIADNE_SHA256||x.scope!=='WORK'||!['INFERENCE','CITATION'].includes(x.purpose))throw Error('SOURCE_OR_SCOPE_HOLD');
-  // Concurrent writes to shared underlying buffers cannot establish a snapshot.
-  if(utilTypes.isProxy(x.scores)||!(x.scores instanceof Float32Array||x.scores instanceof Float64Array)||
-      ![Float32Array.prototype,Float64Array.prototype].includes(Object.getPrototypeOf(x.scores)))throw Error('UNTRUSTED_SCORE_VIEW');
-  if(typeof SharedArrayBuffer!=='undefined' && x.scores.buffer instanceof SharedArrayBuffer)throw Error('SHARED_MUTABLE_FRAME');
+  primitiveMetadata(x,{
+    ids:['issuer','sourceId','sourceEdition','requestId','tenant','logicalTarget','contractVersion'],
+    hashes:['modelSha256','querySha256','sourceSha256','registrySha256']
+  });
+  if(x.registrySha256!==ARIADNE_SHA256||x.scope!=='WORK'||!['INFERENCE','CITATION'].includes(x.purpose))throw Error('SOURCE_OR_SCOPE_HOLD');
+  // Capture through intrinsic typed-array data slots; never call the caller's
+  // iterator or own buffer/length getters. R34 takes its own clean copy.
+  const copied=snapshotIssuedScores(x.scores);
   const r34=makeIssuedPageFromExistingFrame({
    issuer:x.issuer,modelSha256:x.modelSha256,querySha256:x.querySha256,
    sourceId:x.sourceId,sourceSha256:x.sourceSha256,sourceEdition:x.sourceEdition,
-   registrySha256:x.registrySha256,scores:x.scores
+   registrySha256:x.registrySha256,scores:copied.scores
   });
   if(r34.status!=='SOURCE_ONLY_ISSUED_PAGE_PREPARED')throw Error('SCORE_SNAPSHOT_HOLD');
   // The original R34 page remains exactly PR66-shaped and *source only*.
