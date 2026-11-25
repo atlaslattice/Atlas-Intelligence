@@ -1,0 +1,11 @@
+{
+  "name": "@atlas/work-learning",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Owner-local, source-pinned neural Work tools for OpenAI Responses and MCP.",
+  "exports": { ".": { "types": "./src/index.d.ts", "import": "./src/index.mjs" } },
+  "bin": { "atlas-work-learning-mcp": "./src/mcp-stdio.mjs" },
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "engines": { "node": ">=20" }
+}
