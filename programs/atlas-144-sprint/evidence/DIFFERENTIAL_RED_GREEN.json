@@ -1,0 +1,18 @@
+{
+  "schema": "atlas.one.144-sprint-differential/v1",
+  "baselineChecks": 48,
+  "candidateChecks": 48,
+  "unchangedDecisions": 47,
+  "changedDecisions": 1,
+  "changes": [
+    {
+      "id": "A144.11.10",
+      "task": "Reject finite operands with overflowed integrated voltage",
+      "baseline": "FAIL",
+      "candidate": "PASS",
+      "baselineDetail": "result false"
+    }
+  ],
+  "scope": "synthetic software contract only",
+  "hosted": false
+}
