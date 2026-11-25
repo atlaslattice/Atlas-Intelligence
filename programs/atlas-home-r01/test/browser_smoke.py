@@ -29,6 +29,29 @@ with sync_playwright() as p:
   assert 'cannot open, export or read' in page.locator('#private-view').inner_text();receipt['assertions'].append(name+': private door not read')
   page.locator('#work-grid .door').first.click()
   assert 'existing host not connected' in page.locator('#toast').inner_text();receipt['assertions'].append(name+': Work host unbound status')
+  assert page.locator('#work-grid .door').first.get_attribute('aria-pressed')=='true'
+  receipt['assertions'].append(name+': Work preview selected by deliberate click')
+  page.locator('#address-input').fill('H00.S01.N01')
+  page.locator('#address-input').press('Enter')
+  assert page.locator('#selected-address').inner_text()=='H07.S09.N12'
+  receipt['assertions'].append(name+': invalid input retains public coordinate')
+  assert page.locator('#route-status').get_attribute('data-state')=='hold'
+  assert page.locator('#work-grid .door').first.get_attribute('aria-pressed')=='false'
+  assert page.locator('#work-grid .door').first.get_attribute('aria-disabled')=='true'
+  receipt['assertions'].append(name+': invalid route clears and blocks stale Work')
+  page.locator('#work-grid .door').first.click(force=True)
+  assert page.locator('#work-grid .door').first.get_attribute('aria-pressed')=='false'
+  receipt['assertions'].append(name+': invalid-route Work reentry refused')
+  page.locator('#address-input').fill('H01.S08.N01')
+  page.locator('#jump').click()
+  assert page.locator('#selected-address').inner_text()=='H01.S08.N01'
+  assert page.locator('#work-grid .door').first.get_attribute('aria-disabled')=='false'
+  assert 'EPISTEMIC METHOD' in page.locator('#kind').inner_text()
+  receipt['assertions'].append(name+': explicit valid HSN reopens neutral home')
+  assert page.locator('#work-grid .door').first.get_attribute('aria-pressed')=='false'
+  page.locator('#work-grid .door').nth(1).click()
+  assert page.locator('#work-grid .door').nth(1).get_attribute('aria-pressed')=='true'
+  receipt['assertions'].append(name+': Work requires fresh selection after recovery')
   page.locator('#leave').click()
   assert page.locator('#selected-address').inner_text()=='H01.S01.N01';receipt['assertions'].append(name+': leave clears visit')
   page.screenshot(path=str(base/'evidence'/f'home-{name}.png'),full_page=True)
