@@ -1,0 +1,13 @@
+# PR77 add-on: Atlas R17 Foundry 1,728 HSN work-order port
+
+**Stage: TESTED_LOCAL / DRAFT REVIEW ONLY.** Source-only additive interface, no production, training, issuer, workspace permissions, Canon, scheduler or source-body release.
+
+**A:** Original Ariadne v0.7 HSN registry raw SHA `07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6` and existing PR67 original address/geometry/12 ports. **B:** R16 owner-private 1,728-node source-contract checks (immutable prior archive SHA `5250508d4613d10c80052e8d25a7fc49edd33312275d5c535d92f3e9d0aec57a`), Foundry room #1–22 self-declared source candidates and distinct PR73/PR77/PR78 interfaces. **C:** One new public-safe, read-only `inspectFoundryFrame` using an *existing supplied* complete 1,728-score numeric frame; it executes original PR67 `topK`, `reductions`, `projectTwelve`, checks the exact HSN topology and domain-separated F64LE digest. No second model or scoring system.
+
+**Tests (actually executed locally):** exhaustive 1,728 source addresses, 12 peer Work ports, 15 distinct Node tests normal and --jitless; hidden-score and signed-zero mutation, proxy/getter/sparse array, private mode, source edition/ontology confusion all HOLD. It outputs no score/source body and always `releaseAuthorized:false`. No real model, true host use/return or independent evidence admission was executed in this small public module.
+
+**Private full build (NOT for public Git):** 1,728 separate source-derived work-order calculations, 20,736 port checks, 13,824 adversarial inputs held, 144 different Sphere profiles, 12 House summaries, E145 source receipt; independent JS verifier, SQLite local evidence cache, offline browser. Nine source-explicit HSNs have peer claims in Foundry message cut22, 1,719 unmapped; no semantic guesswork or forced resident tasks. Exactly 18 corrected source profile scopes need fresh review of 216 HSN descendants. Source-code ports are a separate namespace from HSN identities.
+
+**Host integration prerequisites:** use existing issuer and current selected 384D/1728 model, verify original exact raw source records independently, independently precommit complete required evidence including negative Work refs, separately check READ/INFERENCE_USE/RETURN/citation/training authority, protect revocation across workers and final socket egress, evaluate on blinded source-family/time split, run existing CI and owner acceptance. A local F64LE frame hash is not a signature or permission.
+
+**Rollback:** remove two new additive public source/test files and this review note, restore PR77 exact predecessor head. No original peer files modified and no shared official MacroTurn progress mutation.

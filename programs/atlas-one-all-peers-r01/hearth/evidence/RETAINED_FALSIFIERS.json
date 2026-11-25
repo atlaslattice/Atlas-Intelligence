@@ -1,0 +1,54 @@
+{
+  "schema": "atlas.indras-hearth.peer-falsifiers/v1",
+  "status": "SOURCE_REPORTED_REQUIRES_INDEPENDENT_FRESH_REPLAY",
+  "cases": [
+    {
+      "id": "GEOMETRY_NOT_PROVEN_SUPERIOR",
+      "finding": "Cross-House geometric topology did not consistently outperform flat or shuffled controls; promotion remains held.",
+      "sourceRef": "atlas-lattice-neural-engineering-20261124-01#350",
+      "promoted": false
+    },
+    {
+      "id": "SOURCE_CONTEXT_DIVERGENCE",
+      "finding": "Equal HSN ordering can hide different underlying source metadata or rights across hosts.",
+      "sourceRef": "atlas-lattice-neural-engineering-20261124-01#353",
+      "promoted": false
+    },
+    {
+      "id": "INDEPENDENT_CLOSURE_REQUIRED",
+      "finding": "Matched caller-selected receipts may omit required negative or open dissent evidence.",
+      "sourceRef": "atlas-lattice-neural-engineering-20261124-01#327",
+      "promoted": false
+    },
+    {
+      "id": "CANCELLATION_MIGRATION_HOLD",
+      "finding": "Historical subtractive four-band algorithm failed extreme cancellation; replacement only after matched replay.",
+      "sourceRef": "atlas-lattice-neural-engineering-20261124-01#382",
+      "promoted": false
+    },
+    {
+      "id": "SIGNED_ZERO_FULL_FRAME",
+      "finding": "JSON.stringify collapses +0 and -0; binary full-frame witness is distinct and required for strict numeric identity.",
+      "sourceRef": "atlas-lattice-neural-engineering-20261124-01#438",
+      "promoted": false
+    },
+    {
+      "id": "CODEC_EDITIONS_DISTINCT",
+      "finding": "Two symbolic 64\u00d727 encodings differ for 1,720 of 1,728 HSN identities. HSN is sole primary key.",
+      "sourceRef": "atlas-lattice-neural-engineering-20261124-01#435",
+      "promoted": false
+    },
+    {
+      "id": "HOSTED_RUNNER_UNADMITTED",
+      "finding": "runner_id=0 and zero executed steps are not hosted CI acceptance.",
+      "sourceRef": "https://github.com/atlaslattice/Atlas-Intelligence/issues/15",
+      "promoted": false
+    },
+    {
+      "id": "SINGLE_ISSUED_FRAME",
+      "finding": "Any alternate encoder, hidden implicit retriever or Work/private-mode import would violate shared-frame design.",
+      "sourceRef": "https://github.com/atlaslattice/Atlas-Intelligence/pull/75",
+      "promoted": false
+    }
+  ]
+}

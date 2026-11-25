@@ -1,0 +1,93 @@
+{
+  "schema": "atlas.indras-hearth.peer-imports/v1",
+  "basePullRequest": 75,
+  "baseHead": "e2b6e0912d00037539391fe179d97095a953d90f",
+  "baseSourceAdditions": 319,
+  "referencePullRequest": 74,
+  "referenceHead": "14ced1b2e3184f9074eee40844cce1f78f7a2641",
+  "alreadyExactInBase": 3,
+  "missingSourceFilesPlanned": 12,
+  "originalCodeWillNotBeEdited": true,
+  "imports": [
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/OMEGA5_INTEGRATION.md",
+      "expectedGitBlob": "ec66e60493d9a5f17df1e95a562fe9acbb810b48",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/OMEGA6_INTEGRATION.md",
+      "expectedGitBlob": "428b2ca09cc885a39536c40679e5ef2754737093",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/OMEGA6_REVIEW_SCOPES_144.json",
+      "expectedGitBlob": "5329b693e528a5da41bdaad15a8e7750f7f7faa7",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/docs/R35_DUAL_FRAME_CONVERGENCE.md",
+      "expectedGitBlob": "cd95e01e11a969df6bfd39c8ec47cb12594d30d2",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/dual-issued-geometry.mjs",
+      "expectedGitBlob": "0c08d13a679a5a7d411d6c57e87b7a5477408169",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/issued-page-r34.mjs",
+      "expectedGitBlob": "ed74e4aa08546074b9b338d711b80fb1b06738bf",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/omega5-unified-review.mjs",
+      "expectedGitBlob": "c47277d505729800e128a6a3d09a2c2ba914324b",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/src/omega6-one-issued-union.mjs",
+      "expectedGitBlob": "4a669580678c15531cf4c938679079640a08f33c",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/dual-issued-geometry.test.mjs",
+      "expectedGitBlob": "f4e89ee277dd8df50f4fa3f50a7b1480e462b857",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/issued-page-r34.test.mjs",
+      "expectedGitBlob": "9c02b06ec53180fb97fc125ba8d660ef8ec5f2e8",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/omega5-unified-review.test.mjs",
+      "expectedGitBlob": "22f4255824bfb5ecfb91945e5bda8b1592819f1c",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    },
+    {
+      "path": "programs/atlas-peer-convergence-r01/test/omega6-one-issued-union.test.mjs",
+      "expectedGitBlob": "8c17ab6556da1184b1645408081112682a0ea931",
+      "peerPullRequest": 74,
+      "status": "SOURCE_ONLY_STAGED_NOT_HOSTED"
+    }
+  ],
+  "branch": "review/atlas-indras-hearth-omega7-20261124",
+  "sourcePreservingGitCommit": "9a393eec02fd1ef3fe4f0212d76100e395b17e35",
+  "twelveRemoteGitBlobsVerified": true,
+  "preservedBaseBlobsVerified": {
+    "programs/atlas-one-all-peers-r01/src/one-frame-composer.mjs": "2052664d23a686dff87253cb8430a8de29774d5a",
+    "programs/atlas-one-all-peers-r01/INTEGRATION_SOURCE_LEDGER.json": "a37018df6e9bb956439bafa4432e598d1bf07d68",
+    "programs/atlas-geometry-one-r38/src/fabric.mjs": "d7433ae7673cd51a27cb84a129d985351020b05c"
+  }
+}
