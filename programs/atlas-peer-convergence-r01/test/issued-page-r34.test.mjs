@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {makeIssuedPageFromExistingFrame} from '../src/issued-page-r34.mjs';
+import {ARIADNE_SHA256} from '../../atlas-geometry-one-r38/src/addresses.mjs';
+const pin=c=>c.repeat(64);
+const fixture=(type='f32')=>({issuer:'owner-local-fixture',modelSha256:pin('a'),querySha256:pin('b'),sourceId:'work-source',sourceSha256:pin('c'),sourceEdition:'synthetic-v1',registrySha256:ARIADNE_SHA256,scores:type==='f32'?new Float32Array(1728):new Float64Array(1728)});
+test('f32 source frames convert to exact PR66 schema',()=>{const r=makeIssuedPageFromExistingFrame(fixture());assert.equal(r.status,'SOURCE_ONLY_ISSUED_PAGE_PREPARED');assert.equal(r.page.schema,'atlas.neural.issued/v1');assert.equal(r.page.scores.length,1728);assert.equal(r.scoreFormat,'f32be');assert.equal(r.addedInferenceCalls,0);assert.equal(r.issuerAuthenticated,false);});
+test('f64 uses different explicit frame encoding',()=>{const a=makeIssuedPageFromExistingFrame(fixture('f32'));const b=makeIssuedPageFromExistingFrame(fixture('f64'));assert.notEqual(a.localScoreBinding,b.localScoreBinding);});
+test('source buffer mutation cannot rewrite emitted page',()=>{const f=fixture();f.scores[0]=1;const r=makeIssuedPageFromExistingFrame(f);f.scores[0]=5;assert.equal(r.page.scores[0],1);});
+test('source edition is evidence, not ontology',()=>{const r=makeIssuedPageFromExistingFrame(fixture());assert.equal(r.page.sourceEdition,'synthetic-v1');assert.equal(r.page.registrySha256,ARIADNE_SHA256);});
+test('wrong source registry fails',()=>{const f=fixture();f.registrySha256=pin('e');assert.equal(makeIssuedPageFromExistingFrame(f).status,'HOLD');});
+test('nonfinite scores fail',()=>{const f=fixture();f.scores[2]=Infinity;assert.equal(makeIssuedPageFromExistingFrame(f).status,'HOLD');});
+test('wrong shape fails',()=>{const f=fixture();f.scores=new Float32Array(1727);assert.equal(makeIssuedPageFromExistingFrame(f).status,'HOLD');});
+test('unsafe object getter fails without invocation',()=>{const f=fixture();Object.defineProperty(f,'issuer',{get(){throw Error('LEAK');}});assert.equal(makeIssuedPageFromExistingFrame(f).status,'HOLD');});
+test('proxy does not produce requested frame',()=>{const f=new Proxy(fixture(),{});assert.equal(makeIssuedPageFromExistingFrame(f).status,'HOLD');});
+test('actual unsigned host claims never asserted',()=>{const r=makeIssuedPageFromExistingFrame(fixture());assert.equal(r.returnAuthorized,false);assert.equal(r.releaseAuthorized,false);assert.equal(r.fullFrameProvenanceVerified,false);});
