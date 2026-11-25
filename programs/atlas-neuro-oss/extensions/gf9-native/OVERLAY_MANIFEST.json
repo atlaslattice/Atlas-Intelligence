@@ -1,0 +1,178 @@
+{
+  "schema": "atlas.oss.additive-overlay/v1",
+  "sourceCommit": "76e6eeefeafbcc1cc4c6f94c00afcb9700fc19ba",
+  "scope": "Original source additions and sanitized synthetic evidence; no baseline code or corpus.",
+  "files": [
+    {
+      "path": "docs/oss144/Atlas_144_Feature_Explorer.html",
+      "sha256": "f072b98c280e2d068779058032e9488d39464e4da022a1da17fd02b4e9910306"
+    },
+    {
+      "path": "docs/oss144/FEATURES_144.csv",
+      "sha256": "ef3235cdc7c385fe50b4bde4d146e50b0bf7e98b19a264ce03e511cdc1ba1b3b"
+    },
+    {
+      "path": "docs/oss144/FEATURES_144.md",
+      "sha256": "96cf5928dc4a6ef935164afbc36cd874b308765c01574176b5c0690b3ae3b41b"
+    },
+    {
+      "path": "docs/oss144/INTEGRATION.md",
+      "sha256": "d1e10af48dc0087c4cbd33c6b07b19418431b4c37f344b44447975183bc0e32e"
+    },
+    {
+      "path": "docs/oss144/SOURCE_ATTRIBUTION.md",
+      "sha256": "603c424d95b6822aa11dbb60980d52b6c0b739f7eb52b44bec57f5d0d85eebb1"
+    },
+    {
+      "path": "docs/oss144/context_boundary_review.md",
+      "sha256": "3a26d620a559d3bd0d5eb0ecdd8a9cd9e5beae33d1812908eaeb1caa9d50f028"
+    },
+    {
+      "path": "docs/oss144/feature-catalog.json",
+      "sha256": "77bdb7c682e60425a7a262f57ec2f022997d6643961eec99484cda98e828a371"
+    },
+    {
+      "path": "docs/oss144/retrieval_audit_independent_review.md",
+      "sha256": "6cc2ab083301a1e000ffdcb4d4432eb0491daac9b637f149dc22e72bfc353dd7"
+    },
+    {
+      "path": "docs/oss144/source-registry.json",
+      "sha256": "652b96a3df26ea31519887550996cfc40789005c03d12df5e63b7b7b0c93e40f"
+    },
+    {
+      "path": "evidence/CATALOG_VALIDATION.json",
+      "sha256": "7daebe008e8278869f25c29fcde7c79c8431ef24617c90d9b2661219f7edc005"
+    },
+    {
+      "path": "evidence/CONTEXT_PACK_EXPERIMENT.json",
+      "sha256": "3fc6045e11f66520d8c52967988b58bfe51e67700cb2aa796405ed5493337a56"
+    },
+    {
+      "path": "evidence/DISCOVERY_BOUNDARY_REVIEW.json",
+      "sha256": "468e3f95c4ef8803b4a0b8487912a88ed06337543598905068493e8492ee59b1"
+    },
+    {
+      "path": "evidence/FRESH_OVERLAY_REPLAY.json",
+      "sha256": "0546c9ac548817dfc72e6c060f8705abd72ed1ff3b2326c92bc59208633ab9d8"
+    },
+    {
+      "path": "evidence/HOST_TEST_SOURCE_PINS.json",
+      "sha256": "090c52dccd0f86e0905213ebfa8a46132cfd09a1f4997ec5287839687de3a89d"
+    },
+    {
+      "path": "evidence/HTML_EXPLORER_VALIDATION.json",
+      "sha256": "6fe3413a67fdd7fd14f38d15d8fa59d14bcc7bcc390ef4f845bed6918d0b21c6"
+    },
+    {
+      "path": "evidence/NODE_COMPOSED_TESTS_SOURCE_BOUND.json",
+      "sha256": "8fcf081b0329613193fde68b3e0478095889fc3c62d611b1366453b6ed1eb697"
+    },
+    {
+      "path": "evidence/PEER_COMPOSITION_REVIEW.json",
+      "sha256": "4d5f33f83692d4168062c4288f4ae21c00f990e06543199943d78069a115be3d"
+    },
+    {
+      "path": "evidence/PEER_LIF_OVERFLOW_FALSIFIER.json",
+      "sha256": "011188e25589b63e16577dde520f700efeb7ccf762934daaa0da201f4db12704"
+    },
+    {
+      "path": "evidence/RELOCATED_BOUNDARY_REPRODUCER.json",
+      "sha256": "440e99fdfce52c27cf3cd24a21f99d61d61d04a80c247092a77224e2ed34b7ef"
+    },
+    {
+      "path": "evidence/REPLAY_RACE_REPAIR.json",
+      "sha256": "c7417791030517cb542dde2e425dc4baebefbddbad9fade873be728e4b748a7c"
+    },
+    {
+      "path": "evidence/RETRIEVAL_AUDITS_EXPERIMENT.json",
+      "sha256": "9e3dcb1b904de697589123c40e1b6fb9069f30f376396dc7e6f4234db22d5872"
+    },
+    {
+      "path": "evidence/SELECTIVE_EVALUATION_EXPERIMENT.json",
+      "sha256": "e3917c5b8774e5534ec2b0b044afebf3cf90a496f4e7c8e817ba52ff7ace9745"
+    },
+    {
+      "path": "evidence/SELECTIVE_EVALUATION_EXPERIMENT_R2.json",
+      "sha256": "82d48402c64c52da7de83d83bf9ecba5749078da9804296eeaa524201927d1d9"
+    },
+    {
+      "path": "evidence/SELECTIVE_SOURCE_OVERLAP_RED.json",
+      "sha256": "2bd9e19c9a53b0bce15af2707054282d9495872710fbe22ade4971fdd3dd2178"
+    },
+    {
+      "path": "evidence/event_lattice_experiment.json",
+      "sha256": "ee62c2a12b65ba9fdecad6f079b910469a1aaf8f4501d9fe0912f608e83c5cd0"
+    },
+    {
+      "path": "integration/peer_composition_probe.py",
+      "sha256": "e60e2e8ba8a95dfd911735931e849fcc7d01289d924ed1bf24c0b9fb8c55499e"
+    },
+    {
+      "path": "integration/run_context_pack_benchmark.mjs",
+      "sha256": "992b7b00ed2048f94055e613484c5e967e7ca9d5a72278791fbf9d830095c2b7"
+    },
+    {
+      "path": "python/atlas_work_learning/event_lattice.py",
+      "sha256": "bca7bc4db87147e20e8add3bf80618e1e3d41b894222362474d9be3c77f307df"
+    },
+    {
+      "path": "python/atlas_work_learning/retrieval_audits.py",
+      "sha256": "b2dc0a4a39cf17c968c186613e9271e39f29bece0c258c28875ce8a1d18b8563"
+    },
+    {
+      "path": "python/atlas_work_learning/selective_evaluation.py",
+      "sha256": "646d99c030d48a6d8c50e312eab34c3a99e2f4afb285e608b2c7ab11fc68c28e"
+    },
+    {
+      "path": "src/context-pack.mjs",
+      "sha256": "1367d2a2798b2a5d618c7a3fd01e526f35f6a935fa91795904ba20df419634c7"
+    },
+    {
+      "path": "src/discovery-tools.mjs",
+      "sha256": "c6f08c973390f7198a8ced23e69506ae9b5464265c995a91531302ab8dd6d288"
+    },
+    {
+      "path": "test/context-pack.test.mjs",
+      "sha256": "51f5c4e1e680cdb7105a2f6bd6d9b89574958b7d7d08a0f6c10b1f31a41da6ad"
+    },
+    {
+      "path": "test/discovery-final-boundary.test.mjs",
+      "sha256": "3a4a8f2e09301a58eecc9579dcd0989e93ab2d452149300f90dec2962e656758"
+    },
+    {
+      "path": "test/discovery-tools.test.mjs",
+      "sha256": "f90c069f63e46147e3f0beced44b31b0572a78215005158a2ac2c954955a08ae"
+    },
+    {
+      "path": "test/oss-catalog.test.mjs",
+      "sha256": "6110859057f3a2cbc0764364805ebc600950ad392686dda6e6bdefa3e2fa801a"
+    },
+    {
+      "path": "tests/test_event_lattice.py",
+      "sha256": "d67a4befa4e6f59b6549845d769008ea4f991cf6443eb65dd1beba9660b98557"
+    },
+    {
+      "path": "tests/test_retrieval_audits.py",
+      "sha256": "0aeb8439958d45055768a922ff2eb2374d9f560855e52e7b52fa4c2d72ef089e"
+    },
+    {
+      "path": "tests/test_selective_evaluation.py",
+      "sha256": "674a33e5f5b6449631740d9be3f61173870efd9bdf1a7d8ebbeaedeb0f506e20"
+    }
+  ],
+  "appendOnlyMutations": [
+    {
+      "path": "src/index.d.ts",
+      "predecessorSha256": "09f3021570d9f66b92a45d1a8af7da8d3a7853e8444a5fc4fd6a25f2a5799b00",
+      "candidateSha256": "3943ad864d15854f92961c7a383a2d8b6af5f55589f8508edf426af6282a5746",
+      "appendUtf8": "\nexport interface FamilyContextItem {id: string; familyId: string; cost: number; utility: number}\nexport interface FamilyContextPlan {\n  schema: 'atlas.work-learning.family-context-plan/v1'; selectedIds: readonly string[]; omittedIds: readonly string[];\n  cost: number; budget: number; utility: number; families: number; transitions: number; states: number;\n  optimalWithinDeclaredObjective: true; scoreIsConfidence: false; qualityImprovementEstablished: false; permissionGranted: false;\n  objective: 'MAX_UTILITY_THEN_FAMILY_COUNT_THEN_MIN_COST_THEN_LEXICAL_IDS';\n}\nexport interface PreparedFamilyContext {\n  envelope: Readonly<Record<string, unknown>>; serializedPayload: string; totalPayloadBytes: number; release: FinalReturnReceipt;\n}\nexport function planFamilyContext(items: readonly FamilyContextItem[], options: {\n  budget: number; maxItems?: number; maxTransitions?: number; maxStates?: number;\n}): FamilyContextPlan;\nexport function prepareFamilyContext(result: WorkResult, options?: {\n  budgetBytes?: number; maxItems?: number; requireHostFence?: boolean;\n}): Promise<PreparedFamilyContext>;\nexport function authorizeFamilyContextRelease(prepared: PreparedFamilyContext): FinalReturnReceipt;\nexport interface DiscoveryCatalog {\n  schema: 'atlas.oss.capabilities/v1'; baselineCommit: string;\n  features: Array<{id: string; module_id: string; title: string; status: string; [key: string]: unknown}>;\n  [key: string]: unknown;\n}\nexport interface DiscoveryToolbox {\n  catalogSha256: string; responsesTools: readonly Record<string, unknown>[]; mcpTools: readonly Record<string, unknown>[];\n  dispatchResponses(call: {type: 'function_call'; call_id: string; name: string; arguments: string}, options?: CallOptions): Promise<Readonly<Record<string, unknown>>>;\n  callMcp(name: string, args: Record<string, unknown>, options?: CallOptions): Promise<Readonly<Record<string, unknown>>>;\n  /** Recheck the host fence immediately before sending this exact output object. */\n  authorizeOutput(output: Readonly<Record<string, unknown>>): FinalReturnReceipt;\n}\nexport function createDiscoveryResponsesTools(): readonly Record<string, unknown>[];\nexport function createDiscoveryMcpTools(): readonly Record<string, unknown>[];\nexport function createDiscoveryToolbox(options: {gateway: Gateway; catalog: DiscoveryCatalog; expectedCatalogSha256: string}): DiscoveryToolbox;\n"
+    },
+    {
+      "path": "src/index.mjs",
+      "predecessorSha256": "3437041ef8cceb477cf8a3d442c91215a505da68570210d5ff213b08c8186a70",
+      "candidateSha256": "b0c71227324b76a9f342b6e9484b16cd623731e91bd4b95599b16cf6f84b7d85",
+      "appendUtf8": "export {planFamilyContext, prepareFamilyContext, authorizeFamilyContextRelease} from './context-pack.mjs';\nexport {createDiscoveryResponsesTools, createDiscoveryMcpTools, createDiscoveryToolbox} from './discovery-tools.mjs';\n"
+    }
+  ],
+  "publicProjection": "r2; separate artifact hashes preserve private predecessors"
+}
