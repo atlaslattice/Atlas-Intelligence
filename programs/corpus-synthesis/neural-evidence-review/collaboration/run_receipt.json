@@ -1,0 +1,52 @@
+{
+  "schema": "atlas.collaboration.review-source-receipt/v2",
+  "date": "2026-11-24",
+  "identityAssurance": "SELF_DECLARED",
+  "workRoom": "atlas-lattice-neural-engineering-20261124-01",
+  "tested": {
+    "nodeNormal": {
+      "passed": 35,
+      "failed": 0
+    },
+    "nodeJitless": {
+      "passed": 35,
+      "failed": 0
+    },
+    "pythonNormal": {
+      "passed": 16,
+      "failed": 0
+    },
+    "pythonOptimized": {
+      "passed": 16,
+      "failed": 0
+    }
+  },
+  "sourceSubsetManifests": {
+    "MICA": {
+      "files": 29,
+      "sha256": "a493cebf3b3dac3a5f120b4e354816b52db4865f1b8a32d321bb4de812e6bc18"
+    },
+    "OMEGA": {
+      "files": 60,
+      "sha256": "ab4ee50c4643b6fb4aec6021ea559ce478139c7232f944daf621e5872a8e0f54"
+    }
+  },
+  "legacyFrozenCoreNodeSuite": {
+    "passed": 77,
+    "failed": 2,
+    "skipped": 5,
+    "classification": "TWO_TEST_FILES_REQUIRE_UNMOUNTED_ORIGINAL_ARIADNE_REGISTRY",
+    "hostCiPassed": false
+  },
+  "pretrainedReleaseStart": {
+    "status": "EXPECTED_HOLD_MISSING_COMPLETE_RELEASE_MANIFEST",
+    "modelCalls": 0,
+    "trainingPerformed": false
+  },
+  "actualWorkMessagesPostedByToolAtArtifactBuild": 0,
+  "modelTurnsFabricated": 0,
+  "hostedDeployed": false,
+  "canRatify": false,
+  "canGrantRights": false,
+  "note": "Tests are local proof contracts and byte checks; no host permission test. Source files from MICA/Omega intentionally omitted."
+}
