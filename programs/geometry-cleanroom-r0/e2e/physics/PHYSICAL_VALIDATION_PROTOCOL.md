@@ -1,0 +1,11 @@
+# Physical cymatics / plate-mode validation — staged, not executed on Atlas equipment
+
+**Independent literature:** “Study and Experiment for the Automatic Identification of Plate Vibration Frequencies Based on Chladni Patterns,” *Applied Sciences* (2026) https://www.mdpi.com/2076-3417/16/18/9246, Figure 16. This source reports both experimentally excited Chladni patterns and simulated patterns, with five illustrated frequency pairs. The five numeric pairs are transcribed into `published_chladni_2026.json`, with attribution under CC BY.
+
+Our executable comparator computes MAE and RMSE of these published **different simulated-vs-experimental frequencies**. A meaningful source-backed negative is that direct uncalibrated absolute frequency matching is poor for the illustrated pairs. It does not reprocess experimental images, reproduce finite-element boundary conditions, calculate new eigenmodes or grant a frequency to an I Ching line.
+
+A future **new Atlas-controlled physical validation**, distinct from this literature calculation, requires: precisely specified plate shape, dimensions, material composition/density, elastic moduli, boundary supports and driver mounting; calibrated oscillator/amplifier and frequency sensor; camera or vibrometer observation with time-stamped independent records; frequency sweep with held-back replicate patterns; plate-matched FEM or mode solver; predeclared error metric and acceptance band; randomized mode-label controls; independent operators and raw image/measurement hashes. For safety, measure sound exposure and avoid high amplitude/unsafe resonance.
+
+First ask whether the hypothesis concerns (1) geometric image aesthetics, (2) mechanical standing waves, or (3) an original Atlas glyph *predicting* experimental frequency or nodal structure. The first is a software visualization; the second is well established physically in the published literature; the third needs entirely new prospective data and cannot be asserted from a 6-bit/3-trit code or a dimensionless sine superposition.
+
+Until data exist, state `ATLAS_GLYPH_PHYSICAL_MAPPING_NOT_ESTABLISHED`, not a simulated success. Do not equate documented scientific Chladni measurements with the project's untested symbolic codec.

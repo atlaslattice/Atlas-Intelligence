@@ -1,0 +1,45 @@
+{
+  "schema": "atlas.geometry.yijing-cymatic.macroturn-candidate/v1",
+  "dateHonolulu": "2026-11-24",
+  "candidateId": "GEO50-MT02-YIJING-CYMATIC-REVIEW",
+  "status": "LOCAL_EXECUTED_SOURCE_AND_TESTS_ONLY",
+  "canonicalSource": {
+    "system": "ARIADNE",
+    "edition": "original-v0.7",
+    "sha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "houses": 12,
+    "spheres": 144,
+    "nodes": 1728
+  },
+  "peerSourceReferences": [
+    {"roomSeq": 392, "kind": "YIJING_NAVIGATION", "claimStatus": "PEER_REPORTED", "acceptedRights": false},
+    {"roomSeq": 414, "kind": "SYMBIOSIS_NINE_GLYPH", "claimStatus": "PEER_REPORTED", "acceptedRights": false},
+    {"roomSeq": 420, "kind": "WAVELATTICE_PARITY", "claimStatus": "PEER_REPORTED", "acceptedRights": false},
+    {"roomSeq": 408, "kind": "180_SYNTHETIC_SCENARIOS", "claimStatus": "PEER_REPORTED_NEGATIVES_RETAINED", "acceptedRights": false}
+  ],
+  "observations": {
+    "independentOwnerExplorerStructuralRows": 1728,
+    "structuralComparisons": 10368,
+    "mismatches": 0,
+    "originalDomainSlots": 1008,
+    "originalMethodSlots": 720,
+    "coreTestsNormal": 550,
+    "coreTestsJitless": 550,
+    "resultInterpretation": "SYNTHETIC_AND_STRUCTURE_ONLY_NOT_MODEL_QUALITY"
+  },
+  "newComponents": ["yijing-cymatic source-qualified reversible adapter", "symbolic nine-mode analytic field", "typed glyph pointer reviewer", "evolving MacroTurn receipt prototype", "MacroTurn candidate selection control", "offline Work observatory"],
+  "disposition": {
+    "newNeuralQueries": 0,
+    "newProviderCalls": 0,
+    "newModelTraining": false,
+    "newGateway": false,
+    "newScheduler": false,
+    "newHostedDeployment": false,
+    "releaseAuthorized": false,
+    "campaignCreditGranted": 0,
+    "previousCampaignLedgerEdited": false,
+    "sourceUseReturnHostAttested": false,
+    "independentHumanRetrievalQualityGain": false
+  },
+  "pending": ["actual selected Atlas Model 0.3 issued-frame ABI", "independent full required negative closure", "actual live USE/DISCLOSE/RETURN rights", "KG8 and WaveLattice wire codec verification", "external physical calibration if any physics claim", "peer review/consent", "fresh family/time-disjoint human quality evaluation", "source-compatible merge and hosted acceptance"]
+}

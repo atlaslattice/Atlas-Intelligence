@@ -1,0 +1,18 @@
+{
+  "schema":"atlas.physical.published-observations/v1",
+  "sourceTitle":"Study and Experiment for the Automatic Identification of Plate Vibration Frequencies Based on Chladni Patterns",
+  "sourceUrl":"https://www.mdpi.com/2076-3417/16/18/9246",
+  "sourceLocation":"Figure 16(a-e): simulated and experimental frequencies for visually corresponding Chladni figures",
+  "license":"CC BY (publisher attribution required)",
+  "observationsType":"PUBLISHED_EXTERNAL_LITERATURE_NOT_ATLAS_MEASURED",
+  "pairUnits":"Hz",
+  "pairs":[
+    {"figure":"a","simulatedHz":43.9,"experimentalHz":170},
+    {"figure":"b","simulatedHz":349.8,"experimentalHz":300},
+    {"figure":"c","simulatedHz":586.0,"experimentalHz":440},
+    {"figure":"d","simulatedHz":848.5,"experimentalHz":680},
+    {"figure":"e","simulatedHz":935.26,"experimentalHz":800}
+  ],
+  "atlasGlyphToHzCalibration":"NONE",
+  "measuredByAtlas":false
+}
