@@ -1,0 +1,17 @@
+--- a/programs/atlas-neuro-oss/src/native_core.mjs
++++ b/programs/atlas-neuro-oss/src/native_core.mjs
+@@ -82,8 +82,13 @@
+ export function lifStep(state,input,{beta=0.85,threshold=1,reset='subtract'}={}){
+  if(!Number.isFinite(state)||!Number.isFinite(input)||!Number.isFinite(beta)||beta<0||beta>1||
+    !Number.isFinite(threshold)||threshold<=0||!['subtract','zero'].includes(reset))throw new TypeError('INVALID_LIF');
+- const integrated=beta*state+input, spike=integrated>=threshold?1:0;
++ const integrated=beta*state+input;
++ // Finite operands can still overflow during arithmetic. Never return an
++ // invalid spike or voltage and never silently clamp a scientific reference.
++ if(!Number.isFinite(integrated))throw new RangeError('NONFINITE_LIF_INTERMEDIATE');
++ const spike=integrated>=threshold?1:0;
+  const voltage=spike?(reset==='zero'?0:integrated-threshold):integrated;
++ if(!Number.isFinite(voltage))throw new RangeError('NONFINITE_LIF_VOLTAGE');
+  return Object.freeze({voltage,spike,integrated,energyMeasured:false});
+ }
+ export function runEventLif(events,config={}){
