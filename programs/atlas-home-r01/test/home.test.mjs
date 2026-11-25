@@ -24,3 +24,41 @@ test('node navigation does not fabricate source science',()=>{const h=createAtla
 test('unrecognized coordinate does not create a node',()=>assert.equal(createAtlasHome().openNode('H00.S01.N01').status,'HOLD'));
 test('return ticket starts blank, is ephemeral, clears on leaving',()=>{const t=createReturnTicket();assert.equal(t.peek().hsn,null);assert.equal(t.remember('H05.S06.N12').status,'IN_MEMORY_ONLY');assert.equal(t.peek().hsn,'H05.S06.N12');assert.equal(t.leave().storedRecords,0);assert.equal(t.peek().hsn,null);assert.equal(t.remember('H05.S06.N12').status,'CLOSED')});
 test('Chronoforge Time axis is typed feature not fourth identity',()=>{assert.equal(CHRONOFORGE_VIEW.canonicalIdentityAxes,3);assert.equal(CHRONOFORGE_VIEW.timeScaleSlots,12);assert.equal(CHRONOFORGE_VIEW.syntheticFixtureBytesFloat64,165888);assert.equal(inspectTemporalPort({historical:true}).status,'HOLD_UNATTESTED_TIMESCALE_STATE')});
+
+test('invalid HSN clears Work context but preserves last valid public location',()=>{
+ const h=createAtlasHome();assert.equal(h.openNode('H03.S08.N11').status,'CANONICAL_NAVIGATION_ONLY');
+ assert.equal(h.openNode('H00.S08.N11').status,'HOLD');assert.equal(h.descriptor().publicLocation,'H03.S08.N11');
+ assert.equal(h.invalidateWorkProjection().status,'LOCAL_WORK_PROJECTION_CLEARED');
+});
+test('late Work response after invalid route is held, even with same public coordinate',async()=>{
+ let finish;const h=createAtlasHome({existingComposer:{inspect:()=>new Promise(r=>finish=r)}});
+ h.openNode('H03.S08.N11');const pending=h.inspectWork({requestId:'x'},{});
+ assert.equal(h.openNode('invalid').status,'HOLD');finish(frame());const got=await pending;
+ assert.equal(got.status,'HOLD');assert.equal(got.reason,'STALE_WORK_RESULT_AFTER_CONTEXT_CHANGE');
+ assert.equal(h.descriptor().publicLocation,'H03.S08.N11');
+});
+test('leaving during Work inspection prevents stale result from being returned',async()=>{
+ let finish;const h=createAtlasHome({existingComposer:{inspect:()=>new Promise(r=>finish=r)}});
+ const p=h.inspectWork();const left=h.leave();assert.equal(left.status,'LEFT_WITHOUT_PERSISTENCE');finish(frame());const got=await p;
+ assert.equal(got.status,'HOLD');assert.equal(h.descriptor().active,false);assert.equal(h.returnTicket.peek().hsn,null);
+});
+test('concurrent double issue is fenced to one inherited composer call',async()=>{
+ let finish,calls=0;const h=createAtlasHome({existingComposer:{inspect:()=>{calls++;return new Promise(r=>finish=r)}}});
+ const first=h.inspectWork();const other=await h.inspectWork();assert.equal(other.status,'HOLD');assert.equal(other.reason,'ONE_EXISTING_COMPOSER_BUSY');finish(frame());assert.equal((await first).status,'LOCAL_GEOMETRY_FRAME_INSPECTED_ONLY');assert.equal(calls,1);
+});
+test('reset of Work projection preserves optional home geometry but not old prepared bytes',async()=>{
+ const h=createAtlasHome({existingComposer:{inspect:async()=>frame()}});h.openNode('H04.S07.N01');
+ const a=await h.inspectWork();assert.equal(a.status,'LOCAL_GEOMETRY_FRAME_INSPECTED_ONLY');
+ assert.equal(h.invalidateWorkProjection().publicLocation,'H04.S07.N01');assert.equal(h.descriptor().newRetrievers,0);
+});
+
+test('invalid address blocks new Work inspection even while public HSN remains visible',async()=>{
+ let calls=0;const h=createAtlasHome({existingComposer:{inspect:async()=>{calls++;return frame()}}});
+ h.openNode('H03.S08.N11');h.openNode('H00.S08.N11');
+ const held=await h.inspectWork({requestId:'new'},{});
+ assert.equal(held.reason,'VALID_CANONICAL_ROUTE_REQUIRED');assert.equal(calls,0);
+ assert.equal(h.descriptor().publicLocation,'H03.S08.N11');assert.equal(h.descriptor().workEligible,false);
+ const restored=h.openNode('H03.S08.N11');assert.equal(restored.status,'CANONICAL_NAVIGATION_ONLY');
+ assert.equal(h.descriptor().workEligible,true);
+ assert.equal((await h.inspectWork()).status,'LOCAL_GEOMETRY_FRAME_INSPECTED_ONLY');assert.equal(calls,1);
+});
