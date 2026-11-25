@@ -1,0 +1,18 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {composeIssuedGeometry} from '../src/indra-compose.mjs';
+import {HSN,ARIADNE_SHA256} from '../peer_r38/addresses.mjs';
+const H=c=>c.repeat(64);const req=()=>({requestId:'q',querySha256:H('a'),sourceId:'s',sourceSha256:H('b'),sourceEdition:'synthetic-v1',purpose:'INFERENCE',k:2,scope:'WORK'});
+const result=()=>({status:'PREPARED_NOT_HOSTED',neuralCalls:1,result:{releaseAuthorized:false,trainingEligible:false,source:{registrySha256:ARIADNE_SHA256,requestSha256:H('a'),sourceSha256:H('b'),sourceEdition:'synthetic-v1',modelSha256:H('c')},lattice:{shape:[12,12,12],positions:1728,houses:Array(12).fill(1/12),spheres:Array(144).fill(1/144)},candidates:[0,1].map(i=>({hsn:HSN[i],score:10-i,sourceSha256:H('b'),sourceEdition:'synthetic-v1'}))}});
+const run=async(r=result(),request=req(),opt={})=>composeIssuedGeometry({run:async()=>r},request,opt);
+test('one result, twelve geometric ports, no authority',async()=>{const r=await run();assert.equal(r.status,'PREPARED_NOT_HOSTED');assert.equal(Object.keys(r.ports).length,12);assert.strictEqual(r.consumers.atlasGPT,r.consumers.swarmChat);assert.equal(r.ports.GEOMETREE.nodes,1728);assert.equal(r.releaseAuthorized,false);});
+test('Ariadne and evidence source edition remain different',async()=>{const r=await run();assert.equal(r.ontologyEdition,'ariadne-reader/v0.7');assert.equal(r.evidenceSourceEdition,'synthetic-v1');});
+test('reject non-Work request',async()=>{let q=req();q.scope='PLAY';assert.equal((await run(result(),q)).status,'HOLD');});
+test('reject source pin mismatch',async()=>{let x=result();x.result.source.registrySha256=H('f');assert.equal((await run(x)).status,'HOLD');});
+test('reject model double-call',async()=>{let x=result();x.neuralCalls=2;assert.equal((await run(x)).status,'HOLD');});
+test('reject candidate promotion',async()=>{assert.equal((await run(result(),req(),{candidateEdges:[{src:HSN[0],dst:'T1',scope:'WORK',review:'REVIEWED',sourceSha256:H('d'),sourceUrl:'https://x'}]})).status,'HOLD');});
+test('unreviewed graph remains untrainable',async()=>{const r=await run(result(),req(),{candidateEdges:[{src:HSN[0],dst:'T1',scope:'WORK',review:'UNREVIEWED',sourceSha256:H('d'),sourceUrl:'https://x'}]});assert.equal(r.ports.GRAPH_FABRIC.candidateEdges[0].canTrain,false);});
+test('method node needs subject',async()=>{let x=result();x.result.candidates[0].hsn=HSN[84];assert.equal((await run(x)).status,'HOLD');assert.equal((await run(x,req(),{methodSubject:'named subject'})).status,'PREPARED_NOT_HOSTED');});
+test('sparse candidate list rejected',async()=>{let x=result();delete x.result.candidates[1];assert.equal((await run(x)).status,'HOLD');});
+test('bad House mass rejected',async()=>{let x=result();x.result.lattice.houses[0]=2;assert.equal((await run(x)).status,'HOLD');});
+test('returned frame hash not invented',async()=>{let x=await run();assert.equal(x.fullScoreFrameDigest,null);assert.equal(x.fullFrameDigestVerified,false);});
+test('same input yields same geometry and no training',async()=>{let a=await run(),b=await run();assert.deepEqual(a.shape,b.shape);assert.equal(a.trainingEligible,false);});
