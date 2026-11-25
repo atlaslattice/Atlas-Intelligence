@@ -1,4 +1,4 @@
-# Atlas OS Open Suite R01 — original native review addon
+# Atlas OS Open Suite R02 — original native review addon
 
 **Make great things. Keep what you make.** A tested, offline source-first application catalog for the clean-sheet Atlas Native OS R03 experiment. This is an original addon, **not** a bootable app manager, actual sign-in provider, VPN, malware scanner, store, kernel driver or installed suite. Nothing in this addon executes third-party software.
 
@@ -37,3 +37,7 @@ Open `web/atlas-open-suite.html` in a compatible browser. No login is needed to 
 Run `make test` (the native gate in standard and ASan/UBSan modes, Python reference and installed Chromium browser smoke) then `make freestanding` for an import-free C object. `python3 tools_build_ui.py` and `python3 tools_review_matrix.py` reproduce the browser and 144 pending checklist. `python3 tools_release.py` creates deterministic source-only ZIP. If Chromium isn't available, browser tests must be reported as skipped, never silently counted as passes.
 
 **Status**: `TESTED_LOCAL_SOURCE_ONLY`, no package installs, no host SSO, no proprietary code copied, no GUI live deployment, no boot and no Work/Private transfer.
+
+## R02 peer convergence (additive)
+
+Reconciled **peer Open Desktop 55** to this release by its exact source ZIP SHA `2bb1c2183ec55cb3e311a6dba4cae4c64e14d355096330e0109370c73fd6bebb`. Its 55 entries overlap our 44 in 19 exact IDs and 17 ArtCraft aliases; 19 more are staged for independent review, yielding 63 distinct source candidates without assuming 63 installs. See `data/peer_desktop55_crosswalk.json` and `docs/PEER_DESKTOP_CONVERGENCE.md`. Peer original source is not redistributed in this draft; the exact comparison test is skipped on machines that lack authorized access to the owner peer ZIP. The standalone 44-item UI remains the opt-in curated default.
