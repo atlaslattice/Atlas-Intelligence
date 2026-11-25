@@ -7,6 +7,7 @@
 import {createHash} from 'node:crypto';
 import {types as utilTypes} from 'node:util';
 import {ARIADNE_SHA256} from '../../atlas-geometry-one-r38/src/addresses.mjs';
+import {snapshotIssuedScores} from './strict-issued-capture.mjs';
 const HEX=/^[a-f0-9]{64}$/;
 const ID=/^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$/;
 const hold=()=>Object.freeze({status:'HOLD',releaseAuthorized:false,authorityEffect:'NONE'});
@@ -20,14 +21,12 @@ export function makeIssuedPageFromExistingFrame(input){
     if(!ID.test(x.issuer)||!ID.test(x.sourceId)||!ID.test(x.sourceEdition)||
        !HEX.test(x.modelSha256)||!HEX.test(x.sourceSha256)||!HEX.test(x.querySha256)||
        x.registrySha256!==ARIADNE_SHA256)return hold();
-    const t=x.scores;
-    if(utilTypes.isProxy(t)||!(t instanceof Float32Array||t instanceof Float64Array)||t.length!==1728)return hold();
-    // Clone immediately: caller can reuse/mutate the original activation.
-    const snapshot=Array.from(t);
-    if(snapshot.some(v=>!Number.isFinite(v)))return hold();
-    const format=t instanceof Float32Array?'f32be':'f64be';
-    const bytes=Buffer.allocUnsafe(t.length*(format==='f32be'?4:8));
-    snapshot.forEach((v,i)=>format==='f32be'?bytes.writeFloatBE(v,4*i):bytes.writeDoubleBE(v,8*i));
+    // Byte-identical upstream PR77 source handles native float brands,
+    // spoofed iterators, shadowed getters, shared/resizable storage and copies.
+    const capture=snapshotIssuedScores(x.scores);
+    const snapshot=Array.from(capture.scores);
+    const format=capture.format;
+    const bytes=capture.beBytes;
     const header=['ATLAS-INDRA-ISSUED-SCORES/v1',format,x.issuer,x.modelSha256,x.registrySha256,
       x.querySha256,x.sourceId,x.sourceSha256,x.sourceEdition].join('|')+'\0';
     const localScoreBinding=createHash('sha256').update(Buffer.from(header)).update(bytes).digest('hex');
