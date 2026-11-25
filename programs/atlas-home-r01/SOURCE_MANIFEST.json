@@ -61,49 +61,19 @@
       "sha256": "9bb1c2bd13598c0231a225bc09d2e7b74d3f1bb613d2cfe918e1d3ec0a322f3c"
     },
     {
-      "path": "evidence/browser-receipt.json",
-      "bytes": 939,
-      "sha256": "f660e9a761853114821cd94a7d80c63c0a913ffe4dd456d27e87b3ab339a1bcb"
-    },
-    {
-      "path": "evidence/browser-smoke.log",
-      "bytes": 872,
-      "sha256": "54741183e88b071387d56ccf20fad9aad91514ec9882ed423558cd36319d8b99"
-    },
-    {
-      "path": "evidence/check.log",
-      "bytes": 108,
-      "sha256": "411a5c4a75dac8eb187014284412c1036531d0ab68fc91d615d187afc76956a4"
-    },
-    {
-      "path": "evidence/standalone-smoke.json",
-      "bytes": 235,
-      "sha256": "5adb84b0abce327419fd14b842c71e3baa8a65ff5df52e3da8b96088a5e7df29"
-    },
-    {
-      "path": "evidence/test-jitless.log",
-      "bytes": 18020,
-      "sha256": "e5b93e07c2677e30124be31b3c6cf39be1705030d544ab753dcd913e8cde4b1f"
-    },
-    {
-      "path": "evidence/test-normal.log",
-      "bytes": 17489,
-      "sha256": "5f97f030feaec13e7ad5c5e395b25b5b3a4f02a7c5589d7bb421ca6cb42d2d79"
-    },
-    {
       "path": "package.json",
       "bytes": 430,
       "sha256": "fcf21dbfbb3091fbaa96426e1a52f5fe18a19cbd5074e094a6d0283553afe934"
     },
     {
       "path": "scripts/make_bundle.py",
-      "bytes": 1783,
-      "sha256": "62e2fb1f48963e1bc98b4b0066a184379910d8a48d9116da78d51a01715fd322"
+      "bytes": 1740,
+      "sha256": "2420a20b5187706636d6226776fa2a1e2d9a35ddad88dba5446601e5c9b4db27"
     },
     {
       "path": "scripts/replay.sh",
-      "bytes": 424,
-      "sha256": "e27a96dc9b7c7bb138e2773ad2b9eb11e764bbbbf44436e27a6e53492c711310"
+      "bytes": 442,
+      "sha256": "19c718759a9c61f2b864fcade7a9e271428799e26e36a81385ea127da44b7a66"
     },
     {
       "path": "scripts/verify-release.mjs",
