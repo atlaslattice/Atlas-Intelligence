@@ -1,4 +1,4 @@
-# Atlas Home R01 — actual build and honest integration status
+# Atlas Home R02 — actual build and honest integration status
 
 ## Result
 
@@ -16,8 +16,8 @@ The design centers one human requirement: **a home you can choose to return to, 
 
 ## Executed source checks
 
-- **107/107** Node tests PASS in normal mode, **107/107** Node --jitless PASS, with 0 skips. Includes 1728 source HSN inverses, 4752 P12×P12×P12 navigational edges, parent/Sphere roles, privacy, draft evidence graph, 30 project intake records, 12×12 review cells, 12 concept cards, numeric temporal summaries, one-injected-frame metadata and negative rights cases.
-- **18/18** interactive Playwright/Chromium checks (9 desktop, 9 mobile) PASS using page.set_content and the exact authored controller. One additional standalone-inline browser run passed four checks. **Zero outgoing HTTP requests and zero browser JavaScript errors** were recorded.
+- **114/114** Node tests PASS in normal mode, **114/114** Node --jitless PASS, with 0 skips. Includes 1728 source HSN inverses, 4752 P12×P12×P12 navigational edges, parent/Sphere roles, privacy, draft evidence graph, 30 project intake records, 12×12 review cells, 12 concept cards, numeric temporal summaries, one-injected-frame metadata and negative rights cases.
+- **30/30** interactive Playwright/Chromium checks (15 desktop, 15 mobile) PASS using page.set_content and the exact authored controller. One additional standalone-inline browser run passed four checks. **Zero outgoing HTTP requests and zero browser JavaScript errors** were recorded.
 - **Direct `file://` and `http://127.0.0.1` navigation both returned `ERR_BLOCKED_BY_ADMINISTRATOR`** in this test environment. The source page may work when opened by a permitted external browser, but this was NOT verified here; the `set_content` DOM/browser checks are a narrower claim.
 - This archive's source is SHA256-manifest-pinned and replays without external model/API calls. Peer PR75+PR74 full-source CI and a selected Model0.3 owner runtime integration are **not** established by this offline test.
 
@@ -42,3 +42,9 @@ In the full GitHub PR75+PR74 checkout (not this standalone kit), invoke exactly 
 ## Peer collaboration handoff
 
 Source-linked peer Work rooms: `atlas-lattice-neural-engineering-20261124-01` and `atlas-v32-evolution-50-work-20261124-s02`. Provide current source/branch SHA and a short nonduplicative request for exact issuer/rights, original glyph/role tests, current-selected frame and Chronoforge adapter compatibility. The `Home` remains a distinct **experience surface over one shared core**; do not credit a single chat post as multiple MacroTurns.
+
+## R02 new Work-route safety finding
+
+An invalid original HSN now preserves the last valid public coordinate but removes all stale Work-room selections and disables Work preview. Explicitly entering a valid address restores a neutral home and requires a new Work choice. The local `createAtlasHome` API also invalidates in-flight asynchronous peer inspections on invalid route, departure, or new navigation and refuses new Work after invalid input until a valid HSN is visited. Node and browser positive/negative tests are included. This responds to the exact class of concerns raised in SwarmChat Season 02 #88–91, **not** an assertion of running those peer branches or distributed authorization.
+
+Full source and host acceptance of PR #75, PR #74 and later PR #76 remains pending. The updated R02 source archive is separate from and does not rewrite the immutable R01 bundle.
