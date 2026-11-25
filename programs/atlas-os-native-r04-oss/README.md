@@ -40,3 +40,7 @@ Test evidence: 100 distinct C app/action/scoping scenarios, **identical 100-row 
 8. Explicit cross-platform file-open/save round trips and independent performance/quality panel for apps (ArtCraft should not replace mature production tools until tests pass).
 
 **Never confuse installed, reviewed, tested, proposed, source-pinned, signed, or hosted.**
+
+## Existing peer Commons — no duplicate authoritative catalogue
+
+The current 37-source-revision Atlas R04 overlay has been compared against an owner-private **42-entry Open Commons R05** inventory. It produced 21 exact ID+source-URL review suggestions, five same-ID/different-URL holds, one URL-only alias candidate and ten R04-only candidates, with 16 Commons-only peers retained. All 37 matches are UNADOPTED; this does not replace the existing Commons49/42/other inventories. Details and executable test are in `docs/PEER_R05_CROSSWALK.md` and `tools/reconcile_catalogue.py`. The full peer source and row-by-row crosswalk stay owner-private.

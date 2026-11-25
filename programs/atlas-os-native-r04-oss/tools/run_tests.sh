@@ -26,3 +26,4 @@ for mode in gcc clang sanitize; do
  "$cc" -std=c11 -Wall -Wextra -Werror -Wno-misleading-indentation $flags -I"$ROOT/src" -I"$AOSR03/src" "$ROOT/tests/bridge_test.c" "$ROOT/src/atlas_appbridge.c" "$ROOT/src/atlas_appgate.c" "$ROOT/src/apps_catalog.c" "$AOSR03/src/aosk.c" -o "$ROOT/build/bridge-$mode"
  "$ROOT/build/bridge-$mode"
 done
+python3 "$ROOT/tests/crosswalk_test.py"
