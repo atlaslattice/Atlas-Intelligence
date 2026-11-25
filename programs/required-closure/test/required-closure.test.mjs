@@ -123,3 +123,48 @@ test('witness that independently trusted required closure is essential',()=>{
   assert.equal(reviewRequiredClosure(counterfeit).requiredSetIndependentlyComplete,false);
   assert.equal(reviewRequiredClosure(counterfeit).releaseAuthorized,false);
 });
+
+// Root input must be normalized before reading any untrusted property.
+test('null and missing root inputs return HOLD_METADATA rather than throwing',()=>{
+  for (const value of [null,undefined,7,'invalid']) {
+    const result=reviewRequiredClosure(value);
+    assert.equal(result.status,'HOLD_METADATA');
+    assert.equal(result.releaseAuthorized,false);
+    assert.ok(result.diagnostics.some(d=>d.code==='INVALID_OR_UNTRUSTED_INPUT'));
+  }
+});
+
+test('root input getter is never invoked and is held',()=>{
+  let calls=0;
+  const f=fixture();
+  Object.defineProperty(f,'trustedAnchor',{enumerable:true,get(){calls++;throw Error('hostile accessor');}});
+  const result=reviewRequiredClosure(f);
+  assert.equal(calls,0);
+  assert.equal(result.status,'HOLD_METADATA');
+  assert.equal(result.releaseAuthorized,false);
+});
+
+test('root input Proxy is rejected without invoking traps',()=>{
+  const f=fixture();
+  let calls=0;
+  const wrapped=new Proxy(f,{get(target,key){calls++;return Reflect.get(target,key);}});
+  const result=reviewRequiredClosure(wrapped);
+  assert.equal(calls,0);
+  assert.equal(result.status,'HOLD_METADATA');
+});
+
+test('unknown root field cannot be silently discarded',()=>{
+  const f=fixture();f.hostAuthority=true;
+  const result=reviewRequiredClosure(f);
+  assert.equal(result.status,'HOLD_METADATA');
+  assert.equal(result.authorityEffect,'NONE');
+});
+
+test('diagnostic entries are immutable audit evidence',()=>{
+  const f=fixture();f.observed.dependencies=[];
+  const result=reviewRequiredClosure(f);
+  assert.equal(result.status,'HOLD_METADATA');
+  assert.ok(result.diagnostics.length>0);
+  assert.throws(()=>{result.diagnostics[0].code='FAKE_PASS';},TypeError);
+  assert.ok(result.diagnostics.some(d=>d.code==='MISSING_REQUIRED'));
+});
