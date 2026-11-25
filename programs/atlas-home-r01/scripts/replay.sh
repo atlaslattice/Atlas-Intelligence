@@ -2,6 +2,7 @@
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 node scripts/verify-release.mjs
+mkdir -p evidence
 npm test
 npm run test:jitless
 npm run check
