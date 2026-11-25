@@ -1,0 +1,988 @@
+{
+  "schema": "atlas.geometry.50-macroturn-protocol/v1",
+  "protocolId": "atlas-geometry-clean-sheet-50-20261124",
+  "goal": 50,
+  "createdDate": "2026-11-24",
+  "scope": "one Atlas/SwarmChat shared neural project",
+  "progress": {
+    "protocolTurnsCompletedAndDurablyCredited": 0,
+    "manualLocalCandidateIterations": 1,
+    "peerReportedTurnsCredited": 0,
+    "existingAtlasNeuralEvolutionCampaignTotal": "SEPARATE_EXISTING_LEDGER_UNCHANGED"
+  },
+  "coordination": {
+    "room": "atlas-lattice-neural-engineering-20261124-01",
+    "existingController": "Atlas Neural Evolution (hourly, no new scheduler)",
+    "lifecycle": "one genuine finite active engineering visit at a time",
+    "workshopPosts": "milestone handoffs only as allowed; posts are not turns",
+    "afterRoomExpiry": "preserve pending packets, use only an already-authorized successor room after rights check"
+  },
+  "gate": "Turn credit requires source-pinned independent substantive work, successful verification or explicitly valuable verified negative, durable artifact and deduped receipt. Planned packets and tests alone earn zero.",
+  "existingCode": "https://github.com/atlaslattice/Atlas-Intelligence/pull/66",
+  "sourcePins": {
+    "ariadne": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "geometreeR0Zip": "e245acb2a3f4464e813226bb86c35a99c2e6580c21ccaa644ce55d03b921d1d0",
+    "fourBandR42": "3366288676eb9ba04c7aa04f48af4490070d83d2c2c3d1a5512c1432ad2741aa",
+    "fourBandR03": "c9ce9830ec3d8e0dd5ceef500fab30cff9a5df1fb626976aaac038f98a1deb16",
+    "rankGuardR01": "662da9b798e17e1e96421eb90c4ab67d02821682f803ddb1de84590d55b12f41"
+  },
+  "authority": {
+    "autoTrain": false,
+    "autoMerge": false,
+    "autoDeploy": false,
+    "autoProviderCost": false,
+    "autoPost": false,
+    "privateModeImport": false,
+    "participantConsentInferred": false
+  },
+  "items": [
+    {
+      "id": "GEO50-MT-01",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Freeze incumbent, clean-sheet baseline and source pins",
+      "falsifier": "One digest cannot authenticate a different edition",
+      "subject": "H05.S06.N12 \u2014 research software engineering",
+      "dependsOn": [],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-02",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Recover the independently authored axial router #367",
+      "falsifier": "Missing bytes cannot inherit reported tests",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-01"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-03",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Replay four-band exclusive hierarchy #368",
+      "falsifier": "Incorrect source masks differ from the dense oracle",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-02"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-04",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Replay independently authored four-band synthesis #375",
+      "falsifier": "Extreme offsets expose subtraction instability",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-03"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-05",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Compare #368 and #375 on the same numeric function",
+      "falsifier": "Different bias/mask semantics invalidate comparison",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-04"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-06",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Port #380 rank-stability to the shared review language",
+      "falsifier": "Near-tie score drift must HOLD",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-05"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-07",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Reproduce geometry-native JS C/H code namespaces #371",
+      "falsifier": "Cxx/Hxx coordinates must never collapse",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-06"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-08",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Check R10 ranking and original selected-head parity",
+      "falsifier": "Same address IDs with different scores is HOLD",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-07"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-09",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Inspect typed source/provenance crosswalks",
+      "falsifier": "Positional match cannot become EXACT_IDENTITY",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-08"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-10",
+      "stage": "A \u2014 source and architecture normalization",
+      "work": "Freeze first source-reproduced competitor matrix",
+      "falsifier": "Peer self-report cannot be marked independently executed",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-09"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-11",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Consolidate one immutable activation ABI",
+      "falsifier": "Two encoder/head calls for one request invalidate parity",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-10"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-12",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Synthesize fixed four-band operator with a source-neutral oracle",
+      "falsifier": "Arbitrary pairwise logits cannot silently pass restricted ABI",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-11"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-13",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Separate geometry adjacency from evidence edges",
+      "falsifier": "Synthetic adjacency cannot become fact",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-12"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-14",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Match full 1728 and 144/12 reductions on one selected result",
+      "falsifier": "Unreviewed House/Sphere mass must never become truth score",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-13"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-15",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Reconcile sparse top-k and fused selection",
+      "falsifier": "Near-tie reorder must be held",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-14"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-16",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Match numerical precision across Python/Node",
+      "falsifier": "Signed zero and cancellation may change rank",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-15"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-17",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Reproduce C/H/Historical identity namespaces",
+      "falsifier": "Lossy mapping cannot be treated as reversible",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-16"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-18",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Unify source/issuer/model/rights epoch tuple",
+      "falsifier": "Matching HSN alone cannot establish host equality",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-17"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-19",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Prove no duplicate query or child model invocation",
+      "falsifier": "Second retriever breaks single-core contract",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-18"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-20",
+      "stage": "B \u2014 compatible A+B functional synthesis",
+      "work": "Freeze independently tested synthesis C1",
+      "falsifier": "Incompatible operators remain separately attributed",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-19"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-21",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Enroll fresh family/time-disjoint human relevance panel",
+      "falsifier": "Previously consumed panel is not fresh",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-20"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-22",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Establish flat selected Model0.3 baseline",
+      "falsifier": "Synthetic scores cannot substitute neural inference",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-21"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-23",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Test exact true and shuffled geometry routing",
+      "falsifier": "Unshuffled advantage must beat shuffled controls",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-22"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-24",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Test equal-parameter alternatives",
+      "falsifier": "Parameter inequality must be disclosed",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-23"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-25",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Measure cold/warm latency p50/p95 by workload",
+      "falsifier": "Order-biased microbench is not hosted speedup",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-24"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-26",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Measure memory and resource budgets",
+      "falsifier": "Conceptual bytes are not peak RSS",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-25"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-27",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Evaluate abstention and evidence citation accuracy",
+      "falsifier": "A high rank without source-use rights is not an answer",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-26"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-28",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Score House/Sphere regressions and minority dissent",
+      "falsifier": "Aggregate improvement cannot erase local failure",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-27"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-29",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Measure known-negative and ambiguous-query handling",
+      "falsifier": "Hard negatives leaking across split invalidates lift",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-28"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-30",
+      "stage": "C \u2014 scientific and runtime evaluation",
+      "work": "Freeze complete independent quality report",
+      "falsifier": "No training or release from self-graded metric",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-29"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-31",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Bind independently pinned required-set closure #327",
+      "falsifier": "Omitted negative receipt must HOLD",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-30"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-32",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Bind READ, USE, optional DISCLOSE, RETURN purpose checks",
+      "falsifier": "Inspection is not inference permission",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-31"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-33",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Test mid-query source withdrawal and return",
+      "falsifier": "Previously allowed source must not escape after revocation",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-32"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-34",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Test current issuer and invocation-token lifecycle",
+      "falsifier": "Foreign gateway with equal hashes must fail",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-33"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-35",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Test cancellation and rollback preservation",
+      "falsifier": "Failed invocation must not erase prior success",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-34"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-36",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Test cross-host source-context divergence #353",
+      "falsifier": "Same HSN with different evidence cannot imply parity",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-35"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-37",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Test shared audience and participant-consent semantics",
+      "falsifier": "Invited Academy profile cannot impersonate a person",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-36"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-38",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Test Brain/Palace/Imagine and social non-ingest",
+      "falsifier": "Private material may not be imported into Work",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-37"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-39",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Test source dependency graph and scope revision #355",
+      "falsifier": "Changed dependency set must trigger re-review",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-38"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-40",
+      "stage": "D \u2014 security, provenance and collaboration",
+      "work": "Freeze host-readiness and dissent manifest",
+      "falsifier": "Open objection or unauthenticated egress remains HOLD",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-39"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-41",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Select only reproduced compatible improvements",
+      "falsifier": "Reported tests without source never promoted",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-40"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-42",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Write clean C2 from first-line architecture contract",
+      "falsifier": "No hidden dependency on legacy runtime globals",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-41"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-43",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Rebuild 12\u00d712\u00d712 tensor and ID crosswalks",
+      "falsifier": "All 1728 coordinates must survive",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-42"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-44",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Compose one gateway across all approved consumers",
+      "falsifier": "Any duplicate retrieval violates the goal",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-43"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-45",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Reproduce full negative matrix and independent peer suite",
+      "falsifier": "A historical test count cannot be borrowed",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-44"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-46",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Audit performance under equal resource budgets",
+      "falsifier": "No selective reporting of winning k values",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-45"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-47",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Perform source/use/revocation/return final fence",
+      "falsifier": "No host authority from metadata matching",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-46"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-48",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Conduct independent reviewer challenge and dissent review",
+      "falsifier": "Reviewer silence is not consent",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-47"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-49",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Freeze full C2 report, source manifest and rollback",
+      "falsifier": "Loss of a required source file is a release HOLD",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-48"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    },
+    {
+      "id": "GEO50-MT-50",
+      "stage": "E \u2014 clean rewrite C2 and reproducible handoff",
+      "work": "Deliver 50-turn ledger and recommendation, preserve original",
+      "falsifier": "No automatic merge, training, spend or deployment",
+      "subject": "source-pinned original Ariadne 12x12x12",
+      "dependsOn": [
+        "GEO50-MT-49"
+      ],
+      "state": "PROPOSED_NOT_RUN",
+      "counted": false,
+      "requiredReceipt": [
+        "exact source hash",
+        "actual tests/negative output",
+        "A+B=C delta",
+        "explicit held gates",
+        "durable artifact link"
+      ]
+    }
+  ]
+}
