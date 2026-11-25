@@ -23,17 +23,17 @@ Ariadne `ariadne-reader/v0.7` SHA256 `07533cf7a6b6f567259962bf73efee9b22b47cbacb
 The original 1,728 positions contain 1,008 DOMAIN nodes in S01–S07 and 720 METHOD nodes in S08–S12 (84 DOMAIN and 60 METHOD Spheres). Role is **not determined by N**. A method subject must refer to an explicit DOMAIN coordinate in the **same House**; `checkMethodSubject` establishes structural scoping, NOT semantic acceptance. PR71's version-tagged Yijing and authored glyph displays do not modify HSN or original source rights.
 
 ## Local verification
-- 27 new distinct R35 tests plus 10 inherited R34 tests: **37/37 standard and 37/37 Node --jitless** in a branch-shaped local fixture.
+- 29 new distinct R35 tests plus 10 inherited R34 tests: **39/39 standard and 39/39 Node --jitless** in a branch-shaped local fixture.
 - Four GitHub-created source/test blobs fetched back and confirmed equal to the exact locally tested Git blobs:
   - `issued-page-r34.mjs` `ed74e4aa08546074b9b338d711b80fb1b06738bf`
-  - `dual-issued-geometry.mjs` `e876ca1d8d1dbdf7134955c1bcedfa13767313de`
+  - `dual-issued-geometry.mjs` `0c08d13a679a5a7d411d6c57e87b7a5477408169`
   - `issued-page-r34.test.mjs` `9c02b06ec53180fb97fc125ba8d660ef8ec5f2e8`
-  - `dual-issued-geometry.test.mjs` `49db60e75147281d171a6fe791da2edfed10be3d`
+  - `dual-issued-geometry.test.mjs` `f4e89ee277dd8df50f4fa3f50a7b1480e462b857`
 - This is **not** full peer-suite CI, a selected Model 0.3 model call, a hosted API request or a learned quality gain.
 - Different `sourceEdition` (evidence) versus `EDITION` (ontology) is explicit. Alternate Yijing codecs never count as interchangeable source identities.
 
 ## Adversarial cases kept
-Wrong scope, source revision, sparse/nonfinite/wrong-length scores, accessor/Proxy input, SharedArrayBuffer, source-buffer mutation, tenant/target/request changes, f32/f64 ambiguity, +0/-0, wrong/forged expected digest, invalid H00, METHOD without same-House DOMAIN, and unauthorized training claims fail or remain review-only.
+Wrong scope, source revision, sparse/nonfinite/wrong-length scores, accessor/Proxy input, malicious score-buffer getter, typed-array subclass, SharedArrayBuffer, source-buffer mutation, tenant/target/request changes, f32/f64 ambiguity, +0/-0, wrong/forged expected digest, invalid H00, METHOD without same-House DOMAIN, and unauthorized training claims fail or remain review-only.
 Existing source-family leakage (#41), role-drift (#47), near-tie/cancellation (#382), context divergence (#353), flat/shuffled geometry losses, full-score source withdrawal and two-account byte-RETURN authorization remain live falsifiers.
 
 ## Next integration, not implied by this PR
