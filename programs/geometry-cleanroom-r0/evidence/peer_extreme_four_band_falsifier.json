@@ -1,0 +1,99 @@
+{
+  "schema": "atlas.geometry.peer-extreme-falsifier/v1",
+  "testCount": 9,
+  "r03Mismatches": 9,
+  "r42Mismatches": 0,
+  "cases": [
+    {
+      "j": 1,
+      "band": 1,
+      "gap": 40.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 1,
+      "band": 1,
+      "gap": 80.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 1,
+      "band": 1,
+      "gap": 700.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 12,
+      "band": 2,
+      "gap": 40.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 12,
+      "band": 2,
+      "gap": 80.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 12,
+      "band": 2,
+      "gap": 700.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 144,
+      "band": 3,
+      "gap": 40.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 144,
+      "band": 3,
+      "gap": 80.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    },
+    {
+      "j": 144,
+      "band": 3,
+      "gap": 700.0,
+      "oracle": 0.5,
+      "r03Original": 1.0,
+      "r42Independent": 0.5,
+      "r03AbsError": 0.5,
+      "r42AbsError": 0.0
+    }
+  ],
+  "limits": "Synthetic source-neutral score arithmetic; no actual neural-model, rights or hosted authority."
+}
