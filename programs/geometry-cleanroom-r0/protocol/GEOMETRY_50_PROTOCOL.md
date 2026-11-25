@@ -72,9 +72,10 @@ A is the exact frozen incumbent and original peer edition. B is one independentl
 
 ## Pilot evidence (not protocol turn-credit)
 
-- 318/318 original Geometree R0 Node tests; new cross-language rank-port brings the combined candidate to 487/487 in normal and jitless runs.
+- 318/318 original Geometree R0 Node tests; new cross-language rank-port and independent dense-band oracle bring the combined candidate to 500/500 in normal and jitless runs.
 - Independently replayed R42 four-band 15/15 Python, R03 rights/four-band 37/37 Python, R01 rank guard 17/17 Python, Reality JS geometry 55/55. These belong to **four separate** source editions and may overlap in scope.
 - Same-function R42/R03 common-domain cross-check: 24 seeded cases, dimensions 1/4/16, maximum output absolute delta 2.7755575615628914e-16, with no failed tolerance checks. This is no proof of a learned benefit.
+- Nine extreme-cancellation cases falsified the old R03 subtractive four-band operator; the R42 exclusive implementation and independent JS dense oracle matched the reference.
 - Rank guard port is review-only: a supplied error bound is not attested; releaseAuthorized remains false.
 - All source artifacts remain separate; no peer source code is republished in the portable pilot. Source hashes, test logs and negative issues are preserved.
 
