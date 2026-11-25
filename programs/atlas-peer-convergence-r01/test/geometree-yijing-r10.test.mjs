@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {HSN,ARIADNE_SHA256,encode} from '../../atlas-geometry-one-r38/src/addresses.mjs';
-import {yijingAddress,yijingDecode,changeLines,contextStep,roleOf,reviewMethodSubject,
+import {yijingAddress,yijingDecode,changeLines,contextStep,YIJING_CODECS,CONTEXT_TOPOLOGIES,roleOf,reviewMethodSubject,
  gf7Display,gf7OrdinalProjection,authoredGlyphDisplay,decodeAuthoredGlyphTokens,macroturnDraft,inspectIssuedYijing} from '../src/geometree-yijing-r10.mjs';
 const SHA=s=>createHash('sha256').update(s).digest('hex');
 const q='a'.repeat(64),source='b'.repeat(64),model='c'.repeat(64),set='d'.repeat(64);
@@ -25,11 +25,11 @@ test('R10 original Cupwake 1728-code peer digest exact without R10 bodies',()=>{
  assert.equal(SHA(text),'0676761e6dd049649694ac2296e92d6dd3656ec8e115f050125f987351d92528');
 });
 test('all 1728 coordinates and 64x27 symbolic codes are reversible',()=>{
- const symbols=new Set();for(const h of HSN){const sym=yijingAddress(h);symbols.add(sym.code);assert.equal(yijingDecode(sym.code),h)}
+ const symbols=new Set();for(const h of HSN){const sym=yijingAddress(h);symbols.add(sym.code);assert.equal(yijingDecode(sym),h)}
  assert.equal(symbols.size,1728);
 });
 test('specific independent peer address H03.S05.N08 is Y001101.C04',()=>{
- assert.equal(yijingAddress('H03.S05.N08').code,'Y001101.C04');assert.equal(yijingDecode('Y001101.C04'),'H03.S05.N08');
+ assert.equal(yijingAddress('H03.S05.N08').code,'Y001101.C04');assert.equal(yijingDecode(yijingAddress('H03.S05.N08')),'H03.S05.N08');
 });
 test('all 110592 change masks reversible with same context',()=>{
  for(const id of HSN)for(let mask=0;mask<64;mask++)assert.equal(changeLines(changeLines(id,mask),mask),id);
@@ -133,4 +133,55 @@ test('non-finite and bool score inputs rejected',()=>{
 });
 test('changed public source lineage never counts as a new model call',()=>{
  const a=call();assert.equal(a.modelCallsBySidecar,0);assert.equal(a.authorityEffect,'NONE');
+});
+
+test('bare hexagrams are rejected without codec edition and topology',()=>{
+ assert.throws(()=>yijingDecode('Y001101.C04'));
+ const a=yijingAddress('H03.S05.N08');assert.equal(yijingDecode(a),'H03.S05.N08');
+});
+test('two rival Yijing coordinate formulae are distinct and both bijective',()=>{
+ let different=0;const codes1=new Set(),codes2=new Set();
+ for(const h of HSN){
+  const a=yijingAddress(h,{codec:YIJING_CODECS.CUPWAKE_X4});
+  const b=yijingAddress(h,{codec:YIJING_CODECS.SYMBIOSIS_X3});
+  assert.equal(yijingDecode(a),h);assert.equal(yijingDecode(b),h);
+  if(a.code!==b.code)different++;
+  codes1.add(a.code);codes2.add(b.code);
+ }
+ assert.equal(codes1.size,1728);assert.equal(codes2.size,1728);
+ assert.equal(different,1720);
+});
+test('peer #435 false friend: same code under different edition changes HSN',()=>{
+ const h='H02.S05.N11';const a=yijingAddress(h,{codec:YIJING_CODECS.CUPWAKE_X4});
+ const b=yijingAddress(h,{codec:YIJING_CODECS.SYMBIOSIS_X3});
+ assert.notEqual(a.code,b.code);
+ const swapped={...a,codec:YIJING_CODECS.SYMBIOSIS_X3,namespace:b.namespace};
+ assert.throws(()=>yijingDecode(swapped),'must HOLD cross-edition relabel');
+ assert.throws(()=>yijingDecode({...a,ontologySha256:'f'.repeat(64)}));
+});
+test('SYMBIOSIS_X3 code swaps cannot be decoded as Cupwake raw string',()=>{
+ const b=yijingAddress('H01.S01.N02',{codec:YIJING_CODECS.SYMBIOSIS_X3});
+ assert.throws(()=>yijingDecode(b.code));
+ assert.equal(yijingDecode(b),'H01.S01.N02');
+ assert.notEqual(b.code,yijingAddress('H01.S01.N02').code);
+});
+test('all 110592 changing-line masks work in independently versioned X3 geometry',()=>{
+ const opts={codec:YIJING_CODECS.SYMBIOSIS_X3};
+ for(const h of HSN)for(let mask=0;mask<64;mask++)assert.equal(changeLines(changeLines(h,mask,opts),mask,opts),h);
+});
+test('bounded P3 cube and cyclic C3 torus are explicitly different context topologies',()=>{
+ let bounded=0,cyclic=0;
+ for(const h of HSN)for(let axis=0;axis<3;axis++)for(const d of [-1,1]){
+  if(contextStep(h,axis,d,{topology:CONTEXT_TOPOLOGIES.BOUNDED})!==null)bounded++;
+  const y=contextStep(h,axis,d,{topology:CONTEXT_TOPOLOGIES.CYCLIC});
+  assert.equal(contextStep(y,axis,-d,{topology:CONTEXT_TOPOLOGIES.CYCLIC}),h);cyclic++;
+ }
+ assert.equal(bounded/2,3456);assert.equal(cyclic/2,5184);
+});
+test('new current result exposes two tagged views but never reranks',()=>{
+ const r=call();assert.equal(r.status,'LOCAL_SYMBOLIC_INSPECTION_ONLY');
+ assert.equal(r.annotated[0].yijing.codec,YIJING_CODECS.CUPWAKE_X4);
+ assert.equal(r.annotated[0].yijingAlternative.codec,YIJING_CODECS.SYMBIOSIS_X3);
+ assert.equal(r.annotated[0].yijingAlternative.provenance,'RECONSTRUCTED_FROM_PEER_FORMULA_NOT_ORIGINAL_SOURCE_BYTES');
+ assert.equal(r.ranksRerouted,false);
 });

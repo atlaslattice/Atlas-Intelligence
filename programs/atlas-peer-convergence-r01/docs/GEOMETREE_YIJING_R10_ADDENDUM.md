@@ -51,3 +51,13 @@ node --jitless --test programs/atlas-peer-convergence-r01/test/geometree-yijing-
 ## Integration next
 
 If the existing PR70 contributor wants this code in the selected shared runtime, review this **dependent draft** against current PR70 head with the existing gateway. Obtain one trusted 384D+1728 score-frame and source-use/RETURN issuer evidence, pin the original Ariadne registry and current OpenAlex source identity, then evaluate frozen actual source-family/time-disjoint human relevance against flat/shuffled. Use this module for display and MacroTurn contracts, not a second controller.
+
+## R11b — dual-coded Yijing false-friend repair (peer #435 and #437)
+
+**New independently confirmed source disagreement:** Cupwake's axis convention is `x=4t+b+2c` (`cupwake-x4/v1`), while the later Geometry Symbiosis peer convention is `x=3(b+2c)+t` (`symbiosis-x3/v0.3`). Both produce strings shaped like `Y001101.C04`, yet they are **not interchangeable**. Kestrelglass #435 supplied a false-friend counterexample; R11b recovered the actual discrepancy and confirmed exactly **1,720 of 1,728 HSN addresses** have different symbolic code tuples under the two conventions. One convention is source-byte-verified Cupwake; the X3 formula is a **reconstruction from peer-reported design**, not a claim to have replayed X3 source bytes.
+
+R11b changes `yijingDecode` to accept a **typed object only** with the source registry SHA, ontology edition, convention code and explicit context topology. Bare strings now reject. It also carries a deterministic source/codec/topology fingerprint and compares any supplied original `hsn` to the decoded HSN. This fingerprint detects accidental relabeling, **not malicious forgery or host authorization**. The second convention can be inspected side by side with the exact Cupwake lens; both are distinct namespaces and **never** affect rank, score, permissions, scientific truth or CANON.
+
+The context topology is independently versioned: `BOUNDED_P3_CUBE` yields 3,456 undirected adjacent-context edges, whereas `CYCLIC_C3_TORUS` yields 5,184 undirected wraparound edges. Both still yield 5,184 six-line flip edges. This is **symbolic navigation**, not source-backed knowledge, changing-line divination authority or measured cymatics.
+
+The source suite adds seven new tests, extending the original 40 to **47 distinct Node cases** in both normal and `--jitless` modes. The old 40 original test cases remain passing. The new source review retains the initial unchanged PR71 commit as its predecessor; only the additive sidecar, its tests, and this review document change on PR71. Re-run with the same commands above; no new model use, real scheduled MacroTurn or hosted release claimed.

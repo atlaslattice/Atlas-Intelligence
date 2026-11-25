@@ -17,6 +17,8 @@ import {ARIADNE_SHA256, EDITION, HSN, encode, decode} from '../../atlas-geometry
 
 export const SCHEMA='atlas.geometree.yijing-cymatic-sidecar/v1';
 export const YIJING_NAMESPACE='atlas.yijing.navigation/v1';
+export const YIJING_CODECS=Object.freeze({CUPWAKE_X4:'cupwake-x4/v1',SYMBIOSIS_X3:'symbiosis-x3/v0.3'});
+export const CONTEXT_TOPOLOGIES=Object.freeze({BOUNDED:'BOUNDED_P3_CUBE',CYCLIC:'CYCLIC_C3_TORUS'});
 export const GF7_NAMESPACE='GF7';
 const HEX=/^[a-f0-9]{64}$/;
 const CODE=/^Y([01]{6})\.C(0[0-9]|1[0-9]|2[0-6])$/;
@@ -58,42 +60,73 @@ function array(raw,n=null){
 function safeNumber(x){return typeof x==='number'&&Number.isFinite(x);}
 function finiteScores(raw){const a=array(raw,1728);if(!a.every(safeNumber))throw Error('NONFINITE_FRAME');return a;}
 function coordinates(hsn){let {h,s,n}=decode(hsn);return [h-1,s-1,n-1];}
-function numericCode(address){
- const a=coordinates(address),context=a.map(x=>Math.floor(x/4));
- const lower=a.reduce((t,x,i)=>t|((x&1)<<i),0),upper=a.reduce((t,x,i)=>t|(((x>>1)&1)<<i),0);
+function selectedCodec(codec){
+ if(!Object.values(YIJING_CODECS).includes(codec))throw Error('YIJING_CODEC_EDITION_UNSUPPORTED');
+ return codec;
+}
+function selectedTopology(topology){
+ if(!Object.values(CONTEXT_TOPOLOGIES).includes(topology))throw Error('YIJING_CONTEXT_TOPOLOGY_UNSUPPORTED');
+ return topology;
+}
+function symbolNamespace(codec){
+ return codec===YIJING_CODECS.CUPWAKE_X4?YIJING_NAMESPACE:'atlas.yijing.symbiosis/v0.3';
+}
+function numericCode(address,codec=YIJING_CODECS.CUPWAKE_X4){
+ selectedCodec(codec);
+ const a=coordinates(address),context=a.map(x=>codec===YIJING_CODECS.CUPWAKE_X4?Math.floor(x/4):x%3);
+ const q=a.map(x=>codec===YIJING_CODECS.CUPWAKE_X4?x%4:Math.floor(x/3));
+ const lower=q.reduce((t,x,i)=>t|((x&1)<<i),0),upper=q.reduce((t,x,i)=>t|(((x>>1)&1)<<i),0);
  const bits=Array.from({length:6},(_,i)=>((lower|(upper<<3))>>i)&1).join('');
  return {context,lower,upper,bits,contextNumber:context[0]*9+context[1]*3+context[2]};
 }
-/** Exact bijection HSN[1728] <-> 64 symbolic line masks x 27 context cells. */
-export function yijingAddress(hsn){
- const o=numericCode(hsn);
- return Object.freeze({namespace:YIJING_NAMESPACE,ontologyEdition:EDITION,ontologySha256:ARIADNE_SHA256,
+function symbolFingerprint({namespace,code,codec,contextTopology}){
+ return sha(canonical({namespace,ontologySha256:ARIADNE_SHA256,code,codec,contextTopology}));
+}
+/** Explicitly versioned reversible 64 x 27 mapping; source formulas do NOT establish equivalence. */
+export function yijingAddress(hsn,{codec=YIJING_CODECS.CUPWAKE_X4,topology=CONTEXT_TOPOLOGIES.BOUNDED}={}){
+ selectedCodec(codec);selectedTopology(topology);
+ const o=numericCode(hsn,codec),namespace=symbolNamespace(codec);
+ const code=`Y${o.bits}.C${String(o.contextNumber).padStart(2,'0')}`;
+ return Object.freeze({namespace,ontologyEdition:EDITION,ontologySha256:ARIADNE_SHA256,
+  codec,contextTopology:topology,symbolFingerprint:symbolFingerprint({namespace,code,codec,contextTopology:topology}),
   hsn,context:Object.freeze(o.context),lowerTrigram:o.lower,upperTrigram:o.upper,
   trigramNames:Object.freeze([TRIGRAMS[o.lower],TRIGRAMS[o.upper]]),
-  linesBottomToTop:o.bits,code:`Y${o.bits}.C${String(o.contextNumber).padStart(2,'0')}`,
+  linesBottomToTop:o.bits,code,
   traditionalKingWenNumber:null,semanticEquivalence:false,scientificClaim:false,authorityEffect:'NONE'});
 }
-export function yijingDecode(code){
- const m=typeof code==='string'?CODE.exec(code):null;
+/** Reject bare Y...C... identifiers: they collide between Cupwake X4 and Symbiosis X3. */
+export function yijingDecode(encoded){
+ const v=record(encoded),codec=selectedCodec(v.codec),topology=selectedTopology(v.contextTopology);
+ if(v.namespace!==symbolNamespace(codec)||v.ontologyEdition!==EDITION||v.ontologySha256!==ARIADNE_SHA256)throw Error('YIJING_NAMESPACE_OR_EDITION_DRIFT');
+ const m=typeof v.code==='string'?CODE.exec(v.code):null;
  if(!m)throw Error('YIJING_CODE_INVALID');
+ if(v.symbolFingerprint!==undefined && v.symbolFingerprint!==symbolFingerprint(v))throw Error('YIJING_FINGERPRINT_MISMATCH');
  const t=Number(m[2]),context=[Math.floor(t/9),Math.floor(t/3)%3,t%3];
  const lower=Number(m[1][0])+2*Number(m[1][1])+4*Number(m[1][2]);
  const upper=Number(m[1][3])+2*Number(m[1][4])+4*Number(m[1][5]);
- const axis=context.map((v,i)=>4*v+((lower>>i)&1)+2*((upper>>i)&1));
- return encode(...axis.map(x=>x+1));
+ const axis=context.map((c,i)=>codec===YIJING_CODECS.CUPWAKE_X4?
+   4*c+((lower>>i)&1)+2*((upper>>i)&1) :
+   3*(((lower>>i)&1)+2*((upper>>i)&1))+c);
+ const hsn=encode(...axis.map(x=>x+1));
+ if(v.hsn!==undefined&&v.hsn!==hsn)throw Error('YIJING_HSN_IDENTITY_DRIFT');
+ return hsn;
 }
-export function changeLines(hsn,mask){
+export function changeLines(hsn,mask,options={}){
  if(!Number.isInteger(mask)||mask<0||mask>63)throw Error('LINE_MASK_INVALID');
- const o=numericCode(hsn),c=(o.lower|(o.upper<<3))^mask;
+ const o=yijingAddress(hsn,options),c=(o.lowerTrigram|(o.upperTrigram<<3))^mask;
  const line=Array.from({length:6},(_,i)=>(c>>i)&1).join('');
- return yijingDecode(`Y${line}.C${String(o.contextNumber).padStart(2,'0')}`);
+ const ref={namespace:o.namespace,ontologyEdition:o.ontologyEdition,ontologySha256:o.ontologySha256,
+   codec:o.codec,contextTopology:o.contextTopology,code:`Y${line}.C${o.code.slice(-2)}`};
+ return yijingDecode(ref);
 }
-export function contextStep(hsn,axis,direction){
+export function contextStep(hsn,axis,direction,options={}){
  if(!Number.isInteger(axis)||axis<0||axis>2||!(direction===-1||direction===1))throw Error('CONTEXT_STEP_INVALID');
- const o=numericCode(hsn),c=o.context.slice();c[axis]+=direction;
- if(c[axis]<0||c[axis]>2)return null;
+ const o=yijingAddress(hsn,options),c=o.context.slice();c[axis]+=direction;
+ if(o.contextTopology===CONTEXT_TOPOLOGIES.CYCLIC)c[axis]=(c[axis]+3)%3;
+ else if(c[axis]<0||c[axis]>2)return null;
  const t=c[0]*9+c[1]*3+c[2];
- return yijingDecode(`Y${o.bits}.C${String(t).padStart(2,'0')}`);
+ return yijingDecode({namespace:o.namespace,ontologyEdition:o.ontologyEdition,ontologySha256:o.ontologySha256,
+  codec:o.codec,contextTopology:o.contextTopology,code:`Y${o.linesBottomToTop}.C${String(t).padStart(2,'0')}`});
 }
 export function roleOf(hsn){return decode(hsn).s<=7?'DOMAIN_SPECIALIZATION':'EPISTEMIC_META';}
 export function reviewMethodSubject(hsn,subject=null){
@@ -181,7 +214,9 @@ export function inspectIssuedYijing({root,queryBinding,fullScores=null,maxHits=1
    const buf=Buffer.allocUnsafe(1728*8);scores.forEach((s,i)=>buf.writeDoubleLE(s,i*8));
    fullScoreSha=sha(Buffer.concat([Buffer.from('atlas.f64le.ordered-scores/v1\0'),buf]));
   }
-  const notes=Object.freeze(ranked.slice(0,maxHits).map(x=>Object.freeze({hsn:x.hsn,role:roleOf(x.hsn),yijing:yijingAddress(x.hsn),gf7:gf7Display(x.hsn),glyph:authoredGlyphDisplay(x.hsn),
+  const notes=Object.freeze(ranked.slice(0,maxHits).map(x=>Object.freeze({hsn:x.hsn,role:roleOf(x.hsn),yijing:yijingAddress(x.hsn),
+    yijingAlternative:Object.freeze({...yijingAddress(x.hsn,{codec:YIJING_CODECS.SYMBIOSIS_X3}),
+      provenance:'RECONSTRUCTED_FROM_PEER_FORMULA_NOT_ORIGINAL_SOURCE_BYTES'}),gf7:gf7Display(x.hsn),glyph:authoredGlyphDisplay(x.hsn),
     kg8:Object.freeze({namespace:'KG8',status:'EXACT_HOST_LOOKUP_REQUIRED'}),scoreUnchanged:true})));
   return Object.freeze({schema:SCHEMA,status:'LOCAL_SYMBOLIC_INSPECTION_ONLY',ontologyEdition:EDITION,ontologySha256:ARIADNE_SHA256,
     evidenceSourceEdition:lineage.sourceEdition,evidenceSourceSha256:p.sourceSha256,
