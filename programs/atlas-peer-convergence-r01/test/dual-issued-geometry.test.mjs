@@ -29,6 +29,8 @@ test('rejected unsupported purpose',()=>{const x=f();x.purpose='TRAINING';assert
 test('root getter never called',()=>{const x=f();let called=0;Object.defineProperty(x,'tenant',{get(){called++;return 'tenant-A'}});assert.equal(makeDualIssuedGeometry(x).status,'HOLD');assert.equal(called,0);});
 test('proxy root rejected',()=>{assert.equal(makeDualIssuedGeometry(new Proxy(f(),{})).status,'HOLD');});
 test('extra field rejected',()=>{const x=f();x.isAdmin=true;assert.equal(makeDualIssuedGeometry(x).status,'HOLD');});
+test('malicious score buffer getter never invoked',()=>{const x=f();let calls=0;x.scores={get buffer(){calls++;return null;}};assert.equal(makeDualIssuedGeometry(x).status,'HOLD');assert.equal(calls,0);});
+test('typed-array subclass with overrideable iterator rejected',()=>{const x=f();class Evil extends Float64Array{[Symbol.iterator](){throw Error('EXPLOIT')}};x.scores=new Evil(1728);assert.equal(makeDualIssuedGeometry(x).status,'HOLD');});
 test('shared underlying frame rejected, if supported',()=>{if(typeof SharedArrayBuffer==='undefined')return;const x=f();x.scores=new Float64Array(new SharedArrayBuffer(1728*8));assert.equal(makeDualIssuedGeometry(x).status,'HOLD');});
 test('structural DOMAIN split by S not N',()=>{assert.equal(checkMethodSubject('H01.S01.N08',null).status,'DOMAIN_POSITION');assert.equal(checkMethodSubject('H01.S08.N01','H01.S01.N08').status,'STRUCTURALLY_SCOPED_FOR_REVIEW');});
 test('METHOD node cannot be subject of METHOD node',()=>{assert.equal(checkMethodSubject('H01.S08.N01','H01.S10.N01').status,'HOLD_SUBJECT_MISMATCH');});
