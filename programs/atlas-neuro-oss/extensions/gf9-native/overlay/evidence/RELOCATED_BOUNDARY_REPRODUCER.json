@@ -1,0 +1,11 @@
+{
+  "schema": "atlas.oss.public-receipt-projection/v1",
+  "originalReceiptSha256": "1c7eea7e8cb71cede8f1c57b063eb14227838b86108df031d081a969b7353996",
+  "projection": "No owner/source bodies. Original observed receipt.",
+  "originalReceipt": {
+    "schema": "atlas.oss.relocated-reproducer/v1",
+    "originalSha256": "5df390c5dd4f8202db300dc9d7c1af6c871963352944ab8f5ee14321e1a94e44",
+    "relocatedSha256": "3a4a8f2e09301a58eecc9579dcd0989e93ab2d452149300f90dec2962e656758",
+    "change": "Only two import paths relocated to package-relative ../src; assertions and fixture bytes unchanged"
+  }
+}
