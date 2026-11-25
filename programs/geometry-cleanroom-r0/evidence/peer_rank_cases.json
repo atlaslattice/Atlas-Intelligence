@@ -1,0 +1,499 @@
+{
+  "schema": "atlas.geometry.peer-rank-fixtures/v1",
+  "sourceAttribution": "SwarmChat #380, rank_guard.py, separate conversation",
+  "sourceZipSha256": "662da9b798e17e1e96421eb90c4ab67d02821682f803ddb1de84590d55b12f41",
+  "oracle": "independent peer Python #380 implementation; synthetic fixtures only",
+  "cases": [
+    {
+      "name": "clear-margin",
+      "ids": [
+        "a",
+        "b",
+        "c"
+      ],
+      "baseline": [
+        3,
+        2,
+        1
+      ],
+      "candidate": [
+        3.0001,
+        1.9999,
+        1
+      ],
+      "bound": 0.001,
+      "k": 2,
+      "expectedJs": "STABLE_ON_SUPPLIED_SCORES",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "same-order-near-tie",
+      "ids": [
+        "a",
+        "b"
+      ],
+      "baseline": [
+        1,
+        1
+      ],
+      "candidate": [
+        1,
+        1
+      ],
+      "bound": 0.001,
+      "k": 2,
+      "expectedJs": "HOLD_NEAR_TIE",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "reverse-near-tie",
+      "ids": [
+        "a",
+        "b"
+      ],
+      "baseline": [
+        1,
+        1.00001
+      ],
+      "candidate": [
+        1.00001,
+        1
+      ],
+      "bound": 2e-05,
+      "k": 2,
+      "expectedJs": "HOLD_RANK_CHANGED",
+      "expectedBaseline": [
+        "b",
+        "a"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "topk-boundary-tie",
+      "ids": [
+        "a",
+        "b",
+        "c"
+      ],
+      "baseline": [
+        2,
+        1,
+        1
+      ],
+      "candidate": [
+        2,
+        1,
+        1
+      ],
+      "bound": 0,
+      "k": 2,
+      "expectedJs": "HOLD_NEAR_TIE",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "all-clear",
+      "ids": [
+        "a",
+        "b",
+        "c"
+      ],
+      "baseline": [
+        3,
+        2,
+        1
+      ],
+      "candidate": [
+        3,
+        2,
+        1
+      ],
+      "bound": 0,
+      "k": 2,
+      "expectedJs": "STABLE_ON_SUPPLIED_SCORES",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "tie-ID-order",
+      "ids": [
+        "b",
+        "a"
+      ],
+      "baseline": [
+        1,
+        1
+      ],
+      "candidate": [
+        1,
+        1
+      ],
+      "bound": 0,
+      "k": 2,
+      "expectedJs": "HOLD_NEAR_TIE",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "cross-topk",
+      "ids": [
+        "a",
+        "b",
+        "c"
+      ],
+      "baseline": [
+        3,
+        2,
+        1.999999
+      ],
+      "candidate": [
+        3,
+        1.999999,
+        2
+      ],
+      "bound": 1e-06,
+      "k": 2,
+      "expectedJs": "HOLD_RANK_CHANGED",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "c"
+      ]
+    },
+    {
+      "name": "shuffled-identity",
+      "ids": [
+        "b",
+        "a"
+      ],
+      "baseline": [
+        1,
+        2
+      ],
+      "candidate": [
+        1,
+        2
+      ],
+      "bound": 0,
+      "k": 2,
+      "expectedJs": "STABLE_ON_SUPPLIED_SCORES",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "single",
+      "ids": [
+        "one"
+      ],
+      "baseline": [
+        1
+      ],
+      "candidate": [
+        1
+      ],
+      "bound": 0,
+      "k": 1,
+      "expectedJs": "STABLE_ON_SUPPLIED_SCORES",
+      "expectedBaseline": [
+        "one"
+      ],
+      "expectedCandidate": [
+        "one"
+      ]
+    },
+    {
+      "name": "unaffected-last",
+      "ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "baseline": [
+        7,
+        6,
+        5,
+        4
+      ],
+      "candidate": [
+        7,
+        6.00001,
+        5,
+        4
+      ],
+      "bound": 2e-05,
+      "k": 2,
+      "expectedJs": "STABLE_ON_SUPPLIED_SCORES",
+      "expectedBaseline": [
+        "a",
+        "b"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "margin-just-above",
+      "ids": [
+        "a",
+        "b"
+      ],
+      "baseline": [
+        1,
+        0.997999
+      ],
+      "candidate": [
+        1,
+        0.997999
+      ],
+      "bound": 0.001,
+      "k": 1,
+      "expectedJs": "STABLE_ON_SUPPLIED_SCORES",
+      "expectedBaseline": [
+        "a"
+      ],
+      "expectedCandidate": [
+        "a"
+      ]
+    },
+    {
+      "name": "margin-exact-equality",
+      "ids": [
+        "a",
+        "b"
+      ],
+      "baseline": [
+        1,
+        0.998
+      ],
+      "candidate": [
+        1,
+        0.998
+      ],
+      "bound": 0.001,
+      "k": 1,
+      "expectedJs": "STABLE_ON_SUPPLIED_SCORES",
+      "expectedBaseline": [
+        "a"
+      ],
+      "expectedCandidate": [
+        "a"
+      ]
+    },
+    {
+      "name": "multiple-unsafe",
+      "ids": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "baseline": [
+        3,
+        3,
+        3,
+        2
+      ],
+      "candidate": [
+        3,
+        3,
+        3,
+        2
+      ],
+      "bound": 0,
+      "k": 3,
+      "expectedJs": "HOLD_NEAR_TIE",
+      "expectedBaseline": [
+        "a",
+        "b",
+        "c"
+      ],
+      "expectedCandidate": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "name": "cancelled-near-tie",
+      "ids": [
+        "H01.S01.N01",
+        "H01.S01.N02",
+        "H01.S01.N03"
+      ],
+      "baseline": [
+        1.000000000000001,
+        1,
+        0
+      ],
+      "candidate": [
+        1,
+        1.000000000000001,
+        0
+      ],
+      "bound": 2e-15,
+      "k": 1,
+      "expectedJs": "HOLD_RANK_CHANGED",
+      "expectedBaseline": [
+        "H01.S01.N01"
+      ],
+      "expectedCandidate": [
+        "H01.S01.N02"
+      ]
+    },
+    {
+      "name": "changed-big-order",
+      "ids": [
+        "z",
+        "y",
+        "x"
+      ],
+      "baseline": [
+        3,
+        2,
+        1
+      ],
+      "candidate": [
+        1,
+        2,
+        3
+      ],
+      "bound": 2,
+      "k": 2,
+      "expectedJs": "HOLD_RANK_CHANGED",
+      "expectedBaseline": [
+        "z",
+        "y"
+      ],
+      "expectedCandidate": [
+        "x",
+        "y"
+      ]
+    },
+    {
+      "name": "bound-violated",
+      "ids": [
+        "a",
+        "b"
+      ],
+      "baseline": [
+        3,
+        1
+      ],
+      "candidate": [
+        2,
+        1
+      ],
+      "bound": 0.1,
+      "k": 1,
+      "expectedJs": "HOLD_BOUND_VIOLATION",
+      "expectedBaseline": [],
+      "expectedCandidate": []
+    },
+    {
+      "name": "duplicate-identity",
+      "ids": [
+        "a",
+        "a"
+      ],
+      "baseline": [
+        3,
+        1
+      ],
+      "candidate": [
+        3,
+        1
+      ],
+      "bound": 0,
+      "k": 1,
+      "expectedJs": "HOLD_INVALID_INPUT",
+      "expectedBaseline": [],
+      "expectedCandidate": []
+    },
+    {
+      "name": "bad-k",
+      "ids": [
+        "a",
+        "b"
+      ],
+      "baseline": [
+        3,
+        1
+      ],
+      "candidate": [
+        3,
+        1
+      ],
+      "bound": 0,
+      "k": 0,
+      "expectedJs": "HOLD_INVALID_INPUT",
+      "expectedBaseline": [],
+      "expectedCandidate": []
+    },
+    {
+      "name": "bad-bound",
+      "ids": [
+        "a",
+        "b"
+      ],
+      "baseline": [
+        3,
+        1
+      ],
+      "candidate": [
+        3,
+        1
+      ],
+      "bound": -1,
+      "k": 1,
+      "expectedJs": "HOLD_INVALID_INPUT",
+      "expectedBaseline": [],
+      "expectedCandidate": []
+    }
+  ]
+}
