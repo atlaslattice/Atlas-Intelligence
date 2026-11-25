@@ -69,12 +69,17 @@ function assert(ok,reason) { if (!ok) reject(reason); }
  * Unknown/missing/contradictory evidence is held. A complete REQUIRED set is
  * assured only to the extent the host independently pinned that set.
  */
-export function reviewRequiredClosure({trustedAnchor,manifest,observed}) {
+export function reviewRequiredClosure(input) {
   const diagnostics=[];
   const hold=(code,detail='')=>{if(diagnostics.length<16) diagnostics.push({code,detail:String(detail).slice(0,128)});};
   let manifestHash=null, selectionHash=null;
   try {
-    const a=normalize(trustedAnchor),m=normalize(manifest),o=normalize(observed);
+    // Validate the WHOLE untrusted argument before accessing its properties.
+    // Parameter destructuring above the try block would invoke a getter or Proxy
+    // trap and allow malformed input to escape as an exception rather than HOLD.
+    const root=normalize(input);
+    assert(exact(root,['trustedAnchor','manifest','observed']),'INPUT_FIELDS');
+    const a=root.trustedAnchor,m=root.manifest,o=root.observed;
     manifestHash=sha256(m);
     assert(exact(a,['manifestSha256','selectionSha256','policySha256']),'ANCHOR_SCHEMA');
     assert(isHex(a.manifestSha256) && isHex(a.selectionSha256) && isHex(a.policySha256),'ANCHOR_DIGEST');
@@ -127,8 +132,11 @@ export function reviewRequiredClosure({trustedAnchor,manifest,observed}) {
     if(!seenAllowedPurposes.has('INFERENCE'))hold('INFERENCE_USE_MISSING');
     if(m.selection.deliveryPurpose==='CITATION' && !seenAllowedPurposes.has('DISCLOSURE'))hold('DISCLOSURE_USE_MISSING');
   }catch(e){hold('INVALID_OR_UNTRUSTED_INPUT',e.message);}
+  // A shallow-frozen result is not enough: callers must not mutate the logged
+  // reason codes after a negative review has been returned.
+  const frozenDiagnostics=Object.freeze(diagnostics.map(d=>Object.freeze(d)));
   return Object.freeze({schema:RESULT_SCHEMA,status:diagnostics.length?'HOLD_METADATA':'MATCHED_PINNED_METADATA',
-    manifestSha256:manifestHash,selectionSha256:selectionHash,diagnostics:Object.freeze(diagnostics),
+    manifestSha256:manifestHash,selectionSha256:selectionHash,diagnostics:frozenDiagnostics,
     requiredSetIndependentlyComplete:false,sourceRightsAttested:false,hostedExecutionVerified:false,
     releaseAuthorized:false,trainingEligible:false,modelUpdated:false,participantIdentityVerified:false,
     observedNeuralQualityGain:false,authorityEffect:'NONE'});
