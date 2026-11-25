@@ -1,0 +1,12 @@
+{
+  "name": "atlas-geometree-cleanroom-r0",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Independent local geometry-native Atlas reference candidate; no production model/host/data",
+  "scripts": {
+    "test": "node --test test/kernel.test.mjs",
+    "test:jitless": "node --jitless --test test/kernel.test.mjs",
+    "bench:synthetic": "node src/benchmark.mjs"
+  }
+}
