@@ -1,4 +1,4 @@
-# Atlas Home R01 — one original geometry, a welcoming front door
+# Atlas Home R02 — one original geometry, a welcoming front door
 
 **Draft / source-only / no host deployment.** Atlas Home is an additive experience and local front-door review layer on the existing [PR75](https://github.com/atlaslattice/Atlas-Intelligence/pull/75) all-peer source convergence. The **existing** PR75 `createOneFramePeerComposer` remains the sole neural composition entry; `src/existing-peer.mjs` imports it. PR74's 12 otherwise-missing public source files are cherry-picked verbatim into the dependent source branch; its three already-present identical files are not duplicated.
 
@@ -6,7 +6,7 @@
 
 Open `web/atlas-home-standalone.html` locally in a browser. It is a **self-contained offline** home, not a connected application. No external scripts, provider calls, storage, cookies or user content. If file navigation is restricted, serve these static files with your locally authorized file viewer; do not work around host access controls.
 
-A welcoming threshold, responsive decorative Indra's net, twelve source-port rooms, exact HSN coordinate picker (12 House / 12 Sphere / 12 Node), 144-position navigation grid, eight protected non-Work doorway previews, quiet mode and an easy exit. UI does not imply hosted execution or source rights.
+A welcoming threshold, responsive decorative Indra's net, twelve source-port rooms, exact HSN text entry plus coordinate picker (12 House / 12 Sphere / 12 Node), 144-position navigation grid, eight protected non-Work doorway previews, quiet mode and an easy exit. UI does not imply hosted execution or source rights.
 
 ## Actual source integration
 
@@ -21,6 +21,12 @@ A welcoming threshold, responsive decorative Indra's net, twelve source-port roo
 - `docs/CHARTER.md`: “a home worth coming home to,” with meaningful room boundaries, consent, agency, honest uncertainty and no productivity debt.
 - `docs/INSPECTION_MATRIX_144.json`: 12 existing Work ports × 12 evidence/engineering review phases, all proposed, never 144 completed features.
 - `docs/SYMBIOTIC_CONCEPTS_12.json`: twelve testable A+B=C proposals, with ablations, falsifiers and explicit status.
+
+## R02 route-continuity repair
+
+A malformed HSN holds new Work preview, clears any prior Work selection and invalidates in-flight Work results while keeping the last valid *public* coordinate visible. A valid re-entry requires an explicit new Work-room choice. Leaving clears the optional ephemeral ticket. [R02 route and source-scope repair](docs/R02_ROUTE_SCOPE_REPAIR.md) records the negative observations and local tests.
+
+R02 local acceptance: **114/114** Node tests in normal and JIT-disabled mode; **30/30** desktop/mobile browser assertions and **4** standalone-inline checks. Zero external requests and browser JS errors. The historical R01 source bundle remains unchanged.
 
 ## Run
 
