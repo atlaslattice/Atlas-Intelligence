@@ -1,0 +1,23 @@
+{
+  "schema": "atlas.local.mt03.redacted-evidence/v1",
+  "sourceEdition": "ariadne-original-v0.7",
+  "registrySha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+  "selectedHeadStateSha256": "736fdd341778468d32d89ca3cb60b71d415f678dae7b2efdcec978a08b7432d8",
+  "realModelExecutedLocally": true,
+  "loopbackHttpVerified": true,
+  "oneEncoderAndHeadPerRequest": true,
+  "unauthorizedRequestHttpStatus": 401,
+  "full1728ScoreHashBound": true,
+  "embedding384HashBound": true,
+  "dualEditionRanksIdentical": true,
+  "realQuestionCount": 12,
+  "realTop12PositionsChecked": 144,
+  "sameNeuralScores": true,
+  "symbolicCodesDifferentAcross144Positions": 143,
+  "realIndependentHumanJudgments": 0,
+  "externallyHosted": false,
+  "thirdPartySourceRightsVerified": false,
+  "atlasPhysicalModeCalibrationVerified": false,
+  "realWeightUpdates": 0,
+  "redactedQueryTextAndRawScores": true
+}
