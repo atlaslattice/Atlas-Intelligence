@@ -1,0 +1,19 @@
+{
+  "review_date": "2026-11-25",
+  "schema": "atlas.os.open-suite.evidence/v1",
+  "sources": [
+    {"topic":"ArtCraft 17 apps; maturity labels", "url":"https://getartcraft.com/apps", "result":"official project lineup; early alpha and in-development projects present"},
+    {"topic":"ArtCraft upstream attribution/trademark separation", "url":"https://github.com/storytold/photocraft", "result":"MIT/Apache dual license claim; artwork/font and trademarks separate"},
+    {"topic":"LibreOffice writer/calc/impress", "url":"https://www.libreoffice.org/", "result":"free office suite"},
+    {"topic":"Nextcloud self-hosted Files and Office", "url":"https://nextcloud.com/", "result":"open-source collaboration platform, server or provider required"},
+    {"topic":"Immich photo sync and backup", "url":"https://docs.immich.app/features/mobile-backup/", "result":"selected-album photo/video server upload; need database and asset backups"},
+    {"topic":"LibreWolf content blocker", "url":"https://librewolf.net/", "result":"Firefox-based hardened browser includes uBlock Origin"},
+    {"topic":"LibreWolf security update behavior", "url":"https://librewolf.net/docs/faq/", "result":"updates via package manager, no built-in auto-updater"},
+    {"topic":"FIDO/WebAuthn service-specific passkeys", "url":"https://fidoalliance.org/passkeys/", "result":"biometrics stay local; each online service domain controls passkeys"},
+    {"topic":"Authelia as open-source OIDC provider", "url":"https://github.com/authelia/authelia", "result":"SSO for enrolled OIDC apps and MFA"},
+    {"topic":"WireGuard is a protocol and tunnel", "url":"https://www.wireguard.com/", "result":"keys and real VPN peer/endpoints needed"},
+    {"topic":"Verified Flathub developer ownership", "url":"https://docs.flathub.org/docs/for-users/verification", "result":"developer confirms app ID ownership, not universal package security guarantee"},
+    {"topic":"Open voxel gaming source", "url":"https://github.com/luanti-org/luanti", "result":"Luanti free/open game engine and mod ecosystem"}
+  ],
+  "nonclaims": ["No packages downloaded or locally installed", "No external source code vendored", "No remote authenticated sessions or security services", "Other 44 license claims pending per-version review", "No source owner contacted or permission inferred"]
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "atlas.os.open-suite.release-manifest/v1",
+  "source_only": true,
+  "predecessor_elf_sha256": "06e68681508a86dd4cde4f438f0ce02040bac7d9a68989bfef850fc8fd8fef29",
+  "source_count": 22,
+  "files": {
+    "Makefile": {
+      "sha256": "2262e8f49ebfa5eea45c5cb1cc3899f5743ef3c96743b6f83204cb446463c500",
+      "bytes": 726
+    },
+    "README.md": {
+      "sha256": "b54a226b5ba786a51b26aff42a2e679be0fcda7a4085c10acd861d02a5ec7281",
+      "bytes": 5631
+    },
+    "data/assessment_144.json": {
+      "sha256": "51b38b582d5e340c382a51572ed62a3b8c147d1cf2ecfcca172b0fdc8e3111b3",
+      "bytes": 47969
+    },
+    "data/catalog.json": {
+      "sha256": "ecd5370fbca63ab36d0a5e2bf327b9bdd5f93a607e531e38cb0e89b0309a0b5c",
+      "bytes": 52471
+    },
+    "data/peer_desktop55_crosswalk.json": {
+      "sha256": "8b7aef71f7ffb62f39bf447c1332eed6cd8dd3a952a35c20aaffe52d32126779",
+      "bytes": 24055
+    },
+    "docs/ARCHITECTURE.md": {
+      "sha256": "74de55fe1713e03f42cc44e7414c0123a125680d3f0a3ce0b1f96cff1c19e6e6",
+      "bytes": 7827
+    },
+    "docs/PEER_DESKTOP_CONVERGENCE.md": {
+      "sha256": "5fcd8bc99b0d77335b9727322abf8ee173e2d69abbc8046d2c16e9da16049df3",
+      "bytes": 2411
+    },
+    "docs/PROVENANCE_POLICY.md": {
+      "sha256": "381db3377e9b0d07a4b03739d411d8ff634ea95a0058ff17984fda7bacf3bb1c",
+      "bytes": 2024
+    },
+    "docs/SOURCE_REFERENCES.json": {
+      "sha256": "0e4d6787947f0d1cf2ee058ed80dd25f458b0289d81744705c6c346f0cf1b4d4",
+      "bytes": 2326
+    },
+    "src/aos_open_suite.c": {
+      "sha256": "730e1e8fecd271e459b0a5b4b773f276931ceb9014ac9c7818d3257f51e28724",
+      "bytes": 1229
+    },
+    "src/aos_open_suite.h": {
+      "sha256": "c13a7e492f8536d5533b0b20636aea0c6ad4c9e616d9338af56d36b469b84dab",
+      "bytes": 1177
+    },
+    "src/catalog_service.py": {
+      "sha256": "4bbf2efe496dcdfd65d6b7f00f87b9ffaaac19a45bbb8f3ce15078fb99536a37",
+      "bytes": 8724
+    },
+    "tests/test_browser.py": {
+      "sha256": "1bd07ae40a9d142a3c3d91813644cda7f80f263ca42c10f59ed3123b0b5d863a",
+      "bytes": 2575
+    },
+    "tests/test_c.c": {
+      "sha256": "03a78bc92c06b8ae312d0cc7e22a06130abd64ab1c44630183430c837a673232",
+      "bytes": 2112
+    },
+    "tests/test_catalog.py": {
+      "sha256": "1f2ef256559cc15d7325cbb4ce32b54fcf7a7b8a0eb3ce92c25d622f4073a92c",
+      "bytes": 6187
+    },
+    "tests/test_peer_merge.py": {
+      "sha256": "80afd0b69d814b1c2c24ff5e82c54ccddd3da359af2028b86de825558b7199f1",
+      "bytes": 2134
+    },
+    "tools_build_ui.py": {
+      "sha256": "c72c6fe18814c151fe7d742f03a035e57bbd5534f9b34cde2ef8f58268925631",
+      "bytes": 14029
+    },
+    "tools_peer_reconcile.py": {
+      "sha256": "60a5452cafbdff453112aa8bf6864ee3edc39f48df59b0db915ec9925b771b0f",
+      "bytes": 2988
+    },
+    "tools_release.py": {
+      "sha256": "bf234a78a1b855e0b883e0e8727aa1667164729631876b137b8216ea9fc155c7",
+      "bytes": 1911
+    },
+    "tools_review_matrix.py": {
+      "sha256": "2afdfcff92924827ab4327ae400a537e4a023a3e0abdbdeb3e83b94c3cdebf70",
+      "bytes": 1264
+    },
+    "tools_seed.py": {
+      "sha256": "fd77ebfe3bba7531531cc839718a382f509d8a44d18127b4cf7646d58cf16a5e",
+      "bytes": 10002
+    },
+    "web/atlas-open-suite.html": {
+      "sha256": "0d1b1af2e9226d84b7c4c4fd24e3436b35e4dd27800490529cfc2dc42154643b",
+      "bytes": 54174
+    }
+  },
+  "curated_app_count": 44,
+  "artcraft_previews": 17,
+  "staged_peer_app_count": 19,
+  "reconciled_unique_source_candidates": 63,
+  "proposed_review_cells": 144,
+  "hosted": false,
+  "booted": false,
+  "installed_apps": 0,
+  "accounts_created": 0,
+  "vpn_active": false,
+  "third_party_bytes_vendored": 0
+}

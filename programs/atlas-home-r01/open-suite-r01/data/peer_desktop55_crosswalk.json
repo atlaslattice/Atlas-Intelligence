@@ -1,0 +1,868 @@
+{
+  "schema": "atlas.os.open-suite.peer-crosswalk/v1",
+  "status": "LOCAL_SOURCE_METADATA_RECONCILED_NOT_INSTALLED",
+  "base_catalog_apps": 44,
+  "peer_catalog_apps": 55,
+  "semantic_unique_projects": 63,
+  "counts": {
+    "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL": 17,
+    "EXACT_ID_ALREADY_PRESENT": 19,
+    "STAGED_PEER_ONLY_NOT_CURATED": 19
+  },
+  "peer_provenance": {
+    "reference_libfile": "libfile_fa2bd4cda6908191b77272eab0640078",
+    "zip_sha256": "2bb1c2183ec55cb3e311a6dba4cae4c64e14d355096330e0109370c73fd6bebb",
+    "foundry_source_seq": 159,
+    "peer_readback_verified": true
+  },
+  "records": [
+    {
+      "peer_id": "libreoffice",
+      "atlas_id": "libreoffice",
+      "name": "LibreOffice",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.libreoffice.org/licenses/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "okular",
+      "atlas_id": null,
+      "name": "Okular",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://apps.kde.org/okular/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "nextcloud",
+      "atlas_id": "nextcloud",
+      "name": "Nextcloud Files",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://nextcloud.com/files/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "syncthing",
+      "atlas_id": "syncthing",
+      "name": "Syncthing",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://syncthing.net/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "restic",
+      "atlas_id": null,
+      "name": "restic",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://restic.net/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "gimp",
+      "atlas_id": "gimp",
+      "name": "GIMP",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.gimp.org/about/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "krita",
+      "atlas_id": "krita",
+      "name": "Krita",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://krita.org/en/about/license/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "inkscape",
+      "atlas_id": "inkscape",
+      "name": "Inkscape",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://inkscape.org/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "darktable",
+      "atlas_id": "darktable",
+      "name": "darktable",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.darktable.org/about/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "penpot",
+      "atlas_id": "penpot",
+      "name": "Penpot",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://penpot.app/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "blender",
+      "atlas_id": "blender",
+      "name": "Blender",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.blender.org/about/",
+        "https://www.blender.org/about/license/?wvideo=akzb57a5z3"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "freecad",
+      "atlas_id": "freecad",
+      "name": "FreeCAD",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.freecad.org/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "godot",
+      "atlas_id": "godot",
+      "name": "Godot",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://godotengine.org/license/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "kdenlive",
+      "atlas_id": "kdenlive",
+      "name": "Kdenlive",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://apps.kde.org/kdenlive/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "obs",
+      "atlas_id": "obs",
+      "name": "OBS Studio",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://obsproject.com/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "vlc",
+      "atlas_id": "vlc",
+      "name": "VLC",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://images.videolan.org/vlc/download-windows.html"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "audacity",
+      "atlas_id": "audacity",
+      "name": "Audacity",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.audacityteam.org/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "firefox",
+      "atlas_id": null,
+      "name": "Firefox",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "ublock",
+      "atlas_id": null,
+      "name": "uBlock Origin",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "brave",
+      "atlas_id": null,
+      "name": "Brave",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://github.com/brave/brave-browser"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "keepassxc",
+      "atlas_id": "keepassxc",
+      "name": "KeePassXC",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://keepassxc.org/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "keycloak",
+      "atlas_id": null,
+      "name": "Keycloak",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://www.keycloak.org/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "fido",
+      "atlas_id": null,
+      "name": "FIDO2 / WebAuthn",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://fidoalliance.org/specifications/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "wireguard",
+      "atlas_id": "wireguard",
+      "name": "WireGuard",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.wireguard.com/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "clamav",
+      "atlas_id": null,
+      "name": "ClamAV",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://www.clamav.net/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "suricata",
+      "atlas_id": null,
+      "name": "Suricata",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://suricata.io/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "wazuh",
+      "atlas_id": null,
+      "name": "Wazuh",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://wazuh.com/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "tuf",
+      "atlas_id": null,
+      "name": "The Update Framework",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://theupdateframework.io/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "cosign",
+      "atlas_id": null,
+      "name": "Sigstore Cosign",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://docs.sigstore.dev/cosign/verifying/verify/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "heroic",
+      "atlas_id": null,
+      "name": "Heroic Games Launcher",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://heroicgameslauncher.com/faq"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "supertuxkart",
+      "atlas_id": "supertuxkart",
+      "name": "SuperTuxKart",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://supertuxkart.net/gl/FAQ"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "0ad",
+      "atlas_id": null,
+      "name": "0 A.D.",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://play0ad.com/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "openttd",
+      "atlas_id": "openttd",
+      "name": "OpenTTD",
+      "disposition": "EXACT_ID_ALREADY_PRESENT",
+      "source_links": [
+        "https://www.openttd.org/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "photocraft",
+      "atlas_id": "artcraft-photocraft",
+      "name": "PhotoCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/photocraft",
+        "https://www.getartcraft.com/apps",
+        "https://github.com/storytold/photocraft"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "vectorcraft",
+      "atlas_id": "artcraft-vectorcraft",
+      "name": "VectorCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/vectorcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "filmcraft",
+      "atlas_id": "artcraft-filmcraft",
+      "name": "FilmCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/filmcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "lightcraft",
+      "atlas_id": "artcraft-lightcraft",
+      "name": "LightCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/lightcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "pdfcraft",
+      "atlas_id": "artcraft-pdfcraft",
+      "name": "PdfCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/pdfcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "effectcraft",
+      "atlas_id": "artcraft-effectcraft",
+      "name": "EffectCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/effectcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "anicraft",
+      "atlas_id": "artcraft-anicraft",
+      "name": "AniCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/anicraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "designcraft",
+      "atlas_id": "artcraft-designcraft",
+      "name": "DesignCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/designcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "figcraft",
+      "atlas_id": "artcraft-figcraft",
+      "name": "FigCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/figcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "texturecraft",
+      "atlas_id": "artcraft-texturecraft",
+      "name": "TextureCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/texturecraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "materialcraft",
+      "atlas_id": "artcraft-materialcraft",
+      "name": "MaterialCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/materialcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "soundcraft",
+      "atlas_id": "artcraft-soundcraft",
+      "name": "SoundCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/soundcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "wordcraft",
+      "atlas_id": "artcraft-wordcraft",
+      "name": "WordCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/wordcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "deckcraft",
+      "atlas_id": "artcraft-deckcraft",
+      "name": "DeckCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/deckcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "cadcraft",
+      "atlas_id": "artcraft-cadcraft",
+      "name": "CADCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/cadcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "gridcraft",
+      "atlas_id": "artcraft-gridcraft",
+      "name": "GridCraft",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/gridcraft",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "craft-anything",
+      "atlas_id": "artcraft-craft-anything",
+      "name": "Craft Anything",
+      "disposition": "ARTCRAFT_ALIAS_NO_DUPLICATE_INSTALL",
+      "source_links": [
+        "https://www.getartcraft.com/apps/craft-anything",
+        "https://www.getartcraft.com/apps"
+      ],
+      "preview_only": true,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "artcraft-studio",
+      "atlas_id": null,
+      "name": "ArtCraft Studio",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://github.com/artcraft-IDE/artcraft"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "gpt-oss",
+      "atlas_id": null,
+      "name": "gpt-oss-20b",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://openai.com/index/introducing-gpt-oss/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "codex",
+      "atlas_id": null,
+      "name": "Codex",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://openai.com/codex/"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "atlas-review",
+      "atlas_id": null,
+      "name": "Atlas Review Civilization",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://chatgpt.com/library?file_id=libfile_bbf36cc265a48191a97a572f65150e1f&account_id=personal"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    },
+    {
+      "peer_id": "atlas-uws",
+      "atlas_id": null,
+      "name": "Atlas UWS / Hearth",
+      "disposition": "STAGED_PEER_ONLY_NOT_CURATED",
+      "source_links": [
+        "https://github.com/atlaslattice/uws"
+      ],
+      "preview_only": false,
+      "can_install": false,
+      "license_approved": false,
+      "source_pinned": false,
+      "host_auth": false,
+      "semantic_map": null
+    }
+  ],
+  "authority_effect": "NONE",
+  "release_promotion": false,
+  "source_code_transferred": false,
+  "identities_or_private_modes_transferred": false
+}
