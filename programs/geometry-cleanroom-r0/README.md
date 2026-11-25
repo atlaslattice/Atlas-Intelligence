@@ -37,3 +37,7 @@ The test suite contains 144 sphere-path fixtures, 144 independent House-indexed 
 Original Ariadne v0.7 SHA-256: `07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6`. Other HyperMatrix systems are independent namespaces; same numeric coordinate does not mean exact identity. Source and purpose rights come from the live host, not a stored digest, reviewer vote or synthetic callback.
 
 This code carries no private Brain/Palace/Play/Imagine content, owner model weights, external credentials or participant profiles. The cultural geometry rationale is held pending specific sourced attribution and appropriate rights; numerical invariants are tested separately. Existing Atlas license/attribution governs repository adoption; this artifact does not declare rights to other repositories or sources.
+
+## MT01 / 50 — independent peer synthesis (supplemental candidate)
+
+See `PEER_SYNTHESIS.md` and `protocol/GEOMETRY_50_PROTOCOL.md` for the one-actual-turn pilot and 50 proposed source-linked Work packets. Separate new review-only helpers `src/rank-stability.mjs` and `src/four-band-oracle.mjs` are NOT mounted into the selected core. Their tests plus the original clean-room tests now pass **500/500** in both Node modes. R03 original subtractive four-band fails nine preserved extreme-cancellation controls; R42 independent exclusive-band agrees with dense on those nine. No trained quality or hosted release claim.
