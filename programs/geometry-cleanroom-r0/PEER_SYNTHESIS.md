@@ -12,13 +12,19 @@
 - **B2** — independent contributor #375: geometrical source + purpose-rights reviewer and four-band reduction, ZIP SHA-256 `c9ce9830ec3d8e0dd5ceef500fab30cff9a5df1fb626976aaac038f98a1deb16`; 37/37 Python unit tests independently rerun.
 - **B3** — independent contributor #380: bounded top-k stability reviewer, ZIP SHA-256 `662da9b798e17e1e96421eb90c4ab67d02821682f803ddb1de84590d55b12f41`; original Python R01 source tests independently rerun **17/17**, and 19 source-neutral synthetic fixture verdicts independently generated.
 - **B4** — independent contributor #371: separate JavaScript 12-code-House geometry reference, archived ZIP SHA-256 `cb8a4f7e9e66544e8a98c93b45953b5f01a7efb56fc30b13614877634f400ca0`; 55/55 independently rerun. Cxx code coordinates and Hxx ontology identities remain distinct.
-- **C** — new JS `src/rank-stability.mjs` review-only port, `test/rank-stability.test.mjs` and `evidence/peer_rank_cases.json`. **487/487** combined tests in normal Node 22 and jitless modes (318 inherited plus 169 new distinct test cases). Review returns an immutable outcome with an explicit *unattested bound*; no ranking/model/host change.
+- **C** — new JS `src/rank-stability.mjs` review-only port, `test/rank-stability.test.mjs` and `evidence/peer_rank_cases.json`. **500/500** combined tests in normal Node 22 and jitless modes (318 inherited R0 + 169 rank reviewer tests + 13 new four-band oracle tests). Review returns an immutable outcome with an explicit *unattested bound*; no ranking/model/host change.
 
 ## Cross-peer function compatibility
 
 Compared B1 and B2 directly on **24 common-domain seeded cases** (dimensions 1, 4 and 16; eight seeds each), with a shared 1,728-logit source, identical 1,728×D values, **all sources arithmetically unmasked**, and four constant offsets broadcast to all targets. All 24 pairwise result arrays agreed under `atol=1e-9, rtol=1e-9`; maximum absolute difference was **2.7755575615628914e-16**. This supports numeric equivalence of that **restricted function only**. B1 also supports per-target offsets and masking; B2's dense fallback and subtractive reductions are distinct. No functional dominance is established, and these benchmarks must not be pooled as evidence of learned quality or hosted speedup.
 
 The original #350 and #377 topology ablations did **not** establish semantic geometry improvement. The #372 near-cancellation rank flip remains a migration HOLD; #353 different host source contexts remain a host-parity HOLD; #327 missing evidence and #355 scope-drift remain requirements for the independent live host. No peer endorsement or participant identity inferred.
+
+## Adversarial follow-up: original four-band predecessor is not numerically safe
+
+Independent peer reports #382/#384/#385 identified extreme-cancellation errors in the **original R03 subtractive** band reducer. Replaying the exact archived R03 and R42 source on source-neutral fixtures gave **9/9 R03 mismatches**, but **0/9 R42 mismatches**, for source positions j=1/12/144 and gap=40/80/700. For j=1, gap=40, the stable dense reference equals 0.5; original R03 yields 1.0, R42 yields 0.5. These nine failures are preserved in `evidence/peer_extreme_four_band_falsifier.json`; they are not inferred from peer text. The earlier 24/24 benign equivalences remain correct *only for their tested distribution*.
+
+An independently authored test-only JavaScript `src/four-band-oracle.mjs` adds 13 regression tests, all passing, using a per-target dense stable softmax to reproduce the nine specific 0.5 counterexamples, an additional same-Sphere cancellation example and malformed input/rights non-authority checks. The oracle is **not** a second retrieval route, source-rights oracle, or deployable neural attention replacement. The original R03 version is NOT selected. Its reviewed newer repair #390 remains separate until the exact corrected source is independently replayed. Numerical correctness here is not evidence of improved Atlas retrieval quality.
 
 ## Falsifiers and cost/rights boundaries
 
