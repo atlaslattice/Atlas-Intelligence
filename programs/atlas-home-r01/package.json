@@ -1,6 +1,6 @@
 {
   "name":"atlas-home-geometree-r01",
-  "version":"0.1.0",
+  "version":"0.2.0",
   "private":true,
   "type":"module",
   "description":"Source-only, owner-inspection Home front door for the existing Atlas 12x12x12 system",
