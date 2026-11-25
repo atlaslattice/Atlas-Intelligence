@@ -60,7 +60,16 @@ export function snapshotIssuedScores(value){
     if(format==='f32be')binary.writeFloatBE(clean[i],4*i);
     else binary.writeDoubleBE(clean[i],8*i);
   }
-  return Object.freeze({scores:clean,format,beBytes:binary,
-    rawDigest:createHash('sha256').update(Buffer.from(`ATLAS-STRICT-ISSUED/${format}/v1\0`)).update(binary).digest('hex'),
-    scoreCount:1728});
+  // R15: Freeze the RECEIPT semantics, not only its outer object. Native
+  // nonempty Float32/64 and Node Buffer cannot be Object.freeze'd; returning
+  // them directly leaked mutable aliases of the committed numerical snapshot.
+  // Each accessor yields a fresh native copy; retained lexical data is never
+  // exposed. Existing R34/R35 read these properties synchronously and receive
+  // exactly the same typed-array/Buffer interface with no model calls.
+  const rawDigest=createHash('sha256').update(Buffer.from(`ATLAS-STRICT-ISSUED/${format}/v1\0`)).update(binary).digest('hex');
+  return Object.freeze({
+    get scores(){return new (format==='f32be'?Float32Array:Float64Array)(clean);},
+    get beBytes(){return Buffer.from(binary);},
+    format,rawDigest,scoreCount:1728
+  });
 }
