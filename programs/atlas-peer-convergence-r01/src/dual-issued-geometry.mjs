@@ -85,3 +85,4 @@ export function checkMethodSubject(methodHsn,subjectHsn){
     ontologySha256:ARIADNE_SHA256,subjectHsn,methodHsn});
  }catch{return Object.freeze({status:'HOLD_INVALID_HSN',semanticAccepted:false});}
 }
+
