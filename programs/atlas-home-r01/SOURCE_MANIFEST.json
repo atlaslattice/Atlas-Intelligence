@@ -1,0 +1,219 @@
+{
+  "schema": "atlas.home.source-manifest/v1",
+  "status": "LOCAL_TESTED_SOURCE_ONLY",
+  "ontology": {
+    "sourceEdition": "ariadne-reader/v0.7",
+    "sourceSha256": "07533cf7a6b6f567259962bf73efee9b22b47cbacb429499787800e07864e5a6",
+    "coordinateShape": [
+      12,
+      12,
+      12
+    ],
+    "nodeCount": 1728,
+    "domainNodeCount": 1008,
+    "methodNodeCount": 720
+  },
+  "gitParent": {
+    "repository": "atlaslattice/Atlas-Intelligence",
+    "pullRequest": 75,
+    "headBranch": "review/atlas-one-geometree-all-peers-r01-20261124",
+    "headSha": "e2b6e0912d00037539391fe179d97095a953d90f"
+  },
+  "peerPullRequest": 74,
+  "localPassNormal": 107,
+  "localPassJitless": 107,
+  "browserInteractionCases": 22,
+  "hostDeploymentVerified": false,
+  "pins": [
+    {
+      "path": "README.md",
+      "bytes": 5211,
+      "sha256": "9f1a11b9770b4f6d8982ce1be54413e5d5f7bd1201fd3bb220558bda003af211"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 7042,
+      "sha256": "5274da4b0761180f5304ca3f2720c7ce2c578b41ea07372f11bbe01d440172ea"
+    },
+    {
+      "path": "docs/CHARTER.md",
+      "bytes": 3811,
+      "sha256": "fee2b4023ee8b8b89ee0ed4135048668290b11a760eee3b95de04a8b9d837516"
+    },
+    {
+      "path": "docs/INSPECTION_MATRIX_144.json",
+      "bytes": 53700,
+      "sha256": "b2d02039cafbe4399a564c16511fb7671dc2b1793c78369ec35155605b531100"
+    },
+    {
+      "path": "docs/PEER_PR74_CHERRYPICK_LEDGER.json",
+      "bytes": 3603,
+      "sha256": "4275882c06a5ba26c1636b4bed3ab4aa1c40d4da4a897c767484a4c65d48707d"
+    },
+    {
+      "path": "docs/SYMBIOTIC_CONCEPTS_12.json",
+      "bytes": 11307,
+      "sha256": "e9f55a40835b595fd3fe2cbc7239c5951cc3920f5c91851a7e8255a0a463a472"
+    },
+    {
+      "path": "docs/WORKBENCH_STATUS.md",
+      "bytes": 3324,
+      "sha256": "9bb1c2bd13598c0231a225bc09d2e7b74d3f1bb613d2cfe918e1d3ec0a322f3c"
+    },
+    {
+      "path": "evidence/browser-receipt.json",
+      "bytes": 939,
+      "sha256": "f660e9a761853114821cd94a7d80c63c0a913ffe4dd456d27e87b3ab339a1bcb"
+    },
+    {
+      "path": "evidence/browser-smoke.log",
+      "bytes": 872,
+      "sha256": "54741183e88b071387d56ccf20fad9aad91514ec9882ed423558cd36319d8b99"
+    },
+    {
+      "path": "evidence/check.log",
+      "bytes": 108,
+      "sha256": "411a5c4a75dac8eb187014284412c1036531d0ab68fc91d615d187afc76956a4"
+    },
+    {
+      "path": "evidence/standalone-smoke.json",
+      "bytes": 235,
+      "sha256": "5adb84b0abce327419fd14b842c71e3baa8a65ff5df52e3da8b96088a5e7df29"
+    },
+    {
+      "path": "evidence/test-jitless.log",
+      "bytes": 18020,
+      "sha256": "e5b93e07c2677e30124be31b3c6cf39be1705030d544ab753dcd913e8cde4b1f"
+    },
+    {
+      "path": "evidence/test-normal.log",
+      "bytes": 17489,
+      "sha256": "5f97f030feaec13e7ad5c5e395b25b5b3a4f02a7c5589d7bb421ca6cb42d2d79"
+    },
+    {
+      "path": "package.json",
+      "bytes": 430,
+      "sha256": "fcf21dbfbb3091fbaa96426e1a52f5fe18a19cbd5074e094a6d0283553afe934"
+    },
+    {
+      "path": "scripts/make_bundle.py",
+      "bytes": 1783,
+      "sha256": "62e2fb1f48963e1bc98b4b0066a184379910d8a48d9116da78d51a01715fd322"
+    },
+    {
+      "path": "scripts/replay.sh",
+      "bytes": 424,
+      "sha256": "e27a96dc9b7c7bb138e2773ad2b9eb11e764bbbbf44436e27a6e53492c711310"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "bytes": 843,
+      "sha256": "458c67ea3667e13594db818490fa01d3ba3183be796bd6b1f8dff9721bb658f7"
+    },
+    {
+      "path": "src/chronoforge.mjs",
+      "bytes": 2273,
+      "sha256": "18bd521c9ce2a8cd0841c4d34f4adf1d530d4887a07ccc4bdea4a4fbae18725b"
+    },
+    {
+      "path": "src/continuity.mjs",
+      "bytes": 637,
+      "sha256": "e91b80c968d337be697220466c31a0a66e8d1c1d009d40c3dc49d4dedfe3b855"
+    },
+    {
+      "path": "src/demo.mjs",
+      "bytes": 355,
+      "sha256": "4fa5ee2ca19ab364f7ce821fd6c206fa7b323aa39df8435f041e0894cee60e7b"
+    },
+    {
+      "path": "src/doors.mjs",
+      "bytes": 3154,
+      "sha256": "2c6674e255bd8fe17c294b07cccdc79bd7092a2fa9a013b62b15aba05cdf93a7"
+    },
+    {
+      "path": "src/existing-peer.mjs",
+      "bytes": 478,
+      "sha256": "b4b5ec8cdd0421a6eec93c57fa0c285f30f3169b0745b1af239ef35fd5a99c27"
+    },
+    {
+      "path": "src/federation.mjs",
+      "bytes": 3070,
+      "sha256": "5286a52f9ecd4762c93a3e51a63cc4cc22149d766e69fe015e33bb2728cbcf16"
+    },
+    {
+      "path": "src/garden.mjs",
+      "bytes": 3031,
+      "sha256": "981a2340598b8d6ae77f4b1361744eb0483b3d11ddfcaf0ae81a9ba0d8ebc51a"
+    },
+    {
+      "path": "src/geometry.mjs",
+      "bytes": 3007,
+      "sha256": "9e16f473e42a837b5402cfd001ef002f7ea3d0a12cdf85ac9ddfd5ea46b1f0b0"
+    },
+    {
+      "path": "src/home.mjs",
+      "bytes": 4567,
+      "sha256": "528de19be145b36959d3aac02428fce910cf6bce7cb0106b7326256024185ae7"
+    },
+    {
+      "path": "test/browser_smoke.py",
+      "bytes": 3150,
+      "sha256": "36518b2e162eca990cd9b32567f2b1cc86b7dff92b3dde3e9d10bbc306893924"
+    },
+    {
+      "path": "test/contracts.test.mjs",
+      "bytes": 1803,
+      "sha256": "f8f316388145b4faf42bdb5c441ef5250f9ee7ae86a0735ab526f3ed22122f52"
+    },
+    {
+      "path": "test/doors.test.mjs",
+      "bytes": 1978,
+      "sha256": "1d314158132acc93e6200125053edff63c14e06766d8f5540584b080c0d62cd7"
+    },
+    {
+      "path": "test/federation.test.mjs",
+      "bytes": 3067,
+      "sha256": "fa7279cd7716d392d701f048975536b0b8370c2a04c6d4519e151f64112bf515"
+    },
+    {
+      "path": "test/garden.test.mjs",
+      "bytes": 2221,
+      "sha256": "d256f68ca2c7d214efee3de49cf2e6f1743d6f528731504104511be8c96e4300"
+    },
+    {
+      "path": "test/geometry.test.mjs",
+      "bytes": 3734,
+      "sha256": "ca4f26108fd37bfa080588a0ef9074af6668e601c8e6b38be67555b8e8a61abd"
+    },
+    {
+      "path": "test/home.test.mjs",
+      "bytes": 5651,
+      "sha256": "b077e94275ea519d57c4984dd63189c1b82d04b540ad02ec1f7a0c0e2018e18b"
+    },
+    {
+      "path": "test/standalone_smoke.py",
+      "bytes": 1348,
+      "sha256": "13bd0bd11860cc43cd477b07cf02019e6f54dd900b83429bdb6b9eedd0794390"
+    },
+    {
+      "path": "test/web.test.mjs",
+      "bytes": 1497,
+      "sha256": "f4119aaf6f674422e60b2e026c1ced8a257147f8aa1129e176dfbef9db66966f"
+    },
+    {
+      "path": "web/atlas-home-standalone.html",
+      "bytes": 20948,
+      "sha256": "b87b113669cc787be0b24d10470ae0e1a430af32ccb4c9a761b6a4b9d4da224e"
+    },
+    {
+      "path": "web/atlas-home.html",
+      "bytes": 15275,
+      "sha256": "ce63cc2b639b1b62cb31914835b08d76bd6cdfb4074281aa8e4b0f93f9041265"
+    },
+    {
+      "path": "web/home-controller.js",
+      "bytes": 5702,
+      "sha256": "bec8363c538c39f3af6bf49bc606bc77d8c9ec090f77425bada2bff021ebf878"
+    }
+  ]
+}
