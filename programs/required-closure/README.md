@@ -26,7 +26,7 @@ node --test programs/required-closure/test/required-closure.test.mjs
 node --jitless --test programs/required-closure/test/required-closure.test.mjs
 ```
 
-The suite contains 12 positive metadata fixtures; **144 synthetic adversarial cases** (12 failure classes × 12 source editions); and 13 additional focused cases for current rights, request/source drift, unknown fields, getters, proxies, cycles and limits. These are *not* 144 semantically validated Atlas Spheres, independent models or production authorization exercises.
+The suite contains 12 positive metadata fixtures; **144 synthetic adversarial cases** (12 failure classes × 12 source editions); and 18 additional focused cases for current rights, request/source drift, unknown fields, getters, proxies, cycles and limits. These are *not* 144 semantically validated Atlas Spheres, independent models or production authorization exercises.
 
 ## Compatible intake on the existing core
 
@@ -44,8 +44,8 @@ The module has no runtime side effects except its own local calculations. Rollba
 
 | Evidence | Meaning |
 | --- | --- |
-| 169/169 normal Node tests | Direct execution of this candidate and fixtures |
-| 169/169 jitless Node tests | Separate engine-mode replay on identical code |
+| 174/174 normal Node tests | Direct execution of this candidate and fixtures |
+| 174/174 jitless Node tests | Separate engine-mode replay on identical code |
 | 144 adversarial fixtures | Synthetic metadata omission and policy controls, not semantics |
 | Selected real Model 0.3 query | **Not performed in this new gate pass**; prior peer/source reports remain separate |
 | Combined core acceptance | **Not performed** |
@@ -62,3 +62,11 @@ The module has no runtime side effects except its own local calculations. Rollba
 - Workboard #339/#340: later compatible guard and Native review remain independent.
 
 Falsification targets: a source edition drift accepted under unchanged pin; an omitted required negative accepted; inspection-only permissions treated as inference; an unresolved objection rendered resolved; a locally generated anchor mistaken for independent trust; raw private bodies entering a metadata receipt; or a second ranking path introduced by integration.
+
+## R2 hardening — untrusted root and audit immutability
+
+This is a narrow repair of the **same PR #65** candidate, not a second retrieval or review system. A previously untested top-level malformed argument could throw before the original safety `try` block, and root getters could execute during function-parameter destructuring. The returned diagnostics array was frozen, but its member objects were not. The five new RED tests captured those failures on the exact predecessor (169 pass, 5 fail). The implementation now normalizes and verifies the *entire root argument before accessing its fields* within the caught boundary, rejects unexpected root fields and Proxy/accessor input without executing traps/getters, and freezes each returned diagnostic object.
+
+**GREEN:** 174/174 tests in Node 22 standard mode and 174/174 in Node 22 `--jitless`, no skips. This is five distinct additional cases, not 348 new capabilities. The new change affects only the local metadata gate. The original 169 tests remain in place. The gate remains review-only: `MATCHED_PINNED_METADATA` is never an authenticated claim of independently complete evidence, participant identity, current rights, a successful neural evaluation, or release permission. Host-generated required-set manifests and final-return permission checks remain a blocking dependency. The draft PR is **not merged, hosted or mounted in Model 0.3**.
+
+New controls: null/missing/primitive root returns HOLD (not a throw); root getter never executes; root Proxy traps never execute; an unknown root field is refused; and diagnostics cannot be rewritten after return. The old failing log is retained as `evidence/red.tap`; new normal and jitless transcripts are `evidence/green.tap` and `evidence/green-jitless.tap`.
